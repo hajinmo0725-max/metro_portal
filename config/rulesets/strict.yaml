@@ -32,8 +32,10 @@ portals:
   T1:
     enabled: true
     cost: 1
-    # 매칭에 쓰는 이름 언어. official 이름만 사용
+    # 매칭에 쓰는 이름: 언어·문자·종류. official 이름만 사용 (부역명·로마자 표기는 제외)
     langs: ["ko"]
+    scripts: ["Hang"]
+    kinds: ["primary"]
     official_only: true
   T2:
     enabled: false
