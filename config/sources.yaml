@@ -1,0 +1,22 @@
+# 외부 데이터 소스 정의. 수집 스크립트는 여기서 URL을 읽는다.
+user_agent: "metro_portal/0.1 (side project; github.com/hajinmo0725-max/metro_portal)"
+request_interval_s: 3
+kric:
+  # 레일포털(data.kric.go.kr) 표준데이터. 공공데이터포털 15013205의 제공 시스템.
+  # 상세 페이지의 공개 '다운로드' 버튼이 가리키는 URL. 로그인 불필요.
+  files:
+    stations_std:
+      url: "https://data.kric.go.kr/rips/dataset/download.file?type=filedata&id=32&operation=1"
+      page: "https://data.kric.go.kr/rips/M_01_01/detail.do?id=32"
+      title: "표준데이터 역사정보(전체 기관)"
+    lines_std:
+      url: "https://data.kric.go.kr/rips/dataset/download.file?type=filedata&id=18&operation=1"
+      page: "https://data.kric.go.kr/rips/M_01_01/detail.do?id=18"
+      title: "표준데이터 노선정보(전체 기관)"
+    stations_metro:
+      url: "https://data.kric.go.kr/rips/dataset/download.file?type=filedata&id=1294&operation=1"
+      page: "https://data.kric.go.kr/rips/M_01_01/detail.do?id=1294"
+      title: "전국 도시광역철도 역사정보 (다국어 역명)"
+overpass:
+  # 2026-11-05 세션에서는 TLS 리셋으로 접근 불가. 허용되면 노선 순서 교차검증용으로 사용 예정.
+  endpoint: "https://overpass-api.de/api/interpreter"

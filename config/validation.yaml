@@ -1,0 +1,13 @@
+# 데이터 검증 임계값 (매칭 룰이 아니라 품질 리포트용)
+stations:
+  # 다국어 보강 시 표준데이터 역과 다국어 파일 역을 같은 역으로 볼 최대 거리
+  enrich_max_distance_m: 400
+  # 다국어 파일에서 '값 없음'을 뜻하는 표기. 이름으로 쓰지 않는다
+  placeholder_names: ["-", "해당없음", "없음", "null"]
+  bbox: {lat_min: 33.0, lat_max: 38.7, lon_min: 124.5, lon_max: 131.0}
+lines:
+  # 인접역 거리 이상치: 절대값 초과 또는 노선 중앙값의 배수 초과
+  adjacent_max_m: 6000
+  adjacent_median_factor: 4.0
+  # 인접역 거리가 이 값 미만이면 중복·좌표 오류 의심
+  adjacent_min_m: 150

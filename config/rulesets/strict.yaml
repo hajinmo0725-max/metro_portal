@@ -8,7 +8,7 @@ normalize:
   strip: true
   collapse_whitespace: true
   # 가운뎃점 변형을 canonical 하나로 통일 (DESIGN 5.1)
-  middle_dot_variants: ["·", "‧", "・", "．", "."]
+  middle_dot_variants: ["·", "‧", "・", "．", ".", "∙", "•", "ㆍ", "\u119e"]
   middle_dot_canonical: "·"
   # 괄호 부역명 제거. 예: 교대(법원·검찰청) → 교대
   remove_parenthetical: true
@@ -23,9 +23,10 @@ cluster:
   # 정규화 이름이 같고 이 거리 이하면 같은 StationCluster(환승)
   transfer_distance_m: 500
   # 소스가 명시한 환승 관계(Wikidata P833 등)로도 묶을지. 이름이 다른 환승역(이수/총신대입구) 대응
-  use_explicit_interchange: true
-  # 명시 환승이라도 이 거리를 넘으면 무시 (데이터 오류 방어)
-  explicit_interchange_max_m: 1000
+  # 괄호 부역명을 환승 판정용 별칭으로도 쓸지. 이름이 다른 환승역 대응
+  # 예: 4호선 "총신대입구(이수)" ↔ 7호선 "이수". 거리 조건(transfer_distance_m)은 동일하게 적용.
+  # 포탈(T1) 매칭에는 별칭을 쓰지 않는다.
+  use_parenthetical_alias: true
 
 portals:
   T1:
