@@ -113,7 +113,9 @@
 │   └── SOURCES.md            # 출처·라이선스
 ├── web/                      # 정적 프론트
 ├── tests/
+├── docs/reports/             # 빌드·검증·야간 작업 보고서
 ├── scripts/install_pkgs.sh   # 클라우드 세션용 의존성 설치
+├── scripts/network_check.sh  # 외부 호스트 접근성 점검
 ├── .claude/settings.json     # SessionStart hook
 └── requirements.txt
 ```
@@ -132,3 +134,5 @@
 - 2026-11-05: 매칭 룰은 설정값으로 분리하고, ruleset별로 그래프를 빌드해서 지표를 출력한다.
 - 2026-11-05: 포탈은 이름 노드 기반 이분 그래프로 모델링한다.
 - 2026-11-05: 개발은 Claude Code 클라우드 세션, 설계 논의는 claude.ai 프로젝트에서 하고, 기준 문서는 docs/DESIGN.md로 한다.
+- 2026-11-05: 프로젝트명을 metro_portal로 통일하고 설계 문서를 docs/DESIGN.md로 옮겼다.
+- 2026-11-05: 네트워크 점검 결과 data.go.kr 표준데이터는 자동 수집 불가(JS XHR 다운로드, OpenAPI 키 필요), Overpass는 TLS 리셋으로 접근 불가, Wikidata SPARQL만 정상이었다 (docs/reports/network_check.md).

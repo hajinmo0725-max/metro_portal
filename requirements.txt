@@ -1,0 +1,4 @@
+# 파이프라인 의존성 (Python 3.11+)
+PyYAML>=6.0
+requests>=2.31
+pytest>=8.0
