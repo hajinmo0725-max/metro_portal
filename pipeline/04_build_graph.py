@@ -40,6 +40,18 @@ def main() -> int:
     lines = load("lines.json")["lines"]
 
     clusters = build_clusters(stations, rs)
+    # 표시용 도시: 노선 정의(config/kr_lines.yaml)의 city. 시퀀스에 없는 역은 노선 pool로 찾는다
+    city_of = {}
+    for ln in lines:
+        for sq in ln["sequences"]:
+            for sid in sq["station_ids"]:
+                city_of.setdefault(sid, ln.get("city", ""))
+    group_city = {g: ln.get("city", "") for ln in lines for g in ln["pools"]}
+    for st_ in stations:
+        st_["city"] = city_of.get(st_["id"]) or group_city.get(st_["line_group"], "")
+    scity = {st_["id"]: st_["city"] for st_ in stations}
+    for c in clusters:
+        c["cities"] = sorted({scity[x] for x in c["station_ids"]})
     portals, capped = build_portals(stations, clusters, rs)
     adj = build_graph(stations, edges, clusters, portals, rs)
 
@@ -60,7 +72,9 @@ def main() -> int:
         return 0
     m = compute_metrics(stations, edges, lines, clusters, portals, adj, rs)
     dump(out / "metrics.json", m)
-    report = render_report(m, portals, clusters, stations, rs)
+    import yaml
+    cands = yaml.safe_load(open(ROOT / "config" / "report.yaml", encoding="utf-8")).get("portal_candidates", [])
+    report = render_report(m, portals, clusters, stations, rs, candidates=cands)
     (ROOT / "docs" / "reports" / f"graph_{rs['name']}.md").write_text(report, encoding="utf-8")
     print(report)
     return 0

@@ -117,3 +117,14 @@ def test_warp_graph_edges(rs):
     pid = portals[0]["id"]
     assert (pid, rs["portals"]["T1"]["cost"], "warp_in", "T1") in adj[YANGPYEONG_5["id"]]
     assert (YANGPYEONG_GJ["id"], 0, "warp_out", "T1") in adj[pid]
+
+
+def test_data_alias_clusters(rs):
+    from helpers import st
+    maglev = dict(st("m:101", "인천국제공항역", 37.447222, 126.4525), aliases=["인천공항1터미널"])
+    arex = st("a:A10", "인천공항1터미널", 37.4476067, 126.4523433)
+    _, portals, _, cof = run([maglev, arex], rs)
+    assert cof["m:101"] == cof["a:A10"] and portals == []
+    rs["cluster"]["use_data_aliases"] = False
+    _, _, _, cof2 = run([maglev, arex], rs)
+    assert cof2["m:101"] != cof2["a:A10"]

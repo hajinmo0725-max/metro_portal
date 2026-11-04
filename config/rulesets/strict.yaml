@@ -27,6 +27,8 @@ cluster:
   # 예: 4호선 "총신대입구(이수)" ↔ 7호선 "이수". 거리 조건(transfer_distance_m)은 동일하게 적용.
   # 포탈(T1) 매칭에는 별칭을 쓰지 않는다.
   use_parenthetical_alias: true
+  # 데이터 보정 파일(config/kr_station_fixes.yaml aliases)의 별칭도 같은 조건으로 쓸지
+  use_data_aliases: true
 
 portals:
   T1:

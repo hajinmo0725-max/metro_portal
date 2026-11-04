@@ -151,7 +151,8 @@ def main() -> int:
     assert len({s["id"] for s in stations}) == len(stations), "station id 중복"
 
     # 좌표 보정 (config/kr_station_fixes.yaml)
-    fixes = yaml.safe_load(open(ROOT / "config" / "kr_station_fixes.yaml", encoding="utf-8")).get("fixes", [])
+    fix_cfg = yaml.safe_load(open(ROOT / "config" / "kr_station_fixes.yaml", encoding="utf-8"))
+    fixes = fix_cfg.get("fixes", [])
     byid = {s["id"]: s for s in stations}
     fixes_applied = []
     for fx in fixes:
@@ -162,6 +163,12 @@ def main() -> int:
         st["coord_fix"] = {"from": [st["lat"], st["lon"]], "reason": fx["reason"]}
         st["lat"], st["lon"] = fx["lat"], fx["lon"]
         fixes_applied.append({"id": fx["id"], "name": st["name_ko"], "moved_m": round(moved, 1)})
+    for al in fix_cfg.get("aliases", []):
+        st = byid.get(al["id"])
+        if st is None:
+            raise SystemExit(f"[02] 별칭 대상 역 없음: {al['id']}")
+        st["aliases"] = sorted(set(st.get("aliases", [])) | set(al["aliases"]))
+        st["alias_reason"] = al["reason"]
 
     unused_metro = sorted(
         {(clean_text(mr["철도운영기관명"]), clean_text(mr["운영노선"]), clean_text(mr["역명(한글)"]))

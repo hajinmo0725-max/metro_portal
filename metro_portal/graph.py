@@ -61,9 +61,14 @@ def build_clusters(stations: list[dict], rs: dict) -> list[dict]:
                 d = haversine_m(a["lat"], a["lon"], b["lat"], b["lon"])
                 if d <= D:
                     uf.union(a["id"], b["id"])
-    if ccfg.get("use_parenthetical_alias"):
+    if ccfg.get("use_parenthetical_alias") or ccfg.get("use_data_aliases"):
         for a in st:
-            for alias in parenthetical_aliases(a["name_ko"], norm):
+            als = []
+            if ccfg.get("use_parenthetical_alias"):
+                als += parenthetical_aliases(a["name_ko"], norm)
+            if ccfg.get("use_data_aliases"):
+                als += [normalize_name(x, norm) for x in a.get("aliases", [])]
+            for alias in sorted(set(als)):
                 for b in by_name.get(alias, []):
                     if b["id"] == a["id"]:
                         continue
