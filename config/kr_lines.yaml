@@ -1,0 +1,373 @@
+# 한국 노선 정의와 정차 순서 보정.
+#
+# 기본값: 레일포털 표준데이터 노선정보의 '정거장구성' 순서를 그대로 쓴다.
+# 여기 적힌 항목만 보정한다. 매칭 룰이 아니라 원본 데이터의 누락·순서 오류를 고치는 데이터 큐레이션이다.
+#
+# source: 원본 노선정보의 {line_no: 노선번호, name: 노선명(공백 정리)} — 이 키로 원본 행과 짝짓는다
+# pools:  정차역 이름을 찾을 역 그룹(stations.json의 line_group). 생략하면 노선번호가 같은 그룹 전부
+# patch:  원본 순서에 대한 수정 — remove, insert_after{기준역: [...]}, prepend, append (적용 순서도 이 순서)
+# branches / sequences: 지선은 별도 시퀀스로 분리 (DESIGN 4장)
+# "역명@그룹" 표기는 다른 노선 그룹의 역을 가리킨다 (직결 분기점 연결용)
+#
+# 보정 근거는 M2 검증 리포트(docs/reports/m2_lines_validation.md)의 매칭 실패·미편입 역·거리 이상치다.
+# 실제 노선 구조는 작성자 지식 기반이며 공식 자료로 대조하지 않았다 (검증 못 함 → 보고서 질문 목록).
+
+lines:
+  # ---------------- 서울·수도권 ----------------
+  - source: {line_no: I4101, name: 수도권 광역철도 1호선}
+    id: seoul-1
+    name: 1호선 (서울역~청량리)
+    city: 수도권
+    color: "#0052A4"
+    pools: ["I4101:1호선"]
+
+  - source: {line_no: I4101, name: 경부선}
+    id: seoul-1-gyeongbu
+    name: 1호선 경부선
+    city: 수도권
+    color: "#0052A4"
+    pools: ["I4101:경부선", "I4401:경부선", "I4401:장항선"]
+    patch:
+      # 원본은 광명(셔틀)·서동탄(병점기지선)을 본선 중간에 끼워 넣었다 → 지선으로 분리
+      # 경부선 역 그룹에는 서울역 행이 없다 → 1호선 그룹의 서울역에서 출발
+      remove: [광명역, 서동탄역, 서울역]
+      prepend: ["서울역@I4101:1호선"]
+    branches:
+      - id: gwangmyeong
+        stops: [금천구청역, 광명역]
+      - id: seodongtan
+        stops: [병점역, 서동탄역]
+
+  - source: {line_no: I1101, name: 경인선}
+    id: seoul-1-gyeongin
+    name: 1호선 경인선
+    city: 수도권
+    color: "#0052A4"
+    patch:
+      # 원본은 구일부터 시작 → 분기점 구로와 연결
+      prepend: ["구로역@I4101:경부선"]
+
+  - source: {line_no: I4102, name: 경원선}
+    id: seoul-1-gyeongwon
+    name: 1호선 경원선
+    city: 수도권
+    color: "#0052A4"
+    pools: ["I4102:경원선"]
+    # 경원선 그룹의 용산~왕십리 역은 경의·중앙선 시퀀스에서 쓴다
+
+  - source: {line_no: S1102, name: 수도권 도시철도 2호선}
+    id: seoul-2
+    name: 2호선
+    city: 수도권
+    color: "#00A84D"
+    circular: true
+
+  - source: {line_no: S1121, name: 수도권 도시철도 2호선}
+    id: seoul-2-seongsu
+    name: 2호선 성수지선
+    city: 수도권
+    color: "#00A84D"
+    patch:
+      prepend: ["성수@S1102:2호선"]
+
+  - source: {line_no: S1122, name: 수도권 도시철도 2호선}
+    id: seoul-2-sinjeong
+    name: 2호선 신정지선
+    city: 수도권
+    color: "#00A84D"
+    sequences:
+      # 표준데이터에 2호선 까치산 행이 없어 5호선 까치산 역으로 잇는다
+      - id: main
+        stops: ["신도림@S1102:2호선", 도림천, 양천구청, 신정네거리, "까치산@S1105:5호선"]
+
+  - source: {line_no: I1103, name: 수도권 광역철도 3호선}
+    id: seoul-3
+    name: 3호선
+    city: 수도권
+    color: "#EF7C1C"
+
+  - source: {line_no: I4106, name: 일산선}
+    id: seoul-3-ilsan
+    name: 3호선 일산선
+    city: 수도권
+    color: "#EF7C1C"
+
+  - source: {line_no: I1104, name: 수도권 광역철도 4호선}
+    id: seoul-4
+    name: 4호선
+    city: 수도권
+    color: "#00A5DE"
+
+  - source: {line_no: I4104, name: 진접선}
+    id: seoul-4-jinjeop
+    name: 4호선 진접선
+    city: 수도권
+    color: "#00A5DE"
+    patch:
+      append: ["불암산@I1104:4호선"]
+
+  - source: {line_no: I4103, name: 안산·과천선}
+    id: seoul-4-ansan
+    name: 4호선 안산·과천선
+    city: 수도권
+    color: "#00A5DE"
+    patch:
+      # 원본은 범계 다음에 산본 → 금정 누락. 시작점도 분기점 남태령과 연결
+      insert_after: {범계역: [금정역]}
+      prepend: ["남태령@I1104:4호선"]
+
+  - source: {line_no: S1105, name: 수도권 도시철도 5호선}
+    id: seoul-5
+    name: 5호선
+    city: 수도권
+    color: "#996CAC"
+    patch:
+      # 원본은 하남검단산 뒤에 마천지선(P549~P555)을 이어 붙였다 → 지선 분리
+      remove: [둔촌동, 올림픽공원(한국체대), 방이, 오금, 개롱, 거여, 마천]
+    branches:
+      - id: macheon
+        stops: [강동, 둔촌동, 올림픽공원(한국체대), 방이, 오금, 개롱, 거여, 마천]
+
+  - source: {line_no: S1106, name: 수도권 도시철도 6호선}
+    id: seoul-6
+    name: 6호선
+    city: 수도권
+    color: "#CD7C2F"
+
+  - source: {line_no: S1107, name: 수도권 도시철도 7호선}
+    id: seoul-7
+    name: 7호선
+    city: 수도권
+    color: "#747F00"
+    pools: ["S1107:7호선"]
+
+  - source: {line_no: S1107, name: 도시철도 7호선}
+    id: seoul-7-incheon
+    name: 7호선 (인천 구간)
+    city: 수도권
+    color: "#747F00"
+    pools: ["S1107:도시철도 7호선"]
+    patch:
+      prepend: ["온수(성공회대입구)@S1107:7호선"]
+
+  - source: {line_no: S1108, name: 수도권 도시철도 8호선}
+    id: seoul-8
+    name: 8호선
+    city: 수도권
+    color: "#E6186C"
+    patch:
+      # 별내선 연장(별내~암사역사공원)이 노선정보에서 분리·누락돼 있다
+      prepend: ["별내역@S4108:수도권 광역철도 8호선", "다산역@S4108:수도권 광역철도 8호선", 동구릉, 구리(구리전통시장), 장자호수공원]
+
+  - source: {line_no: S4108, name: 수도권 전철 8호선}
+    skip: true   # seoul-8에 합쳤다
+
+  - source: {line_no: S1109, name: 서울 도시철도 9호선}
+    id: seoul-9
+    name: 9호선
+    city: 수도권
+    color: "#BDB092"
+
+  - source: {line_no: I28A1, name: 인천국제공항선}
+    id: arex
+    name: 공항철도
+    city: 수도권
+    color: "#0090D2"
+
+  - source: {line_no: I4108, name: 경의·중앙선}
+    id: gyeongui-jungang
+    name: 경의·중앙선
+    city: 수도권
+    color: "#77C4A3"
+    pools: ["I4108:경의중앙선", "I4102:경원선"]
+    # 경의중앙선 그룹의 광운대역 행은 일부 열차 종착 레코드로 보여 시퀀스에 넣지 않는다 (1호선 광운대와 환승 클러스터로 연결됨)
+    # 원본은 용산~회기 누락, 가좌·효창공원앞 순서 꼬임, 서울역 지선 혼합 → 전체를 명시
+    sequences:
+      - id: main
+        stops: [임진강역, 운천역, 문산역, 파주역, 월롱역, 금촌역, 금릉역, 운정역, 야당역, 탄현역, 일산역,
+                풍산역, 백마역, 곡산역, 대곡역, 능곡역, 행신역, 강매역, 한국항공대, 수색역, 디지털미디어시티역,
+                가좌역, 홍대입구역, 서강대역, 공덕역, 효창공원앞역,
+                "용산역@I4102:경원선", "이촌역@I4102:경원선", "서빙고역@I4102:경원선", "한남역@I4102:경원선",
+                "옥수역@I4102:경원선", "응봉역@I4102:경원선", "왕십리역@I4102:경원선",
+                청량리역, 회기역, 중랑역, 상봉역, 망우역, 양원역, 구리역, 도농역, 양정역, 덕소역, 도심역, 팔당역,
+                운길산역, 양수역, 신원역, 국수역, 아신역, 오빈역, 양평역, 원덕역, 용문역, 지평역]
+      - id: seoul-station
+        stops: [가좌역, 신촌역, 서울역(경의선)]
+
+  - source: {line_no: I41K2, name: 경춘선}
+    id: gyeongchun
+    name: 경춘선
+    city: 수도권
+    color: "#0C8E72"
+    pools: ["I41K2:경춘선"]
+    patch:
+      # 원본은 신내부터 시작. 표준데이터 경춘선 그룹의 광운대·중랑·상봉·망우를 앞에 잇는다 (운행계통 기준, 검증 못 함)
+      prepend: ["광운대역@I4108:경춘선", "중랑역@I4108:경춘선", "상봉역@I4108:경춘선", 망우역]
+
+  - source: {line_no: I28K1, name: 분당선}
+    id: suin-bundang
+    name: 수인·분당선 (분당선 구간)
+    city: 수도권
+    color: "#FABE00"
+    # 원본 노선번호가 수인선과 같은 I28K1로 잘못 적혀 있다. 역 그룹은 I4105
+    pools: ["I4105:분당선"]
+    patch:
+      prepend: [왕십리역]
+
+  - source: {line_no: I28K1, name: 수인선}
+    id: suin-bundang-suin
+    name: 수인·분당선 (수인선 구간)
+    city: 수도권
+    color: "#FABE00"
+    pools: ["I28K1:수인선"]
+    patch:
+      # 원본은 4호선 공용구간(한대앞~오이도)을 생략하고 사리→달월로 건너뛴다
+      insert_after: {사리역: [한대앞역, 중앙역, 고잔역, 초지역, 안산역, 능길역, 정왕역, 오이도역]}
+      prepend: ["수원역(분당)@I4105:분당선"]
+
+  - source: {line_no: I41K5, name: 경강선}
+    id: gyeonggang
+    name: 경강선
+    city: 수도권
+    color: "#003DA5"
+
+  - source: {line_no: I41WS, name: 서해선}
+    id: seohae
+    name: 서해선
+    city: 수도권
+    color: "#8FC31F"
+    patch:
+      # 일산 연장 구간(일산~능곡)이 원본 순서에 없다
+      prepend: [일산역, 풍산역, 백마역, 곡산역, 대곡역, 능곡역]
+
+  - source: {line_no: I11D1, name: 신분당선}
+    id: shinbundang
+    name: 신분당선
+    city: 수도권
+    color: "#D4003B"
+
+  - source: {line_no: L41E1, name: 수도권 경량도시철도 에버라인}
+    id: everline
+    name: 용인 에버라인
+    city: 수도권
+    color: "#509F22"
+
+  - source: {line_no: L41U1, name: 의정부}
+    id: uijeongbu
+    name: 의정부 경전철
+    city: 수도권
+    color: "#FDA600"
+
+  - source: {line_no: L11UI, name: 수도권 경량도시철도 우이신설선}
+    id: ui-sinseol
+    name: 우이신설선
+    city: 수도권
+    color: "#B0CE18"
+
+  - source: {line_no: L11SL, name: 수도권 경량도시철도 신림선}
+    id: sillim
+    name: 신림선
+    city: 수도권
+    color: "#6789CA"
+
+  - source: {line_no: L41G1, name: 김포도시철도}
+    id: gimpo-gold
+    name: 김포골드라인
+    city: 수도권
+    color: "#AD8605"
+
+  - source: {line_no: S2801, name: 인천지하철 1호선}
+    id: incheon-1
+    name: 인천 1호선
+    city: 수도권
+    color: "#7CA8D5"
+    patch:
+      # 검단 연장(아라~검단호수공원)이 원본 순서에 없다
+      prepend: [검단호수공원, 신검단중앙, "아라(북부법원, 검찰청)"]
+
+  - source: {line_no: S2802, name: 인천지하철 2호선}
+    id: incheon-2
+    name: 인천 2호선
+    city: 수도권
+    color: "#ED8B00"
+
+  - source: {line_no: S28M1, name: 자기부상철도}
+    id: incheon-maglev
+    name: 인천공항 자기부상철도
+    city: 수도권
+    color: "#FFCD12"
+
+  # ---------------- 부산·울산·경남 ----------------
+  - source: {line_no: S2601, name: 부산 도시철도 1호선}
+    id: busan-1
+    name: 부산 1호선
+    city: 부산
+    color: "#F06A00"
+
+  - source: {line_no: S2602, name: 부산 도시철도 2호선}
+    id: busan-2
+    name: 부산 2호선
+    city: 부산
+    color: "#81BF48"
+
+  - source: {line_no: S2603, name: 부산 도시철도 3호선}
+    id: busan-3
+    name: 부산 3호선
+    city: 부산
+    color: "#BB8C00"
+
+  - source: {line_no: L2604, name: 부산 경량도시철도 4호선}
+    id: busan-4
+    name: 부산 4호선
+    city: 부산
+    color: "#217DCB"
+
+  - source: {line_no: L48B1, name: 부산김해경전철}
+    id: busan-gimhae
+    name: 부산김해경전철
+    city: 부산
+    color: "#8652A1"
+
+  - source: {line_no: I26K6, name: 동해선}
+    id: donghae
+    name: 동해선 (광역전철)
+    city: 부산
+    color: "#0054A6"
+
+  # ---------------- 대구 ----------------
+  - source: {line_no: S2701, name: 대구 도시철도 1호선}
+    id: daegu-1
+    name: 대구 1호선
+    city: 대구
+    color: "#D93F5C"
+
+  - source: {line_no: S2702, name: 대구 도시철도 2호선}
+    id: daegu-2
+    name: 대구 2호선
+    city: 대구
+    color: "#00AA80"
+
+  - source: {line_no: S2703, name: 대구 도시철도 3호선}
+    id: daegu-3
+    name: 대구 3호선
+    city: 대구
+    color: "#FFB100"
+
+  - source: {line_no: I27K7, name: 대경선}
+    id: daegyeong
+    name: 대경선
+    city: 대구
+    color: "#00A0E9"
+
+  # ---------------- 대전·광주 ----------------
+  - source: {line_no: S3001, name: 대전 도시철도 1호선}
+    id: daejeon-1
+    name: 대전 1호선
+    city: 대전
+    color: "#007448"
+
+  - source: {line_no: S2901, name: 광주 도시철도 1호선}
+    id: gwangju-1
+    name: 광주 1호선
+    city: 광주
+    color: "#009088"

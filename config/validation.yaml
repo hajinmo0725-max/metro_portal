@@ -11,3 +11,26 @@ lines:
   adjacent_median_factor: 4.0
   # 인접역 거리가 이 값 미만이면 중복·좌표 오류 의심
   adjacent_min_m: 150
+  # 거리 이상치 중 실제 장거리 구간으로 판단한 것 (작성자 판단. 공식 거리표와 대조하지 않음)
+  known_long_segments:
+    - [arex, 디지털미디어시티, 마곡나루]
+    - [arex, 청라국제도시, 영종]
+    - [daegu-1, 대구한의대병원, 부호(경일대·호산대)]
+    - [daegyeong, 북삼역, 왜관역]
+    - [daegyeong, 왜관역, 서대구역]
+    - [daegyeong, 동대구역, 경산역]
+    - [donghae, 서생역, 남창역]
+    - [gyeongchun, 마석역, 대성리역]
+    - [gyeongchun, 대성리역, 청평역]
+    - [gyeongchun, 상천역, 가평역]
+    - [gyeongchun, 강촌역, 김유정역]
+    - [gyeonggang, 이매역, 삼동역]
+    - [gyeonggang, 곤지암역, 신둔도예촌역]
+    - [gyeonggang, 신둔도예촌역, 이천역]
+    - [gyeonggang, 부발역, 세종대왕릉역]
+    - [incheon-maglev, 파라다이스시티역, 워터파크역]
+    - [seohae, 능곡역, 김포공항역]
+    - [seoul-1-gyeongbu, 평택역, 성환역]
+    - [seoul-1-gyeongwon, 전곡역, 연천역]
+    - [seoul-4-jinjeop, 오남역, 별내별가람역]
+    - [shinbundang, 청계산입구, 판교]

@@ -150,6 +150,19 @@ def main() -> int:
         })
     assert len({s["id"] for s in stations}) == len(stations), "station id 중복"
 
+    # 좌표 보정 (config/kr_station_fixes.yaml)
+    fixes = yaml.safe_load(open(ROOT / "config" / "kr_station_fixes.yaml", encoding="utf-8")).get("fixes", [])
+    byid = {s["id"]: s for s in stations}
+    fixes_applied = []
+    for fx in fixes:
+        st = byid.get(fx["id"])
+        if st is None:
+            raise SystemExit(f"[02] 보정 대상 역 없음: {fx['id']}")
+        moved = haversine_m(st["lat"], st["lon"], fx["lat"], fx["lon"])
+        st["coord_fix"] = {"from": [st["lat"], st["lon"]], "reason": fx["reason"]}
+        st["lat"], st["lon"] = fx["lat"], fx["lon"]
+        fixes_applied.append({"id": fx["id"], "name": st["name_ko"], "moved_m": round(moved, 1)})
+
     unused_metro = sorted(
         {(clean_text(mr["철도운영기관명"]), clean_text(mr["운영노선"]), clean_text(mr["역명(한글)"]))
          for lst in midx.values() for _, _, mr in lst if id(mr) not in used_metro})
@@ -173,8 +186,10 @@ def main() -> int:
                 "enriched_by_name_only": len(name_only),
                 "dropped_duplicates": len(dropped),
                 "out_of_bbox": len(out_of_bbox),
+                "coord_fixes": len(fixes_applied),
             },
             "dropped_duplicates": dropped,
+            "coord_fixes": fixes_applied,
             "unenriched_station_ids": unenriched,
             "enriched_by_name_only_ids": [stations[i]["id"] for i in name_only],
             "metro_rows_not_in_std": [list(x) for x in unused_metro],
