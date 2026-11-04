@@ -35,7 +35,9 @@ def main() -> int:
 
     cfg = yaml.safe_load(open(ROOT / "config" / "sources.yaml", encoding="utf-8"))
     RAW.mkdir(parents=True, exist_ok=True)
-    log = {"fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "files": {}}
+    log_path = RAW / "fetch_log.json"
+    prev = json.loads(log_path.read_text(encoding="utf-8")) if log_path.exists() else {"files": {}}
+    log = {"files": {}}
     ok = True
     for i, (key, spec) in enumerate(sorted(cfg["kric"]["files"].items())):
         out = RAW / f"{key}.xlsx"
@@ -45,6 +47,9 @@ def main() -> int:
             shutil.copyfile(manual, out)
             entry.update(source="manual", path=str(manual.relative_to(ROOT)))
         elif out.exists() and not args.force:
+            # 캐시 재사용: 이전 다운로드 정보를 유지해서 산출물 메타가 바뀌지 않게 한다 (결정성)
+            old = prev["files"].get(key, {})
+            entry.update({k: v for k, v in old.items() if k in ("downloaded_at", "content_disposition")})
             entry.update(source="cache")
         else:
             if i:
@@ -56,6 +61,7 @@ def main() -> int:
                     raise ValueError(f"not an xlsx (content-type={r.headers.get('content-type')})")
                 out.write_bytes(r.content)
                 entry.update(source="download", status=r.status_code,
+                             downloaded_at=datetime.now(timezone.utc).isoformat(timespec="seconds"),
                              content_disposition=(r.headers.get("content-disposition") or "").encode("latin-1", "replace").decode("utf-8", "replace"))
             except Exception as e:  # noqa: BLE001
                 entry.update(source="error", error=f"{type(e).__name__}: {e}")
@@ -64,7 +70,7 @@ def main() -> int:
             entry["bytes"] = out.stat().st_size
         log["files"][key] = entry
         print(f"[01] {key}: {entry['source']} {entry.get('bytes', '')} {entry.get('error', '')}")
-    (RAW / "fetch_log.json").write_text(json.dumps(log, ensure_ascii=False, indent=2), encoding="utf-8")
+    log_path.write_text(json.dumps(log, ensure_ascii=False, indent=2), encoding="utf-8")
     if not ok:
         print("[01] 일부 다운로드 실패. data/raw/manual/kric/에 수동 파일을 두면 그걸 쓴다.", file=sys.stderr)
     return 0 if ok else 1

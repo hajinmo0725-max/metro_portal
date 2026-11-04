@@ -182,9 +182,9 @@ def main() -> int:
     doc = {
         "meta": {
             "description": "한국 도시철도·광역철도 역 (노선별 역 단위). 표준데이터 범위 그대로.",
-            "sources": {k: {"title": v["title"], "url": v["url"], "fetch": v["source"]} for k, v in fetch_log["files"].items()},
+            "sources": {k: {"title": v["title"], "url": v["url"], "downloaded_at": v.get("downloaded_at", ""),
+                            "file": v.get("content_disposition", "")} for k, v in sorted(fetch_log["files"].items())},
             "license": "공공데이터포털/레일포털 표준데이터: 이용허락범위 제한 없음",
-            "fetched_at": fetch_log["fetched_at"],
             "counts": {
                 "stations": len(stations),
                 "line_groups": len({s["line_group"] for s in stations}),

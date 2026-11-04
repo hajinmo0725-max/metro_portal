@@ -161,7 +161,26 @@ def compute_metrics(stations, ride_edges, lines, clusters, portals, adj_station,
                          "clusters": p["cluster_ids"]}
                         for p in sorted(portals, key=lambda p: (-p["degree"], p["name"]))[: mcfg.get("top_portals", 20)]],
         "isolated_without_warp": [describe(c) for c in cn[1:]],
+        "quality": cluster_quality(stations, clusters),
     }
+
+
+def cluster_quality(stations, clusters):
+    """환승 클러스터 점검: (1) 원본 '환승역' 표시인데 혼자인 역 = 환승 누락 의심,
+    (2) 묶인 레코드 간 최대 거리 = 과병합 의심 확인용."""
+    from .geo import haversine_m
+    sid = {s["id"]: s for s in stations}
+    cof = {x: c for c in clusters for x in c["station_ids"]}
+    lonely = [{"id": s["id"], "name": s["name_ko"], "line": s["line_name"], "transfer_lines_raw": s.get("transfer_lines_raw", "")}
+              for s in sorted(stations, key=lambda s: s["id"]) if s.get("transfer_flag") and len(cof[s["id"]]["station_ids"]) == 1]
+    spread = []
+    for c in clusters:
+        m = [sid[x] for x in c["station_ids"]]
+        if len(m) > 1:
+            d = max(haversine_m(a["lat"], a["lon"], b["lat"], b["lon"]) for a in m for b in m)
+            spread.append({"cluster": c["id"], "max_internal_m": round(d), "records": len(m)})
+    spread.sort(key=lambda x: (-x["max_internal_m"], x["cluster"]))
+    return {"transfer_flag_singletons": lonely, "widest_clusters": spread[:10]}
 
 
 def render_report(m, portals, clusters, stations, rs, candidates=None):
@@ -204,6 +223,15 @@ def render_report(m, portals, clusters, stations, rs, candidates=None):
             mem = [sid[s] for s in p["station_ids"] if s in cid[cl]["station_ids"]]
             parts.append(f"{_city(mem[0])} " + "/".join(sorted({x['name_ko'] + '[' + x['line_name'] + ']' for x in mem})))
         L.append(f"| {p['name']} | {p['tier']} | {p['cost']} | {p['degree']} | {'; '.join(parts)} |")
+    q = m.get("quality")
+    if q:
+        L += ["", "## 환승 클러스터 품질 점검", "",
+              "원본에서 '환승역'으로 표시됐는데 클러스터에 혼자인 역 (환승 누락 의심):", "",
+              "| 역 | 노선 | 원본 환승노선 |", "| :- | :- | :- |"]
+        L += [f"| {x['name']} | {x['line']} | {x['transfer_lines_raw']} |" for x in q["transfer_flag_singletons"]] or ["| - | - | - |"]
+        L += ["", f"내부 거리가 가장 큰 클러스터 상위 {len(q['widest_clusters'])} (D={rs['cluster']['transfer_distance_m']}m 단일 연결이라 D보다 클 수 있음):", "",
+              "| 클러스터 | 최대 내부 거리(m) | 레코드 수 |", "| :- | -: | -: |"]
+        L += [f"| {x['cluster']} | {x['max_internal_m']} | {x['records']} |" for x in q["widest_clusters"]]
     if candidates:
         L += _candidate_table(candidates, portals, clusters, stations, rs)
     return "\n".join(L) + "\n"

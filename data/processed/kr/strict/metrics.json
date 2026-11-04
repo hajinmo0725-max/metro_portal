@@ -460,5 +460,79 @@
    ],
    "joins_giant_with_warp": true
   }
- ]
+ ],
+ "quality": {
+  "transfer_flag_singletons": [
+   {
+    "id": "kr:I4105:1863",
+    "name": "구성역",
+    "line": "분당선",
+    "transfer_lines_raw": "GTX-A"
+   },
+   {
+    "id": "kr:I41K5:1512",
+    "name": "성남역",
+    "line": "경강선",
+    "transfer_lines_raw": "GTX-A"
+   },
+   {
+    "id": "kr:S1105:0518",
+    "name": "까치산",
+    "line": "5호선",
+    "transfer_lines_raw": "수도권 도시철도 2호선"
+   }
+  ],
+  "widest_clusters": [
+   {
+    "cluster": "서울#1",
+    "max_internal_m": 435,
+    "records": 4
+   },
+   {
+    "cluster": "잠실#1",
+    "max_internal_m": 394,
+    "records": 2
+   },
+   {
+    "cluster": "벡스코#1",
+    "max_internal_m": 365,
+    "records": 2
+   },
+   {
+    "cluster": "동대문역사문화공원#1",
+    "max_internal_m": 346,
+    "records": 3
+   },
+   {
+    "cluster": "부전#1",
+    "max_internal_m": 342,
+    "records": 2
+   },
+   {
+    "cluster": "디지털미디어시티#1",
+    "max_internal_m": 325,
+    "records": 3
+   },
+   {
+    "cluster": "노원#1",
+    "max_internal_m": 306,
+    "records": 2
+   },
+   {
+    "cluster": "고속터미널#1",
+    "max_internal_m": 297,
+    "records": 3
+   },
+   {
+    "cluster": "홍대입구#1",
+    "max_internal_m": 296,
+    "records": 3
+   },
+   {
+    "cluster": "신당#1",
+    "max_internal_m": 293,
+    "records": 2
+   }
+  ]
+ }
 }

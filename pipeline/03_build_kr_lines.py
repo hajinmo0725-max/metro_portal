@@ -64,12 +64,14 @@ class Resolver:
             nm = ref
         key = normalize_name(nm, self.norm)
         ck = code_key(code) if code else ""
-        for grp in pools:
-            cands = [s for s in self.by_group.get(grp, []) if normalize_name(s["name_ko"], self.norm) == key]
-            if ck:
-                exact = [s for s in cands if code_key(s["code"]) == ck]
+        if ck:  # 1순위: 모든 풀에서 역번호+이름 정확 일치
+            for grp in pools:
+                exact = [s for s in self.by_group.get(grp, [])
+                         if normalize_name(s["name_ko"], self.norm) == key and code_key(s["code"]) == ck]
                 if exact:
                     return exact[0]["id"], "code+name"
+        for grp in pools:  # 2순위: 풀 순서대로 이름 일치
+            cands = [s for s in self.by_group.get(grp, []) if normalize_name(s["name_ko"], self.norm) == key]
             if len(cands) == 1:
                 return cands[0]["id"], "name"
             if len(cands) > 1:
