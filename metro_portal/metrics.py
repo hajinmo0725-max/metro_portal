@@ -105,6 +105,69 @@ def diameter(adj, comp_clusters, exact_max, seed):
     return {"value": best[0], "from": best[1], "to": best[2], "exact": False, "mean_cost": None}
 
 
+def sssp_multi(adj, sources):
+    """multi-source 최단 비용. adj: node -> [(to, cost, ...)]. 비용 0/1이면 0-1 BFS, 아니면 Dijkstra."""
+    dist = {s: 0 for s in sources}
+    costs = {e[1] for outs in adj.values() for e in outs}
+    if costs <= {0, 1}:
+        dq = deque(sorted(sources))
+        while dq:
+            x = dq.popleft()
+            for e in adj.get(x, ()):
+                y, c = e[0], e[1]
+                nd = dist[x] + c
+                if nd < dist.get(y, float("inf")):
+                    dist[y] = nd
+                    (dq.appendleft if c == 0 else dq.append)(y)
+        return dist
+    pq = [(0, s) for s in sorted(sources)]
+    heapq.heapify(pq)
+    while pq:
+        d, x = heapq.heappop(pq)
+        if d > dist.get(x, float("inf")):
+            continue
+        for e in adj.get(x, ()):
+            y, c = e[0], e[1]
+            nd = d + c
+            if nd < dist.get(y, float("inf")):
+                dist[y] = nd
+                heapq.heappush(pq, (nd, y))
+    return dist
+
+
+def cluster_dist_station_level(adj_station, clusters, src_cluster, cof=None):
+    """역(노선별 레코드) 수준 그래프에서 클러스터 → 모든 클러스터 최단 비용.
+    출발 클러스터의 아무 레코드에서나 비용 0으로 출발하고, 도착 클러스터는 레코드 중 최솟값.
+    환승 비용이 0이 아닐 때 클러스터 접힘 그래프 대신 쓴다."""
+    if cof is None:
+        cof = {sid: c["id"] for c in clusters for sid in c["station_ids"]}
+    d = sssp_multi(adj_station, src_cluster["station_ids"])
+    out = {}
+    for n, v in d.items():
+        c = cof.get(n)
+        if c is not None and v < out.get(c, float("inf")):
+            out[c] = v
+    return out
+
+
+def diameter_station_level(adj_station, clusters, comp_clusters):
+    """클러스터 쌍 최단 비용의 최댓값을 역 수준 그래프에서 정확 계산 (환승 비용 반영)."""
+    cmap = {c["id"]: c for c in clusters}
+    cof = {sid: c["id"] for c in clusters for sid in c["station_ids"]}
+    nodes = sorted(comp_clusters)
+    best, total, pairs = (-1, None, None), 0, 0
+    for s in nodes:
+        d = cluster_dist_station_level(adj_station, clusters, cmap[s], cof)
+        for t in nodes:
+            if t in d and t != s:
+                total += d[t]
+                pairs += 1
+                if d[t] > best[0] or (d[t] == best[0] and (s, t) < (best[1], best[2])):
+                    best = (d[t], s, t)
+    return {"value": best[0], "from": best[1], "to": best[2], "exact": True,
+            "mean_cost": round(total / pairs, 3) if pairs else 0, "level": "station"}
+
+
 def compute_metrics(stations, ride_edges, lines, clusters, portals, adj_station, rs):
     mcfg = rs.get("metrics", {})
     cid = {c["id"]: c for c in clusters}
@@ -129,6 +192,14 @@ def compute_metrics(stations, ride_edges, lines, clusters, portals, adj_station,
 
     exact_max = mcfg.get("exact_diameter_max_nodes", 4000)
     seed = mcfg.get("random_seed", 42)
+    if rs["costs"]["transfer"] == 0:
+        # 환승 0이면 클러스터 접힘 그래프와 역 수준 그래프의 클러스터 간 비용이 같다
+        dia_w = diameter(g_warp, cw[0], exact_max, seed)
+        dia_n = diameter(g_none, cn[0], exact_max, seed)
+    else:
+        from .route import without_warps
+        dia_w = diameter_station_level(adj_station, clusters, cw[0])
+        dia_n = diameter_station_level(without_warps(adj_station), clusters, cn[0])
     return {
         "ruleset": rs["name"],
         "counts": {
@@ -148,13 +219,13 @@ def compute_metrics(stations, ride_edges, lines, clusters, portals, adj_station,
             "components": len(cw),
             "largest_component_ratio": round(len(cw[0]) / len(cl_ids), 4),
             "largest_component_size": len(cw[0]),
-            "diameter": diameter(g_warp, cw[0], exact_max, seed),
+            "diameter": dia_w,
         },
         "without_warp": {
             "components": len(cn),
             "largest_component_ratio": round(len(cn[0]) / len(cl_ids), 4),
             "largest_component_size": len(cn[0]),
-            "diameter": diameter(g_none, cn[0], exact_max, seed),
+            "diameter": dia_n,
             "component_list": [describe(c) for c in cn],
         },
         "top_portals": [{"name": p["name"], "tier": p["tier"], "degree": p["degree"],

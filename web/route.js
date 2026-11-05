@@ -109,9 +109,10 @@ export function summarize(path) {
   return { rides, warps };
 }
 
-// 클러스터 인덱스 → 경로
+// 클러스터 인덱스(또는 인덱스 배열: 같은 도시 동명역 여러 개) → 경로
 export function routeClusters(data, adj, fromCluster, toCluster) {
-  const r = shortestPath(adj, data.clusters[fromCluster].s, data.clusters[toCluster].s);
+  const nodesOf = (c) => [].concat(c).flatMap((i) => data.clusters[i].s);
+  const r = shortestPath(adj, nodesOf(fromCluster), nodesOf(toCluster));
   if (!r) return null;
   return { ...r, ...summarize(r.path), segments: describe(r.path, data) };
 }
@@ -144,5 +145,7 @@ export function resolveQuery(data, labels, text) {
   if (city) cands = cands.filter(([c, i]) => c.city.includes(city) || data.clusters[i].s.some((n) => (data.nodes[n].ct || "").includes(city)));
   if (cands.length === 1) return { index: cands[0][1] };
   if (cands.length === 0) return { error: `역을 찾지 못함: ${t}` };
+  // 도시 접두어까지 줬는데 같은 도시에 같은 이름 역이 여럿이면(부산 동래) 전부를 후보로 쓴다 (Python과 같은 규칙)
+  if (city && new Set(cands.map(([c]) => c.city)).size === 1) return { index: cands.map(([, i]) => i), multi: true };
   return { error: `여러 역이 일치함: ${cands.map(([, i]) => labels[i]).join(", ")}. 목록에서 골라` , options: cands.map(([, i]) => i) };
 }

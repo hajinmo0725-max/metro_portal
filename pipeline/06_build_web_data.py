@@ -97,16 +97,20 @@ def main() -> int:
     import yaml
     ex = yaml.safe_load(open(ROOT / "config" / "report.yaml", encoding="utf-8"))["route_examples"]
     rnd = random.Random(rs.get("metrics", {}).get("random_seed", 42))
-    pairs = [(idx.resolve(s)[0]["id"], idx.resolve(d)[0]["id"]) for s, d in ex]
+    # 예시는 질의 해석 결과 전체(도시 접두어 + 같은 도시 동명역이면 여러 클러스터)를 쓴다
+    pairs = [(tuple(c["id"] for c in idx.resolve(s)), tuple(c["id"] for c in idx.resolve(d))) for s, d in ex]
     cl_ids = [c["id"] for c in clusters]
-    pairs += [tuple(rnd.sample(cl_ids, 2)) for _ in range(a.random_pairs)]
+    pairs += [tuple((x,) for x in rnd.sample(cl_ids, 2)) for _ in range(a.random_pairs)]
     cmap = {c["id"]: c for c in clusters}
     nowarp = without_warps(adj)
     exp = []
     for s, d in pairs:
         for warp in (True, False):
-            r = shortest_path(adj if warp else nowarp, cmap[s]["station_ids"], cmap[d]["station_ids"])
-            exp.append({"from": cix[s], "to": cix[d], "warp": warp,
+            r = shortest_path(adj if warp else nowarp, [x for c in s for x in cmap[c]["station_ids"]],
+                              [x for c in d for x in cmap[c]["station_ids"]])
+            fr = cix[s[0]] if len(s) == 1 else [cix[c] for c in s]
+            to = cix[d[0]] if len(d) == 1 else [cix[c] for c in d]
+            exp.append({"from": fr, "to": to, "warp": warp,
                         "cost": r[0] if r else None, "path": [nix[x[0]] for x in r[1]] if r else None})
     (ROOT / "web" / "data" / f"expected_routes_{rs['name']}.json").write_text(json.dumps(exp, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"[06] wrote {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB): nodes={len(nodes)} edges={len(edges)} "

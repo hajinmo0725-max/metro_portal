@@ -1,48 +1,48 @@
 {
  "ruleset": "strict",
  "counts": {
-  "stations": 1097,
-  "clusters": 941,
-  "lines": 46,
+  "stations": 1091,
+  "clusters": 937,
+  "lines": 45,
   "sequences": 50,
-  "ride_edges": 1060,
-  "transfer_clusters_multi": 135,
-  "portals_total": 28,
+  "ride_edges": 1056,
+  "transfer_clusters_multi": 134,
+  "portals_total": 29,
   "portals_by_tier": {
-   "T1": 28
+   "T1": 29
   },
-  "portal_links": 58,
-  "routing_nodes": 1125,
-  "routing_edges": 2618
+  "portal_links": 60,
+  "routing_nodes": 1120,
+  "routing_edges": 2610
  },
  "with_warp": {
   "components": 1,
   "largest_component_ratio": 1.0,
-  "largest_component_size": 941,
+  "largest_component_size": 937,
   "diameter": {
    "value": 68,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 18.411
+   "mean_cost": 18.366
   }
  },
  "without_warp": {
   "components": 5,
-  "largest_component_ratio": 0.6982,
-  "largest_component_size": 657,
+  "largest_component_ratio": 0.6958,
+  "largest_component_size": 652,
   "diameter": {
    "value": 71,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 21.539
+   "mean_cost": 21.482
   },
   "component_list": [
    {
-    "size": 657,
+    "size": 652,
     "regions": {
-     "수도권": 657
+     "수도권": 652
     },
     "lines": [
      "I1101:경인선",
@@ -82,7 +82,6 @@
      "S1122:2호선",
      "S2801:인천지하철 1호선",
      "S2802:인천지하철 2호선",
-     "S28M1:자기부상철도",
      "S4108:수도권 광역철도 8호선"
     ],
     "sample": [
@@ -98,9 +97,9 @@
     "joins_giant_with_warp": true
    },
    {
-    "size": 145,
+    "size": 146,
     "regions": {
-     "부산": 145
+     "부산": 146
     },
     "lines": [
      "I26K6:동해선",
@@ -263,6 +262,15 @@
    ]
   },
   {
+   "name": "동래",
+   "tier": "T1",
+   "degree": 2,
+   "clusters": [
+    "동래#1",
+    "동래#2"
+   ]
+  },
+  {
    "name": "동백",
    "tier": "T1",
    "degree": 2,
@@ -360,22 +368,13 @@
     "운천#1",
     "운천#2"
    ]
-  },
-  {
-   "name": "월드컵경기장",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "월드컵경기장#1",
-    "월드컵경기장#2"
-   ]
   }
  ],
  "isolated_without_warp": [
   {
-   "size": 145,
+   "size": 146,
    "regions": {
-    "부산": 145
+    "부산": 146
    },
    "lines": [
     "I26K6:동해선",
@@ -463,6 +462,12 @@
  ],
  "quality": {
   "transfer_flag_singletons": [
+   {
+    "id": "kr:I28A1:A10",
+    "name": "인천공항1터미널",
+    "line": "인천국제공항선",
+    "transfer_lines_raw": "자기부상철도"
+   },
    {
     "id": "kr:I4105:1863",
     "name": "구성역",

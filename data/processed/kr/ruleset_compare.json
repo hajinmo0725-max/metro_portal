@@ -1,0 +1,716 @@
+{
+ "grid": {
+  "base": "strict",
+  "reference": {
+   "transfer": 0,
+   "D": 500
+  },
+  "axes": {
+   "transfer": [
+    0,
+    1
+   ],
+   "D": [
+    300,
+    500,
+    1000
+   ]
+  }
+ },
+ "rows": [
+  {
+   "name": "strict_t0_d300",
+   "transfer": 0,
+   "D": 300,
+   "counts": {
+    "stations": 1091,
+    "clusters": 942,
+    "lines": 45,
+    "sequences": 50,
+    "ride_edges": 1056,
+    "transfer_clusters_multi": 131,
+    "portals_total": 34,
+    "portals_by_tier": {
+     "T1": 34
+    },
+    "portal_links": 70,
+    "routing_nodes": 1125,
+    "routing_edges": 2618
+   },
+   "with_warp": {
+    "components": 1,
+    "largest_component_ratio": 1.0,
+    "largest_component_size": 942,
+    "diameter": {
+     "value": 68,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 18.446
+    }
+   },
+   "without_warp": {
+    "components": 5,
+    "largest_component_ratio": 0.6953,
+    "largest_component_size": 655,
+    "diameter": {
+     "value": 71,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 21.514
+    }
+   },
+   "top_portals": [
+    {
+     "name": "교대",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "교대#1",
+      "교대#2",
+      "교대#3"
+     ]
+    },
+    {
+     "name": "시청",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "시청#1",
+      "시청#2",
+      "시청#3"
+     ]
+    },
+    {
+     "name": "고촌",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "고촌#1",
+      "고촌#2"
+     ]
+    },
+    {
+     "name": "공항",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "공항#1",
+      "공항#2"
+     ]
+    },
+    {
+     "name": "구암",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "구암#1",
+      "구암#2"
+     ]
+    }
+   ],
+   "same_city_portals": [
+    "노원",
+    "동래",
+    "벡스코",
+    "부전",
+    "서울",
+    "신촌",
+    "양평",
+    "잠실",
+    "좌천"
+   ]
+  },
+  {
+   "name": "strict_t0_d500",
+   "transfer": 0,
+   "D": 500,
+   "counts": {
+    "stations": 1091,
+    "clusters": 937,
+    "lines": 45,
+    "sequences": 50,
+    "ride_edges": 1056,
+    "transfer_clusters_multi": 134,
+    "portals_total": 29,
+    "portals_by_tier": {
+     "T1": 29
+    },
+    "portal_links": 60,
+    "routing_nodes": 1120,
+    "routing_edges": 2610
+   },
+   "with_warp": {
+    "components": 1,
+    "largest_component_ratio": 1.0,
+    "largest_component_size": 937,
+    "diameter": {
+     "value": 68,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 18.366
+    }
+   },
+   "without_warp": {
+    "components": 5,
+    "largest_component_ratio": 0.6958,
+    "largest_component_size": 652,
+    "diameter": {
+     "value": 71,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 21.482
+    }
+   },
+   "top_portals": [
+    {
+     "name": "교대",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "교대#1",
+      "교대#2",
+      "교대#3"
+     ]
+    },
+    {
+     "name": "시청",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "시청#1",
+      "시청#2",
+      "시청#3"
+     ]
+    },
+    {
+     "name": "고촌",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "고촌#1",
+      "고촌#2"
+     ]
+    },
+    {
+     "name": "공항",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "공항#1",
+      "공항#2"
+     ]
+    },
+    {
+     "name": "구암",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "구암#1",
+      "구암#2"
+     ]
+    }
+   ],
+   "same_city_portals": [
+    "동래",
+    "신촌",
+    "양평",
+    "좌천"
+   ]
+  },
+  {
+   "name": "strict_t0_d1000",
+   "transfer": 0,
+   "D": 1000,
+   "counts": {
+    "stations": 1091,
+    "clusters": 936,
+    "lines": 45,
+    "sequences": 50,
+    "ride_edges": 1056,
+    "transfer_clusters_multi": 135,
+    "portals_total": 28,
+    "portals_by_tier": {
+     "T1": 28
+    },
+    "portal_links": 58,
+    "routing_nodes": 1119,
+    "routing_edges": 2608
+   },
+   "with_warp": {
+    "components": 1,
+    "largest_component_ratio": 1.0,
+    "largest_component_size": 936,
+    "diameter": {
+     "value": 68,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 18.377
+    }
+   },
+   "without_warp": {
+    "components": 5,
+    "largest_component_ratio": 0.6955,
+    "largest_component_size": 651,
+    "diameter": {
+     "value": 71,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 21.499
+    }
+   },
+   "top_portals": [
+    {
+     "name": "교대",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "교대#1",
+      "교대#2",
+      "교대#3"
+     ]
+    },
+    {
+     "name": "시청",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "시청#1",
+      "시청#2",
+      "시청#3"
+     ]
+    },
+    {
+     "name": "고촌",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "고촌#1",
+      "고촌#2"
+     ]
+    },
+    {
+     "name": "공항",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "공항#1",
+      "공항#2"
+     ]
+    },
+    {
+     "name": "구암",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "구암#1",
+      "구암#2"
+     ]
+    }
+   ],
+   "same_city_portals": [
+    "동래",
+    "양평",
+    "좌천"
+   ]
+  },
+  {
+   "name": "strict_t1_d300",
+   "transfer": 1,
+   "D": 300,
+   "counts": {
+    "stations": 1091,
+    "clusters": 942,
+    "lines": 45,
+    "sequences": 50,
+    "ride_edges": 1056,
+    "transfer_clusters_multi": 131,
+    "portals_total": 34,
+    "portals_by_tier": {
+     "T1": 34
+    },
+    "portal_links": 70,
+    "routing_nodes": 1125,
+    "routing_edges": 2618
+   },
+   "with_warp": {
+    "components": 1,
+    "largest_component_ratio": 1.0,
+    "largest_component_size": 942,
+    "diameter": {
+     "value": 71,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 20.43,
+     "level": "station"
+    }
+   },
+   "without_warp": {
+    "components": 5,
+    "largest_component_ratio": 0.6953,
+    "largest_component_size": 655,
+    "diameter": {
+     "value": 75,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 24.377,
+     "level": "station"
+    }
+   },
+   "top_portals": [
+    {
+     "name": "교대",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "교대#1",
+      "교대#2",
+      "교대#3"
+     ]
+    },
+    {
+     "name": "시청",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "시청#1",
+      "시청#2",
+      "시청#3"
+     ]
+    },
+    {
+     "name": "고촌",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "고촌#1",
+      "고촌#2"
+     ]
+    },
+    {
+     "name": "공항",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "공항#1",
+      "공항#2"
+     ]
+    },
+    {
+     "name": "구암",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "구암#1",
+      "구암#2"
+     ]
+    }
+   ],
+   "same_city_portals": [
+    "노원",
+    "동래",
+    "벡스코",
+    "부전",
+    "서울",
+    "신촌",
+    "양평",
+    "잠실",
+    "좌천"
+   ]
+  },
+  {
+   "name": "strict_t1_d500",
+   "transfer": 1,
+   "D": 500,
+   "counts": {
+    "stations": 1091,
+    "clusters": 937,
+    "lines": 45,
+    "sequences": 50,
+    "ride_edges": 1056,
+    "transfer_clusters_multi": 134,
+    "portals_total": 29,
+    "portals_by_tier": {
+     "T1": 29
+    },
+    "portal_links": 60,
+    "routing_nodes": 1120,
+    "routing_edges": 2610
+   },
+   "with_warp": {
+    "components": 1,
+    "largest_component_ratio": 1.0,
+    "largest_component_size": 937,
+    "diameter": {
+     "value": 71,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 20.464,
+     "level": "station"
+    }
+   },
+   "without_warp": {
+    "components": 5,
+    "largest_component_ratio": 0.6958,
+    "largest_component_size": 652,
+    "diameter": {
+     "value": 75,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 24.327,
+     "level": "station"
+    }
+   },
+   "top_portals": [
+    {
+     "name": "교대",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "교대#1",
+      "교대#2",
+      "교대#3"
+     ]
+    },
+    {
+     "name": "시청",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "시청#1",
+      "시청#2",
+      "시청#3"
+     ]
+    },
+    {
+     "name": "고촌",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "고촌#1",
+      "고촌#2"
+     ]
+    },
+    {
+     "name": "공항",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "공항#1",
+      "공항#2"
+     ]
+    },
+    {
+     "name": "구암",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "구암#1",
+      "구암#2"
+     ]
+    }
+   ],
+   "same_city_portals": [
+    "동래",
+    "신촌",
+    "양평",
+    "좌천"
+   ]
+  },
+  {
+   "name": "strict_t1_d1000",
+   "transfer": 1,
+   "D": 1000,
+   "counts": {
+    "stations": 1091,
+    "clusters": 936,
+    "lines": 45,
+    "sequences": 50,
+    "ride_edges": 1056,
+    "transfer_clusters_multi": 135,
+    "portals_total": 28,
+    "portals_by_tier": {
+     "T1": 28
+    },
+    "portal_links": 58,
+    "routing_nodes": 1119,
+    "routing_edges": 2608
+   },
+   "with_warp": {
+    "components": 1,
+    "largest_component_ratio": 1.0,
+    "largest_component_size": 936,
+    "diameter": {
+     "value": 71,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 20.476,
+     "level": "station"
+    }
+   },
+   "without_warp": {
+    "components": 5,
+    "largest_component_ratio": 0.6955,
+    "largest_component_size": 651,
+    "diameter": {
+     "value": 75,
+     "from": "신창#1",
+     "to": "연천#1",
+     "exact": true,
+     "mean_cost": 24.345,
+     "level": "station"
+    }
+   },
+   "top_portals": [
+    {
+     "name": "교대",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "교대#1",
+      "교대#2",
+      "교대#3"
+     ]
+    },
+    {
+     "name": "시청",
+     "tier": "T1",
+     "degree": 3,
+     "clusters": [
+      "시청#1",
+      "시청#2",
+      "시청#3"
+     ]
+    },
+    {
+     "name": "고촌",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "고촌#1",
+      "고촌#2"
+     ]
+    },
+    {
+     "name": "공항",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "공항#1",
+      "공항#2"
+     ]
+    },
+    {
+     "name": "구암",
+     "tier": "T1",
+     "degree": 2,
+     "clusters": [
+      "구암#1",
+      "구암#2"
+     ]
+    }
+   ],
+   "same_city_portals": [
+    "동래",
+    "양평",
+    "좌천"
+   ]
+  }
+ ],
+ "portal_diffs_vs_reference": [
+  {
+   "transfer": 0,
+   "D": 300,
+   "added": [
+    "노원 [수도권:4호선 ↔ 수도권:7호선]",
+    "벡스코 [부산:동해선 ↔ 부산:부산 도시철도 2호선]",
+    "부전 [부산:동해선 ↔ 부산:부산 도시철도 1호선]",
+    "서울 [수도권:1호선+경의중앙선 ↔ 수도권:4호선+인천국제공항선]",
+    "잠실 [수도권:2호선 ↔ 수도권:8호선]"
+   ],
+   "removed": []
+  },
+  {
+   "transfer": 0,
+   "D": 1000,
+   "added": [],
+   "removed": [
+    "신촌 [수도권:2호선 ↔ 수도권:경의중앙선]"
+   ]
+  },
+  {
+   "transfer": 1,
+   "D": 300,
+   "added": [
+    "노원 [수도권:4호선 ↔ 수도권:7호선]",
+    "벡스코 [부산:동해선 ↔ 부산:부산 도시철도 2호선]",
+    "부전 [부산:동해선 ↔ 부산:부산 도시철도 1호선]",
+    "서울 [수도권:1호선+경의중앙선 ↔ 수도권:4호선+인천국제공항선]",
+    "잠실 [수도권:2호선 ↔ 수도권:8호선]"
+   ],
+   "removed": []
+  },
+  {
+   "transfer": 1,
+   "D": 500,
+   "added": [],
+   "removed": []
+  },
+  {
+   "transfer": 1,
+   "D": 1000,
+   "added": [],
+   "removed": [
+    "신촌 [수도권:2호선 ↔ 수도권:경의중앙선]"
+   ]
+  }
+ ],
+ "cluster_count_changes_by_D": [
+  {
+   "name": "노원",
+   "D300": 2,
+   "D500": 1,
+   "D1000": 1
+  },
+  {
+   "name": "벡스코",
+   "D300": 2,
+   "D500": 1,
+   "D1000": 1
+  },
+  {
+   "name": "부전",
+   "D300": 2,
+   "D500": 1,
+   "D1000": 1
+  },
+  {
+   "name": "서울",
+   "D300": 2,
+   "D500": 1,
+   "D1000": 1
+  },
+  {
+   "name": "신촌",
+   "D300": 2,
+   "D500": 2,
+   "D1000": 1
+  },
+  {
+   "name": "잠실",
+   "D300": 2,
+   "D500": 1,
+   "D1000": 1
+  }
+ ]
+}

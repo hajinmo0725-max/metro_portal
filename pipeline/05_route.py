@@ -54,16 +54,19 @@ def route(world, src_q, dst_q, warp=True):
         if not c:
             res["error"] = f"역을 찾지 못함: {res[k]}"
             return res
-        if len(c) > 1:
+        # 도시 접두어까지 줬는데 같은 도시에 같은 이름 역이 여럿이면(부산 동래: 1·4호선 / 동해선) 전부를 후보로 쓴다
+        if len(c) > 1 and not idx.city_multi_ok(res[k], c):
             res["error"] = f"여러 역이 일치함 ({res[k]}): " + ", ".join(f"{x['id']}[{'/'.join(x['cities'])}]" for x in c) + " — 도시명을 앞에 붙여라 (예: '부산 동래')"
             return res
     g = adj if warp else without_warps(adj)
-    r = shortest_path(g, src[0]["station_ids"], dst[0]["station_ids"])
-    res["from_cluster"], res["to_cluster"] = src[0]["id"], dst[0]["id"]
+    r = shortest_path(g, [x for c in src for x in c["station_ids"]], [x for c in dst for x in c["station_ids"]])
+    res["from_cluster"], res["to_cluster"] = "|".join(c["id"] for c in src), "|".join(c["id"] for c in dst)
     if r is None:
         res["reachable"] = False
         return res
     cost, path = r
+    cof = {x: c["id"] for c in src + dst for x in c["station_ids"]}
+    res["from_cluster"], res["to_cluster"] = cof[path[0][0]], cof[path[-1][0]]
     segs, text = describe(path, idx, lines_by_id, portals_by_id)
     res.update(reachable=True, cost=cost, **summarize(path), steps=text, path=[p[0] for p in path])
     return res

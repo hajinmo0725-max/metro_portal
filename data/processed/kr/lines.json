@@ -1273,11 +1273,6 @@
      "id": "main",
      "station_ids": [
       "kr:S1106:0610",
-      "kr:S1106:0611",
-      "kr:S1106:0612",
-      "kr:S1106:0613",
-      "kr:S1106:0614",
-      "kr:S1106:0615",
       "kr:S1106:0616",
       "kr:S1106:0617",
       "kr:S1106:0618",
@@ -1313,6 +1308,18 @@
       "kr:S1106:0648"
      ],
      "circular": false
+    },
+    {
+     "id": "eungam-loop",
+     "station_ids": [
+      "kr:S1106:0610",
+      "kr:S1106:0611",
+      "kr:S1106:0612",
+      "kr:S1106:0613",
+      "kr:S1106:0614",
+      "kr:S1106:0615"
+     ],
+     "circular": true
     }
    ],
    "patched": true
@@ -1986,33 +1993,6 @@
       "kr:S2802:3225",
       "kr:S2802:3226",
       "kr:S2802:3227"
-     ],
-     "circular": false
-    }
-   ],
-   "patched": true
-  },
-  {
-   "id": "incheon-maglev",
-   "name": "인천공항 자기부상철도",
-   "source_no": "S28M1",
-   "source_name": "자기부상철도",
-   "operator": "인천국제공항공사",
-   "city": "수도권",
-   "color": "#FFCD12",
-   "pools": [
-    "S28M1:자기부상철도"
-   ],
-   "sequences": [
-    {
-     "id": "main",
-     "station_ids": [
-      "kr:S28M1:101",
-      "kr:S28M1:102",
-      "kr:S28M1:103",
-      "kr:S28M1:104",
-      "kr:S28M1:105",
-      "kr:S28M1:106"
      ],
      "circular": false
     }

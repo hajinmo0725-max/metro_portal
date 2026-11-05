@@ -20,3 +20,8 @@ kric:
 overpass:
   # 2026-11-05 세션에서는 TLS 리셋으로 접근 불가. 허용되면 노선 순서 교차검증용으로 사용 예정.
   endpoint: "https://overpass-api.de/api/interpreter"
+wikidata:
+  # 2026-11-05 2차 세션: query.wikidata.org 접근 가능(200). 노선 순서·좌표 교차검증용 (N2c·N3). CC0.
+  endpoint: "https://query.wikidata.org/sparql"
+  request_interval_s: 3
+  chunk_size: 300

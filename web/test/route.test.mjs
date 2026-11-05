@@ -9,7 +9,10 @@ const data = JSON.parse(readFileSync(new URL("data/kr_strict.json", root), "utf8
 const expected = JSON.parse(readFileSync(new URL("data/expected_routes_strict.json", root), "utf8"));
 const adjWarp = buildAdj(data, { warp: true });
 const adjNo = buildAdj(data, { warp: false });
-const clusterByName = (n, city) => data.clusters.findIndex((c) => c.n === n && (!city || c.city.includes(city)));
+const clusterByName = (n, city) => {
+  const all = data.clusters.map((c, i) => [c, i]).filter(([c]) => c.n === n && (!city || c.city.includes(city))).map(([, i]) => i);
+  return all.length === 1 ? all[0] : all;
+};
 
 test("JS 길찾기 비용·경로가 Python 결과와 같다", () => {
   assert.ok(expected.length >= 80);
@@ -66,7 +69,11 @@ test("입력 해석: 도시 접두어, 동명역, 라벨", () => {
   const labels = buildLabels(data);
   assert.equal(new Set(labels).size, labels.length);
   const r1 = resolveQuery(data, labels, "부산 동래");
-  assert.equal(data.clusters[r1.index].n, "동래");
+  // 부산에는 동래가 둘(1·4호선 / 동해선): 도시 접두어가 있으면 둘 다 후보
+  assert.ok(r1.multi && r1.index.length === 2 && r1.index.every((i) => data.clusters[i].n === "동래"));
+  assert.ok(resolveQuery(data, labels, "동래").error.includes("여러 역"));
+  const r0 = resolveQuery(data, labels, "광주 녹동");
+  assert.equal(data.clusters[r0.index].n, "녹동");
   assert.ok(resolveQuery(data, labels, "양평").error.includes("여러 역"));
   const r2 = resolveQuery(data, labels, "강남역");
   assert.equal(data.clusters[r2.index].n, "강남");

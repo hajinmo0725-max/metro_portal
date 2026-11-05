@@ -1860,14 +1860,14 @@
    "sequence": "main",
    "a": "kr:I26K6:8004",
    "b": "kr:I26K6:8005",
-   "distance_m": 1230.4
+   "distance_m": 1036.8
   },
   {
    "line": "donghae",
    "sequence": "main",
    "a": "kr:I26K6:8005",
    "b": "kr:I26K6:8006",
-   "distance_m": 2362.0
+   "distance_m": 1020.6
   },
   {
    "line": "donghae",
@@ -3310,41 +3310,6 @@
    "a": "kr:S2802:3226",
    "b": "kr:S2802:3227",
    "distance_m": 1150.6
-  },
-  {
-   "line": "incheon-maglev",
-   "sequence": "main",
-   "a": "kr:S28M1:101",
-   "b": "kr:S28M1:102",
-   "distance_m": 467.9
-  },
-  {
-   "line": "incheon-maglev",
-   "sequence": "main",
-   "a": "kr:S28M1:102",
-   "b": "kr:S28M1:103",
-   "distance_m": 454.5
-  },
-  {
-   "line": "incheon-maglev",
-   "sequence": "main",
-   "a": "kr:S28M1:103",
-   "b": "kr:S28M1:104",
-   "distance_m": 382.2
-  },
-  {
-   "line": "incheon-maglev",
-   "sequence": "main",
-   "a": "kr:S28M1:104",
-   "b": "kr:S28M1:105",
-   "distance_m": 2434.9
-  },
-  {
-   "line": "incheon-maglev",
-   "sequence": "main",
-   "a": "kr:S28M1:105",
-   "b": "kr:S28M1:106",
-   "distance_m": 1053.1
   },
   {
    "line": "seohae",
@@ -5588,45 +5553,52 @@
   },
   {
    "line": "seoul-6",
-   "sequence": "main",
+   "sequence": "eungam-loop",
    "a": "kr:S1106:0610",
    "b": "kr:S1106:0611",
    "distance_m": 1043.2
   },
   {
    "line": "seoul-6",
+   "sequence": "eungam-loop",
+   "a": "kr:S1106:0610",
+   "b": "kr:S1106:0615",
+   "distance_m": 1409.4
+  },
+  {
+   "line": "seoul-6",
    "sequence": "main",
+   "a": "kr:S1106:0610",
+   "b": "kr:S1106:0616",
+   "distance_m": 845.5
+  },
+  {
+   "line": "seoul-6",
+   "sequence": "eungam-loop",
    "a": "kr:S1106:0611",
    "b": "kr:S1106:0612",
    "distance_m": 803.5
   },
   {
    "line": "seoul-6",
-   "sequence": "main",
+   "sequence": "eungam-loop",
    "a": "kr:S1106:0612",
    "b": "kr:S1106:0613",
    "distance_m": 889.4
   },
   {
    "line": "seoul-6",
-   "sequence": "main",
+   "sequence": "eungam-loop",
    "a": "kr:S1106:0613",
    "b": "kr:S1106:0614",
    "distance_m": 1112.6
   },
   {
    "line": "seoul-6",
-   "sequence": "main",
+   "sequence": "eungam-loop",
    "a": "kr:S1106:0614",
    "b": "kr:S1106:0615",
    "distance_m": 856.5
-  },
-  {
-   "line": "seoul-6",
-   "sequence": "main",
-   "a": "kr:S1106:0615",
-   "b": "kr:S1106:0616",
-   "distance_m": 2252.2
   },
   {
    "line": "seoul-6",

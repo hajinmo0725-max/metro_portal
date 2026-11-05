@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>워프 데일리 퍼즐</title>
+  <meta name="description" content="매일 바뀌는 지하철 워프 최단 루트 퍼즐. 같은 이름 역 워프를 써서 최소 수로 도착해라.">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="panel" aria-label="데일리 퍼즐">
+      <header class="brand">
+        <h1>워프 데일리 <span id="pz-no"></span></h1>
+        <p class="sub">한 수 = 인접역 1개 승차 또는 같은 이름 역으로 워프 1번. 환승은 공짜. 최소 수로 도착해라. · <a href="index.html">길찾기</a></p>
+      </header>
+
+      <section class="card" id="pz-head" aria-live="polite">
+        <div class="pz-goal"><i class="dot dot-start"></i><b id="pz-from"></b><span class="arrow">→</span><i class="dot dot-end"></i><b id="pz-to"></b></div>
+        <div class="summary" id="pz-chips"></div>
+      </section>
+
+      <section class="card" id="pz-play">
+        <div class="row"><span class="field-label">지금 위치</span><span class="field-label" id="pz-cost"></span></div>
+        <div class="pz-here" id="pz-here"></div>
+        <ol class="pz-moves" id="pz-moves" aria-label="갈 수 있는 역"></ol>
+        <div class="row">
+          <button type="button" id="pz-undo" class="ghost">↶ 되돌리기</button>
+          <button type="button" id="pz-giveup" class="ghost">포기하고 정답 보기</button>
+        </div>
+      </section>
+
+      <section class="card" id="pz-result" hidden>
+        <pre id="pz-share" class="pz-share"></pre>
+        <div class="row">
+          <button type="button" id="pz-copy" class="primary">결과 복사</button>
+          <span id="pz-copied" class="field-label"></span>
+        </div>
+        <div id="pz-optimal"></div>
+      </section>
+
+      <section class="card">
+        <p class="field-label" style="margin:0">내 경로</p>
+        <ol class="steps" id="pz-trail"></ol>
+      </section>
+
+      <footer class="foot">
+        <p id="attribution"></p>
+        <p>퍼즐은 서울 시간 자정에 바뀐다. 다른 날 퍼즐: <code>daily.html#d=2026-11-06</code> · <a href="https://github.com/hajinmo0725-max/metro_portal">소스</a></p>
+      </footer>
+    </aside>
+    <main id="map" aria-label="지도"></main>
+  </div>
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script type="module" src="daily.js"></script>
+</body>
+</html>
