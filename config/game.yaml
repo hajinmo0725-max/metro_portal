@@ -1,0 +1,23 @@
+# 게임 데이터 사전 계산 설정 (pipeline/10_build_game_data.py). 매칭 룰이 아니라 게임 설계 값.
+puzzles:
+  # 같은 권역 퍼즐의 최소 워프 단축 폭 (비용)
+  min_savings: 3
+  # 퍼즐 최소 워프 포함 비용 (너무 쉬운 1~2수 퍼즐 제외)
+  min_cost: 3
+  # 퍼즐 최대 워프 포함 비용 (데일리로 매일 누르기에 너무 긴 30수+ 퍼즐 제외)
+  max_cost: 24
+  # 난이도: 순서대로 검사해서 처음 맞는 등급. 둘 다 아니면 hard
+  difficulty:
+    easy: {max_warps: 1, max_cost: 8}
+    normal: {max_warps: 2, max_cost: 14}
+  per_kind_per_difficulty: {shortcut: 25, crosscity: 15}
+  # 다양성: 같은 워프 포탈 순서는 등급마다 최대 n개, 같은 출발/도착 역은 전체에서 최대 n번
+  max_per_warp_signature: 3
+  max_per_endpoint: 2
+  # 데일리 퍼즐 순서 셔플 시드와 1번 퍼즐 날짜 (웹은 날짜 차이로 순서를 고른다)
+  daily_seed: 20261105
+  daily_epoch: "2026-11-05"
+n_stops:
+  N: 13
+  top_k: 20
+  top_k_no_warp: 5

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지하철 워프</title>
+  <meta name="description" content="같은 이름의 역끼리 포탈로 이어지는 전국 지하철 노선도와 워프 길찾기">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="panel" aria-label="길찾기">
+      <header class="brand">
+        <h1>지하철 워프</h1>
+        <p class="sub">이름이 같은 역은 포탈로 이어진다. 강남 → 교대 ⇢ 부산 교대 → 동래. · <a href="daily.html">오늘의 퍼즐</a></p>
+      </header>
+
+      <form id="route-form" class="card" autocomplete="off">
+        <div class="pair">
+          <div class="fields">
+            <label class="field">
+              <span class="field-label"><i class="dot dot-start"></i>출발</span>
+              <input id="from" list="station-list" placeholder="예: 강남" required>
+            </label>
+            <label class="field">
+              <span class="field-label"><i class="dot dot-end"></i>도착</span>
+              <input id="to" list="station-list" placeholder="예: 부산 동래" required>
+            </label>
+          </div>
+          <button type="button" id="swap" class="swap" title="출발·도착 바꾸기" aria-label="출발·도착 바꾸기">⇅</button>
+        </div>
+        <datalist id="station-list"></datalist>
+        <div class="row">
+          <label class="check"><input type="checkbox" id="allow-warp" checked> 워프 허용</label>
+          <button type="submit" class="primary">경로 찾기</button>
+        </div>
+        <div class="examples" aria-label="예시 경로">
+          <span>예시</span>
+          <button type="button" data-from="강남" data-to="부산 동래">강남→부산 동래</button>
+          <button type="button" data-from="목동" data-to="부산 동래">목동→부산 동래</button>
+          <button type="button" data-from="개화" data-to="광주 녹동">개화→광주 녹동</button>
+        </div>
+      </form>
+
+      <section id="result" class="card result" aria-live="polite">
+        <p class="hint">지도에서 역을 눌러 출발·도착을 고르거나 위에 역 이름을 입력해.</p>
+      </section>
+
+      <section class="card layers">
+        <label class="check"><input type="checkbox" id="show-warps" checked> 워프 아크</label>
+        <label class="check"><input type="checkbox" id="show-stations" checked> 역</label>
+        <span id="stats" class="stats"></span>
+      </section>
+
+      <footer class="foot">
+        <p id="attribution"></p>
+        <p>ruleset <code id="ruleset"></code> · <a href="https://github.com/hajinmo0725-max/metro_portal">소스</a></p>
+      </footer>
+    </aside>
+    <main id="map" aria-label="지도"></main>
+  </div>
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+# strict: Phase 0 기본 ruleset. T1(같은 언어·같은 문자 공식명 정확 일치)만 활성.
+# 매칭 룰은 여기서만 정의한다. 코드에 하드코딩 금지 (CLAUDE.md).
+name: strict
+description: "T1만 활성, 환승 판정 거리 D=500m"
+
+normalize:
+  unicode_form: NFKC
+  strip: true
+  collapse_whitespace: true
+  # 가운뎃점 변형을 canonical 하나로 통일 (DESIGN 5.1)
+  middle_dot_variants: ["·", "‧", "・", "．", ".", "∙", "•", "ㆍ", "\u119e"]
+  middle_dot_canonical: "·"
+  # 괄호 부역명 제거. 예: 교대(법원·검찰청) → 교대
+  remove_parenthetical: true
+  parenthesis_pairs:
+    - ["(", ")"]
+    - ["[", "]"]
+  # 접미사 제거. 제거 결과가 min_length 미만이면 제거하지 않는다.
+  remove_suffixes: ["역"]
+  min_length_after_suffix: 1
+
+cluster:
+  # 정규화 이름이 같고 이 거리 이하면 같은 StationCluster(환승)
+  transfer_distance_m: 500
+  # 소스가 명시한 환승 관계(Wikidata P833 등)로도 묶을지. 이름이 다른 환승역(이수/총신대입구) 대응
+  # 괄호 부역명을 환승 판정용 별칭으로도 쓸지. 이름이 다른 환승역 대응
+  # 예: 4호선 "총신대입구(이수)" ↔ 7호선 "이수". 거리 조건(transfer_distance_m)은 동일하게 적용.
+  # 포탈(T1) 매칭에는 별칭을 쓰지 않는다.
+  use_parenthetical_alias: true
+  # 데이터 보정 파일(config/kr_station_fixes.yaml aliases)의 별칭도 같은 조건으로 쓸지
+  use_data_aliases: true
+
+portals:
+  T1:
+    enabled: true
+    cost: 1
+    # 매칭에 쓰는 이름: 언어·문자·종류. official 이름만 사용 (부역명·로마자 표기는 제외)
+    langs: ["ko"]
+    scripts: ["Hang"]
+    kinds: ["primary"]
+    official_only: true
+  T2:
+    enabled: false
+    cost: 2
+  T3:
+    enabled: false
+    cost: 3
+  # 포탈 하나에 연결 가능한 클러스터 수 상한. null이면 무제한 (Phase 3 대비 옵션)
+  hub_degree_cap: null
+
+costs:
+  ride: 1
+  transfer: 0
+
+metrics:
+  top_portals: 20
+  # 지름 계산: 노드 수가 이 값 이하면 정확값, 넘으면 double-sweep 근사
+  exact_diameter_max_nodes: 4000
+  random_seed: 42

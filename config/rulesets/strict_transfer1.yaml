@@ -1,0 +1,9 @@
+# strict_transfer1: strict와 같고 환승 비용만 1.
+# 2026-11-05 추가 (추천 반영, 사용자 확인 필요). 환승 0이면 "환승 많은 경로"와 "적은 경로"가 같은 비용이라
+# 게임(최단 루트 퍼즐)에서 최적해가 불필요하게 많아진다. 1로 두면 환승도 한 수로 센다.
+extends: strict
+name: strict_transfer1
+description: "strict + 환승 비용 1 (T1만, D=500m)"
+
+costs:
+  transfer: 1

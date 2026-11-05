@@ -1,0 +1,13 @@
+# 원본 데이터는 스크립트로 재생성 (CLAUDE.md). 단, 수동 다운로드 원본은 추적.
+data/raw/*
+!data/raw/manual/
+!data/raw/manual/**
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+.DS_Store
+*.log

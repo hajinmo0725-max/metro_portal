@@ -1,0 +1,9 @@
+{
+  "name": "metro_portal-web",
+  "private": true,
+  "description": "metro_portal 정적 웹 MVP. 의존성 없음 (Leaflet은 web/vendor에 번들).",
+  "type": "module",
+  "scripts": {
+    "test": "node --test web/test/*.test.mjs"
+  }
+}

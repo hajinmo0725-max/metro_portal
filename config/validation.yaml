@@ -1,0 +1,58 @@
+# 데이터 검증 임계값 (매칭 룰이 아니라 품질 리포트용)
+stations:
+  # 다국어 보강 시 표준데이터 역과 다국어 파일 역을 같은 역으로 볼 최대 거리
+  enrich_max_distance_m: 400
+  # 다국어 파일에서 '값 없음'을 뜻하는 표기. 이름으로 쓰지 않는다
+  placeholder_names: ["-", "해당없음", "없음", "null"]
+  bbox: {lat_min: 33.0, lat_max: 38.7, lon_min: 124.5, lon_max: 131.0}
+lines:
+  # 인접역 거리 이상치: 절대값 초과 또는 노선 중앙값의 배수 초과
+  adjacent_max_m: 6000
+  adjacent_median_factor: 4.0
+  # 인접역 거리가 이 값 미만이면 중복·좌표 오류 의심
+  adjacent_min_m: 150
+  # 거리 이상치 중 실제 장거리 구간으로 판단한 것 (작성자 판단. 공식 거리표와 대조하지 않음)
+  known_long_segments:
+    - [arex, 디지털미디어시티, 마곡나루]
+    - [arex, 청라국제도시, 영종]
+    - [daegu-1, 대구한의대병원, 부호(경일대·호산대)]
+    - [daegyeong, 북삼역, 왜관역]
+    - [daegyeong, 왜관역, 서대구역]
+    - [daegyeong, 동대구역, 경산역]
+    - [donghae, 서생역, 남창역]
+    - [gyeongchun, 마석역, 대성리역]
+    - [gyeongchun, 대성리역, 청평역]
+    - [gyeongchun, 상천역, 가평역]
+    - [gyeongchun, 강촌역, 김유정역]
+    - [gyeonggang, 이매역, 삼동역]
+    - [gyeonggang, 곤지암역, 신둔도예촌역]
+    - [gyeonggang, 신둔도예촌역, 이천역]
+    - [gyeonggang, 부발역, 세종대왕릉역]
+    - [seohae, 능곡역, 김포공항역]
+    - [seoul-1-gyeongbu, 평택역, 성환역]
+    - [seoul-1-gyeongwon, 전곡역, 연천역]
+    - [seoul-4-jinjeop, 오남역, 별내별가람역]
+    - [shinbundang, 청계산입구, 판교]
+# N2: 노선 순서 기하 검사 (pipeline/08_validate_lines.py)
+line_geometry:
+  # 현재 길이 / 좌표 최적 경로 길이가 이 값을 넘으면 순서 의심
+  opt_ratio_flag: 1.02
+  # 연속 3역의 가운데 각도가 이보다 작으면 '되돌아감'(급반전). 두 구간 모두 최소 길이 이상일 때만
+  backtrack_angle_deg: 35
+  backtrack_min_segment_m: 300
+  # 연속 4역 (a,b,c,d)에서 b·c를 바꿨을 때 줄어드는 길이가 둘 다 넘으면 스왑 의심
+  swap_gain_min_m: 300
+  swap_gain_min_ratio: 0.15
+# N3: 좌표 검사
+coords:
+  # 스파이크: 이웃 두 역과 모두 spike_min_m 이상, 그리고 이웃끼리 거리의 spike_ratio배 이상 떨어짐
+  spike_min_m: 3000
+  spike_ratio: 2.5
+  # 끝점: 바로 옆 구간이 그다음 구간의 spike_end_ratio배 이상
+  spike_end_ratio: 4.0
+  # Wikidata P625와 이 거리 이상 차이 나면 의심
+  wikidata_mismatch_m: 1000
+  # 다른 클러스터 역끼리 이 거리 미만이면 좌표 복사 의심
+  near_duplicate_m: 30
+  # Wikidata에 같은 이름 아이템이 없을 때 이 거리 이내 가장 가까운 아이템을 대체 매칭 (인접 검사 전용)
+  wikidata_fallback_match_m: 200

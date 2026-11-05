@@ -1,0 +1,837 @@
+{
+ "stop_failures": [],
+ "unused_line_defs": [],
+ "stations_not_sequenced": [
+  {
+   "id": "kr:I4108:경의중앙선:1019",
+   "name": "광운대역",
+   "line_group": "I4108:경의중앙선"
+  }
+ ],
+ "adjacent_outliers": [
+  {
+   "line": "arex",
+   "sequence": "main",
+   "a": "kr:I28A1:A04",
+   "b": "kr:I28A1:A042",
+   "distance_m": 6334.8,
+   "a_name": "디지털미디어시티",
+   "b_name": "마곡나루",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "arex",
+   "sequence": "main",
+   "a": "kr:I28A1:A071",
+   "b": "kr:I28A1:A072",
+   "distance_m": 10143.1,
+   "a_name": "청라국제도시",
+   "b_name": "영종",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "daegu-1",
+   "sequence": "main",
+   "a": "kr:S2701:0147",
+   "b": "kr:S2701:0148",
+   "distance_m": 5682.0,
+   "a_name": "대구한의대병원",
+   "b_name": "부호(경일대·호산대)",
+   "reason": ">4.0×중앙값(893m)",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "daegyeong",
+   "sequence": "main",
+   "a": "kr:I27K7:7003",
+   "b": "kr:I27K7:7004",
+   "distance_m": 8691.7,
+   "a_name": "북삼역",
+   "b_name": "왜관역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "daegyeong",
+   "sequence": "main",
+   "a": "kr:I27K7:7004",
+   "b": "kr:I27K7:7005",
+   "distance_m": 17552.8,
+   "a_name": "왜관역",
+   "b_name": "서대구역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "daegyeong",
+   "sequence": "main",
+   "a": "kr:I27K7:7007",
+   "b": "kr:I27K7:7008",
+   "distance_m": 11138.2,
+   "a_name": "동대구역",
+   "b_name": "경산역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "donghae",
+   "sequence": "main",
+   "a": "kr:I26K6:8018",
+   "b": "kr:I26K6:8019",
+   "distance_m": 8241.5,
+   "a_name": "서생역",
+   "b_name": "남창역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gyeongchun",
+   "sequence": "main",
+   "a": "kr:I41K2:1319",
+   "b": "kr:I41K2:1320",
+   "distance_m": 6897.8,
+   "a_name": "마석역",
+   "b_name": "대성리역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gyeongchun",
+   "sequence": "main",
+   "a": "kr:I41K2:1320",
+   "b": "kr:I41K2:1321",
+   "distance_m": 7089.3,
+   "a_name": "대성리역",
+   "b_name": "청평역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gyeongchun",
+   "sequence": "main",
+   "a": "kr:I41K2:1322",
+   "b": "kr:I41K2:1323",
+   "distance_m": 6986.3,
+   "a_name": "상천역",
+   "b_name": "가평역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gyeongchun",
+   "sequence": "main",
+   "a": "kr:I41K2:1326",
+   "b": "kr:I41K2:1327",
+   "distance_m": 7190.6,
+   "a_name": "강촌역",
+   "b_name": "김유정역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gyeonggang",
+   "sequence": "main",
+   "a": "kr:I41K5:1502",
+   "b": "kr:I41K5:1503",
+   "distance_m": 6925.6,
+   "a_name": "이매역",
+   "b_name": "삼동역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gyeonggang",
+   "sequence": "main",
+   "a": "kr:I41K5:1506",
+   "b": "kr:I41K5:1507",
+   "distance_m": 6514.6,
+   "a_name": "곤지암역",
+   "b_name": "신둔도예촌역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gyeonggang",
+   "sequence": "main",
+   "a": "kr:I41K5:1507",
+   "b": "kr:I41K5:1508",
+   "distance_m": 6569.4,
+   "a_name": "신둔도예촌역",
+   "b_name": "이천역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gyeonggang",
+   "sequence": "main",
+   "a": "kr:I41K5:1509",
+   "b": "kr:I41K5:1510",
+   "distance_m": 8020.7,
+   "a_name": "부발역",
+   "b_name": "세종대왕릉역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "seohae",
+   "sequence": "main",
+   "a": "kr:I41WS:1271",
+   "b": "kr:I41WS:1980",
+   "distance_m": 6462.7,
+   "a_name": "능곡역",
+   "b_name": "김포공항역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "seoul-1-gyeongbu",
+   "sequence": "main",
+   "a": "kr:I4101:1724",
+   "b": "kr:I4101:1725",
+   "distance_m": 9096.4,
+   "a_name": "평택역",
+   "b_name": "성환역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "seoul-1-gyeongwon",
+   "sequence": "main",
+   "a": "kr:I4102:1918",
+   "b": "kr:I4102:1919",
+   "distance_m": 8501.6,
+   "a_name": "전곡역",
+   "b_name": "연천역",
+   "reason": ">6000m, >4.0×중앙값(1493m)",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "seoul-4-jinjeop",
+   "sequence": "main",
+   "a": "kr:I4104:0406",
+   "b": "kr:I4104:0408",
+   "distance_m": 7846.4,
+   "a_name": "오남역",
+   "b_name": "별내별가람역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "shinbundang",
+   "sequence": "main",
+   "a": "kr:I11D1:D010",
+   "b": "kr:I11D1:D011",
+   "distance_m": 7743.0,
+   "a_name": "청계산입구",
+   "b_name": "판교",
+   "reason": ">6000m, >4.0×중앙값(1701m)",
+   "verdict": "실제 장거리 구간(판단)"
+  }
+ ],
+ "coverage": [
+  {
+   "line": "seoul-1-gyeongin",
+   "name": "1호선 경인선",
+   "pool": 20,
+   "sequenced": 21,
+   "from_pool": 20,
+   "sequences": 1,
+   "edges": 20
+  },
+  {
+   "line": "seoul-3",
+   "name": "3호선",
+   "pool": 34,
+   "sequenced": 34,
+   "from_pool": 34,
+   "sequences": 1,
+   "edges": 33
+  },
+  {
+   "line": "seoul-4",
+   "name": "4호선",
+   "pool": 26,
+   "sequenced": 26,
+   "from_pool": 26,
+   "sequences": 1,
+   "edges": 25
+  },
+  {
+   "line": "shinbundang",
+   "name": "신분당선",
+   "pool": 16,
+   "sequenced": 16,
+   "from_pool": 16,
+   "sequences": 1,
+   "edges": 15
+  },
+  {
+   "line": "donghae",
+   "name": "동해선 (광역전철)",
+   "pool": 23,
+   "sequenced": 23,
+   "from_pool": 23,
+   "sequences": 1,
+   "edges": 22
+  },
+  {
+   "line": "daegyeong",
+   "name": "대경선",
+   "pool": 8,
+   "sequenced": 8,
+   "from_pool": 8,
+   "sequences": 1,
+   "edges": 7
+  },
+  {
+   "line": "arex",
+   "name": "공항철도",
+   "pool": 14,
+   "sequenced": 14,
+   "from_pool": 14,
+   "sequences": 1,
+   "edges": 13
+  },
+  {
+   "line": "suin-bundang",
+   "name": "수인·분당선 (분당선 구간)",
+   "pool": 36,
+   "sequenced": 36,
+   "from_pool": 36,
+   "sequences": 1,
+   "edges": 35
+  },
+  {
+   "line": "suin-bundang-suin",
+   "name": "수인·분당선 (수인선 구간)",
+   "pool": 26,
+   "sequenced": 27,
+   "from_pool": 26,
+   "sequences": 1,
+   "edges": 26
+  },
+  {
+   "line": "seoul-1-gyeongbu",
+   "name": "1호선 경부선",
+   "pool": 45,
+   "sequenced": 46,
+   "from_pool": 45,
+   "sequences": 3,
+   "edges": 45
+  },
+  {
+   "line": "seoul-1",
+   "name": "1호선 (서울역~청량리)",
+   "pool": 10,
+   "sequenced": 10,
+   "from_pool": 10,
+   "sequences": 1,
+   "edges": 9
+  },
+  {
+   "line": "seoul-1-gyeongwon",
+   "name": "1호선 경원선",
+   "pool": 35,
+   "sequenced": 28,
+   "from_pool": 28,
+   "sequences": 1,
+   "edges": 27
+  },
+  {
+   "line": "seoul-4-ansan",
+   "name": "4호선 안산·과천선",
+   "pool": 22,
+   "sequenced": 23,
+   "from_pool": 22,
+   "sequences": 1,
+   "edges": 22
+  },
+  {
+   "line": "seoul-4-jinjeop",
+   "name": "4호선 진접선",
+   "pool": 3,
+   "sequenced": 4,
+   "from_pool": 3,
+   "sequences": 1,
+   "edges": 3
+  },
+  {
+   "line": "seoul-3-ilsan",
+   "name": "3호선 일산선",
+   "pool": 11,
+   "sequenced": 11,
+   "from_pool": 11,
+   "sequences": 1,
+   "edges": 10
+  },
+  {
+   "line": "gyeongui-jungang",
+   "name": "경의·중앙선",
+   "pool": 86,
+   "sequenced": 57,
+   "from_pool": 57,
+   "sequences": 2,
+   "edges": 56
+  },
+  {
+   "line": "gyeongchun",
+   "name": "경춘선",
+   "pool": 20,
+   "sequenced": 23,
+   "from_pool": 20,
+   "sequences": 1,
+   "edges": 22
+  },
+  {
+   "line": "gyeonggang",
+   "name": "경강선",
+   "pool": 12,
+   "sequenced": 12,
+   "from_pool": 12,
+   "sequences": 1,
+   "edges": 11
+  },
+  {
+   "line": "seohae",
+   "name": "서해선",
+   "pool": 21,
+   "sequenced": 21,
+   "from_pool": 21,
+   "sequences": 1,
+   "edges": 20
+  },
+  {
+   "line": "sillim",
+   "name": "신림선",
+   "pool": 11,
+   "sequenced": 11,
+   "from_pool": 11,
+   "sequences": 1,
+   "edges": 10
+  },
+  {
+   "line": "ui-sinseol",
+   "name": "우이신설선",
+   "pool": 13,
+   "sequenced": 13,
+   "from_pool": 13,
+   "sequences": 1,
+   "edges": 12
+  },
+  {
+   "line": "busan-4",
+   "name": "부산 4호선",
+   "pool": 14,
+   "sequenced": 14,
+   "from_pool": 14,
+   "sequences": 1,
+   "edges": 13
+  },
+  {
+   "line": "everline",
+   "name": "용인 에버라인",
+   "pool": 15,
+   "sequenced": 15,
+   "from_pool": 15,
+   "sequences": 1,
+   "edges": 14
+  },
+  {
+   "line": "gimpo-gold",
+   "name": "김포골드라인",
+   "pool": 10,
+   "sequenced": 10,
+   "from_pool": 10,
+   "sequences": 1,
+   "edges": 9
+  },
+  {
+   "line": "uijeongbu",
+   "name": "의정부 경전철",
+   "pool": 15,
+   "sequenced": 15,
+   "from_pool": 15,
+   "sequences": 1,
+   "edges": 14
+  },
+  {
+   "line": "busan-gimhae",
+   "name": "부산김해경전철",
+   "pool": 21,
+   "sequenced": 21,
+   "from_pool": 21,
+   "sequences": 1,
+   "edges": 20
+  },
+  {
+   "line": "seoul-2",
+   "name": "2호선",
+   "pool": 43,
+   "sequenced": 43,
+   "from_pool": 43,
+   "sequences": 1,
+   "edges": 43
+  },
+  {
+   "line": "seoul-5",
+   "name": "5호선",
+   "pool": 56,
+   "sequenced": 56,
+   "from_pool": 56,
+   "sequences": 2,
+   "edges": 55
+  },
+  {
+   "line": "seoul-6",
+   "name": "6호선",
+   "pool": 39,
+   "sequenced": 39,
+   "from_pool": 39,
+   "sequences": 2,
+   "edges": 39
+  },
+  {
+   "line": "seoul-7-incheon",
+   "name": "7호선 (인천 구간)",
+   "pool": 11,
+   "sequenced": 12,
+   "from_pool": 11,
+   "sequences": 1,
+   "edges": 11
+  },
+  {
+   "line": "seoul-7",
+   "name": "7호선",
+   "pool": 42,
+   "sequenced": 42,
+   "from_pool": 42,
+   "sequences": 1,
+   "edges": 41
+  },
+  {
+   "line": "seoul-8",
+   "name": "8호선",
+   "pool": 22,
+   "sequenced": 24,
+   "from_pool": 22,
+   "sequences": 1,
+   "edges": 23
+  },
+  {
+   "line": "seoul-9",
+   "name": "9호선",
+   "pool": 38,
+   "sequenced": 38,
+   "from_pool": 38,
+   "sequences": 1,
+   "edges": 37
+  },
+  {
+   "line": "seoul-2-seongsu",
+   "name": "2호선 성수지선",
+   "pool": 4,
+   "sequenced": 5,
+   "from_pool": 4,
+   "sequences": 1,
+   "edges": 4
+  },
+  {
+   "line": "seoul-2-sinjeong",
+   "name": "2호선 신정지선",
+   "pool": 3,
+   "sequenced": 5,
+   "from_pool": 3,
+   "sequences": 1,
+   "edges": 4
+  },
+  {
+   "line": "busan-1",
+   "name": "부산 1호선",
+   "pool": 40,
+   "sequenced": 40,
+   "from_pool": 40,
+   "sequences": 1,
+   "edges": 39
+  },
+  {
+   "line": "busan-2",
+   "name": "부산 2호선",
+   "pool": 43,
+   "sequenced": 43,
+   "from_pool": 43,
+   "sequences": 1,
+   "edges": 42
+  },
+  {
+   "line": "busan-3",
+   "name": "부산 3호선",
+   "pool": 17,
+   "sequenced": 17,
+   "from_pool": 17,
+   "sequences": 1,
+   "edges": 16
+  },
+  {
+   "line": "daegu-1",
+   "name": "대구 1호선",
+   "pool": 35,
+   "sequenced": 35,
+   "from_pool": 35,
+   "sequences": 1,
+   "edges": 34
+  },
+  {
+   "line": "daegu-2",
+   "name": "대구 2호선",
+   "pool": 29,
+   "sequenced": 29,
+   "from_pool": 29,
+   "sequences": 1,
+   "edges": 28
+  },
+  {
+   "line": "daegu-3",
+   "name": "대구 3호선",
+   "pool": 30,
+   "sequenced": 30,
+   "from_pool": 30,
+   "sequences": 1,
+   "edges": 29
+  },
+  {
+   "line": "incheon-1",
+   "name": "인천 1호선",
+   "pool": 33,
+   "sequenced": 33,
+   "from_pool": 33,
+   "sequences": 1,
+   "edges": 32
+  },
+  {
+   "line": "incheon-2",
+   "name": "인천 2호선",
+   "pool": 27,
+   "sequenced": 27,
+   "from_pool": 27,
+   "sequences": 1,
+   "edges": 26
+  },
+  {
+   "line": "gwangju-1",
+   "name": "광주 1호선",
+   "pool": 20,
+   "sequenced": 20,
+   "from_pool": 20,
+   "sequences": 1,
+   "edges": 19
+  },
+  {
+   "line": "daejeon-1",
+   "name": "대전 1호선",
+   "pool": 22,
+   "sequenced": 22,
+   "from_pool": 22,
+   "sequences": 1,
+   "edges": 21
+  }
+ ],
+ "totals": {
+  "lines": 45,
+  "sequences": 50,
+  "ride_edges": 1056,
+  "stations": 1091,
+  "stations_sequenced": 1090,
+  "stop_failures": 0,
+  "outliers": 20,
+  "outliers_unexplained": 0
+ },
+ "coord_fixes": [
+  {
+   "id": "kr:I4108:1204",
+   "name": "양원역",
+   "moved_m": 189462.0
+  },
+  {
+   "id": "kr:S1105:0514",
+   "name": "마곡",
+   "moved_m": 1026.8
+  },
+  {
+   "id": "kr:I1104:0430",
+   "name": "이촌(국립중앙박물관)",
+   "moved_m": 879.4
+  },
+  {
+   "id": "kr:I26K6:8005",
+   "name": "동래역",
+   "moved_m": 1395.3
+  }
+ ],
+ "patched_lines": [
+  {
+   "id": "seoul-1",
+   "source": "I4101 수도권 광역철도 1호선",
+   "ops": [
+    "pools"
+   ]
+  },
+  {
+   "id": "seoul-1-gyeongbu",
+   "source": "I4101 경부선",
+   "ops": [
+    "branches",
+    "patch",
+    "pools"
+   ]
+  },
+  {
+   "id": "seoul-1-gyeongin",
+   "source": "I1101 경인선",
+   "ops": [
+    "patch"
+   ]
+  },
+  {
+   "id": "seoul-1-gyeongwon",
+   "source": "I4102 경원선",
+   "ops": [
+    "pools"
+   ]
+  },
+  {
+   "id": "seoul-2",
+   "source": "S1102 수도권 도시철도 2호선",
+   "ops": [
+    "circular"
+   ]
+  },
+  {
+   "id": "seoul-2-seongsu",
+   "source": "S1121 수도권 도시철도 2호선",
+   "ops": [
+    "patch"
+   ]
+  },
+  {
+   "id": "seoul-2-sinjeong",
+   "source": "S1122 수도권 도시철도 2호선",
+   "ops": [
+    "sequences"
+   ]
+  },
+  {
+   "id": "seoul-4-jinjeop",
+   "source": "I4104 진접선",
+   "ops": [
+    "patch"
+   ]
+  },
+  {
+   "id": "seoul-4-ansan",
+   "source": "I4103 안산·과천선",
+   "ops": [
+    "patch"
+   ]
+  },
+  {
+   "id": "seoul-5",
+   "source": "S1105 수도권 도시철도 5호선",
+   "ops": [
+    "branches",
+    "patch"
+   ]
+  },
+  {
+   "id": "seoul-6",
+   "source": "S1106 수도권 도시철도 6호선",
+   "ops": [
+    "branches",
+    "patch"
+   ]
+  },
+  {
+   "id": "seoul-7",
+   "source": "S1107 수도권 도시철도 7호선",
+   "ops": [
+    "pools"
+   ]
+  },
+  {
+   "id": "seoul-7-incheon",
+   "source": "S1107 도시철도 7호선",
+   "ops": [
+    "patch",
+    "pools"
+   ]
+  },
+  {
+   "id": "seoul-8",
+   "source": "S1108 수도권 도시철도 8호선",
+   "ops": [
+    "patch"
+   ]
+  },
+  {
+   "id": "",
+   "source": "S4108 수도권 전철 8호선",
+   "ops": [
+    "skip"
+   ]
+  },
+  {
+   "id": "gyeongui-jungang",
+   "source": "I4108 경의·중앙선",
+   "ops": [
+    "pools",
+    "sequences"
+   ]
+  },
+  {
+   "id": "gyeongchun",
+   "source": "I41K2 경춘선",
+   "ops": [
+    "patch",
+    "pools"
+   ]
+  },
+  {
+   "id": "suin-bundang",
+   "source": "I28K1 분당선",
+   "ops": [
+    "patch",
+    "pools"
+   ]
+  },
+  {
+   "id": "suin-bundang-suin",
+   "source": "I28K1 수인선",
+   "ops": [
+    "patch",
+    "pools"
+   ]
+  },
+  {
+   "id": "seohae",
+   "source": "I41WS 서해선",
+   "ops": [
+    "patch"
+   ]
+  },
+  {
+   "id": "incheon-1",
+   "source": "S2801 인천지하철 1호선",
+   "ops": [
+    "patch"
+   ]
+  },
+  {
+   "id": "incheon-maglev",
+   "source": "S28M1 자기부상철도",
+   "ops": [
+    "skip"
+   ]
+  }
+ ]
+}
