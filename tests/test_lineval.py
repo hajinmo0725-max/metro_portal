@@ -139,3 +139,40 @@ def test_validation_report_has_no_both_flags():
     doc = json.loads(p.read_text(encoding="utf-8"))
     assert not [e for r in doc["sequences"] for e in r["edges"] if e["both"]]
     assert all(x["detected_by_spike"] or x["detected_by_near_dup"] for x in doc["spike_regression"])
+
+
+def test_coord_fallback_match_only_for_adjacency():
+    """Wikidata 라벨이 달라 이름 후보가 없으면 가까운 아이템을 coord_fallback으로 붙이되, 좌표 검사에는 쓰지 않는다."""
+    from metro_portal.ruleset import load_ruleset
+    mod = _load_mod()
+    norm = load_ruleset("strict")["normalize"]
+
+    def it(q, label, lat, lon, adj=()):
+        return {"qid": q, "label_ko": label, "lat": lat, "lon": lon, "n_coords": 1, "lines": [], "codes": [], "classes": [],
+                "adjacent": [{"qid": a, "line": ""} for a in adj]}
+    items = [it("Q1", "어린이대공원역", 37.548, 127.0745, ["Q2"]), it("Q2", "건국대역", 37.5405, 127.0705, ["Q1"])]
+    wm = mod.WikidataMatcher(items, norm)
+    stations = [{"id": "a", "name_ko": "어린이대공원(세종대)", "lat": 37.548, "lon": 127.0745},
+                {"id": "b", "name_ko": "건대입구", "lat": 37.5404, "lon": 127.0700}]
+    lines = [{"id": "L", "sequences": [{"id": "main", "station_ids": ["a", "b"], "circular": False}]}]
+    m = mod.match_stations(stations, lines, wm, fallback_m=200)
+    assert m["b"]["method"] == "coord_fallback" and m["b"]["qid"] == "Q2"
+    assert mod.match_stations(stations, lines, wm, fallback_m=10)["b"]["method"] == "no_candidate"
+    # 좌표 검사: fallback 매칭은 거리가 커도 보고하지 않는다
+    stations[1]["lat"] += 0.05
+    m2 = mod.match_stations(stations, lines, wm, fallback_m=10000)
+    flagged, _ = mod.coord_checks(stations, {"a": "A", "b": "B"}, m2, wm, {"wikidata_mismatch_m": 1000, "near_duplicate_m": 30})
+    assert not flagged
+
+
+@real
+def test_wikidata_cross_check_coverage():
+    """N2c 회귀: Wikidata 인접 확인 엣지가 충분하고, 기하·Wikidata 둘 다 걸린 엣지는 0."""
+    p = PROC / "lines_check.json"
+    if not p.exists():
+        pytest.skip("lines_check.json missing")
+    doc = json.loads(p.read_text(encoding="utf-8"))
+    edges = [e for r in doc["sequences"] for e in r["edges"]]
+    adj = sum(e["wikidata"] == "adjacent" for e in edges)
+    assert adj / len(edges) > 0.97
+    assert all(not r["ratio"] > VCFG["line_geometry"]["opt_ratio_flag"] for r in doc["sequences"])

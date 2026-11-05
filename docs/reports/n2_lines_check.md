@@ -10,12 +10,22 @@
 | :- | -: |
 | adj | 121 |
 | adj+nearest | 4 |
+| coord_fallback | 6 |
 | nearest | 1 |
-| no_candidate | 7 |
+| no_candidate | 1 |
 | unique | 7 |
 | unique+adj | 951 |
 
-unique = 이름 후보 1개, adj = 이웃 역과 P197 인접인 후보, nearest = 동률이라 거리로 고름, no_candidate = 같은 이름 아이템 없음
+unique = 이름 후보 1개, adj = 이웃 역과 P197 인접인 후보, nearest = 동률이라 거리로 고름, coord_fallback = 같은 이름 아이템이 없어 가까운 아이템을 붙임(라벨 차이, 좌표 검사 제외), no_candidate = 매칭 없음
+
+| 우리 역 | Wikidata 라벨 (coord_fallback) | 거리(m) |
+| :- | :- | -: |
+| 총신대입구(이수) (4호선) | 이수역 | 36 |
+| 건대입구 (2호선) | 건국대역 | 63 |
+| 건대입구 (7호선) | 건국대역 | 156 |
+| 수성알파시티(삼성라이온즈파크) (대구 도시철도 2호선) | 대공원역 | 36 |
+| 서구청 (인천지하철 2호선) | 서해구청역 | 20 |
+| 학동증심사입구 (광주도시철도 1호선) | 학동·증심사입구역 | 62 |
 
 ## 시퀀스별 요약
 
@@ -25,7 +35,7 @@ ratio = 현재 길이 / 좌표 최적 경로 길이. 1.02 초과면 순서 의�
 | :- | :- | -: | -: | -: | -: | -: | -: | -: | -: | -: | :- |
 | 1호선 경인선 | main | 21 | 25.8 | 25.8 | 1.000 | 0 | 0 | 0 | 0 | 9 | [png](lines/seoul-1-gyeongin__main.png) |
 | 3호선 | main | 34 | 36.3 | 36.3 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/seoul-3__main.png) |
-| 4호선 | main | 26 | 29.5 | 29.5 | 1.000 | 0 | 0 | 2 | 0 | 0 | [png](lines/seoul-4__main.png) |
+| 4호선 | main | 26 | 29.5 | 29.5 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/seoul-4__main.png) |
 | 신분당선 | main | 16 | 31.4 | 31.4 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/shinbundang__main.png) |
 | 동해선 (광역전철) | main | 23 | 60.3 | 60.3 | 1.000 | 0 | 0 | 0 | 0 | 1 | [png](lines/donghae__main.png) |
 | 대경선 | main | 8 | 54.3 | 54.3 | 1.000 | 0 | 1 | 0 | 0 | 4 | [png](lines/daegyeong__main.png) |
@@ -52,13 +62,13 @@ ratio = 현재 길이 / 좌표 최적 경로 길이. 1.02 초과면 순서 의�
 | 김포골드라인 | main | 10 | 21.7 | 21.7 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/gimpo-gold__main.png) |
 | 의정부 경전철 | main | 15 | 9.7 | 9.7 | 1.000 | 0 | 2 | 0 | 0 | 0 | [png](lines/uijeongbu__main.png) |
 | 부산김해경전철 | main | 21 | 21.5 | 21.5 | 1.000 | 0 | 3 | 0 | 0 | 0 | [png](lines/busan-gimhae__main.png) |
-| 2호선 | main | 43 | 47.1 | 47.1 | 1.000 | 0 | 0 | 2 | 0 | 0 | [png](lines/seoul-2__main.png) |
+| 2호선 | main | 43 | 47.1 | 47.1 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/seoul-2__main.png) |
 | 5호선 | main | 49 | 50.0 | 50.0 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/seoul-5__main.png) |
 | 5호선 | macheon | 8 | 6.5 | 6.5 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/seoul-5__macheon.png) |
 | 6호선 | main | 34 | 29.3 | 29.3 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/seoul-6__main.png) |
 | 6호선 | eungam-loop | 6 | 6.1 | 6.1 | 1.000 | 2 | 0 | 0 | 0 | 0 | [png](lines/seoul-6__eungam-loop.png) |
 | 7호선 (인천 구간) | main | 12 | 13.9 | 13.9 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/seoul-7-incheon__main.png) |
-| 7호선 | main | 42 | 45.9 | 45.9 | 1.000 | 0 | 0 | 2 | 0 | 0 | [png](lines/seoul-7__main.png) |
+| 7호선 | main | 42 | 45.9 | 45.9 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/seoul-7__main.png) |
 | 8호선 | main | 24 | 29.2 | 29.2 | 1.000 | 0 | 0 | 0 | 0 | 1 | [png](lines/seoul-8__main.png) |
 | 9호선 | main | 38 | 37.0 | 37.0 | 1.000 | 0 | 0 | 0 | 0 | 13 | [png](lines/seoul-9__main.png) |
 | 2호선 성수지선 | main | 5 | 5.0 | 5.0 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/seoul-2-seongsu__main.png) |
@@ -67,11 +77,11 @@ ratio = 현재 길이 / 좌표 최적 경로 길이. 1.02 초과면 순서 의�
 | 부산 2호선 | main | 43 | 43.3 | 43.3 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/busan-2__main.png) |
 | 부산 3호선 | main | 17 | 17.1 | 17.1 | 1.000 | 0 | 2 | 0 | 0 | 0 | [png](lines/busan-3__main.png) |
 | 대구 1호선 | main | 35 | 36.7 | 36.7 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/daegu-1__main.png) |
-| 대구 2호선 | main | 29 | 30.1 | 30.1 | 1.000 | 0 | 0 | 2 | 0 | 0 | [png](lines/daegu-2__main.png) |
+| 대구 2호선 | main | 29 | 30.1 | 30.1 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/daegu-2__main.png) |
 | 대구 3호선 | main | 30 | 22.4 | 22.4 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/daegu-3__main.png) |
 | 인천 1호선 | main | 33 | 34.7 | 34.7 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/incheon-1__main.png) |
-| 인천 2호선 | main | 27 | 27.9 | 27.9 | 1.000 | 0 | 0 | 2 | 0 | 1 | [png](lines/incheon-2__main.png) |
-| 광주 1호선 | main | 20 | 19.8 | 19.8 | 1.000 | 0 | 0 | 2 | 0 | 0 | [png](lines/gwangju-1__main.png) |
+| 인천 2호선 | main | 27 | 27.9 | 27.9 | 1.000 | 0 | 0 | 0 | 0 | 1 | [png](lines/incheon-2__main.png) |
+| 광주 1호선 | main | 20 | 19.8 | 19.8 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/gwangju-1__main.png) |
 | 대전 1호선 | main | 22 | 19.7 | 19.7 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/daejeon-1__main.png) |
 
 ## 의심 엣지 상세
@@ -194,17 +204,5 @@ not_adjacent_weak = 한쪽 역의 Wikidata 아이템이 시퀀스 이웃 누구�
 
 | 노선 | A | B | 사유 |
 | :- | :- | :- | :- |
-| seoul-4 | 동작(현충원) | 총신대입구(이수) | 후보 없음: 총신대입구(이수) |
-| seoul-4 | 총신대입구(이수) | 사당 | 후보 없음: 총신대입구(이수) |
 | arex | 청라국제도시 | 영종 | 후보 없음: 영종 |
 | arex | 영종 | 운서 | 후보 없음: 영종 |
-| seoul-2 | 성수 | 건대입구 | 후보 없음: 건대입구 |
-| seoul-2 | 건대입구 | 구의(광진구청) | 후보 없음: 건대입구 |
-| seoul-7 | 어린이대공원(세종대) | 건대입구 | 후보 없음: 건대입구 |
-| seoul-7 | 건대입구 | 자양(뚝섬한강공원) | 후보 없음: 건대입구 |
-| daegu-2 | 연호 | 수성알파시티(삼성라이온즈파크) | 후보 없음: 수성알파시티(삼성라이온즈파크) |
-| daegu-2 | 수성알파시티(삼성라이온즈파크) | 고산 | 후보 없음: 수성알파시티(삼성라이온즈파크) |
-| incheon-2 | 아시아드경기장 | 서구청 | 후보 없음: 서구청 |
-| incheon-2 | 서구청 | 가정(루원시티) | 후보 없음: 서구청 |
-| gwangju-1 | 소태 | 학동증심사입구 | 후보 없음: 학동증심사입구 |
-| gwangju-1 | 학동증심사입구 | 남광주 | 후보 없음: 학동증심사입구 |

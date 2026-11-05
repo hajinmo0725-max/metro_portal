@@ -63,8 +63,10 @@ class WikidataMatcher:
         return b in self.adj.get(a, ())
 
 
-def match_stations(stations, lines, wm):
-    """역 레코드 → Wikidata 아이템. 반환: {sid: {qid, method, n_cands, adj_score}}"""
+def match_stations(stations, lines, wm, fallback_m=None):
+    """역 레코드 → Wikidata 아이템. 반환: {sid: {qid, method, n_cands, adj_score}}
+    같은 이름 아이템이 없으면(Wikidata 라벨이 다름: 건대입구 ↔ 건국대역) fallback_m 이내 가장 가까운 아이템을
+    'coord_fallback'으로 붙인다. 이 매칭은 좌표에 기대므로 좌표 검사에는 쓰지 않고 인접 검사에만 쓴다."""
     neigh = defaultdict(set)
     for ln in lines:
         for sq in ln["sequences"]:
@@ -78,7 +80,14 @@ def match_stations(stations, lines, wm):
     for s in sorted(stations, key=lambda s: s["id"]):
         cands = wm.candidates(s)
         if not cands:
-            out[s["id"]] = {"qid": None, "method": "no_candidate", "n_cands": 0, "adj_score": 0}
+            near = None
+            if fallback_m:
+                near = min(((haversine_m(s["lat"], s["lon"], it["lat"], it["lon"]), q) for q, it in wm.items.items()), default=None)
+            if near and near[0] <= fallback_m:
+                out[s["id"]] = {"qid": near[1], "method": "coord_fallback", "n_cands": 0, "adj_score": 0,
+                                "wd_label": wm.items[near[1]]["label_ko"], "distance_m": round(near[0])}
+            else:
+                out[s["id"]] = {"qid": None, "method": "no_candidate", "n_cands": 0, "adj_score": 0}
             continue
         ncands = {n: set(wm.candidates(sid[n])) for n in sorted(neigh[s["id"]])}
 
@@ -132,7 +141,7 @@ def check_sequences(stations, lines, wm, match, gcfg, ccfg):
                     wd = "same_item"
                 elif wm.adjacent(qa, qb):
                     wd = "adjacent"
-                elif match[a]["adj_score"] == 0 or match[b]["adj_score"] == 0:
+                elif match[a]["adj_score"] <= 0 or match[b]["adj_score"] <= 0:
                     # 한쪽 아이템이 시퀀스 이웃 누구와도 P197 인접이 아니다: 그 노선용 아이템이 Wikidata에 없을 가능성
                     # (예: 부산 1호선 교대 → 동해선 교대 아이템만 있음). 순서 오류일 수도 있어 따로 표시한다
                     wd = "not_adjacent_weak"
@@ -176,7 +185,7 @@ def coord_checks(stations, clusters_by_sid, match, wm, ccfg):
     out = []
     for s in sorted(stations, key=lambda s: s["id"]):
         m = match[s["id"]]
-        if not m["qid"]:
+        if not m["qid"] or m["method"] == "coord_fallback":
             continue
         it = wm.items[m["qid"]]
         d = haversine_m(s["lat"], s["lon"], it["lat"], it["lon"])
@@ -306,7 +315,11 @@ def main() -> int:
     lines = load(PROC / "lines.json")["lines"]
     wd = load(PROC / "wikidata_stations.json")
     wm = WikidataMatcher(wd["items"], rs["normalize"])
-    match = match_stations(stations, lines, wm)
+    match = match_stations(stations, lines, wm, ccfg.get("wikidata_fallback_match_m"))
+    # coord_fallback 매칭의 adj_score: 이웃 후보와의 인접 수 (참고용)
+    for sid_, m in match.items():
+        if m["method"] == "coord_fallback":
+            m["adj_score"] = -1
     from metro_portal.graph import build_clusters
     cl = build_clusters(stations, rs)
     cof = {x: c["id"] for c in cl for x in c["station_ids"]}
@@ -355,7 +368,12 @@ def write_reports(doc, sid, wm):
          "`config/kr_lines.yaml` 수정은 두 근거가 같은 결론일 때만 한다.", "",
          "## Wikidata 매칭", "", "| 방법 | 역 레코드 수 |", "| :- | -: |"]
     L += [f"| {k} | {v} |" for k, v in doc["match_stats"].items()]
-    L += ["", "unique = 이름 후보 1개, adj = 이웃 역과 P197 인접인 후보, nearest = 동률이라 거리로 고름, no_candidate = 같은 이름 아이템 없음", "",
+    L += ["", "unique = 이름 후보 1개, adj = 이웃 역과 P197 인접인 후보, nearest = 동률이라 거리로 고름, "
+          "coord_fallback = 같은 이름 아이템이 없어 가까운 아이템을 붙임(라벨 차이, 좌표 검사 제외), no_candidate = 매칭 없음", "",
+          "| 우리 역 | Wikidata 라벨 (coord_fallback) | 거리(m) |", "| :- | :- | -: |"]
+    L += [f"| {sid[k]['name_ko']} ({sid[k]['line_name']}) | {m['wd_label']} | {m['distance_m']} |"
+          for k, m in sorted(doc["match"].items()) if m["method"] == "coord_fallback"]
+    L += ["",
           "## 시퀀스별 요약", "",
           f"ratio = 현재 길이 / 좌표 최적 경로 길이. {g['opt_ratio_flag']} 초과면 순서 의심.", "",
           "| 노선 | 시퀀스 | 역 | 현재 km | 최적 km | ratio | 기하 의심 엣지 | WD 비인접 | WD 매칭 안 됨 | 둘 다 | WD 추가 인접 | PNG |",

@@ -116,3 +116,20 @@ def test_D_boundary_cases(D, expect):
         assert cnt[name] == n, (D, name)
     names = {p["name"] for p in w["portals"]}
     assert ("신촌" in names) == (D < 701)
+
+
+@pytest.mark.skipif(not (PROC / "ruleset_compare.json").exists(), reason="ruleset_compare.json missing")
+def test_ruleset_compare_reference_matches_strict_metrics():
+    """N4: 비교표의 기준 조합(환승 0, D=500)은 strict 빌드 지표와 같아야 한다. 환승 비용은 포탈 목록을 바꾸지 않는다."""
+    cmp_ = json.loads((PROC / "ruleset_compare.json").read_text(encoding="utf-8"))
+    m = json.loads((PROC / "strict" / "metrics.json").read_text(encoding="utf-8"))
+    ref = next(r for r in cmp_["rows"] if r["transfer"] == 0 and r["D"] == 500)
+    assert ref["counts"] == m["counts"]
+    assert ref["with_warp"]["diameter"] == m["with_warp"]["diameter"]
+    assert len(cmp_["rows"]) == 6
+    by = {(r["transfer"], r["D"]): r for r in cmp_["rows"]}
+    for d in (300, 500, 1000):
+        assert by[(0, d)]["counts"]["portals_total"] == by[(1, d)]["counts"]["portals_total"]
+        assert by[(1, d)]["with_warp"]["diameter"]["value"] >= by[(0, d)]["with_warp"]["diameter"]["value"]
+    t1 = json.loads((PROC / "strict_transfer1" / "metrics.json").read_text(encoding="utf-8"))
+    assert by[(1, 500)]["with_warp"]["diameter"]["value"] == t1["with_warp"]["diameter"]["value"]

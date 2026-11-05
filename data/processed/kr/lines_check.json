@@ -12,7 +12,8 @@
    "spike_ratio": 2.5,
    "spike_end_ratio": 4.0,
    "wikidata_mismatch_m": 1000,
-   "near_duplicate_m": 30
+   "near_duplicate_m": 30,
+   "wikidata_fallback_match_m": 200
   }
  },
  "wikidata_meta": {
@@ -22,8 +23,9 @@
  "match_stats": {
   "adj": 121,
   "adj+nearest": 4,
+  "coord_fallback": 6,
   "nearest": 1,
-  "no_candidate": 7,
+  "no_candidate": 1,
   "unique": 7,
   "unique+adj": 951
  },
@@ -491,10 +493,12 @@
    "adj_score": 1
   },
   "kr:I1104:0432": {
-   "qid": null,
-   "method": "no_candidate",
+   "qid": "Q46351",
+   "method": "coord_fallback",
    "n_cands": 0,
-   "adj_score": 0
+   "adj_score": -1,
+   "wd_label": "이수역",
+   "distance_m": 36
   },
   "kr:I1104:0433": {
    "qid": "Q49098",
@@ -3305,10 +3309,12 @@
    "adj_score": 2
   },
   "kr:S1102:0212": {
-   "qid": null,
-   "method": "no_candidate",
+   "qid": "Q68859",
+   "method": "coord_fallback",
    "n_cands": 0,
-   "adj_score": 0
+   "adj_score": -1,
+   "wd_label": "건국대역",
+   "distance_m": 63
   },
   "kr:S1102:0213": {
    "qid": "Q488778",
@@ -4175,10 +4181,12 @@
    "adj_score": 1
   },
   "kr:S1107:0727": {
-   "qid": null,
-   "method": "no_candidate",
+   "qid": "Q68859",
+   "method": "coord_fallback",
    "n_cands": 0,
-   "adj_score": 0
+   "adj_score": -1,
+   "wd_label": "건국대역",
+   "distance_m": 156
   },
   "kr:S1107:0728": {
    "qid": "Q68866",
@@ -5729,10 +5737,12 @@
    "adj_score": 1
   },
   "kr:S2702:0238": {
-   "qid": null,
-   "method": "no_candidate",
+   "qid": "Q695096",
+   "method": "coord_fallback",
    "n_cands": 0,
-   "adj_score": 0
+   "adj_score": -1,
+   "wd_label": "대공원역",
+   "distance_m": 36
   },
   "kr:S2702:0239": {
    "qid": "Q708278",
@@ -6203,10 +6213,12 @@
    "adj_score": 1
   },
   "kr:S2802:3210": {
-   "qid": null,
-   "method": "no_candidate",
+   "qid": "Q20823464",
+   "method": "coord_fallback",
    "n_cands": 0,
-   "adj_score": 0
+   "adj_score": -1,
+   "wd_label": "서해구청역",
+   "distance_m": 20
   },
   "kr:S2802:3211": {
    "qid": "Q20823465",
@@ -6323,10 +6335,12 @@
    "adj_score": 1
   },
   "kr:S2901:102": {
-   "qid": null,
-   "method": "no_candidate",
+   "qid": "Q626197",
+   "method": "coord_fallback",
    "n_cands": 0,
-   "adj_score": 0
+   "adj_score": -1,
+   "wd_label": "학동·증심사입구역",
+   "distance_m": 62
   },
   "kr:S2901:103": {
    "qid": "Q624382",
@@ -7778,7 +7792,7 @@
      "a_name": "동작(현충원)",
      "b_name": "총신대입구(이수)",
      "distance_m": 1794,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },
@@ -7790,7 +7804,7 @@
      "a_name": "총신대입구(이수)",
      "b_name": "사당",
      "distance_m": 1253,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },
@@ -15404,7 +15418,7 @@
      "a_name": "성수",
      "b_name": "건대입구",
      "distance_m": 1259,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },
@@ -15416,7 +15430,7 @@
      "a_name": "건대입구",
      "b_name": "구의(광진구청)",
      "distance_m": 1540,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },
@@ -17708,7 +17722,7 @@
      "a_name": "어린이대공원(세종대)",
      "b_name": "건대입구",
      "distance_m": 847,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },
@@ -17720,7 +17734,7 @@
      "a_name": "건대입구",
      "b_name": "자양(뚝섬한강공원)",
      "distance_m": 1107,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },
@@ -21466,7 +21480,7 @@
      "a_name": "연호",
      "b_name": "수성알파시티(삼성라이온즈파크)",
      "distance_m": 846,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },
@@ -21478,7 +21492,7 @@
      "a_name": "수성알파시티(삼성라이온즈파크)",
      "b_name": "고산",
      "distance_m": 1205,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },
@@ -22623,7 +22637,7 @@
      "a_name": "아시아드경기장",
      "b_name": "서구청",
      "distance_m": 838,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },
@@ -22635,7 +22649,7 @@
      "a_name": "서구청",
      "b_name": "가정(루원시티)",
      "distance_m": 2120,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },
@@ -22931,7 +22945,7 @@
      "a_name": "소태",
      "b_name": "학동증심사입구",
      "distance_m": 1045,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },
@@ -22943,7 +22957,7 @@
      "a_name": "학동증심사입구",
      "b_name": "남광주",
      "distance_m": 814,
-     "wikidata": "unmatched",
+     "wikidata": "adjacent",
      "geometry": [],
      "both": false
     },

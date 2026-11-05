@@ -209,3 +209,44 @@ def test_brandes_matches_bruteforce():
                     for v in p[1:-1]:
                         exp[v] += 1 / len(paths)
         assert all(abs(a - b) < 1e-9 for a, b in zip(bc, exp)), seed
+
+
+@real
+def test_n_stops_paths_are_legal_moves():
+    """13정류장 경로의 각 턴이 실제 승차 인접 또는 같은 포탈 워프인지."""
+    from metro_portal.world import build_world, load_base
+    ns = json.loads((ROOT / "data" / "processed" / "n_stops_max.json").read_text(encoding="utf-8"))
+    w = build_world(*load_base(), load_ruleset(ns["ruleset"]))
+    g = g10.ClusterGraph(w)
+    portal_of = {}
+    for p in g.portals:
+        for c in p["cluster_ids"]:
+            portal_of.setdefault(c, set()).add(p["name"])
+    for key in ("great_circle", "track"):
+        for r in ns["with_warp"][key] + ns["without_warp"][key]:
+            for a, b in zip(r["path"], r["path"][1:]):
+                u, v = g.ix[a["cluster"]], g.ix[b["cluster"]]
+                if b["via"] == "ride":
+                    assert any(x == v for x, _ in g.ride_adj[u])
+                else:
+                    assert portal_of.get(a["cluster"], set()) & portal_of.get(b["cluster"], set())
+
+
+FF = ROOT / "data" / "processed" / "fun_facts.json"
+
+
+@pytest.mark.skipif(not FF.exists(), reason="fun_facts.json missing")
+def test_fun_facts_consistent_with_metrics():
+    ff = json.loads(FF.read_text(encoding="utf-8"))
+    m = json.loads((ROOT / "data" / "processed" / "kr" / "strict" / "metrics.json").read_text(encoding="utf-8"))
+    assert ff["diameter"]["cost"] == m["with_warp"]["diameter"]["value"]
+    assert ff["diameter"]["cost_no_warp"] >= ff["diameter"]["cost"]
+    assert sum(1 for x in ff["diameter"]["steps"] if x["type"] == "ride") + sum(1 for x in ff["diameter"]["steps"] if x["type"] == "warp") == ff["diameter"]["cost"]
+    hubs = ff["portal_hubs"]
+    assert len(hubs) == m["counts"]["portals_total"]
+    assert all(0 <= h["betweenness_share"] < 1 for h in hubs)
+    assert [h["betweenness_pairs"] for h in hubs] == sorted((h["betweenness_pairs"] for h in hubs), reverse=True)
+    # 워프 포함 그래프는 연결 컴포넌트 1개라 모든 클러스터 쌍이 연결돼 있다
+    assert m["with_warp"]["components"] == 1
+    C = m["counts"]["clusters"]
+    assert ff["pairs_total"] == C * (C - 1) // 2
