@@ -1,20 +1,20 @@
 # Phase 0 야간 작업 3차 보고서 — 한국 데이터 보정 (A1~A7)
 
-- 시작: 2026-11-05T15:19:17Z (UTC, 세션 시작 직후 `date` 기록) · 보고서 작성: 2026-11-05T15:59:32Z
+- 시작: 2026-11-05T15:19:17Z (UTC, 세션 시작 직후 `date` 기록) · 보고서 작성: 2026-11-05T23:19:18Z
 - 브랜치: `kr-fixes` (main = PR #1·#2 머지본에서 분기) · PR #3 (base `main`, draft). main push·머지 안 함
 - 재현: `scripts/build_all.sh` (수집 → 역 → 노선 → 그래프 → 경로 → 웹 → Wikidata → 검증 → ruleset 비교 → 게임 → fun facts → 환승 감사 → pytest → node). 약 1.5분. 2차 대비 비교: `python3 scripts/compare_night2_night3.py`
 - 이번 세션 한정 지시에 따라 '계획 먼저 제시'와 '실행 전 지적'은 이 보고서 기록으로 대체했다 (3·4장).
 
 ## 요약
 
-- **A1·A2·A3·A4·A6·A7 완료. A5는 미완** — Geofabrik이 허용 목록에 있는데도 egress에서 TLS 단계 터널 종료(3회 재현). 우회 없이 파서·대조 도구와 합성 데이터 테스트까지만 했다.
+- **A1·A2·A3·A4·A6·A7 완료. A5는 미완으로 종료** — Geofabrik이 허용 목록에 있는데도 egress에서 TLS 단계 터널 종료. 시작 8시간(23:19Z)까지 같은 호스트에 간격을 두고 재시도했지만 한 번도 열리지 않아(아래 A5), 지시의 8시간 조항에 따라 그때까지의 결과로 보고서를 확정했다. 우회 없이 파서·판정·보고서 생성 도구와 합성 데이터 테스트까지 준비했다.
 - A1 경춘선: 광운대–상봉 직결(본선) + 청량리–회기–중랑–상봉(지선). 실제로 없던 광운대–중랑 엣지 제거.
 - A2 응암순환: 단방향 유향 엣지 6개. 대칭을 가정하던 코드 6곳(그래프·클러스터 지표·게임 그래프·퍼즐 쌍 열거·fun facts 쌍 열거·매개 중심성 /2)을 고쳤다. 예: 워프 없이 응암 → 역촌 1수, 역촌 → 응암 4수.
 - A3 공식 환승 우선: D=500 대비 클러스터가 바뀐 이름은 **부전 하나**(동해선 ↔ 부산 1호선 342m, 표준데이터상 둘 다 일반역 → 분리, 같은 도시 T1 포탈 추가). T1 포탈 29 / 60 → 30 / 62.
 - A4 좌표 복사: 이름 같음 + 20m 미만 + 공식 환승 아님 = 5쌍, 전부 같은 노선 레코드(직결 경계) 또는 정보 불완전. **좌표 복사 의심 0건.** 2차에서 고친 동해선 동래를 원래 좌표로 되돌리면 이 검사가 잡는다(검출력 확인).
 - A6 누락 노선: 표준데이터(2026-06-30)에 빠진 개통 노선은 **GTX-A 하나**. 근거 2개(레일포털 다국어 파일 신설일자 + Wikidata P1619)가 맞는 운정중앙–서울역·수서–동탄 9역만 추가. 서울역–수서는 개통 확인 못 해 제외.
 - A7 재생성: 역 1091 → 1100, 클러스터 937 → 941, 승차 엣지 1056 → 1065, 워프 有 지름 68 → 67. 13정류장 대권거리 1위는 그대로 371.4km, 구간 거리 합 1위는 GTX-A 덕에 63.9km → 73.5km.
-- 테스트: **pytest 149 passed in 3.06s**, **node 15 pass / 0 fail**. 재빌드 2회 산출물(json·md 39개) md5 동일.
+- 테스트: **pytest 150 passed in 3.29s**, **node 15 pass / 0 fail**. 재빌드 2회 산출물(json·md 39개) md5 동일.
 
 ## 1. 단계별 완료 증거
 
@@ -121,11 +121,12 @@
 
 - 논현(신분당선 ↔ 7호선 1.9m): 신분당선 논현은 '환승역'인데 노선 목록이 자기 노선뿐, 7호선 논현은 일반역으로 적혀 있어 공식 관계 불완전 → 거리 D로 환승 처리. 2022년 신분당선 연장으로 생긴 실제 환승역이라 표준데이터 7호선 쪽 환승 표기가 갱신 안 된 것으로 판단 (검증 못 함)
 
-### A5 — OSM 교차검증 (미완, 커밋 `3f46c1d`)
+### A5 — OSM 교차검증 (미완, 커밋 `3f46c1d`·`85b8a27`)
 
-- 시도: `download.geofabrik.de` (환경 허용 목록에 있음). 15:20Z·15:42Z·15:56Z 세 번 모두 프록시 CONNECT 200 뒤 TLS ClientHello 직후 egress 터널 종료 (`ws_closed_mid_exchange`, code 1006, 517B 송신·39B 수신). `pipeline/13_validate_osm.py --fetch`도 `ConnectionResetError(104)`
+- 시도: `download.geofabrik.de` (환경 허용 목록에 있음). 15:20Z·15:42Z·15:56Z·16:39Z 수동 시도 모두 프록시 CONNECT 200 뒤 TLS ClientHello 직후 egress 터널 종료 (`ws_closed_mid_exchange`, code 1006, 517B 송신·39B 수신). `pipeline/13_validate_osm.py --fetch`도 `ConnectionResetError(104)`
+- 재시도 (`scripts/retry_geofabrik.sh`, 같은 URL에 1~2분 간격, 위장·미러 없음): 2026-11-05T16:43:25Z ~ 2026-11-05T23:18:40Z, 41회차 208번 시도, 열린 적 0번. 모든 시도가 `curl: (35) Recv failure: Connection reset by peer`. 전체 기록 `docs/reports/evidence/geofabrik_attempts.log`
 - 판단: 정책 거부(403)가 아니라 업스트림/egress 실패 증상이고 설정으로 고칠 수 없다. CLAUDE.md 규칙대로 미러·다른 OSM 배포처·다른 경로로 우회하지 않았다. Overpass도 같은 증상(2차와 동일)
-- 한 것: `metro_portal/osm.py`(pyosmium 2패스 파서, 정차 순서·좌표·이름), `pipeline/13_validate_osm.py`(이름+거리 매칭, OSM 인접·좌표 대조, OSM과 Wikidata/기하가 같은 결론일 때만 수정 후보, 보정 파일은 건드리지 않음), 합성 .osm 테스트 2개. 파일만 생기면 `python3 pipeline/13_validate_osm.py --fetch`로 바로 돌릴 수 있다
+- 한 것: `metro_portal/osm.py`(pyosmium 2패스 파서, 정차 순서·좌표·이름), `pipeline/13_validate_osm.py`(이름+거리 매칭 → 우리 엣지별 OSM 판정 '인접 / 같은 노선에 둘 다 있는데 비인접 / 정보 없음', OSM에만 있는 인접은 급행 패턴·근거 2개·OSM만으로 분류, 좌표는 OSM 거리 중앙값 300m 초과 + Wikidata 1km 초과면 수정 후보, `docs/reports/a5_osm_check.md` 자동 생성, 보정 파일은 건드리지 않음), 테스트 3개(합성 .osm 파서 2, 실데이터 2호선으로 만든 합성 OSM에서 두 역 순서를 바꾸면 '비인접 → 의심'으로 잡히는지 1). 파일만 생기면 `python3 pipeline/13_validate_osm.py --fetch`로 바로 돌릴 수 있다
 
 ### A6 — 누락 노선 (커밋 `c1cea31`)
 
@@ -212,7 +213,7 @@
 
 ### 테스트 출력
 
-- pytest: `149 passed in 3.06s` (전문 `docs/reports/evidence/pytest_night3.txt`)
+- pytest: `150 passed in 3.29s` (전문 `docs/reports/evidence/pytest_night3.txt`)
 
 | 파일 | passed |
 | :- | -: |
@@ -222,7 +223,7 @@
 | tests/test_lines.py | 11 |
 | tests/test_lineval.py | 12 |
 | tests/test_normalize.py | 19 |
-| tests/test_osm_parser.py | 2 |
+| tests/test_osm_parser.py | 3 |
 | tests/test_real_data.py | 7 |
 | tests/test_route.py | 30 |
 | tests/test_ruleset_scope.py | 17 |
@@ -253,7 +254,7 @@ ok 15 - 입력 해석: 도시 접두어, 동명역, 라벨
 
 | 단계 | 상태 | 사유 | 남은 일 |
 | :- | :- | :- | :- |
-| A5 OSM 교차검증 | 도구·테스트만 | `download.geofabrik.de` egress TLS 단계 차단 (허용 목록에는 있음). 우회 금지 | 접속이 되는 환경에서 `python3 pipeline/13_validate_osm.py --fetch` 실행 → `docs/reports/a5_osm_check.md` 판정표 검토 |
+| A5 OSM 교차검증 | 도구·테스트만, 8시간 조항으로 종료 | `download.geofabrik.de` egress TLS 단계 차단 (허용 목록에는 있음). 23:18Z까지 208번 재시도 전부 실패. 우회 금지 | 접속이 되는 환경에서 `python3 pipeline/13_validate_osm.py --fetch` 실행 → `docs/reports/a5_osm_check.md` 판정표 검토 |
 
 ## 3. 가정·판단 (이번 세션은 '실행 전 지적' 대신 여기 기록)
 
