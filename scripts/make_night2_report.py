@@ -5,7 +5,7 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path("/home/user/metro_portal")
+ROOT = Path(__file__).resolve().parent.parent
 REP = ROOT / "docs" / "reports"
 written_at = sys.argv[1]
 
