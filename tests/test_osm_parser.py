@@ -53,3 +53,42 @@ def test_match_stops_name_and_distance(tmp_path):
           {"id": "c", "name_ko": "을지로입구", "lat": 37.60, "lon": 126.9824}]     # 이름은 같지만 4km 밖
     r = mod.match_stops(routes, st, load_ruleset("strict")["normalize"], 400)
     assert [n["match"] for n in r[0]["stops"]] == ["a", None]
+
+
+def test_compare_flags_order_disagreement_with_real_stations(tmp_path):
+    """실데이터 2호선 앞 역들로 합성 OSM 노선을 만들고 두 역 순서를 바꾸면 '같은 노선에 있는데 비인접'으로 잡히는지."""
+    import json
+    from metro_portal.osm import read_routes
+    from metro_portal.ruleset import load_ruleset
+    proc = ROOT / "data" / "processed" / "kr"
+    if not (proc / "lines.json").exists():
+        pytest.skip("processed data missing")
+    spec = importlib.util.spec_from_file_location("v13b", ROOT / "pipeline" / "13_validate_osm.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    st = json.loads((proc / "stations.json").read_text(encoding="utf-8"))["stations"]
+    sid = {s["id"]: s for s in st}
+    edges = json.loads((proc / "ride_edges.json").read_text(encoding="utf-8"))["edges"]
+    chk = json.loads((proc / "lines_check.json").read_text(encoding="utf-8"))
+    wd = json.loads((proc / "wikidata_stations.json").read_text(encoding="utf-8"))["items"]
+    line = next(ln for ln in json.loads((proc / "lines.json").read_text(encoding="utf-8"))["lines"] if ln["id"] == "seoul-2")
+    seq = [sid[x] for x in line["sequences"][0]["station_ids"][:6]]
+    osm_order = [seq[0], seq[1], seq[3], seq[2], seq[4], seq[5]]          # 2·3번째 역 순서를 바꾼 OSM
+    nodes = "".join(f'<node id="{i + 1}" lat="{s["lat"]}" lon="{s["lon"]}" version="1"><tag k="name" v="{s["name_ko"]}"/></node>'
+                    for i, s in enumerate(osm_order))
+    members = "".join(f'<member type="node" ref="{i + 1}" role="stop"/>' for i in range(len(osm_order)))
+    f = tmp_path / "k.osm"
+    f.write_text(f'<?xml version="1.0"?><osm version="0.6">{nodes}<relation id="9" version="1">{members}'
+                 '<tag k="type" v="route"/><tag k="route" v="subway"/><tag k="name" v="2호선"/></relation></osm>', encoding="utf-8")
+    routes = mod.match_stops(read_routes(f, ["subway"], ["stop"]), st, load_ruleset("strict")["normalize"], 400)
+    rows, extra, coords, stats = mod.compare(routes, st, edges, chk, wd, {"coord_flag_m": 300})
+    by = {frozenset((r["a"], r["b"])): r for r in rows if r["line"] == "seoul-2"}
+    n = [s["name_ko"] for s in seq]
+    assert by[frozenset((n[0], n[1]))]["osm"] == "adjacent"
+    assert by[frozenset((n[1], n[2]))]["osm"] == "not_adjacent"         # 우리 순서 1-2가 OSM에선 이웃 아님
+    assert by[frozenset((n[1], n[2]))]["verdict"] == "suspect"          # Wikidata는 인접이라 근거 1개 → 의심만
+    assert all(r["osm"] == "no_info" for r in rows if r["line"] != "seoul-2" and r["a"] not in n and r["b"] not in n)
+    # OSM에만 있는 인접(1-3, 2-4)은 우리 그래프에서 2역 거리 → 급행 패턴으로 분류
+    assert {x["kind"] for x in extra} <= {"express_pattern", "missing_edge_two_sources", "missing_edge_osm_only"}
+    assert any(x["kind"] == "express_pattern" for x in extra)
+    assert stats["stops_matched"] == 6 and not coords
