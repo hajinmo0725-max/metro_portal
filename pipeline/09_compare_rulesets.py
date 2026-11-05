@@ -32,7 +32,7 @@ def portal_sig(p, clusters_by_id):
     for cid in p["cluster_ids"]:
         c = clusters_by_id[cid]
         parts.append(f"{'/'.join(c['cities'])}:{'+'.join(sorted(set(l.split(':', 1)[1] for l in c['lines'])))}")
-    return f"{p['name']} [{' | '.join(sorted(parts))}]"
+    return f"{p['name']} [{' ↔ '.join(sorted(parts))}]"
 
 
 def main() -> int:
@@ -99,7 +99,7 @@ def write_report(doc, ref):
     L += [f"- 환승 {r['transfer']}, D={r['D']}: {r['with_warp']['diameter']['from']} ↔ {r['with_warp']['diameter']['to']} "
           f"(비용 {r['with_warp']['diameter']['value']})" for r in rows]
     L += ["", "## 2. 포탈 목록 차이 (기준 조합 대비)", "",
-          "포탈은 '이름 [도시:노선 묶음 | ...]'로 비교한다. 환승 비용은 포탈 생성에 영향이 없어서 D만 차이를 만든다.", "",
+          "포탈은 '이름 [도시:노선 묶음 ↔ ...]'로 비교한다. 환승 비용은 포탈 생성에 영향이 없어서 D만 차이를 만든다.", "",
           "| 환승 | D(m) | 추가된 포탈 | 사라진 포탈 |", "| -: | -: | :- | :- |"]
     for d in doc["portal_diffs_vs_reference"]:
         L.append(f"| {d['transfer']} | {d['D']} | {'<br>'.join(d['added']) or '-'} | {'<br>'.join(d['removed']) or '-'} |")
