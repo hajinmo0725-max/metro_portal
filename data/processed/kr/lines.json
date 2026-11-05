@@ -2142,6 +2142,45 @@
     }
    ],
    "patched": true
+  },
+  {
+   "id": "gtx-a",
+   "name": "GTX-A",
+   "source_no": "XGTXA",
+   "source_name": "GTX-A",
+   "operator": "㈜SR/지티엑스에이운영",
+   "city": "수도권",
+   "color": "#9A6292",
+   "pools": [
+    "XGTXA:GTX-A"
+   ],
+   "sequences": [
+    {
+     "id": "north",
+     "station_ids": [
+      "kr:XGTXA:X101",
+      "kr:XGTXA:X102",
+      "kr:XGTXA:X103",
+      "kr:XGTXA:X105",
+      "kr:XGTXA:X106"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "south",
+     "station_ids": [
+      "kr:XGTXA:X108",
+      "kr:XGTXA:X109",
+      "kr:XGTXA:X110",
+      "kr:XGTXA:X111"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": true,
+   "supplement": true
   }
  ]
 }

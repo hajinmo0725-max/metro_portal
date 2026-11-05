@@ -108,6 +108,15 @@ def main() -> int:
     defs = {(str(d["source"]["line_no"]), d["source"]["name"]): d for d in lcfg.get("lines", []) if "source" in d}
     used_defs = set()
     src_rows = read_sheet(ROOT / "data" / "raw" / "kric" / "lines_std.xlsx")
+    # 3차 A6: 표준데이터에 없는 개통 노선 (config/kr_supplement.yaml). 정차 순서는 설정의 sequences를 그대로 쓴다
+    sup = yaml.safe_load(open(ROOT / "config" / "kr_supplement.yaml", encoding="utf-8")) or {}
+    for sl in sup.get("lines", []):
+        ops = sorted({s["operator"] for s in stations if s["line_no"] == sl["line_no"]})
+        src_rows.append({"노선번호": sl["line_no"], "노선명": sl["line_name"], "정거장구성": "", "운영기관명": "/".join(ops)})
+        defs[(sl["line_no"], sl["line_name"])] = {
+            "source": {"line_no": sl["line_no"], "name": sl["line_name"]}, "id": sl["id"], "name": sl["name"],
+            "city": sl["city"], "color": sl["color"], "pools": [f"{sl['line_no']}:{sl['line_name']}"],
+            "sequences": [{"id": q["id"], "stops": q["stops"]} for q in sl["sequences"]], "supplement": True}
 
     lines, failures, edges = [], [], {}
     for row in sorted(src_rows, key=lambda r: (clean_text(r["노선번호"]), clean_text(r["노선명"]))):
@@ -164,6 +173,7 @@ def main() -> int:
             "id": line_id, "name": d.get("name", nm), "source_no": no, "source_name": nm,
             "operator": clean_text(row["운영기관명"]), "city": d.get("city", ""), "color": d.get("color", ""),
             "pools": pools, "sequences": seqs, "patched": bool(d),
+            **({"supplement": True} if d.get("supplement") else {}),
         })
 
     unused = [k for k in defs if k not in used_defs]

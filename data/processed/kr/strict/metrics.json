@@ -1,53 +1,53 @@
 {
  "ruleset": "strict",
  "counts": {
-  "stations": 1091,
-  "clusters": 938,
-  "lines": 45,
-  "sequences": 51,
-  "ride_edges": 1058,
+  "stations": 1100,
+  "clusters": 941,
+  "lines": 46,
+  "sequences": 53,
+  "ride_edges": 1065,
   "ride_edges_directed": 6,
-  "transfer_clusters_multi": 133,
+  "transfer_clusters_multi": 135,
   "portals_total": 30,
   "portals_by_tier": {
    "T1": 30
   },
   "portal_links": 62,
-  "routing_nodes": 1121,
-  "routing_edges": 2610
+  "routing_nodes": 1130,
+  "routing_edges": 2652
  },
  "with_warp": {
   "components": 1,
   "largest_component_ratio": 1.0,
-  "largest_component_size": 938,
+  "largest_component_size": 941,
   "strong_components": 1,
-  "largest_strong_component_size": 938,
+  "largest_strong_component_size": 941,
   "diameter": {
    "value": 67,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 18.347
+   "mean_cost": 17.77
   }
  },
  "without_warp": {
   "components": 5,
-  "largest_component_ratio": 0.6951,
-  "largest_component_size": 652,
+  "largest_component_ratio": 0.6961,
+  "largest_component_size": 655,
   "strong_components": 5,
-  "largest_strong_component_size": 652,
+  "largest_strong_component_size": 655,
   "diameter": {
-   "value": 72,
+   "value": 70,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 21.529
+   "mean_cost": 20.449
   },
   "component_list": [
    {
-    "size": 652,
+    "size": 655,
     "regions": {
-     "수도권": 652
+     "수도권": 655
     },
     "lines": [
      "I1101:경인선",
@@ -87,7 +87,8 @@
      "S1122:2호선",
      "S2801:인천지하철 1호선",
      "S2802:인천지하철 2호선",
-     "S4108:수도권 광역철도 8호선"
+     "S4108:수도권 광역철도 8호선",
+     "XGTXA:GTX-A"
     ],
     "sample": [
      "4·19민주묘지#1",
@@ -474,18 +475,6 @@
     "transfer_lines_raw": "자기부상철도"
    },
    {
-    "id": "kr:I4105:1863",
-    "name": "구성역",
-    "line": "분당선",
-    "transfer_lines_raw": "GTX-A"
-   },
-   {
-    "id": "kr:I41K5:1512",
-    "name": "성남역",
-    "line": "경강선",
-    "transfer_lines_raw": "GTX-A"
-   },
-   {
     "id": "kr:S1105:0518",
     "name": "까치산",
     "line": "5호선",
@@ -496,7 +485,7 @@
    {
     "cluster": "서울#1",
     "max_internal_m": 435,
-    "records": 4
+    "records": 5
    },
    {
     "cluster": "잠실#1",

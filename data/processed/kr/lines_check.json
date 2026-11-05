@@ -21,13 +21,13 @@
   "adjacency_rows": 4291
  },
  "match_stats": {
-  "adj": 121,
+  "adj": 123,
   "adj+nearest": 4,
   "coord_fallback": 6,
   "nearest": 1,
   "no_candidate": 1,
-  "unique": 6,
-  "unique+adj": 952
+  "unique": 7,
+  "unique+adj": 958
  },
  "match": {
   "kr:I1101:1801": {
@@ -6587,6 +6587,60 @@
    "method": "adj",
    "n_cands": 2,
    "adj_score": 2
+  },
+  "kr:XGTXA:X101": {
+   "qid": "Q125895818",
+   "method": "unique+adj",
+   "n_cands": 1,
+   "adj_score": 1
+  },
+  "kr:XGTXA:X102": {
+   "qid": "Q125695849",
+   "method": "unique+adj",
+   "n_cands": 1,
+   "adj_score": 2
+  },
+  "kr:XGTXA:X103": {
+   "qid": "Q59856",
+   "method": "adj",
+   "n_cands": 2,
+   "adj_score": 2
+  },
+  "kr:XGTXA:X105": {
+   "qid": "Q79956",
+   "method": "unique+adj",
+   "n_cands": 1,
+   "adj_score": 2
+  },
+  "kr:XGTXA:X106": {
+   "qid": "Q137326",
+   "method": "adj",
+   "n_cands": 2,
+   "adj_score": 1
+  },
+  "kr:XGTXA:X108": {
+   "qid": "Q46157",
+   "method": "unique+adj",
+   "n_cands": 1,
+   "adj_score": 1
+  },
+  "kr:XGTXA:X109": {
+   "qid": "Q123158798",
+   "method": "unique+adj",
+   "n_cands": 1,
+   "adj_score": 2
+  },
+  "kr:XGTXA:X110": {
+   "qid": "Q46207",
+   "method": "unique+adj",
+   "n_cands": 1,
+   "adj_score": 1
+  },
+  "kr:XGTXA:X111": {
+   "qid": "Q23954759",
+   "method": "unique",
+   "n_cands": 1,
+   "adj_score": 0
   }
  },
  "sequences": [
@@ -23545,6 +23599,162 @@
     "kr:S3001:120",
     "kr:S3001:121",
     "kr:S3001:122"
+   ]
+  },
+  {
+   "line": "gtx-a",
+   "line_name": "GTX-A",
+   "sequence": "north",
+   "circular": false,
+   "n": 5,
+   "color": "#9A6292",
+   "length_current_m": 30708,
+   "length_optimal_m": 30708,
+   "ratio": 1.0,
+   "optimal_order": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "cur_only_edges": [],
+   "geometry_flags": [],
+   "spike_flags": [],
+   "edges": [
+    {
+     "i": 0,
+     "j": 1,
+     "a": "kr:XGTXA:X101",
+     "b": "kr:XGTXA:X102",
+     "a_name": "운정중앙",
+     "b_name": "킨텍스",
+     "distance_m": 5914,
+     "wikidata": "adjacent",
+     "geometry": [],
+     "both": false
+    },
+    {
+     "i": 1,
+     "j": 2,
+     "a": "kr:XGTXA:X102",
+     "b": "kr:XGTXA:X103",
+     "a_name": "킨텍스",
+     "b_name": "대곡",
+     "distance_m": 6591,
+     "wikidata": "adjacent",
+     "geometry": [],
+     "both": false
+    },
+    {
+     "i": 2,
+     "j": 3,
+     "a": "kr:XGTXA:X103",
+     "b": "kr:XGTXA:X105",
+     "a_name": "대곡",
+     "b_name": "연신내",
+     "distance_m": 9841,
+     "wikidata": "adjacent",
+     "geometry": [],
+     "both": false
+    },
+    {
+     "i": 3,
+     "j": 4,
+     "a": "kr:XGTXA:X105",
+     "b": "kr:XGTXA:X106",
+     "a_name": "연신내",
+     "b_name": "서울역",
+     "distance_m": 8363,
+     "wikidata": "adjacent",
+     "geometry": [],
+     "both": false
+    }
+   ],
+   "wikidata_extra_adjacent": [],
+   "station_ids": [
+    "kr:XGTXA:X101",
+    "kr:XGTXA:X102",
+    "kr:XGTXA:X103",
+    "kr:XGTXA:X105",
+    "kr:XGTXA:X106"
+   ]
+  },
+  {
+   "line": "gtx-a",
+   "line_name": "GTX-A",
+   "sequence": "south",
+   "circular": false,
+   "n": 4,
+   "color": "#9A6292",
+   "length_current_m": 32146,
+   "length_optimal_m": 32146,
+   "ratio": 1.0,
+   "optimal_order": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "cur_only_edges": [],
+   "geometry_flags": [],
+   "spike_flags": [],
+   "edges": [
+    {
+     "i": 0,
+     "j": 1,
+     "a": "kr:XGTXA:X108",
+     "b": "kr:XGTXA:X109",
+     "a_name": "수서역",
+     "b_name": "성남역",
+     "distance_m": 10443,
+     "wikidata": "adjacent",
+     "geometry": [],
+     "both": false
+    },
+    {
+     "i": 1,
+     "j": 2,
+     "a": "kr:XGTXA:X109",
+     "b": "kr:XGTXA:X110",
+     "a_name": "성남역",
+     "b_name": "구성역",
+     "distance_m": 10710,
+     "wikidata": "adjacent",
+     "geometry": [],
+     "both": false
+    },
+    {
+     "i": 2,
+     "j": 3,
+     "a": "kr:XGTXA:X110",
+     "b": "kr:XGTXA:X111",
+     "a_name": "구성역",
+     "b_name": "동탄역",
+     "distance_m": 10992,
+     "wikidata": "not_adjacent_weak",
+     "geometry": [],
+     "both": false
+    }
+   ],
+   "wikidata_extra_adjacent": [
+    {
+     "a": "kr:XGTXA:X108",
+     "b": "kr:XGTXA:X111",
+     "a_name": "수서역",
+     "b_name": "동탄역",
+     "pos": [
+      0,
+      3
+     ],
+     "distance_m": 31904
+    }
+   ],
+   "station_ids": [
+    "kr:XGTXA:X108",
+    "kr:XGTXA:X109",
+    "kr:XGTXA:X110",
+    "kr:XGTXA:X111"
    ]
   }
  ],

@@ -23,24 +23,81 @@
   },
   "license": "공공데이터포털/레일포털 표준데이터: 이용허락범위 제한 없음",
   "counts": {
-   "stations": 1091,
-   "line_groups": 50,
+   "stations": 1100,
+   "line_groups": 51,
    "names_by_lang_script": {
-    "en-Latn": 1290,
-    "ja-Jpan": 944,
-    "ko-Hang": 1334,
+    "en-Latn": 1299,
+    "ja-Jpan": 953,
+    "ko-Hang": 1343,
     "ko-Hani": 1091,
-    "ko-Latn": 463,
-    "zh-Hans": 963,
-    "zh-Hant": 552
+    "ko-Latn": 471,
+    "zh-Hans": 968,
+    "zh-Hant": 560
    },
    "unenriched": 21,
    "enriched_by_name_only": 76,
    "dropped_duplicates": 2,
    "out_of_bbox": 0,
    "coord_fixes": 4,
-   "excluded_by_scope": 6
+   "excluded_by_scope": 6,
+   "supplemented": 9
   },
+  "supplemented": [
+   {
+    "id": "kr:XGTXA:X101",
+    "name": "운정중앙",
+    "line": "GTX-A",
+    "opened": "20241228"
+   },
+   {
+    "id": "kr:XGTXA:X102",
+    "name": "킨텍스",
+    "line": "GTX-A",
+    "opened": "20241228"
+   },
+   {
+    "id": "kr:XGTXA:X103",
+    "name": "대곡",
+    "line": "GTX-A",
+    "opened": "20241228"
+   },
+   {
+    "id": "kr:XGTXA:X105",
+    "name": "연신내",
+    "line": "GTX-A",
+    "opened": "20241228"
+   },
+   {
+    "id": "kr:XGTXA:X106",
+    "name": "서울역",
+    "line": "GTX-A",
+    "opened": "20241228"
+   },
+   {
+    "id": "kr:XGTXA:X108",
+    "name": "수서역",
+    "line": "GTX-A",
+    "opened": "20240329"
+   },
+   {
+    "id": "kr:XGTXA:X109",
+    "name": "성남역",
+    "line": "GTX-A",
+    "opened": "20240329"
+   },
+   {
+    "id": "kr:XGTXA:X110",
+    "name": "구성역",
+    "line": "GTX-A",
+    "opened": "20240629"
+   },
+   {
+    "id": "kr:XGTXA:X111",
+    "name": "동탄역",
+    "line": "GTX-A",
+    "opened": "20161115"
+   }
+  ],
   "excluded_by_scope": {
    "line_groups": {
     "S28M1:자기부상철도": "인천공항 자기부상철도. 2022년 7월 운행 중단 후 2025년 10월 운행을 재개했지만 도시철도가 아닌 궤도운송시설로 전환됐다(사용자 제공 정보, 세션에서 공식 자료로 검증 못 함). Phase 0 스코프(도시철도·광역철도)에서 제외. 2026-11-05 결정: 추천 반영, 사용자 확인 필요."
@@ -223,11 +280,6 @@
   ],
   "metro_rows_not_in_std": [
    [
-    "㈜SR",
-    "GTX-A",
-    "동탄역"
-   ],
-   [
     "공항철도",
     "공항철도선",
     "김포공항"
@@ -386,41 +438,6 @@
     "인천교통공사",
     "인천2호선",
     "석남(거북시장)"
-   ],
-   [
-    "지티엑스에이운영",
-    "GTX-A",
-    "구성역"
-   ],
-   [
-    "지티엑스에이운영",
-    "GTX-A",
-    "대곡"
-   ],
-   [
-    "지티엑스에이운영",
-    "GTX-A",
-    "서울역"
-   ],
-   [
-    "지티엑스에이운영",
-    "GTX-A",
-    "성남역"
-   ],
-   [
-    "지티엑스에이운영",
-    "GTX-A",
-    "수서역"
-   ],
-   [
-    "지티엑스에이운영",
-    "GTX-A",
-    "운정중앙"
-   ],
-   [
-    "지티엑스에이운영",
-    "GTX-A",
-    "킨텍스"
    ],
    [
     "코레일",
@@ -75478,6 +75495,579 @@
    ],
    "source": "kric_std",
    "source_date": "2024-09-12"
+  },
+  {
+   "id": "kr:XGTXA:X101",
+   "code": "X101",
+   "name_ko": "운정중앙",
+   "lat": 37.716044,
+   "lon": 126.728133,
+   "line_no": "XGTXA",
+   "line_name": "GTX-A",
+   "line_group": "XGTXA:GTX-A",
+   "operator": "지티엑스에이운영",
+   "region": "",
+   "address": "",
+   "transfer_flag": false,
+   "transfer_lines_raw": "",
+   "transfer_line_nos_raw": "",
+   "names": [
+    {
+     "text": "운정중앙",
+     "lang": "ko",
+     "script": "Hang",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Unjeong",
+     "lang": "en",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Unjeong",
+     "lang": "ko",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "romanization"
+    },
+    {
+     "text": "ウンジョンチュンアン",
+     "lang": "ja",
+     "script": "Jpan",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "云井中央",
+     "lang": "zh",
+     "script": "Hans",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "雲井中央",
+     "lang": "zh",
+     "script": "Hant",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    }
+   ],
+   "source": "kric_metro_supplement",
+   "source_date": "",
+   "opened": "20241228"
+  },
+  {
+   "id": "kr:XGTXA:X102",
+   "code": "X102",
+   "name_ko": "킨텍스",
+   "lat": 37.66528,
+   "lon": 126.748166,
+   "line_no": "XGTXA",
+   "line_name": "GTX-A",
+   "line_group": "XGTXA:GTX-A",
+   "operator": "지티엑스에이운영",
+   "region": "",
+   "address": "",
+   "transfer_flag": false,
+   "transfer_lines_raw": "",
+   "transfer_line_nos_raw": "",
+   "names": [
+    {
+     "text": "킨텍스",
+     "lang": "ko",
+     "script": "Hang",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "KINTEX",
+     "lang": "en",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "KINTEX",
+     "lang": "ko",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "romanization"
+    },
+    {
+     "text": "キンテックス",
+     "lang": "ja",
+     "script": "Jpan",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "韩国国际会展中心",
+     "lang": "zh",
+     "script": "Hans",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "韩国国际会展中心",
+     "lang": "zh",
+     "script": "Hant",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    }
+   ],
+   "source": "kric_metro_supplement",
+   "source_date": "",
+   "opened": "20241228"
+  },
+  {
+   "id": "kr:XGTXA:X103",
+   "code": "X103",
+   "name_ko": "대곡",
+   "lat": 37.63237,
+   "lon": 126.81043,
+   "line_no": "XGTXA",
+   "line_name": "GTX-A",
+   "line_group": "XGTXA:GTX-A",
+   "operator": "지티엑스에이운영",
+   "region": "경기도",
+   "address": "경기도 고양시 대주로 107번길 71-81",
+   "transfer_flag": true,
+   "transfer_lines_raw": "3호선,서해선,경의중앙",
+   "transfer_line_nos_raw": "I1103+I41WS+I41K4",
+   "names": [
+    {
+     "text": "대곡",
+     "lang": "ko",
+     "script": "Hang",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Daegok",
+     "lang": "en",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Daegok",
+     "lang": "ko",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "romanization"
+    },
+    {
+     "text": "テゴク",
+     "lang": "ja",
+     "script": "Jpan",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "大谷",
+     "lang": "zh",
+     "script": "Hans",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "大谷",
+     "lang": "zh",
+     "script": "Hant",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    }
+   ],
+   "source": "kric_metro_supplement",
+   "source_date": "",
+   "opened": "20241228"
+  },
+  {
+   "id": "kr:XGTXA:X105",
+   "code": "X105",
+   "name_ko": "연신내",
+   "lat": 37.618855,
+   "lon": 126.920859,
+   "line_no": "XGTXA",
+   "line_name": "GTX-A",
+   "line_group": "XGTXA:GTX-A",
+   "operator": "지티엑스에이운영",
+   "region": "서울특별시",
+   "address": "서울특별시 은평구 통일로 지하849(갈현동)",
+   "transfer_flag": true,
+   "transfer_lines_raw": "3호선,6호선",
+   "transfer_line_nos_raw": "I1103+S1106",
+   "names": [
+    {
+     "text": "연신내",
+     "lang": "ko",
+     "script": "Hang",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Yeonsinnae",
+     "lang": "en",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Yeonsinnae",
+     "lang": "ko",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "romanization"
+    },
+    {
+     "text": "ヨンシンネ",
+     "lang": "ja",
+     "script": "Jpan",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "延新川",
+     "lang": "zh",
+     "script": "Hans",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    }
+   ],
+   "source": "kric_metro_supplement",
+   "source_date": "",
+   "opened": "20241228"
+  },
+  {
+   "id": "kr:XGTXA:X106",
+   "code": "X106",
+   "name_ko": "서울역",
+   "lat": 37.55585,
+   "lon": 126.9726803,
+   "line_no": "XGTXA",
+   "line_name": "GTX-A",
+   "line_group": "XGTXA:GTX-A",
+   "operator": "지티엑스에이운영",
+   "region": "서울시",
+   "address": "서울시 중구 통일로 1",
+   "transfer_flag": true,
+   "transfer_lines_raw": "1호선,4호선",
+   "transfer_line_nos_raw": "S1101+S1104",
+   "names": [
+    {
+     "text": "서울역",
+     "lang": "ko",
+     "script": "Hang",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Seoul Station",
+     "lang": "en",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Seoul Station",
+     "lang": "ko",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "romanization"
+    },
+    {
+     "text": "ソウルヨク",
+     "lang": "ja",
+     "script": "Jpan",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "首尔站",
+     "lang": "zh",
+     "script": "Hans",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "首爾驛",
+     "lang": "zh",
+     "script": "Hant",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    }
+   ],
+   "source": "kric_metro_supplement",
+   "source_date": "",
+   "opened": "20241228"
+  },
+  {
+   "id": "kr:XGTXA:X108",
+   "code": "X108",
+   "name_ko": "수서역",
+   "lat": 37.486944,
+   "lon": 127.101944,
+   "line_no": "XGTXA",
+   "line_name": "GTX-A",
+   "line_group": "XGTXA:GTX-A",
+   "operator": "지티엑스에이운영",
+   "region": "서울",
+   "address": "서울 강남구 광평로 지하270",
+   "transfer_flag": true,
+   "transfer_lines_raw": "3호선",
+   "transfer_line_nos_raw": "I1103",
+   "names": [
+    {
+     "text": "수서역",
+     "lang": "ko",
+     "script": "Hang",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Suseo",
+     "lang": "en",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Suseo",
+     "lang": "ko",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "romanization"
+    },
+    {
+     "text": "スソ",
+     "lang": "ja",
+     "script": "Jpan",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "水西",
+     "lang": "zh",
+     "script": "Hant",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    }
+   ],
+   "source": "kric_metro_supplement",
+   "source_date": "20240412",
+   "opened": "20240329"
+  },
+  {
+   "id": "kr:XGTXA:X109",
+   "code": "X109",
+   "name_ko": "성남역",
+   "lat": 37.394192,
+   "lon": 127.120544,
+   "line_no": "XGTXA",
+   "line_name": "GTX-A",
+   "line_group": "XGTXA:GTX-A",
+   "operator": "지티엑스에이운영",
+   "region": "경기도",
+   "address": "경기도 성남시 분당구 이매동 153-1",
+   "transfer_flag": true,
+   "transfer_lines_raw": "경강선",
+   "transfer_line_nos_raw": "I41K5",
+   "names": [
+    {
+     "text": "성남역",
+     "lang": "ko",
+     "script": "Hang",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Seongnam",
+     "lang": "en",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Seongnam",
+     "lang": "ko",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "romanization"
+    },
+    {
+     "text": "ソンナム",
+     "lang": "ja",
+     "script": "Jpan",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "城南",
+     "lang": "zh",
+     "script": "Hant",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    }
+   ],
+   "source": "kric_metro_supplement",
+   "source_date": "20240412",
+   "opened": "20240329"
+  },
+  {
+   "id": "kr:XGTXA:X110",
+   "code": "X110",
+   "name_ko": "구성역",
+   "lat": 37.298611,
+   "lon": 127.105556,
+   "line_no": "XGTXA",
+   "line_name": "GTX-A",
+   "line_group": "XGTXA:GTX-A",
+   "operator": "지티엑스에이운영",
+   "region": "경기도",
+   "address": "경기도 용인시 기흥구 용구대로 2403",
+   "transfer_flag": true,
+   "transfer_lines_raw": "수인분당선",
+   "transfer_line_nos_raw": "I41K1",
+   "names": [
+    {
+     "text": "구성역",
+     "lang": "ko",
+     "script": "Hang",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Guseong",
+     "lang": "en",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "クソン",
+     "lang": "ja",
+     "script": "Jpan",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "駒城",
+     "lang": "zh",
+     "script": "Hant",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    }
+   ],
+   "source": "kric_metro_supplement",
+   "source_date": "20240715",
+   "opened": "20240629"
+  },
+  {
+   "id": "kr:XGTXA:X111",
+   "code": "X111",
+   "name_ko": "동탄역",
+   "lat": 37.2000668,
+   "lon": 127.0957373,
+   "line_no": "XGTXA",
+   "line_name": "GTX-A",
+   "line_group": "XGTXA:GTX-A",
+   "operator": "㈜SR",
+   "region": "경기도",
+   "address": "경기도 화성시 동탄역로 지하 151(오산동, 동탄역사)",
+   "transfer_flag": false,
+   "transfer_lines_raw": "",
+   "transfer_line_nos_raw": "",
+   "names": [
+    {
+     "text": "동탄역",
+     "lang": "ko",
+     "script": "Hang",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Dongtan",
+     "lang": "en",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "Dongtan",
+     "lang": "ko",
+     "script": "Latn",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "romanization"
+    },
+    {
+     "text": "トンタン",
+     "lang": "ja",
+     "script": "Jpan",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    },
+    {
+     "text": "東灘",
+     "lang": "zh",
+     "script": "Hant",
+     "source": "kric_metro",
+     "official": true,
+     "kind": "primary"
+    }
+   ],
+   "source": "kric_metro_supplement",
+   "source_date": "20240412",
+   "opened": "20161115"
   }
  ]
 }

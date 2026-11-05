@@ -8,13 +8,13 @@
 
 | 방법 | 역 레코드 수 |
 | :- | -: |
-| adj | 121 |
+| adj | 123 |
 | adj+nearest | 4 |
 | coord_fallback | 6 |
 | nearest | 1 |
 | no_candidate | 1 |
-| unique | 6 |
-| unique+adj | 952 |
+| unique | 7 |
+| unique+adj | 958 |
 
 unique = 이름 후보 1개, adj = 이웃 역과 P197 인접인 후보, nearest = 동률이라 거리로 고름, coord_fallback = 같은 이름 아이템이 없어 가까운 아이템을 붙임(라벨 차이, 좌표 검사 제외), no_candidate = 매칭 없음
 
@@ -84,6 +84,8 @@ ratio = 현재 길이 / 좌표 최적 경로 길이. 1.02 초과면 순서 의�
 | 인천 2호선 | main | 27 | 27.9 | 27.9 | 1.000 | 0 | 0 | 0 | 0 | 1 | [png](lines/incheon-2__main.png) |
 | 광주 1호선 | main | 20 | 19.8 | 19.8 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/gwangju-1__main.png) |
 | 대전 1호선 | main | 22 | 19.7 | 19.7 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/daejeon-1__main.png) |
+| GTX-A | north | 5 | 30.7 | 30.7 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/gtx-a__north.png) |
+| GTX-A | south | 4 | 32.1 | 32.1 | 1.000 | 0 | 1 | 0 | 0 | 1 | [png](lines/gtx-a__south.png) |
 
 ## 의심 엣지 상세
 
@@ -107,6 +109,7 @@ not_adjacent_weak = 한쪽 역의 Wikidata 아이템이 시퀀스 이웃 누구�
 | busan-1 | main | 교대 | 동래 | 1091 | - | not_adjacent | - |
 | busan-3 | main | 연산 | 거제 | 736 | - | not_adjacent_weak | - |
 | busan-3 | main | 거제 | 종합운동장 | 656 | - | not_adjacent_weak | - |
+| gtx-a | south | 구성역 | 동탄역 | 10992 | - | not_adjacent_weak | - |
 
 ## Wikidata에는 인접인데 시퀀스에서 비연속인 쌍
 
@@ -199,6 +202,7 @@ not_adjacent_weak = 한쪽 역의 Wikidata 아이템이 시퀀스 이웃 누구�
 | seoul-9 | main | 석촌 (32) | 올림픽공원(한국체대) (35) | 2400 |
 | seoul-9 | main | 올림픽공원(한국체대) (35) | 중앙보훈병원 (37) | 2135 |
 | incheon-2 | main | 주안국가산단 (16) | 시민공원 (18) | 1697 |
+| gtx-a | south | 수서역 (0) | 동탄역 (3) | 31904 |
 
 ## Wikidata 매칭이 안 된 엣지
 

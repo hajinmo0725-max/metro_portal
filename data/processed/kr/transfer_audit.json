@@ -2,14 +2,14 @@
  "ruleset": "strict",
  "D": 500,
  "basis_counts": {
-  "official_yes": 165,
-  "official_no": 51,
+  "official_yes": 175,
+  "official_no": 55,
   "distance(same_line)": 11,
   "distance(unknown)": 4
  },
  "status_counts": {
-  "none": 818,
-  "listed": 256,
+  "none": 821,
+  "listed": 262,
   "unknown": 17
  },
  "pairs": [
@@ -469,6 +469,19 @@
    "changed": false
   },
   {
+   "name": "구성",
+   "a": "kr:I4105:1863",
+   "b": "kr:XGTXA:X110",
+   "distance_m": 45.7,
+   "merged": true,
+   "basis": "official_yes",
+   "merged_d500": true,
+   "relation": "yes",
+   "status_a": "unknown",
+   "status_b": "listed",
+   "changed": false
+  },
+  {
    "name": "구암",
    "a": "kr:S2703:0317",
    "b": "kr:S3001:117",
@@ -795,6 +808,19 @@
   },
   {
    "name": "대곡",
+   "a": "kr:I4106:1953",
+   "b": "kr:XGTXA:X103",
+   "distance_m": 97.6,
+   "merged": true,
+   "basis": "official_yes",
+   "merged_d500": true,
+   "relation": "yes",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": false
+  },
+  {
+   "name": "대곡",
    "a": "kr:I4108:1953",
    "b": "kr:I41WS:1953",
    "distance_m": 37.2,
@@ -821,6 +847,19 @@
   },
   {
    "name": "대곡",
+   "a": "kr:I4108:1953",
+   "b": "kr:XGTXA:X103",
+   "distance_m": 84.3,
+   "merged": true,
+   "basis": "official_yes",
+   "merged_d500": true,
+   "relation": "yes",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": false
+  },
+  {
+   "name": "대곡",
    "a": "kr:I41WS:1953",
    "b": "kr:S2701:0117",
    "distance_m": 253131.9,
@@ -830,6 +869,32 @@
    "relation": "no",
    "status_a": "listed",
    "status_b": "none",
+   "changed": false
+  },
+  {
+   "name": "대곡",
+   "a": "kr:I41WS:1953",
+   "b": "kr:XGTXA:X103",
+   "distance_m": 99.2,
+   "merged": true,
+   "basis": "official_yes",
+   "merged_d500": true,
+   "relation": "yes",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": false
+  },
+  {
+   "name": "대곡",
+   "a": "kr:S2701:0117",
+   "b": "kr:XGTXA:X103",
+   "distance_m": 253163.9,
+   "merged": false,
+   "basis": "official_no",
+   "merged_d500": false,
+   "relation": "no",
+   "status_a": "none",
+   "status_b": "listed",
    "changed": false
   },
   {
@@ -1497,6 +1562,19 @@
   },
   {
    "name": "서울",
+   "a": "kr:I1104:0426",
+   "b": "kr:XGTXA:X106",
+   "distance_m": 297.8,
+   "merged": true,
+   "basis": "official_yes",
+   "merged_d500": true,
+   "relation": "yes",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": false
+  },
+  {
+   "name": "서울",
    "a": "kr:I28A1:A01",
    "b": "kr:I4101:0133",
    "distance_m": 376.4,
@@ -1523,6 +1601,19 @@
   },
   {
    "name": "서울",
+   "a": "kr:I28A1:A01",
+   "b": "kr:XGTXA:X106",
+   "distance_m": 406.5,
+   "merged": false,
+   "basis": "official_no",
+   "merged_d500": true,
+   "relation": "no",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": true
+  },
+  {
+   "name": "서울",
    "a": "kr:I4101:0133",
    "b": "kr:I4108:1251",
    "distance_m": 114.9,
@@ -1533,6 +1624,32 @@
    "status_a": "listed",
    "status_b": "listed",
    "changed": false
+  },
+  {
+   "name": "서울",
+   "a": "kr:I4101:0133",
+   "b": "kr:XGTXA:X106",
+   "distance_m": 50.9,
+   "merged": true,
+   "basis": "official_yes",
+   "merged_d500": true,
+   "relation": "yes",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": false
+  },
+  {
+   "name": "서울",
+   "a": "kr:I4108:1251",
+   "b": "kr:XGTXA:X106",
+   "distance_m": 149.0,
+   "merged": false,
+   "basis": "official_no",
+   "merged_d500": true,
+   "relation": "no",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": true
   },
   {
    "name": "석계",
@@ -1600,6 +1717,19 @@
    "changed": false
   },
   {
+   "name": "성남",
+   "a": "kr:I41K5:1512",
+   "b": "kr:XGTXA:X109",
+   "distance_m": 109.4,
+   "merged": true,
+   "basis": "official_yes",
+   "merged_d500": true,
+   "relation": "yes",
+   "status_a": "unknown",
+   "status_b": "listed",
+   "changed": false
+  },
+  {
    "name": "성신여대입구",
    "a": "kr:I1104:0418",
    "b": "kr:L11UI:S120",
@@ -1650,6 +1780,32 @@
    "status_a": "listed",
    "status_b": "listed",
    "changed": false
+  },
+  {
+   "name": "수서",
+   "a": "kr:I1103:0349",
+   "b": "kr:XGTXA:X108",
+   "distance_m": 61.8,
+   "merged": true,
+   "basis": "official_yes",
+   "merged_d500": true,
+   "relation": "yes",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": false
+  },
+  {
+   "name": "수서",
+   "a": "kr:I4105:1030",
+   "b": "kr:XGTXA:X108",
+   "distance_m": 105.7,
+   "merged": false,
+   "basis": "official_no",
+   "merged_d500": true,
+   "relation": "no",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": true
   },
   {
    "name": "수영",
@@ -2020,6 +2176,32 @@
    "a": "kr:I1103:0321",
    "b": "kr:S1106:0614",
    "distance_m": 102.7,
+   "merged": true,
+   "basis": "official_yes",
+   "merged_d500": true,
+   "relation": "yes",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": false
+  },
+  {
+   "name": "연신내",
+   "a": "kr:I1103:0321",
+   "b": "kr:XGTXA:X105",
+   "distance_m": 49.7,
+   "merged": true,
+   "basis": "official_yes",
+   "merged_d500": true,
+   "relation": "yes",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": false
+  },
+  {
+   "name": "연신내",
+   "a": "kr:S1106:0614",
+   "b": "kr:XGTXA:X105",
+   "distance_m": 57.7,
    "merged": true,
    "basis": "official_yes",
    "merged_d500": true,
@@ -3038,6 +3220,45 @@
    "changed": true
   },
   {
+   "name": "서울",
+   "a": "kr:I28A1:A01",
+   "b": "kr:XGTXA:X106",
+   "distance_m": 406.5,
+   "merged": false,
+   "basis": "official_no",
+   "merged_d500": true,
+   "relation": "no",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": true
+  },
+  {
+   "name": "서울",
+   "a": "kr:I4108:1251",
+   "b": "kr:XGTXA:X106",
+   "distance_m": 149.0,
+   "merged": false,
+   "basis": "official_no",
+   "merged_d500": true,
+   "relation": "no",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": true
+  },
+  {
+   "name": "수서",
+   "a": "kr:I4105:1030",
+   "b": "kr:XGTXA:X108",
+   "distance_m": 105.7,
+   "merged": false,
+   "basis": "official_no",
+   "merged_d500": true,
+   "relation": "no",
+   "status_a": "listed",
+   "status_b": "listed",
+   "changed": true
+  },
+  {
    "name": "신설동",
    "a": "kr:L11UI:S122",
    "b": "kr:S1121:2114",
@@ -3063,24 +3284,24 @@
  "portals_removed": [],
  "metrics": {
   "distance_only_D500": {
-   "clusters": 937,
-   "multi": 134,
+   "clusters": 940,
+   "multi": 136,
    "portals": 29,
    "portal_links": 60,
    "dia_w": 67,
-   "mean_w": 18.331,
+   "mean_w": 17.757,
    "comp_n": 5,
-   "dia_n": 72
+   "dia_n": 70
   },
   "official_first": {
-   "clusters": 938,
-   "multi": 133,
+   "clusters": 941,
+   "multi": 135,
    "portals": 30,
    "portal_links": 62,
    "dia_w": 67,
-   "mean_w": 18.347,
+   "mean_w": 17.77,
    "comp_n": 5,
-   "dia_n": 72
+   "dia_n": 70
   }
  },
  "unknown_status": [

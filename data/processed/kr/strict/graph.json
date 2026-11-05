@@ -1125,7 +1125,16 @@
   "kr:S3001:121",
   "kr:S3001:122",
   "kr:S4108:804",
-  "kr:S4108:805"
+  "kr:S4108:805",
+  "kr:XGTXA:X101",
+  "kr:XGTXA:X102",
+  "kr:XGTXA:X103",
+  "kr:XGTXA:X105",
+  "kr:XGTXA:X106",
+  "kr:XGTXA:X108",
+  "kr:XGTXA:X109",
+  "kr:XGTXA:X110",
+  "kr:XGTXA:X111"
  ],
  "edges": [
   [
@@ -1262,6 +1271,13 @@
    "T1"
   ],
   [
+   "P:T1:대곡",
+   "kr:XGTXA:X103",
+   0,
+   "warp_out",
+   "T1"
+  ],
+  [
    "P:T1:동래",
    "kr:I26K6:8005",
    0,
@@ -1990,6 +2006,13 @@
    "연신내#1"
   ],
   [
+   "kr:I1103:0321",
+   "kr:XGTXA:X105",
+   0,
+   "transfer",
+   "연신내#1"
+  ],
+  [
    "kr:I1103:0322",
    "kr:I1103:0321",
    1,
@@ -2487,6 +2510,13 @@
    "수서#1"
   ],
   [
+   "kr:I1103:0349",
+   "kr:XGTXA:X108",
+   0,
+   "transfer",
+   "수서#1"
+  ],
+  [
    "kr:I1103:0350",
    "kr:I1103:0349",
    1,
@@ -2853,6 +2883,13 @@
   [
    "kr:I1104:0426",
    "kr:I4108:1251",
+   0,
+   "transfer",
+   "서울#1"
+  ],
+  [
+   "kr:I1104:0426",
+   "kr:XGTXA:X106",
    0,
    "transfer",
    "서울#1"
@@ -3777,6 +3814,13 @@
   [
    "kr:I28A1:A01",
    "kr:I4108:1251",
+   0,
+   "transfer",
+   "서울#1"
+  ],
+  [
+   "kr:I28A1:A01",
+   "kr:XGTXA:X106",
    0,
    "transfer",
    "서울#1"
@@ -4715,6 +4759,13 @@
   [
    "kr:I4101:0133",
    "kr:I4108:1251",
+   0,
+   "transfer",
+   "서울#1"
+  ],
+  [
+   "kr:I4101:0133",
+   "kr:XGTXA:X106",
    0,
    "transfer",
    "서울#1"
@@ -6456,6 +6507,13 @@
    "suin-bundang"
   ],
   [
+   "kr:I4105:1030",
+   "kr:XGTXA:X108",
+   0,
+   "transfer",
+   "수서#1"
+  ],
+  [
    "kr:I4105:1031",
    "kr:I4105:1030",
    1,
@@ -6785,6 +6843,13 @@
    "suin-bundang"
   ],
   [
+   "kr:I4105:1863",
+   "kr:XGTXA:X110",
+   0,
+   "transfer",
+   "구성#1"
+  ],
+  [
    "kr:I4105:1864",
    "kr:I4105:1863",
    1,
@@ -7025,6 +7090,13 @@
   [
    "kr:I4106:1953",
    "kr:I41WS:1953",
+   0,
+   "transfer",
+   "대곡#2"
+  ],
+  [
+   "kr:I4106:1953",
+   "kr:XGTXA:X103",
    0,
    "transfer",
    "대곡#2"
@@ -7469,6 +7541,13 @@
    1,
    "ride",
    "gyeongui-jungang"
+  ],
+  [
+   "kr:I4108:1251",
+   "kr:XGTXA:X106",
+   0,
+   "transfer",
+   "서울#1"
   ],
   [
    "kr:I4108:1252",
@@ -7970,6 +8049,13 @@
   [
    "kr:I4108:1953",
    "kr:I41WS:1953",
+   0,
+   "transfer",
+   "대곡#2"
+  ],
+  [
+   "kr:I4108:1953",
+   "kr:XGTXA:X103",
    0,
    "transfer",
    "대곡#2"
@@ -8584,6 +8670,13 @@
    "gyeonggang"
   ],
   [
+   "kr:I41K5:1512",
+   "kr:XGTXA:X109",
+   0,
+   "transfer",
+   "성남#1"
+  ],
+  [
    "kr:I41WS:1271",
    "kr:I4108:1271",
    0,
@@ -8715,6 +8808,13 @@
    1,
    "ride",
    "seohae"
+  ],
+  [
+   "kr:I41WS:1953",
+   "kr:XGTXA:X103",
+   0,
+   "transfer",
+   "대곡#2"
   ],
   [
    "kr:I41WS:1980",
@@ -12369,6 +12469,13 @@
    1,
    "ride",
    "seoul-6"
+  ],
+  [
+   "kr:S1106:0614",
+   "kr:XGTXA:X105",
+   0,
+   "transfer",
+   "연신내#1"
   ],
   [
    "kr:S1106:0615",
@@ -19397,6 +19504,202 @@
    1,
    "ride",
    "seoul-8"
+  ],
+  [
+   "kr:XGTXA:X101",
+   "kr:XGTXA:X102",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X102",
+   "kr:XGTXA:X101",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X102",
+   "kr:XGTXA:X103",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X103",
+   "P:T1:대곡",
+   1,
+   "warp_in",
+   "T1"
+  ],
+  [
+   "kr:XGTXA:X103",
+   "kr:I4106:1953",
+   0,
+   "transfer",
+   "대곡#2"
+  ],
+  [
+   "kr:XGTXA:X103",
+   "kr:I4108:1953",
+   0,
+   "transfer",
+   "대곡#2"
+  ],
+  [
+   "kr:XGTXA:X103",
+   "kr:I41WS:1953",
+   0,
+   "transfer",
+   "대곡#2"
+  ],
+  [
+   "kr:XGTXA:X103",
+   "kr:XGTXA:X102",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X103",
+   "kr:XGTXA:X105",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X105",
+   "kr:I1103:0321",
+   0,
+   "transfer",
+   "연신내#1"
+  ],
+  [
+   "kr:XGTXA:X105",
+   "kr:S1106:0614",
+   0,
+   "transfer",
+   "연신내#1"
+  ],
+  [
+   "kr:XGTXA:X105",
+   "kr:XGTXA:X103",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X105",
+   "kr:XGTXA:X106",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X106",
+   "kr:I1104:0426",
+   0,
+   "transfer",
+   "서울#1"
+  ],
+  [
+   "kr:XGTXA:X106",
+   "kr:I28A1:A01",
+   0,
+   "transfer",
+   "서울#1"
+  ],
+  [
+   "kr:XGTXA:X106",
+   "kr:I4101:0133",
+   0,
+   "transfer",
+   "서울#1"
+  ],
+  [
+   "kr:XGTXA:X106",
+   "kr:I4108:1251",
+   0,
+   "transfer",
+   "서울#1"
+  ],
+  [
+   "kr:XGTXA:X106",
+   "kr:XGTXA:X105",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X108",
+   "kr:I1103:0349",
+   0,
+   "transfer",
+   "수서#1"
+  ],
+  [
+   "kr:XGTXA:X108",
+   "kr:I4105:1030",
+   0,
+   "transfer",
+   "수서#1"
+  ],
+  [
+   "kr:XGTXA:X108",
+   "kr:XGTXA:X109",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X109",
+   "kr:I41K5:1512",
+   0,
+   "transfer",
+   "성남#1"
+  ],
+  [
+   "kr:XGTXA:X109",
+   "kr:XGTXA:X108",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X109",
+   "kr:XGTXA:X110",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X110",
+   "kr:I4105:1863",
+   0,
+   "transfer",
+   "구성#1"
+  ],
+  [
+   "kr:XGTXA:X110",
+   "kr:XGTXA:X109",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X110",
+   "kr:XGTXA:X111",
+   1,
+   "ride",
+   "gtx-a"
+  ],
+  [
+   "kr:XGTXA:X111",
+   "kr:XGTXA:X110",
+   1,
+   "ride",
+   "gtx-a"
   ]
  ]
 }
