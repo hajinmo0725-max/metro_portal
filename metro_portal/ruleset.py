@@ -78,7 +78,7 @@ def validate(rs: dict) -> None:
             if k not in rs[section]:
                 raise RulesetError(f"missing key: {section}.{k}")
     for tier, spec in rs["portals"].items():
-        if tier == "hub_degree_cap":
+        if not tier.startswith("T"):
             continue
         if "enabled" not in spec or "cost" not in spec:
             raise RulesetError(f"portal tier {tier} needs enabled and cost")

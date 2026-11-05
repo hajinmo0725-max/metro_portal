@@ -7,11 +7,30 @@ from . import ROOT
 from .graph import build_clusters, build_graph, build_portals
 
 PROC = ROOT / "data" / "processed" / "kr"
+COUNTRY_DIRS = {"KR": ROOT / "data" / "processed" / "kr", "TW": ROOT / "data" / "processed" / "tw"}
 
 
 def load_base():
     ld = lambda n: json.loads((PROC / n).read_text(encoding="utf-8"))  # noqa: E731
     return ld("stations.json")["stations"], ld("ride_edges.json")["edges"], ld("lines.json")["lines"]
+
+
+def load_multi(countries=("KR", "TW")):
+    """여러 나라 데이터를 한 그래프 입력으로 합친다 (Phase 1). 역에 country를 붙인다. id는 kr:/tw: 접두어로 겹치지 않는다."""
+    S, E, L = [], [], []
+    for cc in countries:
+        d = COUNTRY_DIRS[cc]
+        ld = lambda n: json.loads((d / n).read_text(encoding="utf-8"))  # noqa: E731
+        for s in ld("stations.json")["stations"]:
+            s.setdefault("country", cc)
+            S.append(s)
+        E += ld("ride_edges.json")["edges"]
+        for ln in ld("lines.json")["lines"]:
+            ln.setdefault("country", cc)
+            L.append(ln)
+    ids = [s["id"] for s in S]
+    assert len(ids) == len(set(ids)), "역 id 중복"
+    return S, E, L
 
 
 def assign_cities(stations, lines):
@@ -30,8 +49,10 @@ def build_world(stations, edges, lines, rs):
     assign_cities(stations, lines)
     clusters = build_clusters(stations, rs)
     scity = {s["id"]: s["city"] for s in stations}
+    sctry = {s["id"]: s.get("country", "KR") for s in stations}
     for c in clusters:
         c["cities"] = sorted({scity[x] for x in c["station_ids"]})
+        c["countries"] = sorted({sctry[x] for x in c["station_ids"]})
     portals, capped = build_portals(stations, clusters, rs)
     adj = build_graph(stations, edges, clusters, portals, rs)
     return {"stations": stations, "edges": edges, "lines": lines, "clusters": clusters,

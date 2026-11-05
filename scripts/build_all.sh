@@ -22,5 +22,9 @@ python3 pipeline/10_build_game_data.py --ruleset "$RS" > /dev/null
 python3 pipeline/11_fun_facts.py --ruleset "$RS" > /dev/null
 # 환승 판정 감사 (3차 A3 공식 우선 vs D=500, A4 좌표 복사)
 python3 pipeline/12_audit_transfers.py --ruleset "$RS" > /dev/null
+# Phase 1 타이베이 (Wikidata 캐시가 없으면 받아 온다), Unihan, 한국+타이베이 ruleset 비교
+python3 pipeline/14_fetch_tw_wikidata.py > /dev/null
+python3 pipeline/15_build_tw.py > /dev/null
+python3 pipeline/16_fetch_unihan.py > /dev/null
 python3 -m pytest -q
 npm test --silent
