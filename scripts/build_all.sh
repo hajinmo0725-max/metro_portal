@@ -12,5 +12,8 @@ python3 pipeline/04_build_graph.py --ruleset "$RS" > /dev/null
 if [ "$RS" = "strict" ]; then python3 pipeline/04_build_graph.py --ruleset strict_transfer1 > /dev/null; fi
 python3 pipeline/05_route.py --ruleset "$RS" --examples > /dev/null
 python3 pipeline/06_build_web_data.py --ruleset "$RS"
+# 노선 순서·좌표 검증 (Wikidata 캐시가 없으면 받아 온다). PNG까지 약 1분
+python3 pipeline/07_fetch_wikidata.py > /dev/null
+python3 pipeline/08_validate_lines.py > /dev/null
 python3 -m pytest -q
 npm test --silent

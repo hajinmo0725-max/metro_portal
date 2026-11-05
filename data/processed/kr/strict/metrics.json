@@ -2,41 +2,41 @@
  "ruleset": "strict",
  "counts": {
   "stations": 1091,
-  "clusters": 936,
+  "clusters": 937,
   "lines": 45,
-  "sequences": 49,
-  "ride_edges": 1055,
+  "sequences": 50,
+  "ride_edges": 1056,
   "transfer_clusters_multi": 134,
-  "portals_total": 28,
+  "portals_total": 29,
   "portals_by_tier": {
-   "T1": 28
+   "T1": 29
   },
-  "portal_links": 58,
-  "routing_nodes": 1119,
-  "routing_edges": 2606
+  "portal_links": 60,
+  "routing_nodes": 1120,
+  "routing_edges": 2610
  },
  "with_warp": {
   "components": 1,
   "largest_component_ratio": 1.0,
-  "largest_component_size": 936,
+  "largest_component_size": 937,
   "diameter": {
    "value": 68,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 18.369
+   "mean_cost": 18.366
   }
  },
  "without_warp": {
   "components": 5,
-  "largest_component_ratio": 0.6966,
+  "largest_component_ratio": 0.6958,
   "largest_component_size": 652,
   "diameter": {
    "value": 71,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 21.484
+   "mean_cost": 21.482
   },
   "component_list": [
    {
@@ -97,9 +97,9 @@
     "joins_giant_with_warp": true
    },
    {
-    "size": 145,
+    "size": 146,
     "regions": {
-     "부산": 145
+     "부산": 146
     },
     "lines": [
      "I26K6:동해선",
@@ -262,6 +262,15 @@
    ]
   },
   {
+   "name": "동래",
+   "tier": "T1",
+   "degree": 2,
+   "clusters": [
+    "동래#1",
+    "동래#2"
+   ]
+  },
+  {
    "name": "동백",
    "tier": "T1",
    "degree": 2,
@@ -359,22 +368,13 @@
     "운천#1",
     "운천#2"
    ]
-  },
-  {
-   "name": "월드컵경기장",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "월드컵경기장#1",
-    "월드컵경기장#2"
-   ]
   }
  ],
  "isolated_without_warp": [
   {
-   "size": 145,
+   "size": 146,
    "regions": {
-    "부산": 145
+    "부산": 146
    },
    "lines": [
     "I26K6:동해선",

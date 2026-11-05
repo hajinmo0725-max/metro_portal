@@ -96,6 +96,14 @@ class StationIndex:
             cands = [c for c in cands if any(city in x for x in c.get("cities", []) + c.get("regions", []))]
         return sorted(cands, key=lambda c: c["id"])
 
+    @staticmethod
+    def city_multi_ok(query: str, cands) -> bool:
+        """도시 접두어가 있는 질의에서 후보가 여럿이고 모두 같은 도시면 전부를 출발/도착 후보로 써도 된다."""
+        if len(query.split()) < 2 or len(cands) < 2:
+            return False
+        cities = {tuple(c.get("cities") or c.get("regions") or []) for c in cands}
+        return len(cities) == 1
+
 
 def describe(path, idx: StationIndex, lines_by_id, portals_by_id):
     """경로를 사람이 읽는 구간 목록으로 묶는다."""

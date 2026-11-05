@@ -7,8 +7,8 @@
 | 항목 | 값 |
 | :- | -: |
 | lines | 45 |
-| sequences | 49 |
-| ride_edges | 1055 |
+| sequences | 50 |
+| ride_edges | 1056 |
 | stations | 1091 |
 | stations_sequenced | 1090 |
 | stop_failures | 0 |
@@ -89,7 +89,7 @@ pool = 이 노선에 속한 표준데이터 역 수, sequenced = 시퀀스에 �
 | busan-gimhae | 부산김해경전철 | 21 | 21 | 21 | 1 | 20 |
 | seoul-2 | 2호선 | 43 | 43 | 43 | 1 | 43 |
 | seoul-5 | 5호선 | 56 | 56 | 56 | 2 | 55 |
-| seoul-6 | 6호선 | 39 | 39 | 39 | 1 | 38 |
+| seoul-6 | 6호선 | 39 | 39 | 39 | 2 | 39 |
 | seoul-7-incheon | 7호선 (인천 구간) | 11 | 12 | 11 | 1 | 11 |
 | seoul-7 | 7호선 | 42 | 42 | 42 | 1 | 41 |
 | seoul-8 | 8호선 | 22 | 24 | 22 | 1 | 23 |
@@ -116,6 +116,7 @@ pool = 이 노선에 속한 표준데이터 역 수, sequenced = 시퀀스에 �
 | kr:I4108:1204 | 양원역 | 189462 |
 | kr:S1105:0514 | 마곡 | 1027 |
 | kr:I1104:0430 | 이촌(국립중앙박물관) | 879 |
+| kr:I26K6:8005 | 동래역 | 1395 |
 
 ### 노선 보정 (config/kr_lines.yaml)
 
@@ -131,6 +132,7 @@ pool = 이 노선에 속한 표준데이터 역 수, sequenced = 시퀀스에 �
 | seoul-4-jinjeop | I4104 진접선 | patch |
 | seoul-4-ansan | I4103 안산·과천선 | patch |
 | seoul-5 | S1105 수도권 도시철도 5호선 | branches, patch |
+| seoul-6 | S1106 수도권 도시철도 6호선 | branches, patch |
 | seoul-7 | S1107 수도권 도시철도 7호선 | pools |
 | seoul-7-incheon | S1107 도시철도 7호선 | patch, pools |
 | seoul-8 | S1108 수도권 도시철도 8호선 | patch |

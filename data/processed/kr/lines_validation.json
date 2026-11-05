@@ -489,8 +489,8 @@
    "pool": 39,
    "sequenced": 39,
    "from_pool": 39,
-   "sequences": 1,
-   "edges": 38
+   "sequences": 2,
+   "edges": 39
   },
   {
    "line": "seoul-7-incheon",
@@ -639,8 +639,8 @@
  ],
  "totals": {
   "lines": 45,
-  "sequences": 49,
-  "ride_edges": 1055,
+  "sequences": 50,
+  "ride_edges": 1056,
   "stations": 1091,
   "stations_sequenced": 1090,
   "stop_failures": 0,
@@ -662,6 +662,11 @@
    "id": "kr:I1104:0430",
    "name": "이촌(국립중앙박물관)",
    "moved_m": 879.4
+  },
+  {
+   "id": "kr:I26K6:8005",
+   "name": "동래역",
+   "moved_m": 1395.3
   }
  ],
  "patched_lines": [
@@ -733,6 +738,14 @@
   {
    "id": "seoul-5",
    "source": "S1105 수도권 도시철도 5호선",
+   "ops": [
+    "branches",
+    "patch"
+   ]
+  },
+  {
+   "id": "seoul-6",
+   "source": "S1106 수도권 도시철도 6호선",
    "ops": [
     "branches",
     "patch"
