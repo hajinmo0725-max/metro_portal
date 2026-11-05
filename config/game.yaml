@@ -17,6 +17,12 @@ puzzles:
   # 데일리 퍼즐 순서 셔플 시드와 1번 퍼즐 날짜 (웹은 날짜 차이로 순서를 고른다)
   daily_seed: 20261105
   daily_epoch: "2026-11-05"
+  # 3차 추가: 난이도 보정 (직관 탐색 = 지리 감각 최선 우선 탐색, metro_portal/game.intuition_search).
+  # 선정·데일리 순서에는 안 쓰고 퍼즐에 주석으로만 단다 (적용은 사용자 결정).
+  # intuition_score = 최적 비용 / 직관 탐색이 찾은 비용. 아래 기준을 순서대로 검사해 처음 맞는 등급, 둘 다 아니면 hard
+  calibration:
+    easy_min_score: 1.0      # 직관 탐색이 최적 경로를 그대로 찾음
+    normal_min_score: 0.4    # 직관 탐색 비용이 최적의 2.5배 이내
 n_stops:
   N: 13
   top_k: 20

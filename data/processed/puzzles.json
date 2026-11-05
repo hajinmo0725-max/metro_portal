@@ -44,7 +44,23 @@
   "pool_shortcut_hard": 44150,
   "pool_crosscity_easy": 21661,
   "pool_crosscity_normal": 86063,
-  "pool_crosscity_hard": 124394
+  "pool_crosscity_hard": 124394,
+  "calibration": {
+   "easy->easy": 11,
+   "easy->normal": 3,
+   "easy->hard": 10,
+   "normal->easy": 3,
+   "normal->normal": 15,
+   "normal->hard": 22,
+   "hard->easy": 0,
+   "hard->normal": 20,
+   "hard->hard": 20
+  },
+  "calibration_expanded_median": {
+   "easy": 16.0,
+   "normal": 40.5,
+   "hard": 51.0
+  }
  },
  "daily_order": [
   "P012",
@@ -193,7 +209,11 @@
      "to": "양평#1"
     }
    ],
-   "id": "P001"
+   "id": "P001",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -235,7 +255,11 @@
      ]
     }
    ],
-   "id": "P002"
+   "id": "P002",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -277,7 +301,11 @@
      ]
     }
    ],
-   "id": "P003"
+   "id": "P003",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -319,7 +347,11 @@
      ]
     }
    ],
-   "id": "P004"
+   "id": "P004",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -361,7 +393,11 @@
      "to": "좌천#1"
     }
    ],
-   "id": "P005"
+   "id": "P005",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -403,7 +439,11 @@
      ]
     }
    ],
-   "id": "P006"
+   "id": "P006",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -445,7 +485,11 @@
      "to": "부전#2"
     }
    ],
-   "id": "P007"
+   "id": "P007",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -487,7 +531,11 @@
      "to": "부전#2"
     }
    ],
-   "id": "P008"
+   "id": "P008",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -529,7 +577,11 @@
      ]
     }
    ],
-   "id": "P009"
+   "id": "P009",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -619,7 +671,11 @@
      ]
     }
    ],
-   "id": "P010"
+   "id": "P010",
+   "intuition_cost": 9,
+   "intuition_expanded": 10,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -709,7 +765,11 @@
      ]
     }
    ],
-   "id": "P011"
+   "id": "P011",
+   "intuition_cost": 48,
+   "intuition_expanded": 85,
+   "intuition_score": 0.188,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -799,7 +859,11 @@
      ]
     }
    ],
-   "id": "P012"
+   "id": "P012",
+   "intuition_cost": 46,
+   "intuition_expanded": 83,
+   "intuition_score": 0.196,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -848,7 +912,11 @@
      "to": "중동#2"
     }
    ],
-   "id": "P013"
+   "id": "P013",
+   "intuition_cost": 37,
+   "intuition_expanded": 38,
+   "intuition_score": 0.108,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -905,7 +973,11 @@
      ]
     }
    ],
-   "id": "P014"
+   "id": "P014",
+   "intuition_cost": 38,
+   "intuition_expanded": 39,
+   "intuition_score": 0.132,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -962,7 +1034,11 @@
      ]
     }
    ],
-   "id": "P015"
+   "id": "P015",
+   "intuition_cost": 39,
+   "intuition_expanded": 40,
+   "intuition_score": 0.128,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1027,7 +1103,11 @@
      ]
     }
    ],
-   "id": "P016"
+   "id": "P016",
+   "intuition_cost": 40,
+   "intuition_expanded": 41,
+   "intuition_score": 0.15,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1108,7 +1188,11 @@
      ]
     }
    ],
-   "id": "P017"
+   "id": "P017",
+   "intuition_cost": 42,
+   "intuition_expanded": 48,
+   "intuition_score": 0.19,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1197,7 +1281,11 @@
      ]
     }
    ],
-   "id": "P018"
+   "id": "P018",
+   "intuition_cost": 42,
+   "intuition_expanded": 43,
+   "intuition_score": 0.214,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1246,7 +1334,11 @@
      "to": "용문#2"
     }
    ],
-   "id": "P019"
+   "id": "P019",
+   "intuition_cost": 38,
+   "intuition_expanded": 75,
+   "intuition_score": 0.105,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1303,7 +1395,11 @@
      ]
     }
    ],
-   "id": "P020"
+   "id": "P020",
+   "intuition_cost": 37,
+   "intuition_expanded": 89,
+   "intuition_score": 0.135,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1368,7 +1464,11 @@
      ]
     }
    ],
-   "id": "P021"
+   "id": "P021",
+   "intuition_cost": 10,
+   "intuition_expanded": 11,
+   "intuition_score": 0.6,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
@@ -1449,7 +1549,11 @@
      ]
     }
    ],
-   "id": "P022"
+   "id": "P022",
+   "intuition_cost": 48,
+   "intuition_expanded": 55,
+   "intuition_score": 0.167,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1538,7 +1642,11 @@
      ]
     }
    ],
-   "id": "P023"
+   "id": "P023",
+   "intuition_cost": 47,
+   "intuition_expanded": 54,
+   "intuition_score": 0.191,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1627,7 +1735,11 @@
      "to": "송정#2"
     }
    ],
-   "id": "P024"
+   "id": "P024",
+   "intuition_cost": 41,
+   "intuition_expanded": 42,
+   "intuition_score": 0.22,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1724,7 +1836,11 @@
      ]
     }
    ],
-   "id": "P025"
+   "id": "P025",
+   "intuition_cost": 48,
+   "intuition_expanded": 55,
+   "intuition_score": 0.208,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1829,7 +1945,11 @@
      "to": "중앙#2"
     }
    ],
-   "id": "P026"
+   "id": "P026",
+   "intuition_cost": 42,
+   "intuition_expanded": 48,
+   "intuition_score": 0.262,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1943,7 +2063,11 @@
      "to": "양정#2"
     }
    ],
-   "id": "P027"
+   "id": "P027",
+   "intuition_cost": 37,
+   "intuition_expanded": 38,
+   "intuition_score": 0.324,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -2056,7 +2180,11 @@
      ]
     }
    ],
-   "id": "P028"
+   "id": "P028",
+   "intuition_cost": 44,
+   "intuition_expanded": 47,
+   "intuition_score": 0.273,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -2169,7 +2297,11 @@
      "to": "중앙#2"
     }
    ],
-   "id": "P029"
+   "id": "P029",
+   "intuition_cost": 43,
+   "intuition_expanded": 51,
+   "intuition_score": 0.279,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -2291,7 +2423,11 @@
      ]
     }
    ],
-   "id": "P030"
+   "id": "P030",
+   "intuition_cost": 38,
+   "intuition_expanded": 39,
+   "intuition_score": 0.342,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -2412,7 +2548,11 @@
      ]
     }
    ],
-   "id": "P031"
+   "id": "P031",
+   "intuition_cost": 39,
+   "intuition_expanded": 40,
+   "intuition_score": 0.333,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -2485,7 +2625,11 @@
      ]
     }
    ],
-   "id": "P032"
+   "id": "P032",
+   "intuition_cost": 9,
+   "intuition_expanded": 10,
+   "intuition_score": 0.778,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
@@ -2575,7 +2719,11 @@
      ]
     }
    ],
-   "id": "P033"
+   "id": "P033",
+   "intuition_cost": 9,
+   "intuition_expanded": 10,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -2665,7 +2813,11 @@
      ]
     }
    ],
-   "id": "P034"
+   "id": "P034",
+   "intuition_cost": 9,
+   "intuition_expanded": 10,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -2776,7 +2928,11 @@
      "to": "운천#2"
     }
    ],
-   "id": "P035"
+   "id": "P035",
+   "intuition_cost": 28,
+   "intuition_expanded": 31,
+   "intuition_score": 0.429,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
@@ -2895,7 +3051,11 @@
      ]
     }
    ],
-   "id": "P036"
+   "id": "P036",
+   "intuition_cost": 29,
+   "intuition_expanded": 32,
+   "intuition_score": 0.448,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
@@ -3014,7 +3174,11 @@
      ]
     }
    ],
-   "id": "P037"
+   "id": "P037",
+   "intuition_cost": 54,
+   "intuition_expanded": 91,
+   "intuition_score": 0.241,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -3141,7 +3305,11 @@
      ]
     }
    ],
-   "id": "P038"
+   "id": "P038",
+   "intuition_cost": 55,
+   "intuition_expanded": 92,
+   "intuition_score": 0.255,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -3268,7 +3436,11 @@
      ]
     }
    ],
-   "id": "P039"
+   "id": "P039",
+   "intuition_cost": 51,
+   "intuition_expanded": 103,
+   "intuition_score": 0.275,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -3412,7 +3584,11 @@
      "to": "중앙#2"
     }
    ],
-   "id": "P040"
+   "id": "P040",
+   "intuition_cost": 22,
+   "intuition_expanded": 27,
+   "intuition_score": 0.727,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
@@ -3549,7 +3725,11 @@
      ]
     }
    ],
-   "id": "P041"
+   "id": "P041",
+   "intuition_cost": 49,
+   "intuition_expanded": 56,
+   "intuition_score": 0.306,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -3686,7 +3866,11 @@
      ]
     }
    ],
-   "id": "P042"
+   "id": "P042",
+   "intuition_cost": 50,
+   "intuition_expanded": 63,
+   "intuition_score": 0.3,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -3823,7 +4007,11 @@
      ]
     }
    ],
-   "id": "P043"
+   "id": "P043",
+   "intuition_cost": 48,
+   "intuition_expanded": 52,
+   "intuition_score": 0.312,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -3960,7 +4148,11 @@
      ]
     }
    ],
-   "id": "P044"
+   "id": "P044",
+   "intuition_cost": 48,
+   "intuition_expanded": 52,
+   "intuition_score": 0.312,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -4097,7 +4289,11 @@
      "to": "동백#2"
     }
    ],
-   "id": "P045"
+   "id": "P045",
+   "intuition_cost": 48,
+   "intuition_expanded": 51,
+   "intuition_score": 0.312,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -4234,7 +4430,11 @@
      ]
     }
    ],
-   "id": "P046"
+   "id": "P046",
+   "intuition_cost": 48,
+   "intuition_expanded": 50,
+   "intuition_score": 0.312,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -4386,7 +4586,11 @@
      "to": "중앙#2"
     }
    ],
-   "id": "P047"
+   "id": "P047",
+   "intuition_cost": 21,
+   "intuition_expanded": 26,
+   "intuition_score": 0.81,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
@@ -4547,7 +4751,11 @@
      ]
     }
    ],
-   "id": "P048"
+   "id": "P048",
+   "intuition_cost": 54,
+   "intuition_expanded": 84,
+   "intuition_score": 0.333,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -4716,7 +4924,11 @@
      ]
     }
    ],
-   "id": "P049"
+   "id": "P049",
+   "intuition_cost": 50,
+   "intuition_expanded": 69,
+   "intuition_score": 0.38,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -4854,7 +5066,11 @@
      ]
     }
    ],
-   "id": "P050"
+   "id": "P050",
+   "intuition_cost": 43,
+   "intuition_expanded": 62,
+   "intuition_score": 0.349,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -4982,7 +5198,11 @@
      ]
     }
    ],
-   "id": "P051"
+   "id": "P051",
+   "intuition_cost": 50,
+   "intuition_expanded": 123,
+   "intuition_score": 0.28,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -5119,7 +5339,11 @@
      ]
     }
    ],
-   "id": "P052"
+   "id": "P052",
+   "intuition_cost": 47,
+   "intuition_expanded": 51,
+   "intuition_score": 0.319,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -5256,7 +5480,11 @@
      ]
     }
    ],
-   "id": "P053"
+   "id": "P053",
+   "intuition_cost": 51,
+   "intuition_expanded": 52,
+   "intuition_score": 0.294,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -5393,7 +5621,11 @@
      ]
     }
    ],
-   "id": "P054"
+   "id": "P054",
+   "intuition_cost": 55,
+   "intuition_expanded": 57,
+   "intuition_score": 0.273,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -5538,7 +5770,11 @@
      ]
     }
    ],
-   "id": "P055"
+   "id": "P055",
+   "intuition_cost": 54,
+   "intuition_expanded": 56,
+   "intuition_score": 0.296,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -5683,7 +5919,11 @@
      ]
     }
    ],
-   "id": "P056"
+   "id": "P056",
+   "intuition_cost": 42,
+   "intuition_expanded": 45,
+   "intuition_score": 0.381,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -5821,7 +6061,11 @@
      ]
     }
    ],
-   "id": "P057"
+   "id": "P057",
+   "intuition_cost": 37,
+   "intuition_expanded": 39,
+   "intuition_score": 0.405,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
@@ -5959,7 +6203,11 @@
      ]
     }
    ],
-   "id": "P058"
+   "id": "P058",
+   "intuition_cost": 41,
+   "intuition_expanded": 60,
+   "intuition_score": 0.366,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -6096,7 +6344,11 @@
      ]
     }
    ],
-   "id": "P059"
+   "id": "P059",
+   "intuition_cost": 39,
+   "intuition_expanded": 40,
+   "intuition_score": 0.385,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6178,7 +6430,11 @@
      ]
     }
    ],
-   "id": "P060"
+   "id": "P060",
+   "intuition_cost": 31,
+   "intuition_expanded": 41,
+   "intuition_score": 0.258,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6260,7 +6516,11 @@
      ]
     }
    ],
-   "id": "P061"
+   "id": "P061",
+   "intuition_cost": 35,
+   "intuition_expanded": 45,
+   "intuition_score": 0.229,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6342,7 +6602,11 @@
      "to": "용산#1"
     }
    ],
-   "id": "P062"
+   "id": "P062",
+   "intuition_cost": 43,
+   "intuition_expanded": 82,
+   "intuition_score": 0.186,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6424,7 +6688,11 @@
      ]
     }
    ],
-   "id": "P063"
+   "id": "P063",
+   "intuition_cost": 55,
+   "intuition_expanded": 133,
+   "intuition_score": 0.145,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6506,7 +6774,11 @@
      ]
     }
    ],
-   "id": "P064"
+   "id": "P064",
+   "intuition_cost": 40,
+   "intuition_expanded": 41,
+   "intuition_score": 0.2,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6589,7 +6861,11 @@
      ]
     }
    ],
-   "id": "P065"
+   "id": "P065",
+   "intuition_cost": 61,
+   "intuition_expanded": 92,
+   "intuition_score": 0.131,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6671,7 +6947,11 @@
      ]
     }
    ],
-   "id": "P066"
+   "id": "P066",
+   "intuition_cost": 34,
+   "intuition_expanded": 35,
+   "intuition_score": 0.235,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6753,7 +7033,11 @@
      "to": "고촌#1"
     }
    ],
-   "id": "P067"
+   "id": "P067",
+   "intuition_cost": 30,
+   "intuition_expanded": 48,
+   "intuition_score": 0.267,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6835,7 +7119,11 @@
      "to": "송정#1"
     }
    ],
-   "id": "P068"
+   "id": "P068",
+   "intuition_cost": 15,
+   "intuition_expanded": 18,
+   "intuition_score": 0.533,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -6917,7 +7205,11 @@
      ]
     }
    ],
-   "id": "P069"
+   "id": "P069",
+   "intuition_cost": 30,
+   "intuition_expanded": 81,
+   "intuition_score": 0.267,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6999,7 +7291,11 @@
      ]
     }
    ],
-   "id": "P070"
+   "id": "P070",
+   "intuition_cost": 13,
+   "intuition_expanded": 14,
+   "intuition_score": 0.615,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -7081,7 +7377,11 @@
      ]
     }
    ],
-   "id": "P071"
+   "id": "P071",
+   "intuition_cost": 28,
+   "intuition_expanded": 38,
+   "intuition_score": 0.286,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -7164,7 +7464,11 @@
      "to": "동천#1"
     }
    ],
-   "id": "P072"
+   "id": "P072",
+   "intuition_cost": 10,
+   "intuition_expanded": 20,
+   "intuition_score": 0.8,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -7246,7 +7550,11 @@
      "to": "금곡#1"
     }
    ],
-   "id": "P073"
+   "id": "P073",
+   "intuition_cost": 8,
+   "intuition_expanded": 9,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "crosscity",
@@ -7328,7 +7636,11 @@
      ]
     }
    ],
-   "id": "P074"
+   "id": "P074",
+   "intuition_cost": 8,
+   "intuition_expanded": 9,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "crosscity",
@@ -7458,7 +7770,11 @@
      ]
     }
    ],
-   "id": "P075"
+   "id": "P075",
+   "intuition_cost": 28,
+   "intuition_expanded": 137,
+   "intuition_score": 0.5,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -7587,7 +7903,11 @@
      ]
     }
    ],
-   "id": "P076"
+   "id": "P076",
+   "intuition_cost": 57,
+   "intuition_expanded": 110,
+   "intuition_score": 0.246,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -7716,7 +8036,11 @@
      ]
     }
    ],
-   "id": "P077"
+   "id": "P077",
+   "intuition_cost": 32,
+   "intuition_expanded": 84,
+   "intuition_score": 0.438,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -7845,7 +8169,11 @@
      ]
     }
    ],
-   "id": "P078"
+   "id": "P078",
+   "intuition_cost": 32,
+   "intuition_expanded": 33,
+   "intuition_score": 0.438,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -7975,7 +8303,11 @@
      ]
     }
    ],
-   "id": "P079"
+   "id": "P079",
+   "intuition_cost": 42,
+   "intuition_expanded": 43,
+   "intuition_score": 0.333,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -8104,7 +8436,11 @@
      ]
     }
    ],
-   "id": "P080"
+   "id": "P080",
+   "intuition_cost": 24,
+   "intuition_expanded": 25,
+   "intuition_score": 0.583,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -8233,7 +8569,11 @@
      ]
     }
    ],
-   "id": "P081"
+   "id": "P081",
+   "intuition_cost": 29,
+   "intuition_expanded": 30,
+   "intuition_score": 0.483,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -8362,7 +8702,11 @@
      ]
     }
    ],
-   "id": "P082"
+   "id": "P082",
+   "intuition_cost": 31,
+   "intuition_expanded": 32,
+   "intuition_score": 0.452,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -8491,7 +8835,11 @@
      "to": "구암#1"
     }
    ],
-   "id": "P083"
+   "id": "P083",
+   "intuition_cost": 34,
+   "intuition_expanded": 40,
+   "intuition_score": 0.412,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -8620,7 +8968,11 @@
      "to": "좌천#1"
     }
    ],
-   "id": "P084"
+   "id": "P084",
+   "intuition_cost": 29,
+   "intuition_expanded": 30,
+   "intuition_score": 0.483,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -8749,7 +9101,11 @@
      ]
     }
    ],
-   "id": "P085"
+   "id": "P085",
+   "intuition_cost": 16,
+   "intuition_expanded": 17,
+   "intuition_score": 0.875,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -8878,7 +9234,11 @@
      ]
     }
    ],
-   "id": "P086"
+   "id": "P086",
+   "intuition_cost": 20,
+   "intuition_expanded": 27,
+   "intuition_score": 0.7,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -9008,7 +9368,11 @@
      ]
     }
    ],
-   "id": "P087"
+   "id": "P087",
+   "intuition_cost": 23,
+   "intuition_expanded": 132,
+   "intuition_score": 0.609,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -9137,7 +9501,11 @@
      ]
     }
    ],
-   "id": "P088"
+   "id": "P088",
+   "intuition_cost": 31,
+   "intuition_expanded": 49,
+   "intuition_score": 0.452,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -9266,7 +9634,11 @@
      ]
     }
    ],
-   "id": "P089"
+   "id": "P089",
+   "intuition_cost": 25,
+   "intuition_expanded": 26,
+   "intuition_score": 0.56,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -9440,7 +9812,11 @@
      ]
     }
    ],
-   "id": "P090"
+   "id": "P090",
+   "intuition_cost": 37,
+   "intuition_expanded": 40,
+   "intuition_score": 0.541,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -9606,7 +9982,11 @@
      ]
     }
    ],
-   "id": "P091"
+   "id": "P091",
+   "intuition_cost": 38,
+   "intuition_expanded": 41,
+   "intuition_score": 0.5,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -9772,7 +10152,11 @@
      ]
     }
    ],
-   "id": "P092"
+   "id": "P092",
+   "intuition_cost": 36,
+   "intuition_expanded": 39,
+   "intuition_score": 0.528,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -9930,7 +10314,11 @@
      ]
     }
    ],
-   "id": "P093"
+   "id": "P093",
+   "intuition_cost": 31,
+   "intuition_expanded": 32,
+   "intuition_score": 0.581,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -10080,7 +10468,11 @@
      ]
     }
    ],
-   "id": "P094"
+   "id": "P094",
+   "intuition_cost": 28,
+   "intuition_expanded": 39,
+   "intuition_score": 0.607,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -10230,7 +10622,11 @@
      ]
     }
    ],
-   "id": "P095"
+   "id": "P095",
+   "intuition_cost": 28,
+   "intuition_expanded": 39,
+   "intuition_score": 0.607,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -10437,7 +10833,11 @@
      ]
     }
    ],
-   "id": "P096"
+   "id": "P096",
+   "intuition_cost": 28,
+   "intuition_expanded": 65,
+   "intuition_score": 0.857,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -10644,7 +11044,11 @@
      ]
     }
    ],
-   "id": "P097"
+   "id": "P097",
+   "intuition_cost": 34,
+   "intuition_expanded": 73,
+   "intuition_score": 0.706,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -10851,7 +11255,11 @@
      ]
     }
    ],
-   "id": "P098"
+   "id": "P098",
+   "intuition_cost": 42,
+   "intuition_expanded": 84,
+   "intuition_score": 0.571,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -11058,7 +11466,11 @@
      ]
     }
    ],
-   "id": "P099"
+   "id": "P099",
+   "intuition_cost": 54,
+   "intuition_expanded": 59,
+   "intuition_score": 0.444,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -11265,7 +11677,11 @@
      ]
     }
    ],
-   "id": "P100"
+   "id": "P100",
+   "intuition_cost": 43,
+   "intuition_expanded": 47,
+   "intuition_score": 0.558,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -11472,7 +11888,11 @@
      ]
     }
    ],
-   "id": "P101"
+   "id": "P101",
+   "intuition_cost": 45,
+   "intuition_expanded": 49,
+   "intuition_score": 0.533,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -11680,7 +12100,11 @@
      ]
     }
    ],
-   "id": "P102"
+   "id": "P102",
+   "intuition_cost": 28,
+   "intuition_expanded": 51,
+   "intuition_score": 0.857,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -11888,7 +12312,11 @@
      ]
     }
    ],
-   "id": "P103"
+   "id": "P103",
+   "intuition_cost": 32,
+   "intuition_expanded": 41,
+   "intuition_score": 0.75,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -12096,7 +12524,11 @@
      ]
     }
    ],
-   "id": "P104"
+   "id": "P104",
+   "intuition_cost": 30,
+   "intuition_expanded": 34,
+   "intuition_score": 0.8,
+   "difficulty_calibrated": "normal"
   }
  ]
 }

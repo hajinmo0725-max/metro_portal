@@ -61,3 +61,21 @@ def test_multi_country_loader_and_clusters_never_mix_countries():
     w = build_world(st, ed, ln, load_ruleset("tw_t1"))
     assert all(len(c["countries"]) == 1 for c in w["clusters"])
     assert {s["city"] for s in w["stations"] if s["country"] == "TW"} == {"타이베이"}
+
+
+def test_intuition_search_backtracks_and_is_deterministic():
+    """직관 탐색: 목적지 쪽(남쪽) 막다른 역 B보다, 반대 방향이지만 워프 도착지가 목적지 옆인 C를 먼저 펼친다."""
+    from metro_portal.game import ClusterGraph, intuition_search
+    rs = load_ruleset("strict")
+    # A(출발) - B(목적지 방향 막다른 길), A - C(반대 방향, 포탈 '가'), 포탈 '가' → D(목적지 옆) - T
+    pts = {"A": (37.0, 127.0), "B": (36.9, 127.0), "C": (37.1, 127.0), "D": (35.1, 129.0), "T": (35.0, 129.0), "C2": (35.05, 129.05)}
+    cl = [{"id": f"{k}#1", "name": k if k != "C2" else "C", "names": [k], "station_ids": [k], "lat": v[0], "lon": v[1],
+           "regions": [""], "lines": ["L"], "cities": ["X"]} for k, v in pts.items()]
+    E = [{"line": "L", "a": "A", "b": "B", "distance_m": 1.0}, {"line": "L", "a": "A", "b": "C", "distance_m": 1.0},
+         {"line": "L", "a": "C2", "b": "D", "distance_m": 1.0}, {"line": "L", "a": "D", "b": "T", "distance_m": 1.0}]
+    portals = [{"id": "P:T1:C", "tier": "T1", "name": "C", "cost": 1, "cluster_ids": ["C#1", "C2#1"], "station_ids": ["C", "C2"], "degree": 2}]
+    g = ClusterGraph({"rs": rs, "clusters": cl, "portals": portals, "edges": E})
+    a, t = g.ix["A#1"], g.ix["T#1"]
+    r1, r2 = intuition_search(g, a, t), intuition_search(g, a, t)
+    assert r1 == r2
+    assert r1 == (4, 5)                   # A → C ⇢ C2 → D → T, 펼친 역 A·C·C2·D·T (B는 안 펼침)
