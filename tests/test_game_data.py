@@ -170,3 +170,42 @@ def test_n_stops_results_valid():
     # 워프 허용 최댓값 >= 워프 금지 최댓값
     for key in ("great_circle", "track"):
         assert ns["with_warp"][key][0]["value_m"] >= ns["without_warp"][key][0]["value_m"]
+
+
+def test_brandes_matches_bruteforce():
+    """N7 포탈 매개 중심성: 작은 그래프에서 모든 쌍 최단 경로를 열거한 값과 같다."""
+    spec11 = importlib.util.spec_from_file_location("f11", ROOT / "pipeline" / "11_fun_facts.py")
+    f11 = importlib.util.module_from_spec(spec11)
+    spec11.loader.exec_module(f11)
+    for seed in range(6):
+        rnd = random.Random(100 + seed)
+        n = 8
+        pairs = sorted({tuple(sorted(rnd.sample(range(n), 2))) for _ in range(10)})
+        w = toy_world(n, pairs, [[0, 4], [2, 6, 7]], seed)
+        g = g10.ClusterGraph(w)
+        bc = f11.brandes(g)
+        # 브루트포스: 순서쌍 (s,t)마다 최단 경로 전부 열거 → 경유 노드 비중 합
+        exp = [0.0] * (g.C + g.P)
+        for s in range(g.C):
+            dist, _ = g.sssp_count(s)
+            for t in range(g.C):
+                if t == s or dist[t] == float("inf"):
+                    continue
+                paths = []
+
+                def dfs(u, cost, path):
+                    if cost > dist[t]:
+                        return
+                    if u == t and cost == dist[t]:
+                        paths.append(list(path))
+                        return
+                    for v, c in g.adj[u]:
+                        if v not in path:
+                            path.append(v)
+                            dfs(v, cost + c, path)
+                            path.pop()
+                dfs(s, 0, [s])
+                for p in paths:
+                    for v in p[1:-1]:
+                        exp[v] += 1 / len(paths)
+        assert all(abs(a - b) < 1e-9 for a, b in zip(bc, exp)), seed
