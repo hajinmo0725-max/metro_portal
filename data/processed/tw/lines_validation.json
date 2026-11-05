@@ -1,0 +1,362 @@
+{
+ "lines": [
+  {
+   "line": "tp-br",
+   "name": "文湖線",
+   "stations": 24,
+   "edges_candidate": 23,
+   "edges_kept": 23,
+   "geometry": [
+    {
+     "sequence": "main",
+     "ratio": 1.0,
+     "same_order": true
+    }
+   ],
+   "dropped_cycle": [],
+   "ignored": [],
+   "kept_non_consecutive": [],
+   "consecutive_without_adjacency": [],
+   "sequences": [
+    [
+     "main",
+     24
+    ]
+   ],
+   "components": 1
+  },
+  {
+   "line": "tp-r",
+   "name": "淡水信義線",
+   "stations": 29,
+   "edges_candidate": 28,
+   "edges_kept": 28,
+   "geometry": [
+    {
+     "sequence": "main",
+     "ratio": 1.0,
+     "same_order": true
+    },
+    {
+     "sequence": "branch-R22A",
+     "ratio": null,
+     "same_order": null
+    }
+   ],
+   "dropped_cycle": [],
+   "ignored": [],
+   "kept_non_consecutive": [],
+   "consecutive_without_adjacency": [],
+   "sequences": [
+    [
+     "main",
+     28
+    ],
+    [
+     "branch-R22A",
+     2
+    ]
+   ],
+   "components": 1
+  },
+  {
+   "line": "tp-g",
+   "name": "松山新店線",
+   "stations": 20,
+   "edges_candidate": 19,
+   "edges_kept": 19,
+   "geometry": [
+    {
+     "sequence": "main",
+     "ratio": 1.0,
+     "same_order": true
+    },
+    {
+     "sequence": "branch-G03A",
+     "ratio": null,
+     "same_order": null
+    }
+   ],
+   "dropped_cycle": [],
+   "ignored": [
+    {
+     "a": "新店",
+     "b": "七張",
+     "codes": "G01–G03",
+     "qualifiers": [
+      "Q8044525"
+     ]
+    },
+    {
+     "a": "新店",
+     "b": "七張",
+     "codes": "G01–G03",
+     "qualifiers": [
+      "-"
+     ]
+    }
+   ],
+   "kept_non_consecutive": [],
+   "consecutive_without_adjacency": [],
+   "sequences": [
+    [
+     "main",
+     19
+    ],
+    [
+     "branch-G03A",
+     2
+    ]
+   ],
+   "components": 1
+  },
+  {
+   "line": "tp-o",
+   "name": "中和新蘆線",
+   "stations": 26,
+   "edges_candidate": 25,
+   "edges_kept": 25,
+   "geometry": [
+    {
+     "sequence": "main",
+     "ratio": 1.0,
+     "same_order": true
+    },
+    {
+     "sequence": "branch-O54",
+     "ratio": 1.0,
+     "same_order": true
+    }
+   ],
+   "dropped_cycle": [],
+   "ignored": [],
+   "kept_non_consecutive": [
+    {
+     "a": "大橋頭",
+     "b": "三重國小",
+     "codes": "O12–O50"
+    }
+   ],
+   "consecutive_without_adjacency": [],
+   "sequences": [
+    [
+     "main",
+     21
+    ],
+    [
+     "branch-O54",
+     6
+    ]
+   ],
+   "components": 1
+  },
+  {
+   "line": "tp-bl",
+   "name": "板南線",
+   "stations": 23,
+   "edges_candidate": 22,
+   "edges_kept": 22,
+   "geometry": [
+    {
+     "sequence": "main",
+     "ratio": 1.0,
+     "same_order": true
+    }
+   ],
+   "dropped_cycle": [],
+   "ignored": [],
+   "kept_non_consecutive": [],
+   "consecutive_without_adjacency": [],
+   "sequences": [
+    [
+     "main",
+     23
+    ]
+   ],
+   "components": 1
+  },
+  {
+   "line": "tp-y",
+   "name": "台北捷運環狀線",
+   "stations": 14,
+   "edges_candidate": 13,
+   "edges_kept": 13,
+   "geometry": [
+    {
+     "sequence": "main",
+     "ratio": 1.0,
+     "same_order": true
+    }
+   ],
+   "dropped_cycle": [],
+   "ignored": [],
+   "kept_non_consecutive": [
+    {
+     "a": "板新",
+     "b": "板橋",
+     "codes": "Y15–Y15"
+    },
+    {
+     "a": "板橋",
+     "b": "新埔民生",
+     "codes": "Y15–Y17"
+    },
+    {
+     "a": "幸福",
+     "b": "頭前庄",
+     "codes": "Y18–Y18"
+    },
+    {
+     "a": "幸福",
+     "b": "新北產業園區",
+     "codes": "Y18–Y20"
+    }
+   ],
+   "consecutive_without_adjacency": [
+    {
+     "a": "中原",
+     "b": "板橋",
+     "codes": "Y14–Y15"
+    },
+    {
+     "a": "新埔民生",
+     "b": "幸福",
+     "codes": "Y17–Y18"
+    }
+   ],
+   "sequences": [
+    [
+     "main",
+     14
+    ]
+   ],
+   "components": 1
+  },
+  {
+   "line": "ty-a",
+   "name": "桃園捷運 機場線",
+   "stations": 22,
+   "edges_candidate": 21,
+   "edges_kept": 21,
+   "geometry": [
+    {
+     "sequence": "main",
+     "ratio": 1.0,
+     "same_order": true
+    }
+   ],
+   "dropped_cycle": [],
+   "ignored": [],
+   "kept_non_consecutive": [],
+   "consecutive_without_adjacency": [],
+   "sequences": [
+    [
+     "main",
+     22
+    ]
+   ],
+   "components": 1
+  },
+  {
+   "line": "nt-v",
+   "name": "淡海輕軌",
+   "stations": 14,
+   "edges_candidate": 13,
+   "edges_kept": 13,
+   "geometry": [
+    {
+     "sequence": "main",
+     "ratio": 1.0,
+     "same_order": true
+    },
+    {
+     "sequence": "branch-V11",
+     "ratio": null,
+     "same_order": null
+    }
+   ],
+   "dropped_cycle": [],
+   "ignored": [],
+   "kept_non_consecutive": [
+    {
+     "a": "濱海沙崙",
+     "b": "臺北海洋大學",
+     "codes": "V09–V28"
+    }
+   ],
+   "consecutive_without_adjacency": [],
+   "sequences": [
+    [
+     "main",
+     12
+    ],
+    [
+     "branch-V11",
+     3
+    ]
+   ],
+   "components": 1
+  },
+  {
+   "line": "nt-k",
+   "name": "安坑輕軌",
+   "stations": 9,
+   "edges_candidate": 8,
+   "edges_kept": 8,
+   "geometry": [
+    {
+     "sequence": "main",
+     "ratio": 1.0,
+     "same_order": true
+    }
+   ],
+   "dropped_cycle": [],
+   "ignored": [],
+   "kept_non_consecutive": [],
+   "consecutive_without_adjacency": [],
+   "sequences": [
+    [
+     "main",
+     9
+    ]
+   ],
+   "components": 1
+  },
+  {
+   "line": "nt-lb",
+   "name": "三鶯線",
+   "stations": 12,
+   "edges_candidate": 11,
+   "edges_kept": 11,
+   "geometry": [
+    {
+     "sequence": "main",
+     "ratio": 1.0,
+     "same_order": true
+    }
+   ],
+   "dropped_cycle": [],
+   "ignored": [],
+   "kept_non_consecutive": [],
+   "consecutive_without_adjacency": [],
+   "sequences": [
+    [
+     "main",
+     12
+    ]
+   ],
+   "components": 1
+  }
+ ],
+ "long_edges": [
+  {
+   "line": "ty-a",
+   "sequence": "main",
+   "a": "tw:ty-a:A10",
+   "b": "tw:ty-a:A9",
+   "distance_m": 7845.0,
+   "a_name": "山鼻",
+   "b_name": "林口"
+  }
+ ]
+}
