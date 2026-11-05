@@ -99,3 +99,20 @@ def test_real_station_level_diameter_matches_cluster_level_when_transfer_0():
     d = diameter_station_level(adj, cl, [c["id"] for c in cl])
     assert d["value"] == m["with_warp"]["diameter"]["value"]
     assert d["mean_cost"] == m["with_warp"]["diameter"]["mean_cost"]
+
+
+@pytest.mark.skipif(not (PROC / "stations.json").exists(), reason="processed data missing")
+@pytest.mark.parametrize("D,expect", [(300, {"노원": 2, "잠실": 2, "신촌": 2}), (500, {"노원": 1, "잠실": 1, "신촌": 2}),
+                                      (1000, {"노원": 1, "잠실": 1, "신촌": 1})])
+def test_D_boundary_cases(D, expect):
+    """N4: D에 따라 환승 ↔ 포탈 경계가 바뀌는 실제 사례 (노원 4·7호선 306m, 잠실 2·8호선 394m, 신촌 2호선·경의중앙 701m)."""
+    from metro_portal.world import build_world, load_base
+    rs = load_ruleset("strict", overrides={"cluster": {"transfer_distance_m": D}})
+    w = build_world(*load_base(), rs)
+    cnt = {}
+    for c in w["clusters"]:
+        cnt[c["name"]] = cnt.get(c["name"], 0) + 1
+    for name, n in expect.items():
+        assert cnt[name] == n, (D, name)
+    names = {p["name"] for p in w["portals"]}
+    assert ("신촌" in names) == (D < 701)

@@ -15,5 +15,7 @@ python3 pipeline/06_build_web_data.py --ruleset "$RS"
 # 노선 순서·좌표 검증 (Wikidata 캐시가 없으면 받아 온다). PNG까지 약 1분
 python3 pipeline/07_fetch_wikidata.py > /dev/null
 python3 pipeline/08_validate_lines.py > /dev/null
+# ruleset 비교 (환승 비용 × D)
+python3 pipeline/09_compare_rulesets.py > /dev/null
 python3 -m pytest -q
 npm test --silent
