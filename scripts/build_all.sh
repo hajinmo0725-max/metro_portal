@@ -17,5 +17,7 @@ python3 pipeline/07_fetch_wikidata.py > /dev/null
 python3 pipeline/08_validate_lines.py > /dev/null
 # ruleset 비교 (환승 비용 × D)
 python3 pipeline/09_compare_rulesets.py > /dev/null
+# 게임 데이터 (퍼즐 후보, N정류장 최대 거리). 약 20초
+python3 pipeline/10_build_game_data.py --ruleset "$RS" > /dev/null
 python3 -m pytest -q
 npm test --silent
