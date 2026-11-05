@@ -760,7 +760,6 @@
      "id": "main",
      "station_ids": [
       "kr:I4108:경춘선:1019",
-      "kr:I4108:경춘선:1201",
       "kr:I4108:경춘선:1202",
       "kr:I41K2:1203",
       "kr:I41K2:1311",
@@ -782,6 +781,16 @@
       "kr:I41K2:1327",
       "kr:I41K2:1328",
       "kr:I41K2:1329"
+     ],
+     "circular": false
+    },
+    {
+     "id": "cheongnyangni",
+     "station_ids": [
+      "kr:I4108:1014",
+      "kr:I4108:1015",
+      "kr:I4108:경춘선:1201",
+      "kr:I4108:경춘선:1202"
      ],
      "circular": false
     }

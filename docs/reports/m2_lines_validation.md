@@ -7,8 +7,8 @@
 | 항목 | 값 |
 | :- | -: |
 | lines | 45 |
-| sequences | 50 |
-| ride_edges | 1056 |
+| sequences | 51 |
+| ride_edges | 1058 |
 | stations | 1091 |
 | stations_sequenced | 1090 |
 | stop_failures | 0 |
@@ -77,7 +77,7 @@ pool = 이 노선에 속한 표준데이터 역 수, sequenced = 시퀀스에 �
 | seoul-4-jinjeop | 4호선 진접선 | 3 | 4 | 3 | 1 | 3 |
 | seoul-3-ilsan | 3호선 일산선 | 11 | 11 | 11 | 1 | 10 |
 | gyeongui-jungang | 경의·중앙선 | 86 | 57 | 57 | 2 | 56 |
-| gyeongchun | 경춘선 | 20 | 23 | 20 | 1 | 22 |
+| gyeongchun | 경춘선 | 20 | 25 | 20 | 2 | 24 |
 | gyeonggang | 경강선 | 12 | 12 | 12 | 1 | 11 |
 | seohae | 서해선 | 21 | 21 | 21 | 1 | 20 |
 | sillim | 신림선 | 11 | 11 | 11 | 1 | 10 |
@@ -138,7 +138,7 @@ pool = 이 노선에 속한 표준데이터 역 수, sequenced = 시퀀스에 �
 | seoul-8 | S1108 수도권 도시철도 8호선 | patch |
 |  | S4108 수도권 전철 8호선 | skip |
 | gyeongui-jungang | I4108 경의·중앙선 | pools, sequences |
-| gyeongchun | I41K2 경춘선 | patch, pools |
+| gyeongchun | I41K2 경춘선 | branches, patch, pools |
 | suin-bundang | I28K1 분당선 | patch, pools |
 | suin-bundang-suin | I28K1 수인선 | patch, pools |
 | seohae | I41WS 서해선 | patch |

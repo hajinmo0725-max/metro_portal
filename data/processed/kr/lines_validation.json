@@ -379,10 +379,10 @@
    "line": "gyeongchun",
    "name": "경춘선",
    "pool": 20,
-   "sequenced": 23,
+   "sequenced": 25,
    "from_pool": 20,
-   "sequences": 1,
-   "edges": 22
+   "sequences": 2,
+   "edges": 24
   },
   {
    "line": "gyeonggang",
@@ -639,8 +639,8 @@
  ],
  "totals": {
   "lines": 45,
-  "sequences": 50,
-  "ride_edges": 1056,
+  "sequences": 51,
+  "ride_edges": 1058,
   "stations": 1091,
   "stations_sequenced": 1090,
   "stop_failures": 0,
@@ -792,6 +792,7 @@
    "id": "gyeongchun",
    "source": "I41K2 경춘선",
    "ops": [
+    "branches",
     "patch",
     "pools"
    ]

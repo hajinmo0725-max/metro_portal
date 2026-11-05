@@ -2284,14 +2284,28 @@
   },
   {
    "line": "gyeongchun",
-   "sequence": "main",
-   "a": "kr:I4108:경춘선:1019",
+   "sequence": "cheongnyangni",
+   "a": "kr:I4108:1014",
+   "b": "kr:I4108:1015",
+   "distance_m": 1417.4
+  },
+  {
+   "line": "gyeongchun",
+   "sequence": "cheongnyangni",
+   "a": "kr:I4108:1015",
    "b": "kr:I4108:경춘선:1201",
-   "distance_m": 3425.6
+   "distance_m": 1703.9
   },
   {
    "line": "gyeongchun",
    "sequence": "main",
+   "a": "kr:I4108:경춘선:1019",
+   "b": "kr:I4108:경춘선:1202",
+   "distance_m": 3792.5
+  },
+  {
+   "line": "gyeongchun",
+   "sequence": "cheongnyangni",
    "a": "kr:I4108:경춘선:1201",
    "b": "kr:I4108:경춘선:1202",
    "distance_m": 855.4

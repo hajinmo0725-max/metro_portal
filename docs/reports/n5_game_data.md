@@ -10,18 +10,18 @@
 | :- | -: |
 | pairs | 438516 |
 | pairs_reachable_without_warp | 227888 |
-| pairs_warp_shortens | 89754 |
+| pairs_warp_shortens | 96632 |
 | pairs_cross_component | 210628 |
-| pairs_unique_optimum | 267875 |
-| optimal_count_hist | {1: 267875, 2: 100639, 3: 23131, 4: 24080, 5: 4427, 6: 6309, 7: 1132, 8: 1944, 9: 518, 10: 8461} |
-| candidates_shortcut | 28029 |
-| candidates_crosscity | 108053 |
+| pairs_unique_optimum | 274830 |
+| optimal_count_hist | {1: 274830, 2: 93655, 3: 27610, 4: 24170, 5: 4986, 6: 7146, 7: 1219, 8: 1860, 9: 464, 10: 2576} |
+| candidates_shortcut | 28190 |
+| candidates_crosscity | 109305 |
 | pool_shortcut_easy | 456 |
-| pool_shortcut_normal | 9822 |
-| pool_shortcut_hard | 17751 |
-| pool_crosscity_easy | 9631 |
-| pool_crosscity_normal | 39593 |
-| pool_crosscity_hard | 58829 |
+| pool_shortcut_normal | 9838 |
+| pool_shortcut_hard | 17896 |
+| pool_crosscity_easy | 9635 |
+| pool_crosscity_normal | 39747 |
+| pool_crosscity_hard | 59923 |
 
 optimal_count_hist: 워프 포함 최적 경로 개수 분포 (10 = 10개 이상).
 

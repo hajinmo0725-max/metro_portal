@@ -4,8 +4,8 @@
   "stations": 1091,
   "clusters": 937,
   "lines": 45,
-  "sequences": 50,
-  "ride_edges": 1056,
+  "sequences": 51,
+  "ride_edges": 1058,
   "transfer_clusters_multi": 134,
   "portals_total": 29,
   "portals_by_tier": {
@@ -13,18 +13,18 @@
   },
   "portal_links": 60,
   "routing_nodes": 1120,
-  "routing_edges": 2610
+  "routing_edges": 2614
  },
  "with_warp": {
   "components": 1,
   "largest_component_ratio": 1.0,
   "largest_component_size": 937,
   "diameter": {
-   "value": 68,
+   "value": 67,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 18.366
+   "mean_cost": 18.322
   }
  },
  "without_warp": {
@@ -32,11 +32,11 @@
   "largest_component_ratio": 0.6958,
   "largest_component_size": 652,
   "diameter": {
-   "value": 71,
+   "value": 72,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 21.482
+   "mean_cost": 21.517
   },
   "component_list": [
    {

@@ -5,19 +5,19 @@
    "lines_std": {
     "title": "표준데이터 노선정보(전체 기관)",
     "url": "https://data.kric.go.kr/rips/dataset/download.file?type=filedata&id=18&operation=1",
-    "downloaded_at": "2026-11-05T06:28:15+00:00",
+    "downloaded_at": "2026-11-05T15:21:57+00:00",
     "file": "attachment; filename=\"전체_도시철도노선정보_20260630.xlsx\""
    },
    "stations_metro": {
     "title": "전국 도시광역철도 역사정보 (다국어 역명)",
     "url": "https://data.kric.go.kr/rips/dataset/download.file?type=filedata&id=1294&operation=1",
-    "downloaded_at": "2026-11-05T06:28:23+00:00",
+    "downloaded_at": "2026-11-05T15:22:05+00:00",
     "file": "attachment; filename=\"전국 도시광역철도 역사 역사정보_20260701.xlsx\""
    },
    "stations_std": {
     "title": "표준데이터 역사정보(전체 기관)",
     "url": "https://data.kric.go.kr/rips/dataset/download.file?type=filedata&id=32&operation=1",
-    "downloaded_at": "2026-11-05T06:28:30+00:00",
+    "downloaded_at": "2026-11-05T15:22:12+00:00",
     "file": "attachment; filename=\"전체_도시철도역사정보_20260630.xlsx\""
    }
   },
