@@ -6,3 +6,5 @@ openpyxl>=3.1
 # 08 단계 노선 PNG (2차부터 사용했는데 누락돼 있었다)
 matplotlib>=3.8
 koreanize-matplotlib>=0.1.1
+# 13 단계 OSM 추출본 파서 (3차 A5)
+osmium>=3.7

@@ -420,6 +420,88 @@
     ]
    },
    {
+    "value_m": 367623,
+    "start": "배산#1",
+    "end": "임진강#1",
+    "start_label": "부산 배산",
+    "end_label": "수도권 임진강",
+    "warps": 3,
+    "great_circle_m": 367623,
+    "track_m": 28036,
+    "path": [
+     {
+      "cluster": "배산#1",
+      "label": "부산 배산",
+      "via": "start"
+     },
+     {
+      "cluster": "물만골#1",
+      "label": "부산 물만골",
+      "via": "ride"
+     },
+     {
+      "cluster": "연산#1",
+      "label": "부산 연산",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#1",
+      "label": "부산 시청",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#3",
+      "label": "수도권 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#2",
+      "label": "수도권 화정",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#1",
+      "label": "광주 화정",
+      "via": "warp"
+     },
+     {
+      "cluster": "쌍촌#1",
+      "label": "광주 쌍촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#1",
+      "label": "광주 운천",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#2",
+      "label": "수도권 운천",
+      "via": "warp"
+     },
+     {
+      "cluster": "임진강#1",
+      "label": "수도권 임진강",
+      "via": "ride"
+     }
+    ]
+   },
+   {
     "value_m": 367621,
     "start": "민락#1",
     "end": "운천#2",
@@ -467,6 +549,416 @@
      {
       "cluster": "능곡#1",
       "label": "수도권 능곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#2",
+      "label": "수도권 화정",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#1",
+      "label": "광주 화정",
+      "via": "warp"
+     },
+     {
+      "cluster": "쌍촌#1",
+      "label": "광주 쌍촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#1",
+      "label": "광주 운천",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#2",
+      "label": "수도권 운천",
+      "via": "warp"
+     }
+    ]
+   },
+   {
+    "value_m": 367225,
+    "start": "서면#1",
+    "end": "임진강#1",
+    "start_label": "부산 서면",
+    "end_label": "수도권 임진강",
+    "warps": 3,
+    "great_circle_m": 367225,
+    "track_m": 28037,
+    "path": [
+     {
+      "cluster": "서면#1",
+      "label": "부산 서면",
+      "via": "start"
+     },
+     {
+      "cluster": "부전#1",
+      "label": "부산 부전",
+      "via": "ride"
+     },
+     {
+      "cluster": "양정#1",
+      "label": "부산 양정",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#1",
+      "label": "부산 시청",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#3",
+      "label": "수도권 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#2",
+      "label": "수도권 화정",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#1",
+      "label": "광주 화정",
+      "via": "warp"
+     },
+     {
+      "cluster": "쌍촌#1",
+      "label": "광주 쌍촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#1",
+      "label": "광주 운천",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#2",
+      "label": "수도권 운천",
+      "via": "warp"
+     },
+     {
+      "cluster": "임진강#1",
+      "label": "수도권 임진강",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 366981,
+    "start": "부전#1",
+    "end": "임진강#1",
+    "start_label": "부산 부전",
+    "end_label": "수도권 임진강",
+    "warps": 4,
+    "great_circle_m": 366981,
+    "track_m": 27418,
+    "path": [
+     {
+      "cluster": "부전#1",
+      "label": "부산 부전",
+      "via": "start"
+     },
+     {
+      "cluster": "양정#1",
+      "label": "부산 양정",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#1",
+      "label": "부산 시청",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#2",
+      "label": "대전 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "시청#3",
+      "label": "수도권 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#2",
+      "label": "수도권 화정",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#1",
+      "label": "광주 화정",
+      "via": "warp"
+     },
+     {
+      "cluster": "쌍촌#1",
+      "label": "광주 쌍촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#1",
+      "label": "광주 운천",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#2",
+      "label": "수도권 운천",
+      "via": "warp"
+     },
+     {
+      "cluster": "임진강#1",
+      "label": "수도권 임진강",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 366822,
+    "start": "물만골#1",
+    "end": "임진강#1",
+    "start_label": "부산 물만골",
+    "end_label": "수도권 임진강",
+    "warps": 4,
+    "great_circle_m": 366822,
+    "track_m": 27076,
+    "path": [
+     {
+      "cluster": "물만골#1",
+      "label": "부산 물만골",
+      "via": "start"
+     },
+     {
+      "cluster": "연산#1",
+      "label": "부산 연산",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#1",
+      "label": "부산 시청",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#2",
+      "label": "대전 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "시청#3",
+      "label": "수도권 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#2",
+      "label": "수도권 화정",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#1",
+      "label": "광주 화정",
+      "via": "warp"
+     },
+     {
+      "cluster": "쌍촌#1",
+      "label": "광주 쌍촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#1",
+      "label": "광주 운천",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#2",
+      "label": "수도권 운천",
+      "via": "warp"
+     },
+     {
+      "cluster": "임진강#1",
+      "label": "수도권 임진강",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 366646,
+    "start": "부전#2",
+    "end": "임진강#1",
+    "start_label": "부산 부전",
+    "end_label": "수도권 임진강",
+    "warps": 4,
+    "great_circle_m": 366646,
+    "track_m": 27418,
+    "path": [
+     {
+      "cluster": "부전#2",
+      "label": "부산 부전",
+      "via": "start"
+     },
+     {
+      "cluster": "부전#1",
+      "label": "부산 부전",
+      "via": "warp"
+     },
+     {
+      "cluster": "양정#1",
+      "label": "부산 양정",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#1",
+      "label": "부산 시청",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#3",
+      "label": "수도권 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#2",
+      "label": "수도권 화정",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#1",
+      "label": "광주 화정",
+      "via": "warp"
+     },
+     {
+      "cluster": "쌍촌#1",
+      "label": "광주 쌍촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#1",
+      "label": "광주 운천",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#2",
+      "label": "수도권 운천",
+      "via": "warp"
+     },
+     {
+      "cluster": "임진강#1",
+      "label": "수도권 임진강",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 366528,
+    "start": "망미#1",
+    "end": "운천#2",
+    "start_label": "부산 망미",
+    "end_label": "수도권 운천",
+    "warps": 3,
+    "great_circle_m": 366528,
+    "track_m": 26995,
+    "path": [
+     {
+      "cluster": "망미#1",
+      "label": "부산 망미",
+      "via": "start"
+     },
+     {
+      "cluster": "배산#1",
+      "label": "부산 배산",
+      "via": "ride"
+     },
+     {
+      "cluster": "물만골#1",
+      "label": "부산 물만골",
+      "via": "ride"
+     },
+     {
+      "cluster": "연산#1",
+      "label": "부산 연산",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#1",
+      "label": "부산 시청",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#3",
+      "label": "수도권 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
@@ -584,6 +1076,88 @@
     ]
    },
    {
+    "value_m": 366305,
+    "start": "범내골#1",
+    "end": "운천#2",
+    "start_label": "부산 범내골",
+    "end_label": "수도권 운천",
+    "warps": 3,
+    "great_circle_m": 366305,
+    "track_m": 26994,
+    "path": [
+     {
+      "cluster": "범내골#1",
+      "label": "부산 범내골",
+      "via": "start"
+     },
+     {
+      "cluster": "서면#1",
+      "label": "부산 서면",
+      "via": "ride"
+     },
+     {
+      "cluster": "부전#1",
+      "label": "부산 부전",
+      "via": "ride"
+     },
+     {
+      "cluster": "양정#1",
+      "label": "부산 양정",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#1",
+      "label": "부산 시청",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#3",
+      "label": "수도권 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#2",
+      "label": "수도권 화정",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#1",
+      "label": "광주 화정",
+      "via": "warp"
+     },
+     {
+      "cluster": "쌍촌#1",
+      "label": "광주 쌍촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#1",
+      "label": "광주 운천",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#2",
+      "label": "수도권 운천",
+      "via": "warp"
+     }
+    ]
+   },
+   {
     "value_m": 366272,
     "start": "동백#1",
     "end": "문산#1",
@@ -661,6 +1235,170 @@
      {
       "cluster": "문산#1",
       "label": "수도권 문산",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 366092,
+    "start": "시청#1",
+    "end": "임진강#1",
+    "start_label": "부산 시청",
+    "end_label": "수도권 임진강",
+    "warps": 3,
+    "great_circle_m": 366092,
+    "track_m": 29073,
+    "path": [
+     {
+      "cluster": "시청#1",
+      "label": "부산 시청",
+      "via": "start"
+     },
+     {
+      "cluster": "시청#3",
+      "label": "수도권 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "충정로#1",
+      "label": "수도권 충정로",
+      "via": "ride"
+     },
+     {
+      "cluster": "애오개#1",
+      "label": "수도권 애오개",
+      "via": "ride"
+     },
+     {
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
+      "via": "ride"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#2",
+      "label": "수도권 화정",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#1",
+      "label": "광주 화정",
+      "via": "warp"
+     },
+     {
+      "cluster": "쌍촌#1",
+      "label": "광주 쌍촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#1",
+      "label": "광주 운천",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#2",
+      "label": "수도권 운천",
+      "via": "warp"
+     },
+     {
+      "cluster": "임진강#1",
+      "label": "수도권 임진강",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 366066,
+    "start": "운천#2",
+    "end": "전포#1",
+    "start_label": "수도권 운천",
+    "end_label": "부산 전포",
+    "warps": 3,
+    "great_circle_m": 366066,
+    "track_m": 26622,
+    "path": [
+     {
+      "cluster": "운천#2",
+      "label": "수도권 운천",
+      "via": "start"
+     },
+     {
+      "cluster": "운천#1",
+      "label": "광주 운천",
+      "via": "warp"
+     },
+     {
+      "cluster": "쌍촌#1",
+      "label": "광주 쌍촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#1",
+      "label": "광주 화정",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#2",
+      "label": "수도권 화정",
+      "via": "warp"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#3",
+      "label": "수도권 시청",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#1",
+      "label": "부산 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "양정#1",
+      "label": "부산 양정",
+      "via": "ride"
+     },
+     {
+      "cluster": "부전#1",
+      "label": "부산 부전",
+      "via": "ride"
+     },
+     {
+      "cluster": "서면#1",
+      "label": "부산 서면",
+      "via": "ride"
+     },
+     {
+      "cluster": "전포#1",
+      "label": "부산 전포",
       "via": "ride"
      }
     ]
@@ -748,6 +1486,88 @@
     ]
    },
    {
+    "value_m": 365700,
+    "start": "배산#1",
+    "end": "운천#2",
+    "start_label": "부산 배산",
+    "end_label": "수도권 운천",
+    "warps": 4,
+    "great_circle_m": 365700,
+    "track_m": 25819,
+    "path": [
+     {
+      "cluster": "배산#1",
+      "label": "부산 배산",
+      "via": "start"
+     },
+     {
+      "cluster": "물만골#1",
+      "label": "부산 물만골",
+      "via": "ride"
+     },
+     {
+      "cluster": "연산#1",
+      "label": "부산 연산",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#1",
+      "label": "부산 시청",
+      "via": "ride"
+     },
+     {
+      "cluster": "시청#2",
+      "label": "대전 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "시청#3",
+      "label": "수도권 시청",
+      "via": "warp"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#2",
+      "label": "수도권 화정",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#1",
+      "label": "광주 화정",
+      "via": "warp"
+     },
+     {
+      "cluster": "쌍촌#1",
+      "label": "광주 쌍촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#1",
+      "label": "광주 운천",
+      "via": "ride"
+     },
+     {
+      "cluster": "운천#2",
+      "label": "수도권 운천",
+      "via": "warp"
+     }
+    ]
+   },
+   {
     "value_m": 365674,
     "start": "석대#1",
     "end": "임진강#1",
@@ -828,1658 +1648,510 @@
       "via": "ride"
      }
     ]
-   },
-   {
-    "value_m": 365621,
-    "start": "운천#2",
-    "end": "재송#1",
-    "start_label": "수도권 운천",
-    "end_label": "부산 재송",
-    "warps": 3,
-    "great_circle_m": 365621,
-    "track_m": 21368,
-    "path": [
-     {
-      "cluster": "운천#2",
-      "label": "수도권 운천",
-      "via": "start"
-     },
-     {
-      "cluster": "운천#1",
-      "label": "광주 운천",
-      "via": "warp"
-     },
-     {
-      "cluster": "쌍촌#1",
-      "label": "광주 쌍촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#1",
-      "label": "광주 화정",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#2",
-      "label": "수도권 화정",
-      "via": "warp"
-     },
-     {
-      "cluster": "대곡#2",
-      "label": "수도권 대곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "능곡#1",
-      "label": "수도권 능곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "김포공항#1",
-      "label": "수도권 김포공항",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#2",
-      "label": "수도권 송정",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#1",
-      "label": "부산 송정",
-      "via": "warp"
-     },
-     {
-      "cluster": "신해운대#1",
-      "label": "부산 신해운대",
-      "via": "ride"
-     },
-     {
-      "cluster": "벡스코#1",
-      "label": "부산 벡스코",
-      "via": "ride"
-     },
-     {
-      "cluster": "센텀#1",
-      "label": "부산 센텀",
-      "via": "ride"
-     },
-     {
-      "cluster": "재송#1",
-      "label": "부산 재송",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 364760,
-    "start": "문산#1",
-    "end": "센텀시티#1",
-    "start_label": "수도권 문산",
-    "end_label": "부산 센텀시티",
-    "warps": 3,
-    "great_circle_m": 364760,
-    "track_m": 22819,
-    "path": [
-     {
-      "cluster": "문산#1",
-      "label": "수도권 문산",
-      "via": "start"
-     },
-     {
-      "cluster": "운천#2",
-      "label": "수도권 운천",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#1",
-      "label": "광주 운천",
-      "via": "warp"
-     },
-     {
-      "cluster": "쌍촌#1",
-      "label": "광주 쌍촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#1",
-      "label": "광주 화정",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#2",
-      "label": "수도권 화정",
-      "via": "warp"
-     },
-     {
-      "cluster": "대곡#2",
-      "label": "수도권 대곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "능곡#1",
-      "label": "수도권 능곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "김포공항#1",
-      "label": "수도권 김포공항",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#2",
-      "label": "수도권 송정",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#1",
-      "label": "부산 송정",
-      "via": "warp"
-     },
-     {
-      "cluster": "신해운대#1",
-      "label": "부산 신해운대",
-      "via": "ride"
-     },
-     {
-      "cluster": "벡스코#1",
-      "label": "부산 벡스코",
-      "via": "ride"
-     },
-     {
-      "cluster": "센텀시티#1",
-      "label": "부산 센텀시티",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 364338,
-    "start": "동의대#1",
-    "end": "운천#2",
-    "start_label": "부산 동의대",
-    "end_label": "수도권 운천",
-    "warps": 2,
-    "great_circle_m": 364338,
-    "track_m": 13069,
-    "path": [
-     {
-      "cluster": "동의대#1",
-      "label": "부산 동의대",
-      "via": "start"
-     },
-     {
-      "cluster": "개금#1",
-      "label": "부산 개금",
-      "via": "ride"
-     },
-     {
-      "cluster": "냉정#1",
-      "label": "부산 냉정",
-      "via": "ride"
-     },
-     {
-      "cluster": "주례#1",
-      "label": "부산 주례",
-      "via": "ride"
-     },
-     {
-      "cluster": "감전#1",
-      "label": "부산 감전",
-      "via": "ride"
-     },
-     {
-      "cluster": "사상#1",
-      "label": "부산 사상",
-      "via": "ride"
-     },
-     {
-      "cluster": "괘법르네시떼#1",
-      "label": "부산 괘법르네시떼",
-      "via": "ride"
-     },
-     {
-      "cluster": "서부산유통지구#1",
-      "label": "부산 서부산유통지구",
-      "via": "ride"
-     },
-     {
-      "cluster": "공항#2",
-      "label": "부산 공항",
-      "via": "ride"
-     },
-     {
-      "cluster": "공항#1",
-      "label": "광주 공항",
-      "via": "warp"
-     },
-     {
-      "cluster": "김대중컨벤션센터#1",
-      "label": "광주 김대중컨벤션센터",
-      "via": "ride"
-     },
-     {
-      "cluster": "상무#1",
-      "label": "광주 상무",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#1",
-      "label": "광주 운천",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#2",
-      "label": "수도권 운천",
-      "via": "warp"
-     }
-    ]
-   },
-   {
-    "value_m": 363435,
-    "start": "문산#1",
-    "end": "센텀#1",
-    "start_label": "수도권 문산",
-    "end_label": "부산 센텀",
-    "warps": 3,
-    "great_circle_m": 363435,
-    "track_m": 23554,
-    "path": [
-     {
-      "cluster": "문산#1",
-      "label": "수도권 문산",
-      "via": "start"
-     },
-     {
-      "cluster": "운천#2",
-      "label": "수도권 운천",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#1",
-      "label": "광주 운천",
-      "via": "warp"
-     },
-     {
-      "cluster": "쌍촌#1",
-      "label": "광주 쌍촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#1",
-      "label": "광주 화정",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#2",
-      "label": "수도권 화정",
-      "via": "warp"
-     },
-     {
-      "cluster": "대곡#2",
-      "label": "수도권 대곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "능곡#1",
-      "label": "수도권 능곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "김포공항#1",
-      "label": "수도권 김포공항",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#2",
-      "label": "수도권 송정",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#1",
-      "label": "부산 송정",
-      "via": "warp"
-     },
-     {
-      "cluster": "신해운대#1",
-      "label": "부산 신해운대",
-      "via": "ride"
-     },
-     {
-      "cluster": "벡스코#1",
-      "label": "부산 벡스코",
-      "via": "ride"
-     },
-     {
-      "cluster": "센텀#1",
-      "label": "부산 센텀",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 363092,
-    "start": "반여농산물시장#1",
-    "end": "운천#2",
-    "start_label": "부산 반여농산물시장",
-    "end_label": "수도권 운천",
-    "warps": 3,
-    "great_circle_m": 363092,
-    "track_m": 21006,
-    "path": [
-     {
-      "cluster": "반여농산물시장#1",
-      "label": "부산 반여농산물시장",
-      "via": "start"
-     },
-     {
-      "cluster": "석대#1",
-      "label": "부산 석대",
-      "via": "ride"
-     },
-     {
-      "cluster": "영산대#1",
-      "label": "부산 영산대",
-      "via": "ride"
-     },
-     {
-      "cluster": "윗반송#1",
-      "label": "부산 윗반송",
-      "via": "ride"
-     },
-     {
-      "cluster": "고촌#1",
-      "label": "부산 고촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "고촌#2",
-      "label": "수도권 고촌",
-      "via": "warp"
-     },
-     {
-      "cluster": "김포공항#1",
-      "label": "수도권 김포공항",
-      "via": "ride"
-     },
-     {
-      "cluster": "능곡#1",
-      "label": "수도권 능곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "대곡#2",
-      "label": "수도권 대곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#2",
-      "label": "수도권 화정",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#1",
-      "label": "광주 화정",
-      "via": "warp"
-     },
-     {
-      "cluster": "쌍촌#1",
-      "label": "광주 쌍촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#1",
-      "label": "광주 운천",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#2",
-      "label": "수도권 운천",
-      "via": "warp"
-     }
-    ]
-   },
-   {
-    "value_m": 361154,
-    "start": "문산#1",
-    "end": "일광#1",
-    "start_label": "수도권 문산",
-    "end_label": "부산 일광",
-    "warps": 3,
-    "great_circle_m": 361154,
-    "track_m": 25355,
-    "path": [
-     {
-      "cluster": "문산#1",
-      "label": "수도권 문산",
-      "via": "start"
-     },
-     {
-      "cluster": "운천#2",
-      "label": "수도권 운천",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#1",
-      "label": "광주 운천",
-      "via": "warp"
-     },
-     {
-      "cluster": "쌍촌#1",
-      "label": "광주 쌍촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#1",
-      "label": "광주 화정",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#2",
-      "label": "수도권 화정",
-      "via": "warp"
-     },
-     {
-      "cluster": "대곡#2",
-      "label": "수도권 대곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "능곡#1",
-      "label": "수도권 능곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "김포공항#1",
-      "label": "수도권 김포공항",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#2",
-      "label": "수도권 송정",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#1",
-      "label": "부산 송정",
-      "via": "warp"
-     },
-     {
-      "cluster": "오시리아#1",
-      "label": "부산 오시리아",
-      "via": "ride"
-     },
-     {
-      "cluster": "기장#1",
-      "label": "부산 기장",
-      "via": "ride"
-     },
-     {
-      "cluster": "일광#1",
-      "label": "부산 일광",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 361126,
-    "start": "벡스코#1",
-    "end": "파주#1",
-    "start_label": "부산 벡스코",
-    "end_label": "수도권 파주",
-    "warps": 3,
-    "great_circle_m": 361126,
-    "track_m": 26590,
-    "path": [
-     {
-      "cluster": "벡스코#1",
-      "label": "부산 벡스코",
-      "via": "start"
-     },
-     {
-      "cluster": "신해운대#1",
-      "label": "부산 신해운대",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#1",
-      "label": "부산 송정",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#2",
-      "label": "수도권 송정",
-      "via": "warp"
-     },
-     {
-      "cluster": "김포공항#1",
-      "label": "수도권 김포공항",
-      "via": "ride"
-     },
-     {
-      "cluster": "능곡#1",
-      "label": "수도권 능곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "대곡#2",
-      "label": "수도권 대곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#2",
-      "label": "수도권 화정",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#1",
-      "label": "광주 화정",
-      "via": "warp"
-     },
-     {
-      "cluster": "쌍촌#1",
-      "label": "광주 쌍촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#1",
-      "label": "광주 운천",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#2",
-      "label": "수도권 운천",
-      "via": "warp"
-     },
-     {
-      "cluster": "문산#1",
-      "label": "수도권 문산",
-      "via": "ride"
-     },
-     {
-      "cluster": "파주#1",
-      "label": "수도권 파주",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 361060,
-    "start": "운천#2",
-    "end": "좌천#2",
-    "start_label": "수도권 운천",
-    "end_label": "부산 좌천",
-    "warps": 3,
-    "great_circle_m": 361060,
-    "track_m": 27168,
-    "path": [
-     {
-      "cluster": "운천#2",
-      "label": "수도권 운천",
-      "via": "start"
-     },
-     {
-      "cluster": "운천#1",
-      "label": "광주 운천",
-      "via": "warp"
-     },
-     {
-      "cluster": "쌍촌#1",
-      "label": "광주 쌍촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#1",
-      "label": "광주 화정",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#2",
-      "label": "수도권 화정",
-      "via": "warp"
-     },
-     {
-      "cluster": "대곡#2",
-      "label": "수도권 대곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "능곡#1",
-      "label": "수도권 능곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "김포공항#1",
-      "label": "수도권 김포공항",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#2",
-      "label": "수도권 송정",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#1",
-      "label": "부산 송정",
-      "via": "warp"
-     },
-     {
-      "cluster": "오시리아#1",
-      "label": "부산 오시리아",
-      "via": "ride"
-     },
-     {
-      "cluster": "기장#1",
-      "label": "부산 기장",
-      "via": "ride"
-     },
-     {
-      "cluster": "일광#1",
-      "label": "부산 일광",
-      "via": "ride"
-     },
-     {
-      "cluster": "좌천#2",
-      "label": "부산 좌천",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 360812,
-    "start": "오시리아#1",
-    "end": "월롱#1",
-    "start_label": "부산 오시리아",
-    "end_label": "수도권 월롱",
-    "warps": 3,
-    "great_circle_m": 360812,
-    "track_m": 23547,
-    "path": [
-     {
-      "cluster": "오시리아#1",
-      "label": "부산 오시리아",
-      "via": "start"
-     },
-     {
-      "cluster": "송정#1",
-      "label": "부산 송정",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#2",
-      "label": "수도권 송정",
-      "via": "warp"
-     },
-     {
-      "cluster": "김포공항#1",
-      "label": "수도권 김포공항",
-      "via": "ride"
-     },
-     {
-      "cluster": "능곡#1",
-      "label": "수도권 능곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "대곡#2",
-      "label": "수도권 대곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#2",
-      "label": "수도권 화정",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#1",
-      "label": "광주 화정",
-      "via": "warp"
-     },
-     {
-      "cluster": "쌍촌#1",
-      "label": "광주 쌍촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#1",
-      "label": "광주 운천",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#2",
-      "label": "수도권 운천",
-      "via": "warp"
-     },
-     {
-      "cluster": "문산#1",
-      "label": "수도권 문산",
-      "via": "ride"
-     },
-     {
-      "cluster": "파주#1",
-      "label": "수도권 파주",
-      "via": "ride"
-     },
-     {
-      "cluster": "월롱#1",
-      "label": "수도권 월롱",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 360608,
-    "start": "개금#1",
-    "end": "문산#1",
-    "start_label": "부산 개금",
-    "end_label": "수도권 문산",
-    "warps": 2,
-    "great_circle_m": 360608,
-    "track_m": 15212,
-    "path": [
-     {
-      "cluster": "개금#1",
-      "label": "부산 개금",
-      "via": "start"
-     },
-     {
-      "cluster": "냉정#1",
-      "label": "부산 냉정",
-      "via": "ride"
-     },
-     {
-      "cluster": "주례#1",
-      "label": "부산 주례",
-      "via": "ride"
-     },
-     {
-      "cluster": "감전#1",
-      "label": "부산 감전",
-      "via": "ride"
-     },
-     {
-      "cluster": "사상#1",
-      "label": "부산 사상",
-      "via": "ride"
-     },
-     {
-      "cluster": "괘법르네시떼#1",
-      "label": "부산 괘법르네시떼",
-      "via": "ride"
-     },
-     {
-      "cluster": "서부산유통지구#1",
-      "label": "부산 서부산유통지구",
-      "via": "ride"
-     },
-     {
-      "cluster": "공항#2",
-      "label": "부산 공항",
-      "via": "ride"
-     },
-     {
-      "cluster": "공항#1",
-      "label": "광주 공항",
-      "via": "warp"
-     },
-     {
-      "cluster": "김대중컨벤션센터#1",
-      "label": "광주 김대중컨벤션센터",
-      "via": "ride"
-     },
-     {
-      "cluster": "상무#1",
-      "label": "광주 상무",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#1",
-      "label": "광주 운천",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#2",
-      "label": "수도권 운천",
-      "via": "warp"
-     },
-     {
-      "cluster": "문산#1",
-      "label": "수도권 문산",
-      "via": "ride"
-     }
-    ]
    }
   ],
   "track": [
    {
-    "value_m": 63915,
-    "start": "양재시민의숲#1",
-    "end": "여주#1",
-    "start_label": "수도권 양재시민의숲",
-    "end_label": "수도권 여주",
+    "value_m": 73504,
+    "start": "영종#1",
+    "end": "운정중앙#1",
+    "start_label": "수도권 영종",
+    "end_label": "수도권 운정중앙",
     "warps": 0,
-    "great_circle_m": 56184,
-    "track_m": 63915,
+    "great_circle_m": 28927,
+    "track_m": 73504,
     "path": [
      {
-      "cluster": "양재시민의숲#1",
-      "label": "수도권 양재시민의숲",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "start"
      },
      {
-      "cluster": "청계산입구#1",
-      "label": "수도권 청계산입구",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
       "via": "ride"
      },
      {
-      "cluster": "판교#1",
-      "label": "수도권 판교",
+      "cluster": "검암#1",
+      "label": "수도권 검암",
       "via": "ride"
      },
      {
-      "cluster": "성남#1",
-      "label": "수도권 성남",
+      "cluster": "계양#1",
+      "label": "수도권 계양",
       "via": "ride"
      },
      {
-      "cluster": "이매#1",
-      "label": "수도권 이매",
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
       "via": "ride"
      },
      {
-      "cluster": "삼동#1",
-      "label": "수도권 삼동",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "ride"
      },
      {
-      "cluster": "경기광주#1",
-      "label": "수도권 경기광주",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "초월#1",
-      "label": "수도권 초월",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "곤지암#1",
-      "label": "수도권 곤지암",
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
       "via": "ride"
      },
      {
-      "cluster": "신둔도예촌#1",
-      "label": "수도권 신둔도예촌",
+      "cluster": "서울#1",
+      "label": "수도권 서울",
       "via": "ride"
      },
      {
-      "cluster": "이천#1",
-      "label": "수도권 이천",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "부발#1",
-      "label": "수도권 부발",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      },
      {
-      "cluster": "세종대왕릉#1",
-      "label": "수도권 세종대왕릉",
+      "cluster": "킨텍스#1",
+      "label": "수도권 킨텍스",
       "via": "ride"
      },
      {
-      "cluster": "여주#1",
-      "label": "수도권 여주",
+      "cluster": "운정중앙#1",
+      "label": "수도권 운정중앙",
       "via": "ride"
      }
     ]
    },
    {
-    "value_m": 62935,
-    "start": "남춘천#1",
-    "end": "사릉#1",
-    "start_label": "수도권 남춘천",
-    "end_label": "수도권 사릉",
+    "value_m": 71035,
+    "start": "운서#1",
+    "end": "킨텍스#1",
+    "start_label": "수도권 운서",
+    "end_label": "수도권 킨텍스",
     "warps": 0,
-    "great_circle_m": 53594,
-    "track_m": 62935,
+    "great_circle_m": 29507,
+    "track_m": 71035,
     "path": [
      {
-      "cluster": "남춘천#1",
-      "label": "수도권 남춘천",
+      "cluster": "운서#1",
+      "label": "수도권 운서",
       "via": "start"
      },
      {
-      "cluster": "김유정#1",
-      "label": "수도권 김유정",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "ride"
      },
      {
-      "cluster": "강촌#1",
-      "label": "수도권 강촌",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
       "via": "ride"
      },
      {
-      "cluster": "백양리#1",
-      "label": "수도권 백양리",
+      "cluster": "검암#1",
+      "label": "수도권 검암",
       "via": "ride"
      },
      {
-      "cluster": "굴봉산#1",
-      "label": "수도권 굴봉산",
+      "cluster": "계양#1",
+      "label": "수도권 계양",
       "via": "ride"
      },
      {
-      "cluster": "가평#1",
-      "label": "수도권 가평",
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
       "via": "ride"
      },
      {
-      "cluster": "상천#1",
-      "label": "수도권 상천",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "ride"
      },
      {
-      "cluster": "청평#1",
-      "label": "수도권 청평",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "대성리#1",
-      "label": "수도권 대성리",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "마석#1",
-      "label": "수도권 마석",
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
       "via": "ride"
      },
      {
-      "cluster": "천마산#1",
-      "label": "수도권 천마산",
+      "cluster": "서울#1",
+      "label": "수도권 서울",
       "via": "ride"
      },
      {
-      "cluster": "평내호평#1",
-      "label": "수도권 평내호평",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "금곡#2",
-      "label": "수도권 금곡",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      },
      {
-      "cluster": "사릉#1",
-      "label": "수도권 사릉",
+      "cluster": "킨텍스#1",
+      "label": "수도권 킨텍스",
       "via": "ride"
      }
     ]
    },
    {
-    "value_m": 62146,
-    "start": "금곡#2",
-    "end": "춘천#1",
-    "start_label": "수도권 금곡",
-    "end_label": "수도권 춘천",
+    "value_m": 70290,
+    "start": "마곡나루#1",
+    "end": "운서#1",
+    "start_label": "수도권 마곡나루",
+    "end_label": "수도권 운서",
     "warps": 0,
-    "great_circle_m": 52476,
-    "track_m": 62146,
+    "great_circle_m": 30560,
+    "track_m": 70290,
     "path": [
      {
-      "cluster": "금곡#2",
-      "label": "수도권 금곡",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "start"
      },
      {
-      "cluster": "평내호평#1",
-      "label": "수도권 평내호평",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "천마산#1",
-      "label": "수도권 천마산",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "마석#1",
-      "label": "수도권 마석",
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
       "via": "ride"
      },
      {
-      "cluster": "대성리#1",
-      "label": "수도권 대성리",
+      "cluster": "서울#1",
+      "label": "수도권 서울",
       "via": "ride"
      },
      {
-      "cluster": "청평#1",
-      "label": "수도권 청평",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "상천#1",
-      "label": "수도권 상천",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      },
      {
-      "cluster": "가평#1",
-      "label": "수도권 가평",
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
       "via": "ride"
      },
      {
-      "cluster": "굴봉산#1",
-      "label": "수도권 굴봉산",
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
       "via": "ride"
      },
      {
-      "cluster": "백양리#1",
-      "label": "수도권 백양리",
+      "cluster": "계양#1",
+      "label": "수도권 계양",
       "via": "ride"
      },
      {
-      "cluster": "강촌#1",
-      "label": "수도권 강촌",
+      "cluster": "검암#1",
+      "label": "수도권 검암",
       "via": "ride"
      },
      {
-      "cluster": "김유정#1",
-      "label": "수도권 김유정",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
       "via": "ride"
      },
      {
-      "cluster": "남춘천#1",
-      "label": "수도권 남춘천",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "ride"
      },
      {
-      "cluster": "춘천#1",
-      "label": "수도권 춘천",
+      "cluster": "운서#1",
+      "label": "수도권 운서",
       "via": "ride"
      }
     ]
    },
    {
-    "value_m": 61330,
-    "start": "세종대왕릉#1",
-    "end": "청계산입구#1",
-    "start_label": "수도권 세종대왕릉",
-    "end_label": "수도권 청계산입구",
+    "value_m": 69666,
+    "start": "영종#1",
+    "end": "킨텍스#1",
+    "start_label": "수도권 영종",
+    "end_label": "수도권 킨텍스",
     "warps": 0,
-    "great_circle_m": 48785,
-    "track_m": 61330,
+    "great_circle_m": 26065,
+    "track_m": 69666,
     "path": [
      {
-      "cluster": "세종대왕릉#1",
-      "label": "수도권 세종대왕릉",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "start"
      },
      {
-      "cluster": "부발#1",
-      "label": "수도권 부발",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
       "via": "ride"
      },
      {
-      "cluster": "이천#1",
-      "label": "수도권 이천",
+      "cluster": "검암#1",
+      "label": "수도권 검암",
       "via": "ride"
      },
      {
-      "cluster": "신둔도예촌#1",
-      "label": "수도권 신둔도예촌",
+      "cluster": "계양#1",
+      "label": "수도권 계양",
       "via": "ride"
      },
      {
-      "cluster": "곤지암#1",
-      "label": "수도권 곤지암",
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
       "via": "ride"
      },
      {
-      "cluster": "초월#1",
-      "label": "수도권 초월",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "ride"
      },
      {
-      "cluster": "경기광주#1",
-      "label": "수도권 경기광주",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "삼동#1",
-      "label": "수도권 삼동",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "이매#1",
-      "label": "수도권 이매",
+      "cluster": "가좌#1",
+      "label": "수도권 가좌",
       "via": "ride"
      },
      {
-      "cluster": "서현#1",
-      "label": "수도권 서현",
+      "cluster": "신촌#2",
+      "label": "수도권 신촌",
       "via": "ride"
      },
      {
-      "cluster": "수내#1",
-      "label": "수도권 수내",
+      "cluster": "서울#1",
+      "label": "수도권 서울",
       "via": "ride"
      },
      {
-      "cluster": "정자#1",
-      "label": "수도권 정자",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "판교#1",
-      "label": "수도권 판교",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      },
      {
-      "cluster": "청계산입구#1",
-      "label": "수도권 청계산입구",
+      "cluster": "킨텍스#1",
+      "label": "수도권 킨텍스",
       "via": "ride"
      }
     ]
    },
    {
-    "value_m": 60718,
-    "start": "김유정#1",
-    "end": "퇴계원#1",
-    "start_label": "수도권 김유정",
-    "end_label": "수도권 퇴계원",
+    "value_m": 68921,
+    "start": "마곡나루#1",
+    "end": "영종#1",
+    "start_label": "수도권 마곡나루",
+    "end_label": "수도권 영종",
     "warps": 0,
-    "great_circle_m": 53615,
-    "track_m": 60718,
+    "great_circle_m": 27418,
+    "track_m": 68921,
     "path": [
      {
-      "cluster": "김유정#1",
-      "label": "수도권 김유정",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "start"
      },
      {
-      "cluster": "강촌#1",
-      "label": "수도권 강촌",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "백양리#1",
-      "label": "수도권 백양리",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "굴봉산#1",
-      "label": "수도권 굴봉산",
+      "cluster": "가좌#1",
+      "label": "수도권 가좌",
       "via": "ride"
      },
      {
-      "cluster": "가평#1",
-      "label": "수도권 가평",
+      "cluster": "신촌#2",
+      "label": "수도권 신촌",
       "via": "ride"
      },
      {
-      "cluster": "상천#1",
-      "label": "수도권 상천",
+      "cluster": "서울#1",
+      "label": "수도권 서울",
       "via": "ride"
      },
      {
-      "cluster": "청평#1",
-      "label": "수도권 청평",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "대성리#1",
-      "label": "수도권 대성리",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      },
      {
-      "cluster": "마석#1",
-      "label": "수도권 마석",
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
       "via": "ride"
      },
      {
-      "cluster": "천마산#1",
-      "label": "수도권 천마산",
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
       "via": "ride"
      },
      {
-      "cluster": "평내호평#1",
-      "label": "수도권 평내호평",
+      "cluster": "계양#1",
+      "label": "수도권 계양",
       "via": "ride"
      },
      {
-      "cluster": "금곡#2",
-      "label": "수도권 금곡",
+      "cluster": "검암#1",
+      "label": "수도권 검암",
       "via": "ride"
      },
      {
-      "cluster": "사릉#1",
-      "label": "수도권 사릉",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
       "via": "ride"
      },
      {
-      "cluster": "퇴계원#1",
-      "label": "수도권 퇴계원",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "ride"
      }
     ]
    },
    {
-    "value_m": 60210,
-    "start": "세종대왕릉#1",
-    "end": "양재#1",
-    "start_label": "수도권 세종대왕릉",
-    "end_label": "수도권 양재",
+    "value_m": 68468,
+    "start": "공항화물청사#1",
+    "end": "대곡#2",
+    "start_label": "수도권 공항화물청사",
+    "end_label": "수도권 대곡",
     "warps": 0,
-    "great_circle_m": 51942,
-    "track_m": 60210,
+    "great_circle_m": 35082,
+    "track_m": 68468,
     "path": [
      {
-      "cluster": "세종대왕릉#1",
-      "label": "수도권 세종대왕릉",
+      "cluster": "공항화물청사#1",
+      "label": "수도권 공항화물청사",
       "via": "start"
      },
      {
-      "cluster": "부발#1",
-      "label": "수도권 부발",
+      "cluster": "운서#1",
+      "label": "수도권 운서",
       "via": "ride"
      },
      {
-      "cluster": "이천#1",
-      "label": "수도권 이천",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "ride"
      },
      {
-      "cluster": "신둔도예촌#1",
-      "label": "수도권 신둔도예촌",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
       "via": "ride"
      },
      {
-      "cluster": "곤지암#1",
-      "label": "수도권 곤지암",
+      "cluster": "검암#1",
+      "label": "수도권 검암",
       "via": "ride"
      },
      {
-      "cluster": "초월#1",
-      "label": "수도권 초월",
+      "cluster": "계양#1",
+      "label": "수도권 계양",
       "via": "ride"
      },
      {
-      "cluster": "경기광주#1",
-      "label": "수도권 경기광주",
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
       "via": "ride"
      },
      {
-      "cluster": "삼동#1",
-      "label": "수도권 삼동",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "ride"
      },
      {
-      "cluster": "이매#1",
-      "label": "수도권 이매",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "성남#1",
-      "label": "수도권 성남",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "판교#1",
-      "label": "수도권 판교",
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
       "via": "ride"
      },
      {
-      "cluster": "청계산입구#1",
-      "label": "수도권 청계산입구",
+      "cluster": "서울#1",
+      "label": "수도권 서울",
       "via": "ride"
      },
      {
-      "cluster": "양재시민의숲#1",
-      "label": "수도권 양재시민의숲",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "양재#1",
-      "label": "수도권 양재",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      }
     ]
    },
    {
-    "value_m": 59800,
-    "start": "금곡#1",
-    "end": "남춘천#1",
-    "start_label": "부산 금곡",
-    "end_label": "수도권 남춘천",
-    "warps": 1,
-    "great_circle_m": 310973,
-    "track_m": 59800,
-    "path": [
-     {
-      "cluster": "금곡#1",
-      "label": "부산 금곡",
-      "via": "start"
-     },
-     {
-      "cluster": "금곡#2",
-      "label": "수도권 금곡",
-      "via": "warp"
-     },
-     {
-      "cluster": "평내호평#1",
-      "label": "수도권 평내호평",
-      "via": "ride"
-     },
-     {
-      "cluster": "천마산#1",
-      "label": "수도권 천마산",
-      "via": "ride"
-     },
-     {
-      "cluster": "마석#1",
-      "label": "수도권 마석",
-      "via": "ride"
-     },
-     {
-      "cluster": "대성리#1",
-      "label": "수도권 대성리",
-      "via": "ride"
-     },
-     {
-      "cluster": "청평#1",
-      "label": "수도권 청평",
-      "via": "ride"
-     },
-     {
-      "cluster": "상천#1",
-      "label": "수도권 상천",
-      "via": "ride"
-     },
-     {
-      "cluster": "가평#1",
-      "label": "수도권 가평",
-      "via": "ride"
-     },
-     {
-      "cluster": "굴봉산#1",
-      "label": "수도권 굴봉산",
-      "via": "ride"
-     },
-     {
-      "cluster": "백양리#1",
-      "label": "수도권 백양리",
-      "via": "ride"
-     },
-     {
-      "cluster": "강촌#1",
-      "label": "수도권 강촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "김유정#1",
-      "label": "수도권 김유정",
-      "via": "ride"
-     },
-     {
-      "cluster": "남춘천#1",
-      "label": "수도권 남춘천",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 58839,
-    "start": "여주#1",
-    "end": "판교#1",
-    "start_label": "수도권 여주",
-    "end_label": "수도권 판교",
-    "warps": 0,
-    "great_circle_m": 47417,
-    "track_m": 58839,
-    "path": [
-     {
-      "cluster": "여주#1",
-      "label": "수도권 여주",
-      "via": "start"
-     },
-     {
-      "cluster": "세종대왕릉#1",
-      "label": "수도권 세종대왕릉",
-      "via": "ride"
-     },
-     {
-      "cluster": "부발#1",
-      "label": "수도권 부발",
-      "via": "ride"
-     },
-     {
-      "cluster": "이천#1",
-      "label": "수도권 이천",
-      "via": "ride"
-     },
-     {
-      "cluster": "신둔도예촌#1",
-      "label": "수도권 신둔도예촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "곤지암#1",
-      "label": "수도권 곤지암",
-      "via": "ride"
-     },
-     {
-      "cluster": "초월#1",
-      "label": "수도권 초월",
-      "via": "ride"
-     },
-     {
-      "cluster": "경기광주#1",
-      "label": "수도권 경기광주",
-      "via": "ride"
-     },
-     {
-      "cluster": "삼동#1",
-      "label": "수도권 삼동",
-      "via": "ride"
-     },
-     {
-      "cluster": "이매#1",
-      "label": "수도권 이매",
-      "via": "ride"
-     },
-     {
-      "cluster": "서현#1",
-      "label": "수도권 서현",
-      "via": "ride"
-     },
-     {
-      "cluster": "수내#1",
-      "label": "수도권 수내",
-      "via": "ride"
-     },
-     {
-      "cluster": "정자#1",
-      "label": "수도권 정자",
-      "via": "ride"
-     },
-     {
-      "cluster": "판교#1",
-      "label": "수도권 판교",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 58289,
-    "start": "미금#1",
-    "end": "여주#1",
-    "start_label": "수도권 미금",
-    "end_label": "수도권 여주",
-    "warps": 0,
-    "great_circle_m": 46567,
-    "track_m": 58289,
-    "path": [
-     {
-      "cluster": "미금#1",
-      "label": "수도권 미금",
-      "via": "start"
-     },
-     {
-      "cluster": "정자#1",
-      "label": "수도권 정자",
-      "via": "ride"
-     },
-     {
-      "cluster": "판교#1",
-      "label": "수도권 판교",
-      "via": "ride"
-     },
-     {
-      "cluster": "성남#1",
-      "label": "수도권 성남",
-      "via": "ride"
-     },
-     {
-      "cluster": "이매#1",
-      "label": "수도권 이매",
-      "via": "ride"
-     },
-     {
-      "cluster": "삼동#1",
-      "label": "수도권 삼동",
-      "via": "ride"
-     },
-     {
-      "cluster": "경기광주#1",
-      "label": "수도권 경기광주",
-      "via": "ride"
-     },
-     {
-      "cluster": "초월#1",
-      "label": "수도권 초월",
-      "via": "ride"
-     },
-     {
-      "cluster": "곤지암#1",
-      "label": "수도권 곤지암",
-      "via": "ride"
-     },
-     {
-      "cluster": "신둔도예촌#1",
-      "label": "수도권 신둔도예촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "이천#1",
-      "label": "수도권 이천",
-      "via": "ride"
-     },
-     {
-      "cluster": "부발#1",
-      "label": "수도권 부발",
-      "via": "ride"
-     },
-     {
-      "cluster": "세종대왕릉#1",
-      "label": "수도권 세종대왕릉",
-      "via": "ride"
-     },
-     {
-      "cluster": "여주#1",
-      "label": "수도권 여주",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 57876,
-    "start": "수내#1",
-    "end": "여주#1",
-    "start_label": "수도권 수내",
-    "end_label": "수도권 여주",
-    "warps": 0,
-    "great_circle_m": 46702,
-    "track_m": 57876,
-    "path": [
-     {
-      "cluster": "수내#1",
-      "label": "수도권 수내",
-      "via": "start"
-     },
-     {
-      "cluster": "정자#1",
-      "label": "수도권 정자",
-      "via": "ride"
-     },
-     {
-      "cluster": "판교#1",
-      "label": "수도권 판교",
-      "via": "ride"
-     },
-     {
-      "cluster": "성남#1",
-      "label": "수도권 성남",
-      "via": "ride"
-     },
-     {
-      "cluster": "이매#1",
-      "label": "수도권 이매",
-      "via": "ride"
-     },
-     {
-      "cluster": "삼동#1",
-      "label": "수도권 삼동",
-      "via": "ride"
-     },
-     {
-      "cluster": "경기광주#1",
-      "label": "수도권 경기광주",
-      "via": "ride"
-     },
-     {
-      "cluster": "초월#1",
-      "label": "수도권 초월",
-      "via": "ride"
-     },
-     {
-      "cluster": "곤지암#1",
-      "label": "수도권 곤지암",
-      "via": "ride"
-     },
-     {
-      "cluster": "신둔도예촌#1",
-      "label": "수도권 신둔도예촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "이천#1",
-      "label": "수도권 이천",
-      "via": "ride"
-     },
-     {
-      "cluster": "부발#1",
-      "label": "수도권 부발",
-      "via": "ride"
-     },
-     {
-      "cluster": "세종대왕릉#1",
-      "label": "수도권 세종대왕릉",
-      "via": "ride"
-     },
-     {
-      "cluster": "여주#1",
-      "label": "수도권 여주",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 57820,
+    "value_m": 68367,
     "start": "가천대#1",
     "end": "여주#1",
     "start_label": "수도권 가천대",
     "end_label": "수도권 여주",
     "warps": 0,
     "great_circle_m": 48038,
-    "track_m": 57820,
+    "track_m": 68367,
     "path": [
      {
       "cluster": "가천대#1",
@@ -2487,100 +2159,18 @@
       "via": "start"
      },
      {
-      "cluster": "태평#1",
-      "label": "수도권 태평",
+      "cluster": "복정#1",
+      "label": "수도권 복정",
       "via": "ride"
      },
      {
-      "cluster": "모란#1",
-      "label": "수도권 모란",
+      "cluster": "수서#1",
+      "label": "수도권 수서",
       "via": "ride"
      },
      {
-      "cluster": "야탑#1",
-      "label": "수도권 야탑",
-      "via": "ride"
-     },
-     {
-      "cluster": "이매#1",
-      "label": "수도권 이매",
-      "via": "ride"
-     },
-     {
-      "cluster": "삼동#1",
-      "label": "수도권 삼동",
-      "via": "ride"
-     },
-     {
-      "cluster": "경기광주#1",
-      "label": "수도권 경기광주",
-      "via": "ride"
-     },
-     {
-      "cluster": "초월#1",
-      "label": "수도권 초월",
-      "via": "ride"
-     },
-     {
-      "cluster": "곤지암#1",
-      "label": "수도권 곤지암",
-      "via": "ride"
-     },
-     {
-      "cluster": "신둔도예촌#1",
-      "label": "수도권 신둔도예촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "이천#1",
-      "label": "수도권 이천",
-      "via": "ride"
-     },
-     {
-      "cluster": "부발#1",
-      "label": "수도권 부발",
-      "via": "ride"
-     },
-     {
-      "cluster": "세종대왕릉#1",
-      "label": "수도권 세종대왕릉",
-      "via": "ride"
-     },
-     {
-      "cluster": "여주#1",
-      "label": "수도권 여주",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 57704,
-    "start": "신흥#2",
-    "end": "여주#1",
-    "start_label": "수도권 신흥",
-    "end_label": "수도권 여주",
-    "warps": 0,
-    "great_circle_m": 45999,
-    "track_m": 57704,
-    "path": [
-     {
-      "cluster": "신흥#2",
-      "label": "수도권 신흥",
-      "via": "start"
-     },
-     {
-      "cluster": "수진#1",
-      "label": "수도권 수진",
-      "via": "ride"
-     },
-     {
-      "cluster": "모란#1",
-      "label": "수도권 모란",
-      "via": "ride"
-     },
-     {
-      "cluster": "야탑#1",
-      "label": "수도권 야탑",
+      "cluster": "성남#1",
+      "label": "수도권 성남",
       "via": "ride"
      },
      {
@@ -2636,551 +2226,59 @@
     ]
    },
    {
-    "value_m": 56184,
-    "start": "김유정#1",
-    "end": "호포#1",
-    "start_label": "수도권 김유정",
-    "end_label": "부산 호포",
-    "warps": 1,
-    "great_circle_m": 305217,
-    "track_m": 56184,
-    "path": [
-     {
-      "cluster": "김유정#1",
-      "label": "수도권 김유정",
-      "via": "start"
-     },
-     {
-      "cluster": "강촌#1",
-      "label": "수도권 강촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "백양리#1",
-      "label": "수도권 백양리",
-      "via": "ride"
-     },
-     {
-      "cluster": "굴봉산#1",
-      "label": "수도권 굴봉산",
-      "via": "ride"
-     },
-     {
-      "cluster": "가평#1",
-      "label": "수도권 가평",
-      "via": "ride"
-     },
-     {
-      "cluster": "상천#1",
-      "label": "수도권 상천",
-      "via": "ride"
-     },
-     {
-      "cluster": "청평#1",
-      "label": "수도권 청평",
-      "via": "ride"
-     },
-     {
-      "cluster": "대성리#1",
-      "label": "수도권 대성리",
-      "via": "ride"
-     },
-     {
-      "cluster": "마석#1",
-      "label": "수도권 마석",
-      "via": "ride"
-     },
-     {
-      "cluster": "천마산#1",
-      "label": "수도권 천마산",
-      "via": "ride"
-     },
-     {
-      "cluster": "평내호평#1",
-      "label": "수도권 평내호평",
-      "via": "ride"
-     },
-     {
-      "cluster": "금곡#2",
-      "label": "수도권 금곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "금곡#1",
-      "label": "부산 금곡",
-      "via": "warp"
-     },
-     {
-      "cluster": "호포#1",
-      "label": "부산 호포",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 56154,
-    "start": "부발#1",
-    "end": "양재시민의숲#1",
-    "start_label": "수도권 부발",
-    "end_label": "수도권 양재시민의숲",
+    "value_m": 68074,
+    "start": "양천향교#1",
+    "end": "영종#1",
+    "start_label": "수도권 양천향교",
+    "end_label": "수도권 영종",
     "warps": 0,
-    "great_circle_m": 46292,
-    "track_m": 56154,
+    "great_circle_m": 28653,
+    "track_m": 68074,
     "path": [
      {
-      "cluster": "부발#1",
-      "label": "수도권 부발",
+      "cluster": "양천향교#1",
+      "label": "수도권 양천향교",
       "via": "start"
      },
      {
-      "cluster": "이천#1",
-      "label": "수도권 이천",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "ride"
      },
      {
-      "cluster": "신둔도예촌#1",
-      "label": "수도권 신둔도예촌",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "곤지암#1",
-      "label": "수도권 곤지암",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "초월#1",
-      "label": "수도권 초월",
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
       "via": "ride"
      },
-     {
-      "cluster": "경기광주#1",
-      "label": "수도권 경기광주",
-      "via": "ride"
-     },
-     {
-      "cluster": "삼동#1",
-      "label": "수도권 삼동",
-      "via": "ride"
-     },
-     {
-      "cluster": "이매#1",
-      "label": "수도권 이매",
-      "via": "ride"
-     },
-     {
-      "cluster": "서현#1",
-      "label": "수도권 서현",
-      "via": "ride"
-     },
-     {
-      "cluster": "수내#1",
-      "label": "수도권 수내",
-      "via": "ride"
-     },
-     {
-      "cluster": "정자#1",
-      "label": "수도권 정자",
-      "via": "ride"
-     },
-     {
-      "cluster": "판교#1",
-      "label": "수도권 판교",
-      "via": "ride"
-     },
-     {
-      "cluster": "청계산입구#1",
-      "label": "수도권 청계산입구",
-      "via": "ride"
-     },
-     {
-      "cluster": "양재시민의숲#1",
-      "label": "수도권 양재시민의숲",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 56137,
-    "start": "구미#1",
-    "end": "선부#1",
-    "start_label": "대구 구미",
-    "end_label": "수도권 선부",
-    "warps": 1,
-    "great_circle_m": 190696,
-    "track_m": 56137,
-    "path": [
-     {
-      "cluster": "구미#1",
-      "label": "대구 구미",
-      "via": "start"
-     },
-     {
-      "cluster": "사곡#1",
-      "label": "대구 사곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "북삼#1",
-      "label": "대구 북삼",
-      "via": "ride"
-     },
-     {
-      "cluster": "왜관#1",
-      "label": "대구 왜관",
-      "via": "ride"
-     },
-     {
-      "cluster": "서대구#1",
-      "label": "대구 서대구",
-      "via": "ride"
-     },
-     {
-      "cluster": "대구#1",
-      "label": "대구 대구",
-      "via": "ride"
-     },
-     {
-      "cluster": "동대구#1",
-      "label": "대구 동대구",
-      "via": "ride"
-     },
-     {
-      "cluster": "신천#1",
-      "label": "대구 신천",
-      "via": "ride"
-     },
-     {
-      "cluster": "신천#2",
-      "label": "수도권 신천",
-      "via": "warp"
-     },
-     {
-      "cluster": "신현#1",
-      "label": "수도권 신현",
-      "via": "ride"
-     },
-     {
-      "cluster": "시흥시청#1",
-      "label": "수도권 시흥시청",
-      "via": "ride"
-     },
-     {
-      "cluster": "시흥능곡#1",
-      "label": "수도권 시흥능곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "달미#1",
-      "label": "수도권 달미",
-      "via": "ride"
-     },
-     {
-      "cluster": "선부#1",
-      "label": "수도권 선부",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 55710,
-    "start": "김유정#1",
-    "end": "동원#1",
-    "start_label": "수도권 김유정",
-    "end_label": "부산 동원",
-    "warps": 1,
-    "great_circle_m": 307351,
-    "track_m": 55710,
-    "path": [
-     {
-      "cluster": "김유정#1",
-      "label": "수도권 김유정",
-      "via": "start"
-     },
-     {
-      "cluster": "강촌#1",
-      "label": "수도권 강촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "백양리#1",
-      "label": "수도권 백양리",
-      "via": "ride"
-     },
-     {
-      "cluster": "굴봉산#1",
-      "label": "수도권 굴봉산",
-      "via": "ride"
-     },
-     {
-      "cluster": "가평#1",
-      "label": "수도권 가평",
-      "via": "ride"
-     },
-     {
-      "cluster": "상천#1",
-      "label": "수도권 상천",
-      "via": "ride"
-     },
-     {
-      "cluster": "청평#1",
-      "label": "수도권 청평",
-      "via": "ride"
-     },
-     {
-      "cluster": "대성리#1",
-      "label": "수도권 대성리",
-      "via": "ride"
-     },
-     {
-      "cluster": "마석#1",
-      "label": "수도권 마석",
-      "via": "ride"
-     },
-     {
-      "cluster": "천마산#1",
-      "label": "수도권 천마산",
-      "via": "ride"
-     },
-     {
-      "cluster": "평내호평#1",
-      "label": "수도권 평내호평",
-      "via": "ride"
-     },
-     {
-      "cluster": "금곡#2",
-      "label": "수도권 금곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "금곡#1",
-      "label": "부산 금곡",
-      "via": "warp"
-     },
-     {
-      "cluster": "동원#1",
-      "label": "부산 동원",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 55694,
-    "start": "서울#1",
-    "end": "인천공항2터미널#1",
-    "start_label": "수도권 서울",
-    "end_label": "수도권 인천공항2터미널",
-    "warps": 0,
-    "great_circle_m": 48414,
-    "track_m": 55694,
-    "path": [
      {
       "cluster": "서울#1",
       "label": "수도권 서울",
-      "via": "start"
-     },
-     {
-      "cluster": "공덕#1",
-      "label": "수도권 공덕",
       "via": "ride"
      },
      {
-      "cluster": "홍대입구#1",
-      "label": "수도권 홍대입구",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "디지털미디어시티#1",
-      "label": "수도권 디지털미디어시티",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      },
-     {
-      "cluster": "마곡나루#1",
-      "label": "수도권 마곡나루",
-      "via": "ride"
-     },
-     {
-      "cluster": "김포공항#1",
-      "label": "수도권 김포공항",
-      "via": "ride"
-     },
-     {
-      "cluster": "계양#1",
-      "label": "수도권 계양",
-      "via": "ride"
-     },
-     {
-      "cluster": "검암#1",
-      "label": "수도권 검암",
-      "via": "ride"
-     },
-     {
-      "cluster": "청라국제도시#1",
-      "label": "수도권 청라국제도시",
-      "via": "ride"
-     },
-     {
-      "cluster": "영종#1",
-      "label": "수도권 영종",
-      "via": "ride"
-     },
-     {
-      "cluster": "운서#1",
-      "label": "수도권 운서",
-      "via": "ride"
-     },
-     {
-      "cluster": "공항화물청사#1",
-      "label": "수도권 공항화물청사",
-      "via": "ride"
-     },
-     {
-      "cluster": "인천공항1터미널#1",
-      "label": "수도권 인천공항1터미널",
-      "via": "ride"
-     },
-     {
-      "cluster": "인천공항2터미널#1",
-      "label": "수도권 인천공항2터미널",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 55667,
-    "start": "능곡#1",
-    "end": "북삼#1",
-    "start_label": "수도권 능곡",
-    "end_label": "대구 북삼",
-    "warps": 1,
-    "great_circle_m": 220451,
-    "track_m": 55667,
-    "path": [
      {
       "cluster": "능곡#1",
       "label": "수도권 능곡",
-      "via": "start"
-     },
-     {
-      "cluster": "김포공항#1",
-      "label": "수도권 김포공항",
       "via": "ride"
-     },
-     {
-      "cluster": "원종#1",
-      "label": "수도권 원종",
-      "via": "ride"
-     },
-     {
-      "cluster": "부천종합운동장#1",
-      "label": "수도권 부천종합운동장",
-      "via": "ride"
-     },
-     {
-      "cluster": "소사#1",
-      "label": "수도권 소사",
-      "via": "ride"
-     },
-     {
-      "cluster": "소새울#1",
-      "label": "수도권 소새울",
-      "via": "ride"
-     },
-     {
-      "cluster": "시흥대야#1",
-      "label": "수도권 시흥대야",
-      "via": "ride"
-     },
-     {
-      "cluster": "신천#2",
-      "label": "수도권 신천",
-      "via": "ride"
-     },
-     {
-      "cluster": "신천#1",
-      "label": "대구 신천",
-      "via": "warp"
-     },
-     {
-      "cluster": "동대구#1",
-      "label": "대구 동대구",
-      "via": "ride"
-     },
-     {
-      "cluster": "대구#1",
-      "label": "대구 대구",
-      "via": "ride"
-     },
-     {
-      "cluster": "서대구#1",
-      "label": "대구 서대구",
-      "via": "ride"
-     },
-     {
-      "cluster": "왜관#1",
-      "label": "대구 왜관",
-      "via": "ride"
-     },
-     {
-      "cluster": "북삼#1",
-      "label": "대구 북삼",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 55586,
-    "start": "남창#1",
-    "end": "영종#1",
-    "start_label": "부산 남창",
-    "end_label": "수도권 영종",
-    "warps": 1,
-    "great_circle_m": 339023,
-    "track_m": 55586,
-    "path": [
-     {
-      "cluster": "남창#1",
-      "label": "부산 남창",
-      "via": "start"
-     },
-     {
-      "cluster": "서생#1",
-      "label": "부산 서생",
-      "via": "ride"
-     },
-     {
-      "cluster": "월내#1",
-      "label": "부산 월내",
-      "via": "ride"
-     },
-     {
-      "cluster": "좌천#2",
-      "label": "부산 좌천",
-      "via": "ride"
-     },
-     {
-      "cluster": "일광#1",
-      "label": "부산 일광",
-      "via": "ride"
-     },
-     {
-      "cluster": "기장#1",
-      "label": "부산 기장",
-      "via": "ride"
-     },
-     {
-      "cluster": "오시리아#1",
-      "label": "부산 오시리아",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#1",
-      "label": "부산 송정",
-      "via": "ride"
-     },
-     {
-      "cluster": "송정#2",
-      "label": "수도권 송정",
-      "via": "warp"
      },
      {
       "cluster": "김포공항#1",
@@ -3210,19 +2308,772 @@
     ]
    },
    {
-    "value_m": 55537,
-    "start": "서강대#1",
-    "end": "인천공항2터미널#1",
-    "start_label": "수도권 서강대",
-    "end_label": "수도권 인천공항2터미널",
+    "value_m": 67980,
+    "start": "공항화물청사#1",
+    "end": "디지털미디어시티#1",
+    "start_label": "수도권 공항화물청사",
+    "end_label": "수도권 디지털미디어시티",
     "warps": 0,
-    "great_circle_m": 45239,
-    "track_m": 55537,
+    "great_circle_m": 39509,
+    "track_m": 67980,
     "path": [
      {
-      "cluster": "서강대#1",
-      "label": "수도권 서강대",
+      "cluster": "공항화물청사#1",
+      "label": "수도권 공항화물청사",
       "via": "start"
+     },
+     {
+      "cluster": "운서#1",
+      "label": "수도권 운서",
+      "via": "ride"
+     },
+     {
+      "cluster": "영종#1",
+      "label": "수도권 영종",
+      "via": "ride"
+     },
+     {
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
+      "via": "ride"
+     },
+     {
+      "cluster": "검암#1",
+      "label": "수도권 검암",
+      "via": "ride"
+     },
+     {
+      "cluster": "계양#1",
+      "label": "수도권 계양",
+      "via": "ride"
+     },
+     {
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
+      "via": "ride"
+     },
+     {
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
+      "via": "ride"
+     },
+     {
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
+      "via": "ride"
+     },
+     {
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 67927,
+    "start": "신촌#2",
+    "end": "인천공항2터미널#1",
+    "start_label": "수도권 신촌",
+    "end_label": "수도권 인천공항2터미널",
+    "warps": 0,
+    "great_circle_m": 46013,
+    "track_m": 67927,
+    "path": [
+     {
+      "cluster": "신촌#2",
+      "label": "수도권 신촌",
+      "via": "start"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
+      "via": "ride"
+     },
+     {
+      "cluster": "계양#1",
+      "label": "수도권 계양",
+      "via": "ride"
+     },
+     {
+      "cluster": "검암#1",
+      "label": "수도권 검암",
+      "via": "ride"
+     },
+     {
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
+      "via": "ride"
+     },
+     {
+      "cluster": "영종#1",
+      "label": "수도권 영종",
+      "via": "ride"
+     },
+     {
+      "cluster": "운서#1",
+      "label": "수도권 운서",
+      "via": "ride"
+     },
+     {
+      "cluster": "공항화물청사#1",
+      "label": "수도권 공항화물청사",
+      "via": "ride"
+     },
+     {
+      "cluster": "인천공항1터미널#1",
+      "label": "수도권 인천공항1터미널",
+      "via": "ride"
+     },
+     {
+      "cluster": "인천공항2터미널#1",
+      "label": "수도권 인천공항2터미널",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 67814,
+    "start": "신방화#1",
+    "end": "영종#1",
+    "start_label": "수도권 신방화",
+    "end_label": "수도권 영종",
+    "warps": 0,
+    "great_circle_m": 26508,
+    "track_m": 67814,
+    "path": [
+     {
+      "cluster": "신방화#1",
+      "label": "수도권 신방화",
+      "via": "start"
+     },
+     {
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
+      "via": "ride"
+     },
+     {
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
+      "via": "ride"
+     },
+     {
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
+      "via": "ride"
+     },
+     {
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
+      "via": "ride"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
+      "via": "ride"
+     },
+     {
+      "cluster": "계양#1",
+      "label": "수도권 계양",
+      "via": "ride"
+     },
+     {
+      "cluster": "검암#1",
+      "label": "수도권 검암",
+      "via": "ride"
+     },
+     {
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
+      "via": "ride"
+     },
+     {
+      "cluster": "영종#1",
+      "label": "수도권 영종",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 67664,
+    "start": "가좌#1",
+    "end": "인천공항1터미널#1",
+    "start_label": "수도권 가좌",
+    "end_label": "수도권 인천공항1터미널",
+    "warps": 0,
+    "great_circle_m": 42957,
+    "track_m": 67664,
+    "path": [
+     {
+      "cluster": "가좌#1",
+      "label": "수도권 가좌",
+      "via": "start"
+     },
+     {
+      "cluster": "신촌#2",
+      "label": "수도권 신촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
+      "via": "ride"
+     },
+     {
+      "cluster": "계양#1",
+      "label": "수도권 계양",
+      "via": "ride"
+     },
+     {
+      "cluster": "검암#1",
+      "label": "수도권 검암",
+      "via": "ride"
+     },
+     {
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
+      "via": "ride"
+     },
+     {
+      "cluster": "영종#1",
+      "label": "수도권 영종",
+      "via": "ride"
+     },
+     {
+      "cluster": "운서#1",
+      "label": "수도권 운서",
+      "via": "ride"
+     },
+     {
+      "cluster": "공항화물청사#1",
+      "label": "수도권 공항화물청사",
+      "via": "ride"
+     },
+     {
+      "cluster": "인천공항1터미널#1",
+      "label": "수도권 인천공항1터미널",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 67451,
+    "start": "남위례#1",
+    "end": "여주#1",
+    "start_label": "수도권 남위례",
+    "end_label": "수도권 여주",
+    "warps": 0,
+    "great_circle_m": 47662,
+    "track_m": 67451,
+    "path": [
+     {
+      "cluster": "남위례#1",
+      "label": "수도권 남위례",
+      "via": "start"
+     },
+     {
+      "cluster": "복정#1",
+      "label": "수도권 복정",
+      "via": "ride"
+     },
+     {
+      "cluster": "수서#1",
+      "label": "수도권 수서",
+      "via": "ride"
+     },
+     {
+      "cluster": "성남#1",
+      "label": "수도권 성남",
+      "via": "ride"
+     },
+     {
+      "cluster": "이매#1",
+      "label": "수도권 이매",
+      "via": "ride"
+     },
+     {
+      "cluster": "삼동#1",
+      "label": "수도권 삼동",
+      "via": "ride"
+     },
+     {
+      "cluster": "경기광주#1",
+      "label": "수도권 경기광주",
+      "via": "ride"
+     },
+     {
+      "cluster": "초월#1",
+      "label": "수도권 초월",
+      "via": "ride"
+     },
+     {
+      "cluster": "곤지암#1",
+      "label": "수도권 곤지암",
+      "via": "ride"
+     },
+     {
+      "cluster": "신둔도예촌#1",
+      "label": "수도권 신둔도예촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "이천#1",
+      "label": "수도권 이천",
+      "via": "ride"
+     },
+     {
+      "cluster": "부발#1",
+      "label": "수도권 부발",
+      "via": "ride"
+     },
+     {
+      "cluster": "세종대왕릉#1",
+      "label": "수도권 세종대왕릉",
+      "via": "ride"
+     },
+     {
+      "cluster": "여주#1",
+      "label": "수도권 여주",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 67309,
+    "start": "공덕#1",
+    "end": "인천공항2터미널#1",
+    "start_label": "수도권 공덕",
+    "end_label": "수도권 인천공항2터미널",
+    "warps": 0,
+    "great_circle_m": 46457,
+    "track_m": 67308,
+    "path": [
+     {
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
+      "via": "start"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
+      "via": "ride"
+     },
+     {
+      "cluster": "계양#1",
+      "label": "수도권 계양",
+      "via": "ride"
+     },
+     {
+      "cluster": "검암#1",
+      "label": "수도권 검암",
+      "via": "ride"
+     },
+     {
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
+      "via": "ride"
+     },
+     {
+      "cluster": "영종#1",
+      "label": "수도권 영종",
+      "via": "ride"
+     },
+     {
+      "cluster": "운서#1",
+      "label": "수도권 운서",
+      "via": "ride"
+     },
+     {
+      "cluster": "공항화물청사#1",
+      "label": "수도권 공항화물청사",
+      "via": "ride"
+     },
+     {
+      "cluster": "인천공항1터미널#1",
+      "label": "수도권 인천공항1터미널",
+      "via": "ride"
+     },
+     {
+      "cluster": "인천공항2터미널#1",
+      "label": "수도권 인천공항2터미널",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 67208,
+    "start": "인천공항1터미널#1",
+    "end": "홍대입구#1",
+    "start_label": "수도권 인천공항1터미널",
+    "end_label": "수도권 홍대입구",
+    "warps": 0,
+    "great_circle_m": 43500,
+    "track_m": 67208,
+    "path": [
+     {
+      "cluster": "인천공항1터미널#1",
+      "label": "수도권 인천공항1터미널",
+      "via": "start"
+     },
+     {
+      "cluster": "공항화물청사#1",
+      "label": "수도권 공항화물청사",
+      "via": "ride"
+     },
+     {
+      "cluster": "운서#1",
+      "label": "수도권 운서",
+      "via": "ride"
+     },
+     {
+      "cluster": "영종#1",
+      "label": "수도권 영종",
+      "via": "ride"
+     },
+     {
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
+      "via": "ride"
+     },
+     {
+      "cluster": "검암#1",
+      "label": "수도권 검암",
+      "via": "ride"
+     },
+     {
+      "cluster": "계양#1",
+      "label": "수도권 계양",
+      "via": "ride"
+     },
+     {
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
+      "via": "ride"
+     },
+     {
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
+      "via": "ride"
+     },
+     {
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 67039,
+    "start": "남영#1",
+    "end": "인천공항2터미널#1",
+    "start_label": "수도권 남영",
+    "end_label": "수도권 인천공항2터미널",
+    "warps": 0,
+    "great_circle_m": 48106,
+    "track_m": 67039,
+    "path": [
+     {
+      "cluster": "남영#1",
+      "label": "수도권 남영",
+      "via": "start"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
+      "via": "ride"
+     },
+     {
+      "cluster": "계양#1",
+      "label": "수도권 계양",
+      "via": "ride"
+     },
+     {
+      "cluster": "검암#1",
+      "label": "수도권 검암",
+      "via": "ride"
+     },
+     {
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
+      "via": "ride"
+     },
+     {
+      "cluster": "영종#1",
+      "label": "수도권 영종",
+      "via": "ride"
+     },
+     {
+      "cluster": "운서#1",
+      "label": "수도권 운서",
+      "via": "ride"
+     },
+     {
+      "cluster": "공항화물청사#1",
+      "label": "수도권 공항화물청사",
+      "via": "ride"
+     },
+     {
+      "cluster": "인천공항1터미널#1",
+      "label": "수도권 인천공항1터미널",
+      "via": "ride"
+     },
+     {
+      "cluster": "인천공항2터미널#1",
+      "label": "수도권 인천공항2터미널",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 66881,
+    "start": "여주#1",
+    "end": "장지#1",
+    "start_label": "수도권 여주",
+    "end_label": "수도권 장지",
+    "warps": 0,
+    "great_circle_m": 49434,
+    "track_m": 66881,
+    "path": [
+     {
+      "cluster": "여주#1",
+      "label": "수도권 여주",
+      "via": "start"
+     },
+     {
+      "cluster": "세종대왕릉#1",
+      "label": "수도권 세종대왕릉",
+      "via": "ride"
+     },
+     {
+      "cluster": "부발#1",
+      "label": "수도권 부발",
+      "via": "ride"
+     },
+     {
+      "cluster": "이천#1",
+      "label": "수도권 이천",
+      "via": "ride"
+     },
+     {
+      "cluster": "신둔도예촌#1",
+      "label": "수도권 신둔도예촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "곤지암#1",
+      "label": "수도권 곤지암",
+      "via": "ride"
+     },
+     {
+      "cluster": "초월#1",
+      "label": "수도권 초월",
+      "via": "ride"
+     },
+     {
+      "cluster": "경기광주#1",
+      "label": "수도권 경기광주",
+      "via": "ride"
+     },
+     {
+      "cluster": "삼동#1",
+      "label": "수도권 삼동",
+      "via": "ride"
+     },
+     {
+      "cluster": "이매#1",
+      "label": "수도권 이매",
+      "via": "ride"
+     },
+     {
+      "cluster": "성남#1",
+      "label": "수도권 성남",
+      "via": "ride"
+     },
+     {
+      "cluster": "수서#1",
+      "label": "수도권 수서",
+      "via": "ride"
+     },
+     {
+      "cluster": "복정#1",
+      "label": "수도권 복정",
+      "via": "ride"
+     },
+     {
+      "cluster": "장지#1",
+      "label": "수도권 장지",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 66824,
+    "start": "백석#1",
+    "end": "운서#1",
+    "start_label": "수도권 백석",
+    "end_label": "수도권 운서",
+    "warps": 0,
+    "great_circle_m": 30857,
+    "track_m": 66824,
+    "path": [
+     {
+      "cluster": "백석#1",
+      "label": "수도권 백석",
+      "via": "start"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
      },
      {
       "cluster": "공덕#1",
@@ -3273,26 +3124,175 @@
       "cluster": "운서#1",
       "label": "수도권 운서",
       "via": "ride"
-     },
+     }
+    ]
+   },
+   {
+    "value_m": 66730,
+    "start": "공항화물청사#1",
+    "end": "홍대입구#1",
+    "start_label": "수도권 공항화물청사",
+    "end_label": "수도권 홍대입구",
+    "warps": 0,
+    "great_circle_m": 41021,
+    "track_m": 66730,
+    "path": [
      {
       "cluster": "공항화물청사#1",
       "label": "수도권 공항화물청사",
+      "via": "start"
+     },
+     {
+      "cluster": "운서#1",
+      "label": "수도권 운서",
       "via": "ride"
      },
      {
-      "cluster": "인천공항1터미널#1",
-      "label": "수도권 인천공항1터미널",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "ride"
      },
      {
-      "cluster": "인천공항2터미널#1",
-      "label": "수도권 인천공항2터미널",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
+      "via": "ride"
+     },
+     {
+      "cluster": "검암#1",
+      "label": "수도권 검암",
+      "via": "ride"
+     },
+     {
+      "cluster": "계양#1",
+      "label": "수도권 계양",
+      "via": "ride"
+     },
+     {
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
+      "via": "ride"
+     },
+     {
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "신촌#2",
+      "label": "수도권 신촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "가좌#1",
+      "label": "수도권 가좌",
+      "via": "ride"
+     },
+     {
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 66519,
+    "start": "대곡#2",
+    "end": "운서#1",
+    "start_label": "수도권 대곡",
+    "end_label": "수도권 운서",
+    "warps": 0,
+    "great_circle_m": 31907,
+    "track_m": 66519,
+    "path": [
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "start"
+     },
+     {
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
+      "via": "ride"
+     },
+     {
+      "cluster": "서울#1",
+      "label": "수도권 서울",
+      "via": "ride"
+     },
+     {
+      "cluster": "신촌#2",
+      "label": "수도권 신촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "가좌#1",
+      "label": "수도권 가좌",
+      "via": "ride"
+     },
+     {
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
+      "via": "ride"
+     },
+     {
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
+      "via": "ride"
+     },
+     {
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
+      "via": "ride"
+     },
+     {
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
+      "via": "ride"
+     },
+     {
+      "cluster": "계양#1",
+      "label": "수도권 계양",
+      "via": "ride"
+     },
+     {
+      "cluster": "검암#1",
+      "label": "수도권 검암",
+      "via": "ride"
+     },
+     {
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
+      "via": "ride"
+     },
+     {
+      "cluster": "영종#1",
+      "label": "수도권 영종",
+      "via": "ride"
+     },
+     {
+      "cluster": "운서#1",
+      "label": "수도권 운서",
       "via": "ride"
      }
     ]
    }
   ],
-  "pairs_seen": 104151
+  "pairs_seen": 120713
  },
  "without_warp": {
   "great_circle": [
@@ -3319,6 +3319,170 @@
      {
       "cluster": "판교#1",
       "label": "수도권 판교",
+      "via": "ride"
+     },
+     {
+      "cluster": "성남#1",
+      "label": "수도권 성남",
+      "via": "ride"
+     },
+     {
+      "cluster": "이매#1",
+      "label": "수도권 이매",
+      "via": "ride"
+     },
+     {
+      "cluster": "삼동#1",
+      "label": "수도권 삼동",
+      "via": "ride"
+     },
+     {
+      "cluster": "경기광주#1",
+      "label": "수도권 경기광주",
+      "via": "ride"
+     },
+     {
+      "cluster": "초월#1",
+      "label": "수도권 초월",
+      "via": "ride"
+     },
+     {
+      "cluster": "곤지암#1",
+      "label": "수도권 곤지암",
+      "via": "ride"
+     },
+     {
+      "cluster": "신둔도예촌#1",
+      "label": "수도권 신둔도예촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "이천#1",
+      "label": "수도권 이천",
+      "via": "ride"
+     },
+     {
+      "cluster": "부발#1",
+      "label": "수도권 부발",
+      "via": "ride"
+     },
+     {
+      "cluster": "세종대왕릉#1",
+      "label": "수도권 세종대왕릉",
+      "via": "ride"
+     },
+     {
+      "cluster": "여주#1",
+      "label": "수도권 여주",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 54737,
+    "start": "개포동#1",
+    "end": "여주#1",
+    "start_label": "수도권 개포동",
+    "end_label": "수도권 여주",
+    "warps": 0,
+    "great_circle_m": 54737,
+    "track_m": 66212,
+    "path": [
+     {
+      "cluster": "개포동#1",
+      "label": "수도권 개포동",
+      "via": "start"
+     },
+     {
+      "cluster": "대모산입구#1",
+      "label": "수도권 대모산입구",
+      "via": "ride"
+     },
+     {
+      "cluster": "수서#1",
+      "label": "수도권 수서",
+      "via": "ride"
+     },
+     {
+      "cluster": "성남#1",
+      "label": "수도권 성남",
+      "via": "ride"
+     },
+     {
+      "cluster": "이매#1",
+      "label": "수도권 이매",
+      "via": "ride"
+     },
+     {
+      "cluster": "삼동#1",
+      "label": "수도권 삼동",
+      "via": "ride"
+     },
+     {
+      "cluster": "경기광주#1",
+      "label": "수도권 경기광주",
+      "via": "ride"
+     },
+     {
+      "cluster": "초월#1",
+      "label": "수도권 초월",
+      "via": "ride"
+     },
+     {
+      "cluster": "곤지암#1",
+      "label": "수도권 곤지암",
+      "via": "ride"
+     },
+     {
+      "cluster": "신둔도예촌#1",
+      "label": "수도권 신둔도예촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "이천#1",
+      "label": "수도권 이천",
+      "via": "ride"
+     },
+     {
+      "cluster": "부발#1",
+      "label": "수도권 부발",
+      "via": "ride"
+     },
+     {
+      "cluster": "세종대왕릉#1",
+      "label": "수도권 세종대왕릉",
+      "via": "ride"
+     },
+     {
+      "cluster": "여주#1",
+      "label": "수도권 여주",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 53870,
+    "start": "대청#1",
+    "end": "여주#1",
+    "start_label": "수도권 대청",
+    "end_label": "수도권 여주",
+    "warps": 0,
+    "great_circle_m": 53870,
+    "track_m": 65805,
+    "path": [
+     {
+      "cluster": "대청#1",
+      "label": "수도권 대청",
+      "via": "start"
+     },
+     {
+      "cluster": "일원#1",
+      "label": "수도권 일원",
+      "via": "ride"
+     },
+     {
+      "cluster": "수서#1",
+      "label": "수도권 수서",
       "via": "ride"
      },
      {
@@ -3541,584 +3705,420 @@
       "via": "ride"
      }
     ]
-   },
-   {
-    "value_m": 52476,
-    "start": "금곡#2",
-    "end": "춘천#1",
-    "start_label": "수도권 금곡",
-    "end_label": "수도권 춘천",
-    "warps": 0,
-    "great_circle_m": 52476,
-    "track_m": 62146,
-    "path": [
-     {
-      "cluster": "금곡#2",
-      "label": "수도권 금곡",
-      "via": "start"
-     },
-     {
-      "cluster": "평내호평#1",
-      "label": "수도권 평내호평",
-      "via": "ride"
-     },
-     {
-      "cluster": "천마산#1",
-      "label": "수도권 천마산",
-      "via": "ride"
-     },
-     {
-      "cluster": "마석#1",
-      "label": "수도권 마석",
-      "via": "ride"
-     },
-     {
-      "cluster": "대성리#1",
-      "label": "수도권 대성리",
-      "via": "ride"
-     },
-     {
-      "cluster": "청평#1",
-      "label": "수도권 청평",
-      "via": "ride"
-     },
-     {
-      "cluster": "상천#1",
-      "label": "수도권 상천",
-      "via": "ride"
-     },
-     {
-      "cluster": "가평#1",
-      "label": "수도권 가평",
-      "via": "ride"
-     },
-     {
-      "cluster": "굴봉산#1",
-      "label": "수도권 굴봉산",
-      "via": "ride"
-     },
-     {
-      "cluster": "백양리#1",
-      "label": "수도권 백양리",
-      "via": "ride"
-     },
-     {
-      "cluster": "강촌#1",
-      "label": "수도권 강촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "김유정#1",
-      "label": "수도권 김유정",
-      "via": "ride"
-     },
-     {
-      "cluster": "남춘천#1",
-      "label": "수도권 남춘천",
-      "via": "ride"
-     },
-     {
-      "cluster": "춘천#1",
-      "label": "수도권 춘천",
-      "via": "ride"
-     }
-    ]
-   },
-   {
-    "value_m": 51942,
-    "start": "세종대왕릉#1",
-    "end": "양재#1",
-    "start_label": "수도권 세종대왕릉",
-    "end_label": "수도권 양재",
-    "warps": 0,
-    "great_circle_m": 51942,
-    "track_m": 60210,
-    "path": [
-     {
-      "cluster": "세종대왕릉#1",
-      "label": "수도권 세종대왕릉",
-      "via": "start"
-     },
-     {
-      "cluster": "부발#1",
-      "label": "수도권 부발",
-      "via": "ride"
-     },
-     {
-      "cluster": "이천#1",
-      "label": "수도권 이천",
-      "via": "ride"
-     },
-     {
-      "cluster": "신둔도예촌#1",
-      "label": "수도권 신둔도예촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "곤지암#1",
-      "label": "수도권 곤지암",
-      "via": "ride"
-     },
-     {
-      "cluster": "초월#1",
-      "label": "수도권 초월",
-      "via": "ride"
-     },
-     {
-      "cluster": "경기광주#1",
-      "label": "수도권 경기광주",
-      "via": "ride"
-     },
-     {
-      "cluster": "삼동#1",
-      "label": "수도권 삼동",
-      "via": "ride"
-     },
-     {
-      "cluster": "이매#1",
-      "label": "수도권 이매",
-      "via": "ride"
-     },
-     {
-      "cluster": "성남#1",
-      "label": "수도권 성남",
-      "via": "ride"
-     },
-     {
-      "cluster": "판교#1",
-      "label": "수도권 판교",
-      "via": "ride"
-     },
-     {
-      "cluster": "청계산입구#1",
-      "label": "수도권 청계산입구",
-      "via": "ride"
-     },
-     {
-      "cluster": "양재시민의숲#1",
-      "label": "수도권 양재시민의숲",
-      "via": "ride"
-     },
-     {
-      "cluster": "양재#1",
-      "label": "수도권 양재",
-      "via": "ride"
-     }
-    ]
    }
   ],
   "track": [
    {
-    "value_m": 63915,
-    "start": "양재시민의숲#1",
-    "end": "여주#1",
-    "start_label": "수도권 양재시민의숲",
-    "end_label": "수도권 여주",
+    "value_m": 73504,
+    "start": "영종#1",
+    "end": "운정중앙#1",
+    "start_label": "수도권 영종",
+    "end_label": "수도권 운정중앙",
     "warps": 0,
-    "great_circle_m": 56184,
-    "track_m": 63915,
+    "great_circle_m": 28927,
+    "track_m": 73504,
     "path": [
      {
-      "cluster": "양재시민의숲#1",
-      "label": "수도권 양재시민의숲",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "start"
      },
      {
-      "cluster": "청계산입구#1",
-      "label": "수도권 청계산입구",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
       "via": "ride"
      },
      {
-      "cluster": "판교#1",
-      "label": "수도권 판교",
+      "cluster": "검암#1",
+      "label": "수도권 검암",
       "via": "ride"
      },
      {
-      "cluster": "성남#1",
-      "label": "수도권 성남",
+      "cluster": "계양#1",
+      "label": "수도권 계양",
       "via": "ride"
      },
      {
-      "cluster": "이매#1",
-      "label": "수도권 이매",
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
       "via": "ride"
      },
      {
-      "cluster": "삼동#1",
-      "label": "수도권 삼동",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "ride"
      },
      {
-      "cluster": "경기광주#1",
-      "label": "수도권 경기광주",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "초월#1",
-      "label": "수도권 초월",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "곤지암#1",
-      "label": "수도권 곤지암",
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
       "via": "ride"
      },
      {
-      "cluster": "신둔도예촌#1",
-      "label": "수도권 신둔도예촌",
+      "cluster": "서울#1",
+      "label": "수도권 서울",
       "via": "ride"
      },
      {
-      "cluster": "이천#1",
-      "label": "수도권 이천",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "부발#1",
-      "label": "수도권 부발",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      },
      {
-      "cluster": "세종대왕릉#1",
-      "label": "수도권 세종대왕릉",
+      "cluster": "킨텍스#1",
+      "label": "수도권 킨텍스",
       "via": "ride"
      },
      {
-      "cluster": "여주#1",
-      "label": "수도권 여주",
+      "cluster": "운정중앙#1",
+      "label": "수도권 운정중앙",
       "via": "ride"
      }
     ]
    },
    {
-    "value_m": 62935,
-    "start": "남춘천#1",
-    "end": "사릉#1",
-    "start_label": "수도권 남춘천",
-    "end_label": "수도권 사릉",
+    "value_m": 71035,
+    "start": "운서#1",
+    "end": "킨텍스#1",
+    "start_label": "수도권 운서",
+    "end_label": "수도권 킨텍스",
     "warps": 0,
-    "great_circle_m": 53594,
-    "track_m": 62935,
+    "great_circle_m": 29507,
+    "track_m": 71035,
     "path": [
      {
-      "cluster": "남춘천#1",
-      "label": "수도권 남춘천",
+      "cluster": "운서#1",
+      "label": "수도권 운서",
       "via": "start"
      },
      {
-      "cluster": "김유정#1",
-      "label": "수도권 김유정",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "ride"
      },
      {
-      "cluster": "강촌#1",
-      "label": "수도권 강촌",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
       "via": "ride"
      },
      {
-      "cluster": "백양리#1",
-      "label": "수도권 백양리",
+      "cluster": "검암#1",
+      "label": "수도권 검암",
       "via": "ride"
      },
      {
-      "cluster": "굴봉산#1",
-      "label": "수도권 굴봉산",
+      "cluster": "계양#1",
+      "label": "수도권 계양",
       "via": "ride"
      },
      {
-      "cluster": "가평#1",
-      "label": "수도권 가평",
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
       "via": "ride"
      },
      {
-      "cluster": "상천#1",
-      "label": "수도권 상천",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "ride"
      },
      {
-      "cluster": "청평#1",
-      "label": "수도권 청평",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "대성리#1",
-      "label": "수도권 대성리",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "마석#1",
-      "label": "수도권 마석",
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
       "via": "ride"
      },
      {
-      "cluster": "천마산#1",
-      "label": "수도권 천마산",
+      "cluster": "서울#1",
+      "label": "수도권 서울",
       "via": "ride"
      },
      {
-      "cluster": "평내호평#1",
-      "label": "수도권 평내호평",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "금곡#2",
-      "label": "수도권 금곡",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      },
      {
-      "cluster": "사릉#1",
-      "label": "수도권 사릉",
+      "cluster": "킨텍스#1",
+      "label": "수도권 킨텍스",
       "via": "ride"
      }
     ]
    },
    {
-    "value_m": 62146,
-    "start": "금곡#2",
-    "end": "춘천#1",
-    "start_label": "수도권 금곡",
-    "end_label": "수도권 춘천",
+    "value_m": 70290,
+    "start": "마곡나루#1",
+    "end": "운서#1",
+    "start_label": "수도권 마곡나루",
+    "end_label": "수도권 운서",
     "warps": 0,
-    "great_circle_m": 52476,
-    "track_m": 62146,
+    "great_circle_m": 30560,
+    "track_m": 70290,
     "path": [
      {
-      "cluster": "금곡#2",
-      "label": "수도권 금곡",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "start"
      },
      {
-      "cluster": "평내호평#1",
-      "label": "수도권 평내호평",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "천마산#1",
-      "label": "수도권 천마산",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "마석#1",
-      "label": "수도권 마석",
+      "cluster": "공덕#1",
+      "label": "수도권 공덕",
       "via": "ride"
      },
      {
-      "cluster": "대성리#1",
-      "label": "수도권 대성리",
+      "cluster": "서울#1",
+      "label": "수도권 서울",
       "via": "ride"
      },
      {
-      "cluster": "청평#1",
-      "label": "수도권 청평",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "상천#1",
-      "label": "수도권 상천",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      },
      {
-      "cluster": "가평#1",
-      "label": "수도권 가평",
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
       "via": "ride"
      },
      {
-      "cluster": "굴봉산#1",
-      "label": "수도권 굴봉산",
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
       "via": "ride"
      },
      {
-      "cluster": "백양리#1",
-      "label": "수도권 백양리",
+      "cluster": "계양#1",
+      "label": "수도권 계양",
       "via": "ride"
      },
      {
-      "cluster": "강촌#1",
-      "label": "수도권 강촌",
+      "cluster": "검암#1",
+      "label": "수도권 검암",
       "via": "ride"
      },
      {
-      "cluster": "김유정#1",
-      "label": "수도권 김유정",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
       "via": "ride"
      },
      {
-      "cluster": "남춘천#1",
-      "label": "수도권 남춘천",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "ride"
      },
      {
-      "cluster": "춘천#1",
-      "label": "수도권 춘천",
+      "cluster": "운서#1",
+      "label": "수도권 운서",
       "via": "ride"
      }
     ]
    },
    {
-    "value_m": 61330,
-    "start": "세종대왕릉#1",
-    "end": "청계산입구#1",
-    "start_label": "수도권 세종대왕릉",
-    "end_label": "수도권 청계산입구",
+    "value_m": 69666,
+    "start": "영종#1",
+    "end": "킨텍스#1",
+    "start_label": "수도권 영종",
+    "end_label": "수도권 킨텍스",
     "warps": 0,
-    "great_circle_m": 48785,
-    "track_m": 61330,
+    "great_circle_m": 26065,
+    "track_m": 69666,
     "path": [
      {
-      "cluster": "세종대왕릉#1",
-      "label": "수도권 세종대왕릉",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "start"
      },
      {
-      "cluster": "부발#1",
-      "label": "수도권 부발",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
       "via": "ride"
      },
      {
-      "cluster": "이천#1",
-      "label": "수도권 이천",
+      "cluster": "검암#1",
+      "label": "수도권 검암",
       "via": "ride"
      },
      {
-      "cluster": "신둔도예촌#1",
-      "label": "수도권 신둔도예촌",
+      "cluster": "계양#1",
+      "label": "수도권 계양",
       "via": "ride"
      },
      {
-      "cluster": "곤지암#1",
-      "label": "수도권 곤지암",
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
       "via": "ride"
      },
      {
-      "cluster": "초월#1",
-      "label": "수도권 초월",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "ride"
      },
      {
-      "cluster": "경기광주#1",
-      "label": "수도권 경기광주",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "삼동#1",
-      "label": "수도권 삼동",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "이매#1",
-      "label": "수도권 이매",
+      "cluster": "가좌#1",
+      "label": "수도권 가좌",
       "via": "ride"
      },
      {
-      "cluster": "서현#1",
-      "label": "수도권 서현",
+      "cluster": "신촌#2",
+      "label": "수도권 신촌",
       "via": "ride"
      },
      {
-      "cluster": "수내#1",
-      "label": "수도권 수내",
+      "cluster": "서울#1",
+      "label": "수도권 서울",
       "via": "ride"
      },
      {
-      "cluster": "정자#1",
-      "label": "수도권 정자",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "판교#1",
-      "label": "수도권 판교",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      },
      {
-      "cluster": "청계산입구#1",
-      "label": "수도권 청계산입구",
+      "cluster": "킨텍스#1",
+      "label": "수도권 킨텍스",
       "via": "ride"
      }
     ]
    },
    {
-    "value_m": 60718,
-    "start": "김유정#1",
-    "end": "퇴계원#1",
-    "start_label": "수도권 김유정",
-    "end_label": "수도권 퇴계원",
+    "value_m": 68921,
+    "start": "마곡나루#1",
+    "end": "영종#1",
+    "start_label": "수도권 마곡나루",
+    "end_label": "수도권 영종",
     "warps": 0,
-    "great_circle_m": 53615,
-    "track_m": 60718,
+    "great_circle_m": 27418,
+    "track_m": 68921,
     "path": [
      {
-      "cluster": "김유정#1",
-      "label": "수도권 김유정",
+      "cluster": "마곡나루#1",
+      "label": "수도권 마곡나루",
       "via": "start"
      },
      {
-      "cluster": "강촌#1",
-      "label": "수도권 강촌",
+      "cluster": "디지털미디어시티#1",
+      "label": "수도권 디지털미디어시티",
       "via": "ride"
      },
      {
-      "cluster": "백양리#1",
-      "label": "수도권 백양리",
+      "cluster": "홍대입구#1",
+      "label": "수도권 홍대입구",
       "via": "ride"
      },
      {
-      "cluster": "굴봉산#1",
-      "label": "수도권 굴봉산",
+      "cluster": "가좌#1",
+      "label": "수도권 가좌",
       "via": "ride"
      },
      {
-      "cluster": "가평#1",
-      "label": "수도권 가평",
+      "cluster": "신촌#2",
+      "label": "수도권 신촌",
       "via": "ride"
      },
      {
-      "cluster": "상천#1",
-      "label": "수도권 상천",
+      "cluster": "서울#1",
+      "label": "수도권 서울",
       "via": "ride"
      },
      {
-      "cluster": "청평#1",
-      "label": "수도권 청평",
+      "cluster": "연신내#1",
+      "label": "수도권 연신내",
       "via": "ride"
      },
      {
-      "cluster": "대성리#1",
-      "label": "수도권 대성리",
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
       "via": "ride"
      },
      {
-      "cluster": "마석#1",
-      "label": "수도권 마석",
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
       "via": "ride"
      },
      {
-      "cluster": "천마산#1",
-      "label": "수도권 천마산",
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
       "via": "ride"
      },
      {
-      "cluster": "평내호평#1",
-      "label": "수도권 평내호평",
+      "cluster": "계양#1",
+      "label": "수도권 계양",
       "via": "ride"
      },
      {
-      "cluster": "금곡#2",
-      "label": "수도권 금곡",
+      "cluster": "검암#1",
+      "label": "수도권 검암",
       "via": "ride"
      },
      {
-      "cluster": "사릉#1",
-      "label": "수도권 사릉",
+      "cluster": "청라국제도시#1",
+      "label": "수도권 청라국제도시",
       "via": "ride"
      },
      {
-      "cluster": "퇴계원#1",
-      "label": "수도권 퇴계원",
+      "cluster": "영종#1",
+      "label": "수도권 영종",
       "via": "ride"
      }
     ]
    }
   ],
-  "pairs_seen": 44108
+  "pairs_seen": 49702
  }
 }

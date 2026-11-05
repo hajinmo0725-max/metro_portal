@@ -105,9 +105,10 @@ def test_real_station_level_diameter_matches_cluster_level_when_transfer_0():
 @pytest.mark.parametrize("D,expect", [(300, {"노원": 2, "잠실": 2, "신촌": 2}), (500, {"노원": 1, "잠실": 1, "신촌": 2}),
                                       (1000, {"노원": 1, "잠실": 1, "신촌": 1})])
 def test_D_boundary_cases(D, expect):
-    """N4: D에 따라 환승 ↔ 포탈 경계가 바뀌는 실제 사례 (노원 4·7호선 306m, 잠실 2·8호선 394m, 신촌 2호선·경의중앙 701m)."""
+    """N4: D에 따라 환승 ↔ 포탈 경계가 바뀌는 실제 사례 (노원 4·7호선 306m, 잠실 2·8호선 394m, 신촌 2호선·경의중앙 701m).
+    2차 거리 규칙(transfer_rule: distance) 전용. 3차 기본(official_first)은 아래 테스트."""
     from metro_portal.world import build_world, load_base
-    rs = load_ruleset("strict", overrides={"cluster": {"transfer_distance_m": D}})
+    rs = load_ruleset("strict", overrides={"cluster": {"transfer_distance_m": D, "transfer_rule": "distance"}})
     w = build_world(*load_base(), rs)
     cnt = {}
     for c in w["clusters"]:
@@ -116,6 +117,22 @@ def test_D_boundary_cases(D, expect):
         assert cnt[name] == n, (D, name)
     names = {p["name"] for p in w["portals"]}
     assert ("신촌" in names) == (D < 701)
+
+
+@pytest.mark.skipif(not (PROC / "stations.json").exists(), reason="processed data missing")
+@pytest.mark.parametrize("D", [300, 500, 1000])
+def test_official_first_ignores_D_for_official_pairs(D):
+    """3차 A3: 공식 환승 정보가 있는 쌍은 D와 무관. 노원·잠실은 공식 yes라 항상 환승, 신촌·부전은 공식 no라 항상 분리."""
+    from metro_portal.world import build_world, load_base
+    rs = load_ruleset("strict", overrides={"cluster": {"transfer_distance_m": D}})
+    assert rs["cluster"]["transfer_rule"] == "official_first"
+    w = build_world(*load_base(), rs)
+    cnt = {}
+    for c in w["clusters"]:
+        cnt[c["name"]] = cnt.get(c["name"], 0) + 1
+    assert (cnt["노원"], cnt["잠실"], cnt["신촌"], cnt["부전"]) == (1, 1, 2, 2)
+    names = {p["name"] for p in w["portals"]}
+    assert {"신촌", "부전"} <= names and not ({"노원", "잠실"} & names)
 
 
 @pytest.mark.skipif(not (PROC / "ruleset_compare.json").exists(), reason="ruleset_compare.json missing")

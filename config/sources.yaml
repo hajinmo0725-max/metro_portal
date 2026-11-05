@@ -25,3 +25,7 @@ wikidata:
   endpoint: "https://query.wikidata.org/sparql"
   request_interval_s: 3
   chunk_size: 300
+geofabrik:
+  # 3차 A5·B1: OSM 추출본. 허용 목록에 있으나 2026-11-05 세션 egress에서 TLS 단계 터널 종료로 실패 (우회 금지)
+  korea: "https://download.geofabrik.de/asia/south-korea-latest.osm.pbf"
+  taiwan: "https://download.geofabrik.de/asia/taiwan-latest.osm.pbf"

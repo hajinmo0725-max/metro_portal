@@ -75,7 +75,8 @@ def main() -> int:
     for lid in line_ids:
         ln = lines_by_id[lid]
         lines_out.append({"id": lid, "name": ln["name"], "color": ln.get("color") or "#888888", "city": ln.get("city", ""),
-                          "seqs": [{"id": sq["id"], "circular": sq["circular"], "nodes": [nix[x] for x in sq["station_ids"]]}
+                          "seqs": [{"id": sq["id"], "circular": sq["circular"], "directed": bool(sq.get("directed")),
+                                    "nodes": [nix[x] for x in sq["station_ids"]]}
                                    for sq in ln["sequences"]]})
     clusters_out = [{"id": c["id"], "n": c["name"], "la": c["lat"], "lo": c["lon"], "city": "/".join(c.get("cities", [])),
                      "s": [nix[x] for x in c["station_ids"]],

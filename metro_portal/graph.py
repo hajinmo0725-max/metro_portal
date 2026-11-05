@@ -44,10 +44,30 @@ def station_match_names(st: dict, tier_cfg: dict, norm: dict) -> set[str]:
     return out
 
 
-def build_clusters(stations: list[dict], rs: dict) -> list[dict]:
-    """정규화 이름이 같고 거리 D 이하인 역을 묶는다. 옵션: 괄호 부역명 별칭도 같은 조건으로 묶는다."""
-    norm, ccfg = rs["normalize"], rs["cluster"]
+def transfer_decision(a: dict, b: dict, d: float, ccfg: dict, official) -> tuple[bool, str]:
+    """같은 이름(또는 별칭)인 두 역 레코드를 환승(같은 클러스터)으로 묶을지. (묶음 여부, 근거)
+    transfer_rule = distance: 거리 D 이하면 묶는다 (2차까지의 규칙).
+    transfer_rule = official_first (3차 A3): 공식 환승 정보 우선. yes면 묶고 (official_max_distance_m 이내),
+      no면 거리와 무관하게 안 묶고, 정보가 없거나(unknown) 같은 노선 패밀리(same_line)면 거리 D로 판정."""
     D = ccfg["transfer_distance_m"]
+    if ccfg.get("transfer_rule", "distance") == "distance" or official is None:
+        return d <= D, "distance"
+    rel = official.relation(a, b)
+    if rel == "yes":
+        return d <= ccfg.get("official_max_distance_m", float("inf")), "official_yes"
+    if rel == "no":
+        return False, "official_no"
+    return d <= D, f"distance({rel})"
+
+
+def build_clusters(stations: list[dict], rs: dict, official=None, audit: list | None = None) -> list[dict]:
+    """정규화 이름이 같은 역을 환승 판정(transfer_decision)으로 묶는다. 옵션: 괄호 부역명·데이터 별칭도 같은 판정으로 묶는다.
+    official: transfer.OfficialTransfers. ruleset이 official_first인데 None이면 역 데이터로 만든다.
+    audit: 리스트를 주면 같은 이름 쌍마다 판정 근거를 넣어 준다 (보고서용)."""
+    norm, ccfg = rs["normalize"], rs["cluster"]
+    if official is None and ccfg.get("transfer_rule", "distance") == "official_first":
+        from .transfer import OfficialTransfers
+        official = OfficialTransfers(stations)
     st = sorted(stations, key=lambda s: s["id"])
     key = {s["id"]: normalize_name(s["name_ko"], norm) for s in st}
     by_name = defaultdict(list)
@@ -59,8 +79,11 @@ def build_clusters(stations: list[dict], rs: dict) -> list[dict]:
         for i, a in enumerate(group):
             for b in group[i + 1:]:
                 d = haversine_m(a["lat"], a["lon"], b["lat"], b["lon"])
-                if d <= D:
+                ok, why = transfer_decision(a, b, d, ccfg, official)
+                if ok:
                     uf.union(a["id"], b["id"])
+                if audit is not None:
+                    audit.append({"name": name, "a": a["id"], "b": b["id"], "distance_m": round(d, 1), "merged": ok, "basis": why})
     if ccfg.get("use_parenthetical_alias") or ccfg.get("use_data_aliases"):
         for a in st:
             als = []
@@ -73,7 +96,11 @@ def build_clusters(stations: list[dict], rs: dict) -> list[dict]:
                     if b["id"] == a["id"]:
                         continue
                     d = haversine_m(a["lat"], a["lon"], b["lat"], b["lon"])
-                    if d <= D:
+                    ok, why = transfer_decision(a, b, d, ccfg, official)
+                    if audit is not None:
+                        audit.append({"name": alias, "a": a["id"], "b": b["id"], "distance_m": round(d, 1), "merged": ok,
+                                      "basis": why, "via_alias": True})
+                    if ok:
                         uf.union(a["id"], b["id"])
                         reasons.append((a["id"], b["id"], alias, round(d, 1)))
     members = defaultdict(list)
@@ -135,7 +162,8 @@ def build_graph(stations: list[dict], ride_edges: list[dict], clusters: list[dic
     adj: dict[str, list] = {s["id"]: [] for s in stations}
     for e in ride_edges:
         adj[e["a"]].append((e["b"], c_ride, "ride", e["line"]))
-        adj[e["b"]].append((e["a"], c_ride, "ride", e["line"]))
+        if not e.get("directed"):  # 유향 엣지(단방향 운행 구간)는 a → b만
+            adj[e["b"]].append((e["a"], c_ride, "ride", e["line"]))
     for c in clusters:
         ids = c["station_ids"]
         for a in ids:

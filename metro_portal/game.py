@@ -1,4 +1,5 @@
-"""게임·통계용 클러스터 수준 그래프 (클러스터 + 포탈 노드)와 탐색 함수. 환승 비용 0 ruleset 전제."""
+"""게임·통계용 클러스터 수준 그래프 (클러스터 + 포탈 노드)와 탐색 함수. 환승 비용 0 ruleset 전제.
+유향 승차 엣지(단방향 구간)가 있어 d(s, t) ≠ d(t, s)일 수 있다. 쌍을 셀 때는 순서쌍을 쓴다."""
 from __future__ import annotations
 
 import heapq
@@ -30,7 +31,8 @@ class ClusterGraph:
             if a == b:
                 continue
             self.adj[a][b] = ride
-            self.adj[b][a] = ride
+            if not e.get("directed"):  # 유향 엣지(단방향 운행)는 a → b만
+                self.adj[b][a] = ride
             k = (min(a, b), max(a, b))
             self.ride_len[k] = max(self.ride_len.get(k, 0.0), e["distance_m"])
             self.ride_lines.setdefault(k, set()).add(e["line"])

@@ -6,6 +6,8 @@
 (b) N정류장 최대 거리: 정확히 N턴(승차 1역 = 1턴, 워프 1회 = 1턴, 환승은 턴 아님) 동안 같은 물리적 역을 두 번 밟지 않는
     경로 중 (1) 시작-끝 대권거리 최대, (2) 탑승 구간 거리 합 최대를 각각 상위 K개 (출발·도착 쌍 중복 없이).
 
+쌍은 순서쌍 (출발 → 도착)이다. 6호선 응암순환이 단방향(유향 엣지)이라 d(s,t) ≠ d(t,s)일 수 있다 (3차 A2).
+같은 두 역의 정·역방향 퍼즐은 하나만 고른다.
 경로 단위는 클러스터(물리적 역) 수준이다. 환승은 클러스터 안에서 비용 0으로 접히므로 '최적 경로 개수'는
 물리적 역 순서(+워프)가 다른 경로의 개수다. 같은 두 역 사이를 다른 노선으로 가는 것은 같은 경로로 센다.
 환승 비용이 0이 아닌 ruleset이면 이 단계는 거부한다 (클러스터 접힘이 성립하지 않음).
@@ -47,8 +49,9 @@ def build_puzzles(g, cfg):
         dw, cw = g.sssp_count(s)
         wp = g.last_warps
         dn = g.bfs_ride(s)
-        for t in range(s + 1, C):
-            if dw[t] == INF:
+        # 순서쌍 (s → t). 유향 엣지(응암순환)가 있어 d(s,t) ≠ d(t,s)일 수 있다 (3차 A2)
+        for t in range(C):
+            if t == s or dw[t] == INF:
                 continue
             rows.append((s, t, dw[t], dn[t], cw[t], wp[t]))
     stats = {"pairs": len(rows),
@@ -71,7 +74,7 @@ def build_puzzles(g, cfg):
             dist_cache[s] = g.sssp_count(s)[0]
         return g.unique_path(s, t, dist_cache[s])
 
-    out = []
+    out, used_pairs = [], set()
     for kind, rows_k in (("shortcut", shortcut), ("crosscity", cross)):
         by_lvl = {"easy": [], "normal": [], "hard": []}
         for s, t, cw, cn, _, warps in rows_k:
@@ -85,12 +88,15 @@ def build_puzzles(g, cfg):
             for _, s, t, cw, cn, warps in sorted(by_lvl[lvl]):
                 if used_end[s] >= cfg["max_per_endpoint"] or used_end[t] >= cfg["max_per_endpoint"]:
                     continue
+                if (min(s, t), max(s, t)) in used_pairs:  # 같은 두 역의 역방향 퍼즐은 하나만
+                    continue
                 steps = describe_path(g, path_of(s, t))
                 sig = tuple(x["portal"] for x in steps if x["type"] == "warp")
                 assert len(sig) == warps
                 if used_sig[sig] >= cfg["max_per_warp_signature"]:
                     continue
                 used_sig[sig] += 1
+                used_pairs.add((min(s, t), max(s, t)))
                 used_end[s] += 1
                 used_end[t] += 1
                 out.append({"kind": kind, "difficulty": lvl, "from": g.cl[s]["id"], "to": g.cl[t]["id"],

@@ -87,6 +87,72 @@
    "verdict": "실제 장거리 구간(판단)"
   },
   {
+   "line": "gtx-a",
+   "sequence": "north",
+   "a": "kr:XGTXA:X102",
+   "b": "kr:XGTXA:X103",
+   "distance_m": 6591.0,
+   "a_name": "킨텍스",
+   "b_name": "대곡",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gtx-a",
+   "sequence": "north",
+   "a": "kr:XGTXA:X103",
+   "b": "kr:XGTXA:X105",
+   "distance_m": 9840.7,
+   "a_name": "대곡",
+   "b_name": "연신내",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gtx-a",
+   "sequence": "north",
+   "a": "kr:XGTXA:X105",
+   "b": "kr:XGTXA:X106",
+   "distance_m": 8362.5,
+   "a_name": "연신내",
+   "b_name": "서울역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gtx-a",
+   "sequence": "south",
+   "a": "kr:XGTXA:X108",
+   "b": "kr:XGTXA:X109",
+   "distance_m": 10443.5,
+   "a_name": "수서역",
+   "b_name": "성남역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gtx-a",
+   "sequence": "south",
+   "a": "kr:XGTXA:X109",
+   "b": "kr:XGTXA:X110",
+   "distance_m": 10710.4,
+   "a_name": "성남역",
+   "b_name": "구성역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
+   "line": "gtx-a",
+   "sequence": "south",
+   "a": "kr:XGTXA:X110",
+   "b": "kr:XGTXA:X111",
+   "distance_m": 10992.0,
+   "a_name": "구성역",
+   "b_name": "동탄역",
+   "reason": ">6000m",
+   "verdict": "실제 장거리 구간(판단)"
+  },
+  {
    "line": "gyeongchun",
    "sequence": "main",
    "a": "kr:I41K2:1319",
@@ -635,16 +701,26 @@
    "from_pool": 22,
    "sequences": 1,
    "edges": 21
+  },
+  {
+   "line": "gtx-a",
+   "name": "GTX-A",
+   "pool": 9,
+   "sequenced": 9,
+   "from_pool": 9,
+   "sequences": 2,
+   "edges": 7
   }
  ],
  "totals": {
-  "lines": 45,
-  "sequences": 51,
-  "ride_edges": 1058,
-  "stations": 1091,
-  "stations_sequenced": 1090,
+  "lines": 46,
+  "sequences": 53,
+  "ride_edges": 1065,
+  "ride_edges_directed": 6,
+  "stations": 1100,
+  "stations_sequenced": 1099,
   "stop_failures": 0,
-  "outliers": 20,
+  "outliers": 26,
   "outliers_unexplained": 0
  },
  "coord_fixes": [
