@@ -152,6 +152,8 @@ def main() -> int:
             "address": clean_text(r["역사도로명주소"]),
             "transfer_flag": "환승" in clean_text(r["환승역구분"]),
             "transfer_lines_raw": clean_text(r["환승노선명"]),
+            # 3차 A3: 공식 환승 판정용. 노선번호 목록 (config/kr_transfer_codes.yaml로 해석)
+            "transfer_line_nos_raw": clean_text(r["환승노선번호"]),
             "names": names,
             "source": "kric_std",
             "source_date": str(r["데이터기준일자"])[:10] if r["데이터기준일자"] else "",

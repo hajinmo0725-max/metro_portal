@@ -2,38 +2,38 @@
  "ruleset": "strict_transfer1",
  "counts": {
   "stations": 1091,
-  "clusters": 937,
+  "clusters": 938,
   "lines": 45,
   "sequences": 51,
   "ride_edges": 1058,
   "ride_edges_directed": 6,
-  "transfer_clusters_multi": 134,
-  "portals_total": 29,
+  "transfer_clusters_multi": 133,
+  "portals_total": 30,
   "portals_by_tier": {
-   "T1": 29
+   "T1": 30
   },
-  "portal_links": 60,
-  "routing_nodes": 1120,
-  "routing_edges": 2608
+  "portal_links": 62,
+  "routing_nodes": 1121,
+  "routing_edges": 2610
  },
  "with_warp": {
   "components": 1,
   "largest_component_ratio": 1.0,
-  "largest_component_size": 937,
+  "largest_component_size": 938,
   "strong_components": 1,
-  "largest_strong_component_size": 937,
+  "largest_strong_component_size": 938,
   "diameter": {
    "value": 70,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 20.414,
+   "mean_cost": 20.402,
    "level": "station"
   }
  },
  "without_warp": {
   "components": 5,
-  "largest_component_ratio": 0.6958,
+  "largest_component_ratio": 0.6951,
   "largest_component_size": 652,
   "strong_components": 5,
   "largest_strong_component_size": 652,
@@ -104,9 +104,9 @@
     "joins_giant_with_warp": true
    },
    {
-    "size": 146,
+    "size": 147,
     "regions": {
-     "부산": 146
+     "부산": 147
     },
     "lines": [
      "I26K6:동해선",
@@ -296,6 +296,15 @@
    ]
   },
   {
+   "name": "부전",
+   "tier": "T1",
+   "degree": 2,
+   "clusters": [
+    "부전#1",
+    "부전#2"
+   ]
+  },
+  {
    "name": "송정",
    "tier": "T1",
    "degree": 2,
@@ -366,22 +375,13 @@
     "용산#1",
     "용산#2"
    ]
-  },
-  {
-   "name": "운천",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "운천#1",
-    "운천#2"
-   ]
   }
  ],
  "isolated_without_warp": [
   {
-   "size": 146,
+   "size": 147,
    "regions": {
-    "부산": 146
+    "부산": 147
    },
    "lines": [
     "I26K6:동해선",
@@ -516,11 +516,6 @@
     "records": 3
    },
    {
-    "cluster": "부전#1",
-    "max_internal_m": 342,
-    "records": 2
-   },
-   {
     "cluster": "디지털미디어시티#1",
     "max_internal_m": 325,
     "records": 3
@@ -544,6 +539,11 @@
     "cluster": "신당#1",
     "max_internal_m": 293,
     "records": 2
+   },
+   {
+    "cluster": "종로3가#1",
+    "max_internal_m": 277,
+    "records": 3
    }
   ]
  }

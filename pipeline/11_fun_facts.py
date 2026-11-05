@@ -254,7 +254,9 @@ def write_md(f, g):
     L += ["### 3-4. 밈 원조", "",
           "- 강남 → 교대 ⇢ 부산 교대 → 동래 = **3수** (워프 없으면 불가)",
           "- '시청'은 서울·대전·부산 세 도시를 잇는 차수 3 포탈. '교대'는 서울·대구·부산.",
-          "- 같은 도시 포탈: 양평(5호선 ↔ 경의중앙선, 53.6km), 좌천(부산 1호선 ↔ 동해선, 26.3km), 신촌(2호선 ↔ 경의중앙선, 0.7km), 동래(1·4호선 ↔ 동해선, 1.4km)", ""]
+          "- 같은 도시 포탈: " + ", ".join(f"{h['portal']}({h['cities'][0]}, {h['max_span_km']}km)"
+                                         for h in sorted(f["portal_hubs"], key=lambda h: (-h["max_span_km"], h["portal"]))
+                                         if len(set(h["cities"])) == 1), ""]
     ps = f["portal_span"]
     L += ["## 4. 같은 이름, 다른 세상", "",
           "가장 먼 동명역 포탈: " + "; ".join(f"**{h['portal']}** {h['max_span_km']}km ({', '.join(h['cities'])})" for h in ps["farthest"]),

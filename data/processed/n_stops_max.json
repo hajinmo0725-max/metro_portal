@@ -3292,7 +3292,7 @@
     ]
    }
   ],
-  "pairs_seen": 104123
+  "pairs_seen": 103856
  },
  "without_warp": {
   "great_circle": [
@@ -4119,6 +4119,6 @@
     ]
    }
   ],
-  "pairs_seen": 44090
+  "pairs_seen": 43814
  }
 }

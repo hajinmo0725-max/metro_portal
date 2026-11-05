@@ -56,3 +56,6 @@ coords:
   near_duplicate_m: 30
   # Wikidata에 같은 이름 아이템이 없을 때 이 거리 이내 가장 가까운 아이템을 대체 매칭 (인접 검사 전용)
   wikidata_fallback_match_m: 200
+# 3차 A4: 좌표 복사 점검. 정규화 이름이 같고 이 거리 미만인데 공식 환승(yes)이 아닌 쌍을 전부 나열한다
+coord_copy:
+  same_name_max_m: 20

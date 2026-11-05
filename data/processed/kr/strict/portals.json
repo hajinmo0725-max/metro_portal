@@ -159,6 +159,21 @@
    "degree": 2
   },
   {
+   "id": "P:T1:부전",
+   "tier": "T1",
+   "name": "부전",
+   "cost": 1,
+   "cluster_ids": [
+    "부전#1",
+    "부전#2"
+   ],
+   "station_ids": [
+    "kr:I26K6:8001",
+    "kr:S2601:0120"
+   ],
+   "degree": 2
+  },
+  {
    "id": "P:T1:송정",
    "tier": "T1",
    "name": "송정",
