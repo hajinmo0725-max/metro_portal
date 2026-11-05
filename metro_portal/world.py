@@ -57,3 +57,13 @@ def build_world(stations, edges, lines, rs):
     adj = build_graph(stations, edges, clusters, portals, rs)
     return {"stations": stations, "edges": edges, "lines": lines, "clusters": clusters,
             "portals": portals, "capped": capped, "adj": adj, "rs": rs}
+
+
+def load_world_multi(ruleset: str, countries=("KR", "TW")):
+    """05_route.load_world와 같은 튜플 (rs, idx, adj, lines_by_id, portals_by_id)을 여러 나라 데이터로 만든다 (웹 번들·테스트용)."""
+    from .route import StationIndex
+    from .ruleset import load_ruleset
+    rs = load_ruleset(ruleset)
+    w = build_world(*load_multi(countries), rs)
+    idx = StationIndex(w["stations"], w["clusters"], rs["normalize"])
+    return rs, idx, w["adj"], {ln["id"]: ln for ln in w["lines"]}, {p["id"]: p for p in w["portals"]}

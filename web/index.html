@@ -16,6 +16,15 @@
         <p class="sub">이름이 같은 역은 포탈로 이어진다. 강남 → 교대 ⇢ 부산 교대 → 동래. · <a href="daily.html">오늘의 퍼즐</a></p>
       </header>
 
+      <section class="card rs-card" aria-label="ruleset">
+        <label class="field">
+          <span class="field-label">ruleset · 나라</span>
+          <select id="ruleset-select"></select>
+        </label>
+        <p id="ruleset-note" class="hint small"></p>
+        <div class="views"><span>지도</span><button type="button" data-view="kr">한국</button><button type="button" data-view="tw">타이베이</button></div>
+      </section>
+
       <form id="route-form" class="card" autocomplete="off">
         <div class="pair">
           <div class="fields">
@@ -40,6 +49,7 @@
           <button type="button" data-from="강남" data-to="부산 동래">강남→부산 동래</button>
           <button type="button" data-from="목동" data-to="부산 동래">목동→부산 동래</button>
           <button type="button" data-from="개화" data-to="광주 녹동">개화→광주 녹동</button>
+          <button type="button" data-from="판교" data-to="타이베이 板橋">판교→타이베이 板橋</button>
         </div>
       </form>
 
@@ -48,7 +58,7 @@
       </section>
 
       <section class="card layers">
-        <label class="check"><input type="checkbox" id="show-warps" checked> 워프 아크</label>
+        <label class="check"><input type="checkbox" id="show-warps" checked> 워프 아크 <span class="legend"><i class="lg-warp"></i>같은 나라 <i class="lg-cross"></i>국가 간</span></label>
         <label class="check"><input type="checkbox" id="show-stations" checked> 역</label>
         <span id="stats" class="stats"></span>
       </section>

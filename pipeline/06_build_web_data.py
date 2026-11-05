@@ -35,9 +35,16 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--ruleset", default="strict")
     ap.add_argument("--random-pairs", type=int, default=40)
+    ap.add_argument("--countries", default="KR", help="KR 또는 KR,TW (Phase 1 통합 번들 → web/data/world_<ruleset>.json)")
     a = ap.parse_args()
-    cli = load_route_cli()
-    world = cli.load_world(a.ruleset)
+    countries = tuple(a.countries.split(","))
+    multi = countries != ("KR",)
+    if multi:
+        from metro_portal.world import load_world_multi
+        world = load_world_multi(a.ruleset, countries)
+    else:
+        cli = load_route_cli()
+        world = cli.load_world(a.ruleset)
     rs, idx, adj, lines_by_id, portals_by_id = world
     stations = sorted(idx.st.values(), key=lambda s: s["id"])
     clusters = sorted(idx.clusters, key=lambda c: c["id"])
@@ -58,11 +65,15 @@ def main() -> int:
     for s in stations:
         st_out[s["id"]] = {"n": s["name_ko"], "la": s["lat"], "lo": s["lon"], "g": line_names.get(s["id"], s["line_name"]),
                            "c": cix[cluster_of[s["id"]]], "ct": s.get("city", "")}
+        if multi:
+            st_out[s["id"]]["co"] = s.get("country", "KR")
     node_out = []
     for n in nodes:
         if n.startswith("P:"):
             p = portals_by_id[n]
-            node_out.append({"id": n, "portal": True, "n": p["name"], "tier": p["tier"]})
+            # 표시 이름: T1은 키 그대로, T2·T3는 접힌 키(간체·소문자) 대신 원문 하나
+            disp = p["name"] if p["tier"] == "T1" or not p.get("texts") else sorted(p["texts"], key=lambda t: (len(t), t))[0]
+            node_out.append({"id": n, "portal": True, "n": disp, "tier": p["tier"]})
         else:
             node_out.append({"id": n, **st_out[n]})
     edges = []
@@ -75,31 +86,47 @@ def main() -> int:
     for lid in line_ids:
         ln = lines_by_id[lid]
         lines_out.append({"id": lid, "name": ln["name"], "color": ln.get("color") or "#888888", "city": ln.get("city", ""),
+                          **({"co": ln.get("country", "KR")} if multi else {}),
                           "seqs": [{"id": sq["id"], "circular": sq["circular"], "directed": bool(sq.get("directed")),
                                     "nodes": [nix[x] for x in sq["station_ids"]]}
                                    for sq in ln["sequences"]]})
     clusters_out = [{"id": c["id"], "n": c["name"], "la": c["lat"], "lo": c["lon"], "city": "/".join(c.get("cities", [])),
+                     **({"co": "/".join(c.get("countries", ["KR"]))} if multi else {}),
                      "s": [nix[x] for x in c["station_ids"]],
                      "lines": sorted({line_names[x] for x in c["station_ids"] if x in line_names})}
                     for c in clusters]
-    portals_out = [{"id": p["id"], "n": p["name"], "tier": p["tier"], "cost": p["cost"], "node": nix[p["id"]],
-                    "c": [cix[x] for x in p["cluster_ids"]]} for p in sorted(portals_by_id.values(), key=lambda p: p["id"])]
+    cmap0 = {c["id"]: c for c in clusters}
+    portals_out = []
+    for p in sorted(portals_by_id.values(), key=lambda p: p["id"]):
+        po = {"id": p["id"], "n": node_out[nix[p["id"]]]["n"], "tier": p["tier"], "cost": p["cost"], "node": nix[p["id"]],
+              "c": [cix[x] for x in p["cluster_ids"]]}
+        if multi:
+            po["x"] = len({co for x in p["cluster_ids"] for co in cmap0[x].get("countries", ["KR"])}) > 1  # 국가 간 포탈
+            po["texts"] = p.get("texts", [])
+        portals_out.append(po)
 
     doc = {
-        "meta": {"ruleset": rs["name"], "costs": rs["costs"], "kinds": list(KIND),
-                 "attribution": "역·노선: 레일포털(data.kric.go.kr) 표준데이터, 이용허락범위 제한 없음. 지도: © OpenStreetMap contributors"},
+        "meta": {"ruleset": rs["name"], "description": rs.get("description", ""), "costs": rs["costs"], "kinds": list(KIND),
+                 "countries": list(countries),
+                 "tiers": {t: {"cost": v["cost"], "official_only": bool(v.get("official_only"))}
+                           for t, v in rs["portals"].items() if t.startswith("T") and v.get("enabled")},
+                 "attribution": "역·노선: 레일포털(data.kric.go.kr) 표준데이터, 이용허락범위 제한 없음"
+                                + (" · 타이베이: Wikidata (CC0)" if "TW" in countries else "") + ". 지도: © OpenStreetMap contributors"},
         "lines": lines_out, "nodes": node_out, "edges": edges, "clusters": clusters_out, "portals": portals_out,
     }
-    out = ROOT / "web" / "data" / f"kr_{rs['name']}.json"
+    out = ROOT / "web" / "data" / (f"world_{rs['name']}.json" if multi else f"kr_{rs['name']}.json")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
 
     # 기대 결과: 예시 + 시드 고정 랜덤 쌍 (워프 유무 각각)
     import yaml
-    ex = yaml.safe_load(open(ROOT / "config" / "report.yaml", encoding="utf-8"))["route_examples"]
+    rcfg = yaml.safe_load(open(ROOT / "config" / "report.yaml", encoding="utf-8"))
+    ex = rcfg["route_examples"] + (rcfg.get("world_route_examples", []) if multi else [])
     rnd = random.Random(rs.get("metrics", {}).get("random_seed", 42))
     # 예시는 질의 해석 결과 전체(도시 접두어 + 같은 도시 동명역이면 여러 클러스터)를 쓴다
     pairs = [(tuple(c["id"] for c in idx.resolve(s)), tuple(c["id"] for c in idx.resolve(d))) for s, d in ex]
+    bad = [(s, d) for (s, d), (a_, b_) in zip(ex, pairs) if not a_ or not b_]
+    assert not bad, f"예시 역을 못 찾음: {bad}"
     cl_ids = [c["id"] for c in clusters]
     pairs += [tuple((x,) for x in rnd.sample(cl_ids, 2)) for _ in range(a.random_pairs)]
     cmap = {c["id"]: c for c in clusters}
@@ -113,7 +140,7 @@ def main() -> int:
             to = cix[d[0]] if len(d) == 1 else [cix[c] for c in d]
             exp.append({"from": fr, "to": to, "warp": warp,
                         "cost": r[0] if r else None, "path": [nix[x[0]] for x in r[1]] if r else None})
-    (ROOT / "web" / "data" / f"expected_routes_{rs['name']}.json").write_text(json.dumps(exp, ensure_ascii=False) + "\n", encoding="utf-8")
+    (ROOT / "web" / "data" / (f"expected_routes_world_{rs['name']}.json" if multi else f"expected_routes_{rs['name']}.json")).write_text(json.dumps(exp, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"[06] wrote {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB): nodes={len(nodes)} edges={len(edges)} "
           f"lines={len(lines_out)} clusters={len(clusters_out)} portals={len(portals_out)}; expected routes={len(exp)}")
     return 0
