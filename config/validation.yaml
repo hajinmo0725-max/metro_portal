@@ -69,3 +69,11 @@ coords:
 # 3차 A4: 좌표 복사 점검. 정규화 이름이 같고 이 거리 미만인데 공식 환승(yes)이 아닌 쌍을 전부 나열한다
 coord_copy:
   same_name_max_m: 20
+# 3차 A5: OSM route relation 교차검증 (pipeline/13_validate_osm.py)
+osm:
+  route_types: [subway, light_rail, train, monorail]
+  stop_roles: [stop, stop_entry_only, stop_exit_only]
+  # OSM 정차 노드와 우리 역을 같은 역으로 볼 최대 거리 (이름 일치 전제)
+  match_max_m: 400
+  # 같은 역으로 매칭됐는데 좌표가 이보다 멀면 좌표 의심
+  coord_flag_m: 300
