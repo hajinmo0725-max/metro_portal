@@ -171,7 +171,7 @@ def build_puzzles(g, cfg):
              "optimal_count_hist": dict(sorted(Counter(min(r[4], 10) for r in rows).items())),
              }
     # 출발·도착 이름이 같으면(양평→양평) 워프 한 번이 답이라 퍼즐에서 뺀다. 최소 비용도 둔다
-    ok = [r for r in rows if r[4] == 1 and r[2] >= cfg["min_cost"] and g.cl[r[0]]["name"] != g.cl[r[1]]["name"]]
+    ok = [r for r in rows if r[4] == 1 and cfg["min_cost"] <= r[2] <= cfg["max_cost"] and g.cl[r[0]]["name"] != g.cl[r[1]]["name"]]
     shortcut = [r for r in ok if r[3] != INF and r[2] < r[3] and r[3] - r[2] >= cfg["min_savings"]]
     cross = [r for r in ok if r[3] == INF]
     stats["candidates_shortcut"] = len(shortcut)

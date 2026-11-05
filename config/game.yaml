@@ -4,6 +4,8 @@ puzzles:
   min_savings: 3
   # 퍼즐 최소 워프 포함 비용 (너무 쉬운 1~2수 퍼즐 제외)
   min_cost: 3
+  # 퍼즐 최대 워프 포함 비용 (데일리로 매일 누르기에 너무 긴 30수+ 퍼즐 제외)
+  max_cost: 24
   # 난이도: 순서대로 검사해서 처음 맞는 등급. 둘 다 아니면 hard
   difficulty:
     easy: {max_warps: 1, max_cost: 8}
