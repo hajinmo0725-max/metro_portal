@@ -1,13 +1,13 @@
 # Phase 1 착수 보고서 — 타이베이 (B1~B4)
 
-- 시작: 2026-11-05T15:19:17Z (UTC, 세션 시작 직후 `date` 기록) · 보고서 작성: 2026-11-05T16:38:56Z
+- 시작: 2026-11-05T15:19:17Z (UTC, 세션 시작 직후 `date` 기록) · 보고서 작성: 2026-11-05T23:19:48Z
 - 브랜치: `tw-phase1` (`kr-fixes`에서 분기, `kr-fixes` 병합) · PR #4 (base `kr-fixes`, draft). main push·머지 안 함
 - 재현: `scripts/build_all.sh` (한국 파이프라인 뒤에 14 타이베이 수집 → 15 정제 → 16 Unihan → 17 ruleset 비교 → 06 웹 번들 5종)
 - 이번 세션 한정 지시에 따라 '계획 먼저 제시'와 '실행 전 지적'은 이 보고서 기록으로 대체했다 (3·4장).
 
 ## 요약
 
-- **B1~B4 모두 돌아가는 상태까지 했지만, 핵심 전제 하나가 막혔다: 타이베이 공식명을 확보하지 못했다.**
+- **B1~B4 모두 돌아가는 상태까지 했지만, 핵심 전제 하나가 막혔다: 타이베이 공식명을 확보하지 못했다.** Geofabrik은 시작 8시간(23:19Z)까지 재시도해도 안 열려서, 지시의 8시간 조항에 따라 그때까지의 결과로 확정했다.
   - Geofabrik 대만 추출본(OSM)은 한국과 같은 TLS 단계 차단. 대만 공식 오픈데이터·운영사 사이트(data.taipei, data.gov.tw, TDX, metro.taipei, 신베이·타오위안 운영사)는 허용 목록 밖. 우회 안 했다.
   - 대체로 Wikidata(허용)에서 구조를 받았다: 물리 역 173, 노선별 레코드 193, 노선 10, 승차 엣지 183. 순서는 인접(P197)+역번호로 만들고 좌표 기하로 교차검증(전 시퀀스 최적 순서와 동일).
   - 그러나 Wikidata 공식명(P1448)이 범위 내 **0건**이라 이름은 라벨(커뮤니티 표기)뿐이다. 지시대로 공식명만 쓰는 ruleset 3종에서는 타이베이 이름이 매칭에 안 들어가 **국가 간 포탈 0개**.
@@ -16,7 +16,7 @@
 - 부작용 발견: 국가 간·국내 T2/T3 포탈이 생기면 한국 내 최단 경로가 짧아진다 (한국 내 순서쌍 중 단축 비율: 공식 T1+T2 3.2%, 참고 T1+T2+T3 12.8% — 타이베이 경유 포함).
 - 데이터 오류 발견: 표준데이터 대구 6개 역의 한자역사명이 문자 그대로 '한자가없음' → 차수 6짜리 가짜 T2 포탈이 생겼었다. 문자 체계 검사(`script_check`)로 차단.
 - B4: 웹에 ruleset 선택(한국만 / 공식명 3종 / 참고 2종), 나라 표시, 국가 간 워프 아크(주황 실선). node 테스트로 번들 5종의 JS 경로 = Python 경로 고정, Playwright 데스크톱·모바일 콘솔 에러 0.
-- 테스트: **pytest 170 passed in 3.23s**, **node tests 24 / pass 24 / fail 0**.
+- 테스트: **pytest 171 passed in 3.26s**, **node tests 24 / pass 24 / fail 0**.
 
 ## 1. 단계별 완료 증거
 
@@ -246,7 +246,7 @@ ERRORS 0 []
 
 ### 테스트 출력
 
-- pytest: `170 passed in 3.23s` (전문 `docs/reports/evidence/pytest_phase1.txt`). Phase 1 관련: test_lineseq.py 5, test_tiers.py 6, test_world_compare.py 4
+- pytest: `171 passed in 3.26s` (전문 `docs/reports/evidence/pytest_phase1.txt`). Phase 1 관련: test_lineseq.py 5, test_tiers.py 6, test_world_compare.py 4
 - node: tests 24, pass 24, fail 0 (전문 `docs/reports/evidence/node_test_phase1.txt`)
 
 ```
@@ -286,7 +286,7 @@ ok 24 - 국가 표기와 국가 간 워프 스타일
 
 | 단계 | 상태 | 사유 | 남은 일 |
 | :- | :- | :- | :- |
-| B1 OSM(Geofabrik 대만) 추출 | 대체 (Wikidata) | Geofabrik egress TLS 단계 차단 | 접속되면 `metro_portal/osm.py`로 같은 스키마 추출 가능 (파서는 A5에서 준비) |
+| B1 OSM(Geofabrik 대만) 추출 | 대체 (Wikidata), 8시간 조항으로 종료 | Geofabrik egress TLS 단계 차단. 같은 호스트(download.geofabrik.de)에 23:18Z까지 208번 재시도했지만 한 번도 안 열림 (`docs/reports/evidence/geofabrik_attempts.log`, A5와 공유) | 접속되면 `metro_portal/osm.py`로 같은 스키마 추출 가능 (파서는 A5에서 준비) |
 | B1 공식명 | **미확보** | Wikidata P1448 0건, 대만 공식 호스트 허용 목록 밖 | 공식 소스 결정(4장 1번) 후 이름만 교체하면 B3·B4는 그대로 재생성된다 |
 | B3 공식명 기준 국가 간 포탈 | 0개 (전제 미충족) | 위와 같음 | 참고 ruleset으로 엔진 동작은 확인함 |
 
