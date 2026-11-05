@@ -6,13 +6,13 @@
 
 | 항목 | 값 |
 | :- | -: |
-| lines | 46 |
-| sequences | 50 |
-| ride_edges | 1060 |
-| stations | 1097 |
-| stations_sequenced | 1096 |
+| lines | 45 |
+| sequences | 49 |
+| ride_edges | 1055 |
+| stations | 1091 |
+| stations_sequenced | 1090 |
 | stop_failures | 0 |
-| outliers | 21 |
+| outliers | 20 |
 | outliers_unexplained | 0 |
 
 노선 순서 소스: 레일포털 표준데이터 노선정보 '정거장구성' + config/kr_lines.yaml 보정.
@@ -49,7 +49,6 @@ OSM route relation은 세션 네트워크에서 Overpass 접근 불가(TLS 리�
 | gyeonggang | 곤지암역 | 신둔도예촌역 | 6515 | >6000m | 실제 장거리 구간(판단) |
 | gyeonggang | 신둔도예촌역 | 이천역 | 6569 | >6000m | 실제 장거리 구간(판단) |
 | gyeonggang | 부발역 | 세종대왕릉역 | 8021 | >6000m | 실제 장거리 구간(판단) |
-| incheon-maglev | 파라다이스시티역 | 워터파크역 | 2435 | >4.0×중앙값(468m) | 실제 장거리 구간(판단) |
 | seohae | 능곡역 | 김포공항역 | 6463 | >6000m | 실제 장거리 구간(판단) |
 | seoul-1-gyeongbu | 평택역 | 성환역 | 9096 | >6000m | 실제 장거리 구간(판단) |
 | seoul-1-gyeongwon | 전곡역 | 연천역 | 8502 | >6000m, >4.0×중앙값(1493m) | 실제 장거리 구간(판단) |
@@ -105,7 +104,6 @@ pool = 이 노선에 속한 표준데이터 역 수, sequenced = 시퀀스에 �
 | daegu-3 | 대구 3호선 | 30 | 30 | 30 | 1 | 29 |
 | incheon-1 | 인천 1호선 | 33 | 33 | 33 | 1 | 32 |
 | incheon-2 | 인천 2호선 | 27 | 27 | 27 | 1 | 26 |
-| incheon-maglev | 인천공항 자기부상철도 | 6 | 6 | 6 | 1 | 5 |
 | gwangju-1 | 광주 1호선 | 20 | 20 | 20 | 1 | 19 |
 | daejeon-1 | 대전 1호선 | 22 | 22 | 22 | 1 | 21 |
 
@@ -143,3 +141,4 @@ pool = 이 노선에 속한 표준데이터 역 수, sequenced = 시퀀스에 �
 | suin-bundang-suin | I28K1 수인선 | patch, pools |
 | seohae | I41WS 서해선 | patch |
 | incheon-1 | S2801 인천지하철 1호선 | patch |
+| incheon-maglev | S28M1 자기부상철도 | skip |

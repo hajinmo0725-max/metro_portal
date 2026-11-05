@@ -291,11 +291,10 @@ lines:
     city: 수도권
     color: "#ED8B00"
 
+  # 인천공항 자기부상철도: 스코프 제외 (config/kr_scope.yaml). 역도 02 단계에서 빠진다.
   - source: {line_no: S28M1, name: 자기부상철도}
     id: incheon-maglev
-    name: 인천공항 자기부상철도
-    city: 수도권
-    color: "#FFCD12"
+    skip: true
 
   # ---------------- 부산·울산·경남 ----------------
   - source: {line_no: S2601, name: 부산 도시철도 1호선}

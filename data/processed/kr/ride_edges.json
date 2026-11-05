@@ -3312,41 +3312,6 @@
    "distance_m": 1150.6
   },
   {
-   "line": "incheon-maglev",
-   "sequence": "main",
-   "a": "kr:S28M1:101",
-   "b": "kr:S28M1:102",
-   "distance_m": 467.9
-  },
-  {
-   "line": "incheon-maglev",
-   "sequence": "main",
-   "a": "kr:S28M1:102",
-   "b": "kr:S28M1:103",
-   "distance_m": 454.5
-  },
-  {
-   "line": "incheon-maglev",
-   "sequence": "main",
-   "a": "kr:S28M1:103",
-   "b": "kr:S28M1:104",
-   "distance_m": 382.2
-  },
-  {
-   "line": "incheon-maglev",
-   "sequence": "main",
-   "a": "kr:S28M1:104",
-   "b": "kr:S28M1:105",
-   "distance_m": 2434.9
-  },
-  {
-   "line": "incheon-maglev",
-   "sequence": "main",
-   "a": "kr:S28M1:105",
-   "b": "kr:S28M1:106",
-   "distance_m": 1053.1
-  },
-  {
    "line": "seohae",
    "sequence": "main",
    "a": "kr:I41WS:1271",

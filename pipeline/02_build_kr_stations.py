@@ -3,6 +3,7 @@
 
 입력: data/raw/kric/stations_std.xlsx (마스터: 표준데이터 역사정보)
       data/raw/kric/stations_metro.xlsx (보강: 다국어 역명, 부역명)
+      config/kr_scope.yaml (스코프 제외 노선), config/kr_station_fixes.yaml (좌표·별칭 보정)
 출력: data/processed/kr/stations.json
 
 Station은 '노선별 역' 단위다 (표준데이터의 1행 = 1 Station). 같은 물리적 역의 묶음은
@@ -53,11 +54,18 @@ def main() -> int:
             lat, lon = lon, lat
         midx[normalize_name(clean_text(r["역명(한글)"]), norm)].append((lat, lon, r))
 
-    # 1) 표준데이터 행 정리 (중복 제거)
-    rows, seen, dropped = [], {}, []
+    # 스코프 제외 (config/kr_scope.yaml)
+    scope = yaml.safe_load(open(ROOT / "config" / "kr_scope.yaml", encoding="utf-8")) or {}
+    excl_groups = {e["line_group"]: e["reason"] for e in scope.get("exclude_line_groups", [])}
+
+    # 1) 표준데이터 행 정리 (중복 제거, 스코프 제외)
+    rows, seen, dropped, excluded = [], {}, [], []
     for r in sorted(std, key=lambda r: (clean_text(r["노선번호"]), clean_text(r["노선명"]), clean_text(r["역번호"]), clean_text(r["역사명"]))):
         code, line_no, line_name = clean_text(r["역번호"]), clean_text(r["노선번호"]), clean_text(r["노선명"])
         ko = clean_text(r["역사명"])
+        if f"{line_no}:{line_name}" in excl_groups:
+            excluded.append({"line_group": f"{line_no}:{line_name}", "code": code, "name": ko})
+            continue
         lat, lon = float(r["역위도"]), float(r["역경도"])
         key = (line_no, line_name, code)
         if key in seen:
@@ -181,7 +189,7 @@ def main() -> int:
     langs = Counter(f"{n['lang']}-{n['script']}" for s in stations for n in s["names"])
     doc = {
         "meta": {
-            "description": "한국 도시철도·광역철도 역 (노선별 역 단위). 표준데이터 범위 그대로.",
+            "description": "한국 도시철도·광역철도 역 (노선별 역 단위). 표준데이터 범위에서 config/kr_scope.yaml 제외분만 뺐다.",
             "sources": {k: {"title": v["title"], "url": v["url"], "downloaded_at": v.get("downloaded_at", ""),
                             "file": v.get("content_disposition", "")} for k, v in sorted(fetch_log["files"].items())},
             "license": "공공데이터포털/레일포털 표준데이터: 이용허락범위 제한 없음",
@@ -194,7 +202,9 @@ def main() -> int:
                 "dropped_duplicates": len(dropped),
                 "out_of_bbox": len(out_of_bbox),
                 "coord_fixes": len(fixes_applied),
+                "excluded_by_scope": len(excluded),
             },
+            "excluded_by_scope": {"line_groups": excl_groups, "stations": excluded},
             "dropped_duplicates": dropped,
             "coord_fixes": fixes_applied,
             "unenriched_station_ids": unenriched,

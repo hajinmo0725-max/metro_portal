@@ -8,6 +8,8 @@ python3 pipeline/01_fetch_kr_sources.py
 python3 pipeline/02_build_kr_stations.py
 python3 pipeline/03_build_kr_lines.py
 python3 pipeline/04_build_graph.py --ruleset "$RS" > /dev/null
+# 비교용 ruleset (환승 비용 1). 기본 ruleset을 바꿔 돌릴 때는 생략
+if [ "$RS" = "strict" ]; then python3 pipeline/04_build_graph.py --ruleset strict_transfer1 > /dev/null; fi
 python3 pipeline/05_route.py --ruleset "$RS" --examples > /dev/null
 python3 pipeline/06_build_web_data.py --ruleset "$RS"
 python3 -m pytest -q

@@ -1080,12 +1080,6 @@
   "kr:S2802:3225",
   "kr:S2802:3226",
   "kr:S2802:3227",
-  "kr:S28M1:101",
-  "kr:S28M1:102",
-  "kr:S28M1:103",
-  "kr:S28M1:104",
-  "kr:S28M1:105",
-  "kr:S28M1:106",
   "kr:S2901:100",
   "kr:S2901:101",
   "kr:S2901:102",
@@ -4022,13 +4016,6 @@
    1,
    "ride",
    "arex"
-  ],
-  [
-   "kr:I28A1:A10",
-   "kr:S28M1:101",
-   0,
-   "transfer",
-   "인천공항1터미널#1"
   ],
   [
    "kr:I28A1:A11",
@@ -18729,83 +18716,6 @@
    1,
    "ride",
    "incheon-2"
-  ],
-  [
-   "kr:S28M1:101",
-   "kr:I28A1:A10",
-   0,
-   "transfer",
-   "인천공항1터미널#1"
-  ],
-  [
-   "kr:S28M1:101",
-   "kr:S28M1:102",
-   1,
-   "ride",
-   "incheon-maglev"
-  ],
-  [
-   "kr:S28M1:102",
-   "kr:S28M1:101",
-   1,
-   "ride",
-   "incheon-maglev"
-  ],
-  [
-   "kr:S28M1:102",
-   "kr:S28M1:103",
-   1,
-   "ride",
-   "incheon-maglev"
-  ],
-  [
-   "kr:S28M1:103",
-   "kr:S28M1:102",
-   1,
-   "ride",
-   "incheon-maglev"
-  ],
-  [
-   "kr:S28M1:103",
-   "kr:S28M1:104",
-   1,
-   "ride",
-   "incheon-maglev"
-  ],
-  [
-   "kr:S28M1:104",
-   "kr:S28M1:103",
-   1,
-   "ride",
-   "incheon-maglev"
-  ],
-  [
-   "kr:S28M1:104",
-   "kr:S28M1:105",
-   1,
-   "ride",
-   "incheon-maglev"
-  ],
-  [
-   "kr:S28M1:105",
-   "kr:S28M1:104",
-   1,
-   "ride",
-   "incheon-maglev"
-  ],
-  [
-   "kr:S28M1:105",
-   "kr:S28M1:106",
-   1,
-   "ride",
-   "incheon-maglev"
-  ],
-  [
-   "kr:S28M1:106",
-   "kr:S28M1:105",
-   1,
-   "ride",
-   "incheon-maglev"
   ],
   [
    "kr:S2901:100",

@@ -175,17 +175,6 @@
    "verdict": "실제 장거리 구간(판단)"
   },
   {
-   "line": "incheon-maglev",
-   "sequence": "main",
-   "a": "kr:S28M1:104",
-   "b": "kr:S28M1:105",
-   "distance_m": 2434.9,
-   "a_name": "파라다이스시티역",
-   "b_name": "워터파크역",
-   "reason": ">4.0×중앙값(468m)",
-   "verdict": "실제 장거리 구간(판단)"
-  },
-  {
    "line": "seohae",
    "sequence": "main",
    "a": "kr:I41WS:1271",
@@ -630,15 +619,6 @@
    "edges": 26
   },
   {
-   "line": "incheon-maglev",
-   "name": "인천공항 자기부상철도",
-   "pool": 6,
-   "sequenced": 6,
-   "from_pool": 6,
-   "sequences": 1,
-   "edges": 5
-  },
-  {
    "line": "gwangju-1",
    "name": "광주 1호선",
    "pool": 20,
@@ -658,13 +638,13 @@
   }
  ],
  "totals": {
-  "lines": 46,
-  "sequences": 50,
-  "ride_edges": 1060,
-  "stations": 1097,
-  "stations_sequenced": 1096,
+  "lines": 45,
+  "sequences": 49,
+  "ride_edges": 1055,
+  "stations": 1091,
+  "stations_sequenced": 1090,
   "stop_failures": 0,
-  "outliers": 21,
+  "outliers": 20,
   "outliers_unexplained": 0
  },
  "coord_fixes": [
@@ -831,6 +811,13 @@
    "source": "S2801 인천지하철 1호선",
    "ops": [
     "patch"
+   ]
+  },
+  {
+   "id": "incheon-maglev",
+   "source": "S28M1 자기부상철도",
+   "ops": [
+    "skip"
    ]
   }
  ]
