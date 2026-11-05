@@ -26,5 +26,6 @@ python3 pipeline/12_audit_transfers.py --ruleset "$RS" > /dev/null
 python3 pipeline/14_fetch_tw_wikidata.py > /dev/null
 python3 pipeline/15_build_tw.py > /dev/null
 python3 pipeline/16_fetch_unihan.py > /dev/null
+python3 pipeline/17_compare_world_rulesets.py > /dev/null   # 약 1.5분 (한국 내 전쌍 최단 비용 × ruleset 6개)
 python3 -m pytest -q
 npm test --silent
