@@ -28,7 +28,10 @@ for (const [i, ln] of data.lines.entries()) {
   for (const sq of ln.seqs) {
     const pts = sq.nodes.map(nodeLL);
     if (sq.circular && pts.length > 2) pts.push(pts[0]);
-    L.polyline(pts, { color: ln.color, weight: 3, opacity: 0.85 }).bindTooltip(ln.name, { sticky: true }).addTo(linesLayer);
+    // 단방향 시퀀스(응암순환)는 점선 + 툴팁에 방향 표시. 길찾기·퍼즐 이동도 그 방향으로만 된다
+    const tip = sq.directed ? `${ln.name} (단방향: ${sq.nodes.map((n) => data.nodes[n].n).join("→")}→${data.nodes[sq.nodes[0]].n})` : ln.name;
+    L.polyline(pts, { color: ln.color, weight: 3, opacity: 0.85, dashArray: sq.directed ? "8 5" : null })
+      .bindTooltip(tip, { sticky: true }).addTo(linesLayer);
   }
 }
 

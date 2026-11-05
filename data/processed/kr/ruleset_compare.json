@@ -28,6 +28,7 @@
     "lines": 45,
     "sequences": 51,
     "ride_edges": 1058,
+    "ride_edges_directed": 6,
     "transfer_clusters_multi": 131,
     "portals_total": 34,
     "portals_by_tier": {
@@ -35,30 +36,34 @@
     },
     "portal_links": 70,
     "routing_nodes": 1125,
-    "routing_edges": 2622
+    "routing_edges": 2616
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
     "largest_component_size": 942,
+    "strong_components": 1,
+    "largest_strong_component_size": 942,
     "diameter": {
      "value": 67,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 18.402
+     "mean_cost": 18.411
     }
    },
    "without_warp": {
     "components": 5,
     "largest_component_ratio": 0.6953,
     "largest_component_size": 655,
+    "strong_components": 5,
+    "largest_strong_component_size": 655,
     "diameter": {
      "value": 72,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 21.548
+     "mean_cost": 21.559
     }
    },
    "top_portals": [
@@ -132,6 +137,7 @@
     "lines": 45,
     "sequences": 51,
     "ride_edges": 1058,
+    "ride_edges_directed": 6,
     "transfer_clusters_multi": 134,
     "portals_total": 29,
     "portals_by_tier": {
@@ -139,30 +145,34 @@
     },
     "portal_links": 60,
     "routing_nodes": 1120,
-    "routing_edges": 2614
+    "routing_edges": 2608
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
     "largest_component_size": 937,
+    "strong_components": 1,
+    "largest_strong_component_size": 937,
     "diameter": {
      "value": 67,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 18.322
+     "mean_cost": 18.331
     }
    },
    "without_warp": {
     "components": 5,
     "largest_component_ratio": 0.6958,
     "largest_component_size": 652,
+    "strong_components": 5,
+    "largest_strong_component_size": 652,
     "diameter": {
      "value": 72,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 21.517
+     "mean_cost": 21.529
     }
    },
    "top_portals": [
@@ -231,6 +241,7 @@
     "lines": 45,
     "sequences": 51,
     "ride_edges": 1058,
+    "ride_edges_directed": 6,
     "transfer_clusters_multi": 135,
     "portals_total": 28,
     "portals_by_tier": {
@@ -238,30 +249,34 @@
     },
     "portal_links": 58,
     "routing_nodes": 1119,
-    "routing_edges": 2612
+    "routing_edges": 2606
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
     "largest_component_size": 936,
+    "strong_components": 1,
+    "largest_strong_component_size": 936,
     "diameter": {
      "value": 67,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 18.334
+     "mean_cost": 18.343
     }
    },
    "without_warp": {
     "components": 5,
     "largest_component_ratio": 0.6955,
     "largest_component_size": 651,
+    "strong_components": 5,
+    "largest_strong_component_size": 651,
     "diameter": {
      "value": 72,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 21.534
+     "mean_cost": 21.546
     }
    },
    "top_portals": [
@@ -329,6 +344,7 @@
     "lines": 45,
     "sequences": 51,
     "ride_edges": 1058,
+    "ride_edges_directed": 6,
     "transfer_clusters_multi": 131,
     "portals_total": 34,
     "portals_by_tier": {
@@ -336,18 +352,20 @@
     },
     "portal_links": 70,
     "routing_nodes": 1125,
-    "routing_edges": 2622
+    "routing_edges": 2616
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
     "largest_component_size": 942,
+    "strong_components": 1,
+    "largest_strong_component_size": 942,
     "diameter": {
      "value": 70,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 20.368,
+     "mean_cost": 20.38,
      "level": "station"
     }
    },
@@ -355,12 +373,14 @@
     "components": 5,
     "largest_component_ratio": 0.6953,
     "largest_component_size": 655,
+    "strong_components": 5,
+    "largest_strong_component_size": 655,
     "diameter": {
      "value": 75,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 24.314,
+     "mean_cost": 24.327,
      "level": "station"
     }
    },
@@ -435,6 +455,7 @@
     "lines": 45,
     "sequences": 51,
     "ride_edges": 1058,
+    "ride_edges_directed": 6,
     "transfer_clusters_multi": 134,
     "portals_total": 29,
     "portals_by_tier": {
@@ -442,18 +463,20 @@
     },
     "portal_links": 60,
     "routing_nodes": 1120,
-    "routing_edges": 2614
+    "routing_edges": 2608
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
     "largest_component_size": 937,
+    "strong_components": 1,
+    "largest_strong_component_size": 937,
     "diameter": {
      "value": 70,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 20.402,
+     "mean_cost": 20.414,
      "level": "station"
     }
    },
@@ -461,12 +484,14 @@
     "components": 5,
     "largest_component_ratio": 0.6958,
     "largest_component_size": 652,
+    "strong_components": 5,
+    "largest_strong_component_size": 652,
     "diameter": {
      "value": 75,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 24.265,
+     "mean_cost": 24.278,
      "level": "station"
     }
    },
@@ -536,6 +561,7 @@
     "lines": 45,
     "sequences": 51,
     "ride_edges": 1058,
+    "ride_edges_directed": 6,
     "transfer_clusters_multi": 135,
     "portals_total": 28,
     "portals_by_tier": {
@@ -543,18 +569,20 @@
     },
     "portal_links": 58,
     "routing_nodes": 1119,
-    "routing_edges": 2612
+    "routing_edges": 2606
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
     "largest_component_size": 936,
+    "strong_components": 1,
+    "largest_strong_component_size": 936,
     "diameter": {
      "value": 70,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 20.415,
+     "mean_cost": 20.426,
      "level": "station"
     }
    },
@@ -562,12 +590,14 @@
     "components": 5,
     "largest_component_ratio": 0.6955,
     "largest_component_size": 651,
+    "strong_components": 5,
+    "largest_strong_component_size": 651,
     "diameter": {
      "value": 75,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 24.283,
+     "mean_cost": 24.296,
      "level": "station"
     }
    },

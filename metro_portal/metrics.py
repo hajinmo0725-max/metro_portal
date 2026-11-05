@@ -16,7 +16,8 @@ def cluster_graph(clusters, ride_edges, portals, rs, with_warp=True):
         a, b = cof[e["a"]], cof[e["b"]]
         if a != b:
             adj[a].add((b, ride))
-            adj[b].add((a, ride))
+            if not e.get("directed"):  # 유향 엣지는 a → b만
+                adj[b].add((a, ride))
     if with_warp:
         for p in portals:
             for cid in p["cluster_ids"]:
@@ -26,6 +27,7 @@ def cluster_graph(clusters, ride_edges, portals, rs, with_warp=True):
 
 
 def components(adj, nodes):
+    """약연결 컴포넌트 (방향 무시). 유향 엣지가 있으면 strong_components로 강연결도 따로 본다."""
     seen, comps = set(), []
     und = defaultdict(set)
     for a, outs in adj.items():
@@ -45,6 +47,47 @@ def components(adj, nodes):
                     seen.add(y)
                     q.append(y)
         comps.append(sorted(comp))
+    comps.sort(key=lambda c: (-len(c), c[0]))
+    return comps
+
+
+def strong_components(adj, nodes):
+    """강연결 컴포넌트 (Tarjan, 반복형). 결정성: 노드·인접 리스트를 정렬해서 방문."""
+    index, low, on, st, comps = {}, {}, set(), [], []
+    counter = 0
+    for root in sorted(nodes):
+        if root in index:
+            continue
+        work = [(root, iter(sorted(b for b, _ in adj.get(root, ()))))]
+        index[root] = low[root] = counter
+        counter += 1
+        st.append(root)
+        on.add(root)
+        while work:
+            v, it = work[-1]
+            nxt = next(it, None)
+            if nxt is not None:
+                if nxt not in index:
+                    index[nxt] = low[nxt] = counter
+                    counter += 1
+                    st.append(nxt)
+                    on.add(nxt)
+                    work.append((nxt, iter(sorted(b for b, _ in adj.get(nxt, ())))))
+                elif nxt in on:
+                    low[v] = min(low[v], index[nxt])
+                continue
+            work.pop()
+            if work:
+                low[work[-1][0]] = min(low[work[-1][0]], low[v])
+            if low[v] == index[v]:
+                comp = []
+                while True:
+                    x = st.pop()
+                    on.discard(x)
+                    comp.append(x)
+                    if x == v:
+                        break
+                comps.append(sorted(comp))
     comps.sort(key=lambda c: (-len(c), c[0]))
     return comps
 
@@ -77,7 +120,8 @@ def sssp(adj, src):
 
 
 def diameter(adj, comp_clusters, exact_max, seed):
-    """클러스터 쌍 최단 비용의 최댓값. 크면 double-sweep 근사."""
+    """클러스터 순서쌍 (s → t) 최단 비용의 최댓값. 유향 엣지가 있으면 d(s,t) ≠ d(t,s)라 순서쌍 전부를 본다.
+    크면 double-sweep 근사 (대칭 그래프 전제라 유향이면 하한일 뿐이다. 현재 데이터는 정확값 범위)."""
     import random
     nodes = sorted(comp_clusters)
     cset = set(nodes)
@@ -182,6 +226,10 @@ def compute_metrics(stations, ride_edges, lines, clusters, portals, adj_station,
 
     cw, cn = comp_summary(g_warp), comp_summary(g_none)
     giant_w = set(cw[0])
+    # 강연결: 유향 엣지 때문에 한쪽으로만 갈 수 있는 클러스터가 생기면 여기서 드러난다
+    scw = [[n for n in c if n in cid] for c in strong_components(g_warp, set(g_warp))]
+    scn = [[n for n in c if n in cid] for c in strong_components(g_none, set(g_none))]
+    scw, scn = [c for c in scw if c], [c for c in scn if c]
     by_tier = Counter(p["tier"] for p in portals)
 
     def describe(comp):
@@ -208,6 +256,7 @@ def compute_metrics(stations, ride_edges, lines, clusters, portals, adj_station,
             "lines": len(lines),
             "sequences": sum(len(l["sequences"]) for l in lines),
             "ride_edges": len(ride_edges),
+            "ride_edges_directed": sum(1 for e in ride_edges if e.get("directed")),
             "transfer_clusters_multi": sum(1 for c in clusters if len(c["station_ids"]) > 1),
             "portals_total": len(portals),
             "portals_by_tier": dict(sorted(by_tier.items())),
@@ -219,12 +268,16 @@ def compute_metrics(stations, ride_edges, lines, clusters, portals, adj_station,
             "components": len(cw),
             "largest_component_ratio": round(len(cw[0]) / len(cl_ids), 4),
             "largest_component_size": len(cw[0]),
+            "strong_components": len(scw),
+            "largest_strong_component_size": len(scw[0]),
             "diameter": dia_w,
         },
         "without_warp": {
             "components": len(cn),
             "largest_component_ratio": round(len(cn[0]) / len(cl_ids), 4),
             "largest_component_size": len(cn[0]),
+            "strong_components": len(scn),
+            "largest_strong_component_size": len(scn[0]),
             "diameter": dia_n,
             "component_list": [describe(c) for c in cn],
         },
@@ -265,7 +318,7 @@ def render_report(m, portals, clusters, stations, rs, candidates=None):
          f"| 환승 클러스터 (물리적 역) | {c['clusters']} |",
          f"| 2개 이상 레코드를 가진 환승 클러스터 | {c['transfer_clusters_multi']} |",
          f"| 노선 / 시퀀스 | {c['lines']} / {c['sequences']} |",
-         f"| 승차 엣지 | {c['ride_edges']} |",
+         f"| 승차 엣지 (유향) | {c['ride_edges']} ({c.get('ride_edges_directed', 0)}) |",
          f"| 포탈 (전체) | {c['portals_total']} |"]
     L += [f"| 포탈 {t} | {n} |" for t, n in c["portals_by_tier"].items()]
     L += [f"| 포탈-클러스터 연결 수 | {c['portal_links']} |",
@@ -274,10 +327,12 @@ def render_report(m, portals, clusters, stations, rs, candidates=None):
     w, n = m["with_warp"], m["without_warp"]
     L += [f"| 연결 컴포넌트 수 | {w['components']} | {n['components']} |",
           f"| 최대 컴포넌트 비율 | {w['largest_component_ratio']:.1%} ({w['largest_component_size']}) | {n['largest_component_ratio']:.1%} ({n['largest_component_size']}) |",
+          f"| 강연결 컴포넌트 수 / 최대 크기 | {w['strong_components']} / {w['largest_strong_component_size']} | {n['strong_components']} / {n['largest_strong_component_size']} |",
           f"| 최대 컴포넌트 지름 (비용) | {w['diameter']['value']} ({'정확' if w['diameter']['exact'] else '근사'}) | {n['diameter']['value']} ({'정확' if n['diameter']['exact'] else '근사'}) |",
           f"| 지름 양 끝 | {w['diameter']['from']} ↔ {w['diameter']['to']} | {n['diameter']['from']} ↔ {n['diameter']['to']} |",
           f"| 최대 컴포넌트 평균 최단 비용 | {w['diameter']['mean_cost']} | {n['diameter']['mean_cost']} |", "",
-          "워프 있음 지름은 최대 컴포넌트가 커져서(여러 도시 합류) 워프 없음 지름과 직접 비교하면 안 된다.", "",
+          "워프 있음 지름은 최대 컴포넌트가 커져서(여러 도시 합류) 워프 없음 지름과 직접 비교하면 안 된다.",
+          "연결 컴포넌트는 방향을 무시한 약연결 기준이고, 지름·평균은 유향 엣지(단방향 구간)를 반영한 순서쌍 (출발 → 도착) 기준이다.", "",
           f"## 포탈 차수 상위 {len(m['top_portals'])}", "", "| 순위 | 포탈 | 등급 | 차수 | 연결 클러스터 |", "| -: | :- | :- | -: | :- |"]
     for i, p in enumerate(m["top_portals"], 1):
         L.append(f"| {i} | {p['name']} | {p['tier']} | {p['degree']} | {', '.join(_cl_label(cid[x]) for x in p['clusters'])} |")

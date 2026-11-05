@@ -121,17 +121,19 @@ def main() -> int:
         parsed = parse_stops(row["정거장구성"])
         line_id = d.get("id") or f"kr-{no}-{nm}".replace(" ", "")
         # 기본 시퀀스: 원본 순서. 이름+역번호로 해석
+        # directed: 단방향 운행 시퀀스 (예: 6호선 응암순환). 승차 엣지를 정차 순서 방향으로만 만든다
         if "sequences" in d:
-            seq_specs = [(sq["id"], [(x, "") for x in sq["stops"]], bool(sq.get("circular"))) for sq in d["sequences"]]
+            seq_specs = [(sq["id"], [(x, "") for x in sq["stops"]], bool(sq.get("circular")), bool(sq.get("directed")))
+                         for sq in d["sequences"]]
         else:
             main = [(c, n) for c, n in parsed]
             names = apply_patch([n for _, n in main], d.get("patch", {}))
             codes = {n: c for c, n in main}
-            seq_specs = [("main", [(n, codes.get(n, "")) for n in names], bool(d.get("circular")))]
+            seq_specs = [("main", [(n, codes.get(n, "")) for n in names], bool(d.get("circular")), bool(d.get("directed")))]
             for br in d.get("branches", []):
-                seq_specs.append((br["id"], [(x, "") for x in br["stops"]], bool(br.get("circular"))))
+                seq_specs.append((br["id"], [(x, "") for x in br["stops"]], bool(br.get("circular")), bool(br.get("directed"))))
         seqs = []
-        for seq_id, stop_refs, circular in seq_specs:
+        for seq_id, stop_refs, circular, directed in seq_specs:
             ids = []
             for ref, code in stop_refs:
                 sid, how = res.resolve(ref, pools, code)
@@ -141,14 +143,23 @@ def main() -> int:
                 if ids and ids[-1] == sid:
                     continue
                 ids.append(sid)
-            seqs.append({"id": seq_id, "station_ids": ids, "circular": circular})
+            seqs.append({"id": seq_id, "station_ids": ids, "circular": circular, "directed": directed})
             pairs = list(zip(ids, ids[1:])) + ([(ids[-1], ids[0])] if circular and len(ids) > 2 else [])
             for a, b in pairs:
-                key = (line_id,) + tuple(sorted((a, b)))
+                # 무향 엣지는 (a, b)를 id 순으로 정렬해 저장, 유향 엣지는 a → b (운행 방향) 그대로
+                ukey = (line_id,) + tuple(sorted((a, b)))
+                key = (line_id, a, b) if directed else ukey
+                if directed and (line_id, b, a) in edges:
+                    raise SystemExit(f"[03] 유향 엣지가 같은 노선에서 양방향으로 정의됨: {line_id} {a}<->{b}")
+                if directed and ukey in edges and not edges[ukey].get("directed"):
+                    continue  # 같은 노선의 무향 엣지가 이미 있으면 그쪽이 양방향을 다 덮는다
                 if key not in edges:
                     sa, sb = sidx[a], sidx[b]
-                    edges[key] = {"line": line_id, "sequence": seq_id, "a": key[1], "b": key[2],
-                                  "distance_m": round(haversine_m(sa["lat"], sa["lon"], sb["lat"], sb["lon"]), 1)}
+                    e = {"line": line_id, "sequence": seq_id, "a": key[1], "b": key[2],
+                         "distance_m": round(haversine_m(sa["lat"], sa["lon"], sb["lat"], sb["lon"]), 1)}
+                    if directed:
+                        e["directed"] = True
+                    edges[key] = e
         lines.append({
             "id": line_id, "name": d.get("name", nm), "source_no": no, "source_name": nm,
             "operator": clean_text(row["운영기관명"]), "city": d.get("city", ""), "color": d.get("color", ""),
@@ -191,7 +202,8 @@ def main() -> int:
     val = {"stop_failures": failures, "unused_line_defs": [list(k) for k in unused],
            "stations_not_sequenced": not_sequenced, "adjacent_outliers": outliers, "coverage": coverage,
            "totals": {"lines": len(lines), "sequences": sum(len(l["sequences"]) for l in lines),
-                      "ride_edges": len(edge_list), "stations": len(stations), "stations_sequenced": len(sequenced),
+                      "ride_edges": len(edge_list), "ride_edges_directed": sum(1 for e in edge_list if e.get("directed")),
+                      "stations": len(stations), "stations_sequenced": len(sequenced),
                       "stop_failures": len(failures), "outliers": len(outliers),
                       "outliers_unexplained": sum(o["verdict"] == "확인 필요" for o in outliers)}}
     meta = json.loads((PROC / "stations.json").read_text(encoding="utf-8"))["meta"]

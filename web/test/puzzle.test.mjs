@@ -105,3 +105,20 @@ test("수 제한: 최적의 3배+10 비용을 넘기면 자동 종료", () => {
   while (!g.done && i++ < 500) play(g, g.path[g.path.length - 1] === a ? b : a);
   assert.ok(g.done && g.gaveUp && g.cost >= g.maxCost);
 });
+
+test("3차 A2: 응암순환 단방향 — 퍼즐 이동·길찾기 모두 역방향 승차 불가", () => {
+  const loopSeq = data.lines.flatMap((l) => l.seqs).find((s) => s.id === "eungam-loop");
+  assert.ok(loopSeq && loopSeq.directed && loopSeq.circular);
+  const cl = (name) => data.clusters.findIndex((c) => c.n === name && c.city === "수도권");
+  const eungam = cl("응암"), yeokchon = cl("역촌"), gusan = cl("구산");
+  const rideTo = (from) => moves[from].filter((m) => m.type === "ride").map((m) => m.to);
+  assert.ok(rideTo(eungam).includes(yeokchon));
+  assert.ok(!rideTo(yeokchon).includes(eungam));
+  assert.ok(rideTo(gusan).includes(eungam));
+  assert.ok(!rideTo(eungam).includes(gusan));
+  // 역촌 → 응암: 워프 없이 4수 (역촌→불광, 3호선 불광→연신내, 연신내→구산→응암), 반대는 1수
+  const adjNo = buildAdj(data, { warp: false });
+  assert.equal(routeClusters(data, adjNo, eungam, yeokchon).cost, 1);
+  assert.equal(routeClusters(data, adjNo, yeokchon, eungam).cost, 4);
+  assert.equal(clusterDistances(moves, yeokchon).dist[eungam], 4);
+});

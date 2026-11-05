@@ -135,7 +135,8 @@ def build_graph(stations: list[dict], ride_edges: list[dict], clusters: list[dic
     adj: dict[str, list] = {s["id"]: [] for s in stations}
     for e in ride_edges:
         adj[e["a"]].append((e["b"], c_ride, "ride", e["line"]))
-        adj[e["b"]].append((e["a"], c_ride, "ride", e["line"]))
+        if not e.get("directed"):  # 유향 엣지(단방향 운행 구간)는 a → b만
+            adj[e["b"]].append((e["a"], c_ride, "ride", e["line"]))
     for c in clusters:
         ids = c["station_ids"]
         for a in ids:

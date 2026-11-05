@@ -5570,14 +5570,8 @@
    "sequence": "eungam-loop",
    "a": "kr:S1106:0610",
    "b": "kr:S1106:0611",
-   "distance_m": 1043.2
-  },
-  {
-   "line": "seoul-6",
-   "sequence": "eungam-loop",
-   "a": "kr:S1106:0610",
-   "b": "kr:S1106:0615",
-   "distance_m": 1409.4
+   "distance_m": 1043.2,
+   "directed": true
   },
   {
    "line": "seoul-6",
@@ -5591,28 +5585,40 @@
    "sequence": "eungam-loop",
    "a": "kr:S1106:0611",
    "b": "kr:S1106:0612",
-   "distance_m": 803.5
+   "distance_m": 803.5,
+   "directed": true
   },
   {
    "line": "seoul-6",
    "sequence": "eungam-loop",
    "a": "kr:S1106:0612",
    "b": "kr:S1106:0613",
-   "distance_m": 889.4
+   "distance_m": 889.4,
+   "directed": true
   },
   {
    "line": "seoul-6",
    "sequence": "eungam-loop",
    "a": "kr:S1106:0613",
    "b": "kr:S1106:0614",
-   "distance_m": 1112.6
+   "distance_m": 1112.6,
+   "directed": true
   },
   {
    "line": "seoul-6",
    "sequence": "eungam-loop",
    "a": "kr:S1106:0614",
    "b": "kr:S1106:0615",
-   "distance_m": 856.5
+   "distance_m": 856.5,
+   "directed": true
+  },
+  {
+   "line": "seoul-6",
+   "sequence": "eungam-loop",
+   "a": "kr:S1106:0615",
+   "b": "kr:S1106:0610",
+   "distance_m": 1409.4,
+   "directed": true
   },
   {
    "line": "seoul-6",

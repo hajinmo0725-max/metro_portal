@@ -641,6 +641,7 @@
   "lines": 45,
   "sequences": 51,
   "ride_edges": 1058,
+  "ride_edges_directed": 6,
   "stations": 1091,
   "stations_sequenced": 1090,
   "stop_failures": 0,

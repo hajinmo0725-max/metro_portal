@@ -37,7 +37,8 @@
       "kr:I1101:1811",
       "kr:I1101:1812"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -92,7 +93,8 @@
       "kr:I1103:0351",
       "kr:I1103:0352"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -139,7 +141,8 @@
       "kr:I1104:0433",
       "kr:I1104:0434"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -176,7 +179,8 @@
       "kr:I11D1:D018",
       "kr:I11D1:D019"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -220,7 +224,8 @@
       "kr:I26K6:8022",
       "kr:I26K6:8023"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -249,7 +254,8 @@
       "kr:I27K7:7007",
       "kr:I27K7:7008"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -284,7 +290,8 @@
       "kr:I28A1:A10",
       "kr:I28A1:A11"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -341,7 +348,8 @@
       "kr:I4105:1872",
       "kr:I4105:1846"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -389,7 +397,8 @@
       "kr:I28K1:1890",
       "kr:I28K1:1891"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -456,7 +465,8 @@
       "kr:I4401:1407",
       "kr:I4401:1408"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     },
     {
      "id": "gwangmyeong",
@@ -464,7 +474,8 @@
       "kr:I4101:1703",
       "kr:I4101:1750"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     },
     {
      "id": "seodongtan",
@@ -472,7 +483,8 @@
       "kr:I4101:1716",
       "kr:I4101:1749"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -503,7 +515,8 @@
       "kr:I4101:0132",
       "kr:I4101:0133"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -552,7 +565,8 @@
       "kr:I4102:1918",
       "kr:I4102:1919"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -596,7 +610,8 @@
       "kr:I4103:1761",
       "kr:I4103:1762"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -621,7 +636,8 @@
       "kr:I4104:0408",
       "kr:I1104:0409"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -653,7 +669,8 @@
       "kr:I4106:1957",
       "kr:I4106:1958"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -730,7 +747,8 @@
       "kr:I4108:1219",
       "kr:I4108:1220"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     },
     {
      "id": "seoul-station",
@@ -739,7 +757,8 @@
       "kr:I4108:1252",
       "kr:I4108:1251"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -782,7 +801,8 @@
       "kr:I41K2:1328",
       "kr:I41K2:1329"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     },
     {
      "id": "cheongnyangni",
@@ -792,7 +812,8 @@
       "kr:I4108:경춘선:1201",
       "kr:I4108:경춘선:1202"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -825,7 +846,8 @@
       "kr:I41K5:1510",
       "kr:I41K5:1511"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -867,7 +889,8 @@
       "kr:I41WS:4814",
       "kr:I41WS:4815"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -899,7 +922,8 @@
       "kr:L11SL:S410",
       "kr:L11SL:S411"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -933,7 +957,8 @@
       "kr:L11UI:S121",
       "kr:L11UI:S122"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -968,7 +993,8 @@
       "kr:L2604:0413",
       "kr:L2604:0414"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1004,7 +1030,8 @@
       "kr:L41E1:Y123",
       "kr:L41E1:Y124"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1035,7 +1062,8 @@
       "kr:L41G1:G108",
       "kr:L41G1:G109"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1071,7 +1099,8 @@
       "kr:L41U1:U124",
       "kr:L41U1:U125"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1113,7 +1142,8 @@
       "kr:L48B1:0020",
       "kr:L48B1:0021"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1177,7 +1207,8 @@
       "kr:S1102:0242",
       "kr:S1102:0243"
      ],
-     "circular": true
+     "circular": true,
+     "directed": false
     }
    ],
    "patched": true
@@ -1247,7 +1278,8 @@
       "kr:S1105:0557",
       "kr:S1105:0558"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     },
     {
      "id": "macheon",
@@ -1261,7 +1293,8 @@
       "kr:S1105:P554",
       "kr:S1105:P555"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1316,7 +1349,8 @@
       "kr:S1106:0647",
       "kr:S1106:0648"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     },
     {
      "id": "eungam-loop",
@@ -1328,7 +1362,8 @@
       "kr:S1106:0614",
       "kr:S1106:0615"
      ],
-     "circular": true
+     "circular": true,
+     "directed": true
     }
    ],
    "patched": true
@@ -1361,7 +1396,8 @@
       "kr:S1107:3762",
       "kr:S1107:3763"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1424,7 +1460,8 @@
       "kr:S1107:0749",
       "kr:S1107:0750"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1469,7 +1506,8 @@
       "kr:S1108:0826",
       "kr:S1108:0827"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1529,7 +1567,8 @@
       "kr:S1109:4137",
       "kr:S1109:4138"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1555,7 +1594,8 @@
       "kr:S1121:2113",
       "kr:S1121:2114"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1581,7 +1621,8 @@
       "kr:S1122:2343",
       "kr:S1105:0518"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1642,7 +1683,8 @@
       "kr:S2601:0133",
       "kr:S2601:0134"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1706,7 +1748,8 @@
       "kr:S2602:0242",
       "kr:S2602:0243"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1744,7 +1787,8 @@
       "kr:S2603:0316",
       "kr:S2603:0317"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1800,7 +1844,8 @@
       "kr:S2701:0148",
       "kr:S2701:0149"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1850,7 +1895,8 @@
       "kr:S2702:0243",
       "kr:S2702:0244"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1901,7 +1947,8 @@
       "kr:S2703:0340",
       "kr:S2703:0341"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -1955,7 +2002,8 @@
       "kr:S2801:3138",
       "kr:S2801:3139"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -2003,7 +2051,8 @@
       "kr:S2802:3226",
       "kr:S2802:3227"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -2044,7 +2093,8 @@
       "kr:S2901:118",
       "kr:S2901:119"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
@@ -2087,7 +2137,8 @@
       "kr:S3001:121",
       "kr:S3001:122"
      ],
-     "circular": false
+     "circular": false,
+     "directed": false
     }
    ],
    "patched": true
