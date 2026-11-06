@@ -8,6 +8,8 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&
 const WARP = getComputedStyle(document.documentElement).getPropertyValue("--warp").trim() || "#8b3dff";
 const BUNDLES = { strict: "kr_strict.json", tw_t12: "world_tw_t12.json" };
 const W = 1000;
+// 권역별 기본 확대 (수도권은 655역이라 처음부터 확대해서 도심을 보여 준다)
+const DEFAULT_ZOOM = { seoul: 3 };
 
 const sch = await (await fetch("data/schematic.json")).json();
 let data, labels, adj, reg, links, rsKey;
@@ -75,6 +77,8 @@ function build() {
   const { H, S, G } = screenCoords(r);
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.style.width = `${100 * state.zoom}%`;
+  // 확대 배율의 역수: 글자·원·선 굵기를 줄여 화면 크기는 그대로, 간격만 넓어지게
+  const k = 1 / state.zoom;
   const idx = new Map(data.clusters.map((c, i) => [c.id, i]));
   const lineByid = new Map(data.lines.map((l, i) => [l.id, i]));
   const gEdges = el("g", { class: "sch-edges" }, svg), gSame = el("g", { class: "sch-same" }, svg);
@@ -87,7 +91,7 @@ function build() {
     nbr.get(a).push(b); nbr.get(b).push(a);
     ls.forEach((lid, k) => {
       const col = (r.lines[lid] || {}).color || data.lines[lineByid.get(lid)]?.color || "#888";
-      const ln = el("line", { stroke: col, "stroke-width": 4, "stroke-linecap": "round" }, gEdges);
+      const ln = el("line", { stroke: col, "stroke-width": 4 * Math.max(k, 0.55), "stroke-linecap": "round" }, gEdges);
       items.edges.push({ e: ln, a, b, k, n: ls.length });
     });
   }
@@ -95,7 +99,7 @@ function build() {
   for (const l of links) for (const [c1, c2] of l.same) {
     const i1 = data.clusters[c1].id, i2 = data.clusters[c2].id;
     if (!S.has(i1) || !S.has(i2) || reg[c1] !== r.id) continue;
-    const ln = el("line", { stroke: WARP, "stroke-width": 2.2, "stroke-dasharray": "5 5", opacity: 0.9 }, gSame);
+    const ln = el("line", { stroke: WARP, "stroke-width": 2.2 * k, "stroke-dasharray": `${5 * k} ${5 * k}`, opacity: 0.9 }, gSame);
     ln.appendChild(el("title")).textContent = `같은 권역 워프 [${l.name}] (비용 ${l.cost})`;
     items.same.push({ e: ln, a: i1, b: i2 });
   }
@@ -111,14 +115,14 @@ function build() {
     const deg = (nbr.get(cid) || []).length;
     const ps = portalAt.get(ci) || [];
     const g = el("g", { class: "sch-st" + (ps.length ? " portal" : ""), "data-c": ci }, gSt);
-    const circ = el("circle", { r: ps.length ? 6 : deg !== 2 ? 5 : 3.2, fill: "#fff", stroke: ps.length ? WARP : "#222", "stroke-width": ps.length ? 3 : deg !== 2 ? 2 : 1.2 }, g);
-    const t = el("text", { "font-size": deg !== 2 || ps.length ? 12 : 10, fill: "#222" }, g);
+    const circ = el("circle", { r: (ps.length ? 6 : deg !== 2 ? 5 : 3.2) * k, fill: "#fff", stroke: ps.length ? WARP : "#222", "stroke-width": (ps.length ? 3 : deg !== 2 ? 2 : 1.2) * k, "data-big": deg !== 2 || ps.length ? 1 : 0 }, g);
+    const t = el("text", { "font-size": (deg !== 2 || ps.length ? 12 : 10) * k, fill: "#222", "stroke-width": 3 * k }, g);
     t.textContent = data.clusters[ci].n;
     let icon = null;
     if (ps.length) {
       const tg = warpTargets(links, ci);
       const dest = [...new Set(tg.map((x) => regionDef(x.region)?.city || "?"))];
-      icon = el("text", { "font-size": 13, class: "sch-icon" }, g);
+      icon = el("text", { "font-size": 13 * k, class: "sch-icon", "stroke-width": 3 * k }, g);
       icon.textContent = `🌀${dest.filter((d) => d !== r.city).length ? "→" + dest.filter((d) => d !== r.city).join("·") : ""}`;
       g.addEventListener("click", (ev) => { ev.stopPropagation(); openPortal(ci, ev); });
       g.appendChild(el("title")).textContent = `포탈 역 ${data.clusters[ci].n}: ` + tg.map((x) => `[${x.portal}] → ${regionDef(x.region)?.city || ""} ${data.clusters[x.c].n}`).join(", ");
@@ -132,23 +136,23 @@ function build() {
       const cids = s.clusters.map((c) => data.clusters[c].id).filter((x) => S.has(x));
       const col = data.lines[s.line]?.color || "#333";
       for (let i = 1; i < cids.length; i++) {
-        const halo = el("line", { stroke: "#ffd400", "stroke-width": 14, "stroke-linecap": "round", opacity: 0.85 }, gRoute);
-        const ln = el("line", { stroke: col, "stroke-width": 7, "stroke-linecap": "round" }, gRoute);
+        const halo = el("line", { stroke: "#ffd400", "stroke-width": 14 * Math.max(k, 0.55), "stroke-linecap": "round", opacity: 0.85 }, gRoute);
+        const ln = el("line", { stroke: col, "stroke-width": 7 * Math.max(k, 0.55), "stroke-linecap": "round" }, gRoute);
         items.route.push({ e: halo, a: cids[i - 1], b: cids[i] }, { e: ln, a: cids[i - 1], b: cids[i] });
       }
     }
   }
-  els = { S, G, items, nbr, H };
+  els = { S, G, items, nbr, H, k };
   place(state.view === "schematic" ? 1 : 0);
   if (state.focus !== null) pulse(state.focus);
 }
 
 // t = 1 도식, 0 지리. 사이 값은 전환 애니메이션
 function place(t) {
-  const { S, G, items, nbr } = els;
+  const { S, G, items, nbr, k } = els;
   const P = (k) => lerpPoint(G.get(k), S.get(k), t);
   for (const x of items.edges) {
-    const [p, q] = offsetSegment(P(x.a), P(x.b), x.k, x.n);
+    const [p, q] = offsetSegment(P(x.a), P(x.b), x.k, x.n, 4.5 * Math.max(k, 0.55));
     x.e.setAttribute("x1", p[0].toFixed(1)); x.e.setAttribute("y1", p[1].toFixed(1));
     x.e.setAttribute("x2", q[0].toFixed(1)); x.e.setAttribute("y2", q[1].toFixed(1));
   }
@@ -169,8 +173,8 @@ function place(t) {
       vx += dx / L; vy += dy / L;
     }
     const L = Math.hypot(vx, vy) || 1;
-    return { p, dir: [vx / L, vy / L], text: x.t.textContent, size: +x.t.getAttribute("font-size"), big: x.circ.getAttribute("r") !== "3.2" };
-  })) : null;
+    return { p, dir: [vx / L, vy / L], text: x.t.textContent, size: +x.t.getAttribute("font-size"), big: x.circ.getAttribute("data-big") === "1" };
+  }), { k }) : null;
   items.st.forEach((x, i) => {
     const p = P(x.cid);
     x.circ.setAttribute("cx", p[0].toFixed(1)); x.circ.setAttribute("cy", p[1].toFixed(1));
@@ -178,7 +182,7 @@ function place(t) {
     x.t.setAttribute("x", lp.x.toFixed(1)); x.t.setAttribute("y", lp.y.toFixed(1));
     x.t.setAttribute("text-anchor", lp.anchor || "start");
     if (lp.rot) x.t.setAttribute("transform", `rotate(${lp.rot} ${lp.x.toFixed(1)} ${lp.y.toFixed(1)})`); else x.t.removeAttribute("transform");
-    if (x.icon) { x.icon.setAttribute("x", (p[0] - 8).toFixed(1)); x.icon.setAttribute("y", (p[1] + 20).toFixed(1)); }
+    if (x.icon) { x.icon.setAttribute("x", (p[0] - 8 * k).toFixed(1)); x.icon.setAttribute("y", (p[1] + 20 * k).toFixed(1)); }
   });
 }
 
@@ -206,6 +210,7 @@ function pulse(ci) {
   const k = svg.clientWidth / W;
   sc.scrollTo({ left: cx * k - sc.clientWidth / 2, top: cy * k - sc.clientHeight / 2, behavior: "smooth" });
   setTimeout(() => g.classList.remove("pulse"), 2400);
+  state.focus = null;
 }
 
 function openPortal(ci, ev) {
@@ -226,10 +231,17 @@ function openPortal(ci, ev) {
 
 function show(regionId) {
   if (!regionDef(regionId)) return;
+  const changed = state.region !== regionId || !els;
   state.region = regionId;
+  if (changed) state.zoom = DEFAULT_ZOOM[regionId] || 1;
+  const hadFocus = state.focus !== null;
   $("sch-pop").hidden = true;
   drawTabs();
   build();
+  if (changed && !hadFocus) {
+    const sc = $("sch-scroll");
+    requestAnimationFrame(() => sc.scrollTo({ left: (sc.scrollWidth - sc.clientWidth) / 2, top: (sc.scrollHeight - sc.clientHeight) / 2 }));
+  }
   const r = regionDef(regionId);
   $("sch-note").textContent = r.note || "";
   saveHash();
@@ -264,8 +276,16 @@ function saveHash() {
 }
 
 document.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => animateTo(b.dataset.view)));
-$("sch-zin").addEventListener("click", () => { state.zoom = Math.min(4, state.zoom * 1.5); $("sch-svg").style.width = `${100 * state.zoom}%`; });
-$("sch-zout").addEventListener("click", () => { state.zoom = Math.max(1, state.zoom / 1.5); $("sch-svg").style.width = `${100 * state.zoom}%`; });
+// 확대·축소: 화면 가운데를 유지하면서 다시 그린다 (글자 크기는 그대로)
+function rezoom(f) {
+  const sc = $("sch-scroll");
+  const cx = (sc.scrollLeft + sc.clientWidth / 2) / sc.scrollWidth, cy = (sc.scrollTop + sc.clientHeight / 2) / sc.scrollHeight;
+  state.zoom = Math.min(6, Math.max(1, state.zoom * f));
+  build();
+  sc.scrollTo({ left: cx * sc.scrollWidth - sc.clientWidth / 2, top: cy * sc.scrollHeight - sc.clientHeight / 2 });
+}
+$("sch-zin").addEventListener("click", () => rezoom(1.5));
+$("sch-zout").addEventListener("click", () => rezoom(1 / 1.5));
 $("sch-form").addEventListener("submit", (e) => { e.preventDefault(); renderRoute(); saveHash(); });
 $("sch-rs").addEventListener("change", async (e) => { await loadBundle(e.target.value); if ($("sch-from").value && $("sch-to").value) renderRoute(); else show(state.region); });
 $("sch-scroll").addEventListener("click", () => { $("sch-pop").hidden = true; });

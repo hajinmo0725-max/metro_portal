@@ -16,7 +16,8 @@
   "span_factor": 1.0,
   "scale_by": "mean",
   "mip_heuristic_effort": 0.05,
-  "pos_window": null
+  "pos_window": null,
+  "geo_len_factor": 0.5
  },
  "regions": {
   "seoul": {
@@ -24,18 +25,18 @@
    "country": "KR",
    "keep_every": 3,
    "engine": "mip",
-   "status": "Time limit reached (실행 가능해 없음)",
-   "seconds": 362.6,
-   "iterations": 2,
-   "crossing_constraints": 224,
+   "status": "반복 2 해 사용 (Optimal; 반복 3은 Time limit reached, 해 없음)",
+   "seconds": 239.5,
+   "iterations": 3,
+   "crossing_constraints": 6,
    "objective": Infinity,
    "stats": {
     "nodes": 655,
     "edges": 755,
     "non_octilinear_edges": 0,
     "crossings": 17,
-    "bend_units_45deg": 177,
-    "mean_displacement_norm": 0.411
+    "bend_units_45deg": 214,
+    "mean_displacement_norm": 0.31
    },
    "stats_geo": {
     "nodes": 655,
@@ -181,5 +182,112 @@
     "mean_displacement_norm": 0.0
    }
   }
- }
+ },
+ "seoul_variants": [
+  {
+   "name": "A 굴곡 우선",
+   "id": "seoul_A",
+   "params": {
+    "w_bend": 3.0,
+    "w_dir": 1.0
+   },
+   "keep_every": 3,
+   "status": "MIP: Time limit reached (실행 가능해 없음) → snap-lp",
+   "seconds": 182.2,
+   "engine": "snap-lp",
+   "iterations": 6,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 18,
+    "crossings": 116,
+    "bend_units_45deg": 213,
+    "mean_displacement_norm": 0.16
+   }
+  },
+  {
+   "name": "B 이전 기본 (w_dir 2, 간격 1.5, 길이 비례 없음)",
+   "id": "seoul_B",
+   "params": {
+    "w_bend": 1.0,
+    "w_dir": 2.0
+   },
+   "keep_every": 3,
+   "status": "Time limit reached (실행 가능해 없음)",
+   "seconds": 362.6,
+   "engine": "mip",
+   "iterations": 2,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 0,
+    "crossings": 17,
+    "bend_units_45deg": 177,
+    "mean_displacement_norm": 0.411
+   }
+  },
+  {
+   "name": "C 지리 우선",
+   "id": "seoul_C",
+   "params": {
+    "w_bend": 1.0,
+    "w_dir": 4.0
+   },
+   "keep_every": 3,
+   "status": "Time limit reached (실행 가능해 없음)",
+   "seconds": 198.7,
+   "engine": "mip",
+   "iterations": 2,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 0,
+    "crossings": 17,
+    "bend_units_45deg": 209,
+    "mean_displacement_norm": 0.319
+   }
+  },
+  {
+   "name": "D 전체 축약",
+   "id": "seoul_D",
+   "params": {
+    "w_bend": 1.0,
+    "w_dir": 2.0
+   },
+   "keep_every": 0,
+   "status": "MIP: Time limit reached (실행 가능해 없음) → snap-lp",
+   "seconds": 181.6,
+   "engine": "snap-lp",
+   "iterations": 6,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 50,
+    "crossings": 52,
+    "bend_units_45deg": 149,
+    "mean_displacement_norm": 0.311
+   }
+  },
+  {
+   "name": "E 간격 완화",
+   "id": "seoul_E",
+   "params": {
+    "w_bend": 1.0,
+    "w_dir": 2.0
+   },
+   "keep_every": 3,
+   "status": "Time limit reached (실행 가능해 없음)",
+   "seconds": 361.4,
+   "engine": "mip",
+   "iterations": 2,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 0,
+    "crossings": 17,
+    "bend_units_45deg": 177,
+    "mean_displacement_norm": 0.411
+   }
+  }
+ ]
 }

@@ -23,18 +23,20 @@ solver:
 regions:
   # 수도권: 축약 엣지 길이 편차가 커서(최소/평균 0.15) N&W 기본 설정으로는 150초 안에 실행 가능해를 못 찾았다 (보고서 S3).
   # 순서 제약 soft, 최소 길이 완화, 좌표 범위 3배, 중앙값 스케일로 푼다
+  # 비교(아래 seoul_variants) 결과 F안(지리 방향 이탈 비용 4, 최소 간격 0.6, 지리 길이 비례 0.35)이 가장 읽기 좋아 기본으로 골랐다
   - {id: seoul, city: 수도권, country: KR, keep_every: 3, time_limit_s: 180, max_iterations: 8, order: soft, min_edge: 1.0,
-     chain_len_factor: 0.3, span_factor: 3.0, scale_by: median, mip_heuristic_effort: 0.3, mip_rel_gap: 0.2}
+     chain_len_factor: 0.3, span_factor: 3.0, scale_by: median, mip_heuristic_effort: 0.3, mip_rel_gap: 0.2,
+     w_dir: 4.0, min_sep: 0.6, geo_len_factor: 0.35}
   - {id: busan, city: 부산, country: KR, keep_every: 2}
   - {id: daegu, city: 대구, country: KR, keep_every: 2}
   - {id: daejeon, city: 대전, country: KR, keep_every: 2}
   - {id: gwangju, city: 광주, country: KR, keep_every: 2}
   - {id: taipei, city: 타이베이, country: TW, keep_every: 2}
 # S3: 수도권은 파라미터 조합 몇 개를 비교해 가장 읽기 좋은 것을 고른다 (LOOM --geo-pen 비교 대신 같은 성격의 가중치 비교)
-# 기본(B)은 regions의 seoul 설정 그대로이고, 나머지는 거기서 바꾼 값만 적는다
+# 수도권 비교 변형 (regions의 seoul 설정에서 바꾼 값). 기본(F안)과 비교한다
 seoul_variants:
-  - {name: "A 굴곡 우선", w_bend: 3.0, w_dir: 1.0}
-  - {name: "C 지리 우선", w_bend: 1.0, w_dir: 4.0}
-  - {name: "D 전체 축약", keep_every: 0}
-  - {name: "E 간격 완화", min_sep: 0.6}
-  - {name: "F 지리 우선 + 길이 비례", w_dir: 4.0, min_sep: 0.6, geo_len_factor: 0.35}
+  - {name: "A 굴곡 우선", w_bend: 3.0, w_dir: 1.0, min_sep: 1.5, geo_len_factor: 0}
+  - {name: "B 이전 기본", w_dir: 2.0, min_sep: 1.5, geo_len_factor: 0}
+  - {name: "C 지리 우선", w_dir: 4.0, min_sep: 1.5, geo_len_factor: 0}
+  - {name: "D 전체 축약", keep_every: 0, w_dir: 2.0, min_sep: 1.5, geo_len_factor: 0}
+  - {name: "E 간격 완화", w_dir: 2.0, min_sep: 0.6, geo_len_factor: 0}

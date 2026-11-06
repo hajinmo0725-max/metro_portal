@@ -1,0 +1,21 @@
+{
+ "name": "A 굴곡 우선",
+ "id": "seoul_A",
+ "params": {
+  "w_bend": 3.0,
+  "w_dir": 1.0
+ },
+ "keep_every": 3,
+ "status": "MIP: Time limit reached (실행 가능해 없음) → snap-lp",
+ "seconds": 182.2,
+ "engine": "snap-lp",
+ "iterations": 6,
+ "stats": {
+  "nodes": 655,
+  "edges": 755,
+  "non_octilinear_edges": 18,
+  "crossings": 116,
+  "bend_units_45deg": 213,
+  "mean_displacement_norm": 0.16
+ }
+}

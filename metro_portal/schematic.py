@@ -342,6 +342,7 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
     added = set()
     it = 0
     status = None
+    last_ok = (0, "")
     pos = {}
     while True:
         it += 1
@@ -350,10 +351,12 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
         sol = h.getSolution().col_value
         if not sol or len(sol) < h.getNumCol() or h.getInfo().primal_solution_status != 2:
             # 실행 가능해 없음 (시간 제한 안에 못 찾음 등). 앞 반복의 해가 있으면 그걸 남긴다
-            status = f"{status} (실행 가능해 없음)"
             if log:
-                log(f"    iter {it}: {status}")
+                log(f"    iter {it}: {status} (실행 가능해 없음)")
+            status = (f"반복 {last_ok[0]} 해 사용 ({last_ok[1]}; 반복 {it}은 {status}, 해 없음)" if pos
+                      else f"{status} (실행 가능해 없음)")
             break
+        last_ok = (it, status)
         pos = {v: (sol[X[v]], sol[Y[v]]) for v in nodes}
         # 교차 검사 (비인접 엣지 쌍) + 정점-엣지 근접
         cross = []

@@ -99,197 +99,197 @@
 <line x1="463.6" y1="233.1" x2="463.6" y2="267.0" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
 <line x1="463.6" y1="294.1" x2="463.6" y2="267.0" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
 <circle cx="931.5" cy="592.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="934.5" y="585.5" font-size="9" fill="#333" transform="rotate(-45 934.5 585.5)">각산</text>
 <circle cx="402.6" cy="673.8" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="408.2" y="682.5" font-size="9" fill="#333">감삼</text>
 <circle cx="239.9" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="242.9" y="694.0" font-size="9" fill="#333" transform="rotate(-45 242.9 694.0)">강창</text>
 <circle cx="599.2" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="602.2" y="694.0" font-size="9" fill="#333" transform="rotate(-45 602.2 694.0)">건들바위</text>
 <circle cx="620.0" cy="646.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="623.0" y="639.7" font-size="9" fill="#333" transform="rotate(-45 623.0 639.7)">경대병원</text>
 <circle cx="694.2" cy="626.4" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="699.8" y="623.7" font-size="11" fill="#333">경산</text>
 <circle cx="267.0" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="270.0" y="694.0" font-size="9" fill="#333" transform="rotate(-45 270.0 694.0)">계명대</text>
 <circle cx="859.3" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="862.3" y="694.0" font-size="9" fill="#333" transform="rotate(-45 862.3 694.0)">고산</text>
 <circle cx="382.2" cy="511.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="387.9" y="508.4" font-size="9" fill="#333">공단</text>
 <circle cx="572.1" cy="728.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="580.1" y="731.1" font-size="9" fill="#333">교대</text>
 <circle cx="60.0" cy="60.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="68.0" y="63.0" font-size="11" fill="#333">구미</text>
 <circle cx="409.4" cy="375.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="415.0" y="384.1" font-size="9" fill="#333">구암</text>
 <circle cx="545.0" cy="673.8" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="550.6" y="671.2" font-size="9" fill="#333">남산</text>
 <circle cx="456.8" cy="646.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="459.8" y="639.7" font-size="9" fill="#333" transform="rotate(-45 459.8 639.7)">내당</text>
 <circle cx="185.6" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="188.6" y="694.0" font-size="9" fill="#333" transform="rotate(-45 188.6 694.0)">다사</text>
 <circle cx="517.9" cy="592.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="525.3" y="592.4" font-size="9" fill="#333">달성공원</text>
 <circle cx="776.3" cy="646.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="779.4" y="642.3" font-size="9" fill="#333">담티</text>
 <circle cx="300.9" cy="972.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="306.5" y="980.8" font-size="9" fill="#333">대곡</text>
 <circle cx="572.1" cy="592.5" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="575.1" y="585.5" font-size="11" fill="#333" transform="rotate(-45 575.1 585.5)">대구</text>
 <circle cx="667.8" cy="646.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="670.8" y="639.7" font-size="9" fill="#333" transform="rotate(-45 670.8 639.7)">대구은행</text>
 <circle cx="985.8" cy="592.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="988.8" y="602.8" font-size="9" fill="#333">대구한의대병원</text>
 <circle cx="490.7" cy="809.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="493.7" y="802.4" font-size="9" fill="#333" transform="rotate(-45 493.7 802.4)">대명</text>
 <circle cx="626.4" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="629.4" y="694.0" font-size="9" fill="#333" transform="rotate(-45 629.4 694.0)">대봉교</text>
 <circle cx="212.7" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="215.7" y="694.0" font-size="9" fill="#333" transform="rotate(-45 215.7 694.0)">대실</text>
 <circle cx="687.4" cy="565.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="693.0" y="574.0" font-size="9" fill="#333">동구청</text>
 <circle cx="660.3" cy="592.5" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="663.3" y="585.5" font-size="11" fill="#333" transform="rotate(-45 663.3 585.5)">동대구</text>
 <circle cx="463.6" cy="321.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="466.7" y="316.8" font-size="9" fill="#333">동천</text>
 <circle cx="741.6" cy="538.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="744.6" y="531.2" font-size="9" fill="#333" transform="rotate(-45 744.6 531.2)">동촌</text>
 <circle cx="429.7" cy="646.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="432.8" y="657.1" font-size="9" fill="#333">두류</text>
 <circle cx="749.2" cy="646.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="752.2" y="639.7" font-size="9" fill="#333" transform="rotate(-45 752.2 639.7)">만촌</text>
 <circle cx="409.4" cy="538.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="412.4" y="533.8" font-size="9" fill="#333">만평</text>
 <circle cx="355.1" cy="429.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="358.2" y="425.3" font-size="9" fill="#333">매천</text>
 <circle cx="355.1" cy="456.8" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="363.1" y="459.8" font-size="9" fill="#333">매천시장</text>
 <circle cx="572.1" cy="701.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="578.9" y="699.7" font-size="11" fill="#333">명덕</text>
 <circle cx="158.5" cy="701.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="161.5" y="694.0" font-size="11" fill="#333" transform="rotate(-45 161.5 694.0)">문양</text>
 <circle cx="484.0" cy="646.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="487.0" y="639.7" font-size="9" fill="#333" transform="rotate(-45 487.0 639.7)">반고개</text>
 <circle cx="904.4" cy="592.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="907.4" y="585.5" font-size="9" fill="#333" transform="rotate(-45 907.4 585.5)">반야월</text>
 <circle cx="572.1" cy="646.7" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="577.8" y="644.0" font-size="11" fill="#333">반월당</text>
 <circle cx="795.9" cy="538.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="798.9" y="531.2" font-size="9" fill="#333" transform="rotate(-45 798.9 531.2)">방촌</text>
 <circle cx="762.0" cy="836.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="767.6" y="833.9" font-size="9" fill="#333">범물</text>
 <circle cx="694.9" cy="646.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="697.9" y="639.7" font-size="9" fill="#333" transform="rotate(-45 697.9 639.7)">범어</text>
 <circle cx="1012.9" cy="565.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="1018.5" y="574.0" font-size="9" fill="#333">부호</text>
 <circle cx="490.7" cy="565.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="496.4" y="562.7" font-size="9" fill="#333">북구청</text>
 <circle cx="60.0" cy="114.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="67.4" y="114.2" font-size="9" fill="#333">북삼</text>
 <circle cx="60.0" cy="87.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="68.0" y="90.1" font-size="9" fill="#333">사곡</text>
 <circle cx="915.2" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="918.2" y="694.0" font-size="9" fill="#333" transform="rotate(-45 918.2 694.0)">사월</text>
 <circle cx="382.2" cy="890.8" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="387.9" y="899.5" font-size="9" fill="#333">상인</text>
 <circle cx="538.2" cy="592.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="541.3" y="588.1" font-size="9" fill="#333">서대구</text>
 <circle cx="517.9" cy="619.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="525.9" y="622.6" font-size="9" fill="#333">서문시장</text>
 <circle cx="463.6" cy="809.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="466.7" y="819.8" font-size="9" fill="#333">서부정류장</text>
 <circle cx="246.6" cy="1026.4" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="252.3" y="1035.1" font-size="11" fill="#333">설화명곡</text>
 <circle cx="294.1" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="297.1" y="694.0" font-size="9" fill="#333" transform="rotate(-45 297.1 694.0)">성서산업단지</text>
 <circle cx="436.5" cy="836.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="442.2" y="845.2" font-size="9" fill="#333">송현</text>
 <circle cx="680.6" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="686.3" y="698.3" font-size="9" fill="#333">수성구민운동장</text>
 <circle cx="722.1" cy="646.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="725.1" y="639.7" font-size="9" fill="#333" transform="rotate(-45 725.1 639.7)">수성구청</text>
 <circle cx="707.7" cy="782.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="713.4" y="779.7" font-size="9" fill="#333">수성못</text>
 <circle cx="653.5" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="656.5" y="694.0" font-size="9" fill="#333" transform="rotate(-45 656.5 694.0)">수성시장</text>
 <circle cx="830.5" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="833.6" y="696.6" font-size="9" fill="#333">수성알파시티</text>
 <circle cx="877.3" cy="592.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="880.3" y="588.1" font-size="9" fill="#333">신기</text>
 <circle cx="888.1" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="891.1" y="694.0" font-size="9" fill="#333" transform="rotate(-45 891.1 694.0)">신매</text>
 <circle cx="626.4" cy="592.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="629.4" y="585.5" font-size="9" fill="#333" transform="rotate(-45 629.4 585.5)">신천</text>
 <circle cx="714.5" cy="538.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="717.6" y="548.6" font-size="9" fill="#333">아양교</text>
 <circle cx="958.6" cy="592.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="961.6" y="585.5" font-size="9" fill="#333" transform="rotate(-45 961.6 585.5)">안심</text>
 <circle cx="517.9" cy="809.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="520.9" y="819.8" font-size="9" fill="#333">안지랑</text>
 <circle cx="680.6" cy="728.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="688.6" y="731.1" font-size="9" fill="#333">어린이세상</text>
 <circle cx="803.4" cy="673.8" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="809.1" y="671.2" font-size="9" fill="#333">연호</text>
 <circle cx="996.6" cy="701.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="999.6" y="694.0" font-size="11" fill="#333" transform="rotate(-45 999.6 694.0)">영남대</text>
 <circle cx="572.1" cy="755.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="575.2" y="750.8" font-size="9" fill="#333">영대병원</text>
 <circle cx="299.1" cy="353.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="304.8" y="350.7" font-size="9" fill="#333">왜관</text>
 <circle cx="823.0" cy="538.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="826.1" y="533.8" font-size="9" fill="#333">용계</text>
 <circle cx="348.3" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="351.3" y="694.0" font-size="9" fill="#333" transform="rotate(-45 351.3 694.0)">용산</text>
 <circle cx="789.1" cy="863.7" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="794.8" y="861.0" font-size="11" fill="#333">용지</text>
 <circle cx="463.6" cy="538.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="466.7" y="533.8" font-size="9" fill="#333">원대</text>
 <circle cx="355.1" cy="917.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="360.8" y="926.6" font-size="9" fill="#333">월배</text>
 <circle cx="409.4" cy="863.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="415.0" y="872.4" font-size="9" fill="#333">월촌</text>
 <circle cx="850.1" cy="565.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="855.8" y="562.7" font-size="9" fill="#333">율하</text>
 <circle cx="321.2" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="324.2" y="694.0" font-size="9" fill="#333" transform="rotate(-45 324.2 694.0)">이곡</text>
 <circle cx="969.5" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="972.5" y="694.0" font-size="9" fill="#333" transform="rotate(-45 972.5 694.0)">임당</text>
 <circle cx="942.4" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="945.4" y="694.0" font-size="9" fill="#333" transform="rotate(-45 945.4 694.0)">정평</text>
 <circle cx="375.5" cy="701.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="378.5" y="711.3" font-size="9" fill="#333">죽전</text>
 <circle cx="572.1" cy="619.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="580.1" y="622.6" font-size="9" fill="#333">중앙로</text>
 <circle cx="734.9" cy="809.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="740.5" y="806.8" font-size="9" fill="#333">지산</text>
 <circle cx="328.0" cy="945.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="333.7" y="953.7" font-size="9" fill="#333">진천</text>
 <circle cx="517.9" cy="646.7" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="522.1" y="642.9" font-size="11" fill="#333">청라언덕</text>
 <circle cx="463.6" cy="233.1" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="471.6" y="236.1" font-size="11" fill="#333">칠곡경대병원</text>
 <circle cx="436.5" cy="348.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="442.2" y="357.0" font-size="9" fill="#333">칠곡운암</text>
 <circle cx="599.2" cy="592.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="602.2" y="585.5" font-size="9" fill="#333" transform="rotate(-45 602.2 585.5)">칠성시장</text>
 <circle cx="382.2" cy="402.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="387.9" y="411.2" font-size="9" fill="#333">태전</text>
 <circle cx="463.6" cy="294.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="471.6" y="297.1" font-size="9" fill="#333">팔거</text>
 <circle cx="355.1" cy="484.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="362.5" y="483.9" font-size="9" fill="#333">팔달</text>
 <circle cx="436.5" cy="538.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="439.5" y="531.2" font-size="9" fill="#333" transform="rotate(-45 439.5 531.2)">팔달시장</text>
 <circle cx="1040.0" cy="538.2" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
-<text x="1045.7" y="546.9" font-size="11" fill="#333">하양</text>
 <circle cx="463.6" cy="267.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="471.6" y="270.0" font-size="9" fill="#333">학정</text>
 <circle cx="768.8" cy="538.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="771.8" y="531.2" font-size="9" fill="#333" transform="rotate(-45 771.8 531.2)">해안</text>
 <circle cx="545.0" cy="782.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="550.6" y="791.0" font-size="9" fill="#333">현충로</text>
 <circle cx="273.8" cy="999.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="279.4" y="1008.0" font-size="9" fill="#333">화원</text>
 <circle cx="680.6" cy="755.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="688.0" y="755.1" font-size="9" fill="#333">황금</text>
+<text x="934.5" y="585.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 934.5 585.5)">각산</text>
+<text x="408.2" y="682.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">감삼</text>
+<text x="242.9" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 242.9 694.0)">강창</text>
+<text x="602.2" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 602.2 694.0)">건들바위</text>
+<text x="620.0" y="657.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">경대병원</text>
+<text x="683.7" y="617.4" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">경산</text>
+<text x="270.0" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 270.0 694.0)">계명대</text>
+<text x="862.3" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 862.3 694.0)">고산</text>
+<text x="387.9" y="508.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">공단</text>
+<text x="580.1" y="731.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">교대</text>
+<text x="68.0" y="63.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">구미</text>
+<text x="415.0" y="384.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">구암</text>
+<text x="550.6" y="671.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">남산</text>
+<text x="459.8" y="639.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 459.8 639.7)">내당</text>
+<text x="188.6" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 188.6 694.0)">다사</text>
+<text x="510.5" y="598.5" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">달성공원</text>
+<text x="767.8" y="637.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">담티</text>
+<text x="306.5" y="980.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대곡</text>
+<text x="575.1" y="585.5" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 575.1 585.5)">대구</text>
+<text x="667.8" y="641.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대구은행</text>
+<text x="955.8" y="583.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대구한의대병원</text>
+<text x="493.7" y="802.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 493.7 802.4)">대명</text>
+<text x="629.4" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 629.4 694.0)">대봉교</text>
+<text x="215.7" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 215.7 694.0)">대실</text>
+<text x="693.0" y="574.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동구청</text>
+<text x="657.3" y="604.5" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 657.3 604.5)">동대구</text>
+<text x="455.1" y="312.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동천</text>
+<text x="744.6" y="531.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 744.6 531.2)">동촌</text>
+<text x="421.2" y="637.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">두류</text>
+<text x="752.2" y="639.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 752.2 639.7)">만촌</text>
+<text x="400.8" y="529.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">만평</text>
+<text x="346.6" y="420.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">매천</text>
+<text x="363.1" y="459.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">매천시장</text>
+<text x="565.3" y="708.2" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">명덕</text>
+<text x="155.5" y="713.0" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 155.5 713.0)">문양</text>
+<text x="481.0" y="658.7" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 481.0 658.7)">반고개</text>
+<text x="907.4" y="585.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 907.4 585.5)">반야월</text>
+<text x="556.4" y="637.7" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">반월당</text>
+<text x="798.9" y="531.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 798.9 531.2)">방촌</text>
+<text x="767.6" y="833.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">범물</text>
+<text x="691.9" y="658.7" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 691.9 658.7)">범어</text>
+<text x="1018.5" y="574.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">부호</text>
+<text x="496.4" y="562.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">북구청</text>
+<text x="67.4" y="114.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">북삼</text>
+<text x="68.0" y="90.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">사곡</text>
+<text x="918.2" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 918.2 694.0)">사월</text>
+<text x="387.9" y="899.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">상인</text>
+<text x="525.4" y="583.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">서대구</text>
+<text x="525.9" y="622.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">서문시장</text>
+<text x="442.2" y="800.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">서부정류장</text>
+<text x="225.7" y="1017.4" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">설화명곡</text>
+<text x="297.1" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 297.1 694.0)">성서산업단지</text>
+<text x="442.2" y="845.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">송현</text>
+<text x="686.3" y="698.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">수성구민운동장</text>
+<text x="725.1" y="639.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 725.1 639.7)">수성구청</text>
+<text x="713.4" y="779.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">수성못</text>
+<text x="650.5" y="713.0" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 650.5 713.0)">수성시장</text>
+<text x="804.9" y="692.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">수성알파시티</text>
+<text x="868.7" y="583.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">신기</text>
+<text x="891.1" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 891.1 694.0)">신매</text>
+<text x="629.4" y="585.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 629.4 585.5)">신천</text>
+<text x="701.7" y="529.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">아양교</text>
+<text x="955.6" y="604.5" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 955.6 604.5)">안심</text>
+<text x="520.9" y="819.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">안지랑</text>
+<text x="688.6" y="731.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">어린이세상</text>
+<text x="809.1" y="671.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">연호</text>
+<text x="993.6" y="713.0" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 993.6 713.0)">영남대</text>
+<text x="555.0" y="746.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">영대병원</text>
+<text x="304.8" y="350.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">왜관</text>
+<text x="814.5" y="529.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">용계</text>
+<text x="351.3" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 351.3 694.0)">용산</text>
+<text x="778.7" y="854.7" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">용지</text>
+<text x="455.1" y="529.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">원대</text>
+<text x="360.8" y="926.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">월배</text>
+<text x="415.0" y="872.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">월촌</text>
+<text x="855.8" y="562.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">율하</text>
+<text x="318.2" y="713.0" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 318.2 713.0)">이곡</text>
+<text x="972.5" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 972.5 694.0)">임당</text>
+<text x="945.4" y="694.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 945.4 694.0)">정평</text>
+<text x="366.9" y="692.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">죽전</text>
+<text x="580.1" y="622.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">중앙로</text>
+<text x="740.5" y="806.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">지산</text>
+<text x="333.7" y="953.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">진천</text>
+<text x="497.0" y="637.7" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">청라언덕</text>
+<text x="471.6" y="236.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">칠곡경대병원</text>
+<text x="442.2" y="357.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">칠곡운암</text>
+<text x="602.2" y="585.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 602.2 585.5)">칠성시장</text>
+<text x="387.9" y="411.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">태전</text>
+<text x="471.6" y="297.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">팔거</text>
+<text x="362.5" y="483.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">팔달</text>
+<text x="433.5" y="550.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 433.5 550.2)">팔달시장</text>
+<text x="1029.5" y="529.2" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">하양</text>
+<text x="471.6" y="270.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">학정</text>
+<text x="771.8" y="531.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 771.8 531.2)">해안</text>
+<text x="550.6" y="791.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">현충로</text>
+<text x="279.4" y="1008.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">화원</text>
+<text x="688.0" y="755.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">황금</text>
 </svg>

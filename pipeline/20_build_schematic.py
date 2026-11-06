@@ -30,6 +30,20 @@ OUT = ROOT / "data" / "processed" / "schematic"
 REP = ROOT / "docs" / "reports" / "schematic"
 
 
+def region_note(city, engine, st, st_geo):
+    """웹 패널 안내 문구. 교차는 지리 좌표에도 있는 입체 교차(역 없는 교차)와 도식이 새로 만든 교차를 나눠 말한다."""
+    if engine == "snap-lp":
+        return f"{city}: MIP가 시간 제한 안에 해를 못 찾아 근사 배치(snap-lp)로 보여 준다. 일부 엣지는 8방향이 아니고 교차가 있다."
+    if engine == "geo-fallback":
+        return f"{city}: 시간 제한 안에 도식 해를 못 찾아 지리 좌표로 보여 준다."
+    extra = st["crossings"] - st_geo["crossings"]
+    if st["crossings"] and extra <= 0:
+        return f"{city}: 선 교차 {st['crossings']}곳. 지리 좌표에도 역 없이 입체 교차하는 곳이 {st_geo['crossings']}곳 있어서 그 수준이다."
+    if extra > 0:
+        return f"{city}: 지리 좌표보다 교차가 {extra}곳 많다 (도식 {st['crossings']}, 지리 {st_geo['crossings']}). 평면성 제약을 다 풀지 못했다."
+    return ""
+
+
 def run_region(w, reg, solver, log):
     g = S.region_graph(w, reg["city"])
     cfg = {**solver, **{k: v for k, v in reg.items() if k in solver}}
@@ -64,7 +78,17 @@ def main() -> int:
     ap.add_argument("--time-limit", type=float, default=None, help="모든 권역의 반복당 시간 제한 덮어쓰기 (빠른 시험용)")
     ap.add_argument("--only-variant", default=None, help="수도권 비교 변형 하나만 (이름 앞글자, 예: A). 권역 산출물은 건드리지 않는다")
     ap.add_argument("--merge-variants", action="store_true", help="variant_*.json을 summary.json에 합치기만 한다")
+    ap.add_argument("--refresh-notes", action="store_true", help="웹 번들의 권역 안내 문구만 다시 쓴다")
     a = ap.parse_args()
+    if a.refresh_notes:   # 다시 풀지 않고 번들의 안내 문구만 summary 지표로 다시 쓴다
+        summ = json.loads((OUT / "summary.json").read_text(encoding="utf-8"))
+        web = json.loads((ROOT / "web" / "data" / "schematic.json").read_text(encoding="utf-8"))
+        for r in web["regions"]:
+            x = summ["regions"][r["id"]]
+            r["note"] = region_note(r["city"], x["engine"], x["stats"], x["stats_geo"])
+        (ROOT / "web" / "data" / "schematic.json").write_text(json.dumps(web, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+        print("[20] notes refreshed")
+        return 0
     if a.merge_variants:
         summ = json.loads((OUT / "summary.json").read_text(encoding="utf-8"))
         vs = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(OUT.glob("variant_*.json"))]
@@ -114,10 +138,7 @@ def main() -> int:
         (REP / f"{reg['id']}_geo.svg").write_text(S.render_svg(g, g["pos"], f"{reg['city']} — 지리 좌표 (비교용)", size=1100), encoding="utf-8")
         summary["regions"][reg["id"]] = {k: doc[k] for k in ("city", "country", "keep_every", "engine", "status", "seconds", "iterations",
                                                              "crossing_constraints", "objective", "stats", "stats_geo")}
-        note = {"mip": "", "snap-lp": f"{reg['city']}: MIP가 시간 제한 안에 해를 못 찾아 근사 배치(snap-lp)로 보여 준다. 일부 엣지는 8방향이 아니고 교차가 있다.",
-                "geo-fallback": f"{reg['city']}: 시간 제한 안에 도식 해를 못 찾아 지리 좌표로 보여 준다."}[r["engine"]]
-        if r["engine"] == "mip" and st["crossings"]:
-            note = f"{reg['city']}: 시간 제한으로 평면성 제약을 다 못 넣어 교차 {st['crossings']}곳이 남았다."
+        note = region_note(reg["city"], r["engine"], st, st_geo)
         web["regions"].append({"id": reg["id"], "city": reg["city"], "country": reg["country"], "engine": r["engine"], "note": note,
                                "s": doc["schematic"], "g": doc["geo"], "e": doc["edges"], "lines": doc["lines"]})
     if a.only_variant or (not a.skip_variants and (not want or "seoul" in want)):
@@ -129,10 +150,6 @@ def main() -> int:
             reg = {**reg0, **{k: x for k, x in v.items() if k != "name"}, "id": "seoul_" + v["name"].split()[0]}
             solver = {**cfg["solver"], **{k: x for k, x in v.items() if k in cfg["solver"]}}
             g, cg, pos, r, st, st_geo, sec, rcfg = run_region(w_kr, reg, solver, log)
-            if r["engine"] != "mip":
-                summary["seoul_variants"].append({"name": v["name"], "id": reg["id"], "keep_every": reg["keep_every"], "status": r["status"],
-                                                  "seconds": sec, "engine": r["engine"]})
-                continue
             (REP / f"{reg['id']}.svg").write_text(S.render_svg(g, pos, f"수도권 비교 {v['name']} (keep={reg['keep_every']}, bend={solver['w_bend']}, dir={solver['w_dir']})", size=1100), encoding="utf-8")
             summary["seoul_variants"].append({"name": v["name"], "id": reg["id"], "params": {k: rcfg[k] for k in ("w_bend", "w_dir")},
                                               "keep_every": reg["keep_every"], "status": r["status"], "seconds": sec, "engine": r["engine"],

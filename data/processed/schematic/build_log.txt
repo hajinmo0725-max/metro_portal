@@ -1,4 +1,5 @@
 [20] seoul (수도권): 역 655, 엣지 755 → 축약 253/350
-    iter 1: Time limit reached, obj=444.36, 위반 쌍 224
-    iter 2: Time limit reached (실행 가능해 없음)
-[20] seoul: Time limit reached (실행 가능해 없음) 362.6s 반복 2 교차제약 224 → {'nodes': 655, 'edges': 755, 'non_octilinear_edges': 0, 'crossings': 17, 'bend_units_45deg': 177, 'mean_displacement_norm': 0.411}
+    iter 1: Optimal, obj=516.49, 위반 쌍 2
+    iter 2: Optimal, obj=497.21, 위반 쌍 4
+    iter 3: Time limit reached (실행 가능해 없음)
+[20] seoul: 반복 2 해 사용 (Optimal; 반복 3은 Time limit reached, 해 없음) 239.5s 반복 3 교차제약 6 → {'nodes': 655, 'edges': 755, 'non_octilinear_edges': 0, 'crossings': 17, 'bend_units_45deg': 214, 'mean_displacement_norm': 0.31}
