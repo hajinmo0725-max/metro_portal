@@ -4,6 +4,7 @@
 입력: data/raw/kric/stations_std.xlsx (마스터: 표준데이터 역사정보)
       data/raw/kric/stations_metro.xlsx (보강: 다국어 역명, 부역명)
       config/kr_scope.yaml (스코프 제외 노선), config/kr_station_fixes.yaml (좌표·별칭 보정)
+      config/kr_planned.yaml (개통 예정 노선, enabled: true인 것만)
 출력: data/processed/kr/stations.json
 
 Station은 '노선별 역' 단위다 (표준데이터의 1행 = 1 Station). 같은 물리적 역의 묶음은
@@ -200,7 +201,22 @@ def main() -> int:
             })
             used_metro.add(id(mr))
             supplemented.append({"id": stations[-1]["id"], "name": ko, "line": ln["line_name"], "opened": clean_text(mr.get("신설일자"))})
+    # 4차 Q5: 역 레코드 단위 스코프 제외 (고아 레코드 등)
+    excl_ids = {e["id"]: e["reason"] for e in scope.get("exclude_stations", [])}
+    missing_excl = sorted(set(excl_ids) - {s["id"] for s in stations})
+    if missing_excl:
+        raise SystemExit(f"[02] 제외 대상 역 없음: {missing_excl}")
+    for s in [s for s in stations if s["id"] in excl_ids]:
+        excluded.append({"line_group": s["line_group"], "code": s["code"], "name": s["name_ko"], "id": s["id"], "reason": excl_ids[s["id"]]})
+    stations = [s for s in stations if s["id"] not in excl_ids]
+    # 4차 Q0-5: 개통 예정 노선 (config/kr_planned.yaml). enabled: true인 노선만 넣는다 (기본은 전부 false)
+    from metro_portal.planned import load_planned, station_records
+    planned_added = station_records(load_planned())
+    stations += planned_added
     assert len({s["id"] for s in stations}) == len(stations), "station id 중복"
+    # 4차 Q6-1: 이름 출처 등급 (config/name_grades.yaml). 한국 역 이름은 전부 공식 소스라 official
+    from metro_portal.names import assign_grades
+    assign_grades(stations, "KR")
 
     # 좌표 보정 (config/kr_station_fixes.yaml)
     fix_cfg = yaml.safe_load(open(ROOT / "config" / "kr_station_fixes.yaml", encoding="utf-8"))
@@ -248,8 +264,10 @@ def main() -> int:
                 "coord_fixes": len(fixes_applied),
                 "excluded_by_scope": len(excluded),
                 "supplemented": len(supplemented),
+                "planned_enabled": len(planned_added),
             },
             "supplemented": supplemented,
+            "planned_enabled": [{"id": x["id"], "name": x["name_ko"], "line": x["planned"]} for x in planned_added],
             "excluded_by_scope": {"line_groups": excl_groups, "stations": excluded},
             "dropped_duplicates": dropped,
             "coord_fixes": fixes_applied,

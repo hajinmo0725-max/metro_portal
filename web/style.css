@@ -25,7 +25,7 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
   font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif; }
-.app { display: grid; grid-template-columns: 360px 1fr; height: 100%; }
+.app { display: grid; grid-template-columns: 360px minmax(0, 1fr); height: 100%; }
 .panel { overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; border-right: 1px solid var(--line); }
 #map { height: 100%; min-height: 300px; background: #dfe5ea; }
 .brand h1 { margin: 0; font-size: 22px; letter-spacing: -.02em; }
@@ -74,9 +74,13 @@ button { font: inherit; }
 .leaflet-container { font: inherit; }
 
 @media (max-width: 720px) {
-  .app { grid-template-columns: 1fr; grid-template-rows: 52vh auto; height: auto; min-height: 100%; }
-  #map { grid-row: 1; height: 52vh; }
+  /* 4차 Q4: 지도를 화면 위에 고정(sticky)하고 패널이 그 아래로 스크롤된다 → 지도와 결과를 함께 본다 */
+  .app { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto; height: auto; min-height: 100%; }
+  #map { grid-row: 1; height: 40vh; min-height: 220px; position: sticky; top: 0; z-index: 500; box-shadow: 0 2px 8px rgba(0, 0, 0, .15); }
+  .app.daily #map { height: 34vh; }
   .panel { grid-row: 2; border-right: 0; padding: 12px 16px 24px; overflow: visible; }
+  #result { scroll-margin-top: calc(40vh + 8px); }
+  .brand .sub { font-size: 12px; }
 }
 
 /* ---------- 데일리 퍼즐 (daily.html) ---------- */
@@ -85,11 +89,30 @@ button { font: inherit; }
 .pz-here { font-size: 18px; font-weight: 700; margin: 2px 0 8px; }
 .pz-moves { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 6px; }
 .pz-moves button { width: 100%; text-align: left; border: 1px solid var(--line); background: var(--bg); color: var(--text);
-  border-radius: 8px; padding: 7px 10px; cursor: pointer; display: flex; gap: 8px; align-items: center; }
+  border-radius: 8px; padding: 8px 10px; cursor: pointer; display: flex; gap: 8px; align-items: center; min-height: 46px; }
+/* 4차 Q1: 역 이름은 줄바꿈·축소 금지, 길어지는 건 노선 태그 쪽 (말줄임) */
+.panel, .pz-moves, .pz-moves li, .pz-moves button { min-width: 0; }
+.pz-moves .nm { white-space: nowrap; flex-shrink: 0; }
+.pz-moves .dir { color: var(--muted); font-size: 12px; white-space: nowrap; flex-shrink: 0; }
+.pz-moves .pt { flex-shrink: 0; font-size: 13px; }
+.pz-actions { margin-bottom: 8px; }
+.pz-actions .ghost { min-height: 40px; }
+.pz-key { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+.pz-key span { display: inline-block; width: 10px; height: 10px; border-radius: 50%; vertical-align: middle; margin-right: 3px; }
+.pz-key .k-ring { border: 2.5px solid #2f6fed; }
+.pz-key .k-portal { border: 2.5px solid var(--warp); }
+.chip.warn { border-color: #d97706; color: #b45309; }
+.pz-legend { list-style: none; margin: 10px 0 0; padding: 8px 10px; display: grid; gap: 4px; font-size: 12px; color: var(--muted);
+  border: 1px dashed var(--line); border-radius: 8px; }
+.pz-legend i { display: inline-block; width: 22px; height: 0; vertical-align: middle; margin-right: 6px; }
+.pz-legend .lg-ride { border-top: 5px solid #0052A4; }
+.pz-legend .lg-mywarp { border-top: 3px dashed var(--warp); }
+.pz-legend .lg-opt { border-top: 3px dotted #12a150; }
+.pz-legend .lg-all { border-top: 1px dashed var(--warp); opacity: .6; }
 .pz-moves button:hover { border-color: var(--accent); }
 .pz-moves button.warp { border-color: var(--warp); color: var(--warp); font-weight: 600; }
 .pz-moves .sw { width: 10px; height: 10px; border-radius: 2px; flex: none; }
-.pz-moves .tag { margin-left: auto; color: var(--muted); font-size: 12px; }
+.pz-moves .tag { margin-left: auto; color: var(--muted); font-size: 12px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ghost { border: 1px solid var(--line); background: transparent; color: var(--text); border-radius: 8px; padding: 6px 10px; cursor: pointer; font-size: 13px; }
 .ghost:disabled { opacity: .4; cursor: default; }
 .pz-share { white-space: pre-wrap; font-family: inherit; font-size: 14px; line-height: 1.5; margin: 0 0 10px; background: var(--bg); border-radius: 8px; padding: 10px; }
@@ -105,3 +128,43 @@ button { font: inherit; }
 .legend .lg-warp { border-color: var(--warp, #8b3dff); }
 .legend .lg-cross { border-top: 3px solid #ff6a00; }
 .steps li.warp.cross .bar { background: #ff6a00; }
+
+/* 4차 Q5·Q6-5: 해외 경유 구간 표시, 아크 팝업 */
+.chip.abroad { border-color: #ff6a00; color: #c2410c; }
+.steps li .abroad { color: #c2410c; font-size: 12px; font-weight: 600; margin-left: 4px; }
+.arc-pop b { font-size: 14px; }
+.arc-pop ul { margin: 4px 0 0; padding-left: 16px; font-size: 12px; }
+
+/* ---------- 4차 S4: 도식 노선도 (schematic.html) ---------- */
+.sch-body { height: auto; }
+.sch-app { max-width: 1180px; margin: 0 auto; padding: 14px 16px 24px; display: flex; flex-direction: column; gap: 10px; }
+.sch-controls { display: grid; gap: 8px; }
+.sch-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.sch-row input { flex: 1 1 140px; min-width: 0; font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--text); }
+.sch-row select { font: inherit; padding: 7px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.seg button { border: 0; background: transparent; color: var(--text); padding: 6px 14px; cursor: pointer; font: inherit; min-height: 36px; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.sch-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.sch-tabs button { border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 999px; padding: 5px 12px; cursor: pointer; font: inherit; min-height: 36px; }
+.sch-tabs button[aria-selected="true"] { border-color: var(--accent); color: var(--accent); font-weight: 700; }
+.sch-tabs button.on-route { box-shadow: inset 0 -3px 0 #ffd400; }
+.sch-stage { position: relative; }
+.sch-scroll { overflow: auto; height: min(72vh, 820px); border: 1px solid var(--line); border-radius: 12px; background: #fff; -webkit-overflow-scrolling: touch; }
+#sch-svg { display: block; width: 100%; height: auto; font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+.sch-st.portal { cursor: pointer; }
+.sch-st text { paint-order: stroke; stroke: #fff; stroke-linejoin: round; }
+.sch-icon { fill: var(--warp); font-weight: 700; }
+.sch-st circle.pulse { animation: schpulse 0.8s ease-in-out 3; }
+@keyframes schpulse { 50% { opacity: 0.2; } }
+.sch-zoom { position: absolute; right: 10px; top: 10px; display: grid; gap: 4px; }
+.sch-zoom button { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text); font-size: 18px; cursor: pointer; }
+.sch-pop { position: absolute; z-index: 10; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; box-shadow: var(--shadow); max-width: 260px; font-size: 13px; }
+.sch-pop ul { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 4px; }
+.sch-pop button { width: 100%; text-align: left; border: 1px solid var(--warp); background: transparent; color: var(--text); border-radius: 6px; padding: 6px 8px; cursor: pointer; font: inherit; min-height: 36px; }
+#sch-route li { cursor: pointer; }
+.sch-go { margin-left: 6px; padding: 2px 8px; font-size: 12px; }
+@media (max-width: 720px) {
+  .sch-app { padding: 10px 12px 20px; }
+  .sch-scroll { height: 58vh; }
+}

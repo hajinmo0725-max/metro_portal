@@ -1,0 +1,7 @@
+# 참고 실험: tw_t123 + T3b(로마자 표기가 우연히 같은 영어명, 예: 성남 ↔ 석남 Seongnam) 켬. 4차 Q6-6에서 기본은 끔.
+extends: tw_t123
+name: tw_t123b
+description: "참고: tw_t123 + T3b(로마자 우연 일치)"
+portals:
+  T3b:
+    enabled: true

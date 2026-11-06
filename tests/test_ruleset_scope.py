@@ -122,7 +122,8 @@ def test_D_boundary_cases(D, expect):
 @pytest.mark.skipif(not (PROC / "stations.json").exists(), reason="processed data missing")
 @pytest.mark.parametrize("D", [300, 500, 1000])
 def test_official_first_ignores_D_for_official_pairs(D):
-    """3차 A3: 공식 환승 정보가 있는 쌍은 D와 무관. 노원·잠실은 공식 yes라 항상 환승, 신촌·부전은 공식 no라 항상 분리."""
+    """3차 A3: 공식 환승 정보가 있는 쌍은 D와 무관. 노원·잠실은 공식 yes라 항상 환승, 신촌은 공식 no라 항상 분리.
+    4차 Q6-3: 부전은 공식 no지만 역외 환승 수동 목록(config/kr_offsite_transfers.yaml)이 이겨서 항상 환승."""
     from metro_portal.world import build_world, load_base
     rs = load_ruleset("strict", overrides={"cluster": {"transfer_distance_m": D}})
     assert rs["cluster"]["transfer_rule"] == "official_first"
@@ -130,9 +131,9 @@ def test_official_first_ignores_D_for_official_pairs(D):
     cnt = {}
     for c in w["clusters"]:
         cnt[c["name"]] = cnt.get(c["name"], 0) + 1
-    assert (cnt["노원"], cnt["잠실"], cnt["신촌"], cnt["부전"]) == (1, 1, 2, 2)
+    assert (cnt["노원"], cnt["잠실"], cnt["신촌"], cnt["부전"]) == (1, 1, 2, 1)
     names = {p["name"] for p in w["portals"]}
-    assert {"신촌", "부전"} <= names and not ({"노원", "잠실"} & names)
+    assert "신촌" in names and not ({"노원", "잠실", "부전"} & names)
 
 
 @pytest.mark.skipif(not (PROC / "ruleset_compare.json").exists(), reason="ruleset_compare.json missing")

@@ -1,0 +1,84 @@
+# 4차 Q0-5: 개통 예정 노선을 비활성 상태로 미리 등록한다. 데이터 큐레이션이지 매칭 룰이 아니다.
+# enabled: true로 바꾸면 02(역)·03(노선 순서) 단계가 표준데이터 역처럼 넣는다 (metro_portal/planned.py).
+# enabled: false면 산출물에 아무 영향이 없고, pipeline/18_planned_preview.py가 "켰을 때 새로 생기는 포탈"만 미리 계산한다.
+#
+# 근거: docs/research/kr_line_openings.md 3-1장 (2026-11-06 조사). 개통 일자는 확정 공표되지 않았다.
+# 좌표: Wikidata P625 (CC0, 2026-11-06 query.wikidata.org 조회). 공식 좌표가 아니므로 개통 후 표준데이터로 교체한다.
+# 역명: 양산선 역명은 양산시지명위원회 결정(2024-12)을 전한 언론 보도 근거 [미확인]. 표준데이터에 들어오면 그쪽이 우선이다.
+# 공식 환승 정보: 개통 전이라 없다 → 환승 판정은 거리 D 규칙(transfer.py unknown)으로 넘어간다.
+lines:
+  - id: yangsan
+    enabled: false
+    kind: new_line
+    expected_open: "2026-12 (일자 미공표)"
+    line_no: XYS01            # 표준데이터 노선번호가 아직 없어 가상 번호를 쓴다
+    line_name: 양산도시철도
+    name: 양산선
+    city: 부산
+    color: "#7B3F99"          # 표시용 임시 색. 공식 색상과 대조 안 함 (검증 못 함)
+    operator: 양산시
+    evidence:
+      - "부산시 보도자료 2026-03-30 '양산선 연내 개통' [공식]"
+      - "경남도 운영면허 발급 2026-07-10 (부산일보 2026-07-13) [언론]"
+      - "역명: 경상일보 2024-12-12 '6개 역이름 확정' [미확인]"
+    stations:
+      # code는 언론 보도의 역번호(101~107). 노포는 기존 부산 1호선 노포와 같은 물리적 역 (거리 D로 묶인다)
+      - {code: "101", name: 노포, lat: 35.2836, lon: 129.095, wikidata: Q705026}
+      - {code: "102", name: 사송, lat: 35.3034983, lon: 129.078803, wikidata: Q140690502}
+      - {code: "103", name: 내송, lat: 35.315244694, lon: 129.065974305, wikidata: Q140690498}
+      - {code: "104", name: 양산시청, lat: 35.3349242, lon: 129.0356794, wikidata: Q140683245}
+      # 부역명 '종합운동장'은 괄호라 정규화에서 빠진다 → 서울·부산 종합운동장과 포탈을 만들지 않는다
+      - {code: "105", name: "양산중앙(종합운동장)", lat: 35.3437662, lon: 129.033699, wikidata: Q56058997}
+      - {code: "106", name: 신기, lat: 35.3532916, lon: 129.0380763, wikidata: Q140690533}
+      - {code: "107", name: 북정, lat: 35.3614386, lon: 129.0411736, wikidata: Q140690557}
+    sequences:
+      - id: main
+        stops: [노포, 사송, 내송, 양산시청, 양산중앙(종합운동장), 신기, 북정]
+
+  - id: busan-2-yangsan-ext
+    enabled: false
+    kind: extension
+    expected_open: "2026-12 (양산선과 함께, 일자 미공표)"
+    extends: busan-2          # config/kr_lines.yaml의 노선 id
+    line_no: S2602
+    line_name: 부산 도시철도 2호선
+    operator: 부산교통공사
+    evidence:
+      - "부산시 보도자료 2026-03-30 '1·2호선 환승 체계' (연결 구간 0.55km는 부산시 운영) [공식]"
+    stations:
+      # 양산선 양산중앙과 같은 물리적 역 (Wikidata 아이템 하나에 두 노선, 역번호 244). 거리 D로 묶인다
+      - {code: "0244", name: "양산중앙(종합운동장)", lat: 35.3437662, lon: 129.033699, wikidata: Q56058997}
+    sequences:
+      - id: yangsan-ext
+        stops: [양산, 양산중앙(종합운동장)]
+
+  - id: donghae-bugulsan-ext
+    enabled: false
+    kind: extension
+    expected_open: "2026-12 (12월 31일 추진 보도, 일자 미공표)"
+    extends: donghae
+    line_no: I26K6
+    line_name: 동해선
+    operator: 한국철도공사
+    evidence:
+      - "울산 북구청 '2026년 12월 개통 목표' [공식]"
+      - "국민일보 2026-10-25 '12월 31일 개통 추진' [언론]. 국가철도공단 공정률 74%('26.9) 표기와 차이 있음"
+    stations:
+      # 기존 동해선 일반열차 역에 광역전철 승강장을 새로 만드는 방식. 다른 도시철도와 환승 없음
+      - {code: "8024", name: 북울산, lat: 35.6146245, lon: 129.3724133, wikidata: Q108426233}
+    sequences:
+      - id: bugulsan-ext
+        stops: [태화강역, 북울산]
+
+# 명세 Q0-6: 넣지 않는 노선 (기록용. 코드는 이 목록을 읽지 않는다)
+not_added:
+  - {line: "교외선 (대곡~의정부)", reason: "일반철도(무궁화호) 운행 재개. 도시철도·광역철도 스코프 밖"}
+  - {line: "GTX-A 서울역~수서", reason: "2027년 이후 연기 (kr_line_openings.md 3-2, [미확인])"}
+  - {line: "위례선 트램", reason: "2027년으로 연기 (서울시 2026-10-28 브리핑 인용 보도)"}
+  - {line: "동북선", reason: "2027년 하반기 전망"}
+  - {line: "신안산선", reason: "2028~2029년 전망"}
+  - {line: "서해선 서화성~원시", reason: "빨라야 2027년 상반기"}
+  - {line: "도봉산~옥정 광역철도", reason: "2029년 (서울시), 경기도 2027년 말 목표로 엇갈림"}
+  - {line: "대전~옥천 광역철도", reason: "공정률 2.2% ('26.9)"}
+  - {line: "광주 2호선 1단계", reason: "2028-12"}
+  - {line: "부산 사상~하단선", reason: "준공 2027-12 이후"}

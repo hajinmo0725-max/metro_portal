@@ -12,3 +12,7 @@
 | 타이베이 대도시권 도시철도 역·노선·인접·역번호 (Phase 1) | Wikidata Query Service (P16 교통망 ∈ 臺北捷運·新北捷運·桃園捷運, 또는 P81 ∈ 범위 노선) | CC0 1.0 | `pipeline/14_fetch_tw_wikidata.py` (SPARQL 4회, 요청 간 3초, User-Agent에 프로젝트명). 원문 캐시 `data/raw/wikidata_tw/` | **사용 (구조·좌표·순서·역번호)**. Geofabrik 대만 추출본·대만 공식 오픈데이터(data.taipei, data.gov.tw, TDX, 운영사 사이트)가 세션 네트워크에서 막혀 대체. 공식명(P1448) 0건이라 이름(zh-Hant·en 라벨)은 official=False로만 저장 |
 | Unihan 이체자 데이터 (Phase 1 T2) | Unicode Consortium `www.unicode.org/Public/UCD/latest/ucd/Unihan.zip` | Unicode License v3 | `pipeline/16_fetch_unihan.py` 자동 다운로드, 캐시 `data/raw/unihan/` | T2 이체자 정규화 |
 | OpenCC 변환표 (Phase 1 T2) | PyPI `opencc` 패키지 내장 사전 | Apache-2.0 | `pip install opencc` | T2 이체자 정규화 |
+| Wikidata 개통 예정 역 좌표 (4차 Q0) | Wikidata Query Service (양산선 6역·노포 Q705026·양산중앙 Q56058997·북울산 Q108426233의 P625) | CC0 1.0 | 2026-11-06 SPARQL 1회 수동 조회, 값은 `config/kr_planned.yaml`에 QID와 함께 기록 | 비활성 계획 노선(`enabled: false`) 좌표. 개통 후 표준데이터로 교체 |
+| 한국 도시철도·광역철도 개통 현황 조사 (4차) | `docs/research/kr_line_openings.md` (Cowork 조사, 2026-11-06). 국토부·국가철도공단·지자체 보도자료와 언론 보도 | 각 원문 저작권. 조사 문서는 요약·링크만 | 사용자 제공 | 개통 예정 노선 등록·제외 판단 근거 |
+| LOOM (도식 노선도 레이아웃 도구, 4차 S2) | github.com/ad-freiburg/loom (커밋 1e47578 고정, `scripts/build_loom.sh`) | **GPL-3.0** — 레포에 코드를 복사하지 않고 빌드 단계에서 받아 외부 CLI로만 쓰는 조건 | `git ls-remote` 접근은 됐지만, 받기·빌드 명령이 세션의 자동 권한 판정(외부 코드 실행)에서 거부됨 (2026-11-06) | **미사용**. 우회 시도 안 함. 자체 MIP(`metro_portal/schematic.py`)로 대체 |
+| HiGHS (MIP 솔버, 4차 S5) | PyPI `highspy` | MIT | `pip install highspy` (requirements.txt) | 자체 octilinear MIP 풀이 |

@@ -118,6 +118,10 @@ def main() -> int:
             "city": sl["city"], "color": sl["color"], "pools": [f"{sl['line_no']}:{sl['line_name']}"],
             "sequences": [{"id": q["id"], "stops": q["stops"]} for q in sl["sequences"]], "supplement": True}
 
+    # 4차 Q0-5: 개통 예정 노선 (config/kr_planned.yaml, enabled: true인 것만). 새 노선은 정의 추가, 연장은 기존 노선에 시퀀스 추가
+    from metro_portal.planned import apply_line_defs, load_planned
+    apply_line_defs(load_planned(), defs, src_rows)
+
     lines, failures, edges = [], [], {}
     for row in sorted(src_rows, key=lambda r: (clean_text(r["노선번호"]), clean_text(r["노선명"]))):
         no, nm = clean_text(row["노선번호"]), clean_text(row["노선명"])
@@ -174,6 +178,8 @@ def main() -> int:
             "operator": clean_text(row["운영기관명"]), "city": d.get("city", ""), "color": d.get("color", ""),
             "pools": pools, "sequences": seqs, "patched": bool(d),
             **({"supplement": True} if d.get("supplement") else {}),
+            **({"planned": d["planned"]} if d.get("planned") else {}),
+            **({"planned_extensions": d["planned_extensions"]} if d.get("planned_extensions") else {}),
         })
 
     unused = [k for k in defs if k not in used_defs]

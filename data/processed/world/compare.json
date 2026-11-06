@@ -10,9 +10,8 @@
    "tw_t123"
   ],
   "reference_rulesets": [
-   "tw_t1_label",
-   "tw_t12_label",
-   "tw_t123_label"
+   "tw_t12_official",
+   "tw_t123b"
   ],
   "hub_explosion": {
    "degree_alert": 5,
@@ -23,7 +22,7 @@
  "results": {
   "tw_t1": {
    "ruleset": "tw_t1",
-   "description": "한국+타이베이, T1만 (공식명만)",
+   "description": "한국+타이베이, T1만 (공식명 + 현지어 라벨)",
    "portals": [
     {
      "tier": "T1",
@@ -45,7 +44,11 @@
      "unfolded_keys": [
       "고촌"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -66,7 +69,11 @@
      "unfolded_keys": [
       "공항"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -92,7 +99,11 @@
      "unfolded_keys": [
       "교대"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -114,7 +125,11 @@
      "unfolded_keys": [
       "구암"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -136,7 +151,11 @@
      "unfolded_keys": [
       "금곡"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -158,12 +177,17 @@
      "unfolded_keys": [
       "남산"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
      "name": "대곡",
      "texts": [
+      "대곡",
       "대곡(정부대구청사)",
       "대곡역"
      ],
@@ -175,6 +199,7 @@
      "cross_country": false,
      "stations": [
       "KR:대곡(정부대구청사)[대구 도시철도 1호선]",
+      "KR:대곡[GTX-A]",
       "KR:대곡역[경의중앙선]",
       "KR:대곡역[서해선]",
       "KR:대곡역[일산선]"
@@ -182,7 +207,11 @@
      "unfolded_keys": [
       "대곡"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -205,7 +234,11 @@
      "unfolded_keys": [
       "동래"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -227,7 +260,11 @@
      "unfolded_keys": [
       "동백"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -248,29 +285,11 @@
      "unfolded_keys": [
       "동천"
      ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "부전",
-     "texts": [
-      "부전",
-      "부전역"
+     "variant_only": false,
+     "grades": [
+      "official"
      ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:부전[부산 도시철도 1호선]",
-      "KR:부전역[동해선]"
-     ],
-     "unfolded_keys": [
-      "부전"
-     ],
-     "variant_only": false
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -292,7 +311,11 @@
      "unfolded_keys": [
       "송정"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -316,7 +339,11 @@
      "unfolded_keys": [
       "시청"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -338,7 +365,11 @@
      "unfolded_keys": [
       "신천"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -360,7 +391,11 @@
      "unfolded_keys": [
       "신촌"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -381,7 +416,11 @@
      "unfolded_keys": [
       "신흥"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -403,7 +442,11 @@
      "unfolded_keys": [
       "양정"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -425,7 +468,11 @@
      "unfolded_keys": [
       "양평"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -447,7 +494,11 @@
      "unfolded_keys": [
       "용문"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -470,7 +521,11 @@
      "unfolded_keys": [
       "용산"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -492,7 +547,11 @@
      "unfolded_keys": [
       "운천"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -514,7 +573,11 @@
      "unfolded_keys": [
       "월드컵경기장"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -536,7 +599,11 @@
      "unfolded_keys": [
       "종합운동장"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -558,7 +625,11 @@
      "unfolded_keys": [
       "좌천"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -580,7 +651,11 @@
      "unfolded_keys": [
       "죽전"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -602,7 +677,11 @@
      "unfolded_keys": [
       "중동"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -625,7 +704,11 @@
      "unfolded_keys": [
       "중앙"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -646,7 +729,11 @@
      "unfolded_keys": [
       "중앙로"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -668,7 +755,11 @@
      "unfolded_keys": [
       "증산"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -690,7 +781,11 @@
      "unfolded_keys": [
       "화정"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     }
    ],
    "subsumed": [],
@@ -708,25 +803,25 @@
     "reasons": []
    },
    "kr_shortened": {
-    "pairs": 884540,
+    "pairs": 882660,
     "shortened": 0,
     "example": null
    },
    "metrics_summary": {
-    "stations": 1293,
-    "clusters": 1111,
+    "stations": 1292,
+    "clusters": 1110,
     "ride_edges": 1248,
-    "portals_total": 30,
+    "portals_total": 29,
     "portals_by_tier": {
-     "T1": 30
+     "T1": 29
     },
-    "portal_links": 62,
+    "portal_links": 60,
     "components_warp": 2,
-    "largest_warp": 941,
-    "ratio_warp": 0.847,
+    "largest_warp": 940,
+    "ratio_warp": 0.8468,
     "diameter_warp": 67,
     "diameter_warp_ends": "신창#1 → 연천#1",
-    "mean_warp": 17.77,
+    "mean_warp": 17.757,
     "components_nowarp": 6,
     "diameter_nowarp": 70,
     "top_portals": [
@@ -782,7 +877,7 @@
   },
   "tw_t12": {
    "ruleset": "tw_t12",
-   "description": "한국+타이베이, T1 + T2 (공식명만)",
+   "description": "한국+타이베이, T1 + T2 (공식명 + 현지어 라벨)",
    "portals": [
     {
      "tier": "T1",
@@ -804,7 +899,11 @@
      "unfolded_keys": [
       "고촌"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -825,7 +924,11 @@
      "unfolded_keys": [
       "공항"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -851,7 +954,11 @@
      "unfolded_keys": [
       "교대"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -873,7 +980,11 @@
      "unfolded_keys": [
       "구암"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -895,7 +1006,11 @@
      "unfolded_keys": [
       "금곡"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -917,12 +1032,17 @@
      "unfolded_keys": [
       "남산"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
      "name": "대곡",
      "texts": [
+      "대곡",
       "대곡(정부대구청사)",
       "대곡역"
      ],
@@ -934,6 +1054,7 @@
      "cross_country": false,
      "stations": [
       "KR:대곡(정부대구청사)[대구 도시철도 1호선]",
+      "KR:대곡[GTX-A]",
       "KR:대곡역[경의중앙선]",
       "KR:대곡역[서해선]",
       "KR:대곡역[일산선]"
@@ -941,7 +1062,11 @@
      "unfolded_keys": [
       "대곡"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -964,7 +1089,11 @@
      "unfolded_keys": [
       "동래"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -986,7 +1115,11 @@
      "unfolded_keys": [
       "동백"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1007,29 +1140,11 @@
      "unfolded_keys": [
       "동천"
      ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "부전",
-     "texts": [
-      "부전",
-      "부전역"
+     "variant_only": false,
+     "grades": [
+      "official"
      ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:부전[부산 도시철도 1호선]",
-      "KR:부전역[동해선]"
-     ],
-     "unfolded_keys": [
-      "부전"
-     ],
-     "variant_only": false
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1051,7 +1166,11 @@
      "unfolded_keys": [
       "송정"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1075,7 +1194,11 @@
      "unfolded_keys": [
       "시청"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1097,7 +1220,11 @@
      "unfolded_keys": [
       "신천"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1119,7 +1246,11 @@
      "unfolded_keys": [
       "신촌"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1140,7 +1271,11 @@
      "unfolded_keys": [
       "신흥"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1162,7 +1297,11 @@
      "unfolded_keys": [
       "양정"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1184,7 +1323,11 @@
      "unfolded_keys": [
       "양평"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1206,7 +1349,11 @@
      "unfolded_keys": [
       "용문"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1229,7 +1376,11 @@
      "unfolded_keys": [
       "용산"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1251,7 +1402,11 @@
      "unfolded_keys": [
       "운천"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1273,7 +1428,11 @@
      "unfolded_keys": [
       "월드컵경기장"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1295,7 +1454,11 @@
      "unfolded_keys": [
       "종합운동장"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1317,7 +1480,11 @@
      "unfolded_keys": [
       "좌천"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1339,7 +1506,11 @@
      "unfolded_keys": [
       "죽전"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1361,7 +1532,11 @@
      "unfolded_keys": [
       "중동"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1384,7 +1559,11 @@
      "unfolded_keys": [
       "중앙"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1405,7 +1584,11 @@
      "unfolded_keys": [
       "중앙로"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1427,7 +1610,11 @@
      "unfolded_keys": [
       "증산"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -1449,2785 +1636,11 @@
      "unfolded_keys": [
       "화정"
      ],
-     "variant_only": false
-    },
-    {
-     "tier": "T2",
-     "name": "大峙",
-     "texts": [
-      "大峙"
-     ],
-     "degree": 2,
-     "cost": 2,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:대치[3호선]",
-      "KR:대티[부산 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "大峙"
-     ],
-     "variant_only": false
-    }
-   ],
-   "subsumed": [
-    {
-     "tier": "T2",
-     "name": "东巛",
-     "texts": [
-      "東川"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "中央",
-     "texts": [
-      "中央"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "中央路",
-     "texts": [
-      "中央路"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "云泉",
-     "texts": [
-      "云泉",
-      "雲泉"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "佐巛",
-     "texts": [
-      "佐川"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "南山",
-     "texts": [
-      "南山",
-      "南山 (계명네거리)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "市厅",
-     "texts": [
-      "市廳"
-     ],
-     "degree": 3
-    },
-    {
-     "tier": "T2",
-     "name": "敎大",
-     "texts": [
-      "敎大",
-      "敎大(法院․檢察廳)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "新㒷",
-     "texts": [
-      "新興"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "新巛",
-     "texts": [
-      "新川",
-      "新川(慶北大入口)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "綜合运动场",
-     "texts": [
-      "綜合運動場",
-      "综合运动场"
-     ],
-     "degree": 2
-    }
-   ],
-   "countries_connected": false,
-   "components_by_country": [
-    [
-     "KR"
-    ],
-    [
-     "TW"
-    ]
-   ],
-   "judge": {
-    "explosion": false,
-    "reasons": []
-   },
-   "kr_shortened": {
-    "pairs": 884540,
-    "shortened": 28271,
-    "example": {
-     "from": "대치#1",
-     "to": "대티#1",
-     "before": 24,
-     "after": 2,
-     "gain": 22,
-     "path": "KR:대치 → ⇢[大峙] → KR:대티"
-    }
-   },
-   "metrics_summary": {
-    "stations": 1293,
-    "clusters": 1111,
-    "ride_edges": 1248,
-    "portals_total": 31,
-    "portals_by_tier": {
-     "T1": 30,
-     "T2": 1
-    },
-    "portal_links": 64,
-    "components_warp": 2,
-    "largest_warp": 941,
-    "ratio_warp": 0.847,
-    "diameter_warp": 67,
-    "diameter_warp_ends": "신창#1 → 연천#1",
-    "mean_warp": 17.563,
-    "components_nowarp": 6,
-    "diameter_nowarp": 70,
-    "top_portals": [
-     {
-      "name": "교대",
-      "tier": "T1",
-      "degree": 3,
-      "clusters": [
-       "교대#1",
-       "교대#2",
-       "교대#3"
-      ]
-     },
-     {
-      "name": "시청",
-      "tier": "T1",
-      "degree": 3,
-      "clusters": [
-       "시청#1",
-       "시청#2",
-       "시청#3"
-      ]
-     },
-     {
-      "name": "大峙",
-      "tier": "T2",
-      "degree": 2,
-      "clusters": [
-       "대치#1",
-       "대티#1"
-      ]
-     },
-     {
-      "name": "고촌",
-      "tier": "T1",
-      "degree": 2,
-      "clusters": [
-       "고촌#1",
-       "고촌#2"
-      ]
-     },
-     {
-      "name": "공항",
-      "tier": "T1",
-      "degree": 2,
-      "clusters": [
-       "공항#1",
-       "공항#2"
-      ]
-     }
-    ]
-   }
-  },
-  "tw_t123": {
-   "ruleset": "tw_t123",
-   "description": "한국+타이베이, T1 + T2 + T3 (공식명만)",
-   "portals": [
-    {
-     "tier": "T1",
-     "name": "고촌",
-     "texts": [
-      "고촌",
-      "고촌역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:고촌[부산 경량도시철도 4호선]",
-      "KR:고촌역[김포도시철도]"
-     ],
-     "unfolded_keys": [
-      "고촌"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "공항",
-     "texts": [
-      "공항"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:공항[광주도시철도 1호선]",
-      "KR:공항[부산김해경전철]"
-     ],
-     "unfolded_keys": [
-      "공항"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "교대",
-     "texts": [
-      "교대",
-      "교대(법원·검찰청)",
-      "교대역"
-     ],
-     "degree": 3,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:교대(법원·검찰청)[2호선]",
-      "KR:교대(법원·검찰청)[3호선]",
-      "KR:교대[대구 도시철도 1호선]",
-      "KR:교대[부산 도시철도 1호선]",
-      "KR:교대역[동해선]"
-     ],
-     "unfolded_keys": [
-      "교대"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "구암",
-     "texts": [
-      "구암",
-      "구암(과학대보건대입구)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:구암(과학대보건대입구)[대구 도시철도 3호선]",
-      "KR:구암[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "구암"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "금곡",
-     "texts": [
-      "금곡",
-      "금곡역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:금곡[부산 도시철도 2호선]",
-      "KR:금곡역[경춘선]"
-     ],
-     "unfolded_keys": [
-      "금곡"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "남산",
-     "texts": [
-      "남산",
-      "남산(계명네거리)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:남산(계명네거리)[대구 도시철도 3호선]",
-      "KR:남산[부산 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "남산"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "대곡",
-     "texts": [
-      "대곡(정부대구청사)",
-      "대곡역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:대곡(정부대구청사)[대구 도시철도 1호선]",
-      "KR:대곡역[경의중앙선]",
-      "KR:대곡역[서해선]",
-      "KR:대곡역[일산선]"
-     ],
-     "unfolded_keys": [
-      "대곡"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "동래",
-     "texts": [
-      "동래",
-      "동래역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:동래[부산 경량도시철도 4호선]",
-      "KR:동래[부산 도시철도 1호선]",
-      "KR:동래역[동해선]"
-     ],
-     "unfolded_keys": [
-      "동래"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "동백",
-     "texts": [
-      "동백",
-      "동백(용인세브란스)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:동백(용인세브란스)[에버라인]",
-      "KR:동백[부산 도시철도 2호선]"
-     ],
-     "unfolded_keys": [
-      "동백"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "동천",
-     "texts": [
-      "동천"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:동천[대구 도시철도 3호선]",
-      "KR:동천[신분당선]"
-     ],
-     "unfolded_keys": [
-      "동천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "부전",
-     "texts": [
-      "부전",
-      "부전역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:부전[부산 도시철도 1호선]",
-      "KR:부전역[동해선]"
-     ],
-     "unfolded_keys": [
-      "부전"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "송정",
-     "texts": [
-      "송정",
-      "송정역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:송정[5호선]",
-      "KR:송정역[동해선]"
-     ],
-     "unfolded_keys": [
-      "송정"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "시청",
-     "texts": [
-      "시청",
-      "시청(연제)"
-     ],
-     "degree": 3,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:시청(연제)[부산 도시철도 1호선]",
-      "KR:시청[1호선]",
-      "KR:시청[2호선]",
-      "KR:시청[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "시청"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "신천",
-     "texts": [
-      "신천(경북대입구)",
-      "신천역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:신천(경북대입구)[대구 도시철도 1호선]",
-      "KR:신천역[서해선]"
-     ],
-     "unfolded_keys": [
-      "신천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "신촌",
-     "texts": [
-      "신촌(지하)",
-      "신촌역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:신촌(지하)[2호선]",
-      "KR:신촌역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "신촌"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "신흥",
-     "texts": [
-      "신흥"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:신흥[8호선]",
-      "KR:신흥[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "신흥"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "양정",
-     "texts": [
-      "양정",
-      "양정역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:양정[부산 도시철도 1호선]",
-      "KR:양정역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "양정"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "양평",
-     "texts": [
-      "양평",
-      "양평역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:양평[5호선]",
-      "KR:양평역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "양평"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "용문",
-     "texts": [
-      "용문",
-      "용문역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:용문[대전 도시철도 1호선]",
-      "KR:용문역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "용문"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "용산",
-     "texts": [
-      "용산(서부법원․검찰청입구)",
-      "용산역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:용산(서부법원․검찰청입구)[대구 도시철도 2호선]",
-      "KR:용산역[경부선]",
-      "KR:용산역[경원선]"
-     ],
-     "unfolded_keys": [
-      "용산"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "운천",
-     "texts": [
-      "운천",
-      "운천역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:운천[광주도시철도 1호선]",
-      "KR:운천역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "운천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "월드컵경기장",
-     "texts": [
-      "월드컵경기장",
-      "월드컵경기장(성산)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:월드컵경기장(성산)[6호선]",
-      "KR:월드컵경기장[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "월드컵경기장"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "종합운동장",
-     "texts": [
-      "종합운동장"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:종합운동장[2호선]",
-      "KR:종합운동장[부산 도시철도 3호선]",
-      "KR:종합운동장[수도권 도시철도 9호선]"
-     ],
-     "unfolded_keys": [
-      "종합운동장"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "좌천",
-     "texts": [
-      "좌천",
-      "좌천역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:좌천[부산 도시철도 1호선]",
-      "KR:좌천역[동해선]"
-     ],
-     "unfolded_keys": [
-      "좌천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "죽전",
-     "texts": [
-      "죽전",
-      "죽전역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:죽전[대구 도시철도 2호선]",
-      "KR:죽전역[분당선]"
-     ],
-     "unfolded_keys": [
-      "죽전"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "중동",
-     "texts": [
-      "중동",
-      "중동역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:중동[부산 도시철도 2호선]",
-      "KR:중동역[경인선]"
-     ],
-     "unfolded_keys": [
-      "중동"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "중앙",
-     "texts": [
-      "중앙",
-      "중앙역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:중앙[부산 도시철도 1호선]",
-      "KR:중앙역[수인선]",
-      "KR:중앙역[안산과천선]"
-     ],
-     "unfolded_keys": [
-      "중앙"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "중앙로",
-     "texts": [
-      "중앙로"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:중앙로[대구 도시철도 1호선]",
-      "KR:중앙로[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "중앙로"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "증산",
-     "texts": [
-      "증산",
-      "증산(명지대앞)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:증산(명지대앞)[6호선]",
-      "KR:증산[부산 도시철도 2호선]"
-     ],
-     "unfolded_keys": [
-      "증산"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "화정",
-     "texts": [
-      "화정",
-      "화정역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:화정[광주도시철도 1호선]",
-      "KR:화정역[일산선]"
-     ],
-     "unfolded_keys": [
-      "화정"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T2",
-     "name": "大峙",
-     "texts": [
-      "大峙"
-     ],
-     "degree": 2,
-     "cost": 2,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:대치[3호선]",
-      "KR:대티[부산 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "大峙"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T3",
-     "name": "seongnam",
-     "texts": [
-      "Seongnam",
-      "Seongnam(Geobuk Market)"
-     ],
-     "degree": 2,
-     "cost": 3,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:석남(거북시장)[도시철도 7호선]",
-      "KR:석남(거북시장)[인천지하철 2호선]",
-      "KR:성남역[경강선]"
-     ],
-     "unfolded_keys": [
-      "seongnam"
-     ],
-     "variant_only": false
-    }
-   ],
-   "subsumed": [
-    {
-     "tier": "T2",
-     "name": "东巛",
-     "texts": [
-      "東川"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "中央",
-     "texts": [
-      "中央"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "中央路",
-     "texts": [
-      "中央路"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "云泉",
-     "texts": [
-      "云泉",
-      "雲泉"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "佐巛",
-     "texts": [
-      "佐川"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "南山",
-     "texts": [
-      "南山",
-      "南山 (계명네거리)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "市厅",
-     "texts": [
-      "市廳"
-     ],
-     "degree": 3
-    },
-    {
-     "tier": "T2",
-     "name": "敎大",
-     "texts": [
-      "敎大",
-      "敎大(法院․檢察廳)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "新㒷",
-     "texts": [
-      "新興"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "新巛",
-     "texts": [
-      "新川",
-      "新川(慶北大入口)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T2",
-     "name": "綜合运动场",
-     "texts": [
-      "綜合運動場",
-      "综合运动场"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "bujeon",
-     "texts": [
-      "Bujeon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "city hall",
-     "texts": [
-      "City Hall"
-     ],
-     "degree": 3
-    },
-    {
-     "tier": "T3",
-     "name": "daegok",
-     "texts": [
-      "Daegok",
-      "Daegok (Central Government Office-Daegu)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "dongbaek",
-     "texts": [
-      "Dongbaek"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "dongcheon",
-     "texts": [
-      "Dongcheon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "dongnae",
-     "texts": [
-      "Dongnae"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "geumgok",
-     "texts": [
-      "Geumgok"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "gochon",
-     "texts": [
-      "Gochon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "guam",
-     "texts": [
-      "Guam",
-      "Guam (Taegu Science Univ. ·Daegu Health College)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "hwajeong",
-     "texts": [
-      "Hwajeong"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jeungsan",
-     "texts": [
-      "Jeungsan",
-      "Jeungsan (Myongji Univ.)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jukjeon",
-     "texts": [
-      "Jukjeon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jung-dong",
-     "texts": [
-      "Jung-dong"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jungang",
-     "texts": [
-      "Jungang"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jungangno",
-     "texts": [
-      "Jungangno"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jwacheon",
-     "texts": [
-      "Jwacheon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "namsan",
-     "texts": [
-      "Namsan",
-      "Namsan (Gyemyeongnegeori)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "sincheon",
-     "texts": [
-      "Sincheon",
-      "Sincheon (Kyungpook Nat’l Univ.)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "sinchon",
-     "texts": [
-      "Sinchon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "sinheung",
-     "texts": [
-      "Sinheung"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "songjeong",
-     "texts": [
-      "Songjeong"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "sports complex",
-     "texts": [
-      "Sports Complex"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "uncheon",
-     "texts": [
-      "Uncheon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "world cup stadium",
-     "texts": [
-      "World Cup Stadium",
-      "World Cup Stadium (Seongsan)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "yangjeong",
-     "texts": [
-      "Yangjeong"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "yangpyeong",
-     "texts": [
-      "Yangpyeong"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "yongmun",
-     "texts": [
-      "Yongmun"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "yongsan",
-     "texts": [
-      "Yongsan",
-      "Yongsan (Seobu Branch Court‧Seobu Prosecutor's Office)"
-     ],
-     "degree": 2
-    }
-   ],
-   "countries_connected": false,
-   "components_by_country": [
-    [
-     "KR"
-    ],
-    [
-     "TW"
-    ]
-   ],
-   "judge": {
-    "explosion": false,
-    "reasons": []
-   },
-   "kr_shortened": {
-    "pairs": 884540,
-    "shortened": 69427,
-    "example": {
-     "from": "대치#1",
-     "to": "대티#1",
-     "before": 24,
-     "after": 2,
-     "gain": 22,
-     "path": "KR:대치 → ⇢[大峙] → KR:대티"
-    }
-   },
-   "metrics_summary": {
-    "stations": 1293,
-    "clusters": 1111,
-    "ride_edges": 1248,
-    "portals_total": 32,
-    "portals_by_tier": {
-     "T1": 30,
-     "T2": 1,
-     "T3": 1
-    },
-    "portal_links": 66,
-    "components_warp": 2,
-    "largest_warp": 941,
-    "ratio_warp": 0.847,
-    "diameter_warp": 67,
-    "diameter_warp_ends": "신창#1 → 연천#1",
-    "mean_warp": 17.343,
-    "components_nowarp": 6,
-    "diameter_nowarp": 70,
-    "top_portals": [
-     {
-      "name": "교대",
-      "tier": "T1",
-      "degree": 3,
-      "clusters": [
-       "교대#1",
-       "교대#2",
-       "교대#3"
-      ]
-     },
-     {
-      "name": "시청",
-      "tier": "T1",
-      "degree": 3,
-      "clusters": [
-       "시청#1",
-       "시청#2",
-       "시청#3"
-      ]
-     },
-     {
-      "name": "seongnam",
-      "tier": "T3",
-      "degree": 2,
-      "clusters": [
-       "석남#1",
-       "성남#1"
-      ]
-     },
-     {
-      "name": "大峙",
-      "tier": "T2",
-      "degree": 2,
-      "clusters": [
-       "대치#1",
-       "대티#1"
-      ]
-     },
-     {
-      "name": "고촌",
-      "tier": "T1",
-      "degree": 2,
-      "clusters": [
-       "고촌#1",
-       "고촌#2"
-      ]
-     }
-    ]
-   }
-  },
-  "tw_t1_label": {
-   "ruleset": "tw_t1_label",
-   "description": "참고: tw_t1 + 타이베이 Wikidata 라벨 허용 (공식명 아님)",
-   "portals": [
-    {
-     "tier": "T1",
-     "name": "고촌",
-     "texts": [
-      "고촌",
-      "고촌역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:고촌[부산 경량도시철도 4호선]",
-      "KR:고촌역[김포도시철도]"
-     ],
-     "unfolded_keys": [
-      "고촌"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "공항",
-     "texts": [
-      "공항"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:공항[광주도시철도 1호선]",
-      "KR:공항[부산김해경전철]"
-     ],
-     "unfolded_keys": [
-      "공항"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "교대",
-     "texts": [
-      "교대",
-      "교대(법원·검찰청)",
-      "교대역"
-     ],
-     "degree": 3,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:교대(법원·검찰청)[2호선]",
-      "KR:교대(법원·검찰청)[3호선]",
-      "KR:교대[대구 도시철도 1호선]",
-      "KR:교대[부산 도시철도 1호선]",
-      "KR:교대역[동해선]"
-     ],
-     "unfolded_keys": [
-      "교대"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "구암",
-     "texts": [
-      "구암",
-      "구암(과학대보건대입구)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:구암(과학대보건대입구)[대구 도시철도 3호선]",
-      "KR:구암[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "구암"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "금곡",
-     "texts": [
-      "금곡",
-      "금곡역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:금곡[부산 도시철도 2호선]",
-      "KR:금곡역[경춘선]"
-     ],
-     "unfolded_keys": [
-      "금곡"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "남산",
-     "texts": [
-      "남산",
-      "남산(계명네거리)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:남산(계명네거리)[대구 도시철도 3호선]",
-      "KR:남산[부산 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "남산"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "대곡",
-     "texts": [
-      "대곡(정부대구청사)",
-      "대곡역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:대곡(정부대구청사)[대구 도시철도 1호선]",
-      "KR:대곡역[경의중앙선]",
-      "KR:대곡역[서해선]",
-      "KR:대곡역[일산선]"
-     ],
-     "unfolded_keys": [
-      "대곡"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "동래",
-     "texts": [
-      "동래",
-      "동래역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:동래[부산 경량도시철도 4호선]",
-      "KR:동래[부산 도시철도 1호선]",
-      "KR:동래역[동해선]"
-     ],
-     "unfolded_keys": [
-      "동래"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "동백",
-     "texts": [
-      "동백",
-      "동백(용인세브란스)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:동백(용인세브란스)[에버라인]",
-      "KR:동백[부산 도시철도 2호선]"
-     ],
-     "unfolded_keys": [
-      "동백"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "동천",
-     "texts": [
-      "동천"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:동천[대구 도시철도 3호선]",
-      "KR:동천[신분당선]"
-     ],
-     "unfolded_keys": [
-      "동천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "부전",
-     "texts": [
-      "부전",
-      "부전역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:부전[부산 도시철도 1호선]",
-      "KR:부전역[동해선]"
-     ],
-     "unfolded_keys": [
-      "부전"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "송정",
-     "texts": [
-      "송정",
-      "송정역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:송정[5호선]",
-      "KR:송정역[동해선]"
-     ],
-     "unfolded_keys": [
-      "송정"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "시청",
-     "texts": [
-      "시청",
-      "시청(연제)"
-     ],
-     "degree": 3,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:시청(연제)[부산 도시철도 1호선]",
-      "KR:시청[1호선]",
-      "KR:시청[2호선]",
-      "KR:시청[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "시청"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "신천",
-     "texts": [
-      "신천(경북대입구)",
-      "신천역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:신천(경북대입구)[대구 도시철도 1호선]",
-      "KR:신천역[서해선]"
-     ],
-     "unfolded_keys": [
-      "신천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "신촌",
-     "texts": [
-      "신촌(지하)",
-      "신촌역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:신촌(지하)[2호선]",
-      "KR:신촌역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "신촌"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "신흥",
-     "texts": [
-      "신흥"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:신흥[8호선]",
-      "KR:신흥[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "신흥"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "양정",
-     "texts": [
-      "양정",
-      "양정역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:양정[부산 도시철도 1호선]",
-      "KR:양정역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "양정"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "양평",
-     "texts": [
-      "양평",
-      "양평역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:양평[5호선]",
-      "KR:양평역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "양평"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "용문",
-     "texts": [
-      "용문",
-      "용문역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:용문[대전 도시철도 1호선]",
-      "KR:용문역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "용문"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "용산",
-     "texts": [
-      "용산(서부법원․검찰청입구)",
-      "용산역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:용산(서부법원․검찰청입구)[대구 도시철도 2호선]",
-      "KR:용산역[경부선]",
-      "KR:용산역[경원선]"
-     ],
-     "unfolded_keys": [
-      "용산"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "운천",
-     "texts": [
-      "운천",
-      "운천역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:운천[광주도시철도 1호선]",
-      "KR:운천역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "운천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "월드컵경기장",
-     "texts": [
-      "월드컵경기장",
-      "월드컵경기장(성산)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:월드컵경기장(성산)[6호선]",
-      "KR:월드컵경기장[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "월드컵경기장"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "종합운동장",
-     "texts": [
-      "종합운동장"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:종합운동장[2호선]",
-      "KR:종합운동장[부산 도시철도 3호선]",
-      "KR:종합운동장[수도권 도시철도 9호선]"
-     ],
-     "unfolded_keys": [
-      "종합운동장"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "좌천",
-     "texts": [
-      "좌천",
-      "좌천역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:좌천[부산 도시철도 1호선]",
-      "KR:좌천역[동해선]"
-     ],
-     "unfolded_keys": [
-      "좌천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "죽전",
-     "texts": [
-      "죽전",
-      "죽전역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:죽전[대구 도시철도 2호선]",
-      "KR:죽전역[분당선]"
-     ],
-     "unfolded_keys": [
-      "죽전"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "중동",
-     "texts": [
-      "중동",
-      "중동역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:중동[부산 도시철도 2호선]",
-      "KR:중동역[경인선]"
-     ],
-     "unfolded_keys": [
-      "중동"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "중앙",
-     "texts": [
-      "중앙",
-      "중앙역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:중앙[부산 도시철도 1호선]",
-      "KR:중앙역[수인선]",
-      "KR:중앙역[안산과천선]"
-     ],
-     "unfolded_keys": [
-      "중앙"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "중앙로",
-     "texts": [
-      "중앙로"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:중앙로[대구 도시철도 1호선]",
-      "KR:중앙로[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "중앙로"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "증산",
-     "texts": [
-      "증산",
-      "증산(명지대앞)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:증산(명지대앞)[6호선]",
-      "KR:증산[부산 도시철도 2호선]"
-     ],
-     "unfolded_keys": [
-      "증산"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "화정",
-     "texts": [
-      "화정",
-      "화정역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:화정[광주도시철도 1호선]",
-      "KR:화정역[일산선]"
-     ],
-     "unfolded_keys": [
-      "화정"
-     ],
-     "variant_only": false
-    }
-   ],
-   "subsumed": [],
-   "countries_connected": false,
-   "components_by_country": [
-    [
-     "KR"
-    ],
-    [
-     "TW"
-    ]
-   ],
-   "judge": {
-    "explosion": false,
-    "reasons": []
-   },
-   "kr_shortened": {
-    "pairs": 884540,
-    "shortened": 0,
-    "example": null
-   },
-   "metrics_summary": {
-    "stations": 1293,
-    "clusters": 1111,
-    "ride_edges": 1248,
-    "portals_total": 30,
-    "portals_by_tier": {
-     "T1": 30
-    },
-    "portal_links": 62,
-    "components_warp": 2,
-    "largest_warp": 941,
-    "ratio_warp": 0.847,
-    "diameter_warp": 67,
-    "diameter_warp_ends": "신창#1 → 연천#1",
-    "mean_warp": 17.77,
-    "components_nowarp": 6,
-    "diameter_nowarp": 70,
-    "top_portals": [
-     {
-      "name": "교대",
-      "tier": "T1",
-      "degree": 3,
-      "clusters": [
-       "교대#1",
-       "교대#2",
-       "교대#3"
-      ]
-     },
-     {
-      "name": "시청",
-      "tier": "T1",
-      "degree": 3,
-      "clusters": [
-       "시청#1",
-       "시청#2",
-       "시청#3"
-      ]
-     },
-     {
-      "name": "고촌",
-      "tier": "T1",
-      "degree": 2,
-      "clusters": [
-       "고촌#1",
-       "고촌#2"
-      ]
-     },
-     {
-      "name": "공항",
-      "tier": "T1",
-      "degree": 2,
-      "clusters": [
-       "공항#1",
-       "공항#2"
-      ]
-     },
-     {
-      "name": "구암",
-      "tier": "T1",
-      "degree": 2,
-      "clusters": [
-       "구암#1",
-       "구암#2"
-      ]
-     }
-    ]
-   }
-  },
-  "tw_t12_label": {
-   "ruleset": "tw_t12_label",
-   "description": "참고: tw_t12 + 타이베이 Wikidata 라벨 허용 (공식명 아님)",
-   "portals": [
-    {
-     "tier": "T1",
-     "name": "고촌",
-     "texts": [
-      "고촌",
-      "고촌역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:고촌[부산 경량도시철도 4호선]",
-      "KR:고촌역[김포도시철도]"
-     ],
-     "unfolded_keys": [
-      "고촌"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "공항",
-     "texts": [
-      "공항"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:공항[광주도시철도 1호선]",
-      "KR:공항[부산김해경전철]"
-     ],
-     "unfolded_keys": [
-      "공항"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "교대",
-     "texts": [
-      "교대",
-      "교대(법원·검찰청)",
-      "교대역"
-     ],
-     "degree": 3,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:교대(법원·검찰청)[2호선]",
-      "KR:교대(법원·검찰청)[3호선]",
-      "KR:교대[대구 도시철도 1호선]",
-      "KR:교대[부산 도시철도 1호선]",
-      "KR:교대역[동해선]"
-     ],
-     "unfolded_keys": [
-      "교대"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "구암",
-     "texts": [
-      "구암",
-      "구암(과학대보건대입구)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:구암(과학대보건대입구)[대구 도시철도 3호선]",
-      "KR:구암[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "구암"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "금곡",
-     "texts": [
-      "금곡",
-      "금곡역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:금곡[부산 도시철도 2호선]",
-      "KR:금곡역[경춘선]"
-     ],
-     "unfolded_keys": [
-      "금곡"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "남산",
-     "texts": [
-      "남산",
-      "남산(계명네거리)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:남산(계명네거리)[대구 도시철도 3호선]",
-      "KR:남산[부산 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "남산"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "대곡",
-     "texts": [
-      "대곡(정부대구청사)",
-      "대곡역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:대곡(정부대구청사)[대구 도시철도 1호선]",
-      "KR:대곡역[경의중앙선]",
-      "KR:대곡역[서해선]",
-      "KR:대곡역[일산선]"
-     ],
-     "unfolded_keys": [
-      "대곡"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "동래",
-     "texts": [
-      "동래",
-      "동래역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:동래[부산 경량도시철도 4호선]",
-      "KR:동래[부산 도시철도 1호선]",
-      "KR:동래역[동해선]"
-     ],
-     "unfolded_keys": [
-      "동래"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "동백",
-     "texts": [
-      "동백",
-      "동백(용인세브란스)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:동백(용인세브란스)[에버라인]",
-      "KR:동백[부산 도시철도 2호선]"
-     ],
-     "unfolded_keys": [
-      "동백"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "동천",
-     "texts": [
-      "동천"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:동천[대구 도시철도 3호선]",
-      "KR:동천[신분당선]"
-     ],
-     "unfolded_keys": [
-      "동천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "부전",
-     "texts": [
-      "부전",
-      "부전역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:부전[부산 도시철도 1호선]",
-      "KR:부전역[동해선]"
-     ],
-     "unfolded_keys": [
-      "부전"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "송정",
-     "texts": [
-      "송정",
-      "송정역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:송정[5호선]",
-      "KR:송정역[동해선]"
-     ],
-     "unfolded_keys": [
-      "송정"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "시청",
-     "texts": [
-      "시청",
-      "시청(연제)"
-     ],
-     "degree": 3,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:시청(연제)[부산 도시철도 1호선]",
-      "KR:시청[1호선]",
-      "KR:시청[2호선]",
-      "KR:시청[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "시청"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "신천",
-     "texts": [
-      "신천(경북대입구)",
-      "신천역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:신천(경북대입구)[대구 도시철도 1호선]",
-      "KR:신천역[서해선]"
-     ],
-     "unfolded_keys": [
-      "신천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "신촌",
-     "texts": [
-      "신촌(지하)",
-      "신촌역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:신촌(지하)[2호선]",
-      "KR:신촌역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "신촌"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "신흥",
-     "texts": [
-      "신흥"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:신흥[8호선]",
-      "KR:신흥[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "신흥"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "양정",
-     "texts": [
-      "양정",
-      "양정역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:양정[부산 도시철도 1호선]",
-      "KR:양정역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "양정"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "양평",
-     "texts": [
-      "양평",
-      "양평역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:양평[5호선]",
-      "KR:양평역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "양평"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "용문",
-     "texts": [
-      "용문",
-      "용문역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:용문[대전 도시철도 1호선]",
-      "KR:용문역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "용문"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "용산",
-     "texts": [
-      "용산(서부법원․검찰청입구)",
-      "용산역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:용산(서부법원․검찰청입구)[대구 도시철도 2호선]",
-      "KR:용산역[경부선]",
-      "KR:용산역[경원선]"
-     ],
-     "unfolded_keys": [
-      "용산"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "운천",
-     "texts": [
-      "운천",
-      "운천역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:운천[광주도시철도 1호선]",
-      "KR:운천역[경의중앙선]"
-     ],
-     "unfolded_keys": [
-      "운천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "월드컵경기장",
-     "texts": [
-      "월드컵경기장",
-      "월드컵경기장(성산)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:월드컵경기장(성산)[6호선]",
-      "KR:월드컵경기장[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "월드컵경기장"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "종합운동장",
-     "texts": [
-      "종합운동장"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:종합운동장[2호선]",
-      "KR:종합운동장[부산 도시철도 3호선]",
-      "KR:종합운동장[수도권 도시철도 9호선]"
-     ],
-     "unfolded_keys": [
-      "종합운동장"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "좌천",
-     "texts": [
-      "좌천",
-      "좌천역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:좌천[부산 도시철도 1호선]",
-      "KR:좌천역[동해선]"
-     ],
-     "unfolded_keys": [
-      "좌천"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "죽전",
-     "texts": [
-      "죽전",
-      "죽전역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:죽전[대구 도시철도 2호선]",
-      "KR:죽전역[분당선]"
-     ],
-     "unfolded_keys": [
-      "죽전"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "중동",
-     "texts": [
-      "중동",
-      "중동역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:중동[부산 도시철도 2호선]",
-      "KR:중동역[경인선]"
-     ],
-     "unfolded_keys": [
-      "중동"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "중앙",
-     "texts": [
-      "중앙",
-      "중앙역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:중앙[부산 도시철도 1호선]",
-      "KR:중앙역[수인선]",
-      "KR:중앙역[안산과천선]"
-     ],
-     "unfolded_keys": [
-      "중앙"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "중앙로",
-     "texts": [
-      "중앙로"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:중앙로[대구 도시철도 1호선]",
-      "KR:중앙로[대전 도시철도 1호선]"
-     ],
-     "unfolded_keys": [
-      "중앙로"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "증산",
-     "texts": [
-      "증산",
-      "증산(명지대앞)"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:증산(명지대앞)[6호선]",
-      "KR:증산[부산 도시철도 2호선]"
-     ],
-     "unfolded_keys": [
-      "증산"
-     ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "화정",
-     "texts": [
-      "화정",
-      "화정역"
-     ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:화정[광주도시철도 1호선]",
-      "KR:화정역[일산선]"
-     ],
-     "unfolded_keys": [
-      "화정"
-     ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T2",
@@ -4250,7 +1663,12 @@
      "unfolded_keys": [
       "中和"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
     },
     {
      "tier": "T2",
@@ -4274,7 +1692,12 @@
       "回龙",
       "迴龍"
      ],
-     "variant_only": true
+     "variant_only": true,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
     },
     {
      "tier": "T2",
@@ -4297,7 +1720,12 @@
      "unfolded_keys": [
       "土城"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
     },
     {
      "tier": "T2",
@@ -4318,7 +1746,11 @@
      "unfolded_keys": [
       "大峙"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T2",
@@ -4343,7 +1775,12 @@
      "unfolded_keys": [
       "明德"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
     },
     {
      "tier": "T2",
@@ -4366,7 +1803,12 @@
      "unfolded_keys": [
       "松山"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
     },
     {
      "tier": "T2",
@@ -4392,7 +1834,12 @@
      "unfolded_keys": [
       "板橋"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
     }
    ],
    "subsumed": [
@@ -4502,33 +1949,33 @@
     "reasons": []
    },
    "kr_shortened": {
-    "pairs": 884540,
-    "shortened": 68800,
+    "pairs": 882660,
+    "shortened": 68746,
     "example": {
      "from": "대치#1",
      "to": "대티#1",
-     "before": 24,
+     "before": 23,
      "after": 2,
-     "gain": 22,
+     "gain": 21,
      "path": "KR:대치 → ⇢[大峙] → KR:대티"
     }
    },
    "metrics_summary": {
-    "stations": 1293,
-    "clusters": 1111,
+    "stations": 1292,
+    "clusters": 1110,
     "ride_edges": 1248,
-    "portals_total": 37,
+    "portals_total": 36,
     "portals_by_tier": {
-     "T1": 30,
+     "T1": 29,
      "T2": 7
     },
-    "portal_links": 76,
+    "portal_links": 74,
     "components_warp": 1,
-    "largest_warp": 1111,
+    "largest_warp": 1110,
     "ratio_warp": 1.0,
     "diameter_warp": 63,
     "diameter_warp_ends": "가야대#1 → 신창#1",
-    "mean_warp": 18.728,
+    "mean_warp": 18.722,
     "components_nowarp": 6,
     "diameter_nowarp": 70,
     "top_portals": [
@@ -4582,9 +2029,9 @@
     ]
    }
   },
-  "tw_t123_label": {
-   "ruleset": "tw_t123_label",
-   "description": "참고: tw_t123 + 타이베이 Wikidata 라벨 허용 (공식명 아님)",
+  "tw_t123": {
+   "ruleset": "tw_t123",
+   "description": "한국+타이베이, T1 + T2 + T3a (영어 번역명, 영어 라벨은 신뢰도 low)",
    "portals": [
     {
      "tier": "T1",
@@ -4606,7 +2053,11 @@
      "unfolded_keys": [
       "고촌"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4627,7 +2078,11 @@
      "unfolded_keys": [
       "공항"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4653,7 +2108,11 @@
      "unfolded_keys": [
       "교대"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4675,7 +2134,11 @@
      "unfolded_keys": [
       "구암"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4697,7 +2160,11 @@
      "unfolded_keys": [
       "금곡"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4719,12 +2186,17 @@
      "unfolded_keys": [
       "남산"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
      "name": "대곡",
      "texts": [
+      "대곡",
       "대곡(정부대구청사)",
       "대곡역"
      ],
@@ -4736,6 +2208,7 @@
      "cross_country": false,
      "stations": [
       "KR:대곡(정부대구청사)[대구 도시철도 1호선]",
+      "KR:대곡[GTX-A]",
       "KR:대곡역[경의중앙선]",
       "KR:대곡역[서해선]",
       "KR:대곡역[일산선]"
@@ -4743,7 +2216,11 @@
      "unfolded_keys": [
       "대곡"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4766,7 +2243,11 @@
      "unfolded_keys": [
       "동래"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4788,7 +2269,11 @@
      "unfolded_keys": [
       "동백"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4809,29 +2294,11 @@
      "unfolded_keys": [
       "동천"
      ],
-     "variant_only": false
-    },
-    {
-     "tier": "T1",
-     "name": "부전",
-     "texts": [
-      "부전",
-      "부전역"
+     "variant_only": false,
+     "grades": [
+      "official"
      ],
-     "degree": 2,
-     "cost": 1,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:부전[부산 도시철도 1호선]",
-      "KR:부전역[동해선]"
-     ],
-     "unfolded_keys": [
-      "부전"
-     ],
-     "variant_only": false
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4853,7 +2320,11 @@
      "unfolded_keys": [
       "송정"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4877,7 +2348,11 @@
      "unfolded_keys": [
       "시청"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4899,7 +2374,11 @@
      "unfolded_keys": [
       "신천"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4921,7 +2400,11 @@
      "unfolded_keys": [
       "신촌"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4942,7 +2425,11 @@
      "unfolded_keys": [
       "신흥"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4964,7 +2451,11 @@
      "unfolded_keys": [
       "양정"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -4986,7 +2477,11 @@
      "unfolded_keys": [
       "양평"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5008,7 +2503,11 @@
      "unfolded_keys": [
       "용문"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5031,7 +2530,11 @@
      "unfolded_keys": [
       "용산"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5053,7 +2556,11 @@
      "unfolded_keys": [
       "운천"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5075,7 +2582,11 @@
      "unfolded_keys": [
       "월드컵경기장"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5097,7 +2608,11 @@
      "unfolded_keys": [
       "종합운동장"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5119,7 +2634,11 @@
      "unfolded_keys": [
       "좌천"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5141,7 +2660,11 @@
      "unfolded_keys": [
       "죽전"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5163,7 +2686,11 @@
      "unfolded_keys": [
       "중동"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5186,7 +2713,11 @@
      "unfolded_keys": [
       "중앙"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5207,7 +2738,11 @@
      "unfolded_keys": [
       "중앙로"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5229,7 +2764,11 @@
      "unfolded_keys": [
       "증산"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T1",
@@ -5251,7 +2790,11 @@
      "unfolded_keys": [
       "화정"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T2",
@@ -5274,7 +2817,12 @@
      "unfolded_keys": [
       "中和"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
     },
     {
      "tier": "T2",
@@ -5298,7 +2846,12 @@
       "回龙",
       "迴龍"
      ],
-     "variant_only": true
+     "variant_only": true,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
     },
     {
      "tier": "T2",
@@ -5321,7 +2874,12 @@
      "unfolded_keys": [
       "土城"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
     },
     {
      "tier": "T2",
@@ -5342,7 +2900,11 @@
      "unfolded_keys": [
       "大峙"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
     },
     {
      "tier": "T2",
@@ -5367,7 +2929,12 @@
      "unfolded_keys": [
       "明德"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
     },
     {
      "tier": "T2",
@@ -5390,7 +2957,12 @@
      "unfolded_keys": [
       "松山"
      ],
-     "variant_only": false
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
     },
     {
      "tier": "T2",
@@ -5416,30 +2988,12 @@
      "unfolded_keys": [
       "板橋"
      ],
-     "variant_only": false
-    },
-    {
-     "tier": "T3",
-     "name": "seongnam",
-     "texts": [
-      "Seongnam",
-      "Seongnam(Geobuk Market)"
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
      ],
-     "degree": 2,
-     "cost": 3,
-     "countries": [
-      "KR"
-     ],
-     "cross_country": false,
-     "stations": [
-      "KR:석남(거북시장)[도시철도 7호선]",
-      "KR:석남(거북시장)[인천지하철 2호선]",
-      "KR:성남역[경강선]"
-     ],
-     "unfolded_keys": [
-      "seongnam"
-     ],
-     "variant_only": false
+     "confidence": "medium"
     }
    ],
    "subsumed": [
@@ -5537,15 +3091,7 @@
      "degree": 2
     },
     {
-     "tier": "T3",
-     "name": "bujeon",
-     "texts": [
-      "Bujeon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
+     "tier": "T3a",
      "name": "city hall",
      "texts": [
       "City Hall"
@@ -5553,164 +3099,7 @@
      "degree": 3
     },
     {
-     "tier": "T3",
-     "name": "daegok",
-     "texts": [
-      "Daegok",
-      "Daegok (Central Government Office-Daegu)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "dongbaek",
-     "texts": [
-      "Dongbaek"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "dongcheon",
-     "texts": [
-      "Dongcheon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "dongnae",
-     "texts": [
-      "Dongnae"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "geumgok",
-     "texts": [
-      "Geumgok"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "gochon",
-     "texts": [
-      "Gochon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "guam",
-     "texts": [
-      "Guam",
-      "Guam (Taegu Science Univ. ·Daegu Health College)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "hwajeong",
-     "texts": [
-      "Hwajeong"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jeungsan",
-     "texts": [
-      "Jeungsan",
-      "Jeungsan (Myongji Univ.)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jukjeon",
-     "texts": [
-      "Jukjeon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jung-dong",
-     "texts": [
-      "Jung-dong"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jungang",
-     "texts": [
-      "Jungang"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jungangno",
-     "texts": [
-      "Jungangno"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "jwacheon",
-     "texts": [
-      "Jwacheon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "namsan",
-     "texts": [
-      "Namsan",
-      "Namsan (Gyemyeongnegeori)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "sincheon",
-     "texts": [
-      "Sincheon",
-      "Sincheon (Kyungpook Nat’l Univ.)"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "sinchon",
-     "texts": [
-      "Sinchon"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "sinheung",
-     "texts": [
-      "Sinheung"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
-     "name": "songjeong",
-     "texts": [
-      "Songjeong"
-     ],
-     "degree": 2
-    },
-    {
-     "tier": "T3",
+     "tier": "T3a",
      "name": "sports complex",
      "texts": [
       "Sports Complex"
@@ -5718,15 +3107,2195 @@
      "degree": 2
     },
     {
-     "tier": "T3",
-     "name": "uncheon",
+     "tier": "T3a",
+     "name": "world cup stadium",
      "texts": [
-      "Uncheon"
+      "World Cup Stadium",
+      "World Cup Stadium (Seongsan)"
+     ],
+     "degree": 2
+    }
+   ],
+   "countries_connected": true,
+   "components_by_country": [
+    [
+     "KR",
+     "TW"
+    ]
+   ],
+   "judge": {
+    "explosion": false,
+    "reasons": []
+   },
+   "kr_shortened": {
+    "pairs": 882660,
+    "shortened": 68746,
+    "example": {
+     "from": "대치#1",
+     "to": "대티#1",
+     "before": 23,
+     "after": 2,
+     "gain": 21,
+     "path": "KR:대치 → ⇢[大峙] → KR:대티"
+    }
+   },
+   "metrics_summary": {
+    "stations": 1292,
+    "clusters": 1110,
+    "ride_edges": 1248,
+    "portals_total": 36,
+    "portals_by_tier": {
+     "T1": 29,
+     "T2": 7
+    },
+    "portal_links": 74,
+    "components_warp": 1,
+    "largest_warp": 1110,
+    "ratio_warp": 1.0,
+    "diameter_warp": 63,
+    "diameter_warp_ends": "가야대#1 → 신창#1",
+    "mean_warp": 18.722,
+    "components_nowarp": 6,
+    "diameter_nowarp": 70,
+    "top_portals": [
+     {
+      "name": "교대",
+      "tier": "T1",
+      "degree": 3,
+      "clusters": [
+       "교대#1",
+       "교대#2",
+       "교대#3"
+      ]
+     },
+     {
+      "name": "시청",
+      "tier": "T1",
+      "degree": 3,
+      "clusters": [
+       "시청#1",
+       "시청#2",
+       "시청#3"
+      ]
+     },
+     {
+      "name": "中咊",
+      "tier": "T2",
+      "degree": 2,
+      "clusters": [
+       "中和#1",
+       "중화#1"
+      ]
+     },
+     {
+      "name": "囘惇",
+      "tier": "T2",
+      "degree": 2,
+      "clusters": [
+       "迴龍#1",
+       "회룡#1"
+      ]
+     },
+     {
+      "name": "土城",
+      "tier": "T2",
+      "degree": 2,
+      "clusters": [
+       "土城#1",
+       "토성#1"
+      ]
+     }
+    ]
+   }
+  },
+  "tw_t12_official": {
+   "ruleset": "tw_t12_official",
+   "description": "참고: 한국+타이베이 T1 + T2, 공식명만 (3차 기본)",
+   "portals": [
+    {
+     "tier": "T1",
+     "name": "고촌",
+     "texts": [
+      "고촌",
+      "고촌역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:고촌[부산 경량도시철도 4호선]",
+      "KR:고촌역[김포도시철도]"
+     ],
+     "unfolded_keys": [
+      "고촌"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "공항",
+     "texts": [
+      "공항"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:공항[광주도시철도 1호선]",
+      "KR:공항[부산김해경전철]"
+     ],
+     "unfolded_keys": [
+      "공항"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "교대",
+     "texts": [
+      "교대",
+      "교대(법원·검찰청)",
+      "교대역"
+     ],
+     "degree": 3,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:교대(법원·검찰청)[2호선]",
+      "KR:교대(법원·검찰청)[3호선]",
+      "KR:교대[대구 도시철도 1호선]",
+      "KR:교대[부산 도시철도 1호선]",
+      "KR:교대역[동해선]"
+     ],
+     "unfolded_keys": [
+      "교대"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "구암",
+     "texts": [
+      "구암",
+      "구암(과학대보건대입구)"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:구암(과학대보건대입구)[대구 도시철도 3호선]",
+      "KR:구암[대전 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "구암"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "금곡",
+     "texts": [
+      "금곡",
+      "금곡역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:금곡[부산 도시철도 2호선]",
+      "KR:금곡역[경춘선]"
+     ],
+     "unfolded_keys": [
+      "금곡"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "남산",
+     "texts": [
+      "남산",
+      "남산(계명네거리)"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:남산(계명네거리)[대구 도시철도 3호선]",
+      "KR:남산[부산 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "남산"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "대곡",
+     "texts": [
+      "대곡",
+      "대곡(정부대구청사)",
+      "대곡역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:대곡(정부대구청사)[대구 도시철도 1호선]",
+      "KR:대곡[GTX-A]",
+      "KR:대곡역[경의중앙선]",
+      "KR:대곡역[서해선]",
+      "KR:대곡역[일산선]"
+     ],
+     "unfolded_keys": [
+      "대곡"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "동래",
+     "texts": [
+      "동래",
+      "동래역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:동래[부산 경량도시철도 4호선]",
+      "KR:동래[부산 도시철도 1호선]",
+      "KR:동래역[동해선]"
+     ],
+     "unfolded_keys": [
+      "동래"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "동백",
+     "texts": [
+      "동백",
+      "동백(용인세브란스)"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:동백(용인세브란스)[에버라인]",
+      "KR:동백[부산 도시철도 2호선]"
+     ],
+     "unfolded_keys": [
+      "동백"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "동천",
+     "texts": [
+      "동천"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:동천[대구 도시철도 3호선]",
+      "KR:동천[신분당선]"
+     ],
+     "unfolded_keys": [
+      "동천"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "송정",
+     "texts": [
+      "송정",
+      "송정역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:송정[5호선]",
+      "KR:송정역[동해선]"
+     ],
+     "unfolded_keys": [
+      "송정"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "시청",
+     "texts": [
+      "시청",
+      "시청(연제)"
+     ],
+     "degree": 3,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:시청(연제)[부산 도시철도 1호선]",
+      "KR:시청[1호선]",
+      "KR:시청[2호선]",
+      "KR:시청[대전 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "시청"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "신천",
+     "texts": [
+      "신천(경북대입구)",
+      "신천역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:신천(경북대입구)[대구 도시철도 1호선]",
+      "KR:신천역[서해선]"
+     ],
+     "unfolded_keys": [
+      "신천"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "신촌",
+     "texts": [
+      "신촌(지하)",
+      "신촌역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:신촌(지하)[2호선]",
+      "KR:신촌역[경의중앙선]"
+     ],
+     "unfolded_keys": [
+      "신촌"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "신흥",
+     "texts": [
+      "신흥"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:신흥[8호선]",
+      "KR:신흥[대전 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "신흥"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "양정",
+     "texts": [
+      "양정",
+      "양정역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:양정[부산 도시철도 1호선]",
+      "KR:양정역[경의중앙선]"
+     ],
+     "unfolded_keys": [
+      "양정"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "양평",
+     "texts": [
+      "양평",
+      "양평역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:양평[5호선]",
+      "KR:양평역[경의중앙선]"
+     ],
+     "unfolded_keys": [
+      "양평"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "용문",
+     "texts": [
+      "용문",
+      "용문역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:용문[대전 도시철도 1호선]",
+      "KR:용문역[경의중앙선]"
+     ],
+     "unfolded_keys": [
+      "용문"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "용산",
+     "texts": [
+      "용산(서부법원․검찰청입구)",
+      "용산역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:용산(서부법원․검찰청입구)[대구 도시철도 2호선]",
+      "KR:용산역[경부선]",
+      "KR:용산역[경원선]"
+     ],
+     "unfolded_keys": [
+      "용산"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "운천",
+     "texts": [
+      "운천",
+      "운천역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:운천[광주도시철도 1호선]",
+      "KR:운천역[경의중앙선]"
+     ],
+     "unfolded_keys": [
+      "운천"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "월드컵경기장",
+     "texts": [
+      "월드컵경기장",
+      "월드컵경기장(성산)"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:월드컵경기장(성산)[6호선]",
+      "KR:월드컵경기장[대전 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "월드컵경기장"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "종합운동장",
+     "texts": [
+      "종합운동장"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:종합운동장[2호선]",
+      "KR:종합운동장[부산 도시철도 3호선]",
+      "KR:종합운동장[수도권 도시철도 9호선]"
+     ],
+     "unfolded_keys": [
+      "종합운동장"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "좌천",
+     "texts": [
+      "좌천",
+      "좌천역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:좌천[부산 도시철도 1호선]",
+      "KR:좌천역[동해선]"
+     ],
+     "unfolded_keys": [
+      "좌천"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "죽전",
+     "texts": [
+      "죽전",
+      "죽전역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:죽전[대구 도시철도 2호선]",
+      "KR:죽전역[분당선]"
+     ],
+     "unfolded_keys": [
+      "죽전"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "중동",
+     "texts": [
+      "중동",
+      "중동역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:중동[부산 도시철도 2호선]",
+      "KR:중동역[경인선]"
+     ],
+     "unfolded_keys": [
+      "중동"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "중앙",
+     "texts": [
+      "중앙",
+      "중앙역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:중앙[부산 도시철도 1호선]",
+      "KR:중앙역[수인선]",
+      "KR:중앙역[안산과천선]"
+     ],
+     "unfolded_keys": [
+      "중앙"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "중앙로",
+     "texts": [
+      "중앙로"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:중앙로[대구 도시철도 1호선]",
+      "KR:중앙로[대전 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "중앙로"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "증산",
+     "texts": [
+      "증산",
+      "증산(명지대앞)"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:증산(명지대앞)[6호선]",
+      "KR:증산[부산 도시철도 2호선]"
+     ],
+     "unfolded_keys": [
+      "증산"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "화정",
+     "texts": [
+      "화정",
+      "화정역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:화정[광주도시철도 1호선]",
+      "KR:화정역[일산선]"
+     ],
+     "unfolded_keys": [
+      "화정"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T2",
+     "name": "大峙",
+     "texts": [
+      "大峙"
+     ],
+     "degree": 2,
+     "cost": 2,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:대치[3호선]",
+      "KR:대티[부산 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "大峙"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    }
+   ],
+   "subsumed": [
+    {
+     "tier": "T2",
+     "name": "东巛",
+     "texts": [
+      "東川"
      ],
      "degree": 2
     },
     {
-     "tier": "T3",
+     "tier": "T2",
+     "name": "中央",
+     "texts": [
+      "中央"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "中央路",
+     "texts": [
+      "中央路"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "云泉",
+     "texts": [
+      "云泉",
+      "雲泉"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "佐巛",
+     "texts": [
+      "佐川"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "南山",
+     "texts": [
+      "南山",
+      "南山 (계명네거리)"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "市厅",
+     "texts": [
+      "市廳"
+     ],
+     "degree": 3
+    },
+    {
+     "tier": "T2",
+     "name": "敎大",
+     "texts": [
+      "敎大",
+      "敎大(法院․檢察廳)"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "新㒷",
+     "texts": [
+      "新興"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "新巛",
+     "texts": [
+      "新川",
+      "新川(慶北大入口)"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "綜合运动场",
+     "texts": [
+      "綜合運動場",
+      "综合运动场"
+     ],
+     "degree": 2
+    }
+   ],
+   "countries_connected": false,
+   "components_by_country": [
+    [
+     "KR"
+    ],
+    [
+     "TW"
+    ]
+   ],
+   "judge": {
+    "explosion": false,
+    "reasons": []
+   },
+   "kr_shortened": {
+    "pairs": 882660,
+    "shortened": 28209,
+    "example": {
+     "from": "대치#1",
+     "to": "대티#1",
+     "before": 23,
+     "after": 2,
+     "gain": 21,
+     "path": "KR:대치 → ⇢[大峙] → KR:대티"
+    }
+   },
+   "metrics_summary": {
+    "stations": 1292,
+    "clusters": 1110,
+    "ride_edges": 1248,
+    "portals_total": 30,
+    "portals_by_tier": {
+     "T1": 29,
+     "T2": 1
+    },
+    "portal_links": 62,
+    "components_warp": 2,
+    "largest_warp": 940,
+    "ratio_warp": 0.8468,
+    "diameter_warp": 67,
+    "diameter_warp_ends": "신창#1 → 연천#1",
+    "mean_warp": 17.557,
+    "components_nowarp": 6,
+    "diameter_nowarp": 70,
+    "top_portals": [
+     {
+      "name": "교대",
+      "tier": "T1",
+      "degree": 3,
+      "clusters": [
+       "교대#1",
+       "교대#2",
+       "교대#3"
+      ]
+     },
+     {
+      "name": "시청",
+      "tier": "T1",
+      "degree": 3,
+      "clusters": [
+       "시청#1",
+       "시청#2",
+       "시청#3"
+      ]
+     },
+     {
+      "name": "大峙",
+      "tier": "T2",
+      "degree": 2,
+      "clusters": [
+       "대치#1",
+       "대티#1"
+      ]
+     },
+     {
+      "name": "고촌",
+      "tier": "T1",
+      "degree": 2,
+      "clusters": [
+       "고촌#1",
+       "고촌#2"
+      ]
+     },
+     {
+      "name": "공항",
+      "tier": "T1",
+      "degree": 2,
+      "clusters": [
+       "공항#1",
+       "공항#2"
+      ]
+     }
+    ]
+   }
+  },
+  "tw_t123b": {
+   "ruleset": "tw_t123b",
+   "description": "참고: tw_t123 + T3b(로마자 우연 일치)",
+   "portals": [
+    {
+     "tier": "T1",
+     "name": "고촌",
+     "texts": [
+      "고촌",
+      "고촌역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:고촌[부산 경량도시철도 4호선]",
+      "KR:고촌역[김포도시철도]"
+     ],
+     "unfolded_keys": [
+      "고촌"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "공항",
+     "texts": [
+      "공항"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:공항[광주도시철도 1호선]",
+      "KR:공항[부산김해경전철]"
+     ],
+     "unfolded_keys": [
+      "공항"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "교대",
+     "texts": [
+      "교대",
+      "교대(법원·검찰청)",
+      "교대역"
+     ],
+     "degree": 3,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:교대(법원·검찰청)[2호선]",
+      "KR:교대(법원·검찰청)[3호선]",
+      "KR:교대[대구 도시철도 1호선]",
+      "KR:교대[부산 도시철도 1호선]",
+      "KR:교대역[동해선]"
+     ],
+     "unfolded_keys": [
+      "교대"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "구암",
+     "texts": [
+      "구암",
+      "구암(과학대보건대입구)"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:구암(과학대보건대입구)[대구 도시철도 3호선]",
+      "KR:구암[대전 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "구암"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "금곡",
+     "texts": [
+      "금곡",
+      "금곡역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:금곡[부산 도시철도 2호선]",
+      "KR:금곡역[경춘선]"
+     ],
+     "unfolded_keys": [
+      "금곡"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "남산",
+     "texts": [
+      "남산",
+      "남산(계명네거리)"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:남산(계명네거리)[대구 도시철도 3호선]",
+      "KR:남산[부산 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "남산"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "대곡",
+     "texts": [
+      "대곡",
+      "대곡(정부대구청사)",
+      "대곡역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:대곡(정부대구청사)[대구 도시철도 1호선]",
+      "KR:대곡[GTX-A]",
+      "KR:대곡역[경의중앙선]",
+      "KR:대곡역[서해선]",
+      "KR:대곡역[일산선]"
+     ],
+     "unfolded_keys": [
+      "대곡"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "동래",
+     "texts": [
+      "동래",
+      "동래역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:동래[부산 경량도시철도 4호선]",
+      "KR:동래[부산 도시철도 1호선]",
+      "KR:동래역[동해선]"
+     ],
+     "unfolded_keys": [
+      "동래"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "동백",
+     "texts": [
+      "동백",
+      "동백(용인세브란스)"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:동백(용인세브란스)[에버라인]",
+      "KR:동백[부산 도시철도 2호선]"
+     ],
+     "unfolded_keys": [
+      "동백"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "동천",
+     "texts": [
+      "동천"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:동천[대구 도시철도 3호선]",
+      "KR:동천[신분당선]"
+     ],
+     "unfolded_keys": [
+      "동천"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "송정",
+     "texts": [
+      "송정",
+      "송정역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:송정[5호선]",
+      "KR:송정역[동해선]"
+     ],
+     "unfolded_keys": [
+      "송정"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "시청",
+     "texts": [
+      "시청",
+      "시청(연제)"
+     ],
+     "degree": 3,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:시청(연제)[부산 도시철도 1호선]",
+      "KR:시청[1호선]",
+      "KR:시청[2호선]",
+      "KR:시청[대전 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "시청"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "신천",
+     "texts": [
+      "신천(경북대입구)",
+      "신천역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:신천(경북대입구)[대구 도시철도 1호선]",
+      "KR:신천역[서해선]"
+     ],
+     "unfolded_keys": [
+      "신천"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "신촌",
+     "texts": [
+      "신촌(지하)",
+      "신촌역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:신촌(지하)[2호선]",
+      "KR:신촌역[경의중앙선]"
+     ],
+     "unfolded_keys": [
+      "신촌"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "신흥",
+     "texts": [
+      "신흥"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:신흥[8호선]",
+      "KR:신흥[대전 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "신흥"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "양정",
+     "texts": [
+      "양정",
+      "양정역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:양정[부산 도시철도 1호선]",
+      "KR:양정역[경의중앙선]"
+     ],
+     "unfolded_keys": [
+      "양정"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "양평",
+     "texts": [
+      "양평",
+      "양평역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:양평[5호선]",
+      "KR:양평역[경의중앙선]"
+     ],
+     "unfolded_keys": [
+      "양평"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "용문",
+     "texts": [
+      "용문",
+      "용문역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:용문[대전 도시철도 1호선]",
+      "KR:용문역[경의중앙선]"
+     ],
+     "unfolded_keys": [
+      "용문"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "용산",
+     "texts": [
+      "용산(서부법원․검찰청입구)",
+      "용산역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:용산(서부법원․검찰청입구)[대구 도시철도 2호선]",
+      "KR:용산역[경부선]",
+      "KR:용산역[경원선]"
+     ],
+     "unfolded_keys": [
+      "용산"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "운천",
+     "texts": [
+      "운천",
+      "운천역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:운천[광주도시철도 1호선]",
+      "KR:운천역[경의중앙선]"
+     ],
+     "unfolded_keys": [
+      "운천"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "월드컵경기장",
+     "texts": [
+      "월드컵경기장",
+      "월드컵경기장(성산)"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:월드컵경기장(성산)[6호선]",
+      "KR:월드컵경기장[대전 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "월드컵경기장"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "종합운동장",
+     "texts": [
+      "종합운동장"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:종합운동장[2호선]",
+      "KR:종합운동장[부산 도시철도 3호선]",
+      "KR:종합운동장[수도권 도시철도 9호선]"
+     ],
+     "unfolded_keys": [
+      "종합운동장"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "좌천",
+     "texts": [
+      "좌천",
+      "좌천역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:좌천[부산 도시철도 1호선]",
+      "KR:좌천역[동해선]"
+     ],
+     "unfolded_keys": [
+      "좌천"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "죽전",
+     "texts": [
+      "죽전",
+      "죽전역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:죽전[대구 도시철도 2호선]",
+      "KR:죽전역[분당선]"
+     ],
+     "unfolded_keys": [
+      "죽전"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "중동",
+     "texts": [
+      "중동",
+      "중동역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:중동[부산 도시철도 2호선]",
+      "KR:중동역[경인선]"
+     ],
+     "unfolded_keys": [
+      "중동"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "중앙",
+     "texts": [
+      "중앙",
+      "중앙역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:중앙[부산 도시철도 1호선]",
+      "KR:중앙역[수인선]",
+      "KR:중앙역[안산과천선]"
+     ],
+     "unfolded_keys": [
+      "중앙"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "중앙로",
+     "texts": [
+      "중앙로"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:중앙로[대구 도시철도 1호선]",
+      "KR:중앙로[대전 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "중앙로"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "증산",
+     "texts": [
+      "증산",
+      "증산(명지대앞)"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:증산(명지대앞)[6호선]",
+      "KR:증산[부산 도시철도 2호선]"
+     ],
+     "unfolded_keys": [
+      "증산"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T1",
+     "name": "화정",
+     "texts": [
+      "화정",
+      "화정역"
+     ],
+     "degree": 2,
+     "cost": 1,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:화정[광주도시철도 1호선]",
+      "KR:화정역[일산선]"
+     ],
+     "unfolded_keys": [
+      "화정"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T2",
+     "name": "中咊",
+     "texts": [
+      "中和",
+      "中和站"
+     ],
+     "degree": 2,
+     "cost": 2,
+     "countries": [
+      "KR",
+      "TW"
+     ],
+     "cross_country": true,
+     "stations": [
+      "KR:중화[7호선]",
+      "TW:中和[台北捷運環狀線]"
+     ],
+     "unfolded_keys": [
+      "中和"
+     ],
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "tier": "T2",
+     "name": "囘惇",
+     "texts": [
+      "回龙",
+      "迴龍站"
+     ],
+     "degree": 2,
+     "cost": 2,
+     "countries": [
+      "KR",
+      "TW"
+     ],
+     "cross_country": true,
+     "stations": [
+      "KR:회룡[의정부]",
+      "TW:迴龍[中和新蘆線]"
+     ],
+     "unfolded_keys": [
+      "回龙",
+      "迴龍"
+     ],
+     "variant_only": true,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "tier": "T2",
+     "name": "土城",
+     "texts": [
+      "土城",
+      "土城站"
+     ],
+     "degree": 2,
+     "cost": 2,
+     "countries": [
+      "KR",
+      "TW"
+     ],
+     "cross_country": true,
+     "stations": [
+      "KR:토성[부산 도시철도 1호선]",
+      "TW:土城[板南線]"
+     ],
+     "unfolded_keys": [
+      "土城"
+     ],
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "tier": "T2",
+     "name": "大峙",
+     "texts": [
+      "大峙"
+     ],
+     "degree": 2,
+     "cost": 2,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:대치[3호선]",
+      "KR:대티[부산 도시철도 1호선]"
+     ],
+     "unfolded_keys": [
+      "大峙"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    },
+    {
+     "tier": "T2",
+     "name": "明徳",
+     "texts": [
+      "明德 (2·28民主運動紀念會館)",
+      "明德(2‧28民主運動紀念會館)",
+      "明德站"
+     ],
+     "degree": 2,
+     "cost": 2,
+     "countries": [
+      "KR",
+      "TW"
+     ],
+     "cross_country": true,
+     "stations": [
+      "KR:명덕(2.28민주운동기념회관)[대구 도시철도 1호선]",
+      "KR:명덕(2·28민주운동기념회관)[대구 도시철도 3호선]",
+      "TW:明德[淡水信義線]"
+     ],
+     "unfolded_keys": [
+      "明德"
+     ],
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "tier": "T2",
+     "name": "松山",
+     "texts": [
+      "松山",
+      "松山車站"
+     ],
+     "degree": 2,
+     "cost": 2,
+     "countries": [
+      "KR",
+      "TW"
+     ],
+     "cross_country": true,
+     "stations": [
+      "KR:송산[의정부]",
+      "TW:松山車站[松山新店線]"
+     ],
+     "unfolded_keys": [
+      "松山"
+     ],
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "tier": "T2",
+     "name": "板桥",
+     "texts": [
+      "板橋",
+      "板橋(板橋테크노밸리)",
+      "板橋站"
+     ],
+     "degree": 2,
+     "cost": 2,
+     "countries": [
+      "KR",
+      "TW"
+     ],
+     "cross_country": true,
+     "stations": [
+      "KR:판교[신분당선]",
+      "KR:판교역[경강선]",
+      "TW:板橋[台北捷運環狀線]",
+      "TW:板橋[板南線]"
+     ],
+     "unfolded_keys": [
+      "板橋"
+     ],
+     "variant_only": false,
+     "grades": [
+      "native_label",
+      "official"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "tier": "T3b",
+     "name": "seongnam",
+     "texts": [
+      "Seongnam",
+      "Seongnam(Geobuk Market)"
+     ],
+     "degree": 2,
+     "cost": 3,
+     "countries": [
+      "KR"
+     ],
+     "cross_country": false,
+     "stations": [
+      "KR:석남(거북시장)[도시철도 7호선]",
+      "KR:석남(거북시장)[인천지하철 2호선]",
+      "KR:성남역[경강선]"
+     ],
+     "unfolded_keys": [
+      "seongnam"
+     ],
+     "variant_only": false,
+     "grades": [
+      "official"
+     ],
+     "confidence": "high"
+    }
+   ],
+   "subsumed": [
+    {
+     "tier": "T2",
+     "name": "东巛",
+     "texts": [
+      "東川"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "中央",
+     "texts": [
+      "中央"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "中央路",
+     "texts": [
+      "中央路"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "云泉",
+     "texts": [
+      "云泉",
+      "雲泉"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "佐巛",
+     "texts": [
+      "佐川"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "南山",
+     "texts": [
+      "南山",
+      "南山 (계명네거리)"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "市厅",
+     "texts": [
+      "市廳"
+     ],
+     "degree": 3
+    },
+    {
+     "tier": "T2",
+     "name": "敎大",
+     "texts": [
+      "敎大",
+      "敎大(法院․檢察廳)"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "新㒷",
+     "texts": [
+      "新興"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "新巛",
+     "texts": [
+      "新川",
+      "新川(慶北大入口)"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T2",
+     "name": "綜合运动场",
+     "texts": [
+      "綜合運動場",
+      "综合运动场"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3a",
+     "name": "city hall",
+     "texts": [
+      "City Hall"
+     ],
+     "degree": 3
+    },
+    {
+     "tier": "T3a",
+     "name": "sports complex",
+     "texts": [
+      "Sports Complex"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3a",
      "name": "world cup stadium",
      "texts": [
       "World Cup Stadium",
@@ -5735,7 +5304,172 @@
      "degree": 2
     },
     {
-     "tier": "T3",
+     "tier": "T3b",
+     "name": "daegok",
+     "texts": [
+      "Daegok",
+      "Daegok (Central Government Office-Daegu)"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "dongbaek",
+     "texts": [
+      "Dongbaek"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "dongcheon",
+     "texts": [
+      "Dongcheon"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "dongnae",
+     "texts": [
+      "Dongnae"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "geumgok",
+     "texts": [
+      "Geumgok"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "gochon",
+     "texts": [
+      "Gochon"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "guam",
+     "texts": [
+      "Guam",
+      "Guam (Taegu Science Univ. ·Daegu Health College)"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "hwajeong",
+     "texts": [
+      "Hwajeong"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "jeungsan",
+     "texts": [
+      "Jeungsan",
+      "Jeungsan (Myongji Univ.)"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "jukjeon",
+     "texts": [
+      "Jukjeon"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "jung-dong",
+     "texts": [
+      "Jung-dong"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "jungang",
+     "texts": [
+      "Jungang"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "jungangno",
+     "texts": [
+      "Jungangno"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "jwacheon",
+     "texts": [
+      "Jwacheon"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "namsan",
+     "texts": [
+      "Namsan",
+      "Namsan (Gyemyeongnegeori)"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "sincheon",
+     "texts": [
+      "Sincheon",
+      "Sincheon (Kyungpook Nat’l Univ.)"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "sinchon",
+     "texts": [
+      "Sinchon"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "sinheung",
+     "texts": [
+      "Sinheung"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "songjeong",
+     "texts": [
+      "Songjeong"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
+     "name": "uncheon",
+     "texts": [
+      "Uncheon"
+     ],
+     "degree": 2
+    },
+    {
+     "tier": "T3b",
      "name": "yangjeong",
      "texts": [
       "Yangjeong"
@@ -5743,7 +5477,7 @@
      "degree": 2
     },
     {
-     "tier": "T3",
+     "tier": "T3b",
      "name": "yangpyeong",
      "texts": [
       "Yangpyeong"
@@ -5751,7 +5485,7 @@
      "degree": 2
     },
     {
-     "tier": "T3",
+     "tier": "T3b",
      "name": "yongmun",
      "texts": [
       "Yongmun"
@@ -5759,7 +5493,7 @@
      "degree": 2
     },
     {
-     "tier": "T3",
+     "tier": "T3b",
      "name": "yongsan",
      "texts": [
       "Yongsan",
@@ -5780,8 +5514,8 @@
     "reasons": []
    },
    "kr_shortened": {
-    "pairs": 884540,
-    "shortened": 113340,
+    "pairs": 882660,
+    "shortened": 113354,
     "example": {
      "from": "석남#1",
      "to": "송산#1",
@@ -5792,22 +5526,22 @@
     }
    },
    "metrics_summary": {
-    "stations": 1293,
-    "clusters": 1111,
+    "stations": 1292,
+    "clusters": 1110,
     "ride_edges": 1248,
-    "portals_total": 38,
+    "portals_total": 37,
     "portals_by_tier": {
-     "T1": 30,
+     "T1": 29,
      "T2": 7,
-     "T3": 1
+     "T3b": 1
     },
-    "portal_links": 78,
+    "portal_links": 76,
     "components_warp": 1,
-    "largest_warp": 1111,
+    "largest_warp": 1110,
     "ratio_warp": 1.0,
     "diameter_warp": 63,
     "diameter_warp_ends": "가야대#1 → 신창#1",
-    "mean_warp": 18.397,
+    "mean_warp": 18.39,
     "components_nowarp": 6,
     "diameter_nowarp": 70,
     "top_portals": [
@@ -5833,7 +5567,7 @@
      },
      {
       "name": "seongnam",
-      "tier": "T3",
+      "tier": "T3b",
       "degree": 2,
       "clusters": [
        "석남#1",

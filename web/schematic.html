@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지하철 워프 도식 노선도</title>
+  <meta name="description" content="같은 이름 역 워프로 이어지는 권역별 자동 생성 도식 노선도 (8방향)">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.ico">
+</head>
+<body class="sch-body">
+  <div class="sch-app">
+    <header class="brand sch-head">
+      <h1>도식 노선도</h1>
+      <p class="sub">권역별 자동 생성 8방향 도식. 🌀 포탈 역을 누르면 워프 목적지 권역으로 넘어간다. · <a href="index.html">지도 길찾기</a> · <a href="daily.html">오늘의 퍼즐</a></p>
+    </header>
+
+    <section class="card sch-controls" aria-label="보기 설정과 길찾기">
+      <div class="sch-row">
+        <div class="seg" role="radiogroup" aria-label="지도 종류">
+          <button type="button" data-view="schematic" aria-pressed="true">도식</button>
+          <button type="button" data-view="geo" aria-pressed="false">지리</button>
+        </div>
+        <select id="sch-rs" aria-label="ruleset">
+          <option value="strict">한국만 · T1 (기본)</option>
+          <option value="tw_t12">한국+타이베이 · T1+T2</option>
+        </select>
+      </div>
+      <form id="sch-form" class="sch-row" autocomplete="off">
+        <input id="sch-from" list="sch-list" placeholder="출발 (예: 목동)" aria-label="출발" required>
+        <input id="sch-to" list="sch-list" placeholder="도착 (예: 부산 동래)" aria-label="도착" required>
+        <button type="submit" class="primary">경로</button>
+        <datalist id="sch-list"></datalist>
+      </form>
+    </section>
+
+    <nav class="sch-tabs" id="sch-tabs" role="tablist" aria-label="권역"></nav>
+
+    <div class="sch-stage">
+      <div class="sch-scroll" id="sch-scroll"><svg id="sch-svg" role="img" aria-label="도식 노선도"></svg></div>
+      <div class="sch-zoom">
+        <button type="button" id="sch-zin" aria-label="확대">＋</button>
+        <button type="button" id="sch-zout" aria-label="축소">－</button>
+      </div>
+      <div class="sch-pop" id="sch-pop" hidden></div>
+    </div>
+
+    <section class="card" id="sch-route" aria-live="polite">
+      <p class="hint">출발·도착을 넣으면 경로를 도식 위에 칠하고, 워프는 패널 이동 단계로 보여 준다.</p>
+    </section>
+
+    <footer class="foot">
+      <p id="sch-note"></p>
+      <p>자동 생성 도식 (자체 octilinear MIP, Nöllenburg &amp; Wolff 2011식). 공식 노선도·역 배치를 쓰지 않았고 노선 색만 썼다. 역·노선: 레일포털 표준데이터 · 타이베이: Wikidata (CC0) · <a href="https://github.com/hajinmo0725-max/metro_portal">소스</a></p>
+    </footer>
+  </div>
+  <script type="module" src="schematic.js"></script>
+</body>
+</html>

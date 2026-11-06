@@ -31,6 +31,19 @@ def load_route_cli():
     return mod
 
 
+def display_name(name: str, norm: dict) -> str:
+    """4차 Q5: 표시용 역 이름의 '역' 접미사 통일 (코레일 계열 '양평역' ↔ 도시철도 '양평'). 괄호 부역명은 남기고 그 앞의 접미사만 뗀다.
+    접미사 목록은 매칭 정규화와 같은 ruleset normalize.remove_suffixes를 쓴다 (클러스터 이름과 같은 규칙)."""
+    import re
+    m = re.match(r"^(.*?)(\s*[(\[].*)?$", name)
+    base, paren = m.group(1), m.group(2) or ""
+    for suf in norm["remove_suffixes"]:
+        if base.endswith(suf) and len(base) - len(suf) >= norm["min_length_after_suffix"]:
+            base = base[: -len(suf)]
+            break
+    return base + paren
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--ruleset", default="strict")
@@ -63,7 +76,7 @@ def main() -> int:
                 line_names.setdefault(x, lines_by_id[lid]["name"])
     st_out = {}
     for s in stations:
-        st_out[s["id"]] = {"n": s["name_ko"], "la": s["lat"], "lo": s["lon"], "g": line_names.get(s["id"], s["line_name"]),
+        st_out[s["id"]] = {"n": display_name(s["name_ko"], rs["normalize"]), "la": s["lat"], "lo": s["lon"], "g": line_names.get(s["id"], s["line_name"]),
                            "c": cix[cluster_of[s["id"]]], "ct": s.get("city", "")}
         if multi:
             st_out[s["id"]]["co"] = s.get("country", "KR")
@@ -103,12 +116,13 @@ def main() -> int:
         if multi:
             po["x"] = len({co for x in p["cluster_ids"] for co in cmap0[x].get("countries", ["KR"])}) > 1  # 국가 간 포탈
             po["texts"] = p.get("texts", [])
+            po["conf"] = p.get("confidence", "high")  # 4차 Q6-1: 이름 출처 등급 기준 신뢰도
         portals_out.append(po)
 
     doc = {
         "meta": {"ruleset": rs["name"], "description": rs.get("description", ""), "costs": rs["costs"], "kinds": list(KIND),
                  "countries": list(countries),
-                 "tiers": {t: {"cost": v["cost"], "official_only": bool(v.get("official_only"))}
+                 "tiers": {t: {"cost": v["cost"], "grades": v.get("grades") or (["official"] if v.get("official_only") else [])}
                            for t, v in rs["portals"].items() if t.startswith("T") and v.get("enabled")},
                  "attribution": "역·노선: 레일포털(data.kric.go.kr) 표준데이터, 이용허락범위 제한 없음"
                                 + (" · 타이베이: Wikidata (CC0)" if "TW" in countries else "") + ". 지도: © OpenStreetMap contributors"},

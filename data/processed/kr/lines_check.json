@@ -26,7 +26,7 @@
   "coord_fallback": 6,
   "nearest": 1,
   "no_candidate": 1,
-  "unique": 7,
+  "unique": 6,
   "unique+adj": 958
  },
  "match": {
@@ -2245,12 +2245,6 @@
    "method": "adj",
    "n_cands": 2,
    "adj_score": 2
-  },
-  "kr:I4108:경의중앙선:1019": {
-   "qid": "Q490064",
-   "method": "unique",
-   "n_cands": 1,
-   "adj_score": 0
   },
   "kr:I4108:경의중앙선:1201": {
    "qid": "Q50004",

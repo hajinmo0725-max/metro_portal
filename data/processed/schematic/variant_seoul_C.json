@@ -1,0 +1,21 @@
+{
+ "name": "C 지리 우선",
+ "id": "seoul_C",
+ "params": {
+  "w_bend": 1.0,
+  "w_dir": 4.0
+ },
+ "keep_every": 3,
+ "status": "Time limit reached (실행 가능해 없음)",
+ "seconds": 198.7,
+ "engine": "mip",
+ "iterations": 2,
+ "stats": {
+  "nodes": 655,
+  "edges": 755,
+  "non_octilinear_edges": 0,
+  "crossings": 17,
+  "bend_units_45deg": 209,
+  "mean_displacement_norm": 0.319
+ }
+}

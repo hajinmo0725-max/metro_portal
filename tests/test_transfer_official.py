@@ -105,9 +105,32 @@ AUDIT = ROOT / "data" / "processed" / "kr" / "transfer_audit.json"
 @pytest.mark.skipif(not AUDIT.exists(), reason="transfer_audit.json missing")
 def test_real_audit_results():
     a = json.loads(AUDIT.read_text(encoding="utf-8"))
-    assert a["names_cluster_count_changed"] == {"부전": [1, 2]}
-    assert a["portals_added"] == ["부전 [부산:동해선 ↔ 부산:부산 도시철도 1호선]"] and a["portals_removed"] == []
+    # 3차: 부전만 D=500과 달랐다 (공식 no → 분리). 4차 Q6-3: 역외 환승 수동 목록으로 다시 묶어 D=500과 클러스터 결과가 같다
+    assert a["names_cluster_count_changed"] == {}
+    assert a["portals_added"] == [] and a["portals_removed"] == []
+    assert a["basis_counts"]["offsite_manual"] == 1
     # 좌표 복사 의심(공식 no, 20m 미만)은 현재 0건이고, 2차에서 고친 동해선 동래를 되돌리면 잡힌다
     assert not [p for p in a["coord_copy"]["pairs"] if p["relation"] == "no"]
     reg = {r["id"]: r["detected"] for r in a["coord_copy"]["regression"]}
     assert reg["kr:I26K6:8005"] is True
+
+
+def test_offsite_manual_list_overrides_official_no():
+    """4차 Q6-3: 역외 환승 수동 목록에 있는 쌍(실제 역 id)은 공식 no여도 묶는다. 목록에 없는 같은 조건 쌍은 그대로 분리."""
+    c = st("kr:I26K6:8001", "부전역", 35.1630, 129.0590, "I26K6")
+    d = st("kr:S2601:0120", "부전", 35.1600, 129.0600, "S2601")
+    assert clusters_by_name([c, d]) == {("kr:I26K6:8001", "kr:S2601:0120")}
+    audit = []
+    build_clusters([c, d], RS, audit=audit)
+    assert audit[0]["basis"] == "offsite_manual" and audit[0]["merged"]
+    off = load_ruleset("strict", overrides={"cluster": {"offsite_transfers": None}})
+    assert clusters_by_name([c, d], off) == {("kr:I26K6:8001",), ("kr:S2601:0120",)}
+
+
+def test_offsite_list_entries_exist_and_cite_sources():
+    import yaml
+    cfg = yaml.safe_load(open(ROOT / "config" / "kr_offsite_transfers.yaml", encoding="utf-8"))
+    ids = {s["id"] for s in json.loads((ROOT / "data" / "processed" / "kr" / "stations.json").read_text(encoding="utf-8"))["stations"]}
+    for e in cfg["pairs"]:
+        assert set(e["stations"]) <= ids, e["name"]
+        assert e["sources"] and e["confidence"] in ("official", "press", "wiki", "decision")

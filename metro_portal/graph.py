@@ -1,6 +1,7 @@
 """환승 클러스터, 포탈, 라우팅 그래프 (DESIGN 4·5장). 룰 값은 전부 ruleset에서 받는다."""
 from __future__ import annotations
 
+import re
 from collections import Counter, defaultdict
 
 from .geo import haversine_m
@@ -34,12 +35,25 @@ def tier_normalize(tier_cfg: dict, norm: dict) -> dict:
     return deep_merge(norm, tier_cfg["normalize"])
 
 
-def station_match_names(st: dict, tier_cfg: dict, norm: dict, folder=None, with_text: bool = False):
-    """포탈 매칭에 쓰는 정규화 이름 집합 (ruleset의 언어·문자·종류·official·출처 조건).
-    folder: T2 이체자 접기 (variants.VariantFolder). with_text면 {키: 원문 집합}을 돌려준다."""
-    out: dict[str, set[str]] = {}
+_WORD = re.compile(r"[a-z0-9']+")
+
+
+def english_type(key: str, tier_cfg: dict) -> str:
+    """4차 Q6-6: 정규화된 영어명 키가 번역형(translation, 예: city hall)인지 로마자형(romanization, 예: seongnam)인지.
+    ruleset의 translation_words에 든 영단어가 하나라도 있으면 번역형."""
+    words = set(tier_cfg.get("translation_words") or [])
+    return "translation" if any(w in words for w in _WORD.findall(key.casefold())) else "romanization"
+
+
+def station_match_names(st: dict, tier_cfg: dict, norm: dict, folder=None, with_text: bool = False, detail: bool = False):
+    """포탈 매칭에 쓰는 정규화 이름 집합 (ruleset의 언어·문자·종류·출처 등급·현지어·official·출처 조건).
+    folder: T2 이체자 접기 (variants.VariantFolder). with_text면 {키: 원문 집합},
+    detail이면 {키: {"texts": 원문 집합, "grades": 출처 등급 집합}}을 돌려준다."""
+    from .names import grade_of, is_native
+    out: dict[str, dict] = {}
     tnorm = tier_normalize(tier_cfg, norm)
     ignore = set(tnorm.get("ignore_texts") or [])
+    country = st.get("country", "KR")
     for n in st.get("names", []):
         if n["lang"] not in tier_cfg["langs"]:
             continue
@@ -51,6 +65,12 @@ def station_match_names(st: dict, tier_cfg: dict, norm: dict, folder=None, with_
             continue
         if tier_cfg.get("sources") and n.get("source") not in tier_cfg["sources"]:
             continue
+        g = grade_of(n, country)
+        # 4차 Q6-1: 출처 등급 허용 목록, 현지어 이름만 (한국 역의 중국어 번역명 등 제외)
+        if tier_cfg.get("grades") and g not in tier_cfg["grades"]:
+            continue
+        if tier_cfg.get("native_only") and not is_native(n, country):
+            continue
         if n["text"].strip() in ignore:
             continue
         k = normalize_name(n["text"], tnorm)
@@ -58,9 +78,17 @@ def station_match_names(st: dict, tier_cfg: dict, norm: dict, folder=None, with_
             continue  # 표기 오류 (한자 칸의 한글 등)
         if folder is not None:
             k = folder.fold(k)
+        if k and tier_cfg.get("en_type") and english_type(k, tier_cfg) != tier_cfg["en_type"]:
+            continue  # T3a(번역형)·T3b(로마자형) 분리
         if k:
-            out.setdefault(k, set()).add(n["text"])
-    return out if with_text else set(out)
+            d = out.setdefault(k, {"texts": set(), "grades": set()})
+            d["texts"].add(n["text"])
+            d["grades"].add(g)
+    if detail:
+        return out
+    if with_text:
+        return {k: v["texts"] for k, v in out.items()}
+    return set(out)
 
 
 def transfer_decision(a: dict, b: dict, d: float, ccfg: dict, official) -> tuple[bool, str]:
@@ -87,6 +115,11 @@ def build_clusters(stations: list[dict], rs: dict, official=None, audit: list | 
     if official is None and ccfg.get("transfer_rule", "distance") == "official_first":
         from .transfer import OfficialTransfers
         official = OfficialTransfers(stations)
+    # 4차 Q6-3: 역외 환승 수동 목록 (config/kr_offsite_transfers.yaml). 공식 정보가 '일반역'이어도 묶는다
+    offsite = {}
+    if ccfg.get("offsite_transfers"):
+        from .transfer import load_offsite
+        offsite = load_offsite(ccfg["offsite_transfers"])
     st = sorted(stations, key=lambda s: s["id"])
     key = {s["id"]: normalize_name(s["name_ko"], norm) for s in st}
     by_name = defaultdict(list)
@@ -99,6 +132,8 @@ def build_clusters(stations: list[dict], rs: dict, official=None, audit: list | 
             for b in group[i + 1:]:
                 d = haversine_m(a["lat"], a["lon"], b["lat"], b["lon"])
                 ok, why = transfer_decision(a, b, d, ccfg, official)
+                if not ok and frozenset((a["id"], b["id"])) in offsite:
+                    ok, why = d <= ccfg.get("official_max_distance_m", float("inf")), "offsite_manual"
                 if ok:
                     uf.union(a["id"], b["id"])
                 if audit is not None:
@@ -163,19 +198,24 @@ def build_portals(stations: list[dict], clusters: list[dict], rs: dict) -> tuple
         if tcfg.get("variant_fold"):
             from .variants import folder_for
             folder = folder_for(tcfg["variant_fold"])
+        from .names import confidence
         by_name = defaultdict(lambda: defaultdict(list))
         texts = defaultdict(set)
+        grades = defaultdict(set)
         for s in sorted(stations, key=lambda s: s["id"]):
-            for nm, tx in station_match_names(s, tcfg, norm, folder, with_text=True).items():
+            for nm, dt in station_match_names(s, tcfg, norm, folder, detail=True).items():
                 by_name[nm][cluster_of[s["id"]]].append(s["id"])
-                texts[nm] |= tx
+                texts[nm] |= dt["texts"]
+                grades[nm] |= dt["grades"]
         for nm in sorted(by_name):
             cl = by_name[nm]
             if len(cl) < 2:
                 continue
             p = {"id": f"P:{tier}:{nm}", "tier": tier, "name": nm, "cost": tcfg["cost"],
                  "cluster_ids": sorted(cl), "station_ids": sorted(sid for v in cl.values() for sid in v),
-                 "degree": len(cl), "texts": sorted(texts[nm])}
+                 "degree": len(cl), "texts": sorted(texts[nm]),
+                 # 4차 Q6-1: 매칭에 쓰인 이름의 출처 등급과 그에 따른 신뢰도 (가장 낮은 등급 기준)
+                 "grades": sorted(grades[nm]), "confidence": confidence(grades[nm])}
             if cap is not None and p["degree"] > cap:
                 capped.append(p)
                 continue

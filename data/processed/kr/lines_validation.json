@@ -1,13 +1,7 @@
 {
  "stop_failures": [],
  "unused_line_defs": [],
- "stations_not_sequenced": [
-  {
-   "id": "kr:I4108:경의중앙선:1019",
-   "name": "광운대역",
-   "line_group": "I4108:경의중앙선"
-  }
- ],
+ "stations_not_sequenced": [],
  "adjacent_outliers": [
   {
    "line": "arex",
@@ -435,7 +429,7 @@
   {
    "line": "gyeongui-jungang",
    "name": "경의·중앙선",
-   "pool": 86,
+   "pool": 85,
    "sequenced": 57,
    "from_pool": 57,
    "sequences": 2,
@@ -717,7 +711,7 @@
   "sequences": 53,
   "ride_edges": 1065,
   "ride_edges_directed": 6,
-  "stations": 1100,
+  "stations": 1099,
   "stations_sequenced": 1099,
   "stop_failures": 0,
   "outliers": 26,

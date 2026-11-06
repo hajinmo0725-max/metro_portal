@@ -1,0 +1,21 @@
+{
+ "name": "D 전체 축약",
+ "id": "seoul_D",
+ "params": {
+  "w_bend": 1.0,
+  "w_dir": 2.0
+ },
+ "keep_every": 0,
+ "status": "MIP: Time limit reached (실행 가능해 없음) → snap-lp",
+ "seconds": 181.6,
+ "engine": "snap-lp",
+ "iterations": 6,
+ "stats": {
+  "nodes": 655,
+  "edges": 755,
+  "non_octilinear_edges": 50,
+  "crossings": 52,
+  "bend_units_45deg": 149,
+  "mean_displacement_norm": 0.311
+ }
+}

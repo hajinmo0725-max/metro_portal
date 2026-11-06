@@ -1,0 +1,42 @@
+# 4차 S3·S5: 권역별 도식 노선도 (pipeline/20_build_schematic.py, metro_portal/schematic.py). 레이아웃 파라미터이지 매칭 룰이 아니다.
+# 엔진: 자체 octilinear MIP (Nöllenburg & Wolff 2011식, HiGHS). LOOM 빌드가 막혀서 대체 (docs/reports/schematic.md S2).
+ruleset: strict              # 클러스터·엣지를 만드는 ruleset (한국). 타이베이는 tw_t12 그래프에서 같은 규칙으로
+solver:
+  grid_edge: 4.0             # 축약 엣지 평균 길이를 이 격자 칸으로 스케일
+  min_edge: 2.0              # 축약 엣지 최소 길이 (격자)
+  chain_len_factor: 0.6      # 축약한 원래 엣지 수가 n이면 최소 길이 × (1 + 0.6(n-1))
+  w_bend: 1.0                # 노선 굴곡 비용 (45° 단위)
+  w_dir: 2.0                 # 지리 방향 섹터 이탈 비용 (0/1)
+  w_len: 0.05                # 엣지 길이 비용
+  min_sep: 1.5               # 비인접 엣지 최소 간격 (지연 평면성 제약)
+  time_limit_s: 60           # 반복(재풀이) 하나의 시간 제한. 이걸 넘기면 그때까지의 최선해 (상태가 'Time limit reached')
+  max_iterations: 12         # 교차 제약 추가 → 재풀이 최대 횟수
+  mip_rel_gap: 0.05
+  # 아래는 큰 권역(수도권)용 조정 키. 기본값은 N&W 그대로에 가깝다
+  order: hard                # 순환 순서 제약: hard / soft(위반에 벌점 w_order) / none
+  w_order: 20.0
+  span_factor: 1.0           # 좌표 범위 배수 (도심이 크게 부풀어야 하는 권역은 키운다)
+  scale_by: mean             # 격자 스케일 기준 엣지 길이: mean / median
+  mip_heuristic_effort: 0.05 # HiGHS 기본값
+  pos_window: null           # 좌표를 지리 위치 ± (범위 × 이 비율)로 묶기 (null = 안 묶음)
+  geo_len_factor: 0.5        # 최소 길이 하한 = 이 값 × 지리 길이(격자, L∞). 0 = 안 씀
+regions:
+  # 수도권: 축약 엣지 길이 편차가 커서(최소/평균 0.15) N&W 기본 설정으로는 150초 안에 실행 가능해를 못 찾았다 (보고서 S3).
+  # 순서 제약 soft, 최소 길이 완화, 좌표 범위 3배, 중앙값 스케일로 푼다
+  # 비교(아래 seoul_variants) 결과 F안(지리 방향 이탈 비용 4, 최소 간격 0.6, 지리 길이 비례 0.35)이 가장 읽기 좋아 기본으로 골랐다
+  - {id: seoul, city: 수도권, country: KR, keep_every: 3, time_limit_s: 180, max_iterations: 8, order: soft, min_edge: 1.0,
+     chain_len_factor: 0.3, span_factor: 3.0, scale_by: median, mip_heuristic_effort: 0.3, mip_rel_gap: 0.2,
+     w_dir: 4.0, min_sep: 0.6, geo_len_factor: 0.35}
+  - {id: busan, city: 부산, country: KR, keep_every: 2}
+  - {id: daegu, city: 대구, country: KR, keep_every: 2}
+  - {id: daejeon, city: 대전, country: KR, keep_every: 2}
+  - {id: gwangju, city: 광주, country: KR, keep_every: 2}
+  - {id: taipei, city: 타이베이, country: TW, keep_every: 2}
+# S3: 수도권은 파라미터 조합 몇 개를 비교해 가장 읽기 좋은 것을 고른다 (LOOM --geo-pen 비교 대신 같은 성격의 가중치 비교)
+# 수도권 비교 변형 (regions의 seoul 설정에서 바꾼 값). 기본(F안)과 비교한다
+seoul_variants:
+  - {name: "A 굴곡 우선", w_bend: 3.0, w_dir: 1.0, min_sep: 1.5, geo_len_factor: 0}
+  - {name: "B 이전 기본", w_dir: 2.0, min_sep: 1.5, geo_len_factor: 0}
+  - {name: "C 지리 우선", w_dir: 4.0, min_sep: 1.5, geo_len_factor: 0}
+  - {name: "D 전체 축약", keep_every: 0, w_dir: 2.0, min_sep: 1.5, geo_len_factor: 0}
+  - {name: "E 간격 완화", w_dir: 2.0, min_sep: 0.6, geo_len_factor: 0}

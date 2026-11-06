@@ -7,13 +7,15 @@
   <meta name="description" content="매일 바뀌는 지하철 워프 최단 루트 퍼즐. 같은 이름 역 워프를 써서 최소 수로 도착해라.">
   <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.ico">
 </head>
 <body>
-  <div class="app">
+  <div class="app daily">
     <aside class="panel" aria-label="데일리 퍼즐">
       <header class="brand">
         <h1>워프 데일리 <span id="pz-no"></span></h1>
-        <p class="sub">한 수 = 인접역 1개 승차 또는 같은 이름 역으로 워프 1번. 환승은 공짜. 최소 수로 도착해라. · <a href="index.html">길찾기</a></p>
+        <p class="sub">한 수 = 인접역 1개 승차 또는 같은 이름 역으로 워프 1번. 환승은 공짜. 최소 수로 도착해라. · <a href="index.html">길찾기</a> · <a href="schematic.html">도식 노선도</a></p>
       </header>
 
       <section class="card" id="pz-head" aria-live="polite">
@@ -24,11 +26,13 @@
       <section class="card" id="pz-play">
         <div class="row"><span class="field-label">지금 위치</span><span class="field-label" id="pz-cost"></span></div>
         <div class="pz-here" id="pz-here"></div>
-        <ol class="pz-moves" id="pz-moves" aria-label="갈 수 있는 역"></ol>
-        <div class="row">
+        <!-- 4차 Q4: 되돌리기·포기를 이동 목록 위로 (모바일 첫 화면에서 보이게) -->
+        <div class="row pz-actions">
           <button type="button" id="pz-undo" class="ghost">↶ 되돌리기</button>
           <button type="button" id="pz-giveup" class="ghost">포기하고 정답 보기</button>
         </div>
+        <ol class="pz-moves" id="pz-moves" aria-label="갈 수 있는 역"></ol>
+        <p class="pz-key"><span class="k-ring"></span>파란 원 = 지금 갈 수 있는 역 · <span class="k-portal"></span>보라 테두리 = 포탈 역 (🌀) · 방면 = 그 노선의 진행 방향 종점</p>
       </section>
 
       <section class="card" id="pz-result" hidden>
@@ -38,6 +42,13 @@
           <span id="pz-copied" class="field-label"></span>
         </div>
         <div id="pz-optimal"></div>
+        <!-- 4차 Q3: 완료 화면 지도 범례 -->
+        <ul class="pz-legend" id="pz-legend" hidden aria-label="지도 범례">
+          <li><i class="lg-ride"></i>내 승차 구간 (노선 색 실선)</li>
+          <li><i class="lg-mywarp"></i>내 워프 (보라 굵은 점선)</li>
+          <li><i class="lg-opt"></i>최적 경로 (초록 점선)</li>
+          <li><i class="lg-all"></i>모든 워프 연결 (연보라 가는 점선)</li>
+        </ul>
       </section>
 
       <section class="card">

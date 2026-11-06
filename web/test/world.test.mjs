@@ -11,7 +11,8 @@ const worlds = RULESETS.filter((r) => r.file.startsWith("world_"));
 
 test("ruleset 목록의 번들 파일이 전부 있다", () => {
   for (const r of RULESETS) assert.ok(existsSync(new URL(`data/${r.file}`, root)), r.file);
-  assert.deepEqual(worlds.map((r) => r.key), ["tw_t1", "tw_t12", "tw_t123", "tw_t12_label", "tw_t123_label"]);
+  assert.deepEqual(worlds.map((r) => r.key), ["tw_t1", "tw_t12", "tw_t123", "tw_t12_official", "tw_t123b"]);
+  assert.equal(RULESETS[0].key, "strict");   // 4차 Q6-5: 길찾기 기본은 한국 T1
 });
 
 for (const r of worlds) {
@@ -29,8 +30,8 @@ for (const r of worlds) {
   });
 }
 
-test("공식명만 쓰는 번들은 국가 간 포탈이 없고 판교 → 타이베이 板橋가 연결되지 않는다", () => {
-  for (const key of ["tw_t1", "tw_t12", "tw_t123"]) {
+test("공식명만 번들(tw_t12_official)과 T1만 번들은 국가 간 포탈이 없고 판교 → 타이베이 板橋가 연결되지 않는다", () => {
+  for (const key of ["tw_t1", "tw_t12_official"]) {
     const data = load(`world_${key}.json`);
     assert.equal(data.portals.filter((p) => p.x).length, 0, key);
     const labels = buildLabels(data);
@@ -40,23 +41,25 @@ test("공식명만 쓰는 번들은 국가 간 포탈이 없고 판교 → 타�
   }
 });
 
-test("참고 번들: 판교 → 타이베이 板橋 = 국가 간 T2 워프 1회 (비용 2)", () => {
-  const data = load("world_tw_t12_label.json");
-  const labels = buildLabels(data);
-  const a = resolveQuery(data, labels, "판교"), b = resolveQuery(data, labels, "타이베이 板橋");
-  const r = routeClusters(data, buildAdj(data, { warp: true }), a.index, b.index);
-  assert.equal(r.cost, 2);
-  assert.equal(r.warps, 1);
-  const w = r.segments.find((s) => s.type === "warp");
-  assert.equal(w.tier, "T2");
-  assert.notEqual(data.nodes[w.from].co, data.nodes[w.to].co);
-  const cross = data.portals.filter((p) => p.x);
-  assert.equal(cross.length, 6);
-  assert.ok(cross.every((p) => p.tier === "T2"));
+test("기본 번들(현지어 라벨 포함): 판교 → 타이베이 板橋 = 국가 간 T2 워프 1회 (비용 2), 신뢰도 medium", () => {
+  for (const key of ["tw_t12", "tw_t123"]) {
+    const data = load(`world_${key}.json`);
+    const labels = buildLabels(data);
+    const a = resolveQuery(data, labels, "판교"), b = resolveQuery(data, labels, "타이베이 板橋");
+    const r = routeClusters(data, buildAdj(data, { warp: true }), a.index, b.index);
+    assert.equal(r.cost, 2);
+    assert.equal(r.warps, 1);
+    const w = r.segments.find((s) => s.type === "warp");
+    assert.equal(w.tier, "T2");
+    assert.notEqual(data.nodes[w.from].co, data.nodes[w.to].co);
+    const cross = data.portals.filter((p) => p.x);
+    assert.equal(cross.length, 6);
+    assert.ok(cross.every((p) => p.tier === "T2" && p.conf === "medium"));
+  }
 });
 
 test("국가 표기와 국가 간 워프 스타일", () => {
-  const data = load("world_tw_t12_label.json");
+  const data = load("world_tw_t12.json");
   const ctry = new Set(data.clusters.map(clusterCountry));
   assert.deepEqual([...ctry].sort(), ["KR", "TW"]);
   const x = data.portals.find((p) => p.x), same = data.portals.find((p) => !p.x);

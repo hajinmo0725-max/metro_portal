@@ -1057,8 +1057,8 @@
   {
    "portal": "시청",
    "degree": 3,
-   "betweenness_pairs": 153942.4,
-   "betweenness_share": 0.174,
+   "betweenness_pairs": 151931.4,
+   "betweenness_share": 0.1721,
    "cities": [
     "부산",
     "대전",
@@ -1069,8 +1069,8 @@
   {
    "portal": "교대",
    "degree": 3,
-   "betweenness_pairs": 137366.2,
-   "betweenness_share": 0.1553,
+   "betweenness_pairs": 138486.1,
+   "betweenness_share": 0.1569,
    "cities": [
     "부산",
     "대구",
@@ -1081,8 +1081,8 @@
   {
    "portal": "양정",
    "degree": 2,
-   "betweenness_pairs": 100228.8,
-   "betweenness_share": 0.1133,
+   "betweenness_pairs": 99751.0,
+   "betweenness_share": 0.113,
    "cities": [
     "부산",
     "수도권"
@@ -1092,8 +1092,8 @@
   {
    "portal": "용산",
    "degree": 2,
-   "betweenness_pairs": 66325.7,
-   "betweenness_share": 0.075,
+   "betweenness_pairs": 65714.8,
+   "betweenness_share": 0.0745,
    "cities": [
     "대구",
     "수도권"
@@ -1103,8 +1103,8 @@
   {
    "portal": "죽전",
    "degree": 2,
-   "betweenness_pairs": 57849.3,
-   "betweenness_share": 0.0654,
+   "betweenness_pairs": 57297.7,
+   "betweenness_share": 0.0649,
    "cities": [
     "대구",
     "수도권"
@@ -1114,7 +1114,7 @@
   {
    "portal": "화정",
    "degree": 2,
-   "betweenness_pairs": 56518.3,
+   "betweenness_pairs": 56441.7,
    "betweenness_share": 0.0639,
    "cities": [
     "광주",
@@ -1125,8 +1125,8 @@
   {
    "portal": "신천",
    "degree": 2,
-   "betweenness_pairs": 41775.2,
-   "betweenness_share": 0.0472,
+   "betweenness_pairs": 40601.7,
+   "betweenness_share": 0.046,
    "cities": [
     "대구",
     "수도권"
@@ -1136,8 +1136,8 @@
   {
    "portal": "중앙",
    "degree": 2,
-   "betweenness_pairs": 39921.6,
-   "betweenness_share": 0.0451,
+   "betweenness_pairs": 40270.7,
+   "betweenness_share": 0.0456,
    "cities": [
     "부산",
     "수도권"
@@ -1147,7 +1147,7 @@
   {
    "portal": "증산",
    "degree": 2,
-   "betweenness_pairs": 39867.3,
+   "betweenness_pairs": 39820.0,
    "betweenness_share": 0.0451,
    "cities": [
     "부산",
@@ -1158,8 +1158,8 @@
   {
    "portal": "종합운동장",
    "degree": 2,
-   "betweenness_pairs": 38629.8,
-   "betweenness_share": 0.0437,
+   "betweenness_pairs": 39510.3,
+   "betweenness_share": 0.0448,
    "cities": [
     "부산",
     "수도권"
@@ -1169,8 +1169,8 @@
   {
    "portal": "동백",
    "degree": 2,
-   "betweenness_pairs": 38589.1,
-   "betweenness_share": 0.0436,
+   "betweenness_pairs": 38311.9,
+   "betweenness_share": 0.0434,
    "cities": [
     "부산",
     "수도권"
@@ -1180,8 +1180,8 @@
   {
    "portal": "송정",
    "degree": 2,
-   "betweenness_pairs": 37683.8,
-   "betweenness_share": 0.0426,
+   "betweenness_pairs": 37419.0,
+   "betweenness_share": 0.0424,
    "cities": [
     "부산",
     "수도권"
@@ -1191,8 +1191,8 @@
   {
    "portal": "금곡",
    "degree": 2,
-   "betweenness_pairs": 32043.5,
-   "betweenness_share": 0.0362,
+   "betweenness_pairs": 32034.9,
+   "betweenness_share": 0.0363,
    "cities": [
     "부산",
     "수도권"
@@ -1202,8 +1202,8 @@
   {
    "portal": "중동",
    "degree": 2,
-   "betweenness_pairs": 30344.9,
-   "betweenness_share": 0.0343,
+   "betweenness_pairs": 30186.7,
+   "betweenness_share": 0.0342,
    "cities": [
     "부산",
     "수도권"
@@ -1213,8 +1213,8 @@
   {
    "portal": "좌천",
    "degree": 2,
-   "betweenness_pairs": 25098.7,
-   "betweenness_share": 0.0284,
+   "betweenness_pairs": 25232.1,
+   "betweenness_share": 0.0286,
    "cities": [
     "부산",
     "부산"
@@ -1224,8 +1224,8 @@
   {
    "portal": "월드컵경기장",
    "degree": 2,
-   "betweenness_pairs": 21708.8,
-   "betweenness_share": 0.0245,
+   "betweenness_pairs": 21694.2,
+   "betweenness_share": 0.0246,
    "cities": [
     "대전",
     "수도권"
@@ -1235,7 +1235,7 @@
   {
    "portal": "구암",
    "degree": 2,
-   "betweenness_pairs": 16740.5,
+   "betweenness_pairs": 16714.1,
    "betweenness_share": 0.0189,
    "cities": [
     "대구",
@@ -1246,7 +1246,7 @@
   {
    "portal": "공항",
    "degree": 2,
-   "betweenness_pairs": 16037.3,
+   "betweenness_pairs": 16008.4,
    "betweenness_share": 0.0181,
    "cities": [
     "광주",
@@ -1257,8 +1257,8 @@
   {
    "portal": "중앙로",
    "degree": 2,
-   "betweenness_pairs": 15396.8,
-   "betweenness_share": 0.0174,
+   "betweenness_pairs": 15460.4,
+   "betweenness_share": 0.0175,
    "cities": [
     "대구",
     "대전"
@@ -1266,21 +1266,10 @@
    "max_span_km": 116.6
   },
   {
-   "portal": "부전",
-   "degree": 2,
-   "betweenness_pairs": 14503.1,
-   "betweenness_share": 0.0164,
-   "cities": [
-    "부산",
-    "부산"
-   ],
-   "max_span_km": 0.3
-  },
-  {
    "portal": "대곡",
    "degree": 2,
-   "betweenness_pairs": 14124.3,
-   "betweenness_share": 0.016,
+   "betweenness_pairs": 14069.8,
+   "betweenness_share": 0.0159,
    "cities": [
     "대구",
     "수도권"
@@ -1290,7 +1279,7 @@
   {
    "portal": "용문",
    "degree": 2,
-   "betweenness_pairs": 12057.7,
+   "betweenness_pairs": 12028.1,
    "betweenness_share": 0.0136,
    "cities": [
     "대전",
@@ -1301,7 +1290,7 @@
   {
    "portal": "고촌",
    "degree": 2,
-   "betweenness_pairs": 11327.3,
+   "betweenness_pairs": 11265.1,
    "betweenness_share": 0.0128,
    "cities": [
     "부산",
@@ -1312,7 +1301,7 @@
   {
    "portal": "동천",
    "degree": 2,
-   "betweenness_pairs": 11237.4,
+   "betweenness_pairs": 11232.1,
    "betweenness_share": 0.0127,
    "cities": [
     "대구",
@@ -1323,7 +1312,7 @@
   {
    "portal": "운천",
    "degree": 2,
-   "betweenness_pairs": 10611.9,
+   "betweenness_pairs": 10600.9,
    "betweenness_share": 0.012,
    "cities": [
     "광주",
@@ -1334,7 +1323,7 @@
   {
    "portal": "양평",
    "degree": 2,
-   "betweenness_pairs": 10230.1,
+   "betweenness_pairs": 10218.9,
    "betweenness_share": 0.0116,
    "cities": [
     "수도권",
@@ -1345,7 +1334,7 @@
   {
    "portal": "남산",
    "degree": 2,
-   "betweenness_pairs": 9074.2,
+   "betweenness_pairs": 9060.9,
    "betweenness_share": 0.0103,
    "cities": [
     "부산",
@@ -1356,8 +1345,8 @@
   {
    "portal": "신흥",
    "degree": 2,
-   "betweenness_pairs": 8913.0,
-   "betweenness_share": 0.0101,
+   "betweenness_pairs": 8829.3,
+   "betweenness_share": 0.01,
    "cities": [
     "대전",
     "수도권"
@@ -1367,7 +1356,7 @@
   {
    "portal": "동래",
    "degree": 2,
-   "betweenness_pairs": 4829.1,
+   "betweenness_pairs": 4814.0,
    "betweenness_share": 0.0055,
    "cities": [
     "부산",
@@ -1378,7 +1367,7 @@
   {
    "portal": "신촌",
    "degree": 2,
-   "betweenness_pairs": 1404.8,
+   "betweenness_pairs": 1402.8,
    "betweenness_share": 0.0016,
    "cities": [
     "수도권",
@@ -1387,57 +1376,57 @@
    "max_span_km": 0.7
   }
  ],
- "pairs_total": 884540,
+ "pairs_total": 882660,
  "station_hubs": [
   {
-   "station": "수도권 서울",
-   "betweenness_pairs": 189809.8,
-   "share": 0.2146
-  },
-  {
    "station": "수도권 김포공항",
-   "betweenness_pairs": 189425.6,
-   "share": 0.2142
+   "betweenness_pairs": 188887.1,
+   "share": 0.214
   },
   {
-   "station": "부산 시청",
-   "betweenness_pairs": 174590.2,
-   "share": 0.1974
+   "station": "수도권 서울",
+   "betweenness_pairs": 188374.3,
+   "share": 0.2134
   },
   {
    "station": "수도권 대곡",
-   "betweenness_pairs": 168041.6,
-   "share": 0.19
+   "betweenness_pairs": 167596.1,
+   "share": 0.1899
+  },
+  {
+   "station": "부산 시청",
+   "betweenness_pairs": 165026.1,
+   "share": 0.187
   },
   {
    "station": "수도권 시청",
-   "betweenness_pairs": 154811.5,
-   "share": 0.175
-  },
-  {
-   "station": "수도권 연신내",
-   "betweenness_pairs": 139164.8,
-   "share": 0.1573
+   "betweenness_pairs": 153033.8,
+   "share": 0.1734
   },
   {
    "station": "부산 교대",
-   "betweenness_pairs": 137826.1,
-   "share": 0.1558
+   "betweenness_pairs": 139865.4,
+   "share": 0.1585
+  },
+  {
+   "station": "수도권 연신내",
+   "betweenness_pairs": 138733.3,
+   "share": 0.1572
   },
   {
    "station": "부산 양정",
-   "betweenness_pairs": 133549.3,
-   "share": 0.151
+   "betweenness_pairs": 124373.4,
+   "share": 0.1409
   },
   {
    "station": "수도권 능곡",
-   "betweenness_pairs": 108898.4,
-   "share": 0.1231
+   "betweenness_pairs": 108582.7,
+   "share": 0.123
   },
   {
-   "station": "부산 연산",
-   "betweenness_pairs": 106030.8,
-   "share": 0.1199
+   "station": "수도권 용산",
+   "betweenness_pairs": 100783.6,
+   "share": 0.1142
   }
  ],
  "same_city_via_other_city": [
@@ -2336,23 +2325,23 @@
  "center_with_warp": [
   {
    "station": "수도권 서울",
-   "mean_cost": 11.11
+   "mean_cost": 11.12
   },
   {
    "station": "부산 시청",
-   "mean_cost": 11.16
-  },
-  {
-   "station": "수도권 시청",
    "mean_cost": 11.17
   },
   {
-   "station": "부산 연산",
-   "mean_cost": 11.43
+   "station": "수도권 시청",
+   "mean_cost": 11.18
   },
   {
-   "station": "수도권 연신내",
-   "mean_cost": 11.51
+   "station": "부산 연산",
+   "mean_cost": 11.44
+  },
+  {
+   "station": "부산 교대",
+   "mean_cost": 11.48
   }
  ],
  "edge_with_warp": [
@@ -2408,7 +2397,7 @@
    "대구->광주": 19.1,
    "대구->대구": 12.7,
    "대구->대전": 12.3,
-   "대구->부산": 17.5,
+   "대구->부산": 17.4,
    "대구->수도권": 18.2,
    "대전->광주": 15.1,
    "대전->대구": 12.3,
@@ -2416,9 +2405,9 @@
    "대전->부산": 14.5,
    "대전->수도권": 15.0,
    "부산->광주": 16.7,
-   "부산->대구": 17.5,
+   "부산->대구": 17.4,
    "부산->대전": 14.5,
-   "부산->부산": 14.7,
+   "부산->부산": 14.6,
    "부산->수도권": 18.4,
    "수도권->광주": 19.0,
    "수도권->대구": 18.2,
@@ -2459,8 +2448,8 @@
    {
     "portal": "송정",
     "degree": 2,
-    "betweenness_pairs": 37683.8,
-    "betweenness_share": 0.0426,
+    "betweenness_pairs": 37419.0,
+    "betweenness_share": 0.0424,
     "cities": [
      "부산",
      "수도권"
@@ -2470,7 +2459,7 @@
    {
     "portal": "고촌",
     "degree": 2,
-    "betweenness_pairs": 11327.3,
+    "betweenness_pairs": 11265.1,
     "betweenness_share": 0.0128,
     "cities": [
      "부산",
@@ -2481,8 +2470,8 @@
    {
     "portal": "중동",
     "degree": 2,
-    "betweenness_pairs": 30344.9,
-    "betweenness_share": 0.0343,
+    "betweenness_pairs": 30186.7,
+    "betweenness_share": 0.0342,
     "cities": [
      "부산",
      "수도권"
@@ -2492,20 +2481,9 @@
   ],
   "nearest": [
    {
-    "portal": "부전",
-    "degree": 2,
-    "betweenness_pairs": 14503.1,
-    "betweenness_share": 0.0164,
-    "cities": [
-     "부산",
-     "부산"
-    ],
-    "max_span_km": 0.3
-   },
-   {
     "portal": "신촌",
     "degree": 2,
-    "betweenness_pairs": 1404.8,
+    "betweenness_pairs": 1402.8,
     "betweenness_share": 0.0016,
     "cities": [
      "수도권",
@@ -2516,13 +2494,24 @@
    {
     "portal": "동래",
     "degree": 2,
-    "betweenness_pairs": 4829.1,
+    "betweenness_pairs": 4814.0,
     "betweenness_share": 0.0055,
     "cities": [
      "부산",
      "부산"
     ],
     "max_span_km": 1.4
+   },
+   {
+    "portal": "좌천",
+    "degree": 2,
+    "betweenness_pairs": 25232.1,
+    "betweenness_share": 0.0286,
+    "cities": [
+     "부산",
+     "부산"
+    ],
+    "max_span_km": 26.3
    }
   ]
  },
@@ -2781,11 +2770,11 @@
   "수도권 등촌"
  ],
  "unique_pairs_by_warps": {
-  "0": 185872,
-  "1": 177252,
-  "2": 198033,
-  "3": 39530,
-  "4": 9096,
+  "0": 185582,
+  "1": 181623,
+  "2": 197448,
+  "3": 37974,
+  "4": 9072,
   "5": 346
  }
 }

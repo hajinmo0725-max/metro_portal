@@ -1,0 +1,542 @@
+{
+ "ruleset": "tw_t12",
+ "rows": [
+  {
+   "key": "东巛",
+   "subsumed": true,
+   "texts": [
+    "東川"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:동천[대구 도시철도 3호선]",
+    "KR:동천[신분당선]"
+   ],
+   "normalized": [
+    "東川"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "中咊",
+   "subsumed": false,
+   "texts": [
+    "中和",
+    "中和站"
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium",
+   "stations": [
+    "KR:중화[7호선]",
+    "TW:中和[台北捷運環狀線]"
+   ],
+   "normalized": [
+    "中和"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "中央",
+   "subsumed": true,
+   "texts": [
+    "中央"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:중앙[부산 도시철도 1호선]",
+    "KR:중앙역[수인선]"
+   ],
+   "normalized": [
+    "中央"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "中央路",
+   "subsumed": true,
+   "texts": [
+    "中央路"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:중앙로[대구 도시철도 1호선]",
+    "KR:중앙로[대전 도시철도 1호선]"
+   ],
+   "normalized": [
+    "中央路"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "云泉",
+   "subsumed": true,
+   "texts": [
+    "云泉",
+    "雲泉"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:운천[광주도시철도 1호선]",
+    "KR:운천역[경의중앙선]"
+   ],
+   "normalized": [
+    "云泉",
+    "雲泉"
+   ],
+   "same_text": false,
+   "diffs": [
+    {
+     "pos": 0,
+     "a": "云",
+     "b": "雲",
+     "t2s": [
+      "云",
+      "云"
+     ],
+     "folded": "云",
+     "via": [
+      "t2s → 云 (역상 雲)",
+      "Unihan kSimplifiedVariant/kTraditionalVariant"
+     ],
+     "t2s_preimage_size": 1
+    }
+   ],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "佐巛",
+   "subsumed": true,
+   "texts": [
+    "佐川"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:좌천[부산 도시철도 1호선]",
+    "KR:좌천역[동해선]"
+   ],
+   "normalized": [
+    "佐川"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "南山",
+   "subsumed": true,
+   "texts": [
+    "南山",
+    "南山 (계명네거리)"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:남산(계명네거리)[대구 도시철도 3호선]",
+    "KR:남산[부산 도시철도 1호선]"
+   ],
+   "normalized": [
+    "南山"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "囘惇",
+   "subsumed": false,
+   "texts": [
+    "回龙",
+    "迴龍站"
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium",
+   "stations": [
+    "KR:회룡[의정부]",
+    "TW:迴龍[中和新蘆線]"
+   ],
+   "normalized": [
+    "回龙",
+    "迴龍"
+   ],
+   "same_text": false,
+   "diffs": [
+    {
+     "pos": 0,
+     "a": "回",
+     "b": "迴",
+     "t2s": [
+      "回",
+      "回"
+     ],
+     "folded": "囘",
+     "via": [
+      "t2s → 回 (역상 回迴)",
+      "Unihan kSimplifiedVariant/kTraditionalVariant"
+     ],
+     "t2s_preimage_size": 2
+    },
+    {
+     "pos": 1,
+     "a": "龙",
+     "b": "龍",
+     "t2s": [
+      "龙",
+      "龙"
+     ],
+     "folded": "惇",
+     "via": [
+      "t2s → 龙 (역상 龍)",
+      "Unihan kSimplifiedVariant/kTraditionalVariant"
+     ],
+     "t2s_preimage_size": 1
+    }
+   ],
+   "many_to_one": true,
+   "many_to_one_chars": [
+    "迴"
+   ]
+  },
+  {
+   "key": "土城",
+   "subsumed": false,
+   "texts": [
+    "土城",
+    "土城站"
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium",
+   "stations": [
+    "KR:토성[부산 도시철도 1호선]",
+    "TW:土城[板南線]"
+   ],
+   "normalized": [
+    "土城"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "大峙",
+   "subsumed": false,
+   "texts": [
+    "大峙"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:대치[3호선]",
+    "KR:대티[부산 도시철도 1호선]"
+   ],
+   "normalized": [
+    "大峙"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "市厅",
+   "subsumed": true,
+   "texts": [
+    "市廳"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:시청(연제)[부산 도시철도 1호선]",
+    "KR:시청[1호선]",
+    "KR:시청[2호선]",
+    "KR:시청[대전 도시철도 1호선]"
+   ],
+   "normalized": [
+    "市廳"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "敎大",
+   "subsumed": true,
+   "texts": [
+    "敎大",
+    "敎大(法院․檢察廳)"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:교대(법원·검찰청)[2호선]",
+    "KR:교대(법원·검찰청)[3호선]",
+    "KR:교대[대구 도시철도 1호선]"
+   ],
+   "normalized": [
+    "敎大"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": [
+    "敎"
+   ]
+  },
+  {
+   "key": "新㒷",
+   "subsumed": true,
+   "texts": [
+    "新興"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:신흥[8호선]",
+    "KR:신흥[대전 도시철도 1호선]"
+   ],
+   "normalized": [
+    "新興"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "新巛",
+   "subsumed": true,
+   "texts": [
+    "新川",
+    "新川(慶北大入口)"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:신천(경북대입구)[대구 도시철도 1호선]",
+    "KR:신천역[서해선]"
+   ],
+   "normalized": [
+    "新川"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "明徳",
+   "subsumed": false,
+   "texts": [
+    "明德 (2·28民主運動紀念會館)",
+    "明德(2‧28民主運動紀念會館)",
+    "明德站"
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium",
+   "stations": [
+    "KR:명덕(2.28민주운동기념회관)[대구 도시철도 1호선]",
+    "KR:명덕(2·28민주운동기념회관)[대구 도시철도 3호선]",
+    "TW:明德[淡水信義線]"
+   ],
+   "normalized": [
+    "明德"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "松山",
+   "subsumed": false,
+   "texts": [
+    "松山",
+    "松山車站"
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium",
+   "stations": [
+    "KR:송산[의정부]",
+    "TW:松山車站[松山新店線]"
+   ],
+   "normalized": [
+    "松山"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "板桥",
+   "subsumed": false,
+   "texts": [
+    "板橋",
+    "板橋(板橋테크노밸리)",
+    "板橋站"
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium",
+   "stations": [
+    "KR:판교[신분당선]",
+    "KR:판교역[경강선]",
+    "TW:板橋[台北捷運環狀線]",
+    "TW:板橋[板南線]"
+   ],
+   "normalized": [
+    "板橋"
+   ],
+   "same_text": true,
+   "diffs": [],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  },
+  {
+   "key": "綜合运动场",
+   "subsumed": true,
+   "texts": [
+    "綜合運動場",
+    "综合运动场"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "stations": [
+    "KR:종합운동장[2호선]",
+    "KR:종합운동장[부산 도시철도 3호선]",
+    "KR:종합운동장[수도권 도시철도 9호선]"
+   ],
+   "normalized": [
+    "綜合運動場",
+    "综合运动场"
+   ],
+   "same_text": false,
+   "diffs": [
+    {
+     "pos": 0,
+     "a": "綜",
+     "b": "综",
+     "t2s": [
+      "综",
+      "综"
+     ],
+     "folded": "綜",
+     "via": [
+      "t2s → 综 (역상 綜)",
+      "Unihan kSimplifiedVariant/kTraditionalVariant"
+     ],
+     "t2s_preimage_size": 1
+    },
+    {
+     "pos": 2,
+     "a": "運",
+     "b": "运",
+     "t2s": [
+      "运",
+      "运"
+     ],
+     "folded": "运",
+     "via": [
+      "t2s → 运 (역상 運)",
+      "Unihan kSimplifiedVariant/kTraditionalVariant"
+     ],
+     "t2s_preimage_size": 1
+    },
+    {
+     "pos": 3,
+     "a": "動",
+     "b": "动",
+     "t2s": [
+      "动",
+      "动"
+     ],
+     "folded": "动",
+     "via": [
+      "t2s → 动 (역상 動)",
+      "Unihan kSimplifiedVariant/kTraditionalVariant"
+     ],
+     "t2s_preimage_size": 1
+    },
+    {
+     "pos": 4,
+     "a": "場",
+     "b": "场",
+     "t2s": [
+      "场",
+      "场"
+     ],
+     "folded": "场",
+     "via": [
+      "t2s → 场 (역상 場)",
+      "Unihan kSimplifiedVariant/kTraditionalVariant"
+     ],
+     "t2s_preimage_size": 1
+    }
+   ],
+   "many_to_one": false,
+   "many_to_one_chars": []
+  }
+ ]
+}

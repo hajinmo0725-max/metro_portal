@@ -1,0 +1,14 @@
+# 4차 Q6-1: 이름 출처 등급. 데이터 분류 규칙이라 ruleset이 아닌 별도 파일에 둔다 (어떤 등급을 매칭에 쓸지는 ruleset의 grades가 정한다).
+#   official      공식 소스의 이름 (표준데이터·레일포털 다국어 파일·Wikidata 공식명 P1448·계획 노선 설정)
+#   native_label  공식 소스가 아닌 라벨인데, 역이 있는 나라의 현지어 (대만 역의 zh-Hant Wikidata 라벨, 일본 역의 ja 라벨 등) = 준공식
+#   foreign_label 공식 소스가 아니고 현지어도 아닌 라벨 (대만 역의 en·ko 라벨 등)
+# 2026-11-06 사용자 결정 (run4_tasks.md Q6-1): 기본 ruleset은 official + native_label, 영어 라벨은 T3에서만 쓰고 신뢰도를 한 단계 낮게 표시
+# 수집 단계가 official=True로 저장하는 소스 (기록용. 판정은 official 플래그로 한다)
+official_sources: [kric_std, kric_metro, planned_config, wikidata_p1448]
+# 나라별 현지어 (Name.lang 값). 한국 역의 한자 표기(ko-Hani)는 lang이 ko라서 현지어다
+native_langs:
+  KR: [ko]
+  TW: [zh]
+  JP: [ja]
+# 포탈 신뢰도: 매칭에 쓰인 이름 중 가장 낮은 등급으로 정한다
+confidence_by_grade: {official: high, native_label: medium, foreign_label: low}

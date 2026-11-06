@@ -1,0 +1,295 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 946 1100" font-family="sans-serif">
+<rect width="100%" height="100%" fill="#fff"/><text x="12" y="24" font-size="16" font-weight="700">대구 — 자동 도식 (octilinear MIP)</text>
+<line x1="768.5" y1="500.6" x2="744.3" y2="500.6" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="768.5" y1="500.6" x2="792.7" y2="500.6" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="278.0" y1="700.9" x2="302.2" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="278.0" y1="700.9" x2="253.8" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="132.7" y1="700.9" x2="156.9" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="132.7" y1="700.9" x2="108.4" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="453.6" y1="749.3" x2="477.8" y2="749.3" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="453.6" y1="749.3" x2="429.4" y2="749.3" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="453.6" y1="700.9" x2="477.8" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="453.6" y1="700.9" x2="429.4" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="628.7" y1="651.5" x2="526.3" y2="549.1" stroke="#00A0E9" stroke-width="4" stroke-linecap="round"/>
+<line x1="156.9" y1="700.9" x2="181.1" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="647.4" y1="700.9" x2="623.2" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="647.4" y1="700.9" x2="671.6" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="182.4" y1="453.9" x2="284.1" y2="555.6" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="182.4" y1="453.9" x2="80.7" y2="352.2" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="429.4" y1="773.6" x2="429.4" y2="749.3" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="429.4" y1="773.6" x2="429.4" y2="797.8" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="151.8" y1="238.4" x2="151.8" y2="284.0" stroke="#00A0E9" stroke-width="4" stroke-linecap="round"/>
+<line x1="129.1" y1="187.2" x2="153.3" y2="162.9" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="129.1" y1="187.2" x2="104.9" y2="211.4" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="405.2" y1="725.1" x2="429.4" y2="749.3" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="405.2" y1="725.1" x2="380.9" y2="700.9" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="326.4" y1="700.9" x2="302.2" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="326.4" y1="700.9" x2="350.7" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="84.2" y1="700.9" x2="108.4" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="84.2" y1="700.9" x2="60.0" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="380.9" y1="652.5" x2="356.7" y2="628.2" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="380.9" y1="652.5" x2="380.9" y2="676.7" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="574.7" y1="700.9" x2="550.5" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="574.7" y1="700.9" x2="598.9" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="187.2" y1="991.6" x2="211.4" y2="967.3" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="187.2" y1="991.6" x2="162.9" y2="1015.8" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="429.4" y1="549.1" x2="526.3" y2="549.1" stroke="#00A0E9" stroke-width="4" stroke-linecap="round"/>
+<line x1="429.4" y1="549.1" x2="371.4" y2="549.1" stroke="#00A0E9" stroke-width="4" stroke-linecap="round"/>
+<line x1="429.4" y1="549.1" x2="429.4" y2="625.0" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="429.4" y1="549.1" x2="453.6" y2="573.3" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="477.8" y1="700.9" x2="502.0" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="816.9" y1="500.6" x2="851.2" y2="466.3" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="816.9" y1="500.6" x2="792.7" y2="500.6" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="356.7" y1="846.2" x2="332.5" y2="846.2" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="356.7" y1="846.2" x2="380.9" y2="846.2" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="477.8" y1="749.3" x2="502.0" y2="749.3" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="550.5" y1="524.9" x2="526.3" y2="549.1" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="550.5" y1="524.9" x2="574.7" y2="500.6" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="526.3" y1="549.1" x2="477.8" y2="597.5" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="177.5" y1="138.7" x2="153.3" y2="162.9" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="177.5" y1="138.7" x2="177.5" y2="114.5" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="598.9" y1="500.6" x2="574.7" y2="500.6" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="598.9" y1="500.6" x2="623.2" y2="500.6" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="550.5" y1="700.9" x2="526.3" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="284.1" y1="555.6" x2="308.3" y2="579.8" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="80.7" y1="235.6" x2="80.7" y2="293.9" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="80.7" y1="235.6" x2="104.9" y2="211.4" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="80.7" y1="293.9" x2="80.7" y2="352.2" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="429.4" y1="749.3" x2="429.4" y2="700.9" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="350.7" y1="700.9" x2="380.9" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="744.3" y1="500.6" x2="720.0" y2="500.6" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="429.4" y1="700.9" x2="429.4" y2="625.0" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="429.4" y1="700.9" x2="380.9" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="647.4" y1="500.6" x2="671.6" y2="500.6" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="647.4" y1="500.6" x2="623.2" y2="500.6" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="647.4" y1="870.4" x2="671.6" y2="894.7" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="647.4" y1="870.4" x2="623.2" y2="846.2" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="502.0" y1="700.9" x2="526.3" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="851.2" y1="466.3" x2="885.5" y2="432.1" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="356.7" y1="628.2" x2="332.5" y2="604.0" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="151.8" y1="329.5" x2="151.8" y2="284.0" stroke="#00A0E9" stroke-width="4" stroke-linecap="round"/>
+<line x1="151.8" y1="329.5" x2="261.6" y2="439.3" stroke="#00A0E9" stroke-width="4" stroke-linecap="round"/>
+<line x1="695.8" y1="700.9" x2="671.6" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="695.8" y1="700.9" x2="720.0" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="259.8" y1="918.9" x2="235.6" y2="943.1" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="259.8" y1="918.9" x2="284.1" y2="894.7" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="371.4" y1="549.1" x2="261.6" y2="439.3" stroke="#00A0E9" stroke-width="4" stroke-linecap="round"/>
+<line x1="380.9" y1="676.7" x2="380.9" y2="700.9" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="332.5" y1="846.2" x2="308.3" y2="870.4" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="138.7" y1="1040.0" x2="162.9" y2="1015.8" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="181.1" y1="700.9" x2="205.3" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="308.3" y1="870.4" x2="284.1" y2="894.7" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="526.3" y1="749.3" x2="502.0" y2="749.3" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="526.3" y1="749.3" x2="550.5" y2="773.6" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="598.9" y1="822.0" x2="623.2" y2="846.2" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="598.9" y1="822.0" x2="574.7" y2="797.8" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="623.2" y1="700.9" x2="598.9" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="720.0" y1="500.6" x2="695.8" y2="500.6" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="477.8" y1="597.5" x2="453.6" y2="573.3" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="380.9" y1="846.2" x2="405.2" y2="822.0" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="550.5" y1="773.6" x2="574.7" y2="797.8" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="768.5" y1="700.9" x2="744.3" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="429.4" y1="797.8" x2="405.2" y2="822.0" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="671.6" y1="500.6" x2="695.8" y2="500.6" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="229.6" y1="700.9" x2="205.3" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="229.6" y1="700.9" x2="253.8" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="332.5" y1="604.0" x2="308.3" y2="579.8" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="235.6" y1="943.1" x2="211.4" y2="967.3" stroke="#D93F5C" stroke-width="4" stroke-linecap="round"/>
+<line x1="744.3" y1="700.9" x2="720.0" y2="700.9" stroke="#00AA80" stroke-width="4" stroke-linecap="round"/>
+<line x1="177.5" y1="60.0" x2="177.5" y2="90.3" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<line x1="177.5" y1="114.5" x2="177.5" y2="90.3" stroke="#FFB100" stroke-width="4" stroke-linecap="round"/>
+<circle cx="768.5" cy="500.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="278.0" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="132.7" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="453.6" cy="749.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="453.6" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="628.7" cy="651.5" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="156.9" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="647.4" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="182.4" cy="453.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="429.4" cy="773.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="151.8" cy="238.4" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="129.1" cy="187.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="405.2" cy="725.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="326.4" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="84.2" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="380.9" cy="652.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="574.7" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="187.2" cy="991.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="429.4" cy="549.1" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="477.8" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="816.9" cy="500.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="356.7" cy="846.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="477.8" cy="749.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="108.4" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="550.5" cy="524.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="526.3" cy="549.1" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="177.5" cy="138.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="598.9" cy="500.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="302.2" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="550.5" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="284.1" cy="555.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="80.7" cy="235.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="80.7" cy="293.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="429.4" cy="749.3" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="60.0" cy="700.9" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="350.7" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="744.3" cy="500.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="429.4" cy="700.9" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="647.4" cy="500.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="647.4" cy="870.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="502.0" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="851.2" cy="466.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="356.7" cy="628.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="151.8" cy="329.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="151.8" cy="284.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="695.8" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="259.8" cy="918.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="371.4" cy="549.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="380.9" cy="676.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="332.5" cy="846.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="138.7" cy="1040.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="181.1" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="308.3" cy="870.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="526.3" cy="749.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="526.3" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="598.9" cy="822.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="502.0" cy="749.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="623.2" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="720.0" cy="500.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="671.6" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="477.8" cy="597.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="574.7" cy="500.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="792.7" cy="500.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="380.9" cy="846.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="550.5" cy="773.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="598.9" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="768.5" cy="700.9" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="429.4" cy="797.8" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="261.6" cy="439.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="671.6" cy="500.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="229.6" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="671.6" cy="894.7" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="332.5" cy="604.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="235.6" cy="943.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="284.1" cy="894.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="695.8" cy="500.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="205.3" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="744.3" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="720.0" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="253.8" cy="700.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="429.4" cy="625.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="623.2" cy="846.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="211.4" cy="967.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="380.9" cy="700.9" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="177.5" cy="60.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="153.3" cy="162.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="453.6" cy="573.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="104.9" cy="211.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="177.5" cy="114.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="80.7" cy="352.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="308.3" cy="579.8" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="885.5" cy="432.1" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<circle cx="177.5" cy="90.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="623.2" cy="500.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="405.2" cy="822.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="162.9" cy="1015.8" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="574.7" cy="797.8" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="771.5" y="493.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 771.5 493.6)">각산</text>
+<text x="281.0" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 281.0 693.9)">감삼</text>
+<text x="135.7" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 135.7 693.9)">강창</text>
+<text x="456.6" y="742.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 456.6 742.3)">건들바위</text>
+<text x="456.6" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 456.6 693.9)">경대병원</text>
+<text x="618.2" y="642.5" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">경산</text>
+<text x="159.9" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 159.9 693.9)">계명대</text>
+<text x="650.4" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 650.4 693.9)">고산</text>
+<text x="188.0" y="451.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">공단</text>
+<text x="437.4" y="776.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">교대</text>
+<text x="159.8" y="241.4" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">구미</text>
+<text x="134.8" y="195.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">구암</text>
+<text x="410.8" y="722.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">남산</text>
+<text x="329.4" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 329.4 693.9)">내당</text>
+<text x="87.2" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 87.2 693.9)">다사</text>
+<text x="388.3" y="652.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">달성공원</text>
+<text x="577.7" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 577.7 693.9)">담티</text>
+<text x="192.8" y="1000.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대곡</text>
+<text x="418.9" y="540.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대구</text>
+<text x="477.8" y="711.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대구은행</text>
+<text x="787.0" y="491.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대구한의대병원</text>
+<text x="359.7" y="839.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 359.7 839.2)">대명</text>
+<text x="474.8" y="761.3" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 474.8 761.3)">대봉교</text>
+<text x="111.4" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 111.4 693.9)">대실</text>
+<text x="556.1" y="533.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동구청</text>
+<text x="523.3" y="561.1" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 523.3 561.1)">동대구</text>
+<text x="169.0" y="129.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동천</text>
+<text x="601.9" y="493.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 601.9 493.6)">동촌</text>
+<text x="305.2" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 305.2 693.9)">두류</text>
+<text x="553.5" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 553.5 693.9)">만촌</text>
+<text x="289.7" y="552.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">만평</text>
+<text x="72.1" y="226.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">매천</text>
+<text x="88.7" y="296.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">매천시장</text>
+<text x="422.6" y="756.6" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">명덕</text>
+<text x="57.0" y="712.9" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 57.0 712.9)">문양</text>
+<text x="347.7" y="712.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 347.7 712.9)">반고개</text>
+<text x="747.3" y="493.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 747.3 493.6)">반야월</text>
+<text x="413.7" y="691.9" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">반월당</text>
+<text x="650.4" y="493.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 650.4 493.6)">방촌</text>
+<text x="653.0" y="867.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">범물</text>
+<text x="505.0" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 505.0 693.9)">범어</text>
+<text x="856.9" y="475.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">부호</text>
+<text x="362.4" y="625.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">북구청</text>
+<text x="159.2" y="329.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">북삼</text>
+<text x="159.8" y="287.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">사곡</text>
+<text x="698.8" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 698.8 693.9)">사월</text>
+<text x="265.5" y="927.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">상인</text>
+<text x="358.6" y="540.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">서대구</text>
+<text x="363.8" y="667.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">서문시장</text>
+<text x="311.1" y="837.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">서부정류장</text>
+<text x="117.8" y="1031.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">설화명곡</text>
+<text x="184.1" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 184.1 693.9)">성서산업단지</text>
+<text x="313.9" y="879.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">송현</text>
+<text x="496.3" y="740.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">수성구민운동장</text>
+<text x="526.3" y="711.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">수성구청</text>
+<text x="604.6" y="819.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">수성못</text>
+<text x="502.0" y="760.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">수성시장</text>
+<text x="620.2" y="712.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 620.2 712.9)">수성알파시티</text>
+<text x="723.0" y="493.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 723.0 493.6)">신기</text>
+<text x="674.6" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 674.6 693.9)">신매</text>
+<text x="480.8" y="590.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 480.8 590.5)">신천</text>
+<text x="561.9" y="491.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">아양교</text>
+<text x="789.7" y="512.6" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 789.7 512.6)">안심</text>
+<text x="384.0" y="856.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">안지랑</text>
+<text x="556.1" y="770.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">어린이세상</text>
+<text x="601.9" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 601.9 693.9)">연호</text>
+<text x="765.5" y="712.9" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 765.5 712.9)">영남대</text>
+<text x="412.3" y="788.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">영대병원</text>
+<text x="267.3" y="436.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">왜관</text>
+<text x="674.6" y="493.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 674.6 493.6)">용계</text>
+<text x="232.6" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 232.6 693.9)">용산</text>
+<text x="661.1" y="885.7" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">용지</text>
+<text x="338.2" y="601.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">원대</text>
+<text x="241.3" y="951.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">월배</text>
+<text x="289.7" y="903.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">월촌</text>
+<text x="698.8" y="493.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 698.8 493.6)">율하</text>
+<text x="202.3" y="712.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 202.3 712.9)">이곡</text>
+<text x="747.3" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 747.3 693.9)">임당</text>
+<text x="723.0" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 723.0 693.9)">정평</text>
+<text x="256.8" y="693.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 256.8 693.9)">죽전</text>
+<text x="437.4" y="628.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">중앙로</text>
+<text x="628.8" y="843.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">지산</text>
+<text x="217.0" y="976.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">진천</text>
+<text x="360.0" y="691.9" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">청라언덕</text>
+<text x="185.5" y="63.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">칠곡경대병원</text>
+<text x="159.0" y="171.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">칠곡운암</text>
+<text x="459.3" y="570.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">칠성시장</text>
+<text x="110.5" y="220.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">태전</text>
+<text x="185.5" y="117.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">팔거</text>
+<text x="88.0" y="352.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">팔달</text>
+<text x="313.9" y="577.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">팔달시장</text>
+<text x="875.1" y="423.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">하양</text>
+<text x="185.5" y="93.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">학정</text>
+<text x="626.2" y="493.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 626.2 493.6)">해안</text>
+<text x="410.8" y="830.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">현충로</text>
+<text x="168.6" y="1024.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">화원</text>
+<text x="580.4" y="795.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">황금</text>
+</svg>

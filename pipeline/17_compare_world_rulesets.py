@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""3차 B3. 한국 + 타이베이 통합 그래프를 ruleset별(T1 / T1+T2 / T1+T2+T3, 참고용 라벨 변형)로 빌드하고
+"""3차 B3 (4차 Q6 갱신). 한국 + 타이베이 통합 그래프를 ruleset별(T1 / T1+T2 / T1+T2+T3a, 참고 변형)로 빌드하고
 등급별 국가 간 포탈 목록, DESIGN 6장 지표, 허브 폭발 여부를 비교한다.
 
 입력: data/processed/{kr,tw}/*.json, config/world_compare.yaml, config/rulesets/tw_*.yaml, data/raw/unihan (T2)
@@ -83,7 +83,8 @@ def run(rs_name, countries):
         plist.append({"tier": p["tier"], "name": p["name"], "texts": p.get("texts", []), "degree": p["degree"], "cost": p["cost"],
                       "countries": ctry, "cross_country": len(ctry) > 1,
                       "stations": sorted({label(sm[x]) for x in p["station_ids"]}),
-                      "unfolded_keys": uk, "variant_only": p["tier"] == "T2" and len(uk) > 1})
+                      "unfolded_keys": uk, "variant_only": p["tier"] == "T2" and len(uk) > 1,
+                      "grades": p.get("grades", []), "confidence": p.get("confidence", "")})
     # 국가 간 연결: 워프 有 그래프에서 KR 클러스터와 TW 클러스터가 같은 약연결 컴포넌트에 있나
     comp_countries = []
     from metro_portal.metrics import cluster_graph, components
@@ -137,7 +138,7 @@ def shortened(base, r):
 def judge(r, base, cfg):
     hx = cfg["hub_explosion"]
     reasons = []
-    hi = [p for p in r["portals"] if p["tier"] in ("T2", "T3") and p["degree"] >= hx["degree_alert"]]
+    hi = [p for p in r["portals"] if p["tier"] != "T1" and p["degree"] >= hx["degree_alert"]]
     if hi:
         reasons.append(f"T2·T3 포탈 차수 ≥ {hx['degree_alert']}: " + ", ".join(f"{p['name']}({p['degree']})" for p in hi))
     if base:
@@ -186,10 +187,12 @@ def write_report(cfg, res):
     names = cfg["rulesets"] + cfg["reference_rulesets"]
     L = ["# B3 한국 + 타이베이 통합 그래프 — ruleset 비교", "",
          "생성: `python3 pipeline/17_compare_world_rulesets.py` (설정 `config/world_compare.yaml`, 룰 `config/rulesets/tw_*.yaml`)", "",
-         "- 기본 3종(`tw_t1`, `tw_t12`, `tw_t123`)은 **공식명만** 쓴다 (사용자 지시). 타이베이는 공식명 소스가 막혀(Wikidata P1448 0건) 매칭 이름이 없다.",
-         "- 참고 3종(`*_label`)은 타이베이 이름으로 Wikidata 라벨(커뮤니티 표기)을 허용한 실험이다. **공식명이 아니다.**",
-         "- 비용: 승차 1, 환승 0, 워프 T1 1·T2 2·T3 3. 환승 판정은 3차 공식 우선 규칙(타이베이는 공식 환승 정보가 없어 거리 D=500).",
-         "- 한국 쪽 T2 = 표준데이터 한자역사명, T3 = 표준데이터 영문역사명. 같은 클러스터 집합을 더 싼 등급이 이미 잇고 있으면 비싼 등급 포탈은 만들지 않는다(dedupe).", "",
+         "- 4차(2026-11-06 사용자 결정 Q6-1): 기본 3종(`tw_t1`, `tw_t12`, `tw_t123`)은 이름 출처 등급 **official + native_label**을 쓴다. "
+         "타이베이 역의 zh-Hant Wikidata 라벨은 현지어 라벨(준공식)로 인정하고, 현지어가 아닌 라벨(en 등)은 T3a에서만 쓰며 그 포탈은 신뢰도 low로 표시한다.",
+         "- 참고: `tw_t12_official`은 공식명만(3차 기본 재현), `tw_t123b`는 T3b(로마자 표기 우연 일치)를 켠 것이다.",
+         "- 비용: 승차 1, 환승 0, 워프 T1 1·T2 2·T3a/T3b 3. 환승 판정은 공식 우선 + 역외 환승 수동 목록(타이베이는 공식 환승 정보가 없어 거리 D=500).",
+         "- 한국 쪽 T2 = 표준데이터 한자역사명, T3 = 표준데이터 영문역사명. T3a = 번역형 영어명(City Hall), T3b = 로마자형 (판정: ruleset translation_words). "
+         "같은 클러스터 집합을 더 싼 등급이 이미 잇고 있으면 비싼 등급 포탈은 만들지 않는다(dedupe).", "",
          "## 지표 (DESIGN 6장)", "",
          "| ruleset | 역 | 클러스터 | 승차 엣지 | 포탈 (등급별) | 포탈 연결 | 워프 有 컴포넌트 | 최대 컴포넌트 | 지름 (양 끝) | 평균 비용 | 워프 無 컴포넌트 | 워프 無 지름 | 국가 간 연결 | 중복으로 생략 |",
          "| :- | -: | -: | -: | :- | -: | -: | :- | :- | -: | -: | -: | :- | -: |"]
@@ -210,7 +213,7 @@ def write_report(cfg, res):
             mx[p["tier"]] = max(mx.get(p["tier"], 0), p["degree"])
         L.append(f"| `{n}` | {'**폭발 의심**' if j['explosion'] else '정상'} | {'; '.join(j['reasons']) or '-'} | {', '.join(f'{k} {v}' for k, v in sorted(mx.items()))} |")
     L += ["", "## 국내 우회 효과 — 한국 내 순서쌍 중 `tw_t1`보다 최단 비용이 줄어든 쌍", "",
-          "국가 간 포탈이 생기면 한국 두 역 사이 최단 경로가 타이베이를 거쳐 짧아질 수 있다. 같은 나라 T2·T3 포탈(대치↔대티, 성남↔석남)도 국내 단축을 만든다.", "",
+          "국가 간 포탈이 생기면 한국 두 역 사이 최단 경로가 타이베이를 거쳐 짧아질 수 있다(4차 Q6-5: 허용, 단 길찾기 기본은 한국 T1). 같은 나라 T2·T3 포탈(대치↔대티, 성남↔석남)도 국내 단축을 만든다.", "",
           "| ruleset | 단축된 쌍 / 한국 내 쌍 | 최대 단축 예시 |", "| :- | :- | :- |"]
     for n in names:
         k = res[n]["kr_shortened"]
@@ -222,12 +225,13 @@ def write_report(cfg, res):
         cross = [p for p in res[n]["portals"] if p["cross_country"]]
         L += [f"### `{n}` — {len(cross)}개", ""]
         if cross:
-            L += ["| 등급 | 접힌 키 | 원문 | 차수 | 연결 역 |", "| :- | :- | :- | -: | :- |"]
-            L += [f"| {p['tier']} | {p['name']} | {' / '.join(p['texts'])} | {p['degree']} | {'; '.join(p['stations'])} |" for p in sorted(cross, key=lambda p: (p["tier"], p["name"]))]
+            L += ["| 등급 | 접힌 키 | 원문 | 차수 | 이름 출처 등급 | 신뢰도 | 연결 역 |", "| :- | :- | :- | -: | :- | :- | :- |"]
+            L += [f"| {p['tier']} | {p['name']} | {' / '.join(p['texts'])} | {p['degree']} | {', '.join(p['grades'])} | {p['confidence']} | {'; '.join(p['stations'])} |"
+                  for p in sorted(cross, key=lambda p: (p["tier"], p["name"]))]
         else:
             L.append("없음.")
         L.append("")
-    L += ["## 국가 내부 T2·T3 포탈 (참고)", "", "| ruleset | 등급 | 키 | 원문 | 차수 | 연결 역 |", "| :- | :- | :- | :- | -: | :- |"]
+    L += ["## 국가 내부 T2·T3a·T3b 포탈 (참고)", "", "| ruleset | 등급 | 키 | 원문 | 차수 | 연결 역 |", "| :- | :- | :- | :- | -: | :- |"]
     for n in names:
         for p in res[n]["portals"]:
             if p["tier"] != "T1" and not p["cross_country"]:

@@ -1,6 +1,6 @@
 // 데일리 퍼즐 화면. 로직은 puzzle.js (node 테스트 대상), 여기는 지도·DOM만.
 import { buildMoves, dailyPick, giveUp, kstDateString, legalMoves, medal, newGame, optimalPath, play, score, shareText,
-  undo } from "./puzzle.js";
+  undo, validDateString } from "./puzzle.js";
 
 const RULESET = "strict";
 const $ = (id) => document.getElementById(id);
@@ -15,18 +15,24 @@ const moves = buildMoves(data);
 const labels = data.clusters.map((c) => `${c.city} ${c.n}`);
 const cLL = (c) => [data.clusters[c].la, data.clusters[c].lo];
 
-// 날짜: #d=YYYY-MM-DD 로 다른 날 퍼즐도 풀 수 있다
+// 날짜: #d=YYYY-MM-DD 로 다른 날 퍼즐도 풀 수 있다.
+// 4차 Q1: 같은 탭에서 해시만 바꿔도 반영되게 hashchange에서 다시 읽는다 (상태가 날짜별이라 새로 고침이 가장 단순하고 안전)
+window.addEventListener("hashchange", () => location.reload());
 const hashDate = new URLSearchParams(location.hash.slice(1)).get("d");
-const dateStr = /^\d{4}-\d{2}-\d{2}$/.test(hashDate || "") ? hashDate : kstDateString();
-const { number, puzzle } = dailyPick(pz, dateStr);
+const picked = dailyPick(pz, validDateString(hashDate) ? hashDate : kstDateString());
+const { number, puzzle, beforeEpoch } = picked;
+const dateStr = picked.date;   // 출시일 이전 날짜는 1회차 날짜로 맞춘다 (#0·음수 회차 방지)
 const game = newGame(data, moves, puzzle);
 const DIFF_KO = { easy: "쉬움", normal: "보통", hard: "어려움" };
+const portalOf = new Map();
+for (const p of data.portals) for (const c of p.c) portalOf.set(c, [...(portalOf.get(c) || []), p.n]);
 
 $("pz-no").textContent = `#${number}`;
 $("pz-from").textContent = labels[game.from];
 $("pz-to").textContent = labels[game.to];
 $("pz-chips").innerHTML = [
   `<span class="chip">${esc(dateStr)}</span>`,
+  beforeEpoch ? `<span class="chip warn">출시일(${esc(pz.daily_epoch)}) 이전 날짜라 1회차를 보여 줌</span>` : "",
   `<span class="chip">난이도 <b>${DIFF_KO[puzzle.difficulty] || puzzle.difficulty}</b></span>`,
   puzzle.cost_no_warp !== null ? `<span class="chip">워프 없으면 <b>${puzzle.cost_no_warp}</b>수</span>` : `<span class="chip warp">워프 필수</span>`,
   `<span class="chip">최적은 비밀</span>`,
@@ -52,14 +58,23 @@ function arc(a, b, bend = 0.25, n = 40) {
 for (const p of data.portals) for (let i = 0; i < p.c.length; i++) for (let j = i + 1; j < p.c.length; j++) {
   L.polyline(arc(cLL(p.c[i]), cLL(p.c[j])), { color: WARP_COLOR, weight: 1.2, opacity: 0.35, dashArray: "4 6" }).addTo(map);
 }
+// 4차 Q3: 포탈 역 강조 (보라 테두리). 이름에 마우스를 올리거나 누르면 어디로 워프되는지 보인다
+for (const [c, names] of portalOf) {
+  const dest = data.portals.filter((p) => p.c.includes(c)).flatMap((p) => p.c.filter((x) => x !== c)).map((x) => labels[x]);
+  L.circleMarker(cLL(c), { radius: 5, color: WARP_COLOR, weight: 2.5, fillColor: "#fff", fillOpacity: 0.9 })
+    .bindTooltip(`🌀 ${esc(labels[c])} · 워프 [${esc(names.join(", "))}] → ${esc(dest.join(", "))}`, { direction: "top" }).addTo(map);
+}
 const playLayer = L.layerGroup().addTo(map);
 
 // ---------- 화면 갱신 ----------
 function lineName(i) { return data.lines[i]?.name || ""; }
 
+// 4차 Q1·Q3: 역 이름은 한 줄(줄바꿈 금지), 방면·노선은 옆에 줄여서. 도착역이 포탈 역이면 🌀 표시
 function moveLabel(m) {
-  if (m.type === "warp") return `🌀 워프 [${esc(m.portal)}] → ${esc(labels[m.to])}`;
-  return `🚇 ${esc(data.clusters[m.to].n)}`;
+  if (m.type === "warp") return `<span class="nm">🌀 워프 [${esc(m.portal)}] → ${esc(labels[m.to])}</span>`;
+  const dir = m.dir !== null && m.dir !== undefined ? `<span class="dir">${esc(data.clusters[m.dir].n)} 방면</span>` : "";
+  const pt = m.toPortal && m.toPortal.length ? `<span class="pt" title="포탈 역: ${esc(m.toPortal.join(", "))}">🌀</span>` : "";
+  return `<span class="nm">🚇 ${esc(data.clusters[m.to].n)}</span>${pt}${dir}`;
 }
 
 function draw() {
@@ -78,7 +93,7 @@ function draw() {
   }
   for (const [c, color] of [[game.to, "#e5484d"], [game.from, "#12a150"], [here, "#1b1f24"]]) {
     L.circleMarker(cLL(c), { radius: c === here ? 9 : 8, color: "#fff", weight: 3, fillColor: color, fillOpacity: 1 })
-      .bindTooltip(labels[c], { permanent: c === game.to || c === here, direction: "right" }).addTo(playLayer);
+      .bindTooltip(labels[c], { permanent: c === game.to || c === here, direction: "auto" }).addTo(playLayer);
   }
   // 패널
   $("pz-here").textContent = labels[here];
@@ -86,7 +101,8 @@ function draw() {
   $("pz-moves").innerHTML = legalMoves(game).map((m) => {
     const sw = m.type === "ride" ? `<span class="sw" style="background:${data.lines[m.lines[0]]?.color || "#888"}"></span>` : "";
     const tag = m.type === "ride" ? esc(m.lines.map(lineName).join(" · ")) : `${m.cost}수`;
-    return `<li><button type="button" class="${m.type}" data-to="${m.to}">${sw}${moveLabel(m)}<span class="tag">${tag}</span></button></li>`;
+    // 노선명이 길면 태그만 말줄임 (역 이름 칸이 좁아져 한 글자씩 세로로 줄바꿈되던 버그, QA 5장)
+    return `<li><button type="button" class="${m.type}" data-to="${m.to}">${sw}${moveLabel(m)}<span class="tag" title="${tag}">${tag}</span></button></li>`;
   }).join("");
   $("pz-moves").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => step(Number(b.dataset.to))));
   $("pz-undo").disabled = game.done || !game.steps.length;
@@ -105,6 +121,7 @@ function showResult() {
   $("pz-play").hidden = true;
   $("pz-result").hidden = false;
   $("pz-share").textContent = shareText(game, number, labels);
+  $("pz-legend").hidden = false;
   const opt = optimalPath(moves, game.from, game.to);
   const optSteps = [];
   for (let i = 1; i < opt.path.length; i++) {
@@ -123,10 +140,15 @@ function showResult() {
   }
 }
 
+// 4차 Q4: 완료 상태에서 전체 경로(내 경로 + 최적 경로, 다른 도시 포함)가 다 보이게. 모바일은 레이아웃이 잡힌 뒤 지도 크기를
+// 다시 재고 맞춘다 (초기 크기로 맞추면 수도권만 보이던 문제)
 function fitAll() {
   const opt = optimalPath(moves, game.from, game.to);
   const pts = [...game.path, ...opt.path].map(cLL);
-  map.fitBounds(L.latLngBounds(pts).pad(0.15), { maxZoom: 12 });
+  const go = () => { map.invalidateSize(); map.fitBounds(L.latLngBounds(pts).pad(0.12), { maxZoom: 12, padding: [24, 24] }); };
+  go();
+  requestAnimationFrame(go);
+  setTimeout(go, 300);
 }
 
 function step(to) {
@@ -161,6 +183,9 @@ try {
   }
 } catch { /* 무시 */ }
 
-map.fitBounds(L.latLngBounds([cLL(game.from), cLL(game.to)]).pad(0.3), { maxZoom: 12 });
+map.invalidateSize();
+map.fitBounds(L.latLngBounds([cLL(game.from), cLL(game.to)]).pad(0.3), { maxZoom: 12, padding: [30, 30] });
 draw();
 if (game.done) fitAll();
+// 테스트·디버그용 (e2e 스크립트가 읽는다)
+window.__daily = { game, number, dateStr, beforeEpoch, map, labels, data };

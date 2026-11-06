@@ -1,10 +1,10 @@
 # 3차 B3: 한국 + 타이베이 통합 그래프 ruleset 비교 (pipeline/17_compare_world_rulesets.py).
 # 매칭 룰은 config/rulesets/*.yaml에, 여기는 비교 대상과 판정 기준만 둔다.
 countries: [KR, TW]
-# 사용자 지시 3종 (공식명만)
+# 기본 3종 (4차 Q6-1: 이름 출처 등급 official + native_label, T3는 T3a만)
 rulesets: [tw_t1, tw_t12, tw_t123]
-# 참고 실험 (타이베이 Wikidata 라벨 허용, 공식명 아님)
-reference_rulesets: [tw_t1_label, tw_t12_label, tw_t123_label]
+# 참고 실험: 공식명만(3차 기본 재현), T3b(로마자 우연 일치) 켬
+reference_rulesets: [tw_t12_official, tw_t123b]
 # 허브 폭발 판정 기준 (DESIGN 6장 '지름이 지나치게 줄어들거나 특정 포탈의 차수가 튀면 룰을 조인다'의 수치화, 작성자 판단)
 hub_explosion:
   # T2·T3 포탈 중 차수가 이 값 이상인 것이 있으면 허브 폭발 의심

@@ -1,0 +1,176 @@
+
+> test
+> node --test web/test/*.test.mjs
+
+TAP version 13
+# Subtest: 서울 시간 날짜: UTC 15시 이후는 다음 날
+ok 1 - 서울 시간 날짜: UTC 15시 이후는 다음 날
+  ---
+  duration_ms: 1.479478
+  type: 'test'
+  ...
+# Subtest: 데일리 선택: 날짜가 같으면 같은 퍼즐, 한 주기 동안 중복 없음, 회차 번호
+ok 2 - 데일리 선택: 날짜가 같으면 같은 퍼즐, 한 주기 동안 중복 없음, 회차 번호
+  ---
+  duration_ms: 5.253659
+  type: 'test'
+  ...
+# Subtest: 4차 Q1: 출시일 이전 날짜는 \#0·음수 회차 대신 1회차 (beforeEpoch), 잘못된 날짜 문자열 거부
+ok 3 - 4차 Q1: 출시일 이전 날짜는 \#0·음수 회차 대신 1회차 (beforeEpoch), 잘못된 날짜 문자열 거부
+  ---
+  duration_ms: 0.492203
+  type: 'test'
+  ...
+# Subtest: 4차 Q3: 이동 후보는 노선·방면 기준 고정 정렬, 방면 표시, 포탈역 표시
+ok 4 - 4차 Q3: 이동 후보는 노선·방면 기준 고정 정렬, 방면 표시, 포탈역 표시
+  ---
+  duration_ms: 20.712072
+  type: 'test'
+  ...
+# Subtest: 4차 Q3: 공유 문구에 되돌리기 횟수
+ok 5 - 4차 Q3: 공유 문구에 되돌리기 횟수
+  ---
+  duration_ms: 6.151479
+  type: 'test'
+  ...
+# Subtest: 이동 그래프: 승차는 인접역, 워프는 같은 포탈, 환승은 수가 아님
+ok 6 - 이동 그래프: 승차는 인접역, 워프는 같은 포탈, 환승은 수가 아님
+  ---
+  duration_ms: 0.835649
+  type: 'test'
+  ...
+# Subtest: 클러스터 단위 최단 비용 = 역 수준 길찾기(route.js) 비용 = 퍼즐 cost_warp
+ok 7 - 클러스터 단위 최단 비용 = 역 수준 길찾기(route.js) 비용 = 퍼즐 cost_warp
+  ---
+  duration_ms: 202.234025
+  type: 'test'
+  ...
+# Subtest: 최적 경로를 따라가면 100점, 이모지 결과
+ok 8 - 최적 경로를 따라가면 100점, 이모지 결과
+  ---
+  duration_ms: 1.560864
+  type: 'test'
+  ...
+# Subtest: 돌아가면 점수가 깎이고, 되돌리기·포기 동작
+ok 9 - 돌아가면 점수가 깎이고, 되돌리기·포기 동작
+  ---
+  duration_ms: 1.969007
+  type: 'test'
+  ...
+# Subtest: 수 제한: 최적의 3배+10 비용을 넘기면 자동 종료
+ok 10 - 수 제한: 최적의 3배+10 비용을 넘기면 자동 종료
+  ---
+  duration_ms: 0.86785
+  type: 'test'
+  ...
+# Subtest: 3차 A2: 응암순환 단방향 — 퍼즐 이동·길찾기 모두 역방향 승차 불가
+ok 11 - 3차 A2: 응암순환 단방향 — 퍼즐 이동·길찾기 모두 역방향 승차 불가
+  ---
+  duration_ms: 2.068556
+  type: 'test'
+  ...
+# Subtest: JS 길찾기 비용·경로가 Python 결과와 같다
+ok 12 - JS 길찾기 비용·경로가 Python 결과와 같다
+  ---
+  duration_ms: 74.448114
+  type: 'test'
+  ...
+# Subtest: 강남 → 부산 동래 = 교대 워프 1회, 비용 3
+ok 13 - 강남 → 부산 동래 = 교대 워프 1회, 비용 3
+  ---
+  duration_ms: 0.833932
+  type: 'test'
+  ...
+# Subtest: 워프 없이는 서울에서 부산에 못 간다
+ok 14 - 워프 없이는 서울에서 부산에 못 간다
+  ---
+  duration_ms: 2.440088
+  type: 'test'
+  ...
+# Subtest: 0-1 BFS와 Dijkstra 비용 일치 (랜덤 쌍)
+ok 15 - 0-1 BFS와 Dijkstra 비용 일치 (랜덤 쌍)
+  ---
+  duration_ms: 53.599806
+  type: 'test'
+  ...
+# Subtest: 경로 구간 묶기: 승차는 노선별로 연속, 워프는 in/out 한 쌍
+ok 16 - 경로 구간 묶기: 승차는 노선별로 연속, 워프는 in/out 한 쌍
+  ---
+  duration_ms: 0.772218
+  type: 'test'
+  ...
+# Subtest: 데이터 무결성: 엣지 인덱스·포탈 노드
+ok 17 - 데이터 무결성: 엣지 인덱스·포탈 노드
+  ---
+  duration_ms: 0.915873
+  type: 'test'
+  ...
+# Subtest: 입력 해석: 도시 접두어, 동명역, 라벨
+ok 18 - 입력 해석: 도시 접두어, 동명역, 라벨
+  ---
+  duration_ms: 4.314101
+  type: 'test'
+  ...
+# Subtest: ruleset 목록의 번들 파일이 전부 있다
+ok 19 - ruleset 목록의 번들 파일이 전부 있다
+  ---
+  duration_ms: 3.158145
+  type: 'test'
+  ...
+# Subtest: tw_t1: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+ok 20 - tw_t1: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+  ---
+  duration_ms: 81.743775
+  type: 'test'
+  ...
+# Subtest: tw_t12: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+ok 21 - tw_t12: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+  ---
+  duration_ms: 84.168347
+  type: 'test'
+  ...
+# Subtest: tw_t123: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+ok 22 - tw_t123: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+  ---
+  duration_ms: 58.292079
+  type: 'test'
+  ...
+# Subtest: tw_t12_official: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+ok 23 - tw_t12_official: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+  ---
+  duration_ms: 78.543262
+  type: 'test'
+  ...
+# Subtest: tw_t123b: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+ok 24 - tw_t123b: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+  ---
+  duration_ms: 56.892206
+  type: 'test'
+  ...
+# Subtest: 공식명만 번들(tw_t12_official)과 T1만 번들은 국가 간 포탈이 없고 판교 → 타이베이 板橋가 연결되지 않는다
+ok 25 - 공식명만 번들(tw_t12_official)과 T1만 번들은 국가 간 포탈이 없고 판교 → 타이베이 板橋가 연결되지 않는다
+  ---
+  duration_ms: 16.780187
+  type: 'test'
+  ...
+# Subtest: 기본 번들(현지어 라벨 포함): 판교 → 타이베이 板橋 = 국가 간 T2 워프 1회 (비용 2), 신뢰도 medium
+ok 26 - 기본 번들(현지어 라벨 포함): 판교 → 타이베이 板橋 = 국가 간 T2 워프 1회 (비용 2), 신뢰도 medium
+  ---
+  duration_ms: 11.563112
+  type: 'test'
+  ...
+# Subtest: 국가 표기와 국가 간 워프 스타일
+ok 27 - 국가 표기와 국가 간 워프 스타일
+  ---
+  duration_ms: 5.026466
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 483.43857

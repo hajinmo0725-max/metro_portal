@@ -1,0 +1,239 @@
+{
+ "planned_lines": [
+  {
+   "id": "yangsan",
+   "enabled": false,
+   "kind": "new_line",
+   "expected_open": "2026-12 (일자 미공표)",
+   "new_stations": [
+    "노포",
+    "사송",
+    "내송",
+    "양산시청",
+    "양산중앙(종합운동장)",
+    "신기",
+    "북정"
+   ]
+  },
+  {
+   "id": "busan-2-yangsan-ext",
+   "enabled": false,
+   "kind": "extension",
+   "expected_open": "2026-12 (양산선과 함께, 일자 미공표)",
+   "new_stations": [
+    "양산중앙(종합운동장)"
+   ]
+  },
+  {
+   "id": "donghae-bugulsan-ext",
+   "enabled": false,
+   "kind": "extension",
+   "expected_open": "2026-12 (12월 31일 추진 보도, 일자 미공표)",
+   "new_stations": [
+    "북울산"
+   ]
+  }
+ ],
+ "rulesets": {
+  "strict": {
+   "before": {
+    "clusters": 940,
+    "portals": 29
+   },
+   "after": {
+    "clusters": 947,
+    "portals": 30
+   },
+   "new_station_clusters": [
+    {
+     "id": "내송#1",
+     "stations": [
+      "kr:XYS01:103"
+     ]
+    },
+    {
+     "id": "노포#1",
+     "stations": [
+      "kr:S2601:0134",
+      "kr:XYS01:101"
+     ]
+    },
+    {
+     "id": "북울산#1",
+     "stations": [
+      "kr:I26K6:8024"
+     ]
+    },
+    {
+     "id": "북정#1",
+     "stations": [
+      "kr:XYS01:107"
+     ]
+    },
+    {
+     "id": "사송#1",
+     "stations": [
+      "kr:XYS01:102"
+     ]
+    },
+    {
+     "id": "신기#1",
+     "stations": [
+      "kr:XYS01:106"
+     ]
+    },
+    {
+     "id": "양산시청#1",
+     "stations": [
+      "kr:XYS01:104"
+     ]
+    },
+    {
+     "id": "양산중앙#1",
+     "stations": [
+      "kr:S2602:0244",
+      "kr:XYS01:105"
+     ]
+    }
+   ],
+   "merged_with_existing": [
+    {
+     "cluster": "노포#1",
+     "stations": [
+      "kr:S2601:0134",
+      "kr:XYS01:101"
+     ],
+     "names": [
+      "노포"
+     ]
+    },
+    {
+     "cluster": "양산중앙#1",
+     "stations": [
+      "kr:S2602:0244",
+      "kr:XYS01:105"
+     ],
+     "names": [
+      "양산중앙"
+     ]
+    }
+   ],
+   "portals_added": [
+    {
+     "id": "P:T1:신기",
+     "tier": "T1",
+     "clusters": [
+      "신기#1",
+      "신기#2"
+     ],
+     "labels": [
+      "부산 신기 [XYS01]",
+      "대구 신기 [S2701]"
+     ]
+    }
+   ],
+   "portals_changed": [],
+   "portals_removed": []
+  },
+  "tw_t123": {
+   "before": {
+    "clusters": 1110,
+    "portals": 36
+   },
+   "after": {
+    "clusters": 1117,
+    "portals": 37
+   },
+   "new_station_clusters": [
+    {
+     "id": "내송#1",
+     "stations": [
+      "kr:XYS01:103"
+     ]
+    },
+    {
+     "id": "노포#1",
+     "stations": [
+      "kr:S2601:0134",
+      "kr:XYS01:101"
+     ]
+    },
+    {
+     "id": "북울산#1",
+     "stations": [
+      "kr:I26K6:8024"
+     ]
+    },
+    {
+     "id": "북정#1",
+     "stations": [
+      "kr:XYS01:107"
+     ]
+    },
+    {
+     "id": "사송#1",
+     "stations": [
+      "kr:XYS01:102"
+     ]
+    },
+    {
+     "id": "신기#1",
+     "stations": [
+      "kr:XYS01:106"
+     ]
+    },
+    {
+     "id": "양산시청#1",
+     "stations": [
+      "kr:XYS01:104"
+     ]
+    },
+    {
+     "id": "양산중앙#1",
+     "stations": [
+      "kr:S2602:0244",
+      "kr:XYS01:105"
+     ]
+    }
+   ],
+   "merged_with_existing": [
+    {
+     "cluster": "노포#1",
+     "stations": [
+      "kr:S2601:0134",
+      "kr:XYS01:101"
+     ],
+     "names": [
+      "노포"
+     ]
+    },
+    {
+     "cluster": "양산중앙#1",
+     "stations": [
+      "kr:S2602:0244",
+      "kr:XYS01:105"
+     ],
+     "names": [
+      "양산중앙"
+     ]
+    }
+   ],
+   "portals_added": [
+    {
+     "id": "P:T1:신기",
+     "tier": "T1",
+     "clusters": [
+      "신기#1",
+      "신기#2"
+     ],
+     "labels": [
+      "부산 신기 [XYS01]",
+      "대구 신기 [S2701]"
+     ]
+    }
+   ],
+   "portals_changed": [],
+   "portals_removed": []
+  }
+ }
+}

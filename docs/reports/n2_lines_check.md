@@ -13,7 +13,7 @@
 | coord_fallback | 6 |
 | nearest | 1 |
 | no_candidate | 1 |
-| unique | 7 |
+| unique | 6 |
 | unique+adj | 958 |
 
 unique = 이름 후보 1개, adj = 이웃 역과 P197 인접인 후보, nearest = 동률이라 거리로 고름, coord_fallback = 같은 이름 아이템이 없어 가까운 아이템을 붙임(라벨 차이, 좌표 검사 제외), no_candidate = 매칭 없음
