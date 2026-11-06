@@ -10,7 +10,7 @@
 | sequences | 53 |
 | ride_edges | 1065 |
 | ride_edges_directed | 6 |
-| stations | 1100 |
+| stations | 1099 |
 | stations_sequenced | 1099 |
 | stop_failures | 0 |
 | outliers | 26 |
@@ -25,9 +25,7 @@ OSM route relation은 세션 네트워크에서 Overpass 접근 불가(TLS 리�
 
 ## 2. 어떤 시퀀스에도 안 들어간 역
 
-| id | 역명 | 노선그룹 |
-| :- | :- | :- |
-| kr:I4108:경의중앙선:1019 | 광운대역 | I4108:경의중앙선 |
+없음.
 
 ## 3. 인접역 간 거리 이상치
 
@@ -83,7 +81,7 @@ pool = 이 노선에 속한 표준데이터 역 수, sequenced = 시퀀스에 �
 | seoul-4-ansan | 4호선 안산·과천선 | 22 | 23 | 22 | 1 | 22 |
 | seoul-4-jinjeop | 4호선 진접선 | 3 | 4 | 3 | 1 | 3 |
 | seoul-3-ilsan | 3호선 일산선 | 11 | 11 | 11 | 1 | 10 |
-| gyeongui-jungang | 경의·중앙선 | 86 | 57 | 57 | 2 | 56 |
+| gyeongui-jungang | 경의·중앙선 | 85 | 57 | 57 | 2 | 56 |
 | gyeongchun | 경춘선 | 20 | 25 | 20 | 2 | 24 |
 | gyeonggang | 경강선 | 12 | 12 | 12 | 1 | 11 |
 | seohae | 서해선 | 21 | 21 | 21 | 1 | 20 |

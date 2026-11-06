@@ -1,7 +1,7 @@
 {
  "ruleset": "tw_t12_official",
  "counts": {
-  "stations": 1293,
+  "stations": 1292,
   "clusters": 1110,
   "lines": 56,
   "sequences": 67,
@@ -14,8 +14,8 @@
    "T2": 1
   },
   "portal_links": 62,
-  "routing_nodes": 1323,
-  "routing_edges": 3068
+  "routing_nodes": 1322,
+  "routing_edges": 3064
  },
  "with_warp": {
   "components": 2,

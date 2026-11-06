@@ -37,3 +37,29 @@ export function tierLabel(tier) {
 export function confidenceLabel(conf) {
   return { high: "공식명", medium: "현지어 라벨(준공식)", low: "외국어 라벨(신뢰도 낮음)" }[conf] || "";
 }
+
+// 4차 Q5: 워프 아크 곡률. 같은 도시 쌍(예: 수도권–부산)을 잇는 아크가 여러 개면 곡률을 번갈아(좌우) 키워 겹치지 않게 하고,
+// 짧은 아크(shortKm 미만, 예: 부산 동래 1.4km)는 short = true로 표시해서 굵게 그린다.
+// key = `${portal.id}|${i}|${j}` (p.c의 인덱스 i < j). 반환 Map(key → {bend, short})
+export function arcBends(data, ll, distM, { base = 0.16, step = 0.09, shortKm = 5, shortBend = 0.5 } = {}) {
+  const groups = new Map();
+  for (const p of data.portals) {
+    for (let i = 0; i < p.c.length; i++) for (let j = i + 1; j < p.c.length; j++) {
+      const a = data.clusters[p.c[i]], b = data.clusters[p.c[j]];
+      const g = [a.city, b.city].sort().join("–");
+      if (!groups.has(g)) groups.set(g, []);
+      groups.get(g).push({ key: `${p.id}|${i}|${j}`, d: distM(ll(p.c[i]), ll(p.c[j])), cross: !!p.x });
+    }
+  }
+  const out = new Map();
+  for (const [, arcs] of [...groups.entries()].sort()) {
+    arcs.sort((x, y) => (x.key < y.key ? -1 : 1));
+    arcs.forEach((x, k) => {
+      const short = x.d < shortKm * 1000;
+      const sign = k % 2 === 0 ? 1 : -1;
+      const bend = short ? shortBend * sign : (x.cross ? 0.18 : base + step * Math.floor(k / 2)) * sign;
+      out.set(x.key, { bend, short });
+    });
+  }
+  return out;
+}

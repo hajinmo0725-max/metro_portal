@@ -1,7 +1,7 @@
 {
  "ruleset": "tw_t1",
  "counts": {
-  "stations": 1293,
+  "stations": 1292,
   "clusters": 1110,
   "lines": 56,
   "sequences": 67,
@@ -13,8 +13,8 @@
    "T1": 29
   },
   "portal_links": 60,
-  "routing_nodes": 1322,
-  "routing_edges": 3064
+  "routing_nodes": 1321,
+  "routing_edges": 3060
  },
  "with_warp": {
   "components": 2,

@@ -1,5 +1,5 @@
 import { buildAdj, buildLabels, resolveQuery, routeClusters } from "./route.js";
-import { COUNTRY_KO, CROSS_COLOR, RULESETS, clusterCountry, rulesetByKey, tierLabel, warpStyle } from "./world.js";
+import { COUNTRY_KO, CROSS_COLOR, RULESETS, arcBends, clusterCountry, confidenceLabel, rulesetByKey, tierLabel, warpStyle } from "./world.js";
 
 const $ = (id) => document.getElementById(id);
 const WARP_COLOR = getComputedStyle(document.documentElement).getPropertyValue("--warp").trim() || "#8b3dff";
@@ -17,8 +17,18 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 const linesLayer = L.layerGroup().addTo(map);
 const warpLayer = L.layerGroup().addTo(map);
-const stationLayer = L.layerGroup().addTo(map);
+const stationLayer = L.layerGroup().addTo(map);       // 포탈 역 (항상)
+const plainStationLayer = L.layerGroup();             // 일반 역: 4차 Q5 낮은 줌(< PLAIN_MIN_ZOOM)에서는 숨겨 노선을 가리지 않게
 const routeLayer = L.layerGroup().addTo(map);
+const PLAIN_MIN_ZOOM = 10;
+// 아크는 클릭·탭 판정 여유를 크게 (터치에서 가는 선을 누르기 어렵다, QA 3장)
+const arcRenderer = L.canvas({ tolerance: 8 });
+function syncPlainStations() {
+  const on = $("show-stations").checked && map.getZoom() >= PLAIN_MIN_ZOOM;
+  if (on && !map.hasLayer(plainStationLayer)) plainStationLayer.addTo(map);
+  if (!on && map.hasLayer(plainStationLayer)) plainStationLayer.remove();
+}
+map.on("zoomend", syncPlainStations);
 
 function drawLines() {
   linesLayer.clearLayers();
@@ -47,14 +57,26 @@ function arc(a, b, bend = 0.25, n = 40) {
   }
   return pts;
 }
+// 클러스터 표시 이름: 도시 + 이름 + (노선). 같은 이름 역이 같은 도시에 여럿이면 노선으로 구분한다 (QA 4장 '수도권 양평 ⇢ 수도권 양평역')
+function clusterLabel(ci) {
+  const c = data.clusters[ci];
+  return `${c.city} ${c.n} (${c.lines.join("·")})`;
+}
 function drawWarps() {
   warpLayer.clearLayers();
+  // 4차 Q5: 같은 도시 쌍을 잇는 아크(서울–부산 등)는 곡률을 나눠 겹치지 않게, 짧은 도시 내부 아크(동래 1.4km)는 굵고 진하게
+  const bends = arcBends(data, (ci) => clusterLL(ci), (a, b) => L.latLng(a).distanceTo(b));
   for (const p of data.portals) {
-    const st = warpStyle(p, WARP_COLOR);
     const names = p.texts && p.texts.length ? ` · 원문 ${p.texts.join(" / ")}` : "";
+    const conf = p.conf && p.conf !== "high" ? ` · ${confidenceLabel(p.conf)}` : "";
+    const pop = `<div class="arc-pop"><b>${p.x ? "국가 간 " : ""}워프 [${esc(p.n)}]</b><div>${esc(tierLabel(p.tier))} · 비용 ${p.cost}${esc(conf)}</div>`
+      + `<ul>${p.c.map((ci) => `<li>${esc(clusterLabel(ci))}</li>`).join("")}</ul>${p.texts && p.texts.length ? `<div>원문 ${esc(p.texts.join(" / "))}</div>` : ""}</div>`;
     for (let i = 0; i < p.c.length; i++) for (let j = i + 1; j < p.c.length; j++) {
-      L.polyline(arc(clusterLL(p.c[i]), clusterLL(p.c[j]), p.x ? 0.18 : 0.25), st)
-        .bindTooltip(`${p.x ? "국가 간 " : ""}워프 ${tierLabel(p.tier)} (비용 ${p.cost}) [${p.n}] · ${p.c.length}개 역${names}`, { sticky: true })
+      const b = bends.get(`${p.id}|${i}|${j}`);
+      const st = { ...warpStyle(p, WARP_COLOR), ...(b.short ? { weight: 3.5, opacity: 0.95, dashArray: "3 4" } : {}), renderer: arcRenderer };
+      L.polyline(arc(clusterLL(p.c[i]), clusterLL(p.c[j]), b.bend), st)
+        .bindTooltip(`${p.x ? "국가 간 " : ""}워프 ${tierLabel(p.tier)} (비용 ${p.cost}) [${p.n}] · ${p.c.length}개 역${names}${conf}`, { sticky: true })
+        .bindPopup(pop)   // 클릭·탭으로도 연다
         .addTo(warpLayer);
     }
   }
@@ -62,6 +84,7 @@ function drawWarps() {
 
 function drawStations() {
   stationLayer.clearLayers();
+  plainStationLayer.clearLayers();
   const portalClusters = new Set(data.portals.flatMap((p) => p.c));
   const crossClusters = new Set(data.portals.filter((p) => p.x).flatMap((p) => p.c));
   for (const [ci, c] of data.clusters.entries()) {
@@ -69,7 +92,7 @@ function drawStations() {
     const m = L.circleMarker([c.la, c.lo], {
       radius: isP ? 5 : 3, weight: isP ? 2 : 1,
       color: isX ? CROSS_COLOR : isP ? WARP_COLOR : "#4a5560", fillColor: "#fff", fillOpacity: 1,
-    }).addTo(stationLayer);
+    }).addTo(isP ? stationLayer : plainStationLayer);
     const ctry = COUNTRY_KO[clusterCountry(c)] || clusterCountry(c);
     m.bindTooltip(`${c.n} · ${ctry}`, { direction: "top" });
     m.on("click", () => {
@@ -107,6 +130,7 @@ async function load(key, { fit = false } = {}) {
   drawLines();
   drawWarps();
   drawStations();
+  syncPlainStations();
   routeLayer.clearLayers();
   $("result").innerHTML = '<p class="hint">지도에서 역을 눌러 출발·도착을 고르거나 위에 역 이름을 입력해.</p>';
   if (fit) map.fitBounds(data.clusters.map((c) => [c.la, c.lo]), { padding: [20, 20] });
@@ -126,11 +150,17 @@ function render(r, warp) {
   const { route } = r;
   const items = [];
   const bounds = [];
+  // 4차 Q6-5: 출발 나라와 다른 나라를 지나는 구간은 '해외 경유'로 표시
+  const home = data.nodes[route.path[0].node].co || "KR";
+  let abroad = 0;
   for (const s of route.segments) {
     if (s.type === "ride") {
       const ln = data.lines[s.line];
       const a = data.nodes[s.nodes[0]], b = data.nodes[s.nodes[s.nodes.length - 1]];
-      items.push(`<li><span class="bar" style="background:${ln.color}"></span><div><b>${esc(ln.name)}</b> ${esc(a.n)} → ${esc(b.n)}<div class="meta">${s.nodes.length - 1}역 · ${s.nodes.slice(1, -1).map((n) => esc(data.nodes[n].n)).join(" · ") || "직행"}</div></div></li>`);
+      const out = (a.co || "KR") !== home;
+      if (out) abroad += 1;
+      const tag = out ? `<span class="abroad">해외 경유 · ${esc(COUNTRY_KO[a.co] || a.co)}</span>` : "";
+      items.push(`<li><span class="bar" style="background:${ln.color}"></span><div><b>${esc(ln.name)}</b>${tag} ${esc(a.n)} → ${esc(b.n)}<div class="meta">${s.nodes.length - 1}역 · ${s.nodes.slice(1, -1).map((n) => esc(data.nodes[n].n)).join(" · ") || "직행"}</div></div></li>`);
       const pts = s.nodes.map(nodeLL);
       bounds.push(...pts);
       L.polyline(pts, { color: "#fff", weight: 10, opacity: 0.9 }).addTo(routeLayer);
@@ -141,7 +171,8 @@ function render(r, warp) {
     } else if (s.type === "warp") {
       const a = data.nodes[s.from], b = data.nodes[s.to], p = data.nodes[s.portal];
       const cross = (a.co || "KR") !== (b.co || "KR");
-      items.push(`<li class="warp${cross ? " cross" : ""}"><span class="bar"></span><div>⇢ ${cross ? "국가 간 " : ""}워프 ${esc(s.tier)} [${esc(p.n)}] ${esc(a.ct)} ${esc(a.n)} ⇢ ${esc(b.ct)} ${esc(b.n)}</div></li>`);
+      // 같은 이름 역이라 노선을 병기한다 (예: 수도권 양평 (5호선) ⇢ 수도권 양평 (경의·중앙선))
+      items.push(`<li class="warp${cross ? " cross" : ""}"><span class="bar"></span><div>⇢ ${cross ? "국가 간 " : ""}워프 ${esc(s.tier)} [${esc(p.n)}] ${esc(a.ct)} ${esc(a.n)} <span class="meta">(${esc(a.g)})</span> ⇢ ${esc(b.ct)} ${esc(b.n)} <span class="meta">(${esc(b.g)})</span></div></li>`);
       const pts = arc(nodeLL(s.from), nodeLL(s.to), cross ? 0.18 : 0.25);
       bounds.push(...pts);
       L.polyline(pts, { color: cross ? CROSS_COLOR : WARP_COLOR, weight: 4, opacity: 0.95, dashArray: "8 8" }).addTo(routeLayer);
@@ -152,8 +183,10 @@ function render(r, warp) {
     L.circleMarker(nodeLL(n), { radius: 8, color: "#fff", weight: 3, fillColor: color, fillOpacity: 1 }).addTo(routeLayer);
     bounds.push(nodeLL(n));
   }
-  box.innerHTML = `<div class="summary"><span class="chip">총비용 <b>${route.cost}</b></span><span class="chip">승차 <b>${route.rides}</b>역</span><span class="chip warp">워프 <b>${route.warps}</b>회</span></div><ol class="steps">${items.join("")}</ol>`;
-  if (bounds.length) map.fitBounds(bounds, { padding: [40, 40], maxZoom: 13 });
+  box.innerHTML = `<div class="summary"><span class="chip">총비용 <b>${route.cost}</b></span><span class="chip">승차 <b>${route.rides}</b>역</span><span class="chip warp">워프 <b>${route.warps}</b>회</span>${abroad ? `<span class="chip abroad">해외 경유 구간 <b>${abroad}</b></span>` : ""}</div><ol class="steps">${items.join("")}</ol>`;
+  if (bounds.length) map.fitBounds(bounds, { padding: [30, 30], maxZoom: 13 });
+  // 4차 Q4: 모바일(지도가 위에 고정)에서는 결과로 스크롤해서 지도와 결과를 함께 보이게
+  if (window.matchMedia("(max-width: 720px)").matches) box.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function run() {
@@ -171,7 +204,7 @@ $("allow-warp").addEventListener("change", () => { if ($("from").value && $("to"
 $("swap").addEventListener("click", () => { [$("from").value, $("to").value] = [$("to").value, $("from").value]; if ($("from").value && $("to").value) run(); });
 document.querySelectorAll(".examples button").forEach((b) => b.addEventListener("click", () => { $("from").value = b.dataset.from; $("to").value = b.dataset.to; run(); }));
 $("show-warps").addEventListener("change", (e) => (e.target.checked ? warpLayer.addTo(map) : warpLayer.remove()));
-$("show-stations").addEventListener("change", (e) => (e.target.checked ? stationLayer.addTo(map) : stationLayer.remove()));
+$("show-stations").addEventListener("change", (e) => { (e.target.checked ? stationLayer.addTo(map) : stationLayer.remove()); syncPlainStations(); });
 
 $("ruleset-select").innerHTML = RULESETS.map((r) => `<option value="${r.key}">${esc(r.label)}</option>`).join("");
 $("ruleset-select").addEventListener("change", async (e) => {
@@ -194,3 +227,5 @@ if (h.get("from") && h.get("to")) {
   $("allow-warp").checked = h.get("warp") !== "0";
   run();
 }
+// 테스트·디버그용 (e2e 스크립트가 읽는다)
+window.__app = { map, get data() { return data; }, plainStationLayer, stationLayer, warpLayer };

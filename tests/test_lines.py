@@ -66,7 +66,8 @@ def test_m2_validation_regression():
     assert v["unused_line_defs"] == []
     assert v["totals"]["outliers_unexplained"] == 0
     # 시퀀스에 안 들어간 역은 의도적으로 남긴 경의중앙선 광운대 레코드 하나뿐
-    assert [s["id"] for s in v["stations_not_sequenced"]] == ["kr:I4108:경의중앙선:1019"]
+    # 4차 Q5: 유일한 미편입 역이던 광운대역[경의중앙선] 고아 레코드를 kr_scope.yaml exclude_stations로 뺐다
+    assert v["stations_not_sequenced"] == []
 
 
 @pytest.mark.skipif(not VAL.exists(), reason="processed data missing")

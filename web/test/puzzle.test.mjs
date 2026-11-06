@@ -3,7 +3,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { buildMoves, clusterDistances, dailyPick, daysBetween, giveUp, kstDateString, legalMoves, medal, newGame,
-  optimalPath, play, score, shareText, undo } from "../puzzle.js";
+  optimalPath, play, rideDirections, score, shareText, undo, validDateString } from "../puzzle.js";
 import { buildAdj, routeClusters } from "../route.js";
 
 const root = new URL("../", import.meta.url);
@@ -37,6 +37,51 @@ test("데일리 선택: 날짜가 같으면 같은 퍼즐, 한 주기 동안 중
   const later = new Date(Date.parse("2026-11-05T00:00:00Z") + n * 86400000).toISOString().slice(0, 10);
   assert.equal(dailyPick(pz, later).puzzle.id, a.puzzle.id);
   assert.ok(dailyPick(pz, "2026-01-01").puzzle);
+});
+
+test("4차 Q1: 출시일 이전 날짜는 #0·음수 회차 대신 1회차 (beforeEpoch), 잘못된 날짜 문자열 거부", () => {
+  for (const d of ["2026-11-04", "2020-01-01"]) {
+    const r = dailyPick(pz, d);
+    assert.equal(r.number, 1, d);
+    assert.equal(r.beforeEpoch, true);
+    assert.equal(r.puzzle.id, pz.daily_order[0]);
+    assert.equal(r.date, pz.daily_epoch);
+  }
+  assert.equal(dailyPick(pz, "2026-11-06").beforeEpoch, false);
+  assert.ok(validDateString("2026-11-05") && !validDateString("abc") && !validDateString("2026-02-30") && !validDateString(""));
+});
+
+test("4차 Q3: 이동 후보는 노선·방면 기준 고정 정렬, 방면 표시, 포탈역 표시", () => {
+  const sindorim = data.clusters.findIndex((c) => c.n === "신도림");
+  const ms = moves[sindorim];
+  const rides = ms.filter((m) => m.type === "ride");
+  assert.ok(rides.length >= 4 && rides.every((m) => m.dir !== null), "신도림 승차 후보에 방면이 다 있다");
+  for (let i = 1; i < rides.length; i++) assert.ok((rides[i - 1].dirLine ?? rides[i - 1].lines[0]) <= (rides[i].dirLine ?? rides[i].lines[0]));
+  assert.ok(ms.findIndex((m) => m.type === "warp") === -1 || ms.findIndex((m) => m.type === "warp") >= rides.length);
+  // 같은 노선의 두 방향은 서로 다른 방면 (종점)
+  const l2 = rides.filter((m) => data.lines[m.dirLine].name.startsWith("2호선") && !data.lines[m.dirLine].name.includes("지선"));
+  assert.ok(l2.length >= 2 && new Set(l2.map((m) => m.dir)).size === l2.length);
+  // 정렬은 매 수 같다: 같은 역이면 같은 순서
+  assert.deepEqual(buildMoves(data)[sindorim].map((m) => m.to), ms.map((m) => m.to));
+  // 포탈역 표시: 강남 → 교대(수도권)는 포탈 '교대'가 있는 역
+  const gangnam = data.clusters.findIndex((c) => c.n === "강남");
+  const toGyodae = moves[gangnam].find((m) => data.clusters[m.to].n === "교대");
+  assert.deepEqual(toGyodae.toPortal, ["교대"]);
+  // 단방향 순환(응암)은 정방향 방면만
+  const dirs = rideDirections(data);
+  assert.ok(dirs.size > 1000);
+});
+
+test("4차 Q3: 공유 문구에 되돌리기 횟수", () => {
+  const { puzzle, number } = dailyPick(pz, "2026-11-05");
+  const g = newGame(data, moves, puzzle);
+  const first = legalMoves(g)[0];
+  play(g, first.to); undo(g); play(g, first.to); undo(g);
+  assert.equal(g.undos, 2);
+  const opt = optimalPath(moves, g.from, g.to);
+  for (const c of opt.path.slice(1)) play(g, c);
+  assert.ok(shareText(g, number, labels).includes("↶ 되돌리기 2회"));
+  assert.equal(score(g), 100);   // 되돌리기는 점수에 영향 없음
 });
 
 test("이동 그래프: 승차는 인접역, 워프는 같은 포탈, 환승은 수가 아님", () => {

@@ -201,6 +201,14 @@ def main() -> int:
             })
             used_metro.add(id(mr))
             supplemented.append({"id": stations[-1]["id"], "name": ko, "line": ln["line_name"], "opened": clean_text(mr.get("신설일자"))})
+    # 4차 Q5: 역 레코드 단위 스코프 제외 (고아 레코드 등)
+    excl_ids = {e["id"]: e["reason"] for e in scope.get("exclude_stations", [])}
+    missing_excl = sorted(set(excl_ids) - {s["id"] for s in stations})
+    if missing_excl:
+        raise SystemExit(f"[02] 제외 대상 역 없음: {missing_excl}")
+    for s in [s for s in stations if s["id"] in excl_ids]:
+        excluded.append({"line_group": s["line_group"], "code": s["code"], "name": s["name_ko"], "id": s["id"], "reason": excl_ids[s["id"]]})
+    stations = [s for s in stations if s["id"] not in excl_ids]
     # 4차 Q0-5: 개통 예정 노선 (config/kr_planned.yaml). enabled: true인 노선만 넣는다 (기본은 전부 false)
     from metro_portal.planned import load_planned, station_records
     planned_added = station_records(load_planned())

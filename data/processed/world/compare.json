@@ -808,7 +808,7 @@
     "example": null
    },
    "metrics_summary": {
-    "stations": 1293,
+    "stations": 1292,
     "clusters": 1110,
     "ride_edges": 1248,
     "portals_total": 29,
@@ -1961,7 +1961,7 @@
     }
    },
    "metrics_summary": {
-    "stations": 1293,
+    "stations": 1292,
     "clusters": 1110,
     "ride_edges": 1248,
     "portals_total": 36,
@@ -3140,7 +3140,7 @@
     }
    },
    "metrics_summary": {
-    "stations": 1293,
+    "stations": 1292,
     "clusters": 1110,
     "ride_edges": 1248,
     "portals_total": 36,
@@ -4122,7 +4122,7 @@
     }
    },
    "metrics_summary": {
-    "stations": 1293,
+    "stations": 1292,
     "clusters": 1110,
     "ride_edges": 1248,
     "portals_total": 30,
@@ -5526,7 +5526,7 @@
     }
    },
    "metrics_summary": {
-    "stations": 1293,
+    "stations": 1292,
     "clusters": 1110,
     "ride_edges": 1248,
     "portals_total": 37,

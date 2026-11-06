@@ -4,13 +4,13 @@
  "basis_counts": {
   "official_yes": 175,
   "official_no": 54,
-  "distance(same_line)": 11,
+  "distance(same_line)": 9,
   "distance(unknown)": 4,
   "offsite_manual": 1
  },
  "status_counts": {
   "none": 821,
-  "listed": 262,
+  "listed": 261,
   "unknown": 17
  },
  "pairs": [
@@ -290,34 +290,8 @@
   {
    "name": "광운대",
    "a": "kr:I4102:1019",
-   "b": "kr:I4108:경의중앙선:1019",
-   "distance_m": 40.3,
-   "merged": true,
-   "basis": "distance(same_line)",
-   "merged_d500": true,
-   "relation": "same_line",
-   "status_a": "listed",
-   "status_b": "listed",
-   "changed": false
-  },
-  {
-   "name": "광운대",
-   "a": "kr:I4102:1019",
    "b": "kr:I4108:경춘선:1019",
    "distance_m": 16.2,
-   "merged": true,
-   "basis": "distance(same_line)",
-   "merged_d500": true,
-   "relation": "same_line",
-   "status_a": "listed",
-   "status_b": "listed",
-   "changed": false
-  },
-  {
-   "name": "광운대",
-   "a": "kr:I4108:경의중앙선:1019",
-   "b": "kr:I4108:경춘선:1019",
-   "distance_m": 29.5,
    "merged": true,
    "basis": "distance(same_line)",
    "merged_d500": true,

@@ -1,7 +1,7 @@
 {
  "ruleset": "strict_transfer1",
  "counts": {
-  "stations": 1100,
+  "stations": 1099,
   "clusters": 940,
   "lines": 46,
   "sequences": 53,
@@ -13,8 +13,8 @@
    "T1": 29
   },
   "portal_links": 60,
-  "routing_nodes": 1129,
-  "routing_edges": 2650
+  "routing_nodes": 1128,
+  "routing_edges": 2646
  },
  "with_warp": {
   "components": 1,
