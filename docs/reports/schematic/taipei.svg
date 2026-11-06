@@ -1,0 +1,526 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1023 1100" font-family="sans-serif">
+<rect width="100%" height="100%" fill="#fff"/><text x="12" y="24" font-size="16" font-weight="700">타이베이 — 자동 도식 (octilinear MIP)</text>
+<line x1="634.0" y1="911.8" x2="634.0" y2="888.0" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="634.0" y1="911.8" x2="610.2" y2="911.8" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="634.0" y1="911.8" x2="634.0" y2="930.8" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="496.9" y1="449.4" x2="515.9" y2="468.4" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="496.9" y1="449.4" x2="477.9" y2="430.4" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="234.5" y1="924.3" x2="215.5" y2="924.3" stroke="#77BBE0" stroke-width="4" stroke-linecap="round"/>
+<line x1="234.5" y1="924.3" x2="253.5" y2="924.3" stroke="#77BBE0" stroke-width="4" stroke-linecap="round"/>
+<line x1="458.9" y1="411.4" x2="477.9" y2="430.4" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="458.9" y1="411.4" x2="435.1" y2="387.7" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="511.1" y1="590.7" x2="439.3" y2="662.5" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="511.1" y1="590.7" x2="558.6" y2="638.1" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="511.1" y1="590.7" x2="367.5" y2="590.7" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="511.1" y1="590.7" x2="511.1" y2="539.0" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="515.9" y1="468.4" x2="534.9" y2="487.4" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="449.1" y1="792.2" x2="429.2" y2="772.3" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="449.1" y1="792.2" x2="469.0" y2="812.1" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="488.0" y1="831.1" x2="507.0" y2="850.1" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="488.0" y1="831.1" x2="469.0" y2="812.1" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="525.4" x2="502.2" y2="581.8" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="525.4" x2="558.6" y2="638.1" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="525.4" x2="718.9" y2="525.4" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="525.4" x2="558.6" y2="506.4" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="761.6" y1="506.4" x2="742.6" y2="525.4" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="761.6" y1="506.4" x2="780.6" y2="487.4" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="680.9" y1="487.4" x2="558.6" y2="487.4" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="680.9" y1="487.4" x2="699.9" y2="506.4" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="750.9" x2="582.4" y2="774.7" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="750.9" x2="558.6" y2="694.5" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="750.9" x2="502.2" y2="694.5" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="750.9" x2="606.1" y2="750.9" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="292.7" y1="753.3" x2="311.7" y2="734.3" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="292.7" y1="753.3" x2="273.7" y2="772.3" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="458.3" y1="1040.0" x2="477.3" y2="1021.0" stroke="#C3B091" stroke-width="4" stroke-linecap="round"/>
+<line x1="367.5" y1="810.3" x2="386.5" y2="791.3" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="367.5" y1="810.3" x2="367.5" y2="829.3" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="761.6" y1="750.9" x2="780.6" y2="750.9" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="761.6" y1="750.9" x2="742.6" y2="750.9" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="439.3" y1="662.5" x2="367.5" y2="734.3" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="856.6" y1="449.4" x2="875.6" y2="468.4" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="856.6" y1="449.4" x2="837.6" y2="449.4" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="634.0" y1="826.3" x2="608.2" y2="800.5" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="634.0" y1="826.3" x2="634.0" y2="845.3" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="742.6" y1="788.9" x2="742.6" y2="769.9" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="742.6" y1="788.9" x2="742.6" y2="807.9" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="780.6" y1="449.4" x2="780.6" y2="468.4" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="780.6" y1="449.4" x2="799.6" y2="449.4" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="444.6" x2="558.6" y2="463.6" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="444.6" x2="558.6" y2="425.6" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="818.6" y1="864.9" x2="799.6" y2="864.9" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="444.6" y1="311.7" x2="463.6" y2="330.7" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="444.6" y1="311.7" x2="425.6" y2="292.7" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="444.6" y1="311.7" x2="468.4" y2="287.9" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="502.2" y1="581.8" x2="445.8" y2="638.1" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="610.2" y1="888.0" x2="634.0" y2="888.0" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="610.2" y1="888.0" x2="591.3" y2="907.0" stroke="#C3B091" stroke-width="4" stroke-linecap="round"/>
+<line x1="610.2" y1="888.0" x2="591.3" y2="869.0" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="780.6" y1="525.4" x2="761.6" y2="525.4" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="780.6" y1="525.4" x2="804.3" y2="525.4" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="742.6" y1="525.4" x2="761.6" y2="525.4" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="742.6" y1="525.4" x2="742.6" y2="638.1" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="742.6" y1="525.4" x2="718.9" y2="525.4" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="530.7" y1="873.8" x2="507.0" y2="850.1" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="921.6" y1="596.9" x2="880.3" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="921.6" y1="596.9" x2="962.8" y2="555.6" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="880.3" y1="638.1" x2="861.3" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="962.8" y1="555.6" x2="928.7" y2="521.5" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="582.4" y1="774.7" x2="608.2" y2="800.5" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="582.4" y1="774.7" x2="606.1" y2="750.9" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="582.4" y1="774.7" x2="556.5" y2="800.5" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="780.6" y1="750.9" x2="799.6" y2="750.9" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="496.3" y1="1002.0" x2="477.3" y2="1021.0" stroke="#C3B091" stroke-width="4" stroke-linecap="round"/>
+<line x1="496.3" y1="1002.0" x2="515.3" y2="983.0" stroke="#C3B091" stroke-width="4" stroke-linecap="round"/>
+<line x1="511.1" y1="487.4" x2="534.9" y2="487.4" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="511.1" y1="487.4" x2="511.1" y2="539.0" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="638.1" x2="558.6" y2="694.5" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="638.1" x2="638.7" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="638.1" x2="445.8" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="482.6" y1="349.7" x2="463.6" y2="330.7" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="482.6" y1="349.7" x2="501.6" y2="368.7" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="638.7" y1="638.1" x2="718.9" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="785.4" y1="638.1" x2="804.3" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="785.4" y1="638.1" x2="766.4" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="102.7" y1="811.5" x2="83.7" y2="792.5" stroke="#77BBE0" stroke-width="4" stroke-linecap="round"/>
+<line x1="102.7" y1="811.5" x2="121.7" y2="830.5" stroke="#77BBE0" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="463.6" x2="558.6" y2="487.4" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="367.5" y1="848.3" x2="348.5" y2="867.3" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="367.5" y1="848.3" x2="367.5" y2="829.3" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="215.5" y1="628.6" x2="234.5" y2="628.6" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="215.5" y1="628.6" x2="196.5" y2="628.6" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="425.6" x2="539.6" y2="406.7" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="139.5" y1="666.6" x2="158.5" y2="647.6" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="139.5" y1="666.6" x2="139.5" y2="719.5" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="634.0" y1="888.0" x2="634.0" y2="864.3" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="742.6" y1="750.9" x2="674.4" y2="750.9" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="742.6" y1="750.9" x2="742.6" y2="638.1" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="742.6" y1="750.9" x2="742.6" y2="769.9" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="674.4" y1="750.9" x2="606.1" y2="750.9" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="534.9" y1="487.4" x2="558.6" y2="487.4" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="875.6" y1="468.4" x2="894.6" y2="487.4" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="780.6" y1="468.4" x2="780.6" y2="487.4" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="310.5" y1="905.3" x2="291.5" y2="924.3" stroke="#77BBE0" stroke-width="4" stroke-linecap="round"/>
+<line x1="310.5" y1="905.3" x2="329.5" y2="886.3" stroke="#77BBE0" stroke-width="4" stroke-linecap="round"/>
+<line x1="553.3" y1="945.0" x2="534.3" y2="964.0" stroke="#C3B091" stroke-width="4" stroke-linecap="round"/>
+<line x1="553.3" y1="945.0" x2="572.3" y2="926.0" stroke="#C3B091" stroke-width="4" stroke-linecap="round"/>
+<line x1="502.2" y1="694.5" x2="445.8" y2="638.1" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="234.5" y1="628.6" x2="253.5" y2="628.6" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="231.0" y1="60.0" x2="231.0" y2="79.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="804.3" y1="638.1" x2="823.3" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="367.5" y1="662.5" x2="367.5" y2="590.7" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="367.5" y1="662.5" x2="367.5" y2="734.3" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="386.5" y1="791.3" x2="405.5" y2="772.3" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="818.6" y1="750.9" x2="799.6" y2="750.9" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="842.3" y1="638.1" x2="861.3" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="842.3" y1="638.1" x2="823.3" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="425.6" y1="292.7" x2="406.7" y2="273.7" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="742.6" y1="638.1" x2="766.4" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="742.6" y1="638.1" x2="718.9" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="718.9" y1="638.1" x2="606.1" y2="750.9" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="718.9" y1="638.1" x2="718.9" y2="525.4" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="406.7" y1="273.7" x2="387.7" y2="254.7" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="837.6" y1="449.4" x2="818.6" y2="449.4" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="367.5" y1="590.7" x2="348.5" y2="609.7" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="591.3" y1="907.0" x2="572.3" y2="926.0" stroke="#C3B091" stroke-width="4" stroke-linecap="round"/>
+<line x1="405.5" y1="705.2" x2="405.5" y2="772.3" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="405.5" y1="705.2" x2="405.5" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="386.5" y1="753.3" x2="405.5" y2="772.3" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="386.5" y1="753.3" x2="367.5" y2="734.3" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="287.9" y1="117.0" x2="268.9" y2="98.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="287.9" y1="117.0" x2="306.9" y2="136.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="634.0" y1="949.8" x2="634.0" y2="930.8" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="339.6" y1="734.3" x2="311.7" y2="734.3" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="339.6" y1="734.3" x2="367.5" y2="734.3" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="348.5" y1="609.7" x2="329.5" y2="628.6" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="520.6" y1="387.7" x2="501.6" y2="368.7" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="520.6" y1="387.7" x2="539.6" y2="406.7" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="507.0" y1="850.1" x2="572.3" y2="850.1" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="507.0" y1="850.1" x2="530.7" y2="826.3" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="572.3" y1="850.1" x2="591.3" y2="869.0" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="534.3" y1="964.0" x2="515.3" y2="983.0" stroke="#C3B091" stroke-width="4" stroke-linecap="round"/>
+<line x1="634.0" y1="864.3" x2="634.0" y2="845.3" stroke="#008659" stroke-width="4" stroke-linecap="round"/>
+<line x1="799.6" y1="864.9" x2="780.6" y2="864.9" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="928.7" y1="521.5" x2="894.6" y2="487.4" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="718.9" y1="525.4" x2="699.9" y2="506.4" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="429.2" y1="772.3" x2="405.5" y2="772.3" stroke="#FFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="253.5" y1="628.6" x2="272.5" y2="628.6" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="139.5" y1="810.3" x2="139.5" y2="829.3" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="139.5" y1="810.3" x2="139.5" y2="791.3" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="158.5" y1="647.6" x2="177.5" y2="628.6" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="196.5" y1="628.6" x2="177.5" y2="628.6" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="139.5" y1="719.5" x2="139.5" y2="772.3" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="272.5" y1="924.3" x2="291.5" y2="924.3" stroke="#77BBE0" stroke-width="4" stroke-linecap="round"/>
+<line x1="272.5" y1="924.3" x2="253.5" y2="924.3" stroke="#77BBE0" stroke-width="4" stroke-linecap="round"/>
+<line x1="558.6" y1="487.4" x2="558.6" y2="506.4" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="83.7" y1="792.5" x2="60.0" y2="768.7" stroke="#77BBE0" stroke-width="4" stroke-linecap="round"/>
+<line x1="530.7" y1="826.3" x2="556.5" y2="800.5" stroke="#F8B61C" stroke-width="4" stroke-linecap="round"/>
+<line x1="348.5" y1="867.3" x2="329.5" y2="886.3" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="405.5" y1="638.1" x2="425.6" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="188.2" y1="117.0" x2="169.2" y2="136.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="188.2" y1="117.0" x2="207.2" y2="98.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="329.5" y1="628.6" x2="310.5" y2="628.6" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="310.5" y1="628.6" x2="291.5" y2="628.6" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="321.2" y1="188.2" x2="344.9" y2="212.0" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="268.9" y1="98.0" x2="249.9" y2="98.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="325.9" y1="155.0" x2="306.9" y2="136.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="325.9" y1="155.0" x2="344.9" y2="174.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="231.0" y1="79.0" x2="231.0" y2="98.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="344.9" y1="174.0" x2="344.9" y2="193.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="818.6" y1="449.4" x2="799.6" y2="449.4" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="231.0" y1="98.0" x2="249.9" y2="98.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="231.0" y1="98.0" x2="207.2" y2="98.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="139.5" y1="848.3" x2="139.5" y2="872.0" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="139.5" y1="848.3" x2="139.5" y2="829.3" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="368.7" y1="235.7" x2="344.9" y2="212.0" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="368.7" y1="235.7" x2="387.7" y2="254.7" stroke="#E3002C" stroke-width="4" stroke-linecap="round"/>
+<line x1="344.9" y1="193.0" x2="344.9" y2="212.0" stroke="#CFDB00" stroke-width="4" stroke-linecap="round"/>
+<line x1="215.5" y1="924.3" x2="168.6" y2="877.4" stroke="#77BBE0" stroke-width="4" stroke-linecap="round"/>
+<line x1="780.6" y1="864.9" x2="761.6" y2="845.9" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="761.6" y1="845.9" x2="742.6" y2="826.9" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="445.8" y1="638.1" x2="425.6" y2="638.1" stroke="#0070BD" stroke-width="4" stroke-linecap="round"/>
+<line x1="742.6" y1="826.9" x2="742.6" y2="807.9" stroke="#C48C31" stroke-width="4" stroke-linecap="round"/>
+<line x1="272.5" y1="628.6" x2="291.5" y2="628.6" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<line x1="121.7" y1="830.5" x2="168.6" y2="877.4" stroke="#77BBE0" stroke-width="4" stroke-linecap="round"/>
+<line x1="139.5" y1="772.3" x2="139.5" y2="791.3" stroke="#8246AF" stroke-width="4" stroke-linecap="round"/>
+<circle cx="634.0" cy="911.8" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="641.1" y="911.2" font-size="11" fill="#333">七張</text>
+<circle cx="496.9" cy="449.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="502.5" y="446.7" font-size="9" fill="#333">三和國中</text>
+<circle cx="234.5" cy="924.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="237.5" y="917.3" font-size="9" fill="#333" transform="rotate(-45 237.5 917.3)">三峽</text>
+<circle cx="458.9" cy="411.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="464.5" y="408.7" font-size="9" fill="#333">三民高中</text>
+<circle cx="511.1" cy="590.7" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="514.2" y="586.3" font-size="11" fill="#333">三重</text>
+<circle cx="515.9" cy="468.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="521.5" y="465.7" font-size="9" fill="#333">三重國小</text>
+<circle cx="449.1" cy="792.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="454.7" y="789.5" font-size="9" fill="#333">中原</text>
+<circle cx="488.0" cy="831.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="493.6" y="828.4" font-size="9" fill="#333">中和</text>
+<circle cx="558.6" cy="525.4" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="563.4" y="522.0" font-size="11" fill="#333">中山</text>
+<circle cx="761.6" cy="506.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="767.3" y="515.0" font-size="9" fill="#333">中山國中</text>
+<circle cx="680.9" cy="487.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="683.9" y="483.0" font-size="9" fill="#333">中山國小</text>
+<circle cx="558.6" cy="750.9" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="564.3" y="748.3" font-size="11" fill="#333">中正紀念堂</text>
+<circle cx="292.7" cy="753.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="298.3" y="762.0" font-size="9" fill="#333">丹鳳</text>
+<circle cx="458.3" cy="1040.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="463.9" y="1048.7" font-size="11" fill="#333">二叭子植物園</text>
+<circle cx="367.5" cy="810.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="370.5" y="805.9" font-size="9" fill="#333">亞東醫院</text>
+<circle cx="761.6" cy="750.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="764.6" y="743.9" font-size="9" fill="#333" transform="rotate(-45 764.6 743.9)">信義安和</text>
+<circle cx="439.3" cy="662.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="445.0" y="671.1" font-size="9" fill="#333">先嗇宮</text>
+<circle cx="856.6" cy="449.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="859.6" y="445.0" font-size="9" fill="#333">內湖</text>
+<circle cx="634.0" cy="826.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="641.4" y="826.2" font-size="9" fill="#333">公館</text>
+<circle cx="742.6" cy="788.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="750.6" y="791.9" font-size="9" fill="#333">六張犁</text>
+<circle cx="780.6" cy="449.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="786.3" y="446.7" font-size="9" fill="#333">劍南路</text>
+<circle cx="558.6" cy="444.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="566.6" y="447.6" font-size="9" fill="#333">劍潭</text>
+<circle cx="818.6" cy="864.9" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="821.6" y="857.9" font-size="11" fill="#333" transform="rotate(-45 821.6 857.9)">動物園</text>
+<circle cx="444.6" cy="311.7" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="447.6" y="304.7" font-size="11" fill="#333" transform="rotate(-45 447.6 304.7)">北投</text>
+<circle cx="502.2" cy="581.8" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="507.9" y="590.4" font-size="9" fill="#333">北門</text>
+<circle cx="610.2" cy="888.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="613.2" y="881.0" font-size="11" fill="#333" transform="rotate(-45 613.2 881.0)">十四張</text>
+<circle cx="780.6" cy="525.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="783.6" y="518.4" font-size="9" fill="#333" transform="rotate(-45 783.6 518.4)">南京三民</text>
+<circle cx="742.6" cy="525.4" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="745.6" y="518.4" font-size="11" fill="#333" transform="rotate(-45 745.6 518.4)">南京復興</text>
+<circle cx="530.7" cy="873.8" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="536.4" y="871.1" font-size="11" fill="#333">南勢角</text>
+<circle cx="921.6" cy="596.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="927.2" y="605.5" font-size="9" fill="#333">南港展覽館</text>
+<circle cx="880.3" cy="638.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="883.4" y="648.5" font-size="9" fill="#333">南港車站</text>
+<circle cx="962.8" cy="555.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="965.8" y="548.6" font-size="9" fill="#333" transform="rotate(-45 965.8 548.6)">南港軟體園區</text>
+<circle cx="582.4" cy="774.7" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="585.4" y="767.7" font-size="11" fill="#333" transform="rotate(-45 585.4 767.7)">古亭</text>
+<circle cx="780.6" cy="750.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="783.6" y="743.9" font-size="9" fill="#333" transform="rotate(-45 783.6 743.9)">台北101/世貿</text>
+<circle cx="496.3" cy="1002.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="501.9" y="1010.7" font-size="9" fill="#333">台北小城</text>
+<circle cx="761.6" cy="525.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="764.6" y="518.4" font-size="9" fill="#333" transform="rotate(-45 764.6 518.4)">台北小巨蛋</text>
+<circle cx="511.1" cy="487.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="516.8" y="484.7" font-size="9" fill="#333">台北橋</text>
+<circle cx="558.6" cy="638.1" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="564.3" y="635.5" font-size="11" fill="#333">台北車站</text>
+<circle cx="558.6" cy="694.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="566.6" y="697.5" font-size="9" fill="#333">台大醫院</text>
+<circle cx="608.2" cy="800.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="613.8" y="797.8" font-size="9" fill="#333">台電大樓</text>
+<circle cx="482.6" cy="349.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="488.3" y="347.0" font-size="9" fill="#333">唭哩岸</text>
+<circle cx="638.7" cy="638.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="641.7" y="631.1" font-size="9" fill="#333" transform="rotate(-45 641.7 631.1)">善導寺</text>
+<circle cx="785.4" cy="638.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="788.4" y="631.1" font-size="9" fill="#333" transform="rotate(-45 788.4 631.1)">國父紀念館</text>
+<circle cx="102.7" cy="811.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="108.4" y="808.8" font-size="9" fill="#333">國華</text>
+<circle cx="558.6" cy="463.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="566.6" y="466.6" font-size="9" fill="#333">圓山</text>
+<circle cx="367.5" cy="848.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="370.5" y="843.9" font-size="9" fill="#333">土城</text>
+<circle cx="215.5" cy="628.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="218.5" y="621.6" font-size="9" fill="#333" transform="rotate(-45 218.5 621.6)">坑口</text>
+<circle cx="558.6" cy="425.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="566.0" y="425.6" font-size="9" fill="#333">士林</text>
+<circle cx="139.5" cy="666.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="142.6" y="662.2" font-size="9" fill="#333">大園</text>
+<circle cx="634.0" cy="888.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="641.1" y="887.5" font-size="11" fill="#333">大坪林</text>
+<circle cx="742.6" cy="750.9" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="748.3" y="748.3" font-size="11" fill="#333">大安</text>
+<circle cx="674.4" cy="750.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="677.4" y="743.9" font-size="9" fill="#333" transform="rotate(-45 677.4 743.9)">大安森林公園</text>
+<circle cx="534.9" cy="487.4" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="537.9" y="480.4" font-size="11" fill="#333" transform="rotate(-45 537.9 480.4)">大橋頭</text>
+<circle cx="875.6" cy="468.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="881.2" y="465.7" font-size="9" fill="#333">大湖公園</text>
+<circle cx="780.6" cy="468.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="788.6" y="471.4" font-size="9" fill="#333">大直</text>
+<circle cx="463.6" cy="330.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="469.3" y="328.0" font-size="9" fill="#333">奇岩</text>
+<circle cx="310.5" cy="905.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="316.1" y="913.9" font-size="9" fill="#333">媽祖田</text>
+<circle cx="553.3" cy="945.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="558.9" y="953.7" font-size="9" fill="#333">安康</text>
+<circle cx="502.2" cy="694.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="507.9" y="691.9" font-size="9" fill="#333">小南門</text>
+<circle cx="610.2" cy="911.8" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="613.2" y="904.8" font-size="11" fill="#333" transform="rotate(-45 613.2 904.8)">小碧潭</text>
+<circle cx="234.5" cy="628.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="237.5" y="621.6" font-size="9" fill="#333" transform="rotate(-45 237.5 621.6)">山鼻</text>
+<circle cx="231.0" cy="60.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="239.0" y="63.0" font-size="11" fill="#333">崁頂</text>
+<circle cx="804.3" cy="638.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="807.3" y="631.1" font-size="9" fill="#333" transform="rotate(-45 807.3 631.1)">市政府</text>
+<circle cx="367.5" cy="662.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="375.5" y="665.5" font-size="9" fill="#333">幸福</text>
+<circle cx="386.5" cy="791.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="392.1" y="799.9" font-size="9" fill="#333">府中</text>
+<circle cx="818.6" cy="750.9" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="821.6" y="743.9" font-size="11" fill="#333" transform="rotate(-45 821.6 743.9)">廣慈/奉天宮</text>
+<circle cx="842.3" cy="638.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="845.3" y="631.1" font-size="9" fill="#333" transform="rotate(-45 845.3 631.1)">後山埤</text>
+<circle cx="477.9" cy="430.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="483.5" y="427.7" font-size="9" fill="#333">徐匯中學</text>
+<circle cx="425.6" cy="292.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="431.3" y="290.0" font-size="9" fill="#333">復興崗</text>
+<circle cx="742.6" cy="638.1" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="748.3" y="635.5" font-size="11" fill="#333">忠孝復興</text>
+<circle cx="766.4" cy="638.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="769.4" y="631.1" font-size="9" fill="#333" transform="rotate(-45 769.4 631.1)">忠孝敦化</text>
+<circle cx="718.9" cy="638.1" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="721.9" y="631.1" font-size="11" fill="#333" transform="rotate(-45 721.9 631.1)">忠孝新生</text>
+<circle cx="406.7" cy="273.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="412.3" y="271.0" font-size="9" fill="#333">忠義</text>
+<circle cx="837.6" cy="449.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="840.6" y="442.4" font-size="9" fill="#333" transform="rotate(-45 840.6 442.4)">文德</text>
+<circle cx="468.4" cy="287.9" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="474.0" y="296.6" font-size="11" fill="#333">新北投</text>
+<circle cx="367.5" cy="590.7" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="370.5" y="583.7" font-size="11" fill="#333" transform="rotate(-45 370.5 583.7)">新北產業園區</text>
+<circle cx="591.3" cy="907.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="596.9" y="915.7" font-size="9" fill="#333">新和國小</text>
+<circle cx="405.5" cy="705.2" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="413.5" y="708.2" font-size="9" fill="#333">新埔</text>
+<circle cx="386.5" cy="753.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="392.1" y="750.6" font-size="9" fill="#333">新埔民生</text>
+<circle cx="287.9" cy="117.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="293.6" y="114.3" font-size="9" fill="#333">新市一路</text>
+<circle cx="634.0" cy="949.8" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="642.0" y="952.8" font-size="11" fill="#333">新店</text>
+<circle cx="634.0" cy="930.8" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="642.0" y="933.8" font-size="9" fill="#333">新店區公所</text>
+<circle cx="339.6" cy="734.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="342.6" y="727.3" font-size="9" fill="#333" transform="rotate(-45 342.6 727.3)">新莊</text>
+<circle cx="348.5" cy="609.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="354.1" y="618.3" font-size="9" fill="#333">新莊副都心</text>
+<circle cx="861.3" cy="638.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="864.3" y="631.1" font-size="9" fill="#333" transform="rotate(-45 864.3 631.1)">昆陽</text>
+<circle cx="520.6" cy="387.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="526.3" y="385.0" font-size="9" fill="#333">明德</text>
+<circle cx="507.0" cy="850.1" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="510.0" y="843.1" font-size="11" fill="#333" transform="rotate(-45 510.0 843.1)">景安</text>
+<circle cx="572.3" cy="850.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="575.3" y="845.7" font-size="9" fill="#333">景平</text>
+<circle cx="534.3" cy="964.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="539.9" y="972.7" font-size="9" fill="#333">景文科大</text>
+<circle cx="634.0" cy="864.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="642.0" y="867.3" font-size="9" fill="#333">景美</text>
+<circle cx="799.6" cy="864.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="802.6" y="857.9" font-size="9" fill="#333" transform="rotate(-45 802.6 857.9)">木柵</text>
+<circle cx="928.7" cy="521.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="934.4" y="518.9" font-size="9" fill="#333">東湖</text>
+<circle cx="606.1" cy="750.9" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="609.2" y="761.3" font-size="11" fill="#333">東門</text>
+<circle cx="780.6" cy="487.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="783.7" y="483.0" font-size="9" fill="#333">松山機場</text>
+<circle cx="804.3" cy="525.4" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="807.3" y="518.4" font-size="11" fill="#333" transform="rotate(-45 807.3 518.4)">松山車站</text>
+<circle cx="718.9" cy="525.4" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="723.1" y="521.6" font-size="11" fill="#333">松江南京</text>
+<circle cx="429.2" cy="772.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="432.3" y="767.9" font-size="9" fill="#333">板新</text>
+<circle cx="405.5" cy="772.3" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="408.5" y="767.9" font-size="11" fill="#333">板橋</text>
+<circle cx="253.5" cy="628.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="256.5" y="621.6" font-size="9" fill="#333" transform="rotate(-45 256.5 621.6)">林口</text>
+<circle cx="139.5" cy="810.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="147.5" y="813.3" font-size="9" fill="#333">桃園體育園區</text>
+<circle cx="469.0" cy="812.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="474.6" y="809.4" font-size="9" fill="#333">橋和</text>
+<circle cx="158.5" cy="647.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="164.2" y="656.3" font-size="9" fill="#333">機場旅館</text>
+<circle cx="196.5" cy="628.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="199.5" y="621.6" font-size="9" fill="#333" transform="rotate(-45 199.5 621.6)">機場第一航廈</text>
+<circle cx="177.5" cy="628.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="180.6" y="639.0" font-size="9" fill="#333">機場第二航廈</text>
+<circle cx="139.5" cy="719.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="147.5" y="722.5" font-size="9" fill="#333">橫山</text>
+<circle cx="272.5" cy="924.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="275.5" y="917.3" font-size="9" fill="#333" transform="rotate(-45 275.5 917.3)">橫溪</text>
+<circle cx="558.6" cy="487.4" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="564.3" y="484.7" font-size="11" fill="#333">民權西路</text>
+<circle cx="83.7" cy="792.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="89.4" y="789.8" font-size="9" fill="#333">永吉公園</text>
+<circle cx="530.7" cy="826.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="536.4" y="835.0" font-size="9" fill="#333">永安市場</text>
+<circle cx="348.5" cy="867.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="354.1" y="875.9" font-size="9" fill="#333">永寧</text>
+<circle cx="823.3" cy="638.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="826.3" y="631.1" font-size="9" fill="#333" transform="rotate(-45 826.3 631.1)">永春</text>
+<circle cx="405.5" cy="638.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="411.1" y="635.5" font-size="9" fill="#333">江子翠</text>
+<circle cx="188.2" cy="117.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="193.9" y="125.6" font-size="9" fill="#333">沙崙</text>
+<circle cx="329.5" cy="628.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="332.5" y="639.0" font-size="9" fill="#333">泰山</text>
+<circle cx="310.5" cy="628.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="313.5" y="621.6" font-size="9" fill="#333" transform="rotate(-45 313.5 621.6)">泰山貴和</text>
+<circle cx="367.5" cy="829.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="375.5" y="832.3" font-size="9" fill="#333">海山</text>
+<circle cx="321.2" cy="188.2" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="326.8" y="185.6" font-size="11" fill="#333">淡水</text>
+<circle cx="169.2" cy="136.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="174.9" y="144.6" font-size="11" fill="#333">淡水漁人碼頭</text>
+<circle cx="268.9" cy="98.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="272.0" y="93.6" font-size="9" fill="#333">淡水行政中心</text>
+<circle cx="325.9" cy="155.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="331.6" y="152.3" font-size="9" fill="#333">淡江大學</text>
+<circle cx="231.0" cy="79.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="239.0" y="82.0" font-size="9" fill="#333">淡海新市鎮</text>
+<circle cx="306.9" cy="136.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="312.6" y="133.3" font-size="9" fill="#333">淡金北新</text>
+<circle cx="344.9" cy="174.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="352.3" y="173.9" font-size="9" fill="#333">淡金鄧公</text>
+<circle cx="818.6" cy="449.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="821.6" y="442.4" font-size="9" fill="#333" transform="rotate(-45 821.6 442.4)">港墘</text>
+<circle cx="231.0" cy="98.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="234.5" y="93.8" font-size="11" fill="#333">濱海沙崙</text>
+<circle cx="249.9" cy="98.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="252.9" y="91.0" font-size="9" fill="#333" transform="rotate(-45 252.9 91.0)">濱海義山</text>
+<circle cx="477.3" cy="1021.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="482.9" y="1029.7" font-size="9" fill="#333">玫瑰中國城</text>
+<circle cx="139.5" cy="848.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="147.5" y="851.3" font-size="9" fill="#333">環北</text>
+<circle cx="501.6" cy="368.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="507.3" y="366.0" font-size="9" fill="#333">石牌</text>
+<circle cx="591.3" cy="869.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="596.9" y="866.4" font-size="9" fill="#333">秀朗橋</text>
+<circle cx="742.6" cy="769.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="750.6" y="772.9" font-size="9" fill="#333">科技大樓</text>
+<circle cx="368.7" cy="235.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="374.3" y="233.0" font-size="9" fill="#333">竹圍</text>
+<circle cx="344.9" cy="193.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="352.9" y="196.0" font-size="9" fill="#333">竿蓁林</text>
+<circle cx="344.9" cy="212.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="351.8" y="210.9" font-size="11" fill="#333">紅樹林</text>
+<circle cx="139.5" cy="872.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="147.5" y="875.0" font-size="11" fill="#333">老街溪</text>
+<circle cx="515.3" cy="983.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="520.9" y="991.7" font-size="9" fill="#333">耕莘安康院區</text>
+<circle cx="215.5" cy="924.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="218.6" y="919.9" font-size="9" fill="#333">臺北大學</text>
+<circle cx="207.2" cy="98.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="210.3" y="108.4" font-size="9" fill="#333">臺北海洋大學</text>
+<circle cx="139.5" cy="829.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="147.5" y="832.3" font-size="9" fill="#333">興南</text>
+<circle cx="539.6" cy="406.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="545.3" y="404.0" font-size="9" fill="#333">芝山</text>
+<circle cx="511.1" cy="539.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="519.1" y="542.0" font-size="9" fill="#333">菜寮</text>
+<circle cx="780.6" cy="864.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="783.7" y="860.5" font-size="9" fill="#333">萬芳社區</text>
+<circle cx="761.6" cy="845.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="767.3" y="843.2" font-size="9" fill="#333">萬芳醫院</text>
+<circle cx="634.0" cy="845.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="642.0" y="848.3" font-size="9" fill="#333">萬隆</text>
+<circle cx="894.6" cy="487.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="900.2" y="484.7" font-size="9" fill="#333">葫洲</text>
+<circle cx="435.1" cy="387.7" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="440.8" y="385.0" font-size="11" fill="#333">蘆洲</text>
+<circle cx="699.9" cy="506.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="705.5" y="503.7" font-size="9" fill="#333">行天宮</text>
+<circle cx="799.6" cy="449.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="802.6" y="442.4" font-size="9" fill="#333" transform="rotate(-45 802.6 442.4)">西湖</text>
+<circle cx="445.8" cy="638.1" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="448.8" y="631.1" font-size="11" fill="#333" transform="rotate(-45 448.8 631.1)">西門</text>
+<circle cx="799.6" cy="750.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="802.6" y="743.9" font-size="9" fill="#333" transform="rotate(-45 802.6 743.9)">象山</text>
+<circle cx="311.7" cy="734.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="314.7" y="744.7" font-size="9" fill="#333">輔大</text>
+<circle cx="742.6" cy="826.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="750.0" y="826.8" font-size="9" fill="#333">辛亥</text>
+<circle cx="273.7" cy="772.3" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="279.3" y="781.0" font-size="11" fill="#333">迴龍</text>
+<circle cx="291.5" cy="924.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="294.6" y="934.6" font-size="9" fill="#333">長壽山</text>
+<circle cx="272.5" cy="628.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="275.5" y="621.6" font-size="9" fill="#333" transform="rotate(-45 275.5 621.6)">長庚醫院</text>
+<circle cx="387.7" cy="254.7" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="393.3" y="252.0" font-size="9" fill="#333">關渡</text>
+<circle cx="121.7" cy="830.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="127.4" y="827.8" font-size="9" fill="#333">陶瓷老街</text>
+<circle cx="572.3" cy="926.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="577.9" y="934.7" font-size="9" fill="#333">陽光運動公園</text>
+<circle cx="558.6" cy="506.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="566.6" y="509.4" font-size="9" fill="#333">雙連</text>
+<circle cx="329.5" cy="886.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="335.1" y="894.9" font-size="9" fill="#333">頂埔</text>
+<circle cx="556.5" cy="800.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="562.2" y="809.1" font-size="9" fill="#333">頂溪</text>
+<circle cx="139.5" cy="772.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="147.5" y="775.3" font-size="9" fill="#333">領航</text>
+<circle cx="367.5" cy="734.3" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="370.5" y="729.9" font-size="11" fill="#333">頭前庄</text>
+<circle cx="291.5" cy="628.6" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="294.5" y="621.6" font-size="9" fill="#333" transform="rotate(-45 294.5 621.6)">體育大學</text>
+<circle cx="139.5" cy="791.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="147.5" y="794.3" font-size="9" fill="#333">高鐵桃園</text>
+<circle cx="60.0" cy="768.7" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
+<text x="65.7" y="766.1" font-size="11" fill="#333">鶯桃福德</text>
+<circle cx="168.6" cy="877.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="174.3" y="874.7" font-size="9" fill="#333">鶯歌車站</text>
+<circle cx="742.6" cy="807.9" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="750.6" y="810.9" font-size="9" fill="#333">麟光</text>
+<circle cx="253.5" cy="924.3" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="256.5" y="917.3" font-size="9" fill="#333" transform="rotate(-45 256.5 917.3)">龍埔</text>
+<circle cx="425.6" cy="638.1" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<text x="428.6" y="631.1" font-size="9" fill="#333" transform="rotate(-45 428.6 631.1)">龍山寺</text>
+</svg>

@@ -1,0 +1,179 @@
+{
+ "engine": "own octilinear MIP (Nöllenburg & Wolff 2011 style, HiGHS via highspy)",
+ "solver": {
+  "grid_edge": 4.0,
+  "min_edge": 2.0,
+  "chain_len_factor": 0.6,
+  "w_bend": 1.0,
+  "w_dir": 2.0,
+  "w_len": 0.05,
+  "min_sep": 1.5,
+  "time_limit_s": 20.0,
+  "max_iterations": 12,
+  "mip_rel_gap": 0.05
+ },
+ "regions": {
+  "seoul": {
+   "city": "수도권",
+   "country": "KR",
+   "keep_every": 3,
+   "engine": "snap-lp",
+   "status": "MIP: Time limit reached (실행 가능해 없음) → snap-lp",
+   "seconds": 21.4,
+   "iterations": 6,
+   "crossing_constraints": 0,
+   "objective": null,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 23,
+    "crossings": 107,
+    "bend_units_45deg": 209,
+    "mean_displacement_norm": 0.298
+   },
+   "stats_geo": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 755,
+    "crossings": 18,
+    "bend_units_45deg": 343,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  "busan": {
+   "city": "부산",
+   "country": "KR",
+   "keep_every": 2,
+   "engine": "mip",
+   "status": "Optimal",
+   "seconds": 1.4,
+   "iterations": 1,
+   "crossing_constraints": 0,
+   "objective": 73.18000000000005,
+   "stats": {
+    "nodes": 146,
+    "edges": 152,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 37,
+    "mean_displacement_norm": 0.376
+   },
+   "stats_geo": {
+    "nodes": 146,
+    "edges": 152,
+    "non_octilinear_edges": 152,
+    "crossings": 0,
+    "bend_units_45deg": 65,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  "daegu": {
+   "city": "대구",
+   "country": "KR",
+   "keep_every": 2,
+   "engine": "mip",
+   "status": "Optimal",
+   "seconds": 1.0,
+   "iterations": 2,
+   "crossing_constraints": 6,
+   "objective": 40.474999999999945,
+   "stats": {
+    "nodes": 97,
+    "edges": 98,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 20,
+    "mean_displacement_norm": 0.428
+   },
+   "stats_geo": {
+    "nodes": 97,
+    "edges": 98,
+    "non_octilinear_edges": 98,
+    "crossings": 2,
+    "bend_units_45deg": 27,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  "daejeon": {
+   "city": "대전",
+   "country": "KR",
+   "keep_every": 2,
+   "engine": "mip",
+   "status": "Optimal",
+   "seconds": 0.1,
+   "iterations": 1,
+   "crossing_constraints": 0,
+   "objective": 11.699999999999992,
+   "stats": {
+    "nodes": 22,
+    "edges": 21,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 6,
+    "mean_displacement_norm": 0.195
+   },
+   "stats_geo": {
+    "nodes": 22,
+    "edges": 21,
+    "non_octilinear_edges": 21,
+    "crossings": 0,
+    "bend_units_45deg": 12,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  "gwangju": {
+   "city": "광주",
+   "country": "KR",
+   "keep_every": 2,
+   "engine": "mip",
+   "status": "Optimal",
+   "seconds": 0.0,
+   "iterations": 1,
+   "crossing_constraints": 0,
+   "objective": 6.539999999999994,
+   "stats": {
+    "nodes": 20,
+    "edges": 19,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 3,
+    "mean_displacement_norm": 0.211
+   },
+   "stats_geo": {
+    "nodes": 20,
+    "edges": 19,
+    "non_octilinear_edges": 19,
+    "crossings": 0,
+    "bend_units_45deg": 7,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  "taipei": {
+   "city": "타이베이",
+   "country": "TW",
+   "keep_every": 2,
+   "engine": "mip",
+   "status": "Time limit reached (실행 가능해 없음)",
+   "seconds": 121.8,
+   "iterations": 3,
+   "crossing_constraints": 22,
+   "objective": Infinity,
+   "stats": {
+    "nodes": 170,
+    "edges": 183,
+    "non_octilinear_edges": 0,
+    "crossings": 7,
+    "bend_units_45deg": 48,
+    "mean_displacement_norm": 0.347
+   },
+   "stats_geo": {
+    "nodes": 170,
+    "edges": 183,
+    "non_octilinear_edges": 183,
+    "crossings": 1,
+    "bend_units_45deg": 79,
+    "mean_displacement_norm": 0.0
+   }
+  }
+ }
+}
