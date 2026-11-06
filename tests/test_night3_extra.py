@@ -17,7 +17,9 @@ def test_puzzles_no_reverse_duplicates_and_daily_permutation():
     pz = json.loads(p.read_text(encoding="utf-8"))
     pairs = [frozenset((x["from"], x["to"])) for x in pz["puzzles"]]
     assert len(pairs) == len(set(pairs))                          # 같은 두 역의 정·역방향 퍼즐은 하나만
-    assert sorted(pz["daily_order"]) == sorted(x["id"] for x in pz["puzzles"])
+    # 4차 Q2: 일정(daily_order)은 풀의 부분집합 순열 (scheduled 표시와 일치)
+    assert sorted(pz["daily_order"]) == sorted(x["id"] for x in pz["puzzles"] if x["scheduled"])
+    assert len(set(pz["daily_order"])) == len(pz["daily_order"])
 
 
 def test_normalize_casefold_and_char_map_are_opt_in():

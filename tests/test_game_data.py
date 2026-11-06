@@ -127,7 +127,9 @@ def test_puzzles_are_consistent_with_router():
     cmap = {c["id"]: c for c in w["clusters"]}
     nowarp = without_warps(w["adj"])
     g = g10.ClusterGraph(w)
-    assert len(pz["puzzles"]) >= 60 and len(set(pz["daily_order"])) == len(pz["puzzles"])
+    # 4차 Q2: 풀(puzzles) 중 일정(daily_order)에 든 것만 웹에 나간다. 일정은 중복 없는 순환 일정
+    assert len(pz["puzzles"]) >= 60 and len(set(pz["daily_order"])) == len(pz["daily_order"])
+    assert set(pz["daily_order"]) <= {p["id"] for p in pz["puzzles"]}
     for p in pz["puzzles"]:
         a, b = cmap[p["from"]]["station_ids"], cmap[p["to"]]["station_ids"]
         r = shortest_path(w["adj"], a, b)
@@ -251,3 +253,86 @@ def test_fun_facts_consistent_with_metrics():
     assert m["with_warp"]["strong_components"] == 1
     C = m["counts"]["clusters"]
     assert ff["pairs_total"] == C * (C - 1)
+
+
+# ---------------- 4차 Q2: 데일리 순서 ----------------
+from datetime import date, timedelta  # noqa: E402
+
+from metro_portal.daily_order import WEEKDAYS, Planner, jaccard  # noqa: E402
+
+
+def _pz(i, portals, level, score=None, kind="shortcut"):
+    return {"id": f"X{i:03d}", "kind": kind, "difficulty": level, "difficulty_calibrated": level, "warp_portals": list(portals),
+            "intuition_score": score if score is not None else {"easy": 1.0, "normal": 0.6, "hard": 0.3}[level],
+            "savings": 10 + i % 7, "warps": len(portals), "cost_warp": 10}
+
+
+def _cfg(days=14):
+    lv = {"mon": ["easy"], "tue": ["easy", "normal"], "wed": ["normal"], "thu": ["normal"], "fri": ["normal", "hard"],
+          "sat": ["hard"], "sun": ["hard"]}
+    return {"days": days, "signature_gap_days": 7, "max_jaccard": 0.34, "window_days": 7, "max_portal_per_window": 2,
+            "weekday": {k: {"levels": v, "target_h": 0.5} for k, v in lv.items()},
+            "weights": {"difficulty": 1.0, "recency": 1.0, "quality": 0.1}, "repair_candidates": 10}
+
+
+def test_planner_satisfies_constraints_on_synthetic_pool():
+    names = "ABCDEFGHIJKL"
+    pool, i = [], 0
+    for lvl, off in (("easy", 5), ("normal", 3), ("hard", 7)):   # 등급마다 다른 포탈 조합 (시그니처가 겹치지 않게)
+        for a in range(len(names)):
+            pool.append(_pz(i, [names[a], names[(a + off) % len(names)]], lvl))
+            i += 1
+    pl = Planner(pool, _cfg(), date(2026, 11, 2))   # 월요일 시작
+    order = pl.local_search(pl.greedy())
+    v = pl.violations(order)
+    assert all(len(x) == 0 for x in v.values()), v
+    assert len(set(order)) == len(order) == 14
+    for t, pid in enumerate(order):                 # 요일 등급 직접 확인
+        wd = WEEKDAYS[(date(2026, 11, 2) + timedelta(days=t)).weekday()]
+        assert pl.level[pid] in _cfg()["weekday"][wd]["levels"]
+        assert jaccard(pl.pset[order[t - 1]], pl.pset[pid]) <= 0.34
+
+
+def test_planner_counts_violations_cyclically():
+    pool = [_pz(0, ["A"], "easy"), _pz(1, ["A"], "easy"), _pz(2, ["B"], "easy")]
+    cfg = _cfg(3)
+    cfg["weekday"] = {k: {"levels": ["easy"], "target_h": 0.0} for k in WEEKDAYS}
+    pl = Planner(pool, cfg, date(2026, 11, 2))
+    v = pl.violations(["X000", "X002", "X001"])     # 마지막 날 → 첫날이 순환으로 이웃: 같은 시그니처 A, 자카드 1
+    assert len(v["signature"]) == 1 and v["jaccard"] == [(0, 1.0)]
+
+
+def test_planner_keeps_locked_prefix():
+    pool = [_pz(i, [c], lvl) for i, (c, lvl) in enumerate([(c, l) for l in ("easy", "normal", "hard") for c in "ABCDEFGH"])]
+    pl = Planner(pool, _cfg(), date(2026, 11, 2), locked=["X016", "X003"])
+    order = pl.local_search(pl.greedy())
+    assert order[:2] == ["X016", "X003"]
+
+
+def test_release_lock_noop_before_launch():
+    import yaml
+    cfg = yaml.safe_load(open(ROOT / "config" / "game.yaml", encoding="utf-8"))["puzzles"]
+    assert cfg["daily_release"]["launch_date"] is None     # 공개 전 (2026-11-06 사용자 결정)
+    assert g10.release_lock(cfg) is None
+    cfg2 = {**cfg, "daily_release": {**cfg["daily_release"], "launch_date": "2099-01-01"}}
+    assert g10.release_lock(cfg2, "2026-11-06") is None   # 출시 전 날짜면 고정 없음
+
+
+@real
+def test_daily_order_meets_all_constraints():
+    """실데이터 일정: (i)~(iv) 위반 0, 요일별 평균 난이도 지수가 월 → 일로 증가, 퍼즐마다 ruleset 기록."""
+    import yaml
+    pz = json.loads(PZ.read_text(encoding="utf-8"))
+    oc = yaml.safe_load(open(ROOT / "config" / "game.yaml", encoding="utf-8"))["puzzles"]["daily_order"]
+    by = {p["id"]: p for p in pz["puzzles"]}
+    pl = Planner([by[i] for i in pz["daily_order"]], oc, date.fromisoformat(pz["definition"].get("epoch", "2026-11-05")))
+    v = pl.violations(pz["daily_order"])
+    assert all(len(x) == 0 for x in v.values()), {k: x[:3] for k, x in v.items()}
+    assert len(pz["daily_order"]) == oc["days"] and oc["days"] % 7 == 0
+    h = pz["stats"]["daily_order"]["weekday_mean_h"]
+    seq = [h[d] for d in WEEKDAYS]
+    assert seq == sorted(seq), seq
+    assert all(by[i]["ruleset"] == pz["ruleset"] for i in pz["daily_order"])
+    web = json.loads((ROOT / "web" / "data" / "puzzles.json").read_text(encoding="utf-8"))
+    assert web["daily_order"] == pz["daily_order"] and len(web["puzzles"]) == len(pz["daily_order"])
+    assert all(p["ruleset"] == "strict" and p["difficulty"] == by[p["id"]]["difficulty_calibrated"] for p in web["puzzles"])

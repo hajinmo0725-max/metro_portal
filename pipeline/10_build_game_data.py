@@ -42,18 +42,21 @@ def difficulty(cfg, cost, warps):
     return "hard"
 
 
-def build_puzzles(g, cfg):
-    C = g.C
+def candidate_rows(g):
+    """모든 순서쌍 (s, t, 워프 有 비용, 워프 無 비용, 최적 경로 수, 최적 경로 워프 수). 순서쌍이다 (응암순환 유향 엣지, 3차 A2)."""
     rows = []
-    for s in range(C):
+    for s in range(g.C):
         dw, cw = g.sssp_count(s)
         wp = g.last_warps
         dn = g.bfs_ride(s)
-        # 순서쌍 (s → t). 유향 엣지(응암순환)가 있어 d(s,t) ≠ d(t,s)일 수 있다 (3차 A2)
-        for t in range(C):
+        for t in range(g.C):
             if t == s or dw[t] == INF:
                 continue
             rows.append((s, t, dw[t], dn[t], cw[t], wp[t]))
+    return rows
+
+
+def pair_stats(rows, g, cfg, max_optimal=1):
     stats = {"pairs": len(rows),
              "pairs_reachable_without_warp": sum(1 for r in rows if r[3] != INF),
              "pairs_warp_shortens": sum(1 for r in rows if r[3] != INF and r[2] < r[3]),
@@ -62,11 +65,17 @@ def build_puzzles(g, cfg):
              "optimal_count_hist": dict(sorted(Counter(min(r[4], 10) for r in rows).items())),
              }
     # 출발·도착 이름이 같으면(양평→양평) 워프 한 번이 답이라 퍼즐에서 뺀다. 최소 비용도 둔다
-    ok = [r for r in rows if r[4] == 1 and cfg["min_cost"] <= r[2] <= cfg["max_cost"] and g.cl[r[0]]["name"] != g.cl[r[1]]["name"]]
+    ok = [r for r in rows if r[4] <= max_optimal and cfg["min_cost"] <= r[2] <= cfg["max_cost"] and g.cl[r[0]]["name"] != g.cl[r[1]]["name"]]
     shortcut = [r for r in ok if r[3] != INF and r[2] < r[3] and r[3] - r[2] >= cfg["min_savings"]]
     cross = [r for r in ok if r[3] == INF]
     stats["candidates_shortcut"] = len(shortcut)
     stats["candidates_crosscity"] = len(cross)
+    return stats, shortcut, cross
+
+
+def select(g, cfg, shortcut, cross, quotas, max_sig, max_end, stats=None, rs_name="strict"):
+    """등급(난이도)·종류별 흥미도 순 선정. 같은 시그니처는 등급마다 max_sig개, 같은 출발/도착 역은 전체에서 max_end번까지.
+    최적해가 여럿인 쌍(완화판)은 역추적 첫 경로를 대표 경로로 쓴다."""
     dist_cache = {}
 
     def path_of(s, t):
@@ -77,23 +86,23 @@ def build_puzzles(g, cfg):
     out, used_pairs = [], set()
     for kind, rows_k in (("shortcut", shortcut), ("crosscity", cross)):
         by_lvl = {"easy": [], "normal": [], "hard": []}
-        for s, t, cw, cn, _, warps in rows_k:
+        for s, t, cw, cn, cnt, warps in rows_k:
             sav = (cn - cw) if cn != INF else None
             # 정렬 키: 단축 폭(같은 권역) 또는 워프 수·비용(도시 횡단)이 클수록 흥미롭다
             key = (-(sav or 0), -(sav / cn if sav else 0), s, t) if kind == "shortcut" else (-warps, -cw, s, t)
-            by_lvl[difficulty(cfg, cw, warps)].append((key, s, t, cw, cn, warps))
+            by_lvl[difficulty(cfg, cw, warps)].append((key, s, t, cw, cn, cnt))
         for lvl in ("easy", "normal", "hard"):
-            stats[f"pool_{kind}_{lvl}"] = len(by_lvl[lvl])
+            if stats is not None:
+                stats[f"pool_{kind}_{lvl}"] = len(by_lvl[lvl])
             used_sig, used_end, picked = Counter(), Counter(), 0
-            for _, s, t, cw, cn, warps in sorted(by_lvl[lvl]):
-                if used_end[s] >= cfg["max_per_endpoint"] or used_end[t] >= cfg["max_per_endpoint"]:
+            for _, s, t, cw, cn, cnt in sorted(by_lvl[lvl]):
+                if used_end[s] >= max_end or used_end[t] >= max_end:
                     continue
                 if (min(s, t), max(s, t)) in used_pairs:  # 같은 두 역의 역방향 퍼즐은 하나만
                     continue
                 steps = describe_path(g, path_of(s, t))
                 sig = tuple(x["portal"] for x in steps if x["type"] == "warp")
-                assert len(sig) == warps
-                if used_sig[sig] >= cfg["max_per_warp_signature"]:
+                if used_sig[sig] >= max_sig:
                     continue
                 used_sig[sig] += 1
                 used_pairs.add((min(s, t), max(s, t)))
@@ -102,37 +111,110 @@ def build_puzzles(g, cfg):
                 out.append({"kind": kind, "difficulty": lvl, "from": g.cl[s]["id"], "to": g.cl[t]["id"],
                             "from_label": g.name(s), "to_label": g.name(t),
                             "cost_warp": cw, "cost_no_warp": None if cn == INF else cn,
-                            "savings": None if cn == INF else cn - cw, "optimal_paths": 1, "warps": warps,
+                            "savings": None if cn == INF else cn - cw, "optimal_paths": cnt, "warps": len(sig),
                             "rides": sum(1 for x in steps if x["type"] == "ride"), "warp_portals": list(sig),
-                            "optimal": steps})
+                            # 4차 Q6-5: 퍼즐마다 ruleset을 하나로 고정하고 기록한다
+                            "ruleset": rs_name, "optimal": steps})
                 picked += 1
-                if picked >= cfg["per_kind_per_difficulty"][kind]:
+                if picked >= quotas[kind]:
                     break
-    # 결정적 퍼즐 id와 데일리 순서
     for i, p in enumerate(out):
         p["id"] = f"P{i + 1:03d}"
-    # 3차: 난이도 보정 주석 (직관 탐색). 선정·순서에는 영향 없음
-    cal = cfg.get("calibration")
-    if cal:
-        for p in out:
-            ic, ex = intuition_search(g, g.ix[p["from"]], g.ix[p["to"]])
-            sc = round(p["cost_warp"] / ic, 3) if ic else 0.0
-            p["intuition_cost"], p["intuition_expanded"], p["intuition_score"] = ic, ex, sc
-            p["difficulty_calibrated"] = "easy" if sc >= cal["easy_min_score"] else ("normal" if sc >= cal["normal_min_score"] else "hard")
-        stats["calibration"] = {f"{a}->{b}": sum(1 for p in out if p["difficulty"] == a and p["difficulty_calibrated"] == b)
-                                for a in ("easy", "normal", "hard") for b in ("easy", "normal", "hard")}
-        import statistics
-        stats["calibration_expanded_median"] = {a: statistics.median([p["intuition_expanded"] for p in out if p["difficulty"] == a] or [0])
-                                                for a in ("easy", "normal", "hard")}
+    return out
+
+
+def calibrate(g, cfg, puzzles):
+    """3차 난이도 보정 (직관 탐색). 4차부터 데일리 순서의 요일별 난이도(Q2 iv)에 쓴다."""
+    cal = cfg["calibration"]
+    for p in puzzles:
+        ic, ex = intuition_search(g, g.ix[p["from"]], g.ix[p["to"]])
+        sc = round(p["cost_warp"] / ic, 3) if ic else 0.0
+        p["intuition_cost"], p["intuition_expanded"], p["intuition_score"] = ic, ex, sc
+        p["difficulty_calibrated"] = "easy" if sc >= cal["easy_min_score"] else ("normal" if sc >= cal["normal_min_score"] else "hard")
+
+
+def calibration_stats(puzzles):
+    import statistics
+    cal = {f"{a}->{b}": sum(1 for p in puzzles if p["difficulty"] == a and p["difficulty_calibrated"] == b)
+           for a in ("easy", "normal", "hard") for b in ("easy", "normal", "hard")}
+    med = {a: statistics.median([p["intuition_expanded"] for p in puzzles if p["difficulty"] == a] or [0]) for a in ("easy", "normal", "hard")}
+    return cal, med
+
+
+def legacy_order(cfg, puzzles):
+    """3차까지의 순서: 시드 고정 셔플 (비교용)."""
     rnd = random.Random(cfg["daily_seed"])
-    order = [p["id"] for p in out]
+    order = [p["id"] for p in puzzles]
     rnd.shuffle(order)
-    return out, order, stats
+    return order
+
+
+def build_puzzles(g, cfg, rs_name="strict", rows=None, locked=None):
+    """4차 Q2: 후보 풀 → 보정 난이도 → 제약 기반 데일리 순서. 반환 (풀 퍼즐, 순서, 통계, 비교 자료)."""
+    from datetime import date
+
+    from metro_portal.daily_order import Planner, summarize
+    rows = rows if rows is not None else candidate_rows(g)
+    oc = cfg["daily_order"]
+    stats, shortcut, cross = pair_stats(rows, g, cfg)
+    pool = select(g, cfg, shortcut, cross, oc["pool_per_kind_per_difficulty"], oc["pool_max_per_warp_signature"],
+                  oc["pool_max_per_endpoint"], stats, rs_name)
+    calibrate(g, cfg, pool)
+    stats["calibration"], stats["calibration_expanded_median"] = calibration_stats(pool)
+    epoch = date.fromisoformat(cfg["daily_epoch"])
+    if locked:
+        key = {(p["from"], p["to"], p["ruleset"]): p["id"] for p in pool}
+        missing = [x for x in locked if (x[1], x[2], x[3]) not in key]
+        if missing:
+            raise SystemExit(f"[10] 고정(append-only) 퍼즐이 새 풀에 없다 — 사람이 확인: {missing[:5]}")
+        locked = [key[(x[1], x[2], x[3])] for x in locked]
+    pl = Planner(pool, oc, epoch, locked=locked)
+    order = pl.local_search(pl.greedy())
+    stats["daily_order"] = summarize(pl, order)
+    stats["pool_size"] = len(pool)
+    # 비교 1: 같은 그래프에서 3차 방식 (작은 선정 + 시드 셔플)
+    legacy = select(g, cfg, shortcut, cross, cfg["per_kind_per_difficulty"], cfg["max_per_warp_signature"], cfg["max_per_endpoint"], None, rs_name)
+    calibrate(g, cfg, legacy)
+    lo = legacy_order(cfg, legacy)
+    pl_legacy = Planner(legacy, {**oc, "days": len(lo)}, epoch)
+    cmp_ = {"legacy_same_graph": {"pool": len(legacy), **summarize(pl_legacy, lo),
+                                  "first_days": [[x for x in next(p for p in legacy if p["id"] == pid)["warp_portals"]] for pid in lo[:7]]}}
+    # 비교 2 (Q2-5): 최적해 유일성 완화판 (최적 경로 ≤ relaxed_max_optimal_paths)
+    st2, sc2, cr2 = pair_stats(rows, g, cfg, oc["relaxed_max_optimal_paths"])
+    pool2 = select(g, cfg, sc2, cr2, oc["pool_per_kind_per_difficulty"], oc["pool_max_per_warp_signature"], oc["pool_max_per_endpoint"], None, rs_name)
+    calibrate(g, cfg, pool2)
+    pl2 = Planner(pool2, oc, epoch)
+    o2 = pl2.local_search(pl2.greedy())
+    cmp_["relaxed_unique"] = {"pool": len(pool2), "candidates_shortcut": st2["candidates_shortcut"],
+                              "candidates_crosscity": st2["candidates_crosscity"], **summarize(pl2, o2)}
+    cmp_["pool_portal_share"] = {
+        "unique": dict(Counter(x for p in pool for x in set(p["warp_portals"])).most_common(12)),
+        "relaxed": dict(Counter(x for p in pool2 for x in set(p["warp_portals"])).most_common(12))}
+    return pool, order, stats, cmp_
+
+
+def release_lock(pcfg, today=None):
+    """4차 Q6-8: 출시(launch_date) 후에는 epoch부터 오늘 + freeze_future_days까지의 퍼즐을 이전 배포본에서 그대로 고정한다.
+    퍼즐 id는 빌드마다 다시 매기므로, 이전 배포본의 (출발, 도착, ruleset)으로 새 풀에서 찾는다 (없으면 오류: 사람이 확인)."""
+    rel = pcfg.get("daily_release") or {}
+    if not rel.get("launch_date"):
+        return None
+    from datetime import date, datetime, timedelta
+    from zoneinfo import ZoneInfo
+    today = date.fromisoformat(today) if today else datetime.now(ZoneInfo(rel.get("timezone", "Asia/Seoul"))).date()
+    if today < date.fromisoformat(rel["launch_date"]):
+        return None
+    prev = json.loads((ROOT / "web" / "data" / "puzzles.json").read_text(encoding="utf-8"))
+    n = (today + timedelta(days=rel["freeze_future_days"]) - date.fromisoformat(prev["daily_epoch"])).days + 1
+    byid = {p["id"]: p for p in prev["puzzles"]}
+    return [("LOCK", byid[pid]["from"], byid[pid]["to"], byid[pid].get("ruleset", prev["ruleset"]))
+            for pid in prev["daily_order"][:max(0, n)]]
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--ruleset", default="strict")
+    ap.add_argument("--today", default=None, help="append-only 고정 기준 날짜 (기본: 서울 기준 오늘). launch_date 전이면 무시")
     a = ap.parse_args()
     cfg = yaml.safe_load(open(ROOT / "config" / "game.yaml", encoding="utf-8"))
     rs = load_ruleset(a.ruleset)
@@ -140,20 +222,32 @@ def main() -> int:
         raise SystemExit("[10] 환승 비용 0인 ruleset만 지원 (클러스터 접힘 전제)")
     w = build_world(*load_base(), rs)
     g = ClusterGraph(w)
-    puzzles, order, stats = build_puzzles(g, cfg["puzzles"])
+    locked = release_lock(cfg["puzzles"], a.today)
+    puzzles, order, stats, compare = build_puzzles(g, cfg["puzzles"], rs["name"], locked=locked)
+    scheduled = set(order)
+    for p in puzzles:
+        p["scheduled"] = p["id"] in scheduled
     pz = {"ruleset": rs["name"], "definition": {
         "unit": "클러스터(물리적 역). 환승 비용 0으로 클러스터 안에서 접힘",
         "cost": f"승차 1역 = {rs['costs']['ride']}, 워프 = 포탈 비용(T1 {rs['portals']['T1']['cost']})",
         "optimal_paths": "물리적 역 순서(+워프)가 다른 최단 경로 개수. 같은 구간의 다른 노선은 같은 경로",
         "kinds": {"shortcut": "워프 없이도 갈 수 있지만 워프로 크게 단축되는 쌍 (단축 폭 큰 순)",
                   "crosscity": "워프 없이는 못 가는 쌍 (워프 수·비용 큰 순)"},
-        "difficulty": cfg["puzzles"]["difficulty"]},
-        "stats": stats, "daily_order": order, "puzzles": puzzles}
+        "difficulty": cfg["puzzles"]["difficulty"],
+        "epoch": cfg["puzzles"]["daily_epoch"],
+        "signature": "최적 경로에 쓰인 포탈 순서 (warp_portals)",
+        "difficulty_calibrated": "직관 탐색 점수 = 최적 비용 / 지리 감각 최선 우선 탐색이 찾은 비용. 1.0 = easy, 0.4 이상 = normal, 그 밖 = hard",
+        "daily_order": cfg["puzzles"]["daily_order"]},
+        "stats": stats, "compare": compare, "daily_order": order, "puzzles": puzzles}
     out = ROOT / "data" / "processed" / "puzzles.json"
     out.write_text(json.dumps(pz, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    # 웹용: 일정에 든 퍼즐만. difficulty = 보정 난이도 (요일 곡선 기준), ruleset은 퍼즐마다 기록 (Q6-5)
     web = {"ruleset": rs["name"], "daily_epoch": cfg["puzzles"]["daily_epoch"], "daily_order": order,
-           "puzzles": [{k: p[k] for k in ("id", "kind", "difficulty", "from", "to", "cost_warp", "cost_no_warp", "savings", "warps")}
-                       for p in puzzles]}
+           "launch_date": cfg["puzzles"]["daily_release"]["launch_date"],
+           "puzzles": [{"id": p["id"], "kind": p["kind"], "difficulty": p["difficulty_calibrated"], "difficulty_rule": p["difficulty"],
+                        "from": p["from"], "to": p["to"], "cost_warp": p["cost_warp"], "cost_no_warp": p["cost_no_warp"],
+                        "savings": p["savings"], "warps": p["warps"], "ruleset": p["ruleset"]}
+                       for p in puzzles if p["scheduled"]]}
     (ROOT / "web" / "data" / "puzzles.json").write_text(json.dumps(web, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"[10] puzzles={len(puzzles)} stats={json.dumps(stats, ensure_ascii=False)}")
 
