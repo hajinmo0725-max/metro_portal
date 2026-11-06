@@ -23,7 +23,8 @@ from metro_portal.world import build_world, load_base  # noqa: E402
 
 
 def brandes(g):
-    """가중 Brandes 매개 중심성. 출발·도착은 클러스터만 센다 (포탈 노드는 경유만). 순서쌍 기준 합."""
+    """가중 Brandes 매개 중심성. 출발·도착은 클러스터만 센다 (포탈 노드는 경유만). 순서쌍 기준 합.
+    3차 A2부터 유향 엣지가 있어 순서쌍 그대로 쓴다 (2차까지는 /2 해서 무순서쌍 기준으로 보고했다)."""
     n = g.C + g.P
     bc = [0.0] * n
     for s in range(g.C):
@@ -88,41 +89,41 @@ def main() -> int:
     facts = {"ruleset": rs["name"]}
 
     # 1. 지름 (워프 있음) + 경로
-    best = max(((D[s][t], s, t) for s in range(C) for t in range(s + 1, C) if D[s][t] != INF), key=lambda x: (x[0], -x[1], -x[2]))
+    best = max(((D[s][t], s, t) for s in range(C) for t in range(C) if t != s and D[s][t] != INF), key=lambda x: (x[0], -x[1], -x[2]))
     dia, s0, t0 = best
     d0, _ = g.sssp_count(s0)
     p0 = g.unique_path(s0, t0, d0)
     facts["diameter"] = {"cost": dia, "from": lab(s0), "to": lab(t0), "optimal_paths": CNT[s0][t0],
                          "steps": describe_path(g, p0), "cost_no_warp": DN[s0][t0]}
     # 도시가 다른 쌍 중 가장 먼 쌍
-    xc = max(((D[s][t], s, t) for s in range(C) for t in range(s + 1, C)
-              if D[s][t] != INF and set(g.cl[s]["cities"]).isdisjoint(g.cl[t]["cities"])), key=lambda x: (x[0], -x[1], -x[2]))
+    xc = max(((D[s][t], s, t) for s in range(C) for t in range(C)
+              if t != s and D[s][t] != INF and set(g.cl[s]["cities"]).isdisjoint(g.cl[t]["cities"])), key=lambda x: (x[0], -x[1], -x[2]))
     d1, _ = g.sssp_count(xc[1])
     facts["farthest_cross_city"] = {"cost": xc[0], "from": lab(xc[1]), "to": lab(xc[2]), "optimal_paths": CNT[xc[1]][xc[2]],
                                     "steps": describe_path(g, g.unique_path(xc[1], xc[2], d1))}
 
     # 2. 포탈 허브: 차수, 매개 중심성(이 포탈을 지나는 최단 경로 비중), 거리
     bc = brandes(g)
-    pairs_total = sum(1 for s in range(C) for t in range(s + 1, C) if D[s][t] != INF)
+    pairs_total = sum(1 for s in range(C) for t in range(C) if t != s and D[s][t] != INF)
     hubs = []
     for j, p in enumerate(g.portals):
         cl = [g.cl[g.ix[c]] for c in p["cluster_ids"]]
         far = max(haversine_m(x["lat"], x["lon"], y["lat"], y["lon"]) for x in cl for y in cl if x is not y)
-        hubs.append({"portal": p["name"], "degree": p["degree"], "betweenness_pairs": round(bc[C + j] / 2, 1),
-                     "betweenness_share": round(bc[C + j] / 2 / pairs_total, 4),
+        hubs.append({"portal": p["name"], "degree": p["degree"], "betweenness_pairs": round(bc[C + j], 1),
+                     "betweenness_share": round(bc[C + j] / pairs_total, 4),
                      "cities": [city_of(x) for x in cl], "max_span_km": round(far / 1000, 1)})
     hubs.sort(key=lambda h: (-h["betweenness_pairs"], h["portal"]))
     facts["portal_hubs"] = hubs
     facts["pairs_total"] = pairs_total
-    st_bc = sorted(((bc[i] / 2, i) for i in range(C)), key=lambda x: (-x[0], x[1]))[:10]
+    st_bc = sorted(((bc[i], i) for i in range(C)), key=lambda x: (-x[0], x[1]))[:10]
     facts["station_hubs"] = [{"station": lab(i), "betweenness_pairs": round(v, 1), "share": round(v / pairs_total, 4)} for v, i in st_bc]
 
     # 3. 웃긴 워프 경로
     # 3a. 같은 도시 안 이동인데 최적해(유일)가 다른 도시를 경유 — 단축 폭 큰 순, 경유 도시 조합별 1개
     detour = []
     for s in range(C):
-        for t in range(s + 1, C):
-            if CNT[s][t] != 1 or DN[s][t] == INF or D[s][t] >= DN[s][t] or WP[s][t] < 2:
+        for t in range(C):
+            if t == s or CNT[s][t] != 1 or DN[s][t] == INF or D[s][t] >= DN[s][t] or WP[s][t] < 2:
                 continue
             if g.cl[s]["cities"] != g.cl[t]["cities"] or g.cl[s]["name"] == g.cl[t]["name"]:
                 continue
@@ -142,13 +143,13 @@ def main() -> int:
             break
     facts["same_city_via_other_city"] = funny_detour
     # 3b. 최적해(유일)에 워프가 가장 많은 쌍
-    mw = max(WP[s][t] for s in range(C) for t in range(s + 1, C) if CNT[s][t] == 1 and D[s][t] != INF)
-    mwp = sorted((D[s][t], s, t) for s in range(C) for t in range(s + 1, C) if CNT[s][t] == 1 and WP[s][t] == mw)
+    mw = max(WP[s][t] for s in range(C) for t in range(C) if t != s and CNT[s][t] == 1 and D[s][t] != INF)
+    mwp = sorted((D[s][t], s, t) for s in range(C) for t in range(C) if t != s and CNT[s][t] == 1 and WP[s][t] == mw)
     ds, _ = g.sssp_count(mwp[0][1])
     facts["most_warps"] = {"warps": mw, "pairs": len(mwp), "example": {"from": lab(mwp[0][1]), "to": lab(mwp[0][2]), "cost": mwp[0][0],
                                                                       "steps": describe_path(g, g.unique_path(mwp[0][1], mwp[0][2], ds))}}
     # 3c. 워프 단축 폭 최대 (같은 권역, 최적해 개수 무관)
-    sv = max(((DN[s][t] - D[s][t], s, t) for s in range(C) for t in range(s + 1, C) if DN[s][t] != INF), key=lambda x: (x[0], -x[1], -x[2]))
+    sv = max(((DN[s][t] - D[s][t], s, t) for s in range(C) for t in range(C) if t != s and DN[s][t] != INF), key=lambda x: (x[0], -x[1], -x[2]))
     ds, _ = g.sssp_count(sv[1])
     facts["max_savings"] = {"savings": sv[0], "from": lab(sv[1]), "to": lab(sv[2]), "cost": D[sv[1]][sv[2]], "cost_no_warp": DN[sv[1]][sv[2]],
                             "optimal_paths": CNT[sv[1]][sv[2]], "steps": describe_path(g, g.unique_path(sv[1], sv[2], ds))}
@@ -179,11 +180,11 @@ def main() -> int:
     ns = json.loads((ROOT / "data" / "processed" / "n_stops_max.json").read_text(encoding="utf-8"))
     facts["n_stops"] = {"N": ns["N"], "great_circle_top": ns["with_warp"]["great_circle"][0], "track_top": ns["with_warp"]["track"][0],
                         "great_circle_no_warp_top": ns["without_warp"]["great_circle"][0]}
-    facts["optimal_count_max"] = max((CNT[s][t], lab(s), lab(t)) for s in range(C) for t in range(s + 1, C) if D[s][t] != INF)
+    facts["optimal_count_max"] = max((CNT[s][t], lab(s), lab(t)) for s in range(C) for t in range(C) if t != s and D[s][t] != INF)
     hist = Counter()
     for s in range(C):
-        for t in range(s + 1, C):
-            if D[s][t] != INF:
+        for t in range(C):
+            if t != s and D[s][t] != INF:
                 hist[WP[s][t] if CNT[s][t] == 1 else -1] += 1
     facts["unique_pairs_by_warps"] = {str(k): v for k, v in sorted(hist.items()) if k >= 0}
     (ROOT / "data" / "processed" / "fun_facts.json").write_text(json.dumps(facts, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -225,7 +226,8 @@ def write_md(f, g):
     L += ["", f"도시가 다른 두 역 중 가장 먼 쌍: **{x['from']} → {x['to']} = {x['cost']}수** (최적 경로 {x['optimal_paths']}개)", "",
           f"> {route_txt(x['steps'], x['from'])}", ""]
     L += ["## 2. 포탈 허브 순위", "",
-          f"매개 중심성 = 전국 연결된 역 쌍 {f['pairs_total']:,}개의 최단 경로 중 이 포탈을 지나는 비중 (최단 경로가 여럿이면 나눠서 셈).", "",
+          f"매개 중심성 = 전국 연결된 역 순서쌍(출발 → 도착) {f['pairs_total']:,}개의 최단 경로 중 이 포탈을 지나는 비중 (최단 경로가 여럿이면 나눠서 셈). "
+          "응암순환이 단방향이라 3차부터 순서쌍 기준이다 (2차는 무순서쌍).", "",
           "| 순위 | 포탈 | 차수 | 지나는 쌍(기대값) | 비중 | 연결 도시 | 최대 거리(km) |", "| -: | :- | -: | -: | -: | :- | -: |"]
     for i, h in enumerate(f["portal_hubs"][:15], 1):
         L.append(f"| {i} | {h['portal']} | {h['degree']} | {h['betweenness_pairs']:,.0f} | {h['betweenness_share']:.1%} | {', '.join(h['cities'])} | {h['max_span_km']} |")
@@ -252,7 +254,9 @@ def write_md(f, g):
     L += ["### 3-4. 밈 원조", "",
           "- 강남 → 교대 ⇢ 부산 교대 → 동래 = **3수** (워프 없으면 불가)",
           "- '시청'은 서울·대전·부산 세 도시를 잇는 차수 3 포탈. '교대'는 서울·대구·부산.",
-          "- 같은 도시 포탈: 양평(5호선 ↔ 경의중앙선, 53.6km), 좌천(부산 1호선 ↔ 동해선, 26.3km), 신촌(2호선 ↔ 경의중앙선, 0.7km), 동래(1·4호선 ↔ 동해선, 1.4km)", ""]
+          "- 같은 도시 포탈: " + ", ".join(f"{h['portal']}({h['cities'][0]}, {h['max_span_km']}km)"
+                                         for h in sorted(f["portal_hubs"], key=lambda h: (-h["max_span_km"], h["portal"]))
+                                         if len(set(h["cities"])) == 1), ""]
     ps = f["portal_span"]
     L += ["## 4. 같은 이름, 다른 세상", "",
           "가장 먼 동명역 포탈: " + "; ".join(f"**{h['portal']}** {h['max_span_km']}km ({', '.join(h['cities'])})" for h in ps["farthest"]),
@@ -276,7 +280,7 @@ def write_md(f, g):
           f"- 탄 구간 거리 합 최대: **{tr['value_m'] / 1000:.1f}km** ({tr['start_label']} → {tr['end_label']}, 워프 {tr['warps']}번)", ""]
     oc = f["optimal_count_max"]
     L += ["## 8. 기타", "", f"- 최단 경로가 가장 많은 쌍: {oc[1]} → {oc[2]}, 최단 경로 {oc[0]:,}개 (같은 수로 가는 길이 이만큼)",
-          f"- 연결된 역 쌍 {f['pairs_total']:,}개 중 최적해가 유일한 쌍 {sum(f['unique_pairs_by_warps'].values()):,}개", ""]
+          f"- 연결된 역 순서쌍 {f['pairs_total']:,}개 중 최적해가 유일한 쌍 {sum(f['unique_pairs_by_warps'].values()):,}개", ""]
     (ROOT / "docs" / "reports" / "fun_facts.md").write_text("\n".join(L) + "\n", encoding="utf-8")
     del lab_id
 

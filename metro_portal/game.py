@@ -1,4 +1,5 @@
-"""게임·통계용 클러스터 수준 그래프 (클러스터 + 포탈 노드)와 탐색 함수. 환승 비용 0 ruleset 전제."""
+"""게임·통계용 클러스터 수준 그래프 (클러스터 + 포탈 노드)와 탐색 함수. 환승 비용 0 ruleset 전제.
+유향 승차 엣지(단방향 구간)가 있어 d(s, t) ≠ d(t, s)일 수 있다. 쌍을 셀 때는 순서쌍을 쓴다."""
 from __future__ import annotations
 
 import heapq
@@ -30,7 +31,8 @@ class ClusterGraph:
             if a == b:
                 continue
             self.adj[a][b] = ride
-            self.adj[b][a] = ride
+            if not e.get("directed"):  # 유향 엣지(단방향 운행)는 a → b만
+                self.adj[b][a] = ride
             k = (min(a, b), max(a, b))
             self.ride_len[k] = max(self.ride_len.get(k, 0.0), e["distance_m"])
             self.ride_lines.setdefault(k, set()).add(e["line"])
@@ -181,3 +183,48 @@ def n_stops(g, N, K, allow_warp=True):
                                  for i, (v, wp) in enumerate(p)]})
         return res
     return {"great_circle": top(best_gc), "track": top(best_tr), "pairs_seen": len(best_gc)}
+
+
+def _moves(g, u):
+    """클러스터 u에서 한 수로 갈 수 있는 클러스터 → 비용 (승차 1, 워프 = 포탈 비용)."""
+    opts = {}
+    for v, c in g.adj[u]:
+        if v < g.C:
+            opts.setdefault(v, c)
+        else:  # 포탈 → 다른 클러스터들
+            for w, _ in g.adj[v]:
+                if w != u and (w not in opts or c < opts[w]):
+                    opts[w] = c
+    return opts
+
+
+def intuition_search(g, s, t):
+    """직관 탐색 (3차 퍼즐 난이도 보정): 지리 감각만 가진 플레이어를 흉내 낸 최선 우선 탐색(GBFS). 막다른 길에서 되돌아갈 수 있다.
+    역의 가치 = min(그 역에서 목적지까지 대권거리, 그 역의 워프 도착지들에서 목적지까지 대권거리) — 역 이름을 보고
+    '저기 가면 목적지 도시로 워프된다'는 정도는 아는 수준.
+    반환: (찾은 경로 비용, 목적지까지 펼친 클러스터 수). 최적을 보장하지 않는다 — 찾은 비용/최적이 '직관이 맞는 정도',
+    펼친 수가 '헤맨 정도'."""
+    lat = [c["lat"] for c in g.cl]
+    lon = [c["lon"] for c in g.cl]
+    d = lambda v: haversine_m(lat[v], lon[v], lat[t], lon[t])  # noqa: E731
+    warp_to = [[w for v, _ in g.adj[u] if v >= g.C for w, _ in g.adj[v] if w != u] for u in range(g.C)]
+    value = lambda v: min([d(v)] + [d(w) for w in warp_to[v]])  # noqa: E731
+    best_cost = {s: 0}
+    pq = [(value(s), d(s), s)]
+    done, expanded = set(), 0
+    while pq:
+        _, _, u = heapq.heappop(pq)
+        if u in done:
+            continue
+        done.add(u)
+        expanded += 1
+        if u == t:
+            return best_cost[u], expanded
+        for v, c in _moves(g, u).items():
+            if v in done:
+                continue
+            nc = best_cost[u] + c
+            if v not in best_cost:
+                best_cost[v] = nc
+                heapq.heappush(pq, (value(v), d(v), v))
+    return None, expanded

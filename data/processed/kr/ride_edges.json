@@ -2150,6 +2150,55 @@
    "distance_m": 5142.0
   },
   {
+   "line": "gtx-a",
+   "sequence": "north",
+   "a": "kr:XGTXA:X101",
+   "b": "kr:XGTXA:X102",
+   "distance_m": 5913.5
+  },
+  {
+   "line": "gtx-a",
+   "sequence": "north",
+   "a": "kr:XGTXA:X102",
+   "b": "kr:XGTXA:X103",
+   "distance_m": 6591.0
+  },
+  {
+   "line": "gtx-a",
+   "sequence": "north",
+   "a": "kr:XGTXA:X103",
+   "b": "kr:XGTXA:X105",
+   "distance_m": 9840.7
+  },
+  {
+   "line": "gtx-a",
+   "sequence": "north",
+   "a": "kr:XGTXA:X105",
+   "b": "kr:XGTXA:X106",
+   "distance_m": 8362.5
+  },
+  {
+   "line": "gtx-a",
+   "sequence": "south",
+   "a": "kr:XGTXA:X108",
+   "b": "kr:XGTXA:X109",
+   "distance_m": 10443.5
+  },
+  {
+   "line": "gtx-a",
+   "sequence": "south",
+   "a": "kr:XGTXA:X109",
+   "b": "kr:XGTXA:X110",
+   "distance_m": 10710.4
+  },
+  {
+   "line": "gtx-a",
+   "sequence": "south",
+   "a": "kr:XGTXA:X110",
+   "b": "kr:XGTXA:X111",
+   "distance_m": 10992.0
+  },
+  {
    "line": "gwangju-1",
    "sequence": "main",
    "a": "kr:S2901:100",
@@ -2284,14 +2333,28 @@
   },
   {
    "line": "gyeongchun",
-   "sequence": "main",
-   "a": "kr:I4108:경춘선:1019",
+   "sequence": "cheongnyangni",
+   "a": "kr:I4108:1014",
+   "b": "kr:I4108:1015",
+   "distance_m": 1417.4
+  },
+  {
+   "line": "gyeongchun",
+   "sequence": "cheongnyangni",
+   "a": "kr:I4108:1015",
    "b": "kr:I4108:경춘선:1201",
-   "distance_m": 3425.6
+   "distance_m": 1703.9
   },
   {
    "line": "gyeongchun",
    "sequence": "main",
+   "a": "kr:I4108:경춘선:1019",
+   "b": "kr:I4108:경춘선:1202",
+   "distance_m": 3792.5
+  },
+  {
+   "line": "gyeongchun",
+   "sequence": "cheongnyangni",
    "a": "kr:I4108:경춘선:1201",
    "b": "kr:I4108:경춘선:1202",
    "distance_m": 855.4
@@ -5556,14 +5619,8 @@
    "sequence": "eungam-loop",
    "a": "kr:S1106:0610",
    "b": "kr:S1106:0611",
-   "distance_m": 1043.2
-  },
-  {
-   "line": "seoul-6",
-   "sequence": "eungam-loop",
-   "a": "kr:S1106:0610",
-   "b": "kr:S1106:0615",
-   "distance_m": 1409.4
+   "distance_m": 1043.2,
+   "directed": true
   },
   {
    "line": "seoul-6",
@@ -5577,28 +5634,40 @@
    "sequence": "eungam-loop",
    "a": "kr:S1106:0611",
    "b": "kr:S1106:0612",
-   "distance_m": 803.5
+   "distance_m": 803.5,
+   "directed": true
   },
   {
    "line": "seoul-6",
    "sequence": "eungam-loop",
    "a": "kr:S1106:0612",
    "b": "kr:S1106:0613",
-   "distance_m": 889.4
+   "distance_m": 889.4,
+   "directed": true
   },
   {
    "line": "seoul-6",
    "sequence": "eungam-loop",
    "a": "kr:S1106:0613",
    "b": "kr:S1106:0614",
-   "distance_m": 1112.6
+   "distance_m": 1112.6,
+   "directed": true
   },
   {
    "line": "seoul-6",
    "sequence": "eungam-loop",
    "a": "kr:S1106:0614",
    "b": "kr:S1106:0615",
-   "distance_m": 856.5
+   "distance_m": 856.5,
+   "directed": true
+  },
+  {
+   "line": "seoul-6",
+   "sequence": "eungam-loop",
+   "a": "kr:S1106:0615",
+   "b": "kr:S1106:0610",
+   "distance_m": 1409.4,
+   "directed": true
   },
   {
    "line": "seoul-6",

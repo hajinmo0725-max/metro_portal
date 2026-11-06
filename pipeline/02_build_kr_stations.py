@@ -152,10 +152,54 @@ def main() -> int:
             "address": clean_text(r["역사도로명주소"]),
             "transfer_flag": "환승" in clean_text(r["환승역구분"]),
             "transfer_lines_raw": clean_text(r["환승노선명"]),
+            # 3차 A3: 공식 환승 판정용. 노선번호 목록 (config/kr_transfer_codes.yaml로 해석)
+            "transfer_line_nos_raw": clean_text(r["환승노선번호"]),
             "names": names,
             "source": "kric_std",
             "source_date": str(r["데이터기준일자"])[:10] if r["데이터기준일자"] else "",
         })
+    # 3차 A6: 표준데이터에 없는 개통 노선 보충 (config/kr_supplement.yaml). 다국어 파일 행에서 역 레코드를 만든다
+    sup = yaml.safe_load(open(ROOT / "config" / "kr_supplement.yaml", encoding="utf-8")) or {}
+    text_codes = sup.get("transfer_text_codes") or {}
+    supplemented = []
+    for ln in sup.get("lines", []):
+        want = ln["match"]
+        for mr in sorted(metro, key=lambda r: clean_text(r.get("역 번호"))):
+            if any(clean_text(mr.get(k)) != v for k, v in want.items()):
+                continue
+            try:
+                a_, b_ = float(mr["역 위치(위도)"]), float(mr["역 위치(경도)"])
+            except (TypeError, ValueError):
+                raise SystemExit(f"[02] 보충 역 좌표 없음: {mr}")
+            lat, lon = (b_, a_) if a_ > b_ else (a_, b_)  # 열 뒤바뀜 방어 (GTX-A 행 대부분이 뒤바뀌어 있다)
+            ko = clean_text(mr["역명(한글)"])
+            names = [name(ko, "ko", "Hang", "kric_metro")]
+            for col, lang, script, kind in [
+                ("역명(영어)", "en", "Latn", "primary"), ("역명(로마자)", "ko", "Latn", "romanization"),
+                ("역명(일본어)", "ja", "Jpan", "primary"), ("역명(중국어간체)", "zh", "Hans", "primary"),
+                ("역명(중국어번체)", "zh", "Hant", "primary"), ("역명(부역명)", "ko", "Hang", "subname"),
+            ]:
+                t = clean_text(mr.get(col))
+                if t and t not in vcfg["placeholder_names"] and not any(n["text"] == t and n["lang"] == lang and n["script"] == script for n in names):
+                    names.append(name(t, lang, script, "kric_metro", kind=kind))
+            txt = [x.strip() for x in clean_text(mr.get("환승노선명")).split(",") if x.strip() and x.strip() not in vcfg["placeholder_names"]]
+            unmapped = [x for x in txt if x not in text_codes]
+            code = clean_text(mr.get("역 번호")) or ko
+            stations.append({
+                "id": f"kr:{ln['line_no']}:{code}", "code": code, "name_ko": ko, "lat": round(lat, 7), "lon": round(lon, 7),
+                "line_no": ln["line_no"], "line_name": ln["line_name"], "line_group": f"{ln['line_no']}:{ln['line_name']}",
+                "operator": clean_text(mr.get("철도운영기관명")),
+                "region": region_of(clean_text(mr.get("역 주소(도로명 주소)")) or clean_text(mr.get("역 주소(지번주소)"))),
+                "address": clean_text(mr.get("역 주소(도로명 주소)")) or clean_text(mr.get("역 주소(지번주소)")),
+                "transfer_flag": clean_text(mr.get("환승역 여부")) == "가능",
+                "transfer_lines_raw": ",".join(txt),
+                # 텍스트를 표준데이터 코드 체계로 옮긴 것. 못 옮긴 텍스트가 있으면 그대로 남겨 '해석 못 하는 코드'로 처리된다
+                "transfer_line_nos_raw": "+".join([text_codes[x] for x in txt if x in text_codes] + unmapped),
+                "names": names, "source": "kric_metro_supplement",
+                "source_date": clean_text(mr.get("데이터 기준일자")), "opened": clean_text(mr.get("신설일자")),
+            })
+            used_metro.add(id(mr))
+            supplemented.append({"id": stations[-1]["id"], "name": ko, "line": ln["line_name"], "opened": clean_text(mr.get("신설일자"))})
     assert len({s["id"] for s in stations}) == len(stations), "station id 중복"
 
     # 좌표 보정 (config/kr_station_fixes.yaml)
@@ -203,7 +247,9 @@ def main() -> int:
                 "out_of_bbox": len(out_of_bbox),
                 "coord_fixes": len(fixes_applied),
                 "excluded_by_scope": len(excluded),
+                "supplemented": len(supplemented),
             },
+            "supplemented": supplemented,
             "excluded_by_scope": {"line_groups": excl_groups, "stations": excluded},
             "dropped_duplicates": dropped,
             "coord_fixes": fixes_applied,

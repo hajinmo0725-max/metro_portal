@@ -246,7 +246,8 @@ def test_fun_facts_consistent_with_metrics():
     assert len(hubs) == m["counts"]["portals_total"]
     assert all(0 <= h["betweenness_share"] < 1 for h in hubs)
     assert [h["betweenness_pairs"] for h in hubs] == sorted((h["betweenness_pairs"] for h in hubs), reverse=True)
-    # 워프 포함 그래프는 연결 컴포넌트 1개라 모든 클러스터 쌍이 연결돼 있다
+    # 워프 포함 그래프는 강연결 컴포넌트 1개라 모든 클러스터 순서쌍이 연결돼 있다 (3차부터 순서쌍 기준)
     assert m["with_warp"]["components"] == 1
+    assert m["with_warp"]["strong_components"] == 1
     C = m["counts"]["clusters"]
-    assert ff["pairs_total"] == C * (C - 1) // 2
+    assert ff["pairs_total"] == C * (C - 1)

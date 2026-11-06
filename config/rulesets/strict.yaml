@@ -20,7 +20,14 @@ normalize:
   min_length_after_suffix: 1
 
 cluster:
-  # 정규화 이름이 같고 이 거리 이하면 같은 StationCluster(환승)
+  # 환승 판정 규칙 (3차 A3, 2026-11-05):
+  #   official_first = 표준데이터 공식 환승 정보(환승역구분·환승노선번호) 우선. 공식 yes면 묶고, 공식 no면 거리와 무관하게
+  #                    안 묶는다. 정보가 없거나 같은 노선 패밀리(직결 경계)일 때만 거리 D로 판정 (metro_portal/transfer.py)
+  #   distance       = 정규화 이름이 같고 거리 D 이하면 묶는다 (2차까지)
+  transfer_rule: official_first
+  # 공식 yes라도 이 거리를 넘으면 묶지 않는다 (좌표·코드 오류 방어용 상한)
+  official_max_distance_m: 1500
+  # 정규화 이름이 같고 이 거리 이하면 같은 StationCluster(환승). official_first에서는 정보가 없을 때만 쓴다
   transfer_distance_m: 500
   # 소스가 명시한 환승 관계(Wikidata P833 등)로도 묶을지. 이름이 다른 환승역(이수/총신대입구) 대응
   # 괄호 부역명을 환승 판정용 별칭으로도 쓸지. 이름이 다른 환승역 대응

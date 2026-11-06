@@ -8,13 +8,13 @@
 
 | 방법 | 역 레코드 수 |
 | :- | -: |
-| adj | 121 |
+| adj | 123 |
 | adj+nearest | 4 |
 | coord_fallback | 6 |
 | nearest | 1 |
 | no_candidate | 1 |
 | unique | 7 |
-| unique+adj | 951 |
+| unique+adj | 958 |
 
 unique = 이름 후보 1개, adj = 이웃 역과 P197 인접인 후보, nearest = 동률이라 거리로 고름, coord_fallback = 같은 이름 아이템이 없어 가까운 아이템을 붙임(라벨 차이, 좌표 검사 제외), no_candidate = 매칭 없음
 
@@ -52,7 +52,8 @@ ratio = 현재 길이 / 좌표 최적 경로 길이. 1.02 초과면 순서 의�
 | 3호선 일산선 | main | 11 | 18.1 | 18.1 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/seoul-3-ilsan__main.png) |
 | 경의·중앙선 | main | 55 | 120.8 | 120.8 | 1.000 | 0 | 0 | 0 | 0 | 19 | [png](lines/gyeongui-jungang__main.png) |
 | 경의·중앙선 | seoul-station | 3 | 5.2 | 5.2 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/gyeongui-jungang__seoul-station.png) |
-| 경춘선 | main | 23 | 80.6 | 80.6 | 1.000 | 0 | 1 | 0 | 0 | 2 | [png](lines/gyeongchun__main.png) |
+| 경춘선 | main | 22 | 80.1 | 80.1 | 1.000 | 0 | 0 | 0 | 0 | 1 | [png](lines/gyeongchun__main.png) |
+| 경춘선 | cheongnyangni | 4 | 4.0 | 4.0 | 1.000 | 0 | 0 | 0 | 0 | 1 | [png](lines/gyeongchun__cheongnyangni.png) |
 | 경강선 | main | 12 | 53.3 | 53.3 | 1.000 | 0 | 0 | 0 | 0 | 1 | [png](lines/gyeonggang__main.png) |
 | 서해선 | main | 21 | 45.4 | 45.4 | 1.000 | 0 | 0 | 0 | 0 | 2 | [png](lines/seohae__main.png) |
 | 신림선 | main | 11 | 6.8 | 6.8 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/sillim__main.png) |
@@ -83,6 +84,8 @@ ratio = 현재 길이 / 좌표 최적 경로 길이. 1.02 초과면 순서 의�
 | 인천 2호선 | main | 27 | 27.9 | 27.9 | 1.000 | 0 | 0 | 0 | 0 | 1 | [png](lines/incheon-2__main.png) |
 | 광주 1호선 | main | 20 | 19.8 | 19.8 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/gwangju-1__main.png) |
 | 대전 1호선 | main | 22 | 19.7 | 19.7 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/daejeon-1__main.png) |
+| GTX-A | north | 5 | 30.7 | 30.7 | 1.000 | 0 | 0 | 0 | 0 | 0 | [png](lines/gtx-a__north.png) |
+| GTX-A | south | 4 | 32.1 | 32.1 | 1.000 | 0 | 1 | 0 | 0 | 1 | [png](lines/gtx-a__south.png) |
 
 ## 의심 엣지 상세
 
@@ -95,7 +98,6 @@ not_adjacent_weak = 한쪽 역의 Wikidata 아이템이 시퀀스 이웃 누구�
 | suin-bundang | main | 매교역 | 수원역(분당) | 1380 | - | not_adjacent_weak | - |
 | suin-bundang-suin | main | 수원역(분당) | 고색역 | 2505 | - | not_adjacent_weak | - |
 | suin-bundang-suin | main | 송도역 | 인하대역 | 2095 | - | not_adjacent | - |
-| gyeongchun | main | 광운대역 | 중랑역 | 3426 | - | not_adjacent_weak | - |
 | uijeongbu | main | 발곡 | 회룡 | 578 | - | not_adjacent_weak | - |
 | uijeongbu | main | 회룡 | 범골 | 490 | - | not_adjacent_weak | - |
 | busan-gimhae | main | 사상 | 괘법르네시떼 | 758 | - | not_adjacent_weak | - |
@@ -107,6 +109,7 @@ not_adjacent_weak = 한쪽 역의 Wikidata 아이템이 시퀀스 이웃 누구�
 | busan-1 | main | 교대 | 동래 | 1091 | - | not_adjacent | - |
 | busan-3 | main | 연산 | 거제 | 736 | - | not_adjacent_weak | - |
 | busan-3 | main | 거제 | 종합운동장 | 656 | - | not_adjacent_weak | - |
+| gtx-a | south | 구성역 | 동탄역 | 10992 | - | not_adjacent_weak | - |
 
 ## Wikidata에는 인접인데 시퀀스에서 비연속인 쌍
 
@@ -179,8 +182,8 @@ not_adjacent_weak = 한쪽 역의 Wikidata 아이템이 시퀀스 이웃 누구�
 | gyeongui-jungang | main | 도심역 (43) | 양수역 (46) | 10076 |
 | gyeongui-jungang | main | 양수역 (46) | 양평역 (51) | 15543 |
 | gyeongui-jungang | main | 양평역 (51) | 용문역 (53) | 9111 |
-| gyeongchun | main | 광운대역 (0) | 망우역 (3) | 3731 |
-| gyeongchun | main | 광운대역 (0) | 상봉역 (2) | 3793 |
+| gyeongchun | main | 광운대역 (0) | 망우역 (2) | 3731 |
+| gyeongchun | cheongnyangni | 회기역 (1) | 상봉역 (3) | 2533 |
 | gyeonggang | main | 판교역 (0) | 이매역 (2) | 1406 |
 | seohae | main | 일산역 (0) | 백마역 (2) | 3442 |
 | seohae | main | 백마역 (2) | 대곡역 (4) | 3266 |
@@ -199,6 +202,7 @@ not_adjacent_weak = 한쪽 역의 Wikidata 아이템이 시퀀스 이웃 누구�
 | seoul-9 | main | 석촌 (32) | 올림픽공원(한국체대) (35) | 2400 |
 | seoul-9 | main | 올림픽공원(한국체대) (35) | 중앙보훈병원 (37) | 2135 |
 | incheon-2 | main | 주안국가산단 (16) | 시민공원 (18) | 1697 |
+| gtx-a | south | 수서역 (0) | 동탄역 (3) | 31904 |
 
 ## Wikidata 매칭이 안 된 엣지
 

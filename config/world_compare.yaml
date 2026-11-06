@@ -1,0 +1,15 @@
+# 3차 B3: 한국 + 타이베이 통합 그래프 ruleset 비교 (pipeline/17_compare_world_rulesets.py).
+# 매칭 룰은 config/rulesets/*.yaml에, 여기는 비교 대상과 판정 기준만 둔다.
+countries: [KR, TW]
+# 사용자 지시 3종 (공식명만)
+rulesets: [tw_t1, tw_t12, tw_t123]
+# 참고 실험 (타이베이 Wikidata 라벨 허용, 공식명 아님)
+reference_rulesets: [tw_t1_label, tw_t12_label, tw_t123_label]
+# 허브 폭발 판정 기준 (DESIGN 6장 '지름이 지나치게 줄어들거나 특정 포탈의 차수가 튀면 룰을 조인다'의 수치화, 작성자 판단)
+hub_explosion:
+  # T2·T3 포탈 중 차수가 이 값 이상인 것이 있으면 허브 폭발 의심
+  degree_alert: 5
+  # 같은 연결 범위에서 지름이 기준 ruleset(T1) 대비 이 비율 이상 줄면 의심
+  diameter_drop_ratio: 0.2
+  # 포탈 수가 기준 대비 이 배수 이상 늘면 의심
+  portal_growth_ratio: 2.0

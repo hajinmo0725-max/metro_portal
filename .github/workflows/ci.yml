@@ -19,6 +19,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      # T2 이체자 테스트용 Unihan (data/raw는 커밋하지 않는다)
+      - run: python pipeline/16_fetch_unihan.py
       - run: python -m pytest -q
       - uses: actions/setup-node@v4
         with:

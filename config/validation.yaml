@@ -33,6 +33,16 @@ lines:
     - [seoul-1-gyeongwon, 전곡역, 연천역]
     - [seoul-4-jinjeop, 오남역, 별내별가람역]
     - [shinbundang, 청계산입구, 판교]
+    # 3차 A6 GTX-A: 광역급행이라 역간 거리가 길다. 다국어 파일 상·하행거리(선로 km)와 직선거리가 정합적
+    #   운정중앙–킨텍스 6.1km(직선 5.9), 킨텍스–대곡 6.9(6.6), 대곡–연신내 9.9(9.8), 연신내–서울역 9.4(8.4), 수서–성남 10.7(10.4),
+    #   성남–동탄 22.1(구성 신설 전 값, 성남–구성 10.7 + 구성–동탄 11.0 직선)
+    - [gtx-a, 운정중앙, 킨텍스]
+    - [gtx-a, 킨텍스, 대곡]
+    - [gtx-a, 대곡, 연신내]
+    - [gtx-a, 연신내, 서울역]
+    - [gtx-a, 수서역, 성남역]
+    - [gtx-a, 성남역, 구성역]
+    - [gtx-a, 구성역, 동탄역]
 # N2: 노선 순서 기하 검사 (pipeline/08_validate_lines.py)
 line_geometry:
   # 현재 길이 / 좌표 최적 경로 길이가 이 값을 넘으면 순서 의심
@@ -56,3 +66,14 @@ coords:
   near_duplicate_m: 30
   # Wikidata에 같은 이름 아이템이 없을 때 이 거리 이내 가장 가까운 아이템을 대체 매칭 (인접 검사 전용)
   wikidata_fallback_match_m: 200
+# 3차 A4: 좌표 복사 점검. 정규화 이름이 같고 이 거리 미만인데 공식 환승(yes)이 아닌 쌍을 전부 나열한다
+coord_copy:
+  same_name_max_m: 20
+# 3차 A5: OSM route relation 교차검증 (pipeline/13_validate_osm.py)
+osm:
+  route_types: [subway, light_rail, train, monorail]
+  stop_roles: [stop, stop_entry_only, stop_exit_only]
+  # OSM 정차 노드와 우리 역을 같은 역으로 볼 최대 거리 (이름 일치 전제)
+  match_max_m: 400
+  # 같은 역으로 매칭됐는데 좌표가 이보다 멀면 좌표 의심
+  coord_flag_m: 300

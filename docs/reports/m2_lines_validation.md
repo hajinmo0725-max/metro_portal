@@ -6,13 +6,14 @@
 
 | 항목 | 값 |
 | :- | -: |
-| lines | 45 |
-| sequences | 50 |
-| ride_edges | 1056 |
-| stations | 1091 |
-| stations_sequenced | 1090 |
+| lines | 46 |
+| sequences | 53 |
+| ride_edges | 1065 |
+| ride_edges_directed | 6 |
+| stations | 1100 |
+| stations_sequenced | 1099 |
 | stop_failures | 0 |
-| outliers | 20 |
+| outliers | 26 |
 | outliers_unexplained | 0 |
 
 노선 순서 소스: 레일포털 표준데이터 노선정보 '정거장구성' + config/kr_lines.yaml 보정.
@@ -41,6 +42,12 @@ OSM route relation은 세션 네트워크에서 Overpass 접근 불가(TLS 리�
 | daegyeong | 왜관역 | 서대구역 | 17553 | >6000m | 실제 장거리 구간(판단) |
 | daegyeong | 동대구역 | 경산역 | 11138 | >6000m | 실제 장거리 구간(판단) |
 | donghae | 서생역 | 남창역 | 8242 | >6000m | 실제 장거리 구간(판단) |
+| gtx-a | 킨텍스 | 대곡 | 6591 | >6000m | 실제 장거리 구간(판단) |
+| gtx-a | 대곡 | 연신내 | 9841 | >6000m | 실제 장거리 구간(판단) |
+| gtx-a | 연신내 | 서울역 | 8362 | >6000m | 실제 장거리 구간(판단) |
+| gtx-a | 수서역 | 성남역 | 10444 | >6000m | 실제 장거리 구간(판단) |
+| gtx-a | 성남역 | 구성역 | 10710 | >6000m | 실제 장거리 구간(판단) |
+| gtx-a | 구성역 | 동탄역 | 10992 | >6000m | 실제 장거리 구간(판단) |
 | gyeongchun | 마석역 | 대성리역 | 6898 | >6000m | 실제 장거리 구간(판단) |
 | gyeongchun | 대성리역 | 청평역 | 7089 | >6000m | 실제 장거리 구간(판단) |
 | gyeongchun | 상천역 | 가평역 | 6986 | >6000m | 실제 장거리 구간(판단) |
@@ -77,7 +84,7 @@ pool = 이 노선에 속한 표준데이터 역 수, sequenced = 시퀀스에 �
 | seoul-4-jinjeop | 4호선 진접선 | 3 | 4 | 3 | 1 | 3 |
 | seoul-3-ilsan | 3호선 일산선 | 11 | 11 | 11 | 1 | 10 |
 | gyeongui-jungang | 경의·중앙선 | 86 | 57 | 57 | 2 | 56 |
-| gyeongchun | 경춘선 | 20 | 23 | 20 | 1 | 22 |
+| gyeongchun | 경춘선 | 20 | 25 | 20 | 2 | 24 |
 | gyeonggang | 경강선 | 12 | 12 | 12 | 1 | 11 |
 | seohae | 서해선 | 21 | 21 | 21 | 1 | 20 |
 | sillim | 신림선 | 11 | 11 | 11 | 1 | 10 |
@@ -106,6 +113,7 @@ pool = 이 노선에 속한 표준데이터 역 수, sequenced = 시퀀스에 �
 | incheon-2 | 인천 2호선 | 27 | 27 | 27 | 1 | 26 |
 | gwangju-1 | 광주 1호선 | 20 | 20 | 20 | 1 | 19 |
 | daejeon-1 | 대전 1호선 | 22 | 22 | 22 | 1 | 21 |
+| gtx-a | GTX-A | 9 | 9 | 9 | 2 | 7 |
 
 ## 5. 보정 내역
 
@@ -138,7 +146,7 @@ pool = 이 노선에 속한 표준데이터 역 수, sequenced = 시퀀스에 �
 | seoul-8 | S1108 수도권 도시철도 8호선 | patch |
 |  | S4108 수도권 전철 8호선 | skip |
 | gyeongui-jungang | I4108 경의·중앙선 | pools, sequences |
-| gyeongchun | I41K2 경춘선 | patch, pools |
+| gyeongchun | I41K2 경춘선 | branches, patch, pools |
 | suin-bundang | I28K1 분당선 | patch, pools |
 | suin-bundang-suin | I28K1 수인선 | patch, pools |
 | seohae | I41WS 서해선 | patch |

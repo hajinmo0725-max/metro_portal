@@ -20,71 +20,87 @@
   }
  },
  "stats": {
-  "pairs": 438516,
-  "pairs_reachable_without_warp": 227888,
-  "pairs_warp_shortens": 89754,
-  "pairs_cross_component": 210628,
-  "pairs_unique_optimum": 267875,
+  "pairs": 884540,
+  "pairs_reachable_without_warp": 459986,
+  "pairs_warp_shortens": 191288,
+  "pairs_cross_component": 424554,
+  "pairs_unique_optimum": 610129,
   "optimal_count_hist": {
-   "1": 267875,
-   "2": 100639,
-   "3": 23131,
-   "4": 24080,
-   "5": 4427,
-   "6": 6309,
-   "7": 1132,
-   "8": 1944,
-   "9": 518,
-   "10": 8461
+   "1": 610129,
+   "2": 181329,
+   "3": 44922,
+   "4": 26081,
+   "5": 6963,
+   "6": 7380,
+   "7": 2869,
+   "8": 2055,
+   "9": 782,
+   "10": 2030
   },
-  "candidates_shortcut": 28029,
-  "candidates_crosscity": 108053,
-  "pool_shortcut_easy": 456,
-  "pool_shortcut_normal": 9822,
-  "pool_shortcut_hard": 17751,
-  "pool_crosscity_easy": 9631,
-  "pool_crosscity_normal": 39593,
-  "pool_crosscity_hard": 58829
+  "candidates_shortcut": 71710,
+  "candidates_crosscity": 232118,
+  "pool_shortcut_easy": 962,
+  "pool_shortcut_normal": 26598,
+  "pool_shortcut_hard": 44150,
+  "pool_crosscity_easy": 21661,
+  "pool_crosscity_normal": 86063,
+  "pool_crosscity_hard": 124394,
+  "calibration": {
+   "easy->easy": 11,
+   "easy->normal": 3,
+   "easy->hard": 10,
+   "normal->easy": 3,
+   "normal->normal": 15,
+   "normal->hard": 22,
+   "hard->easy": 0,
+   "hard->normal": 20,
+   "hard->hard": 20
+  },
+  "calibration_expanded_median": {
+   "easy": 16.0,
+   "normal": 40.5,
+   "hard": 51.0
+  }
  },
  "daily_order": [
   "P012",
   "P048",
   "P011",
   "P042",
-  "P092",
+  "P093",
   "P030",
   "P001",
-  "P087",
-  "P084",
+  "P096",
+  "P090",
   "P065",
   "P066",
   "P032",
-  "P096",
+  "P097",
   "P057",
   "P037",
-  "P080",
+  "P081",
   "P008",
   "P052",
   "P014",
-  "P086",
+  "P087",
   "P027",
   "P058",
-  "P100",
+  "P089",
   "P025",
-  "P099",
+  "P100",
   "P038",
   "P050",
-  "P074",
+  "P075",
   "P045",
   "P067",
   "P051",
   "P036",
-  "P072",
+  "P076",
   "P018",
   "P034",
-  "P101",
+  "P104",
   "P068",
-  "P075",
+  "P074",
   "P010",
   "P003",
   "P043",
@@ -92,9 +108,9 @@
   "P026",
   "P005",
   "P071",
-  "P097",
+  "P098",
   "P047",
-  "P083",
+  "P084",
   "P033",
   "P060",
   "P046",
@@ -102,25 +118,26 @@
   "P016",
   "P069",
   "P070",
-  "P077",
-  "P091",
+  "P102",
+  "P092",
   "P054",
   "P023",
-  "P094",
+  "P083",
   "P028",
   "P029",
   "P031",
-  "P095",
+  "P080",
   "P061",
   "P006",
   "P056",
-  "P081",
+  "P095",
   "P064",
   "P015",
   "P049",
+  "P072",
   "P021",
-  "P076",
-  "P089",
+  "P077",
+  "P086",
   "P073",
   "P062",
   "P009",
@@ -130,13 +147,13 @@
   "P035",
   "P040",
   "P004",
-  "P090",
+  "P091",
   "P024",
   "P041",
-  "P098",
+  "P099",
   "P059",
   "P085",
-  "P093",
+  "P094",
   "P039",
   "P055",
   "P022",
@@ -146,7 +163,9 @@
   "P013",
   "P078",
   "P020",
+  "P101",
   "P088",
+  "P103",
   "P017"
  ],
  "puzzles": [
@@ -190,7 +209,11 @@
      "to": "양평#1"
     }
    ],
-   "id": "P001"
+   "id": "P001",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -232,7 +255,11 @@
      ]
     }
    ],
-   "id": "P002"
+   "id": "P002",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -274,7 +301,11 @@
      ]
     }
    ],
-   "id": "P003"
+   "id": "P003",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -284,8 +315,8 @@
    "from_label": "부산 부산진",
    "to_label": "부산 월내",
    "cost_warp": 3,
-   "cost_no_warp": 21,
-   "savings": 18,
+   "cost_no_warp": 22,
+   "savings": 19,
    "optimal_paths": 1,
    "warps": 1,
    "rides": 2,
@@ -316,7 +347,11 @@
      ]
     }
    ],
-   "id": "P004"
+   "id": "P004",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -326,8 +361,8 @@
    "from_label": "부산 서생",
    "to_label": "부산 좌천",
    "cost_warp": 3,
-   "cost_no_warp": 21,
-   "savings": 18,
+   "cost_no_warp": 22,
+   "savings": 19,
    "optimal_paths": 1,
    "warps": 1,
    "rides": 2,
@@ -358,7 +393,11 @@
      "to": "좌천#1"
     }
    ],
-   "id": "P005"
+   "id": "P005",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -368,8 +407,8 @@
    "from_label": "부산 좌천",
    "to_label": "부산 초량",
    "cost_warp": 3,
-   "cost_no_warp": 21,
-   "savings": 18,
+   "cost_no_warp": 22,
+   "savings": 19,
    "optimal_paths": 1,
    "warps": 1,
    "rides": 2,
@@ -400,7 +439,149 @@
      ]
     }
    ],
-   "id": "P006"
+   "id": "P006",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "easy",
+   "from": "범내골#1",
+   "to": "부전#2",
+   "from_label": "부산 범내골",
+   "to_label": "부산 부전",
+   "cost_warp": 3,
+   "cost_no_warp": 8,
+   "savings": 5,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 2,
+   "warp_portals": [
+    "부전"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "범내골#1",
+     "to": "서면#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서면#1",
+     "to": "부전#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "부전",
+     "from": "부전#1",
+     "to": "부전#2"
+    }
+   ],
+   "id": "P007",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "easy",
+   "from": "부암#1",
+   "to": "부전#2",
+   "from_label": "부산 부암",
+   "to_label": "부산 부전",
+   "cost_warp": 3,
+   "cost_no_warp": 8,
+   "savings": 5,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 2,
+   "warp_portals": [
+    "부전"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "부암#1",
+     "to": "서면#1",
+     "lines": [
+      "busan-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서면#1",
+     "to": "부전#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "부전",
+     "from": "부전#1",
+     "to": "부전#2"
+    }
+   ],
+   "id": "P008",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "easy",
+   "from": "거제해맞이#1",
+   "to": "서면#1",
+   "from_label": "부산 거제해맞이",
+   "to_label": "부산 서면",
+   "cost_warp": 3,
+   "cost_no_warp": 6,
+   "savings": 3,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 2,
+   "warp_portals": [
+    "부전"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "거제해맞이#1",
+     "to": "부전#2",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "부전",
+     "from": "부전#2",
+     "to": "부전#1"
+    },
+    {
+     "type": "ride",
+     "from": "부전#1",
+     "to": "서면#1",
+     "lines": [
+      "busan-1"
+     ]
+    }
+   ],
+   "id": "P009",
+   "intuition_cost": 3,
+   "intuition_expanded": 4,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
@@ -490,7 +671,199 @@
      ]
     }
    ],
-   "id": "P007"
+   "id": "P010",
+   "intuition_cost": 9,
+   "intuition_expanded": 10,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "normal",
+   "from": "등촌#1",
+   "to": "용문#2",
+   "from_label": "수도권 등촌",
+   "to_label": "수도권 용문",
+   "cost_warp": 9,
+   "cost_no_warp": 36,
+   "savings": 27,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 8,
+   "warp_portals": [
+    "양평"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "등촌#1",
+     "to": "염창#1",
+     "lines": [
+      "seoul-9"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "염창#1",
+     "to": "신목동#1",
+     "lines": [
+      "seoul-9"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "신목동#1",
+     "to": "선유도#1",
+     "lines": [
+      "seoul-9"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "선유도#1",
+     "to": "당산#1",
+     "lines": [
+      "seoul-9"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "당산#1",
+     "to": "영등포구청#1",
+     "lines": [
+      "seoul-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "영등포구청#1",
+     "to": "양평#2",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "양평",
+     "from": "양평#2",
+     "to": "양평#1"
+    },
+    {
+     "type": "ride",
+     "from": "양평#1",
+     "to": "원덕#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "원덕#1",
+     "to": "용문#2",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    }
+   ],
+   "id": "P011",
+   "intuition_cost": 48,
+   "intuition_expanded": 85,
+   "intuition_score": 0.188,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "normal",
+   "from": "신정네거리#1",
+   "to": "지평#1",
+   "from_label": "수도권 신정네거리",
+   "to_label": "수도권 지평",
+   "cost_warp": 9,
+   "cost_no_warp": 36,
+   "savings": 27,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 8,
+   "warp_portals": [
+    "양평"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "신정네거리#1",
+     "to": "까치산#1",
+     "lines": [
+      "seoul-2-sinjeong"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "까치산#1",
+     "to": "신정#1",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "신정#1",
+     "to": "목동#1",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "목동#1",
+     "to": "오목교#1",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "오목교#1",
+     "to": "양평#2",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "양평",
+     "from": "양평#2",
+     "to": "양평#1"
+    },
+    {
+     "type": "ride",
+     "from": "양평#1",
+     "to": "원덕#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "원덕#1",
+     "to": "용문#2",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "용문#2",
+     "to": "지평#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    }
+   ],
+   "id": "P012",
+   "intuition_cost": 46,
+   "intuition_expanded": 83,
+   "intuition_score": 0.196,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -500,8 +873,8 @@
    "from_label": "수도권 동백",
    "to_label": "수도권 중동",
    "cost_warp": 4,
-   "cost_no_warp": 32,
-   "savings": 28,
+   "cost_no_warp": 30,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 2,
@@ -539,7 +912,11 @@
      "to": "중동#2"
     }
    ],
-   "id": "P008"
+   "id": "P013",
+   "intuition_cost": 37,
+   "intuition_expanded": 38,
+   "intuition_score": 0.108,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -549,8 +926,8 @@
    "from_label": "수도권 동백",
    "to_label": "수도권 송내",
    "cost_warp": 5,
-   "cost_no_warp": 33,
-   "savings": 28,
+   "cost_no_warp": 31,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 3,
@@ -596,7 +973,11 @@
      ]
     }
    ],
-   "id": "P009"
+   "id": "P014",
+   "intuition_cost": 38,
+   "intuition_expanded": 39,
+   "intuition_score": 0.132,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -606,8 +987,8 @@
    "from_label": "수도권 중동",
    "to_label": "수도권 초당",
    "cost_warp": 5,
-   "cost_no_warp": 33,
-   "savings": 28,
+   "cost_no_warp": 31,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 3,
@@ -653,7 +1034,11 @@
      ]
     }
    ],
-   "id": "P010"
+   "id": "P015",
+   "intuition_cost": 39,
+   "intuition_expanded": 40,
+   "intuition_score": 0.128,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -663,8 +1048,8 @@
    "from_label": "수도권 송내",
    "to_label": "수도권 초당",
    "cost_warp": 6,
-   "cost_no_warp": 34,
-   "savings": 28,
+   "cost_no_warp": 32,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 4,
@@ -718,7 +1103,11 @@
      ]
     }
    ],
-   "id": "P011"
+   "id": "P016",
+   "intuition_cost": 40,
+   "intuition_expanded": 41,
+   "intuition_score": 0.15,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -728,8 +1117,8 @@
    "from_label": "수도권 부개",
    "to_label": "수도권 삼가",
    "cost_warp": 8,
-   "cost_no_warp": 36,
-   "savings": 28,
+   "cost_no_warp": 34,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 6,
@@ -799,132 +1188,30 @@
      ]
     }
    ],
-   "id": "P012"
+   "id": "P017",
+   "intuition_cost": 42,
+   "intuition_expanded": 48,
+   "intuition_score": 0.19,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
    "difficulty": "normal",
-   "from": "용문#2",
-   "to": "우장산#1",
-   "from_label": "수도권 용문",
-   "to_label": "수도권 우장산",
+   "from": "삼가#1",
+   "to": "부평#1",
+   "from_label": "수도권 삼가",
+   "to_label": "수도권 부평",
    "cost_warp": 9,
-   "cost_no_warp": 37,
-   "savings": 28,
-   "optimal_paths": 1,
-   "warps": 1,
-   "rides": 8,
-   "warp_portals": [
-    "양평"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "용문#2",
-     "to": "원덕#1",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "원덕#1",
-     "to": "양평#1",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "양평",
-     "from": "양평#1",
-     "to": "양평#2"
-    },
-    {
-     "type": "ride",
-     "from": "양평#2",
-     "to": "오목교#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "오목교#1",
-     "to": "목동#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "목동#1",
-     "to": "신정#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신정#1",
-     "to": "까치산#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "까치산#1",
-     "to": "화곡#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "화곡#1",
-     "to": "우장산#1",
-     "lines": [
-      "seoul-5"
-     ]
-    }
-   ],
-   "id": "P013"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "normal",
-   "from": "명지대#1",
-   "to": "부개#1",
-   "from_label": "수도권 명지대",
-   "to_label": "수도권 부개",
-   "cost_warp": 10,
-   "cost_no_warp": 38,
-   "savings": 28,
+   "cost_no_warp": 35,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
-   "rides": 8,
+   "rides": 7,
    "warp_portals": [
     "동백",
     "중동"
    ],
    "optimal": [
-    {
-     "type": "ride",
-     "from": "명지대#1",
-     "to": "시청·용인대#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "시청·용인대#1",
-     "to": "삼가#1",
-     "lines": [
-      "everline"
-     ]
-    },
     {
      "type": "ride",
      "from": "삼가#1",
@@ -984,89 +1271,154 @@
      "lines": [
       "seoul-1-gyeongin"
      ]
+    },
+    {
+     "type": "ride",
+     "from": "부개#1",
+     "to": "부평#1",
+     "lines": [
+      "seoul-1-gyeongin"
+     ]
     }
    ],
-   "id": "P014"
+   "id": "P018",
+   "intuition_cost": 42,
+   "intuition_expanded": 43,
+   "intuition_score": 0.214,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
    "difficulty": "normal",
-   "from": "우장산#1",
-   "to": "지평#1",
-   "from_label": "수도권 우장산",
-   "to_label": "수도권 지평",
-   "cost_warp": 10,
-   "cost_no_warp": 38,
-   "savings": 28,
+   "from": "시청#3",
+   "to": "용문#2",
+   "from_label": "수도권 시청",
+   "to_label": "수도권 용문",
+   "cost_warp": 4,
+   "cost_no_warp": 28,
+   "savings": 24,
    "optimal_paths": 1,
-   "warps": 1,
-   "rides": 9,
+   "warps": 2,
+   "rides": 2,
    "warp_portals": [
-    "양평"
+    "시청",
+    "용문"
    ],
    "optimal": [
     {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#3",
+     "to": "시청#2"
+    },
+    {
      "type": "ride",
-     "from": "우장산#1",
-     "to": "화곡#1",
+     "from": "시청#2",
+     "to": "탄방#1",
      "lines": [
-      "seoul-5"
+      "daejeon-1"
      ]
     },
     {
      "type": "ride",
-     "from": "화곡#1",
-     "to": "까치산#1",
+     "from": "탄방#1",
+     "to": "용문#1",
      "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "까치산#1",
-     "to": "신정#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신정#1",
-     "to": "목동#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "목동#1",
-     "to": "오목교#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "오목교#1",
-     "to": "양평#2",
-     "lines": [
-      "seoul-5"
+      "daejeon-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "양평",
-     "from": "양평#2",
-     "to": "양평#1"
+     "portal": "용문",
+     "from": "용문#1",
+     "to": "용문#2"
+    }
+   ],
+   "id": "P019",
+   "intuition_cost": 38,
+   "intuition_expanded": 75,
+   "intuition_score": 0.105,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "normal",
+   "from": "시청#3",
+   "to": "원덕#1",
+   "from_label": "수도권 시청",
+   "to_label": "수도권 원덕",
+   "cost_warp": 5,
+   "cost_no_warp": 27,
+   "savings": 22,
+   "optimal_paths": 1,
+   "warps": 2,
+   "rides": 3,
+   "warp_portals": [
+    "시청",
+    "용문"
+   ],
+   "optimal": [
+    {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#3",
+     "to": "시청#2"
     },
     {
      "type": "ride",
-     "from": "양평#1",
+     "from": "시청#2",
+     "to": "탄방#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "탄방#1",
+     "to": "용문#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "용문",
+     "from": "용문#1",
+     "to": "용문#2"
+    },
+    {
+     "type": "ride",
+     "from": "용문#2",
      "to": "원덕#1",
      "lines": [
       "gyeongui-jungang"
      ]
-    },
+    }
+   ],
+   "id": "P020",
+   "intuition_cost": 37,
+   "intuition_expanded": 89,
+   "intuition_score": 0.135,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "normal",
+   "from": "원덕#1",
+   "to": "충정로#1",
+   "from_label": "수도권 원덕",
+   "to_label": "수도권 충정로",
+   "cost_warp": 6,
+   "cost_no_warp": 28,
+   "savings": 22,
+   "optimal_paths": 1,
+   "warps": 2,
+   "rides": 4,
+   "warp_portals": [
+    "용문",
+    "시청"
+   ],
+   "optimal": [
     {
      "type": "ride",
      "from": "원덕#1",
@@ -1076,88 +1428,47 @@
      ]
     },
     {
-     "type": "ride",
+     "type": "warp",
+     "portal": "용문",
      "from": "용문#2",
-     "to": "지평#1",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    }
-   ],
-   "id": "P015"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "normal",
-   "from": "삼가#1",
-   "to": "송정#2",
-   "from_label": "수도권 삼가",
-   "to_label": "수도권 송정",
-   "cost_warp": 7,
-   "cost_no_warp": 32,
-   "savings": 25,
-   "optimal_paths": 1,
-   "warps": 2,
-   "rides": 5,
-   "warp_portals": [
-    "동백",
-    "송정"
-   ],
-   "optimal": [
+     "to": "용문#1"
+    },
     {
      "type": "ride",
-     "from": "삼가#1",
-     "to": "초당#1",
+     "from": "용문#1",
+     "to": "탄방#1",
      "lines": [
-      "everline"
+      "daejeon-1"
      ]
     },
     {
      "type": "ride",
-     "from": "초당#1",
-     "to": "동백#2",
+     "from": "탄방#1",
+     "to": "시청#2",
      "lines": [
-      "everline"
+      "daejeon-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "동백",
-     "from": "동백#2",
-     "to": "동백#1"
+     "portal": "시청",
+     "from": "시청#2",
+     "to": "시청#3"
     },
     {
      "type": "ride",
-     "from": "동백#1",
-     "to": "벡스코#1",
+     "from": "시청#3",
+     "to": "충정로#1",
      "lines": [
-      "busan-2"
+      "seoul-2"
      ]
-    },
-    {
-     "type": "ride",
-     "from": "벡스코#1",
-     "to": "신해운대#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신해운대#1",
-     "to": "송정#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "송정",
-     "from": "송정#1",
-     "to": "송정#2"
     }
    ],
-   "id": "P016"
+   "id": "P021",
+   "intuition_cost": 10,
+   "intuition_expanded": 11,
+   "intuition_score": 0.6,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
@@ -1167,8 +1478,8 @@
    "from_label": "수도권 송정",
    "to_label": "수도권 시청·용인대",
    "cost_warp": 8,
-   "cost_no_warp": 33,
-   "savings": 25,
+   "cost_no_warp": 29,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 6,
@@ -1238,7 +1549,11 @@
      ]
     }
    ],
-   "id": "P017"
+   "id": "P022",
+   "intuition_cost": 48,
+   "intuition_expanded": 55,
+   "intuition_score": 0.167,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1248,8 +1563,8 @@
    "from_label": "수도권 마곡",
    "to_label": "수도권 시청·용인대",
    "cost_warp": 9,
-   "cost_no_warp": 34,
-   "savings": 25,
+   "cost_no_warp": 30,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 7,
@@ -1327,7 +1642,104 @@
      ]
     }
    ],
-   "id": "P018"
+   "id": "P023",
+   "intuition_cost": 47,
+   "intuition_expanded": 54,
+   "intuition_score": 0.191,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "normal",
+   "from": "명지대#1",
+   "to": "송정#2",
+   "from_label": "수도권 명지대",
+   "to_label": "수도권 송정",
+   "cost_warp": 9,
+   "cost_no_warp": 30,
+   "savings": 21,
+   "optimal_paths": 1,
+   "warps": 2,
+   "rides": 7,
+   "warp_portals": [
+    "동백",
+    "송정"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "명지대#1",
+     "to": "시청·용인대#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "시청·용인대#1",
+     "to": "삼가#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "삼가#1",
+     "to": "초당#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "초당#1",
+     "to": "동백#2",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "동백",
+     "from": "동백#2",
+     "to": "동백#1"
+    },
+    {
+     "type": "ride",
+     "from": "동백#1",
+     "to": "벡스코#1",
+     "lines": [
+      "busan-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "벡스코#1",
+     "to": "신해운대#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "신해운대#1",
+     "to": "송정#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "송정",
+     "from": "송정#1",
+     "to": "송정#2"
+    }
+   ],
+   "id": "P024",
+   "intuition_cost": 41,
+   "intuition_expanded": 42,
+   "intuition_score": 0.22,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1337,8 +1749,8 @@
    "from_label": "수도권 마곡",
    "to_label": "수도권 명지대",
    "cost_warp": 10,
-   "cost_no_warp": 35,
-   "savings": 25,
+   "cost_no_warp": 31,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 8,
@@ -1424,298 +1836,11 @@
      ]
     }
    ],
-   "id": "P019"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "normal",
-   "from": "김량장#1",
-   "to": "발산#1",
-   "from_label": "수도권 김량장",
-   "to_label": "수도권 발산",
-   "cost_warp": 12,
-   "cost_no_warp": 37,
-   "savings": 25,
-   "optimal_paths": 1,
-   "warps": 2,
-   "rides": 10,
-   "warp_portals": [
-    "동백",
-    "송정"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "김량장#1",
-     "to": "명지대#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "명지대#1",
-     "to": "시청·용인대#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "시청·용인대#1",
-     "to": "삼가#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "삼가#1",
-     "to": "초당#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초당#1",
-     "to": "동백#2",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "동백",
-     "from": "동백#2",
-     "to": "동백#1"
-    },
-    {
-     "type": "ride",
-     "from": "동백#1",
-     "to": "벡스코#1",
-     "lines": [
-      "busan-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "벡스코#1",
-     "to": "신해운대#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신해운대#1",
-     "to": "송정#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "송정",
-     "from": "송정#1",
-     "to": "송정#2"
-    },
-    {
-     "type": "ride",
-     "from": "송정#2",
-     "to": "마곡#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "마곡#1",
-     "to": "발산#1",
-     "lines": [
-      "seoul-5"
-     ]
-    }
-   ],
-   "id": "P020"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "normal",
-   "from": "고진#1",
-   "to": "발산#1",
-   "from_label": "수도권 고진",
-   "to_label": "수도권 발산",
-   "cost_warp": 14,
-   "cost_no_warp": 39,
-   "savings": 25,
-   "optimal_paths": 1,
-   "warps": 2,
-   "rides": 12,
-   "warp_portals": [
-    "동백",
-    "송정"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "고진#1",
-     "to": "용인중앙시장#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "용인중앙시장#1",
-     "to": "김량장#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김량장#1",
-     "to": "명지대#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "명지대#1",
-     "to": "시청·용인대#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "시청·용인대#1",
-     "to": "삼가#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "삼가#1",
-     "to": "초당#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초당#1",
-     "to": "동백#2",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "동백",
-     "from": "동백#2",
-     "to": "동백#1"
-    },
-    {
-     "type": "ride",
-     "from": "동백#1",
-     "to": "벡스코#1",
-     "lines": [
-      "busan-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "벡스코#1",
-     "to": "신해운대#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신해운대#1",
-     "to": "송정#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "송정",
-     "from": "송정#1",
-     "to": "송정#2"
-    },
-    {
-     "type": "ride",
-     "from": "송정#2",
-     "to": "마곡#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "마곡#1",
-     "to": "발산#1",
-     "lines": [
-      "seoul-5"
-     ]
-    }
-   ],
-   "id": "P021"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "normal",
-   "from": "시청#3",
-   "to": "용문#2",
-   "from_label": "수도권 시청",
-   "to_label": "수도권 용문",
-   "cost_warp": 4,
-   "cost_no_warp": 28,
-   "savings": 24,
-   "optimal_paths": 1,
-   "warps": 2,
-   "rides": 2,
-   "warp_portals": [
-    "시청",
-    "용문"
-   ],
-   "optimal": [
-    {
-     "type": "warp",
-     "portal": "시청",
-     "from": "시청#3",
-     "to": "시청#2"
-    },
-    {
-     "type": "ride",
-     "from": "시청#2",
-     "to": "탄방#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "탄방#1",
-     "to": "용문#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "용문",
-     "from": "용문#1",
-     "to": "용문#2"
-    }
-   ],
-   "id": "P022"
+   "id": "P025",
+   "intuition_cost": 48,
+   "intuition_expanded": 55,
+   "intuition_score": 0.208,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -1725,8 +1850,8 @@
    "from_label": "수도권 양정",
    "to_label": "수도권 중앙",
    "cost_warp": 11,
-   "cost_no_warp": 34,
-   "savings": 23,
+   "cost_no_warp": 32,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 9,
@@ -1820,242 +1945,11 @@
      "to": "중앙#2"
     }
    ],
-   "id": "P023"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "normal",
-   "from": "덕소#1",
-   "to": "중앙#2",
-   "from_label": "수도권 덕소",
-   "to_label": "수도권 중앙",
-   "cost_warp": 12,
-   "cost_no_warp": 35,
-   "savings": 23,
-   "optimal_paths": 1,
-   "warps": 2,
-   "rides": 10,
-   "warp_portals": [
-    "양정",
-    "중앙"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "덕소#1",
-     "to": "양정#2",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "양정",
-     "from": "양정#2",
-     "to": "양정#1"
-    },
-    {
-     "type": "ride",
-     "from": "양정#1",
-     "to": "부전#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부전#1",
-     "to": "서면#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서면#1",
-     "to": "범내골#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범내골#1",
-     "to": "범일#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범일#1",
-     "to": "좌천#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "좌천#1",
-     "to": "부산진#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부산진#1",
-     "to": "초량#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초량#1",
-     "to": "부산#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부산#1",
-     "to": "중앙#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "중앙",
-     "from": "중앙#1",
-     "to": "중앙#2"
-    }
-   ],
-   "id": "P024"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "normal",
-   "from": "시청#3",
-   "to": "원덕#1",
-   "from_label": "수도권 시청",
-   "to_label": "수도권 원덕",
-   "cost_warp": 5,
-   "cost_no_warp": 27,
-   "savings": 22,
-   "optimal_paths": 1,
-   "warps": 2,
-   "rides": 3,
-   "warp_portals": [
-    "시청",
-    "용문"
-   ],
-   "optimal": [
-    {
-     "type": "warp",
-     "portal": "시청",
-     "from": "시청#3",
-     "to": "시청#2"
-    },
-    {
-     "type": "ride",
-     "from": "시청#2",
-     "to": "탄방#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "탄방#1",
-     "to": "용문#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "용문",
-     "from": "용문#1",
-     "to": "용문#2"
-    },
-    {
-     "type": "ride",
-     "from": "용문#2",
-     "to": "원덕#1",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    }
-   ],
-   "id": "P025"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "normal",
-   "from": "원덕#1",
-   "to": "충정로#1",
-   "from_label": "수도권 원덕",
-   "to_label": "수도권 충정로",
-   "cost_warp": 6,
-   "cost_no_warp": 28,
-   "savings": 22,
-   "optimal_paths": 1,
-   "warps": 2,
-   "rides": 4,
-   "warp_portals": [
-    "용문",
-    "시청"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "원덕#1",
-     "to": "용문#2",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "용문",
-     "from": "용문#2",
-     "to": "용문#1"
-    },
-    {
-     "type": "ride",
-     "from": "용문#1",
-     "to": "탄방#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "탄방#1",
-     "to": "시청#2",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "시청",
-     "from": "시청#2",
-     "to": "시청#3"
-    },
-    {
-     "type": "ride",
-     "from": "시청#3",
-     "to": "충정로#1",
-     "lines": [
-      "seoul-2"
-     ]
-    }
-   ],
-   "id": "P026"
+   "id": "P026",
+   "intuition_cost": 42,
+   "intuition_expanded": 48,
+   "intuition_score": 0.262,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -2065,8 +1959,8 @@
    "from_label": "수도권 고잔",
    "to_label": "수도권 양정",
    "cost_warp": 12,
-   "cost_no_warp": 34,
-   "savings": 22,
+   "cost_no_warp": 33,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 10,
@@ -2169,7 +2063,245 @@
      "to": "양정#2"
     }
    ],
-   "id": "P027"
+   "id": "P027",
+   "intuition_cost": 37,
+   "intuition_expanded": 38,
+   "intuition_score": 0.324,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "normal",
+   "from": "김량장#1",
+   "to": "발산#1",
+   "from_label": "수도권 김량장",
+   "to_label": "수도권 발산",
+   "cost_warp": 12,
+   "cost_no_warp": 33,
+   "savings": 21,
+   "optimal_paths": 1,
+   "warps": 2,
+   "rides": 10,
+   "warp_portals": [
+    "동백",
+    "송정"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "김량장#1",
+     "to": "명지대#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "명지대#1",
+     "to": "시청·용인대#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "시청·용인대#1",
+     "to": "삼가#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "삼가#1",
+     "to": "초당#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "초당#1",
+     "to": "동백#2",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "동백",
+     "from": "동백#2",
+     "to": "동백#1"
+    },
+    {
+     "type": "ride",
+     "from": "동백#1",
+     "to": "벡스코#1",
+     "lines": [
+      "busan-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "벡스코#1",
+     "to": "신해운대#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "신해운대#1",
+     "to": "송정#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "송정",
+     "from": "송정#1",
+     "to": "송정#2"
+    },
+    {
+     "type": "ride",
+     "from": "송정#2",
+     "to": "마곡#1",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "마곡#1",
+     "to": "발산#1",
+     "lines": [
+      "seoul-5"
+     ]
+    }
+   ],
+   "id": "P028",
+   "intuition_cost": 44,
+   "intuition_expanded": 47,
+   "intuition_score": 0.273,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "normal",
+   "from": "덕소#1",
+   "to": "중앙#2",
+   "from_label": "수도권 덕소",
+   "to_label": "수도권 중앙",
+   "cost_warp": 12,
+   "cost_no_warp": 33,
+   "savings": 21,
+   "optimal_paths": 1,
+   "warps": 2,
+   "rides": 10,
+   "warp_portals": [
+    "양정",
+    "중앙"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "덕소#1",
+     "to": "양정#2",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "양정",
+     "from": "양정#2",
+     "to": "양정#1"
+    },
+    {
+     "type": "ride",
+     "from": "양정#1",
+     "to": "부전#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부전#1",
+     "to": "서면#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서면#1",
+     "to": "범내골#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "범내골#1",
+     "to": "범일#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "범일#1",
+     "to": "좌천#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "좌천#1",
+     "to": "부산진#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부산진#1",
+     "to": "초량#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "초량#1",
+     "to": "부산#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부산#1",
+     "to": "중앙#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "중앙",
+     "from": "중앙#1",
+     "to": "중앙#2"
+    }
+   ],
+   "id": "P029",
+   "intuition_cost": 43,
+   "intuition_expanded": 51,
+   "intuition_score": 0.279,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -2179,8 +2311,8 @@
    "from_label": "수도권 고잔",
    "to_label": "수도권 덕소",
    "cost_warp": 13,
-   "cost_no_warp": 35,
-   "savings": 22,
+   "cost_no_warp": 34,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 11,
@@ -2291,137 +2423,136 @@
      ]
     }
    ],
-   "id": "P028"
+   "id": "P030",
+   "intuition_cost": 38,
+   "intuition_expanded": 39,
+   "intuition_score": 0.342,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
    "difficulty": "normal",
-   "from": "도심#1",
-   "to": "한대앞#1",
-   "from_label": "수도권 도심",
-   "to_label": "수도권 한대앞",
-   "cost_warp": 14,
-   "cost_no_warp": 35,
+   "from": "김량장#1",
+   "to": "우장산#1",
+   "from_label": "수도권 김량장",
+   "to_label": "수도권 우장산",
+   "cost_warp": 13,
+   "cost_no_warp": 34,
    "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
-   "rides": 12,
+   "rides": 11,
    "warp_portals": [
-    "양정",
-    "중앙"
+    "동백",
+    "송정"
    ],
    "optimal": [
     {
      "type": "ride",
-     "from": "도심#1",
-     "to": "덕소#1",
+     "from": "김량장#1",
+     "to": "명지대#1",
      "lines": [
-      "gyeongui-jungang"
+      "everline"
      ]
     },
     {
      "type": "ride",
-     "from": "덕소#1",
-     "to": "양정#2",
+     "from": "명지대#1",
+     "to": "시청·용인대#1",
      "lines": [
-      "gyeongui-jungang"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "양정",
-     "from": "양정#2",
-     "to": "양정#1"
-    },
-    {
-     "type": "ride",
-     "from": "양정#1",
-     "to": "부전#1",
-     "lines": [
-      "busan-1"
+      "everline"
      ]
     },
     {
      "type": "ride",
-     "from": "부전#1",
-     "to": "서면#1",
+     "from": "시청·용인대#1",
+     "to": "삼가#1",
      "lines": [
-      "busan-1"
+      "everline"
      ]
     },
     {
      "type": "ride",
-     "from": "서면#1",
-     "to": "범내골#1",
+     "from": "삼가#1",
+     "to": "초당#1",
      "lines": [
-      "busan-1"
+      "everline"
      ]
     },
     {
      "type": "ride",
-     "from": "범내골#1",
-     "to": "범일#1",
+     "from": "초당#1",
+     "to": "동백#2",
      "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범일#1",
-     "to": "좌천#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "좌천#1",
-     "to": "부산진#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부산진#1",
-     "to": "초량#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초량#1",
-     "to": "부산#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부산#1",
-     "to": "중앙#1",
-     "lines": [
-      "busan-1"
+      "everline"
      ]
     },
     {
      "type": "warp",
-     "portal": "중앙",
-     "from": "중앙#1",
-     "to": "중앙#2"
+     "portal": "동백",
+     "from": "동백#2",
+     "to": "동백#1"
     },
     {
      "type": "ride",
-     "from": "중앙#2",
-     "to": "한대앞#1",
+     "from": "동백#1",
+     "to": "벡스코#1",
      "lines": [
-      "seoul-4-ansan",
-      "suin-bundang-suin"
+      "busan-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "벡스코#1",
+     "to": "신해운대#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "신해운대#1",
+     "to": "송정#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "송정",
+     "from": "송정#1",
+     "to": "송정#2"
+    },
+    {
+     "type": "ride",
+     "from": "송정#2",
+     "to": "마곡#1",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "마곡#1",
+     "to": "발산#1",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "발산#1",
+     "to": "우장산#1",
+     "lines": [
+      "seoul-5"
      ]
     }
    ],
-   "id": "P029"
+   "id": "P031",
+   "intuition_cost": 39,
+   "intuition_expanded": 40,
+   "intuition_score": 0.333,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -2494,136 +2625,270 @@
      ]
     }
    ],
-   "id": "P030"
+   "id": "P032",
+   "intuition_cost": 9,
+   "intuition_expanded": 10,
+   "intuition_score": 0.778,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
    "difficulty": "normal",
-   "from": "금곡#2",
-   "to": "증산#2",
-   "from_label": "수도권 금곡",
-   "to_label": "수도권 증산",
-   "cost_warp": 4,
-   "cost_no_warp": 22,
-   "savings": 18,
+   "from": "개운포#1",
+   "to": "초량#1",
+   "from_label": "부산 개운포",
+   "to_label": "부산 초량",
+   "cost_warp": 9,
+   "cost_no_warp": 28,
+   "savings": 19,
    "optimal_paths": 1,
-   "warps": 2,
-   "rides": 2,
+   "warps": 1,
+   "rides": 8,
    "warp_portals": [
-    "금곡",
-    "증산"
+    "좌천"
    ],
    "optimal": [
     {
-     "type": "warp",
-     "portal": "금곡",
-     "from": "금곡#2",
-     "to": "금곡#1"
-    },
-    {
      "type": "ride",
-     "from": "금곡#1",
-     "to": "호포#1",
+     "from": "개운포#1",
+     "to": "덕하#1",
      "lines": [
-      "busan-2"
+      "donghae"
      ]
     },
     {
      "type": "ride",
-     "from": "호포#1",
-     "to": "증산#1",
+     "from": "덕하#1",
+     "to": "망양#1",
      "lines": [
-      "busan-2"
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "망양#1",
+     "to": "남창#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "남창#1",
+     "to": "서생#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서생#1",
+     "to": "월내#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "월내#1",
+     "to": "좌천#2",
+     "lines": [
+      "donghae"
      ]
     },
     {
      "type": "warp",
-     "portal": "증산",
-     "from": "증산#1",
-     "to": "증산#2"
+     "portal": "좌천",
+     "from": "좌천#2",
+     "to": "좌천#1"
+    },
+    {
+     "type": "ride",
+     "from": "좌천#1",
+     "to": "부산진#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부산진#1",
+     "to": "초량#1",
+     "lines": [
+      "busan-1"
+     ]
     }
    ],
-   "id": "P031"
+   "id": "P033",
+   "intuition_cost": 9,
+   "intuition_expanded": 10,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "normal",
+   "from": "남창#1",
+   "to": "남포#1",
+   "from_label": "부산 남창",
+   "to_label": "부산 남포",
+   "cost_warp": 9,
+   "cost_no_warp": 28,
+   "savings": 19,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 8,
+   "warp_portals": [
+    "좌천"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "남창#1",
+     "to": "서생#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서생#1",
+     "to": "월내#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "월내#1",
+     "to": "좌천#2",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "좌천",
+     "from": "좌천#2",
+     "to": "좌천#1"
+    },
+    {
+     "type": "ride",
+     "from": "좌천#1",
+     "to": "부산진#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부산진#1",
+     "to": "초량#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "초량#1",
+     "to": "부산#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부산#1",
+     "to": "중앙#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "중앙#1",
+     "to": "남포#1",
+     "lines": [
+      "busan-1"
+     ]
+    }
+   ],
+   "id": "P034",
+   "intuition_cost": 9,
+   "intuition_expanded": 10,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "shortcut",
    "difficulty": "hard",
-   "from": "동백#2",
+   "from": "용문#2",
    "to": "운천#2",
-   "from_label": "수도권 동백",
+   "from_label": "수도권 용문",
    "to_label": "수도권 운천",
-   "cost_warp": 13,
-   "cost_no_warp": 44,
+   "cost_warp": 12,
+   "cost_no_warp": 43,
    "savings": 31,
    "optimal_paths": 1,
    "warps": 4,
-   "rides": 9,
+   "rides": 8,
    "warp_portals": [
-    "동백",
-    "송정",
+    "용문",
+    "시청",
     "화정",
     "운천"
    ],
    "optimal": [
     {
      "type": "warp",
-     "portal": "동백",
-     "from": "동백#2",
-     "to": "동백#1"
+     "portal": "용문",
+     "from": "용문#2",
+     "to": "용문#1"
     },
     {
      "type": "ride",
-     "from": "동백#1",
-     "to": "벡스코#1",
+     "from": "용문#1",
+     "to": "탄방#1",
      "lines": [
-      "busan-2"
+      "daejeon-1"
      ]
     },
     {
      "type": "ride",
-     "from": "벡스코#1",
-     "to": "신해운대#1",
+     "from": "탄방#1",
+     "to": "시청#2",
      "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신해운대#1",
-     "to": "송정#1",
-     "lines": [
-      "donghae"
+      "daejeon-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "송정",
-     "from": "송정#1",
-     "to": "송정#2"
+     "portal": "시청",
+     "from": "시청#2",
+     "to": "시청#3"
     },
     {
      "type": "ride",
-     "from": "송정#2",
-     "to": "김포공항#1",
+     "from": "시청#3",
+     "to": "서울#1",
      "lines": [
-      "seoul-5"
+      "seoul-1"
      ]
     },
     {
      "type": "ride",
-     "from": "김포공항#1",
-     "to": "능곡#1",
+     "from": "서울#1",
+     "to": "연신내#1",
      "lines": [
-      "seohae"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "능곡#1",
+     "from": "연신내#1",
      "to": "대곡#2",
      "lines": [
-      "gyeongui-jungang",
-      "seohae"
+      "gtx-a"
      ]
     },
     {
@@ -2663,87 +2928,82 @@
      "to": "운천#2"
     }
    ],
-   "id": "P032"
+   "id": "P035",
+   "intuition_cost": 28,
+   "intuition_expanded": 31,
+   "intuition_score": 0.429,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
    "difficulty": "hard",
-   "from": "동백#2",
+   "from": "용문#2",
    "to": "임진강#1",
-   "from_label": "수도권 동백",
+   "from_label": "수도권 용문",
    "to_label": "수도권 임진강",
-   "cost_warp": 14,
-   "cost_no_warp": 45,
+   "cost_warp": 13,
+   "cost_no_warp": 44,
    "savings": 31,
    "optimal_paths": 1,
    "warps": 4,
-   "rides": 10,
+   "rides": 9,
    "warp_portals": [
-    "동백",
-    "송정",
+    "용문",
+    "시청",
     "화정",
     "운천"
    ],
    "optimal": [
     {
      "type": "warp",
-     "portal": "동백",
-     "from": "동백#2",
-     "to": "동백#1"
+     "portal": "용문",
+     "from": "용문#2",
+     "to": "용문#1"
     },
     {
      "type": "ride",
-     "from": "동백#1",
-     "to": "벡스코#1",
+     "from": "용문#1",
+     "to": "탄방#1",
      "lines": [
-      "busan-2"
+      "daejeon-1"
      ]
     },
     {
      "type": "ride",
-     "from": "벡스코#1",
-     "to": "신해운대#1",
+     "from": "탄방#1",
+     "to": "시청#2",
      "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신해운대#1",
-     "to": "송정#1",
-     "lines": [
-      "donghae"
+      "daejeon-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "송정",
-     "from": "송정#1",
-     "to": "송정#2"
+     "portal": "시청",
+     "from": "시청#2",
+     "to": "시청#3"
     },
     {
      "type": "ride",
-     "from": "송정#2",
-     "to": "김포공항#1",
+     "from": "시청#3",
+     "to": "서울#1",
      "lines": [
-      "seoul-5"
+      "seoul-1"
      ]
     },
     {
      "type": "ride",
-     "from": "김포공항#1",
-     "to": "능곡#1",
+     "from": "서울#1",
+     "to": "연신내#1",
      "lines": [
-      "seohae"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "능곡#1",
+     "from": "연신내#1",
      "to": "대곡#2",
      "lines": [
-      "gyeongui-jungang",
-      "seohae"
+      "gtx-a"
      ]
     },
     {
@@ -2791,26 +3051,30 @@
      ]
     }
    ],
-   "id": "P033"
+   "id": "P036",
+   "intuition_cost": 29,
+   "intuition_expanded": 32,
+   "intuition_score": 0.448,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
    "difficulty": "hard",
    "from": "운천#2",
-   "to": "초당#1",
+   "to": "지평#1",
    "from_label": "수도권 운천",
-   "to_label": "수도권 초당",
-   "cost_warp": 14,
-   "cost_no_warp": 45,
+   "to_label": "수도권 지평",
+   "cost_warp": 13,
+   "cost_no_warp": 44,
    "savings": 31,
    "optimal_paths": 1,
    "warps": 4,
-   "rides": 10,
+   "rides": 9,
    "warp_portals": [
     "운천",
     "화정",
-    "송정",
-    "동백"
+    "시청",
+    "용문"
    ],
    "optimal": [
     {
@@ -2852,94 +3116,359 @@
     {
      "type": "ride",
      "from": "대곡#2",
-     "to": "능곡#1",
+     "to": "연신내#1",
      "lines": [
-      "gyeongui-jungang",
-      "seohae"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "능곡#1",
-     "to": "김포공항#1",
+     "from": "연신내#1",
+     "to": "서울#1",
      "lines": [
-      "seohae"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "김포공항#1",
-     "to": "송정#2",
+     "from": "서울#1",
+     "to": "시청#3",
      "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "송정",
-     "from": "송정#2",
-     "to": "송정#1"
-    },
-    {
-     "type": "ride",
-     "from": "송정#1",
-     "to": "신해운대#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신해운대#1",
-     "to": "벡스코#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "벡스코#1",
-     "to": "동백#1",
-     "lines": [
-      "busan-2"
+      "seoul-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "동백",
-     "from": "동백#1",
-     "to": "동백#2"
+     "portal": "시청",
+     "from": "시청#3",
+     "to": "시청#2"
     },
     {
      "type": "ride",
-     "from": "동백#2",
-     "to": "초당#1",
+     "from": "시청#2",
+     "to": "탄방#1",
      "lines": [
-      "everline"
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "탄방#1",
+     "to": "용문#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "용문",
+     "from": "용문#1",
+     "to": "용문#2"
+    },
+    {
+     "type": "ride",
+     "from": "용문#2",
+     "to": "지평#1",
+     "lines": [
+      "gyeongui-jungang"
      ]
     }
    ],
-   "id": "P034"
+   "id": "P037",
+   "intuition_cost": 54,
+   "intuition_expanded": 91,
+   "intuition_score": 0.241,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
    "difficulty": "hard",
-   "from": "용문#2",
-   "to": "중앙#2",
-   "from_label": "수도권 용문",
-   "to_label": "수도권 중앙",
-   "cost_warp": 15,
-   "cost_no_warp": 46,
+   "from": "임진강#1",
+   "to": "지평#1",
+   "from_label": "수도권 임진강",
+   "to_label": "수도권 지평",
+   "cost_warp": 14,
+   "cost_no_warp": 45,
    "savings": 31,
    "optimal_paths": 1,
+   "warps": 4,
+   "rides": 10,
+   "warp_portals": [
+    "운천",
+    "화정",
+    "시청",
+    "용문"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "임진강#1",
+     "to": "운천#2",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "운천",
+     "from": "운천#2",
+     "to": "운천#1"
+    },
+    {
+     "type": "ride",
+     "from": "운천#1",
+     "to": "쌍촌#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "쌍촌#1",
+     "to": "화정#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "화정",
+     "from": "화정#1",
+     "to": "화정#2"
+    },
+    {
+     "type": "ride",
+     "from": "화정#2",
+     "to": "대곡#2",
+     "lines": [
+      "seoul-3-ilsan"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "대곡#2",
+     "to": "연신내#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연신내#1",
+     "to": "서울#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서울#1",
+     "to": "시청#3",
+     "lines": [
+      "seoul-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#3",
+     "to": "시청#2"
+    },
+    {
+     "type": "ride",
+     "from": "시청#2",
+     "to": "탄방#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "탄방#1",
+     "to": "용문#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "용문",
+     "from": "용문#1",
+     "to": "용문#2"
+    },
+    {
+     "type": "ride",
+     "from": "용문#2",
+     "to": "지평#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    }
+   ],
+   "id": "P038",
+   "intuition_cost": 55,
+   "intuition_expanded": 92,
+   "intuition_score": 0.255,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "hard",
+   "from": "문산#1",
+   "to": "원덕#1",
+   "from_label": "수도권 문산",
+   "to_label": "수도권 원덕",
+   "cost_warp": 14,
+   "cost_no_warp": 41,
+   "savings": 27,
+   "optimal_paths": 1,
+   "warps": 4,
+   "rides": 10,
+   "warp_portals": [
+    "운천",
+    "화정",
+    "시청",
+    "용문"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "문산#1",
+     "to": "운천#2",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "운천",
+     "from": "운천#2",
+     "to": "운천#1"
+    },
+    {
+     "type": "ride",
+     "from": "운천#1",
+     "to": "쌍촌#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "쌍촌#1",
+     "to": "화정#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "화정",
+     "from": "화정#1",
+     "to": "화정#2"
+    },
+    {
+     "type": "ride",
+     "from": "화정#2",
+     "to": "대곡#2",
+     "lines": [
+      "seoul-3-ilsan"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "대곡#2",
+     "to": "연신내#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연신내#1",
+     "to": "서울#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서울#1",
+     "to": "시청#3",
+     "lines": [
+      "seoul-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#3",
+     "to": "시청#2"
+    },
+    {
+     "type": "ride",
+     "from": "시청#2",
+     "to": "탄방#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "탄방#1",
+     "to": "용문#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "용문",
+     "from": "용문#1",
+     "to": "용문#2"
+    },
+    {
+     "type": "ride",
+     "from": "용문#2",
+     "to": "원덕#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    }
+   ],
+   "id": "P039",
+   "intuition_cost": 51,
+   "intuition_expanded": 103,
+   "intuition_score": 0.275,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "hard",
+   "from": "원덕#1",
+   "to": "중앙#2",
+   "from_label": "수도권 원덕",
+   "to_label": "수도권 중앙",
+   "cost_warp": 16,
+   "cost_no_warp": 43,
+   "savings": 27,
+   "optimal_paths": 1,
    "warps": 3,
-   "rides": 12,
+   "rides": 13,
    "warp_portals": [
     "용문",
     "시청",
     "중앙"
    ],
    "optimal": [
+    {
+     "type": "ride",
+     "from": "원덕#1",
+     "to": "용문#2",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
     {
      "type": "warp",
      "portal": "용문",
@@ -3055,874 +3584,11 @@
      "to": "중앙#2"
     }
    ],
-   "id": "P035"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "hard",
-   "from": "임진강#1",
-   "to": "초당#1",
-   "from_label": "수도권 임진강",
-   "to_label": "수도권 초당",
-   "cost_warp": 15,
-   "cost_no_warp": 46,
-   "savings": 31,
-   "optimal_paths": 1,
-   "warps": 4,
-   "rides": 11,
-   "warp_portals": [
-    "운천",
-    "화정",
-    "송정",
-    "동백"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "임진강#1",
-     "to": "운천#2",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "운천",
-     "from": "운천#2",
-     "to": "운천#1"
-    },
-    {
-     "type": "ride",
-     "from": "운천#1",
-     "to": "쌍촌#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "쌍촌#1",
-     "to": "화정#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "화정",
-     "from": "화정#1",
-     "to": "화정#2"
-    },
-    {
-     "type": "ride",
-     "from": "화정#2",
-     "to": "대곡#2",
-     "lines": [
-      "seoul-3-ilsan"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대곡#2",
-     "to": "능곡#1",
-     "lines": [
-      "gyeongui-jungang",
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "능곡#1",
-     "to": "김포공항#1",
-     "lines": [
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김포공항#1",
-     "to": "송정#2",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "송정",
-     "from": "송정#2",
-     "to": "송정#1"
-    },
-    {
-     "type": "ride",
-     "from": "송정#1",
-     "to": "신해운대#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신해운대#1",
-     "to": "벡스코#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "벡스코#1",
-     "to": "동백#1",
-     "lines": [
-      "busan-2"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "동백",
-     "from": "동백#1",
-     "to": "동백#2"
-    },
-    {
-     "type": "ride",
-     "from": "동백#2",
-     "to": "초당#1",
-     "lines": [
-      "everline"
-     ]
-    }
-   ],
-   "id": "P036"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "hard",
-   "from": "중앙#2",
-   "to": "지평#1",
-   "from_label": "수도권 중앙",
-   "to_label": "수도권 지평",
-   "cost_warp": 16,
-   "cost_no_warp": 47,
-   "savings": 31,
-   "optimal_paths": 1,
-   "warps": 3,
-   "rides": 13,
-   "warp_portals": [
-    "중앙",
-    "시청",
-    "용문"
-   ],
-   "optimal": [
-    {
-     "type": "warp",
-     "portal": "중앙",
-     "from": "중앙#2",
-     "to": "중앙#1"
-    },
-    {
-     "type": "ride",
-     "from": "중앙#1",
-     "to": "부산#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부산#1",
-     "to": "초량#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초량#1",
-     "to": "부산진#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부산진#1",
-     "to": "좌천#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "좌천#1",
-     "to": "범일#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범일#1",
-     "to": "범내골#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범내골#1",
-     "to": "서면#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서면#1",
-     "to": "부전#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부전#1",
-     "to": "양정#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "양정#1",
-     "to": "시청#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "시청",
-     "from": "시청#1",
-     "to": "시청#2"
-    },
-    {
-     "type": "ride",
-     "from": "시청#2",
-     "to": "탄방#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "탄방#1",
-     "to": "용문#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "용문",
-     "from": "용문#1",
-     "to": "용문#2"
-    },
-    {
-     "type": "ride",
-     "from": "용문#2",
-     "to": "지평#1",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    }
-   ],
-   "id": "P037"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "hard",
-   "from": "고잔#1",
-   "to": "용문#2",
-   "from_label": "수도권 고잔",
-   "to_label": "수도권 용문",
-   "cost_warp": 16,
-   "cost_no_warp": 46,
-   "savings": 30,
-   "optimal_paths": 1,
-   "warps": 3,
-   "rides": 13,
-   "warp_portals": [
-    "중앙",
-    "시청",
-    "용문"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "고잔#1",
-     "to": "중앙#2",
-     "lines": [
-      "seoul-4-ansan",
-      "suin-bundang-suin"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "중앙",
-     "from": "중앙#2",
-     "to": "중앙#1"
-    },
-    {
-     "type": "ride",
-     "from": "중앙#1",
-     "to": "부산#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부산#1",
-     "to": "초량#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초량#1",
-     "to": "부산진#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부산진#1",
-     "to": "좌천#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "좌천#1",
-     "to": "범일#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범일#1",
-     "to": "범내골#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범내골#1",
-     "to": "서면#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서면#1",
-     "to": "부전#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부전#1",
-     "to": "양정#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "양정#1",
-     "to": "시청#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "시청",
-     "from": "시청#1",
-     "to": "시청#2"
-    },
-    {
-     "type": "ride",
-     "from": "시청#2",
-     "to": "탄방#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "탄방#1",
-     "to": "용문#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "용문",
-     "from": "용문#1",
-     "to": "용문#2"
-    }
-   ],
-   "id": "P038"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "hard",
-   "from": "고잔#1",
-   "to": "지평#1",
-   "from_label": "수도권 고잔",
-   "to_label": "수도권 지평",
-   "cost_warp": 17,
-   "cost_no_warp": 47,
-   "savings": 30,
-   "optimal_paths": 1,
-   "warps": 3,
-   "rides": 14,
-   "warp_portals": [
-    "중앙",
-    "시청",
-    "용문"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "고잔#1",
-     "to": "중앙#2",
-     "lines": [
-      "seoul-4-ansan",
-      "suin-bundang-suin"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "중앙",
-     "from": "중앙#2",
-     "to": "중앙#1"
-    },
-    {
-     "type": "ride",
-     "from": "중앙#1",
-     "to": "부산#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부산#1",
-     "to": "초량#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초량#1",
-     "to": "부산진#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부산진#1",
-     "to": "좌천#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "좌천#1",
-     "to": "범일#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범일#1",
-     "to": "범내골#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범내골#1",
-     "to": "서면#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서면#1",
-     "to": "부전#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부전#1",
-     "to": "양정#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "양정#1",
-     "to": "시청#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "시청",
-     "from": "시청#1",
-     "to": "시청#2"
-    },
-    {
-     "type": "ride",
-     "from": "시청#2",
-     "to": "탄방#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "탄방#1",
-     "to": "용문#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "용문",
-     "from": "용문#1",
-     "to": "용문#2"
-    },
-    {
-     "type": "ride",
-     "from": "용문#2",
-     "to": "지평#1",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    }
-   ],
-   "id": "P039"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "hard",
-   "from": "문산#1",
-   "to": "삼가#1",
-   "from_label": "수도권 문산",
-   "to_label": "수도권 삼가",
-   "cost_warp": 16,
-   "cost_no_warp": 45,
-   "savings": 29,
-   "optimal_paths": 1,
-   "warps": 4,
-   "rides": 12,
-   "warp_portals": [
-    "운천",
-    "화정",
-    "송정",
-    "동백"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "문산#1",
-     "to": "운천#2",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "운천",
-     "from": "운천#2",
-     "to": "운천#1"
-    },
-    {
-     "type": "ride",
-     "from": "운천#1",
-     "to": "쌍촌#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "쌍촌#1",
-     "to": "화정#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "화정",
-     "from": "화정#1",
-     "to": "화정#2"
-    },
-    {
-     "type": "ride",
-     "from": "화정#2",
-     "to": "대곡#2",
-     "lines": [
-      "seoul-3-ilsan"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대곡#2",
-     "to": "능곡#1",
-     "lines": [
-      "gyeongui-jungang",
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "능곡#1",
-     "to": "김포공항#1",
-     "lines": [
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김포공항#1",
-     "to": "송정#2",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "송정",
-     "from": "송정#2",
-     "to": "송정#1"
-    },
-    {
-     "type": "ride",
-     "from": "송정#1",
-     "to": "신해운대#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신해운대#1",
-     "to": "벡스코#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "벡스코#1",
-     "to": "동백#1",
-     "lines": [
-      "busan-2"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "동백",
-     "from": "동백#1",
-     "to": "동백#2"
-    },
-    {
-     "type": "ride",
-     "from": "동백#2",
-     "to": "초당#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초당#1",
-     "to": "삼가#1",
-     "lines": [
-      "everline"
-     ]
-    }
-   ],
-   "id": "P040"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "hard",
-   "from": "문산#1",
-   "to": "양평#1",
-   "from_label": "수도권 문산",
-   "to_label": "수도권 양평",
-   "cost_warp": 16,
-   "cost_no_warp": 45,
-   "savings": 29,
-   "optimal_paths": 1,
-   "warps": 3,
-   "rides": 13,
-   "warp_portals": [
-    "운천",
-    "화정",
-    "양평"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "문산#1",
-     "to": "운천#2",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "운천",
-     "from": "운천#2",
-     "to": "운천#1"
-    },
-    {
-     "type": "ride",
-     "from": "운천#1",
-     "to": "쌍촌#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "쌍촌#1",
-     "to": "화정#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "화정",
-     "from": "화정#1",
-     "to": "화정#2"
-    },
-    {
-     "type": "ride",
-     "from": "화정#2",
-     "to": "대곡#2",
-     "lines": [
-      "seoul-3-ilsan"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대곡#2",
-     "to": "능곡#1",
-     "lines": [
-      "gyeongui-jungang",
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "능곡#1",
-     "to": "김포공항#1",
-     "lines": [
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김포공항#1",
-     "to": "마곡나루#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "마곡나루#1",
-     "to": "디지털미디어시티#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "홍대입구#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "홍대입구#1",
-     "to": "합정#1",
-     "lines": [
-      "seoul-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "합정#1",
-     "to": "당산#1",
-     "lines": [
-      "seoul-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "당산#1",
-     "to": "영등포구청#1",
-     "lines": [
-      "seoul-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "영등포구청#1",
-     "to": "양평#2",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "양평",
-     "from": "양평#2",
-     "to": "양평#1"
-    }
-   ],
-   "id": "P041"
+   "id": "P040",
+   "intuition_cost": 22,
+   "intuition_expanded": 27,
+   "intuition_score": 0.727,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
@@ -3932,8 +3598,8 @@
    "from_label": "수도권 간석",
    "to_label": "수도권 김량장",
    "cost_warp": 15,
-   "cost_no_warp": 43,
-   "savings": 28,
+   "cost_no_warp": 41,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 13,
@@ -4059,7 +3725,11 @@
      ]
     }
    ],
-   "id": "P042"
+   "id": "P041",
+   "intuition_cost": 49,
+   "intuition_expanded": 56,
+   "intuition_score": 0.306,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -4069,8 +3739,8 @@
    "from_label": "수도권 간석오거리",
    "to_label": "수도권 김량장",
    "cost_warp": 15,
-   "cost_no_warp": 43,
-   "savings": 28,
+   "cost_no_warp": 41,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 13,
@@ -4196,7 +3866,11 @@
      ]
     }
    ],
-   "id": "P043"
+   "id": "P042",
+   "intuition_cost": 50,
+   "intuition_expanded": 63,
+   "intuition_score": 0.3,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -4206,8 +3880,8 @@
    "from_label": "수도권 고진",
    "to_label": "수도권 동수",
    "cost_warp": 15,
-   "cost_no_warp": 43,
-   "savings": 28,
+   "cost_no_warp": 41,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 13,
@@ -4333,7 +4007,11 @@
      ]
     }
    ],
-   "id": "P044"
+   "id": "P043",
+   "intuition_cost": 48,
+   "intuition_expanded": 52,
+   "intuition_score": 0.312,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -4343,8 +4021,8 @@
    "from_label": "수도권 고진",
    "to_label": "수도권 백운",
    "cost_warp": 15,
-   "cost_no_warp": 43,
-   "savings": 28,
+   "cost_no_warp": 41,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 13,
@@ -4470,18 +4148,22 @@
      ]
     }
    ],
-   "id": "P045"
+   "id": "P044",
+   "intuition_cost": 48,
+   "intuition_expanded": 52,
+   "intuition_score": 0.312,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
    "difficulty": "hard",
-   "from": "도화#1",
-   "to": "시청·용인대#1",
-   "from_label": "수도권 도화",
-   "to_label": "수도권 시청·용인대",
+   "from": "남동구청#1",
+   "to": "동백#2",
+   "from_label": "수도권 남동구청",
+   "to_label": "수도권 동백",
    "cost_warp": 15,
-   "cost_no_warp": 43,
-   "savings": 28,
+   "cost_no_warp": 41,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 13,
@@ -4492,42 +4174,66 @@
    "optimal": [
     {
      "type": "ride",
-     "from": "도화#1",
-     "to": "주안#1",
+     "from": "남동구청#1",
+     "to": "만수#1",
      "lines": [
-      "seoul-1-gyeongin"
+      "incheon-2"
      ]
     },
     {
      "type": "ride",
-     "from": "주안#1",
-     "to": "간석#1",
+     "from": "만수#1",
+     "to": "모래내시장#1",
      "lines": [
-      "seoul-1-gyeongin"
+      "incheon-2"
      ]
     },
     {
      "type": "ride",
-     "from": "간석#1",
-     "to": "동암#1",
+     "from": "모래내시장#1",
+     "to": "석천사거리#1",
      "lines": [
-      "seoul-1-gyeongin"
+      "incheon-2"
      ]
     },
     {
      "type": "ride",
-     "from": "동암#1",
-     "to": "백운#1",
+     "from": "석천사거리#1",
+     "to": "인천시청#1",
      "lines": [
-      "seoul-1-gyeongin"
+      "incheon-2"
      ]
     },
     {
      "type": "ride",
-     "from": "백운#1",
+     "from": "인천시청#1",
+     "to": "간석오거리#1",
+     "lines": [
+      "incheon-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "간석오거리#1",
+     "to": "부평삼거리#1",
+     "lines": [
+      "incheon-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부평삼거리#1",
+     "to": "동수#1",
+     "lines": [
+      "incheon-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "동수#1",
      "to": "부평#1",
      "lines": [
-      "seoul-1-gyeongin"
+      "incheon-1"
      ]
     },
     {
@@ -4581,33 +4287,13 @@
      "portal": "동백",
      "from": "동백#1",
      "to": "동백#2"
-    },
-    {
-     "type": "ride",
-     "from": "동백#2",
-     "to": "초당#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초당#1",
-     "to": "삼가#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "삼가#1",
-     "to": "시청·용인대#1",
-     "lines": [
-      "everline"
-     ]
     }
    ],
-   "id": "P046"
+   "id": "P045",
+   "intuition_cost": 48,
+   "intuition_expanded": 51,
+   "intuition_score": 0.312,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -4617,8 +4303,8 @@
    "from_label": "수도권 둔전",
    "to_label": "수도권 부개",
    "cost_warp": 15,
-   "cost_no_warp": 43,
-   "savings": 28,
+   "cost_no_warp": 41,
+   "savings": 26,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 13,
@@ -4744,162 +4430,22 @@
      ]
     }
    ],
-   "id": "P047"
+   "id": "P046",
+   "intuition_cost": 48,
+   "intuition_expanded": 50,
+   "intuition_score": 0.312,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
    "difficulty": "hard",
-   "from": "삼가#1",
-   "to": "양평#1",
-   "from_label": "수도권 삼가",
-   "to_label": "수도권 양평",
-   "cost_warp": 16,
-   "cost_no_warp": 43,
-   "savings": 27,
-   "optimal_paths": 1,
-   "warps": 3,
-   "rides": 13,
-   "warp_portals": [
-    "동백",
-    "송정",
-    "양평"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "삼가#1",
-     "to": "초당#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초당#1",
-     "to": "동백#2",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "동백",
-     "from": "동백#2",
-     "to": "동백#1"
-    },
-    {
-     "type": "ride",
-     "from": "동백#1",
-     "to": "벡스코#1",
-     "lines": [
-      "busan-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "벡스코#1",
-     "to": "신해운대#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신해운대#1",
-     "to": "송정#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "송정",
-     "from": "송정#1",
-     "to": "송정#2"
-    },
-    {
-     "type": "ride",
-     "from": "송정#2",
-     "to": "김포공항#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김포공항#1",
-     "to": "마곡나루#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "마곡나루#1",
-     "to": "디지털미디어시티#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "홍대입구#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "홍대입구#1",
-     "to": "합정#1",
-     "lines": [
-      "seoul-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "합정#1",
-     "to": "당산#1",
-     "lines": [
-      "seoul-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "당산#1",
-     "to": "영등포구청#1",
-     "lines": [
-      "seoul-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "영등포구청#1",
-     "to": "양평#2",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "양평",
-     "from": "양평#2",
-     "to": "양평#1"
-    }
-   ],
-   "id": "P048"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "hard",
-   "from": "원덕#1",
-   "to": "한대앞#1",
-   "from_label": "수도권 원덕",
-   "to_label": "수도권 한대앞",
+   "from": "양평#1",
+   "to": "중앙#2",
+   "from_label": "수도권 양평",
+   "to_label": "수도권 중앙",
    "cost_warp": 17,
-   "cost_no_warp": 44,
-   "savings": 27,
+   "cost_no_warp": 42,
+   "savings": 25,
    "optimal_paths": 1,
    "warps": 3,
    "rides": 14,
@@ -4909,6 +4455,14 @@
     "중앙"
    ],
    "optimal": [
+    {
+     "type": "ride",
+     "from": "양평#1",
+     "to": "원덕#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
     {
      "type": "ride",
      "from": "원덕#1",
@@ -5030,32 +4584,507 @@
      "portal": "중앙",
      "from": "중앙#1",
      "to": "중앙#2"
-    },
-    {
-     "type": "ride",
-     "from": "중앙#2",
-     "to": "한대앞#1",
-     "lines": [
-      "seoul-4-ansan",
-      "suin-bundang-suin"
-     ]
     }
    ],
-   "id": "P049"
+   "id": "P047",
+   "intuition_cost": 21,
+   "intuition_expanded": 26,
+   "intuition_score": 0.81,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "shortcut",
    "difficulty": "hard",
-   "from": "시청·용인대#1",
-   "to": "파주#1",
-   "from_label": "수도권 시청·용인대",
-   "to_label": "수도권 파주",
+   "from": "고잔#1",
+   "to": "양평#1",
+   "from_label": "수도권 고잔",
+   "to_label": "수도권 양평",
    "cost_warp": 18,
-   "cost_no_warp": 45,
-   "savings": 27,
+   "cost_no_warp": 43,
+   "savings": 25,
+   "optimal_paths": 1,
+   "warps": 3,
+   "rides": 15,
+   "warp_portals": [
+    "중앙",
+    "시청",
+    "용문"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "고잔#1",
+     "to": "중앙#2",
+     "lines": [
+      "seoul-4-ansan",
+      "suin-bundang-suin"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "중앙",
+     "from": "중앙#2",
+     "to": "중앙#1"
+    },
+    {
+     "type": "ride",
+     "from": "중앙#1",
+     "to": "부산#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부산#1",
+     "to": "초량#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "초량#1",
+     "to": "부산진#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부산진#1",
+     "to": "좌천#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "좌천#1",
+     "to": "범일#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "범일#1",
+     "to": "범내골#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "범내골#1",
+     "to": "서면#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서면#1",
+     "to": "부전#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부전#1",
+     "to": "양정#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "양정#1",
+     "to": "시청#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#1",
+     "to": "시청#2"
+    },
+    {
+     "type": "ride",
+     "from": "시청#2",
+     "to": "탄방#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "탄방#1",
+     "to": "용문#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "용문",
+     "from": "용문#1",
+     "to": "용문#2"
+    },
+    {
+     "type": "ride",
+     "from": "용문#2",
+     "to": "원덕#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "원덕#1",
+     "to": "양평#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    }
+   ],
+   "id": "P048",
+   "intuition_cost": 54,
+   "intuition_expanded": 84,
+   "intuition_score": 0.333,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "hard",
+   "from": "고잔#1",
+   "to": "오빈#1",
+   "from_label": "수도권 고잔",
+   "to_label": "수도권 오빈",
+   "cost_warp": 19,
+   "cost_no_warp": 42,
+   "savings": 23,
+   "optimal_paths": 1,
+   "warps": 3,
+   "rides": 16,
+   "warp_portals": [
+    "중앙",
+    "시청",
+    "용문"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "고잔#1",
+     "to": "중앙#2",
+     "lines": [
+      "seoul-4-ansan",
+      "suin-bundang-suin"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "중앙",
+     "from": "중앙#2",
+     "to": "중앙#1"
+    },
+    {
+     "type": "ride",
+     "from": "중앙#1",
+     "to": "부산#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부산#1",
+     "to": "초량#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "초량#1",
+     "to": "부산진#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부산진#1",
+     "to": "좌천#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "좌천#1",
+     "to": "범일#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "범일#1",
+     "to": "범내골#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "범내골#1",
+     "to": "서면#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서면#1",
+     "to": "부전#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부전#1",
+     "to": "양정#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "양정#1",
+     "to": "시청#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#1",
+     "to": "시청#2"
+    },
+    {
+     "type": "ride",
+     "from": "시청#2",
+     "to": "탄방#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "탄방#1",
+     "to": "용문#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "용문",
+     "from": "용문#1",
+     "to": "용문#2"
+    },
+    {
+     "type": "ride",
+     "from": "용문#2",
+     "to": "원덕#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "원덕#1",
+     "to": "양평#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "양평#1",
+     "to": "오빈#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    }
+   ],
+   "id": "P049",
+   "intuition_cost": 50,
+   "intuition_expanded": 69,
+   "intuition_score": 0.38,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "hard",
+   "from": "군포#1",
+   "to": "오빈#1",
+   "from_label": "수도권 군포",
+   "to_label": "수도권 오빈",
+   "cost_warp": 15,
+   "cost_no_warp": 37,
+   "savings": 22,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 14,
+   "warp_portals": [
+    "양평"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "군포#1",
+     "to": "금정#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "금정#1",
+     "to": "명학#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "명학#1",
+     "to": "안양#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "안양#1",
+     "to": "관악#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "관악#1",
+     "to": "석수#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "석수#1",
+     "to": "금천구청#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "금천구청#1",
+     "to": "독산#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "독산#1",
+     "to": "가산디지털단지#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "가산디지털단지#1",
+     "to": "구로#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "구로#1",
+     "to": "신도림#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "신도림#1",
+     "to": "문래#1",
+     "lines": [
+      "seoul-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "문래#1",
+     "to": "영등포구청#1",
+     "lines": [
+      "seoul-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "영등포구청#1",
+     "to": "양평#2",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "양평",
+     "from": "양평#2",
+     "to": "양평#1"
+    },
+    {
+     "type": "ride",
+     "from": "양평#1",
+     "to": "오빈#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    }
+   ],
+   "id": "P050",
+   "intuition_cost": 43,
+   "intuition_expanded": 62,
+   "intuition_score": 0.349,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "hard",
+   "from": "동백#2",
+   "to": "문산#1",
+   "from_label": "수도권 동백",
+   "to_label": "수도권 문산",
+   "cost_warp": 14,
+   "cost_no_warp": 35,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 4,
-   "rides": 14,
+   "rides": 10,
    "warp_portals": [
     "동백",
     "송정",
@@ -5063,30 +5092,6 @@
     "운천"
    ],
    "optimal": [
-    {
-     "type": "ride",
-     "from": "시청·용인대#1",
-     "to": "삼가#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "삼가#1",
-     "to": "초당#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초당#1",
-     "to": "동백#2",
-     "lines": [
-      "everline"
-     ]
-    },
     {
      "type": "warp",
      "portal": "동백",
@@ -5191,178 +5196,13 @@
      "lines": [
       "gyeongui-jungang"
      ]
-    },
-    {
-     "type": "ride",
-     "from": "문산#1",
-     "to": "파주#1",
-     "lines": [
-      "gyeongui-jungang"
-     ]
     }
    ],
-   "id": "P050"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "hard",
-   "from": "원덕#1",
-   "to": "파주#1",
-   "from_label": "수도권 원덕",
-   "to_label": "수도권 파주",
-   "cost_warp": 18,
-   "cost_no_warp": 45,
-   "savings": 27,
-   "optimal_paths": 1,
-   "warps": 3,
-   "rides": 15,
-   "warp_portals": [
-    "양평",
-    "화정",
-    "운천"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "원덕#1",
-     "to": "양평#1",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "양평",
-     "from": "양평#1",
-     "to": "양평#2"
-    },
-    {
-     "type": "ride",
-     "from": "양평#2",
-     "to": "영등포구청#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "영등포구청#1",
-     "to": "당산#1",
-     "lines": [
-      "seoul-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "당산#1",
-     "to": "합정#1",
-     "lines": [
-      "seoul-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "합정#1",
-     "to": "홍대입구#1",
-     "lines": [
-      "seoul-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "홍대입구#1",
-     "to": "디지털미디어시티#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "마곡나루#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "마곡나루#1",
-     "to": "김포공항#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김포공항#1",
-     "to": "능곡#1",
-     "lines": [
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "능곡#1",
-     "to": "대곡#2",
-     "lines": [
-      "gyeongui-jungang",
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대곡#2",
-     "to": "화정#2",
-     "lines": [
-      "seoul-3-ilsan"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "화정",
-     "from": "화정#2",
-     "to": "화정#1"
-    },
-    {
-     "type": "ride",
-     "from": "화정#1",
-     "to": "쌍촌#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "쌍촌#1",
-     "to": "운천#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "운천",
-     "from": "운천#1",
-     "to": "운천#2"
-    },
-    {
-     "type": "ride",
-     "from": "운천#2",
-     "to": "문산#1",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "문산#1",
-     "to": "파주#1",
-     "lines": [
-      "gyeongui-jungang"
-     ]
-    }
-   ],
-   "id": "P051"
+   "id": "P051",
+   "intuition_cost": 50,
+   "intuition_expanded": 123,
+   "intuition_score": 0.28,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -5372,8 +5212,8 @@
    "from_label": "수도권 둔전",
    "to_label": "수도권 마곡",
    "cost_warp": 15,
-   "cost_no_warp": 40,
-   "savings": 25,
+   "cost_no_warp": 36,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 13,
@@ -5499,7 +5339,11 @@
      ]
     }
    ],
-   "id": "P052"
+   "id": "P052",
+   "intuition_cost": 47,
+   "intuition_expanded": 51,
+   "intuition_score": 0.319,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -5509,8 +5353,8 @@
    "from_label": "수도권 발산",
    "to_label": "수도권 보평",
    "cost_warp": 15,
-   "cost_no_warp": 40,
-   "savings": 25,
+   "cost_no_warp": 36,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 13,
@@ -5636,7 +5480,11 @@
      ]
     }
    ],
-   "id": "P053"
+   "id": "P053",
+   "intuition_cost": 51,
+   "intuition_expanded": 52,
+   "intuition_score": 0.294,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -5646,8 +5494,8 @@
    "from_label": "수도권 송정",
    "to_label": "수도권 전대·에버랜드",
    "cost_warp": 15,
-   "cost_no_warp": 40,
-   "savings": 25,
+   "cost_no_warp": 36,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 13,
@@ -5773,7 +5621,11 @@
      ]
     }
    ],
-   "id": "P054"
+   "id": "P054",
+   "intuition_cost": 55,
+   "intuition_expanded": 57,
+   "intuition_score": 0.273,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -5783,8 +5635,8 @@
    "from_label": "수도권 마곡",
    "to_label": "수도권 전대·에버랜드",
    "cost_warp": 16,
-   "cost_no_warp": 41,
-   "savings": 25,
+   "cost_no_warp": 37,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 14,
@@ -5918,7 +5770,11 @@
      ]
     }
    ],
-   "id": "P055"
+   "id": "P055",
+   "intuition_cost": 54,
+   "intuition_expanded": 56,
+   "intuition_score": 0.296,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -5928,8 +5784,8 @@
    "from_label": "수도권 보평",
    "to_label": "수도권 우장산",
    "cost_warp": 16,
-   "cost_no_warp": 41,
-   "savings": 25,
+   "cost_no_warp": 37,
+   "savings": 21,
    "optimal_paths": 1,
    "warps": 2,
    "rides": 14,
@@ -6063,7 +5919,608 @@
      ]
     }
    ],
-   "id": "P056"
+   "id": "P056",
+   "intuition_cost": 42,
+   "intuition_expanded": 45,
+   "intuition_score": 0.381,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "hard",
+   "from": "국수#1",
+   "to": "명학#1",
+   "from_label": "수도권 국수",
+   "to_label": "수도권 명학",
+   "cost_warp": 15,
+   "cost_no_warp": 35,
+   "savings": 20,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 14,
+   "warp_portals": [
+    "양평"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "국수#1",
+     "to": "아신#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "아신#1",
+     "to": "오빈#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "오빈#1",
+     "to": "양평#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "양평",
+     "from": "양평#1",
+     "to": "양평#2"
+    },
+    {
+     "type": "ride",
+     "from": "양평#2",
+     "to": "영등포구청#1",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "영등포구청#1",
+     "to": "문래#1",
+     "lines": [
+      "seoul-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "문래#1",
+     "to": "신도림#1",
+     "lines": [
+      "seoul-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "신도림#1",
+     "to": "구로#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "구로#1",
+     "to": "가산디지털단지#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "가산디지털단지#1",
+     "to": "독산#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "독산#1",
+     "to": "금천구청#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "금천구청#1",
+     "to": "석수#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "석수#1",
+     "to": "관악#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "관악#1",
+     "to": "안양#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "안양#1",
+     "to": "명학#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    }
+   ],
+   "id": "P057",
+   "intuition_cost": 37,
+   "intuition_expanded": 39,
+   "intuition_score": 0.405,
+   "difficulty_calibrated": "normal"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "hard",
+   "from": "금정#1",
+   "to": "아신#1",
+   "from_label": "수도권 금정",
+   "to_label": "수도권 아신",
+   "cost_warp": 15,
+   "cost_no_warp": 35,
+   "savings": 20,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 14,
+   "warp_portals": [
+    "양평"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "금정#1",
+     "to": "명학#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "명학#1",
+     "to": "안양#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "안양#1",
+     "to": "관악#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "관악#1",
+     "to": "석수#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "석수#1",
+     "to": "금천구청#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "금천구청#1",
+     "to": "독산#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "독산#1",
+     "to": "가산디지털단지#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "가산디지털단지#1",
+     "to": "구로#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "구로#1",
+     "to": "신도림#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "신도림#1",
+     "to": "문래#1",
+     "lines": [
+      "seoul-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "문래#1",
+     "to": "영등포구청#1",
+     "lines": [
+      "seoul-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "영등포구청#1",
+     "to": "양평#2",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "양평",
+     "from": "양평#2",
+     "to": "양평#1"
+    },
+    {
+     "type": "ride",
+     "from": "양평#1",
+     "to": "오빈#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "오빈#1",
+     "to": "아신#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    }
+   ],
+   "id": "P058",
+   "intuition_cost": 41,
+   "intuition_expanded": 60,
+   "intuition_score": 0.366,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "hard",
+   "from": "용인중앙시장#1",
+   "to": "화곡#1",
+   "from_label": "수도권 용인중앙시장",
+   "to_label": "수도권 화곡",
+   "cost_warp": 15,
+   "cost_no_warp": 35,
+   "savings": 20,
+   "optimal_paths": 1,
+   "warps": 2,
+   "rides": 13,
+   "warp_portals": [
+    "동백",
+    "송정"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "용인중앙시장#1",
+     "to": "김량장#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "김량장#1",
+     "to": "명지대#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "명지대#1",
+     "to": "시청·용인대#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "시청·용인대#1",
+     "to": "삼가#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "삼가#1",
+     "to": "초당#1",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "초당#1",
+     "to": "동백#2",
+     "lines": [
+      "everline"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "동백",
+     "from": "동백#2",
+     "to": "동백#1"
+    },
+    {
+     "type": "ride",
+     "from": "동백#1",
+     "to": "벡스코#1",
+     "lines": [
+      "busan-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "벡스코#1",
+     "to": "신해운대#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "신해운대#1",
+     "to": "송정#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "송정",
+     "from": "송정#1",
+     "to": "송정#2"
+    },
+    {
+     "type": "ride",
+     "from": "송정#2",
+     "to": "마곡#1",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "마곡#1",
+     "to": "발산#1",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "발산#1",
+     "to": "우장산#1",
+     "lines": [
+      "seoul-5"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "우장산#1",
+     "to": "화곡#1",
+     "lines": [
+      "seoul-5"
+     ]
+    }
+   ],
+   "id": "P059",
+   "intuition_cost": 39,
+   "intuition_expanded": 40,
+   "intuition_score": 0.385,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "crosscity",
+   "difficulty": "easy",
+   "from": "가락시장#1",
+   "to": "두류#1",
+   "from_label": "수도권 가락시장",
+   "to_label": "대구 두류",
+   "cost_warp": 8,
+   "cost_no_warp": null,
+   "savings": null,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 7,
+   "warp_portals": [
+    "죽전"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "가락시장#1",
+     "to": "수서#1",
+     "lines": [
+      "seoul-3"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "수서#1",
+     "to": "성남#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "성남#1",
+     "to": "구성#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "구성#1",
+     "to": "보정#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "보정#1",
+     "to": "죽전#2",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "죽전",
+     "from": "죽전#2",
+     "to": "죽전#1"
+    },
+    {
+     "type": "ride",
+     "from": "죽전#1",
+     "to": "감삼#1",
+     "lines": [
+      "daegu-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "감삼#1",
+     "to": "두류#1",
+     "lines": [
+      "daegu-2"
+     ]
+    }
+   ],
+   "id": "P060",
+   "intuition_cost": 31,
+   "intuition_expanded": 41,
+   "intuition_score": 0.258,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "crosscity",
+   "difficulty": "easy",
+   "from": "가락시장#1",
+   "to": "이곡#1",
+   "from_label": "수도권 가락시장",
+   "to_label": "대구 이곡",
+   "cost_warp": 8,
+   "cost_no_warp": null,
+   "savings": null,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 7,
+   "warp_portals": [
+    "죽전"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "가락시장#1",
+     "to": "수서#1",
+     "lines": [
+      "seoul-3"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "수서#1",
+     "to": "성남#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "성남#1",
+     "to": "구성#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "구성#1",
+     "to": "보정#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "보정#1",
+     "to": "죽전#2",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "죽전",
+     "from": "죽전#2",
+     "to": "죽전#1"
+    },
+    {
+     "type": "ride",
+     "from": "죽전#1",
+     "to": "용산#1",
+     "lines": [
+      "daegu-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "용산#1",
+     "to": "이곡#1",
+     "lines": [
+      "daegu-2"
+     ]
+    }
+   ],
+   "id": "P061",
+   "intuition_cost": 35,
+   "intuition_expanded": 45,
+   "intuition_score": 0.229,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6145,7 +6602,11 @@
      "to": "용산#1"
     }
    ],
-   "id": "P057"
+   "id": "P062",
+   "intuition_cost": 43,
+   "intuition_expanded": 82,
+   "intuition_score": 0.186,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6227,15 +6688,19 @@
      ]
     }
    ],
-   "id": "P058"
+   "id": "P063",
+   "intuition_cost": 55,
+   "intuition_expanded": 133,
+   "intuition_score": 0.145,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
    "difficulty": "easy",
    "from": "가야#1",
-   "to": "강남#1",
+   "to": "공덕#1",
    "from_label": "부산 가야",
-   "to_label": "수도권 강남",
+   "to_label": "수도권 공덕",
    "cost_warp": 8,
    "cost_no_warp": null,
    "savings": null,
@@ -6243,7 +6708,7 @@
    "warps": 1,
    "rides": 7,
    "warp_portals": [
-    "교대"
+    "시청"
    ],
    "optimal": [
     {
@@ -6273,43 +6738,47 @@
     {
      "type": "ride",
      "from": "부전#1",
-     "to": "거제해맞이#1",
+     "to": "양정#1",
      "lines": [
-      "donghae"
+      "busan-1"
      ]
     },
     {
      "type": "ride",
-     "from": "거제해맞이#1",
-     "to": "거제#1",
+     "from": "양정#1",
+     "to": "시청#1",
      "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "거제#1",
-     "to": "교대#1",
-     "lines": [
-      "donghae"
+      "busan-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "교대",
-     "from": "교대#1",
-     "to": "교대#3"
+     "portal": "시청",
+     "from": "시청#1",
+     "to": "시청#3"
     },
     {
      "type": "ride",
-     "from": "교대#3",
-     "to": "강남#1",
+     "from": "시청#3",
+     "to": "서울#1",
      "lines": [
-      "seoul-2"
+      "seoul-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서울#1",
+     "to": "공덕#1",
+     "lines": [
+      "arex"
      ]
     }
    ],
-   "id": "P059"
+   "id": "P064",
+   "intuition_cost": 40,
+   "intuition_expanded": 41,
+   "intuition_score": 0.2,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6392,7 +6861,11 @@
      ]
     }
    ],
-   "id": "P060"
+   "id": "P065",
+   "intuition_cost": 61,
+   "intuition_expanded": 92,
+   "intuition_score": 0.131,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6474,7 +6947,11 @@
      ]
     }
    ],
-   "id": "P061"
+   "id": "P066",
+   "intuition_cost": 34,
+   "intuition_expanded": 35,
+   "intuition_score": 0.235,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6556,7 +7033,11 @@
      "to": "고촌#1"
     }
    ],
-   "id": "P062"
+   "id": "P067",
+   "intuition_cost": 30,
+   "intuition_expanded": 48,
+   "intuition_score": 0.267,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6638,15 +7119,19 @@
      "to": "송정#1"
     }
    ],
-   "id": "P063"
+   "id": "P068",
+   "intuition_cost": 15,
+   "intuition_expanded": 18,
+   "intuition_score": 0.533,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
    "difficulty": "easy",
    "from": "가좌#1",
-   "to": "농성#1",
+   "to": "돌고개#1",
    "from_label": "수도권 가좌",
-   "to_label": "광주 농성",
+   "to_label": "광주 돌고개",
    "cost_warp": 8,
    "cost_no_warp": null,
    "savings": null,
@@ -6660,42 +7145,33 @@
     {
      "type": "ride",
      "from": "가좌#1",
-     "to": "디지털미디어시티#1",
+     "to": "신촌#2",
      "lines": [
       "gyeongui-jungang"
      ]
     },
     {
      "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "마곡나루#1",
+     "from": "신촌#2",
+     "to": "서울#1",
      "lines": [
-      "arex"
+      "gyeongui-jungang"
      ]
     },
     {
      "type": "ride",
-     "from": "마곡나루#1",
-     "to": "김포공항#1",
+     "from": "서울#1",
+     "to": "연신내#1",
      "lines": [
-      "arex"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "김포공항#1",
-     "to": "능곡#1",
-     "lines": [
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "능곡#1",
+     "from": "연신내#1",
      "to": "대곡#2",
      "lines": [
-      "gyeongui-jungang",
-      "seohae"
+      "gtx-a"
      ]
     },
     {
@@ -6719,9 +7195,21 @@
      "lines": [
       "gwangju-1"
      ]
+    },
+    {
+     "type": "ride",
+     "from": "농성#1",
+     "to": "돌고개#1",
+     "lines": [
+      "gwangju-1"
+     ]
     }
    ],
-   "id": "P064"
+   "id": "P069",
+   "intuition_cost": 30,
+   "intuition_expanded": 81,
+   "intuition_score": 0.267,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -6803,15 +7291,19 @@
      ]
     }
    ],
-   "id": "P065"
+   "id": "P070",
+   "intuition_cost": 13,
+   "intuition_expanded": 14,
+   "intuition_score": 0.615,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
    "difficulty": "easy",
    "from": "가천대#1",
-   "to": "중앙로#2",
+   "to": "감삼#1",
    "from_label": "수도권 가천대",
-   "to_label": "대전 중앙로",
+   "to_label": "대구 감삼",
    "cost_warp": 8,
    "cost_no_warp": null,
    "savings": null,
@@ -6819,73 +7311,164 @@
    "warps": 1,
    "rides": 7,
    "warp_portals": [
-    "신흥"
+    "죽전"
    ],
    "optimal": [
     {
      "type": "ride",
      "from": "가천대#1",
-     "to": "태평#1",
+     "to": "복정#1",
      "lines": [
       "suin-bundang"
      ]
     },
     {
      "type": "ride",
-     "from": "태평#1",
-     "to": "모란#1",
+     "from": "복정#1",
+     "to": "수서#1",
      "lines": [
       "suin-bundang"
      ]
     },
     {
      "type": "ride",
-     "from": "모란#1",
-     "to": "수진#1",
+     "from": "수서#1",
+     "to": "성남#1",
      "lines": [
-      "seoul-8"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "수진#1",
-     "to": "신흥#2",
+     "from": "성남#1",
+     "to": "구성#1",
      "lines": [
-      "seoul-8"
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "구성#1",
+     "to": "보정#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "보정#1",
+     "to": "죽전#2",
+     "lines": [
+      "suin-bundang"
      ]
     },
     {
      "type": "warp",
-     "portal": "신흥",
-     "from": "신흥#2",
-     "to": "신흥#1"
+     "portal": "죽전",
+     "from": "죽전#2",
+     "to": "죽전#1"
     },
     {
      "type": "ride",
-     "from": "신흥#1",
-     "to": "대동#1",
+     "from": "죽전#1",
+     "to": "감삼#1",
      "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대동#1",
-     "to": "대전#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대전#1",
-     "to": "중앙로#2",
-     "lines": [
-      "daejeon-1"
+      "daegu-2"
      ]
     }
    ],
-   "id": "P066"
+   "id": "P071",
+   "intuition_cost": 28,
+   "intuition_expanded": 38,
+   "intuition_score": 0.286,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "crosscity",
+   "difficulty": "easy",
+   "from": "가천대#1",
+   "to": "동천#1",
+   "from_label": "수도권 가천대",
+   "to_label": "대구 동천",
+   "cost_warp": 8,
+   "cost_no_warp": null,
+   "savings": null,
+   "optimal_paths": 1,
+   "warps": 1,
+   "rides": 7,
+   "warp_portals": [
+    "동천"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "가천대#1",
+     "to": "복정#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "복정#1",
+     "to": "수서#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "수서#1",
+     "to": "성남#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "성남#1",
+     "to": "판교#1",
+     "lines": [
+      "gyeonggang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "판교#1",
+     "to": "정자#1",
+     "lines": [
+      "shinbundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "정자#1",
+     "to": "미금#1",
+     "lines": [
+      "shinbundang",
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "미금#1",
+     "to": "동천#2",
+     "lines": [
+      "shinbundang"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "동천",
+     "from": "동천#2",
+     "to": "동천#1"
+    }
+   ],
+   "id": "P072",
+   "intuition_cost": 10,
+   "intuition_expanded": 20,
+   "intuition_score": 0.8,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -6967,7 +7550,11 @@
      "to": "금곡#1"
     }
    ],
-   "id": "P067"
+   "id": "P073",
+   "intuition_cost": 8,
+   "intuition_expanded": 9,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "crosscity",
@@ -7049,253 +7636,145 @@
      ]
     }
    ],
-   "id": "P068"
+   "id": "P074",
+   "intuition_cost": 8,
+   "intuition_expanded": 9,
+   "intuition_score": 1.0,
+   "difficulty_calibrated": "easy"
   },
   {
    "kind": "crosscity",
-   "difficulty": "easy",
-   "from": "간석#1",
-   "to": "해운대#1",
-   "from_label": "수도권 간석",
-   "to_label": "부산 해운대",
-   "cost_warp": 8,
+   "difficulty": "normal",
+   "from": "가락시장#1",
+   "to": "지족#1",
+   "from_label": "수도권 가락시장",
+   "to_label": "대전 지족",
+   "cost_warp": 14,
    "cost_no_warp": null,
    "savings": null,
    "optimal_paths": 1,
-   "warps": 1,
-   "rides": 7,
+   "warps": 2,
+   "rides": 12,
    "warp_portals": [
-    "중동"
+    "동천",
+    "구암"
    ],
    "optimal": [
     {
      "type": "ride",
-     "from": "간석#1",
-     "to": "동암#1",
+     "from": "가락시장#1",
+     "to": "수서#1",
      "lines": [
-      "seoul-1-gyeongin"
+      "seoul-3"
      ]
     },
     {
      "type": "ride",
-     "from": "동암#1",
-     "to": "백운#1",
+     "from": "수서#1",
+     "to": "성남#1",
      "lines": [
-      "seoul-1-gyeongin"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "백운#1",
-     "to": "부평#1",
+     "from": "성남#1",
+     "to": "판교#1",
      "lines": [
-      "seoul-1-gyeongin"
+      "gyeonggang"
      ]
     },
     {
      "type": "ride",
-     "from": "부평#1",
-     "to": "부개#1",
+     "from": "판교#1",
+     "to": "정자#1",
      "lines": [
-      "seoul-1-gyeongin"
+      "shinbundang"
      ]
     },
     {
      "type": "ride",
-     "from": "부개#1",
-     "to": "송내#1",
+     "from": "정자#1",
+     "to": "미금#1",
      "lines": [
-      "seoul-1-gyeongin"
+      "shinbundang",
+      "suin-bundang"
      ]
     },
     {
      "type": "ride",
-     "from": "송내#1",
-     "to": "중동#2",
+     "from": "미금#1",
+     "to": "동천#2",
      "lines": [
-      "seoul-1-gyeongin"
+      "shinbundang"
      ]
     },
     {
      "type": "warp",
-     "portal": "중동",
-     "from": "중동#2",
-     "to": "중동#1"
+     "portal": "동천",
+     "from": "동천#2",
+     "to": "동천#1"
     },
     {
      "type": "ride",
-     "from": "중동#1",
-     "to": "해운대#1",
+     "from": "동천#1",
+     "to": "칠곡운암#1",
      "lines": [
-      "busan-2"
-     ]
-    }
-   ],
-   "id": "P069"
-  },
-  {
-   "kind": "crosscity",
-   "difficulty": "easy",
-   "from": "간석오거리#1",
-   "to": "장산#1",
-   "from_label": "수도권 간석오거리",
-   "to_label": "부산 장산",
-   "cost_warp": 8,
-   "cost_no_warp": null,
-   "savings": null,
-   "optimal_paths": 1,
-   "warps": 1,
-   "rides": 7,
-   "warp_portals": [
-    "중동"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "간석오거리#1",
-     "to": "부평삼거리#1",
-     "lines": [
-      "incheon-1"
+      "daegu-3"
      ]
     },
     {
      "type": "ride",
-     "from": "부평삼거리#1",
-     "to": "동수#1",
+     "from": "칠곡운암#1",
+     "to": "구암#1",
      "lines": [
-      "incheon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "동수#1",
-     "to": "부평#1",
-     "lines": [
-      "incheon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부평#1",
-     "to": "부개#1",
-     "lines": [
-      "seoul-1-gyeongin"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부개#1",
-     "to": "송내#1",
-     "lines": [
-      "seoul-1-gyeongin"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "송내#1",
-     "to": "중동#2",
-     "lines": [
-      "seoul-1-gyeongin"
+      "daegu-3"
      ]
     },
     {
      "type": "warp",
-     "portal": "중동",
-     "from": "중동#2",
-     "to": "중동#1"
+     "portal": "구암",
+     "from": "구암#1",
+     "to": "구암#2"
     },
     {
      "type": "ride",
-     "from": "중동#1",
-     "to": "장산#1",
-     "lines": [
-      "busan-2"
-     ]
-    }
-   ],
-   "id": "P070"
-  },
-  {
-   "kind": "crosscity",
-   "difficulty": "easy",
-   "from": "갈마#1",
-   "to": "국제금융센터·부산은행#1",
-   "from_label": "대전 갈마",
-   "to_label": "부산 국제금융센터·부산은행",
-   "cost_warp": 8,
-   "cost_no_warp": null,
-   "savings": null,
-   "optimal_paths": 1,
-   "warps": 1,
-   "rides": 7,
-   "warp_portals": [
-    "시청"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "갈마#1",
-     "to": "정부청사#1",
+     "from": "구암#2",
+     "to": "현충원#1",
      "lines": [
       "daejeon-1"
      ]
     },
     {
      "type": "ride",
-     "from": "정부청사#1",
-     "to": "시청#2",
+     "from": "현충원#1",
+     "to": "월드컵경기장#1",
      "lines": [
       "daejeon-1"
      ]
     },
     {
-     "type": "warp",
-     "portal": "시청",
-     "from": "시청#2",
-     "to": "시청#1"
-    },
-    {
      "type": "ride",
-     "from": "시청#1",
-     "to": "양정#1",
+     "from": "월드컵경기장#1",
+     "to": "노은#1",
      "lines": [
-      "busan-1"
+      "daejeon-1"
      ]
     },
     {
      "type": "ride",
-     "from": "양정#1",
-     "to": "부전#1",
+     "from": "노은#1",
+     "to": "지족#1",
      "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부전#1",
-     "to": "서면#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서면#1",
-     "to": "전포#1",
-     "lines": [
-      "busan-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "전포#1",
-     "to": "국제금융센터·부산은행#1",
-     "lines": [
-      "busan-2"
+      "daejeon-1"
      ]
     }
    ],
-   "id": "P071"
+   "id": "P075",
+   "intuition_cost": 28,
+   "intuition_expanded": 137,
+   "intuition_score": 0.5,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -7424,7 +7903,11 @@
      ]
     }
    ],
-   "id": "P072"
+   "id": "P076",
+   "intuition_cost": 57,
+   "intuition_expanded": 110,
+   "intuition_score": 0.246,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -7553,15 +8036,19 @@
      ]
     }
    ],
-   "id": "P073"
+   "id": "P077",
+   "intuition_cost": 32,
+   "intuition_expanded": 84,
+   "intuition_score": 0.438,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
    "difficulty": "normal",
    "from": "가야#1",
-   "to": "신흥#1",
+   "to": "건대입구#1",
    "from_label": "부산 가야",
-   "to_label": "대전 신흥",
+   "to_label": "수도권 건대입구",
    "cost_warp": 14,
    "cost_no_warp": null,
    "savings": null,
@@ -7569,8 +8056,8 @@
    "warps": 2,
    "rides": 12,
    "warp_portals": [
-    "교대",
-    "중앙로"
+    "부전",
+    "종합운동장"
    ],
    "optimal": [
     {
@@ -7598,8 +8085,14 @@
      ]
     },
     {
-     "type": "ride",
+     "type": "warp",
+     "portal": "부전",
      "from": "부전#1",
+     "to": "부전#2"
+    },
+    {
+     "type": "ride",
+     "from": "부전#2",
      "to": "거제해맞이#1",
      "lines": [
       "donghae"
@@ -7616,73 +8109,71 @@
     {
      "type": "ride",
      "from": "거제#1",
-     "to": "교대#1",
+     "to": "종합운동장#1",
      "lines": [
-      "donghae"
+      "busan-3"
      ]
     },
     {
      "type": "warp",
-     "portal": "교대",
-     "from": "교대#1",
-     "to": "교대#2"
+     "portal": "종합운동장",
+     "from": "종합운동장#1",
+     "to": "종합운동장#2"
     },
     {
      "type": "ride",
-     "from": "교대#2",
-     "to": "명덕#1",
+     "from": "종합운동장#2",
+     "to": "잠실새내#1",
      "lines": [
-      "daegu-1"
+      "seoul-2"
      ]
     },
     {
      "type": "ride",
-     "from": "명덕#1",
-     "to": "반월당#1",
+     "from": "잠실새내#1",
+     "to": "잠실#1",
      "lines": [
-      "daegu-1"
+      "seoul-2"
      ]
     },
     {
      "type": "ride",
-     "from": "반월당#1",
-     "to": "중앙로#1",
+     "from": "잠실#1",
+     "to": "잠실나루#1",
      "lines": [
-      "daegu-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "중앙로",
-     "from": "중앙로#1",
-     "to": "중앙로#2"
-    },
-    {
-     "type": "ride",
-     "from": "중앙로#2",
-     "to": "대전#1",
-     "lines": [
-      "daejeon-1"
+      "seoul-2"
      ]
     },
     {
      "type": "ride",
-     "from": "대전#1",
-     "to": "대동#1",
+     "from": "잠실나루#1",
+     "to": "강변#1",
      "lines": [
-      "daejeon-1"
+      "seoul-2"
      ]
     },
     {
      "type": "ride",
-     "from": "대동#1",
-     "to": "신흥#1",
+     "from": "강변#1",
+     "to": "구의#1",
      "lines": [
-      "daejeon-1"
+      "seoul-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "구의#1",
+     "to": "건대입구#1",
+     "lines": [
+      "seoul-2"
      ]
     }
    ],
-   "id": "P074"
+   "id": "P078",
+   "intuition_cost": 32,
+   "intuition_expanded": 33,
+   "intuition_score": 0.438,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -7812,7 +8303,11 @@
      ]
     }
    ],
-   "id": "P075"
+   "id": "P079",
+   "intuition_cost": 42,
+   "intuition_expanded": 43,
+   "intuition_score": 0.333,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -7941,7 +8436,11 @@
      ]
     }
    ],
-   "id": "P076"
+   "id": "P080",
+   "intuition_cost": 24,
+   "intuition_expanded": 25,
+   "intuition_score": 0.583,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -8070,7 +8569,11 @@
      ]
     }
    ],
-   "id": "P077"
+   "id": "P081",
+   "intuition_cost": 29,
+   "intuition_expanded": 30,
+   "intuition_score": 0.483,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -8199,7 +8702,11 @@
      ]
     }
    ],
-   "id": "P078"
+   "id": "P082",
+   "intuition_cost": 31,
+   "intuition_expanded": 32,
+   "intuition_score": 0.452,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -8328,7 +8835,11 @@
      "to": "구암#1"
     }
    ],
-   "id": "P079"
+   "id": "P083",
+   "intuition_cost": 34,
+   "intuition_expanded": 40,
+   "intuition_score": 0.412,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -8457,15 +8968,19 @@
      "to": "좌천#1"
     }
    ],
-   "id": "P080"
+   "id": "P084",
+   "intuition_cost": 29,
+   "intuition_expanded": 30,
+   "intuition_score": 0.483,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
    "difficulty": "normal",
    "from": "가좌#1",
-   "to": "덕두#1",
+   "to": "괘법르네시떼#1",
    "from_label": "수도권 가좌",
-   "to_label": "부산 덕두",
+   "to_label": "부산 괘법르네시떼",
    "cost_warp": 14,
    "cost_no_warp": null,
    "savings": null,
@@ -8480,42 +8995,166 @@
     {
      "type": "ride",
      "from": "가좌#1",
-     "to": "디지털미디어시티#1",
+     "to": "신촌#2",
      "lines": [
       "gyeongui-jungang"
      ]
     },
     {
      "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "마곡나루#1",
+     "from": "신촌#2",
+     "to": "서울#1",
      "lines": [
-      "arex"
+      "gyeongui-jungang"
      ]
     },
     {
      "type": "ride",
-     "from": "마곡나루#1",
-     "to": "김포공항#1",
+     "from": "서울#1",
+     "to": "연신내#1",
      "lines": [
-      "arex"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "김포공항#1",
-     "to": "능곡#1",
-     "lines": [
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "능곡#1",
+     "from": "연신내#1",
      "to": "대곡#2",
      "lines": [
-      "gyeongui-jungang",
-      "seohae"
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "대곡#2",
+     "to": "화정#2",
+     "lines": [
+      "seoul-3-ilsan"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "화정",
+     "from": "화정#2",
+     "to": "화정#1"
+    },
+    {
+     "type": "ride",
+     "from": "화정#1",
+     "to": "쌍촌#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "쌍촌#1",
+     "to": "운천#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "운천#1",
+     "to": "상무#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "상무#1",
+     "to": "김대중컨벤션센터#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "김대중컨벤션센터#1",
+     "to": "공항#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "공항",
+     "from": "공항#1",
+     "to": "공항#2"
+    },
+    {
+     "type": "ride",
+     "from": "공항#2",
+     "to": "서부산유통지구#1",
+     "lines": [
+      "busan-gimhae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서부산유통지구#1",
+     "to": "괘법르네시떼#1",
+     "lines": [
+      "busan-gimhae"
+     ]
+    }
+   ],
+   "id": "P085",
+   "intuition_cost": 16,
+   "intuition_expanded": 17,
+   "intuition_score": 0.875,
+   "difficulty_calibrated": "normal"
+  },
+  {
+   "kind": "crosscity",
+   "difficulty": "normal",
+   "from": "가좌#1",
+   "to": "등구#1",
+   "from_label": "수도권 가좌",
+   "to_label": "부산 등구",
+   "cost_warp": 14,
+   "cost_no_warp": null,
+   "savings": null,
+   "optimal_paths": 1,
+   "warps": 2,
+   "rides": 12,
+   "warp_portals": [
+    "화정",
+    "공항"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "가좌#1",
+     "to": "신촌#2",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "신촌#2",
+     "to": "서울#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서울#1",
+     "to": "연신내#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연신내#1",
+     "to": "대곡#2",
+     "lines": [
+      "gtx-a"
      ]
     },
     {
@@ -8585,17 +9224,29 @@
      "lines": [
       "busan-gimhae"
      ]
+    },
+    {
+     "type": "ride",
+     "from": "덕두#1",
+     "to": "등구#1",
+     "lines": [
+      "busan-gimhae"
+     ]
     }
    ],
-   "id": "P081"
+   "id": "P086",
+   "intuition_cost": 20,
+   "intuition_expanded": 27,
+   "intuition_score": 0.7,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
    "difficulty": "normal",
-   "from": "가좌#1",
-   "to": "만촌#1",
-   "from_label": "수도권 가좌",
-   "to_label": "대구 만촌",
+   "from": "가천대#1",
+   "to": "노은#1",
+   "from_label": "수도권 가천대",
+   "to_label": "대전 노은",
    "cost_warp": 14,
    "cost_no_warp": null,
    "savings": null,
@@ -8603,120 +9254,125 @@
    "warps": 2,
    "rides": 12,
    "warp_portals": [
-    "시청",
-    "교대"
+    "동천",
+    "구암"
    ],
    "optimal": [
     {
      "type": "ride",
-     "from": "가좌#1",
-     "to": "신촌#2",
+     "from": "가천대#1",
+     "to": "복정#1",
      "lines": [
-      "gyeongui-jungang"
+      "suin-bundang"
      ]
     },
     {
      "type": "ride",
-     "from": "신촌#2",
-     "to": "서울#1",
+     "from": "복정#1",
+     "to": "수서#1",
      "lines": [
-      "gyeongui-jungang"
+      "suin-bundang"
      ]
     },
     {
      "type": "ride",
-     "from": "서울#1",
-     "to": "시청#3",
+     "from": "수서#1",
+     "to": "성남#1",
      "lines": [
-      "seoul-1"
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "성남#1",
+     "to": "판교#1",
+     "lines": [
+      "gyeonggang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "판교#1",
+     "to": "정자#1",
+     "lines": [
+      "shinbundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "정자#1",
+     "to": "미금#1",
+     "lines": [
+      "shinbundang",
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "미금#1",
+     "to": "동천#2",
+     "lines": [
+      "shinbundang"
      ]
     },
     {
      "type": "warp",
-     "portal": "시청",
-     "from": "시청#3",
-     "to": "시청#1"
+     "portal": "동천",
+     "from": "동천#2",
+     "to": "동천#1"
     },
     {
      "type": "ride",
-     "from": "시청#1",
-     "to": "연산#1",
+     "from": "동천#1",
+     "to": "칠곡운암#1",
      "lines": [
-      "busan-1"
+      "daegu-3"
      ]
     },
     {
      "type": "ride",
-     "from": "연산#1",
-     "to": "교대#1",
+     "from": "칠곡운암#1",
+     "to": "구암#1",
      "lines": [
-      "busan-1"
+      "daegu-3"
      ]
     },
     {
      "type": "warp",
-     "portal": "교대",
-     "from": "교대#1",
-     "to": "교대#2"
+     "portal": "구암",
+     "from": "구암#1",
+     "to": "구암#2"
     },
     {
      "type": "ride",
-     "from": "교대#2",
-     "to": "명덕#1",
+     "from": "구암#2",
+     "to": "현충원#1",
      "lines": [
-      "daegu-1"
+      "daejeon-1"
      ]
     },
     {
      "type": "ride",
-     "from": "명덕#1",
-     "to": "반월당#1",
+     "from": "현충원#1",
+     "to": "월드컵경기장#1",
      "lines": [
-      "daegu-1"
+      "daejeon-1"
      ]
     },
     {
      "type": "ride",
-     "from": "반월당#1",
-     "to": "경대병원#1",
+     "from": "월드컵경기장#1",
+     "to": "노은#1",
      "lines": [
-      "daegu-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "경대병원#1",
-     "to": "대구은행#1",
-     "lines": [
-      "daegu-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대구은행#1",
-     "to": "범어#1",
-     "lines": [
-      "daegu-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범어#1",
-     "to": "수성구청#1",
-     "lines": [
-      "daegu-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "수성구청#1",
-     "to": "만촌#1",
-     "lines": [
-      "daegu-2"
+      "daejeon-1"
      ]
     }
    ],
-   "id": "P082"
+   "id": "P087",
+   "intuition_cost": 23,
+   "intuition_expanded": 132,
+   "intuition_score": 0.609,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -8845,136 +9501,11 @@
      ]
     }
    ],
-   "id": "P083"
-  },
-  {
-   "kind": "crosscity",
-   "difficulty": "normal",
-   "from": "가천대#1",
-   "to": "북구청#1",
-   "from_label": "수도권 가천대",
-   "to_label": "대구 북구청",
-   "cost_warp": 14,
-   "cost_no_warp": null,
-   "savings": null,
-   "optimal_paths": 1,
-   "warps": 2,
-   "rides": 12,
-   "warp_portals": [
-    "신흥",
-    "중앙로"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "가천대#1",
-     "to": "태평#1",
-     "lines": [
-      "suin-bundang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "태평#1",
-     "to": "모란#1",
-     "lines": [
-      "suin-bundang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "모란#1",
-     "to": "수진#1",
-     "lines": [
-      "seoul-8"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "수진#1",
-     "to": "신흥#2",
-     "lines": [
-      "seoul-8"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "신흥",
-     "from": "신흥#2",
-     "to": "신흥#1"
-    },
-    {
-     "type": "ride",
-     "from": "신흥#1",
-     "to": "대동#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대동#1",
-     "to": "대전#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대전#1",
-     "to": "중앙로#2",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "중앙로",
-     "from": "중앙로#2",
-     "to": "중앙로#1"
-    },
-    {
-     "type": "ride",
-     "from": "중앙로#1",
-     "to": "반월당#1",
-     "lines": [
-      "daegu-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "반월당#1",
-     "to": "청라언덕#1",
-     "lines": [
-      "daegu-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "청라언덕#1",
-     "to": "서문시장#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서문시장#1",
-     "to": "달성공원#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "달성공원#1",
-     "to": "북구청#1",
-     "lines": [
-      "daegu-3"
-     ]
-    }
-   ],
-   "id": "P084"
+   "id": "P088",
+   "intuition_cost": 31,
+   "intuition_expanded": 49,
+   "intuition_score": 0.452,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -9103,478 +9634,121 @@
      ]
     }
    ],
-   "id": "P085"
+   "id": "P089",
+   "intuition_cost": 25,
+   "intuition_expanded": 26,
+   "intuition_score": 0.56,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
-   "difficulty": "normal",
-   "from": "갈마#1",
-   "to": "굽은다리#1",
-   "from_label": "대전 갈마",
-   "to_label": "수도권 굽은다리",
-   "cost_warp": 14,
+   "difficulty": "hard",
+   "from": "노포#1",
+   "to": "월롱#1",
+   "from_label": "부산 노포",
+   "to_label": "수도권 월롱",
+   "cost_warp": 20,
    "cost_no_warp": null,
    "savings": null,
    "optimal_paths": 1,
-   "warps": 2,
-   "rides": 12,
+   "warps": 5,
+   "rides": 15,
    "warp_portals": [
+    "남산",
+    "교대",
     "시청",
-    "양정"
+    "화정",
+    "운천"
    ],
    "optimal": [
     {
      "type": "ride",
-     "from": "갈마#1",
-     "to": "정부청사#1",
+     "from": "노포#1",
+     "to": "범어사#1",
      "lines": [
-      "daejeon-1"
+      "busan-1"
      ]
     },
     {
      "type": "ride",
-     "from": "정부청사#1",
-     "to": "시청#2",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "시청",
-     "from": "시청#2",
-     "to": "시청#1"
-    },
-    {
-     "type": "ride",
-     "from": "시청#1",
-     "to": "양정#1",
+     "from": "범어사#1",
+     "to": "남산#1",
      "lines": [
       "busan-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "양정",
-     "from": "양정#1",
-     "to": "양정#2"
+     "portal": "남산",
+     "from": "남산#1",
+     "to": "남산#2"
     },
     {
      "type": "ride",
-     "from": "양정#2",
-     "to": "도농#1",
+     "from": "남산#2",
+     "to": "명덕#1",
      "lines": [
-      "gyeongui-jungang"
+      "daegu-3"
      ]
     },
     {
      "type": "ride",
-     "from": "도농#1",
-     "to": "구리#1",
+     "from": "명덕#1",
+     "to": "교대#2",
      "lines": [
-      "gyeongui-jungang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "구리#1",
-     "to": "장자호수공원#1",
-     "lines": [
-      "seoul-8"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "장자호수공원#1",
-     "to": "암사역사공원#1",
-     "lines": [
-      "seoul-8"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "암사역사공원#1",
-     "to": "암사#1",
-     "lines": [
-      "seoul-8"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "암사#1",
-     "to": "천호#1",
-     "lines": [
-      "seoul-8"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "천호#1",
-     "to": "강동#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "강동#1",
-     "to": "길동#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "길동#1",
-     "to": "굽은다리#1",
-     "lines": [
-      "seoul-5"
-     ]
-    }
-   ],
-   "id": "P086"
-  },
-  {
-   "kind": "crosscity",
-   "difficulty": "hard",
-   "from": "공항#2",
-   "to": "광교중앙#1",
-   "from_label": "부산 공항",
-   "to_label": "수도권 광교중앙",
-   "cost_warp": 24,
-   "cost_no_warp": null,
-   "savings": null,
-   "optimal_paths": 1,
-   "warps": 5,
-   "rides": 19,
-   "warp_portals": [
-    "공항",
-    "화정",
-    "월드컵경기장",
-    "구암",
-    "동천"
-   ],
-   "optimal": [
-    {
-     "type": "warp",
-     "portal": "공항",
-     "from": "공항#2",
-     "to": "공항#1"
-    },
-    {
-     "type": "ride",
-     "from": "공항#1",
-     "to": "김대중컨벤션센터#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김대중컨벤션센터#1",
-     "to": "상무#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "상무#1",
-     "to": "운천#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "운천#1",
-     "to": "쌍촌#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "쌍촌#1",
-     "to": "화정#1",
-     "lines": [
-      "gwangju-1"
+      "daegu-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "화정",
-     "from": "화정#1",
-     "to": "화정#2"
+     "portal": "교대",
+     "from": "교대#2",
+     "to": "교대#1"
     },
     {
      "type": "ride",
-     "from": "화정#2",
+     "from": "교대#1",
+     "to": "연산#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연산#1",
+     "to": "시청#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#1",
+     "to": "시청#3"
+    },
+    {
+     "type": "ride",
+     "from": "시청#3",
+     "to": "서울#1",
+     "lines": [
+      "seoul-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서울#1",
+     "to": "연신내#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연신내#1",
      "to": "대곡#2",
      "lines": [
-      "seoul-3-ilsan"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대곡#2",
-     "to": "능곡#1",
-     "lines": [
-      "gyeongui-jungang",
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "능곡#1",
-     "to": "김포공항#1",
-     "lines": [
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김포공항#1",
-     "to": "마곡나루#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "마곡나루#1",
-     "to": "디지털미디어시티#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "월드컵경기장#2",
-     "lines": [
-      "seoul-6"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "월드컵경기장",
-     "from": "월드컵경기장#2",
-     "to": "월드컵경기장#1"
-    },
-    {
-     "type": "ride",
-     "from": "월드컵경기장#1",
-     "to": "현충원#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "현충원#1",
-     "to": "구암#2",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "구암",
-     "from": "구암#2",
-     "to": "구암#1"
-    },
-    {
-     "type": "ride",
-     "from": "구암#1",
-     "to": "칠곡운암#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "칠곡운암#1",
-     "to": "동천#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "동천",
-     "from": "동천#1",
-     "to": "동천#2"
-    },
-    {
-     "type": "ride",
-     "from": "동천#2",
-     "to": "수지구청#1",
-     "lines": [
-      "shinbundang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "수지구청#1",
-     "to": "성복#1",
-     "lines": [
-      "shinbundang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "성복#1",
-     "to": "상현#1",
-     "lines": [
-      "shinbundang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "상현#1",
-     "to": "광교중앙#1",
-     "lines": [
-      "shinbundang"
-     ]
-    }
-   ],
-   "id": "P087"
-  },
-  {
-   "kind": "crosscity",
-   "difficulty": "hard",
-   "from": "상현#1",
-   "to": "서부산유통지구#1",
-   "from_label": "수도권 상현",
-   "to_label": "부산 서부산유통지구",
-   "cost_warp": 24,
-   "cost_no_warp": null,
-   "savings": null,
-   "optimal_paths": 1,
-   "warps": 5,
-   "rides": 19,
-   "warp_portals": [
-    "동천",
-    "구암",
-    "월드컵경기장",
-    "화정",
-    "공항"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "상현#1",
-     "to": "성복#1",
-     "lines": [
-      "shinbundang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "성복#1",
-     "to": "수지구청#1",
-     "lines": [
-      "shinbundang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "수지구청#1",
-     "to": "동천#2",
-     "lines": [
-      "shinbundang"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "동천",
-     "from": "동천#2",
-     "to": "동천#1"
-    },
-    {
-     "type": "ride",
-     "from": "동천#1",
-     "to": "칠곡운암#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "칠곡운암#1",
-     "to": "구암#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "구암",
-     "from": "구암#1",
-     "to": "구암#2"
-    },
-    {
-     "type": "ride",
-     "from": "구암#2",
-     "to": "현충원#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "현충원#1",
-     "to": "월드컵경기장#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "월드컵경기장",
-     "from": "월드컵경기장#1",
-     "to": "월드컵경기장#2"
-    },
-    {
-     "type": "ride",
-     "from": "월드컵경기장#2",
-     "to": "디지털미디어시티#1",
-     "lines": [
-      "seoul-6"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "마곡나루#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "마곡나루#1",
-     "to": "김포공항#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김포공항#1",
-     "to": "능곡#1",
-     "lines": [
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "능곡#1",
-     "to": "대곡#2",
-     "lines": [
-      "gyeongui-jungang",
-      "seohae"
+      "gtx-a"
      ]
     },
     {
@@ -9608,96 +9782,424 @@
      ]
     },
     {
-     "type": "ride",
-     "from": "운천#1",
-     "to": "상무#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "상무#1",
-     "to": "김대중컨벤션센터#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김대중컨벤션센터#1",
-     "to": "공항#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
      "type": "warp",
-     "portal": "공항",
-     "from": "공항#1",
-     "to": "공항#2"
+     "portal": "운천",
+     "from": "운천#1",
+     "to": "운천#2"
     },
     {
      "type": "ride",
-     "from": "공항#2",
-     "to": "서부산유통지구#1",
+     "from": "운천#2",
+     "to": "문산#1",
      "lines": [
-      "busan-gimhae"
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "문산#1",
+     "to": "파주#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "파주#1",
+     "to": "월롱#1",
+     "lines": [
+      "gyeongui-jungang"
      ]
     }
    ],
-   "id": "P088"
+   "id": "P090",
+   "intuition_cost": 37,
+   "intuition_expanded": 40,
+   "intuition_score": 0.541,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
    "difficulty": "hard",
-   "from": "공항#2",
-   "to": "상현#1",
-   "from_label": "부산 공항",
-   "to_label": "수도권 상현",
-   "cost_warp": 23,
+   "from": "노포#1",
+   "to": "파주#1",
+   "from_label": "부산 노포",
+   "to_label": "수도권 파주",
+   "cost_warp": 19,
    "cost_no_warp": null,
    "savings": null,
    "optimal_paths": 1,
    "warps": 5,
-   "rides": 18,
+   "rides": 14,
    "warp_portals": [
-    "공항",
+    "남산",
+    "교대",
+    "시청",
     "화정",
-    "월드컵경기장",
-    "구암",
-    "동천"
+    "운천"
    ],
    "optimal": [
     {
+     "type": "ride",
+     "from": "노포#1",
+     "to": "범어사#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "범어사#1",
+     "to": "남산#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
      "type": "warp",
-     "portal": "공항",
-     "from": "공항#2",
-     "to": "공항#1"
+     "portal": "남산",
+     "from": "남산#1",
+     "to": "남산#2"
     },
     {
      "type": "ride",
-     "from": "공항#1",
-     "to": "김대중컨벤션센터#1",
+     "from": "남산#2",
+     "to": "명덕#1",
+     "lines": [
+      "daegu-3"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "명덕#1",
+     "to": "교대#2",
+     "lines": [
+      "daegu-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "교대",
+     "from": "교대#2",
+     "to": "교대#1"
+    },
+    {
+     "type": "ride",
+     "from": "교대#1",
+     "to": "연산#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연산#1",
+     "to": "시청#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#1",
+     "to": "시청#3"
+    },
+    {
+     "type": "ride",
+     "from": "시청#3",
+     "to": "서울#1",
+     "lines": [
+      "seoul-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서울#1",
+     "to": "연신내#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연신내#1",
+     "to": "대곡#2",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "대곡#2",
+     "to": "화정#2",
+     "lines": [
+      "seoul-3-ilsan"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "화정",
+     "from": "화정#2",
+     "to": "화정#1"
+    },
+    {
+     "type": "ride",
+     "from": "화정#1",
+     "to": "쌍촌#1",
      "lines": [
       "gwangju-1"
      ]
     },
     {
      "type": "ride",
-     "from": "김대중컨벤션센터#1",
-     "to": "상무#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "상무#1",
+     "from": "쌍촌#1",
      "to": "운천#1",
      "lines": [
       "gwangju-1"
      ]
+    },
+    {
+     "type": "warp",
+     "portal": "운천",
+     "from": "운천#1",
+     "to": "운천#2"
+    },
+    {
+     "type": "ride",
+     "from": "운천#2",
+     "to": "문산#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "문산#1",
+     "to": "파주#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    }
+   ],
+   "id": "P091",
+   "intuition_cost": 38,
+   "intuition_expanded": 41,
+   "intuition_score": 0.5,
+   "difficulty_calibrated": "normal"
+  },
+  {
+   "kind": "crosscity",
+   "difficulty": "hard",
+   "from": "두실#1",
+   "to": "월롱#1",
+   "from_label": "부산 두실",
+   "to_label": "수도권 월롱",
+   "cost_warp": 19,
+   "cost_no_warp": null,
+   "savings": null,
+   "optimal_paths": 1,
+   "warps": 5,
+   "rides": 14,
+   "warp_portals": [
+    "남산",
+    "교대",
+    "시청",
+    "화정",
+    "운천"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "두실#1",
+     "to": "남산#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "남산",
+     "from": "남산#1",
+     "to": "남산#2"
+    },
+    {
+     "type": "ride",
+     "from": "남산#2",
+     "to": "명덕#1",
+     "lines": [
+      "daegu-3"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "명덕#1",
+     "to": "교대#2",
+     "lines": [
+      "daegu-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "교대",
+     "from": "교대#2",
+     "to": "교대#1"
+    },
+    {
+     "type": "ride",
+     "from": "교대#1",
+     "to": "연산#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연산#1",
+     "to": "시청#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#1",
+     "to": "시청#3"
+    },
+    {
+     "type": "ride",
+     "from": "시청#3",
+     "to": "서울#1",
+     "lines": [
+      "seoul-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서울#1",
+     "to": "연신내#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연신내#1",
+     "to": "대곡#2",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "대곡#2",
+     "to": "화정#2",
+     "lines": [
+      "seoul-3-ilsan"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "화정",
+     "from": "화정#2",
+     "to": "화정#1"
+    },
+    {
+     "type": "ride",
+     "from": "화정#1",
+     "to": "쌍촌#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "쌍촌#1",
+     "to": "운천#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "운천",
+     "from": "운천#1",
+     "to": "운천#2"
+    },
+    {
+     "type": "ride",
+     "from": "운천#2",
+     "to": "문산#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "문산#1",
+     "to": "파주#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "파주#1",
+     "to": "월롱#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    }
+   ],
+   "id": "P092",
+   "intuition_cost": 36,
+   "intuition_expanded": 39,
+   "intuition_score": 0.528,
+   "difficulty_calibrated": "normal"
+  },
+  {
+   "kind": "crosscity",
+   "difficulty": "hard",
+   "from": "파주#1",
+   "to": "두실#1",
+   "from_label": "수도권 파주",
+   "to_label": "부산 두실",
+   "cost_warp": 18,
+   "cost_no_warp": null,
+   "savings": null,
+   "optimal_paths": 1,
+   "warps": 5,
+   "rides": 13,
+   "warp_portals": [
+    "운천",
+    "화정",
+    "시청",
+    "교대",
+    "남산"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "파주#1",
+     "to": "문산#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "문산#1",
+     "to": "운천#2",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "운천",
+     "from": "운천#2",
+     "to": "운천#1"
     },
     {
      "type": "ride",
@@ -9732,179 +10234,126 @@
     {
      "type": "ride",
      "from": "대곡#2",
-     "to": "능곡#1",
+     "to": "연신내#1",
      "lines": [
-      "gyeongui-jungang",
-      "seohae"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "능곡#1",
-     "to": "김포공항#1",
+     "from": "연신내#1",
+     "to": "서울#1",
      "lines": [
-      "seohae"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "김포공항#1",
-     "to": "마곡나루#1",
+     "from": "서울#1",
+     "to": "시청#3",
      "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "마곡나루#1",
-     "to": "디지털미디어시티#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "월드컵경기장#2",
-     "lines": [
-      "seoul-6"
+      "seoul-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "월드컵경기장",
-     "from": "월드컵경기장#2",
-     "to": "월드컵경기장#1"
+     "portal": "시청",
+     "from": "시청#3",
+     "to": "시청#1"
     },
     {
      "type": "ride",
-     "from": "월드컵경기장#1",
-     "to": "현충원#1",
+     "from": "시청#1",
+     "to": "연산#1",
      "lines": [
-      "daejeon-1"
+      "busan-1"
      ]
     },
     {
      "type": "ride",
-     "from": "현충원#1",
-     "to": "구암#2",
+     "from": "연산#1",
+     "to": "교대#1",
      "lines": [
-      "daejeon-1"
+      "busan-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "구암",
-     "from": "구암#2",
-     "to": "구암#1"
+     "portal": "교대",
+     "from": "교대#1",
+     "to": "교대#2"
     },
     {
      "type": "ride",
-     "from": "구암#1",
-     "to": "칠곡운암#1",
+     "from": "교대#2",
+     "to": "명덕#1",
      "lines": [
-      "daegu-3"
+      "daegu-1"
      ]
     },
     {
      "type": "ride",
-     "from": "칠곡운암#1",
-     "to": "동천#1",
+     "from": "명덕#1",
+     "to": "남산#2",
      "lines": [
       "daegu-3"
      ]
     },
     {
      "type": "warp",
-     "portal": "동천",
-     "from": "동천#1",
-     "to": "동천#2"
+     "portal": "남산",
+     "from": "남산#2",
+     "to": "남산#1"
     },
     {
      "type": "ride",
-     "from": "동천#2",
-     "to": "수지구청#1",
+     "from": "남산#1",
+     "to": "두실#1",
      "lines": [
-      "shinbundang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "수지구청#1",
-     "to": "성복#1",
-     "lines": [
-      "shinbundang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "성복#1",
-     "to": "상현#1",
-     "lines": [
-      "shinbundang"
+      "busan-1"
      ]
     }
    ],
-   "id": "P089"
+   "id": "P093",
+   "intuition_cost": 31,
+   "intuition_expanded": 32,
+   "intuition_score": 0.581,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
    "difficulty": "hard",
-   "from": "서부산유통지구#1",
-   "to": "성복#1",
-   "from_label": "부산 서부산유통지구",
-   "to_label": "수도권 성복",
-   "cost_warp": 23,
+   "from": "문산#1",
+   "to": "범어사#1",
+   "from_label": "수도권 문산",
+   "to_label": "부산 범어사",
+   "cost_warp": 17,
    "cost_no_warp": null,
    "savings": null,
    "optimal_paths": 1,
    "warps": 5,
-   "rides": 18,
+   "rides": 12,
    "warp_portals": [
-    "공항",
+    "운천",
     "화정",
-    "월드컵경기장",
-    "구암",
-    "동천"
+    "시청",
+    "교대",
+    "남산"
    ],
    "optimal": [
     {
      "type": "ride",
-     "from": "서부산유통지구#1",
-     "to": "공항#2",
+     "from": "문산#1",
+     "to": "운천#2",
      "lines": [
-      "busan-gimhae"
+      "gyeongui-jungang"
      ]
     },
     {
      "type": "warp",
-     "portal": "공항",
-     "from": "공항#2",
-     "to": "공항#1"
-    },
-    {
-     "type": "ride",
-     "from": "공항#1",
-     "to": "김대중컨벤션센터#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김대중컨벤션센터#1",
-     "to": "상무#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "상무#1",
-     "to": "운천#1",
-     "lines": [
-      "gwangju-1"
-     ]
+     "portal": "운천",
+     "from": "운천#2",
+     "to": "운천#1"
     },
     {
      "type": "ride",
@@ -9939,112 +10388,245 @@
     {
      "type": "ride",
      "from": "대곡#2",
-     "to": "능곡#1",
+     "to": "연신내#1",
      "lines": [
-      "gyeongui-jungang",
-      "seohae"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "능곡#1",
-     "to": "김포공항#1",
+     "from": "연신내#1",
+     "to": "서울#1",
      "lines": [
-      "seohae"
+      "gtx-a"
      ]
     },
     {
      "type": "ride",
-     "from": "김포공항#1",
-     "to": "마곡나루#1",
+     "from": "서울#1",
+     "to": "시청#3",
      "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "마곡나루#1",
-     "to": "디지털미디어시티#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "월드컵경기장#2",
-     "lines": [
-      "seoul-6"
+      "seoul-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "월드컵경기장",
-     "from": "월드컵경기장#2",
-     "to": "월드컵경기장#1"
+     "portal": "시청",
+     "from": "시청#3",
+     "to": "시청#1"
     },
     {
      "type": "ride",
-     "from": "월드컵경기장#1",
-     "to": "현충원#1",
+     "from": "시청#1",
+     "to": "연산#1",
      "lines": [
-      "daejeon-1"
+      "busan-1"
      ]
     },
     {
      "type": "ride",
-     "from": "현충원#1",
-     "to": "구암#2",
+     "from": "연산#1",
+     "to": "교대#1",
      "lines": [
-      "daejeon-1"
+      "busan-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "구암",
-     "from": "구암#2",
-     "to": "구암#1"
+     "portal": "교대",
+     "from": "교대#1",
+     "to": "교대#2"
     },
     {
      "type": "ride",
-     "from": "구암#1",
-     "to": "칠곡운암#1",
+     "from": "교대#2",
+     "to": "명덕#1",
      "lines": [
-      "daegu-3"
+      "daegu-1"
      ]
     },
     {
      "type": "ride",
-     "from": "칠곡운암#1",
-     "to": "동천#1",
+     "from": "명덕#1",
+     "to": "남산#2",
      "lines": [
       "daegu-3"
      ]
     },
     {
      "type": "warp",
-     "portal": "동천",
-     "from": "동천#1",
-     "to": "동천#2"
+     "portal": "남산",
+     "from": "남산#2",
+     "to": "남산#1"
     },
     {
      "type": "ride",
-     "from": "동천#2",
-     "to": "수지구청#1",
+     "from": "남산#1",
+     "to": "범어사#1",
      "lines": [
-      "shinbundang"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "수지구청#1",
-     "to": "성복#1",
-     "lines": [
-      "shinbundang"
+      "busan-1"
      ]
     }
    ],
-   "id": "P090"
+   "id": "P094",
+   "intuition_cost": 28,
+   "intuition_expanded": 39,
+   "intuition_score": 0.607,
+   "difficulty_calibrated": "normal"
+  },
+  {
+   "kind": "crosscity",
+   "difficulty": "hard",
+   "from": "임진강#1",
+   "to": "범어사#1",
+   "from_label": "수도권 임진강",
+   "to_label": "부산 범어사",
+   "cost_warp": 17,
+   "cost_no_warp": null,
+   "savings": null,
+   "optimal_paths": 1,
+   "warps": 5,
+   "rides": 12,
+   "warp_portals": [
+    "운천",
+    "화정",
+    "시청",
+    "교대",
+    "남산"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "임진강#1",
+     "to": "운천#2",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "운천",
+     "from": "운천#2",
+     "to": "운천#1"
+    },
+    {
+     "type": "ride",
+     "from": "운천#1",
+     "to": "쌍촌#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "쌍촌#1",
+     "to": "화정#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "화정",
+     "from": "화정#1",
+     "to": "화정#2"
+    },
+    {
+     "type": "ride",
+     "from": "화정#2",
+     "to": "대곡#2",
+     "lines": [
+      "seoul-3-ilsan"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "대곡#2",
+     "to": "연신내#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연신내#1",
+     "to": "서울#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서울#1",
+     "to": "시청#3",
+     "lines": [
+      "seoul-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#3",
+     "to": "시청#1"
+    },
+    {
+     "type": "ride",
+     "from": "시청#1",
+     "to": "연산#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연산#1",
+     "to": "교대#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "교대",
+     "from": "교대#1",
+     "to": "교대#2"
+    },
+    {
+     "type": "ride",
+     "from": "교대#2",
+     "to": "명덕#1",
+     "lines": [
+      "daegu-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "명덕#1",
+     "to": "남산#2",
+     "lines": [
+      "daegu-3"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "남산",
+     "from": "남산#2",
+     "to": "남산#1"
+    },
+    {
+     "type": "ride",
+     "from": "남산#1",
+     "to": "범어사#1",
+     "lines": [
+      "busan-1"
+     ]
+    }
+   ],
+   "id": "P095",
+   "intuition_cost": 28,
+   "intuition_expanded": 39,
+   "intuition_score": 0.607,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -10251,7 +10833,11 @@
      ]
     }
    ],
-   "id": "P091"
+   "id": "P096",
+   "intuition_cost": 28,
+   "intuition_expanded": 65,
+   "intuition_score": 0.857,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -10458,7 +11044,11 @@
      ]
     }
    ],
-   "id": "P092"
+   "id": "P097",
+   "intuition_cost": 34,
+   "intuition_expanded": 73,
+   "intuition_score": 0.706,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -10665,214 +11255,11 @@
      ]
     }
    ],
-   "id": "P093"
-  },
-  {
-   "kind": "crosscity",
-   "difficulty": "hard",
-   "from": "개운포#1",
-   "to": "단대오거리#1",
-   "from_label": "부산 개운포",
-   "to_label": "수도권 단대오거리",
-   "cost_warp": 24,
-   "cost_no_warp": null,
-   "savings": null,
-   "optimal_paths": 1,
-   "warps": 4,
-   "rides": 20,
-   "warp_portals": [
-    "좌천",
-    "교대",
-    "중앙로",
-    "신흥"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "개운포#1",
-     "to": "덕하#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "덕하#1",
-     "to": "망양#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "망양#1",
-     "to": "남창#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "남창#1",
-     "to": "서생#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서생#1",
-     "to": "월내#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "월내#1",
-     "to": "좌천#2",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "좌천",
-     "from": "좌천#2",
-     "to": "좌천#1"
-    },
-    {
-     "type": "ride",
-     "from": "좌천#1",
-     "to": "범일#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범일#1",
-     "to": "범내골#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "범내골#1",
-     "to": "서면#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서면#1",
-     "to": "부전#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "부전#1",
-     "to": "거제해맞이#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "거제해맞이#1",
-     "to": "거제#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "거제#1",
-     "to": "교대#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "교대",
-     "from": "교대#1",
-     "to": "교대#2"
-    },
-    {
-     "type": "ride",
-     "from": "교대#2",
-     "to": "명덕#1",
-     "lines": [
-      "daegu-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "명덕#1",
-     "to": "반월당#1",
-     "lines": [
-      "daegu-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "반월당#1",
-     "to": "중앙로#1",
-     "lines": [
-      "daegu-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "중앙로",
-     "from": "중앙로#1",
-     "to": "중앙로#2"
-    },
-    {
-     "type": "ride",
-     "from": "중앙로#2",
-     "to": "대전#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대전#1",
-     "to": "대동#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대동#1",
-     "to": "신흥#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "신흥",
-     "from": "신흥#1",
-     "to": "신흥#2"
-    },
-    {
-     "type": "ride",
-     "from": "신흥#2",
-     "to": "단대오거리#1",
-     "lines": [
-      "seoul-8"
-     ]
-    }
-   ],
-   "id": "P094"
+   "id": "P098",
+   "intuition_cost": 42,
+   "intuition_expanded": 84,
+   "intuition_score": 0.571,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -11079,15 +11466,19 @@
      ]
     }
    ],
-   "id": "P095"
+   "id": "P099",
+   "intuition_cost": 54,
+   "intuition_expanded": 59,
+   "intuition_score": 0.444,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
    "difficulty": "hard",
-   "from": "고색#1",
-   "to": "돌고개#1",
-   "from_label": "수도권 고색",
-   "to_label": "광주 돌고개",
+   "from": "고산#1",
+   "to": "문산#1",
+   "from_label": "대구 고산",
+   "to_label": "수도권 문산",
    "cost_warp": 24,
    "cost_no_warp": null,
    "savings": null,
@@ -11095,166 +11486,150 @@
    "warps": 4,
    "rides": 20,
    "warp_portals": [
-    "중앙",
-    "좌천",
-    "송정",
-    "화정"
+    "교대",
+    "시청",
+    "화정",
+    "운천"
    ],
    "optimal": [
     {
      "type": "ride",
-     "from": "고색#1",
-     "to": "오목천#1",
+     "from": "고산#1",
+     "to": "수성알파시티#1",
      "lines": [
-      "suin-bundang-suin"
+      "daegu-2"
      ]
     },
     {
      "type": "ride",
-     "from": "오목천#1",
-     "to": "어천#1",
+     "from": "수성알파시티#1",
+     "to": "연호#1",
      "lines": [
-      "suin-bundang-suin"
+      "daegu-2"
      ]
     },
     {
      "type": "ride",
-     "from": "어천#1",
-     "to": "야목#1",
+     "from": "연호#1",
+     "to": "담티#1",
      "lines": [
-      "suin-bundang-suin"
+      "daegu-2"
      ]
     },
     {
      "type": "ride",
-     "from": "야목#1",
-     "to": "사리#1",
+     "from": "담티#1",
+     "to": "만촌#1",
      "lines": [
-      "suin-bundang-suin"
+      "daegu-2"
      ]
     },
     {
      "type": "ride",
-     "from": "사리#1",
-     "to": "한대앞#1",
+     "from": "만촌#1",
+     "to": "수성구청#1",
      "lines": [
-      "suin-bundang-suin"
+      "daegu-2"
      ]
     },
     {
      "type": "ride",
-     "from": "한대앞#1",
-     "to": "중앙#2",
+     "from": "수성구청#1",
+     "to": "범어#1",
      "lines": [
-      "seoul-4-ansan",
-      "suin-bundang-suin"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "중앙",
-     "from": "중앙#2",
-     "to": "중앙#1"
-    },
-    {
-     "type": "ride",
-     "from": "중앙#1",
-     "to": "부산#1",
-     "lines": [
-      "busan-1"
+      "daegu-2"
      ]
     },
     {
      "type": "ride",
-     "from": "부산#1",
-     "to": "초량#1",
+     "from": "범어#1",
+     "to": "대구은행#1",
      "lines": [
-      "busan-1"
+      "daegu-2"
      ]
     },
     {
      "type": "ride",
-     "from": "초량#1",
-     "to": "부산진#1",
+     "from": "대구은행#1",
+     "to": "경대병원#1",
      "lines": [
-      "busan-1"
+      "daegu-2"
      ]
     },
     {
      "type": "ride",
-     "from": "부산진#1",
-     "to": "좌천#1",
+     "from": "경대병원#1",
+     "to": "반월당#1",
      "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "좌천",
-     "from": "좌천#1",
-     "to": "좌천#2"
-    },
-    {
-     "type": "ride",
-     "from": "좌천#2",
-     "to": "일광#1",
-     "lines": [
-      "donghae"
+      "daegu-2"
      ]
     },
     {
      "type": "ride",
-     "from": "일광#1",
-     "to": "기장#1",
+     "from": "반월당#1",
+     "to": "명덕#1",
      "lines": [
-      "donghae"
+      "daegu-1"
      ]
     },
     {
      "type": "ride",
-     "from": "기장#1",
-     "to": "오시리아#1",
+     "from": "명덕#1",
+     "to": "교대#2",
      "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "오시리아#1",
-     "to": "송정#1",
-     "lines": [
-      "donghae"
+      "daegu-1"
      ]
     },
     {
      "type": "warp",
-     "portal": "송정",
-     "from": "송정#1",
-     "to": "송정#2"
+     "portal": "교대",
+     "from": "교대#2",
+     "to": "교대#1"
     },
     {
      "type": "ride",
-     "from": "송정#2",
-     "to": "김포공항#1",
+     "from": "교대#1",
+     "to": "연산#1",
      "lines": [
-      "seoul-5"
+      "busan-1"
      ]
     },
     {
      "type": "ride",
-     "from": "김포공항#1",
-     "to": "능곡#1",
+     "from": "연산#1",
+     "to": "시청#1",
      "lines": [
-      "seohae"
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#1",
+     "to": "시청#3"
+    },
+    {
+     "type": "ride",
+     "from": "시청#3",
+     "to": "서울#1",
+     "lines": [
+      "seoul-1"
      ]
     },
     {
      "type": "ride",
-     "from": "능곡#1",
+     "from": "서울#1",
+     "to": "연신내#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연신내#1",
      "to": "대곡#2",
      "lines": [
-      "gyeongui-jungang",
-      "seohae"
+      "gtx-a"
      ]
     },
     {
@@ -11274,21 +11649,250 @@
     {
      "type": "ride",
      "from": "화정#1",
-     "to": "농성#1",
+     "to": "쌍촌#1",
      "lines": [
       "gwangju-1"
      ]
     },
     {
      "type": "ride",
-     "from": "농성#1",
-     "to": "돌고개#1",
+     "from": "쌍촌#1",
+     "to": "운천#1",
      "lines": [
       "gwangju-1"
      ]
+    },
+    {
+     "type": "warp",
+     "portal": "운천",
+     "from": "운천#1",
+     "to": "운천#2"
+    },
+    {
+     "type": "ride",
+     "from": "운천#2",
+     "to": "문산#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
     }
    ],
-   "id": "P096"
+   "id": "P100",
+   "intuition_cost": 43,
+   "intuition_expanded": 47,
+   "intuition_score": 0.558,
+   "difficulty_calibrated": "normal"
+  },
+  {
+   "kind": "crosscity",
+   "difficulty": "hard",
+   "from": "고산#1",
+   "to": "임진강#1",
+   "from_label": "대구 고산",
+   "to_label": "수도권 임진강",
+   "cost_warp": 24,
+   "cost_no_warp": null,
+   "savings": null,
+   "optimal_paths": 1,
+   "warps": 4,
+   "rides": 20,
+   "warp_portals": [
+    "교대",
+    "시청",
+    "화정",
+    "운천"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "고산#1",
+     "to": "수성알파시티#1",
+     "lines": [
+      "daegu-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "수성알파시티#1",
+     "to": "연호#1",
+     "lines": [
+      "daegu-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연호#1",
+     "to": "담티#1",
+     "lines": [
+      "daegu-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "담티#1",
+     "to": "만촌#1",
+     "lines": [
+      "daegu-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "만촌#1",
+     "to": "수성구청#1",
+     "lines": [
+      "daegu-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "수성구청#1",
+     "to": "범어#1",
+     "lines": [
+      "daegu-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "범어#1",
+     "to": "대구은행#1",
+     "lines": [
+      "daegu-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "대구은행#1",
+     "to": "경대병원#1",
+     "lines": [
+      "daegu-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "경대병원#1",
+     "to": "반월당#1",
+     "lines": [
+      "daegu-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "반월당#1",
+     "to": "명덕#1",
+     "lines": [
+      "daegu-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "명덕#1",
+     "to": "교대#2",
+     "lines": [
+      "daegu-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "교대",
+     "from": "교대#2",
+     "to": "교대#1"
+    },
+    {
+     "type": "ride",
+     "from": "교대#1",
+     "to": "연산#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연산#1",
+     "to": "시청#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "시청",
+     "from": "시청#1",
+     "to": "시청#3"
+    },
+    {
+     "type": "ride",
+     "from": "시청#3",
+     "to": "서울#1",
+     "lines": [
+      "seoul-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서울#1",
+     "to": "연신내#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "연신내#1",
+     "to": "대곡#2",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "대곡#2",
+     "to": "화정#2",
+     "lines": [
+      "seoul-3-ilsan"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "화정",
+     "from": "화정#2",
+     "to": "화정#1"
+    },
+    {
+     "type": "ride",
+     "from": "화정#1",
+     "to": "쌍촌#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "쌍촌#1",
+     "to": "운천#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "운천",
+     "from": "운천#1",
+     "to": "운천#2"
+    },
+    {
+     "type": "ride",
+     "from": "운천#2",
+     "to": "임진강#1",
+     "lines": [
+      "gyeongui-jungang"
+     ]
+    }
+   ],
+   "id": "P101",
+   "intuition_cost": 45,
+   "intuition_expanded": 49,
+   "intuition_score": 0.533,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -11496,7 +12100,11 @@
      ]
     }
    ],
-   "id": "P097"
+   "id": "P102",
+   "intuition_cost": 28,
+   "intuition_expanded": 51,
+   "intuition_score": 0.857,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
@@ -11704,15 +12312,19 @@
      ]
     }
    ],
-   "id": "P098"
+   "id": "P103",
+   "intuition_cost": 32,
+   "intuition_expanded": 41,
+   "intuition_score": 0.75,
+   "difficulty_calibrated": "normal"
   },
   {
    "kind": "crosscity",
    "difficulty": "hard",
    "from": "고진#1",
-   "to": "팔달#1",
+   "to": "서부산유통지구#1",
    "from_label": "수도권 고진",
-   "to_label": "대구 팔달",
+   "to_label": "부산 서부산유통지구",
    "cost_warp": 24,
    "cost_no_warp": null,
    "savings": null,
@@ -11722,8 +12334,8 @@
    "warp_portals": [
     "동백",
     "송정",
-    "월드컵경기장",
-    "구암"
+    "화정",
+    "공항"
    ],
    "optimal": [
     {
@@ -11829,503 +12441,94 @@
     {
      "type": "ride",
      "from": "김포공항#1",
-     "to": "마곡나루#1",
+     "to": "능곡#1",
      "lines": [
-      "arex"
+      "seohae"
      ]
     },
     {
      "type": "ride",
-     "from": "마곡나루#1",
-     "to": "디지털미디어시티#1",
+     "from": "능곡#1",
+     "to": "대곡#2",
      "lines": [
-      "arex"
+      "gyeongui-jungang",
+      "seohae"
      ]
     },
     {
      "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "월드컵경기장#2",
+     "from": "대곡#2",
+     "to": "화정#2",
      "lines": [
-      "seoul-6"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "월드컵경기장",
-     "from": "월드컵경기장#2",
-     "to": "월드컵경기장#1"
-    },
-    {
-     "type": "ride",
-     "from": "월드컵경기장#1",
-     "to": "현충원#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "현충원#1",
-     "to": "구암#2",
-     "lines": [
-      "daejeon-1"
+      "seoul-3-ilsan"
      ]
     },
     {
      "type": "warp",
-     "portal": "구암",
-     "from": "구암#2",
-     "to": "구암#1"
+     "portal": "화정",
+     "from": "화정#2",
+     "to": "화정#1"
     },
     {
      "type": "ride",
-     "from": "구암#1",
-     "to": "태전#1",
+     "from": "화정#1",
+     "to": "쌍촌#1",
      "lines": [
-      "daegu-3"
+      "gwangju-1"
      ]
     },
     {
      "type": "ride",
-     "from": "태전#1",
-     "to": "매천#1",
+     "from": "쌍촌#1",
+     "to": "운천#1",
      "lines": [
-      "daegu-3"
+      "gwangju-1"
      ]
     },
     {
      "type": "ride",
-     "from": "매천#1",
-     "to": "매천시장#1",
+     "from": "운천#1",
+     "to": "상무#1",
      "lines": [
-      "daegu-3"
+      "gwangju-1"
      ]
     },
     {
      "type": "ride",
-     "from": "매천시장#1",
-     "to": "팔달#1",
+     "from": "상무#1",
+     "to": "김대중컨벤션센터#1",
      "lines": [
-      "daegu-3"
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "김대중컨벤션센터#1",
+     "to": "공항#1",
+     "lines": [
+      "gwangju-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "공항",
+     "from": "공항#1",
+     "to": "공항#2"
+    },
+    {
+     "type": "ride",
+     "from": "공항#2",
+     "to": "서부산유통지구#1",
+     "lines": [
+      "busan-gimhae"
      ]
     }
    ],
-   "id": "P099"
-  },
-  {
-   "kind": "crosscity",
-   "difficulty": "hard",
-   "from": "공단#1",
-   "to": "백양리#1",
-   "from_label": "대구 공단",
-   "to_label": "수도권 백양리",
-   "cost_warp": 24,
-   "cost_no_warp": null,
-   "savings": null,
-   "optimal_paths": 1,
-   "warps": 4,
-   "rides": 20,
-   "warp_portals": [
-    "구암",
-    "월드컵경기장",
-    "증산",
-    "금곡"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "공단#1",
-     "to": "팔달#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "팔달#1",
-     "to": "매천시장#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "매천시장#1",
-     "to": "매천#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "매천#1",
-     "to": "태전#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "태전#1",
-     "to": "구암#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "구암",
-     "from": "구암#1",
-     "to": "구암#2"
-    },
-    {
-     "type": "ride",
-     "from": "구암#2",
-     "to": "현충원#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "현충원#1",
-     "to": "월드컵경기장#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "월드컵경기장",
-     "from": "월드컵경기장#1",
-     "to": "월드컵경기장#2"
-    },
-    {
-     "type": "ride",
-     "from": "월드컵경기장#2",
-     "to": "디지털미디어시티#1",
-     "lines": [
-      "seoul-6"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "증산#2",
-     "lines": [
-      "seoul-6"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "증산",
-     "from": "증산#2",
-     "to": "증산#1"
-    },
-    {
-     "type": "ride",
-     "from": "증산#1",
-     "to": "호포#1",
-     "lines": [
-      "busan-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "호포#1",
-     "to": "금곡#1",
-     "lines": [
-      "busan-2"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "금곡",
-     "from": "금곡#1",
-     "to": "금곡#2"
-    },
-    {
-     "type": "ride",
-     "from": "금곡#2",
-     "to": "평내호평#1",
-     "lines": [
-      "gyeongchun"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "평내호평#1",
-     "to": "천마산#1",
-     "lines": [
-      "gyeongchun"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "천마산#1",
-     "to": "마석#1",
-     "lines": [
-      "gyeongchun"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "마석#1",
-     "to": "대성리#1",
-     "lines": [
-      "gyeongchun"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대성리#1",
-     "to": "청평#1",
-     "lines": [
-      "gyeongchun"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "청평#1",
-     "to": "상천#1",
-     "lines": [
-      "gyeongchun"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "상천#1",
-     "to": "가평#1",
-     "lines": [
-      "gyeongchun"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "가평#1",
-     "to": "굴봉산#1",
-     "lines": [
-      "gyeongchun"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "굴봉산#1",
-     "to": "백양리#1",
-     "lines": [
-      "gyeongchun"
-     ]
-    }
-   ],
-   "id": "P100"
-  },
-  {
-   "kind": "crosscity",
-   "difficulty": "hard",
-   "from": "공단#1",
-   "to": "용인중앙시장#1",
-   "from_label": "대구 공단",
-   "to_label": "수도권 용인중앙시장",
-   "cost_warp": 24,
-   "cost_no_warp": null,
-   "savings": null,
-   "optimal_paths": 1,
-   "warps": 4,
-   "rides": 20,
-   "warp_portals": [
-    "구암",
-    "월드컵경기장",
-    "송정",
-    "동백"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "공단#1",
-     "to": "팔달#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "팔달#1",
-     "to": "매천시장#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "매천시장#1",
-     "to": "매천#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "매천#1",
-     "to": "태전#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "태전#1",
-     "to": "구암#1",
-     "lines": [
-      "daegu-3"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "구암",
-     "from": "구암#1",
-     "to": "구암#2"
-    },
-    {
-     "type": "ride",
-     "from": "구암#2",
-     "to": "현충원#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "현충원#1",
-     "to": "월드컵경기장#1",
-     "lines": [
-      "daejeon-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "월드컵경기장",
-     "from": "월드컵경기장#1",
-     "to": "월드컵경기장#2"
-    },
-    {
-     "type": "ride",
-     "from": "월드컵경기장#2",
-     "to": "디지털미디어시티#1",
-     "lines": [
-      "seoul-6"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "디지털미디어시티#1",
-     "to": "마곡나루#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "마곡나루#1",
-     "to": "김포공항#1",
-     "lines": [
-      "arex"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김포공항#1",
-     "to": "송정#2",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "송정",
-     "from": "송정#2",
-     "to": "송정#1"
-    },
-    {
-     "type": "ride",
-     "from": "송정#1",
-     "to": "신해운대#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신해운대#1",
-     "to": "벡스코#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "벡스코#1",
-     "to": "동백#1",
-     "lines": [
-      "busan-2"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "동백",
-     "from": "동백#1",
-     "to": "동백#2"
-    },
-    {
-     "type": "ride",
-     "from": "동백#2",
-     "to": "초당#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초당#1",
-     "to": "삼가#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "삼가#1",
-     "to": "시청·용인대#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "시청·용인대#1",
-     "to": "명지대#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "명지대#1",
-     "to": "김량장#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김량장#1",
-     "to": "용인중앙시장#1",
-     "lines": [
-      "everline"
-     ]
-    }
-   ],
-   "id": "P101"
+   "id": "P104",
+   "intuition_cost": 30,
+   "intuition_expanded": 34,
+   "intuition_score": 0.8,
+   "difficulty_calibrated": "normal"
   }
  ]
 }

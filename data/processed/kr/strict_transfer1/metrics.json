@@ -1,50 +1,55 @@
 {
  "ruleset": "strict_transfer1",
  "counts": {
-  "stations": 1091,
-  "clusters": 937,
-  "lines": 45,
-  "sequences": 50,
-  "ride_edges": 1056,
-  "transfer_clusters_multi": 134,
-  "portals_total": 29,
+  "stations": 1100,
+  "clusters": 941,
+  "lines": 46,
+  "sequences": 53,
+  "ride_edges": 1065,
+  "ride_edges_directed": 6,
+  "transfer_clusters_multi": 135,
+  "portals_total": 30,
   "portals_by_tier": {
-   "T1": 29
+   "T1": 30
   },
-  "portal_links": 60,
-  "routing_nodes": 1120,
-  "routing_edges": 2610
+  "portal_links": 62,
+  "routing_nodes": 1130,
+  "routing_edges": 2652
  },
  "with_warp": {
   "components": 1,
   "largest_component_ratio": 1.0,
-  "largest_component_size": 937,
+  "largest_component_size": 941,
+  "strong_components": 1,
+  "largest_strong_component_size": 941,
   "diameter": {
-   "value": 71,
+   "value": 70,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 20.464,
+   "mean_cost": 19.934,
    "level": "station"
   }
  },
  "without_warp": {
   "components": 5,
-  "largest_component_ratio": 0.6958,
-  "largest_component_size": 652,
+  "largest_component_ratio": 0.6961,
+  "largest_component_size": 655,
+  "strong_components": 5,
+  "largest_strong_component_size": 655,
   "diameter": {
    "value": 75,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 24.327,
+   "mean_cost": 23.469,
    "level": "station"
   },
   "component_list": [
    {
-    "size": 652,
+    "size": 655,
     "regions": {
-     "수도권": 652
+     "수도권": 655
     },
     "lines": [
      "I1101:경인선",
@@ -84,7 +89,8 @@
      "S1122:2호선",
      "S2801:인천지하철 1호선",
      "S2802:인천지하철 2호선",
-     "S4108:수도권 광역철도 8호선"
+     "S4108:수도권 광역철도 8호선",
+     "XGTXA:GTX-A"
     ],
     "sample": [
      "4·19민주묘지#1",
@@ -99,9 +105,9 @@
     "joins_giant_with_warp": true
    },
    {
-    "size": 146,
+    "size": 147,
     "regions": {
-     "부산": 146
+     "부산": 147
     },
     "lines": [
      "I26K6:동해선",
@@ -291,6 +297,15 @@
    ]
   },
   {
+   "name": "부전",
+   "tier": "T1",
+   "degree": 2,
+   "clusters": [
+    "부전#1",
+    "부전#2"
+   ]
+  },
+  {
    "name": "송정",
    "tier": "T1",
    "degree": 2,
@@ -361,22 +376,13 @@
     "용산#1",
     "용산#2"
    ]
-  },
-  {
-   "name": "운천",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "운천#1",
-    "운천#2"
-   ]
   }
  ],
  "isolated_without_warp": [
   {
-   "size": 146,
+   "size": 147,
    "regions": {
-    "부산": 146
+    "부산": 147
    },
    "lines": [
     "I26K6:동해선",
@@ -471,18 +477,6 @@
     "transfer_lines_raw": "자기부상철도"
    },
    {
-    "id": "kr:I4105:1863",
-    "name": "구성역",
-    "line": "분당선",
-    "transfer_lines_raw": "GTX-A"
-   },
-   {
-    "id": "kr:I41K5:1512",
-    "name": "성남역",
-    "line": "경강선",
-    "transfer_lines_raw": "GTX-A"
-   },
-   {
     "id": "kr:S1105:0518",
     "name": "까치산",
     "line": "5호선",
@@ -493,7 +487,7 @@
    {
     "cluster": "서울#1",
     "max_internal_m": 435,
-    "records": 4
+    "records": 5
    },
    {
     "cluster": "잠실#1",
@@ -509,11 +503,6 @@
     "cluster": "동대문역사문화공원#1",
     "max_internal_m": 346,
     "records": 3
-   },
-   {
-    "cluster": "부전#1",
-    "max_internal_m": 342,
-    "records": 2
    },
    {
     "cluster": "디지털미디어시티#1",
@@ -539,6 +528,11 @@
     "cluster": "신당#1",
     "max_internal_m": 293,
     "records": 2
+   },
+   {
+    "cluster": "종로3가#1",
+    "max_internal_m": 277,
+    "records": 3
    }
   ]
  }
