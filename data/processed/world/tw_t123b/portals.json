@@ -1,5 +1,5 @@
 {
- "ruleset": "tw_t123_label",
+ "ruleset": "tw_t123b",
  "portals": [
   {
    "id": "P:T1:고촌",
@@ -18,7 +18,11 @@
    "texts": [
     "고촌",
     "고촌역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:공항",
@@ -36,7 +40,11 @@
    "degree": 2,
    "texts": [
     "공항"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:교대",
@@ -60,7 +68,11 @@
     "교대",
     "교대(법원·검찰청)",
     "교대역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:구암",
@@ -79,7 +91,11 @@
    "texts": [
     "구암",
     "구암(과학대보건대입구)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:금곡",
@@ -98,7 +114,11 @@
    "texts": [
     "금곡",
     "금곡역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:남산",
@@ -117,7 +137,11 @@
    "texts": [
     "남산",
     "남산(계명네거리)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:대곡",
@@ -132,13 +156,19 @@
     "kr:I4106:1953",
     "kr:I4108:1953",
     "kr:I41WS:1953",
-    "kr:S2701:0117"
+    "kr:S2701:0117",
+    "kr:XGTXA:X103"
    ],
    "degree": 2,
    "texts": [
+    "대곡",
     "대곡(정부대구청사)",
     "대곡역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:동래",
@@ -158,7 +188,11 @@
    "texts": [
     "동래",
     "동래역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:동백",
@@ -177,7 +211,11 @@
    "texts": [
     "동백",
     "동백(용인세브란스)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:동천",
@@ -195,26 +233,11 @@
    "degree": 2,
    "texts": [
     "동천"
-   ]
-  },
-  {
-   "id": "P:T1:부전",
-   "tier": "T1",
-   "name": "부전",
-   "cost": 1,
-   "cluster_ids": [
-    "부전#1",
-    "부전#2"
    ],
-   "station_ids": [
-    "kr:I26K6:8001",
-    "kr:S2601:0120"
+   "grades": [
+    "official"
    ],
-   "degree": 2,
-   "texts": [
-    "부전",
-    "부전역"
-   ]
+   "confidence": "high"
   },
   {
    "id": "P:T1:송정",
@@ -233,7 +256,11 @@
    "texts": [
     "송정",
     "송정역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:시청",
@@ -255,7 +282,11 @@
    "texts": [
     "시청",
     "시청(연제)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:신천",
@@ -274,7 +305,11 @@
    "texts": [
     "신천(경북대입구)",
     "신천역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:신촌",
@@ -293,7 +328,11 @@
    "texts": [
     "신촌(지하)",
     "신촌역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:신흥",
@@ -311,7 +350,11 @@
    "degree": 2,
    "texts": [
     "신흥"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:양정",
@@ -330,7 +373,11 @@
    "texts": [
     "양정",
     "양정역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:양평",
@@ -349,7 +396,11 @@
    "texts": [
     "양평",
     "양평역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:용문",
@@ -368,7 +419,11 @@
    "texts": [
     "용문",
     "용문역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:용산",
@@ -388,7 +443,11 @@
    "texts": [
     "용산(서부법원․검찰청입구)",
     "용산역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:운천",
@@ -407,7 +466,11 @@
    "texts": [
     "운천",
     "운천역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:월드컵경기장",
@@ -426,7 +489,11 @@
    "texts": [
     "월드컵경기장",
     "월드컵경기장(성산)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:종합운동장",
@@ -445,7 +512,11 @@
    "degree": 2,
    "texts": [
     "종합운동장"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:좌천",
@@ -464,7 +535,11 @@
    "texts": [
     "좌천",
     "좌천역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:죽전",
@@ -483,7 +558,11 @@
    "texts": [
     "죽전",
     "죽전역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:중동",
@@ -502,7 +581,11 @@
    "texts": [
     "중동",
     "중동역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:중앙",
@@ -522,7 +605,11 @@
    "texts": [
     "중앙",
     "중앙역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:중앙로",
@@ -540,7 +627,11 @@
    "degree": 2,
    "texts": [
     "중앙로"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:증산",
@@ -559,7 +650,11 @@
    "texts": [
     "증산",
     "증산(명지대앞)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:화정",
@@ -578,7 +673,11 @@
    "texts": [
     "화정",
     "화정역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T2:中咊",
@@ -597,7 +696,12 @@
    "texts": [
     "中和",
     "中和站"
-   ]
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium"
   },
   {
    "id": "P:T2:囘惇",
@@ -616,7 +720,12 @@
    "texts": [
     "回龙",
     "迴龍站"
-   ]
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium"
   },
   {
    "id": "P:T2:土城",
@@ -635,7 +744,12 @@
    "texts": [
     "土城",
     "土城站"
-   ]
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium"
   },
   {
    "id": "P:T2:大峙",
@@ -653,7 +767,11 @@
    "degree": 2,
    "texts": [
     "大峙"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T2:明徳",
@@ -674,7 +792,12 @@
     "明德 (2·28民主運動紀念會館)",
     "明德(2‧28民主運動紀念會館)",
     "明德站"
-   ]
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium"
   },
   {
    "id": "P:T2:松山",
@@ -693,7 +816,12 @@
    "texts": [
     "松山",
     "松山車站"
-   ]
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium"
   },
   {
    "id": "P:T2:板桥",
@@ -715,11 +843,16 @@
     "板橋",
     "板橋(板橋테크노밸리)",
     "板橋站"
-   ]
+   ],
+   "grades": [
+    "native_label",
+    "official"
+   ],
+   "confidence": "medium"
   },
   {
-   "id": "P:T3:seongnam",
-   "tier": "T3",
+   "id": "P:T3b:seongnam",
+   "tier": "T3b",
    "name": "seongnam",
    "cost": 3,
    "cluster_ids": [
@@ -735,7 +868,11 @@
    "texts": [
     "Seongnam",
     "Seongnam(Geobuk Market)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   }
  ],
  "capped": [
@@ -756,6 +893,10 @@
    "texts": [
     "東川"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -775,6 +916,10 @@
    "texts": [
     "中央"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -794,6 +939,10 @@
    "texts": [
     "中央路"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -814,6 +963,10 @@
     "云泉",
     "雲泉"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -833,6 +986,10 @@
    "texts": [
     "佐川"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -853,6 +1010,10 @@
     "南山",
     "南山 (계명네거리)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -875,6 +1036,10 @@
    "texts": [
     "市廳"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -896,6 +1061,10 @@
     "敎大",
     "敎大(法院․檢察廳)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -915,6 +1084,10 @@
    "texts": [
     "新興"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -935,6 +1108,10 @@
     "新川",
     "新川(慶北大入口)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -956,30 +1133,15 @@
     "綜合運動場",
     "综合运动场"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:bujeon",
-   "tier": "T3",
-   "name": "bujeon",
-   "cost": 3,
-   "cluster_ids": [
-    "부전#1",
-    "부전#2"
-   ],
-   "station_ids": [
-    "kr:I26K6:8001",
-    "kr:S2601:0120"
-   ],
-   "degree": 2,
-   "texts": [
-    "Bujeon"
-   ],
-   "subsumed": true
-  },
-  {
-   "id": "P:T3:city hall",
-   "tier": "T3",
+   "id": "P:T3a:city hall",
+   "tier": "T3a",
    "name": "city hall",
    "cost": 3,
    "cluster_ids": [
@@ -997,11 +1159,63 @@
    "texts": [
     "City Hall"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:daegok",
-   "tier": "T3",
+   "id": "P:T3a:sports complex",
+   "tier": "T3a",
+   "name": "sports complex",
+   "cost": 3,
+   "cluster_ids": [
+    "종합운동장#1",
+    "종합운동장#2"
+   ],
+   "station_ids": [
+    "kr:S1102:0218",
+    "kr:S1109:4130",
+    "kr:S2603:0307"
+   ],
+   "degree": 2,
+   "texts": [
+    "Sports Complex"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "subsumed": true
+  },
+  {
+   "id": "P:T3a:world cup stadium",
+   "tier": "T3a",
+   "name": "world cup stadium",
+   "cost": 3,
+   "cluster_ids": [
+    "월드컵경기장#1",
+    "월드컵경기장#2"
+   ],
+   "station_ids": [
+    "kr:S1106:0619",
+    "kr:S3001:119"
+   ],
+   "degree": 2,
+   "texts": [
+    "World Cup Stadium",
+    "World Cup Stadium (Seongsan)"
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
+   "subsumed": true
+  },
+  {
+   "id": "P:T3b:daegok",
+   "tier": "T3b",
    "name": "daegok",
    "cost": 3,
    "cluster_ids": [
@@ -1019,11 +1233,15 @@
     "Daegok",
     "Daegok (Central Government Office-Daegu)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:dongbaek",
-   "tier": "T3",
+   "id": "P:T3b:dongbaek",
+   "tier": "T3b",
    "name": "dongbaek",
    "cost": 3,
    "cluster_ids": [
@@ -1038,11 +1256,15 @@
    "texts": [
     "Dongbaek"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:dongcheon",
-   "tier": "T3",
+   "id": "P:T3b:dongcheon",
+   "tier": "T3b",
    "name": "dongcheon",
    "cost": 3,
    "cluster_ids": [
@@ -1057,11 +1279,15 @@
    "texts": [
     "Dongcheon"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:dongnae",
-   "tier": "T3",
+   "id": "P:T3b:dongnae",
+   "tier": "T3b",
    "name": "dongnae",
    "cost": 3,
    "cluster_ids": [
@@ -1077,11 +1303,15 @@
    "texts": [
     "Dongnae"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:geumgok",
-   "tier": "T3",
+   "id": "P:T3b:geumgok",
+   "tier": "T3b",
    "name": "geumgok",
    "cost": 3,
    "cluster_ids": [
@@ -1096,11 +1326,15 @@
    "texts": [
     "Geumgok"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:gochon",
-   "tier": "T3",
+   "id": "P:T3b:gochon",
+   "tier": "T3b",
    "name": "gochon",
    "cost": 3,
    "cluster_ids": [
@@ -1115,11 +1349,15 @@
    "texts": [
     "Gochon"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:guam",
-   "tier": "T3",
+   "id": "P:T3b:guam",
+   "tier": "T3b",
    "name": "guam",
    "cost": 3,
    "cluster_ids": [
@@ -1135,11 +1373,15 @@
     "Guam",
     "Guam (Taegu Science Univ. ·Daegu Health College)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:hwajeong",
-   "tier": "T3",
+   "id": "P:T3b:hwajeong",
+   "tier": "T3b",
    "name": "hwajeong",
    "cost": 3,
    "cluster_ids": [
@@ -1154,11 +1396,15 @@
    "texts": [
     "Hwajeong"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:jeungsan",
-   "tier": "T3",
+   "id": "P:T3b:jeungsan",
+   "tier": "T3b",
    "name": "jeungsan",
    "cost": 3,
    "cluster_ids": [
@@ -1174,11 +1420,15 @@
     "Jeungsan",
     "Jeungsan (Myongji Univ.)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:jukjeon",
-   "tier": "T3",
+   "id": "P:T3b:jukjeon",
+   "tier": "T3b",
    "name": "jukjeon",
    "cost": 3,
    "cluster_ids": [
@@ -1193,11 +1443,15 @@
    "texts": [
     "Jukjeon"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:jung-dong",
-   "tier": "T3",
+   "id": "P:T3b:jung-dong",
+   "tier": "T3b",
    "name": "jung-dong",
    "cost": 3,
    "cluster_ids": [
@@ -1212,11 +1466,15 @@
    "texts": [
     "Jung-dong"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:jungang",
-   "tier": "T3",
+   "id": "P:T3b:jungang",
+   "tier": "T3b",
    "name": "jungang",
    "cost": 3,
    "cluster_ids": [
@@ -1232,11 +1490,15 @@
    "texts": [
     "Jungang"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:jungangno",
-   "tier": "T3",
+   "id": "P:T3b:jungangno",
+   "tier": "T3b",
    "name": "jungangno",
    "cost": 3,
    "cluster_ids": [
@@ -1251,11 +1513,15 @@
    "texts": [
     "Jungangno"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:jwacheon",
-   "tier": "T3",
+   "id": "P:T3b:jwacheon",
+   "tier": "T3b",
    "name": "jwacheon",
    "cost": 3,
    "cluster_ids": [
@@ -1270,11 +1536,15 @@
    "texts": [
     "Jwacheon"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:namsan",
-   "tier": "T3",
+   "id": "P:T3b:namsan",
+   "tier": "T3b",
    "name": "namsan",
    "cost": 3,
    "cluster_ids": [
@@ -1290,11 +1560,15 @@
     "Namsan",
     "Namsan (Gyemyeongnegeori)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:sincheon",
-   "tier": "T3",
+   "id": "P:T3b:sincheon",
+   "tier": "T3b",
    "name": "sincheon",
    "cost": 3,
    "cluster_ids": [
@@ -1310,11 +1584,15 @@
     "Sincheon",
     "Sincheon (Kyungpook Nat’l Univ.)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:sinchon",
-   "tier": "T3",
+   "id": "P:T3b:sinchon",
+   "tier": "T3b",
    "name": "sinchon",
    "cost": 3,
    "cluster_ids": [
@@ -1329,11 +1607,15 @@
    "texts": [
     "Sinchon"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:sinheung",
-   "tier": "T3",
+   "id": "P:T3b:sinheung",
+   "tier": "T3b",
    "name": "sinheung",
    "cost": 3,
    "cluster_ids": [
@@ -1348,11 +1630,15 @@
    "texts": [
     "Sinheung"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:songjeong",
-   "tier": "T3",
+   "id": "P:T3b:songjeong",
+   "tier": "T3b",
    "name": "songjeong",
    "cost": 3,
    "cluster_ids": [
@@ -1367,31 +1653,15 @@
    "texts": [
     "Songjeong"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:sports complex",
-   "tier": "T3",
-   "name": "sports complex",
-   "cost": 3,
-   "cluster_ids": [
-    "종합운동장#1",
-    "종합운동장#2"
-   ],
-   "station_ids": [
-    "kr:S1102:0218",
-    "kr:S1109:4130",
-    "kr:S2603:0307"
-   ],
-   "degree": 2,
-   "texts": [
-    "Sports Complex"
-   ],
-   "subsumed": true
-  },
-  {
-   "id": "P:T3:uncheon",
-   "tier": "T3",
+   "id": "P:T3b:uncheon",
+   "tier": "T3b",
    "name": "uncheon",
    "cost": 3,
    "cluster_ids": [
@@ -1406,31 +1676,15 @@
    "texts": [
     "Uncheon"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:world cup stadium",
-   "tier": "T3",
-   "name": "world cup stadium",
-   "cost": 3,
-   "cluster_ids": [
-    "월드컵경기장#1",
-    "월드컵경기장#2"
-   ],
-   "station_ids": [
-    "kr:S1106:0619",
-    "kr:S3001:119"
-   ],
-   "degree": 2,
-   "texts": [
-    "World Cup Stadium",
-    "World Cup Stadium (Seongsan)"
-   ],
-   "subsumed": true
-  },
-  {
-   "id": "P:T3:yangjeong",
-   "tier": "T3",
+   "id": "P:T3b:yangjeong",
+   "tier": "T3b",
    "name": "yangjeong",
    "cost": 3,
    "cluster_ids": [
@@ -1445,11 +1699,15 @@
    "texts": [
     "Yangjeong"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:yangpyeong",
-   "tier": "T3",
+   "id": "P:T3b:yangpyeong",
+   "tier": "T3b",
    "name": "yangpyeong",
    "cost": 3,
    "cluster_ids": [
@@ -1464,11 +1722,15 @@
    "texts": [
     "Yangpyeong"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:yongmun",
-   "tier": "T3",
+   "id": "P:T3b:yongmun",
+   "tier": "T3b",
    "name": "yongmun",
    "cost": 3,
    "cluster_ids": [
@@ -1483,11 +1745,15 @@
    "texts": [
     "Yongmun"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
-   "id": "P:T3:yongsan",
-   "tier": "T3",
+   "id": "P:T3b:yongsan",
+   "tier": "T3b",
    "name": "yongsan",
    "cost": 3,
    "cluster_ids": [
@@ -1504,6 +1770,10 @@
     "Yongsan",
     "Yongsan (Seobu Branch Court‧Seobu Prosecutor's Office)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   }
  ]

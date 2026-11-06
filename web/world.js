@@ -2,12 +2,12 @@
 // 번들은 pipeline/06_build_web_data.py가 만든다 (한국만 = kr_<rs>.json, 한국+타이베이 = world_<rs>.json).
 
 export const RULESETS = [
-  { key: "strict", file: "kr_strict.json", label: "한국만 · T1", note: "" },
-  { key: "tw_t1", file: "world_tw_t1.json", label: "한국+타이베이 · T1", note: "공식명만" },
-  { key: "tw_t12", file: "world_tw_t12.json", label: "한국+타이베이 · T1+T2", note: "공식명만" },
-  { key: "tw_t123", file: "world_tw_t123.json", label: "한국+타이베이 · T1+T2+T3", note: "공식명만" },
-  { key: "tw_t12_label", file: "world_tw_t12_label.json", label: "참고 · T1+T2 (타이베이 위키데이터 라벨)", note: "공식명 아님" },
-  { key: "tw_t123_label", file: "world_tw_t123_label.json", label: "참고 · T1+T2+T3 (타이베이 위키데이터 라벨)", note: "공식명 아님" },
+  { key: "strict", file: "kr_strict.json", label: "한국만 · T1 (기본)", note: "" },
+  { key: "tw_t1", file: "world_tw_t1.json", label: "한국+타이베이 · T1", note: "현지어 라벨 포함" },
+  { key: "tw_t12", file: "world_tw_t12.json", label: "한국+타이베이 · T1+T2", note: "현지어 라벨 포함" },
+  { key: "tw_t123", file: "world_tw_t123.json", label: "한국+타이베이 · T1+T2+T3a", note: "현지어 라벨 포함" },
+  { key: "tw_t12_official", file: "world_tw_t12_official.json", label: "참고 · T1+T2 공식명만", note: "공식명만" },
+  { key: "tw_t123b", file: "world_tw_t123b.json", label: "참고 · T1+T2+T3a+T3b (로마자 우연 일치)", note: "T3b 포함" },
 ];
 
 export const COUNTRY_KO = { KR: "한국", TW: "대만" };
@@ -25,10 +25,15 @@ export function clusterCountry(c) {
 export const CROSS_COLOR = "#ff6a00";
 export function warpStyle(portal, warpColor) {
   if (portal.x) return { color: CROSS_COLOR, weight: 2.6, opacity: 0.85, dashArray: portal.tier === "T1" ? null : "10 4" };
-  const dash = { T1: "4 6", T2: "2 4", T3: "1 5" }[portal.tier] || "4 6";
+  const dash = { T1: "4 6", T2: "2 4", T3a: "1 5", T3b: "1 8" }[portal.tier] || "4 6";
   return { color: warpColor, weight: 1.6, opacity: 0.55, dashArray: dash };
 }
 
 export function tierLabel(tier) {
-  return { T1: "T1 같은 이름", T2: "T2 한자 이체자", T3: "T3 영문명" }[tier] || tier;
+  return { T1: "T1 같은 이름", T2: "T2 한자 이체자", T3a: "T3a 영어 번역명", T3b: "T3b 로마자 우연 일치" }[tier] || tier;
+}
+
+// 4차 Q6-1: 포탈 신뢰도 (이름 출처 등급 중 가장 낮은 것). high = 공식명, medium = 현지어 라벨, low = 외국어 라벨
+export function confidenceLabel(conf) {
+  return { high: "공식명", medium: "현지어 라벨(준공식)", low: "외국어 라벨(신뢰도 낮음)" }[conf] || "";
 }

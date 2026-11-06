@@ -1,12 +1,12 @@
-# Phase 1 (한국 + 타이베이) T1만. 3차 B3 비교용 ruleset 3종 중 1.
-# 공식명만 매칭에 쓴다 (사용자 지시). 한국: 표준데이터(kric_std) 한글 역명. 타이베이: Wikidata 공식명(P1448) — 범위 내 0건.
+# Phase 1 (한국 + 타이베이) T1만. 4차 기본 ruleset 3종 중 1.
+# 4차 Q6-1 (2026-11-06 사용자 결정): 이름 출처 등급 official + native_label. 타이베이 역의 zh-Hant Wikidata 라벨은 현지어 라벨(준공식)로 인정.
+# 현지어가 아닌 라벨(타이베이 역의 en·ko 라벨)은 T1·T2에 쓰지 않는다. 한국 역의 중국어 번역명도 현지어가 아니라 제외(native_only).
 extends: strict
 name: tw_t1
-description: "한국+타이베이, T1만 (공식명만)"
+description: "한국+타이베이, T1만 (공식명 + 현지어 라벨)"
 portals:
   T1:
     langs: ["ko", "zh"]
     scripts: ["Hang", "Hant"]
-    sources: ["kric_std", "wikidata_p1448"]
-  # 더 싼 등급 포탈이 이미 같은 클러스터를 다 잇고 있으면 비싼 등급 포탈은 만들지 않는다 (T1 '시청' ⊇ T3 'city hall')
+  # 더 싼 등급 포탈이 이미 같은 클러스터를 다 잇고 있으면 비싼 등급 포탈은 만들지 않는다 (T1 '시청' ⊇ T3a 'city hall')
   dedupe_subsumed: true

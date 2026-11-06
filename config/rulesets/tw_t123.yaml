@@ -1,22 +1,39 @@
-# Phase 1 T1 + T2 + T3 (영어명 정확 일치). 3차 B3.
-# T3 이름: 한국 = 표준데이터 영문역사명(kric_std), 타이베이 = 공식 영문명(wikidata_p1448).
+# Phase 1 T1 + T2 + T3a (번역형 영어명 정확 일치). 4차 기본 ruleset 3종 중 3.
+# 4차 Q6-6 (2026-11-06 사용자 결정): T3를 T3a(번역형, 예: City Hall)와 T3b(로마자 표기가 우연히 같은 경우, 예: 성남 ↔ 석남 Seongnam)로
+# 나누고 T3b는 기본으로 끈다. 번역형/로마자형 판정 = 정규화된 영어명에 translation_words의 영단어가 하나라도 있으면 번역형.
+# 4차 Q6-1: 영어 라벨(타이베이 역의 en Wikidata 라벨 = foreign_label)은 T3에서만 쓰고, 그 라벨로 맞은 포탈은 신뢰도 low로 표시한다.
+# T3 이름: 한국 = 표준데이터 영문역사명(kric_std), 타이베이 = 공식 영문명(P1448) 또는 en 라벨.
 extends: tw_t12
 name: tw_t123
-description: "한국+타이베이, T1 + T2 + T3 (공식명만)"
+description: "한국+타이베이, T1 + T2 + T3a (영어 번역명, 영어 라벨은 신뢰도 low)"
 portals:
-  T3:
+  T3a: &t3
     enabled: true
     cost: 3
     langs: ["en"]
     scripts: ["Latn"]
     kinds: ["primary"]
-    official_only: true
-    sources: ["kric_std", "wikidata_p1448"]
-    # 정규화된 이름의 글자가 선언한 문자 체계(Hani/Hant/Latn)인지 검사. 표준데이터 대구 6역의 한자역사명이 '한자가없음'이다
+    grades: ["official", "native_label", "foreign_label"]
+    native_only: false
+    # 한국 쪽은 표준데이터 영문역사명만 (다국어 파일 영문명 제외, 3차와 같음)
+    sources: ["kric_std", "wikidata_p1448", "wikidata_label"]
     script_check: true
+    en_type: translation
+    translation_words: [city, hall, univ, university, nat, natl, "nat'l", national, education, stadium, sports, complex, airport,
+                        terminal, park, market, hospital, office, center, centre, plaza, bridge, port, harbor, harbour, tower,
+                        square, gate, medical, court, courts, prosecutors, church, temple, palace, museum, zoo, garden, lake, beach,
+                        mountain, industrial, science, technology, techno, valley, expo, exhibition, international, business,
+                        culture, cultural, arts, world, cup, olympic, grand, memorial, hall, library, government, county,
+                        district, provincial, metropolitan, station, bus, express, central, new, old, east, west, south, north,
+                        river, stream, island, hill, forest, mall, outlet, wharf, fishing, pier, tourist, resort, spa, hot,
+                        springs, airbase, base, army, navy, police, fire, school, college, institute, campus, research, cemetery]
     normalize:
       casefold: true
       char_map: {"’": "'", "‘": "'", "–": "-", "—": "-"}
       # 대소문자 접기 뒤에 적용. Wikidata 영문 라벨의 ' Station' 꼬리 (공식명에는 대개 없다)
       remove_suffixes: [" station"]
       ignore_texts: ["-"]
+  T3b:
+    <<: *t3
+    enabled: false
+    en_type: romanization

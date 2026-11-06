@@ -20,45 +20,45 @@
   }
  },
  "stats": {
-  "pairs": 884540,
-  "pairs_reachable_without_warp": 459986,
-  "pairs_warp_shortens": 191288,
-  "pairs_cross_component": 424554,
-  "pairs_unique_optimum": 610129,
+  "pairs": 882660,
+  "pairs_reachable_without_warp": 459694,
+  "pairs_warp_shortens": 190782,
+  "pairs_cross_component": 422966,
+  "pairs_unique_optimum": 612045,
   "optimal_count_hist": {
-   "1": 610129,
-   "2": 181329,
-   "3": 44922,
-   "4": 26081,
-   "5": 6963,
-   "6": 7380,
-   "7": 2869,
-   "8": 2055,
-   "9": 782,
-   "10": 2030
+   "1": 612045,
+   "2": 177688,
+   "3": 46266,
+   "4": 25155,
+   "5": 6443,
+   "6": 7621,
+   "7": 2651,
+   "8": 1929,
+   "9": 724,
+   "10": 2138
   },
-  "candidates_shortcut": 71710,
-  "candidates_crosscity": 232118,
-  "pool_shortcut_easy": 962,
-  "pool_shortcut_normal": 26598,
-  "pool_shortcut_hard": 44150,
-  "pool_crosscity_easy": 21661,
-  "pool_crosscity_normal": 86063,
-  "pool_crosscity_hard": 124394,
+  "candidates_shortcut": 71866,
+  "candidates_crosscity": 234812,
+  "pool_shortcut_easy": 912,
+  "pool_shortcut_normal": 26536,
+  "pool_shortcut_hard": 44418,
+  "pool_crosscity_easy": 21854,
+  "pool_crosscity_normal": 87300,
+  "pool_crosscity_hard": 125658,
   "calibration": {
-   "easy->easy": 11,
+   "easy->easy": 8,
    "easy->normal": 3,
    "easy->hard": 10,
-   "normal->easy": 3,
-   "normal->normal": 15,
-   "normal->hard": 22,
+   "normal->easy": 1,
+   "normal->normal": 14,
+   "normal->hard": 25,
    "hard->easy": 0,
    "hard->normal": 20,
    "hard->hard": 20
   },
   "calibration_expanded_median": {
-   "easy": 16.0,
-   "normal": 40.5,
+   "easy": 20,
+   "normal": 41.5,
    "hard": 51.0
   }
  },
@@ -67,40 +67,40 @@
   "P048",
   "P011",
   "P042",
-  "P093",
+  "P092",
   "P030",
   "P001",
-  "P096",
-  "P090",
+  "P087",
+  "P084",
   "P065",
   "P066",
   "P032",
-  "P097",
+  "P096",
   "P057",
   "P037",
-  "P081",
+  "P080",
   "P008",
   "P052",
   "P014",
-  "P087",
+  "P086",
   "P027",
   "P058",
-  "P089",
-  "P025",
   "P100",
+  "P025",
+  "P099",
   "P038",
   "P050",
-  "P075",
+  "P074",
   "P045",
   "P067",
   "P051",
   "P036",
-  "P076",
+  "P072",
   "P018",
   "P034",
-  "P104",
+  "P101",
   "P068",
-  "P074",
+  "P075",
   "P010",
   "P003",
   "P043",
@@ -108,9 +108,9 @@
   "P026",
   "P005",
   "P071",
-  "P098",
+  "P097",
   "P047",
-  "P084",
+  "P083",
   "P033",
   "P060",
   "P046",
@@ -118,26 +118,25 @@
   "P016",
   "P069",
   "P070",
-  "P102",
-  "P092",
+  "P077",
+  "P091",
   "P054",
   "P023",
-  "P083",
+  "P094",
   "P028",
   "P029",
   "P031",
-  "P080",
+  "P095",
   "P061",
   "P006",
   "P056",
-  "P095",
+  "P081",
   "P064",
   "P015",
   "P049",
-  "P072",
   "P021",
-  "P077",
-  "P086",
+  "P076",
+  "P089",
   "P073",
   "P062",
   "P009",
@@ -147,13 +146,13 @@
   "P035",
   "P040",
   "P004",
-  "P091",
+  "P090",
   "P024",
   "P041",
-  "P099",
+  "P098",
   "P059",
   "P085",
-  "P094",
+  "P093",
   "P039",
   "P055",
   "P022",
@@ -163,9 +162,7 @@
   "P013",
   "P078",
   "P020",
-  "P101",
   "P088",
-  "P103",
   "P017"
  ],
  "puzzles": [
@@ -315,8 +312,8 @@
    "from_label": "부산 부산진",
    "to_label": "부산 월내",
    "cost_warp": 3,
-   "cost_no_warp": 22,
-   "savings": 19,
+   "cost_no_warp": 21,
+   "savings": 18,
    "optimal_paths": 1,
    "warps": 1,
    "rides": 2,
@@ -361,8 +358,8 @@
    "from_label": "부산 서생",
    "to_label": "부산 좌천",
    "cost_warp": 3,
-   "cost_no_warp": 22,
-   "savings": 19,
+   "cost_no_warp": 21,
+   "savings": 18,
    "optimal_paths": 1,
    "warps": 1,
    "rides": 2,
@@ -407,8 +404,8 @@
    "from_label": "부산 좌천",
    "to_label": "부산 초량",
    "cost_warp": 3,
-   "cost_no_warp": 22,
-   "savings": 19,
+   "cost_no_warp": 21,
+   "savings": 18,
    "optimal_paths": 1,
    "warps": 1,
    "rides": 2,
@@ -440,144 +437,6 @@
     }
    ],
    "id": "P006",
-   "intuition_cost": 3,
-   "intuition_expanded": 4,
-   "intuition_score": 1.0,
-   "difficulty_calibrated": "easy"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "easy",
-   "from": "범내골#1",
-   "to": "부전#2",
-   "from_label": "부산 범내골",
-   "to_label": "부산 부전",
-   "cost_warp": 3,
-   "cost_no_warp": 8,
-   "savings": 5,
-   "optimal_paths": 1,
-   "warps": 1,
-   "rides": 2,
-   "warp_portals": [
-    "부전"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "범내골#1",
-     "to": "서면#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서면#1",
-     "to": "부전#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "부전",
-     "from": "부전#1",
-     "to": "부전#2"
-    }
-   ],
-   "id": "P007",
-   "intuition_cost": 3,
-   "intuition_expanded": 4,
-   "intuition_score": 1.0,
-   "difficulty_calibrated": "easy"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "easy",
-   "from": "부암#1",
-   "to": "부전#2",
-   "from_label": "부산 부암",
-   "to_label": "부산 부전",
-   "cost_warp": 3,
-   "cost_no_warp": 8,
-   "savings": 5,
-   "optimal_paths": 1,
-   "warps": 1,
-   "rides": 2,
-   "warp_portals": [
-    "부전"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "부암#1",
-     "to": "서면#1",
-     "lines": [
-      "busan-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서면#1",
-     "to": "부전#1",
-     "lines": [
-      "busan-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "부전",
-     "from": "부전#1",
-     "to": "부전#2"
-    }
-   ],
-   "id": "P008",
-   "intuition_cost": 3,
-   "intuition_expanded": 4,
-   "intuition_score": 1.0,
-   "difficulty_calibrated": "easy"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "easy",
-   "from": "거제해맞이#1",
-   "to": "서면#1",
-   "from_label": "부산 거제해맞이",
-   "to_label": "부산 서면",
-   "cost_warp": 3,
-   "cost_no_warp": 6,
-   "savings": 3,
-   "optimal_paths": 1,
-   "warps": 1,
-   "rides": 2,
-   "warp_portals": [
-    "부전"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "거제해맞이#1",
-     "to": "부전#2",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "부전",
-     "from": "부전#2",
-     "to": "부전#1"
-    },
-    {
-     "type": "ride",
-     "from": "부전#1",
-     "to": "서면#1",
-     "lines": [
-      "busan-1"
-     ]
-    }
-   ],
-   "id": "P009",
    "intuition_cost": 3,
    "intuition_expanded": 4,
    "intuition_score": 1.0,
@@ -671,7 +530,7 @@
      ]
     }
    ],
-   "id": "P010",
+   "id": "P007",
    "intuition_cost": 9,
    "intuition_expanded": 10,
    "intuition_score": 1.0,
@@ -765,7 +624,7 @@
      ]
     }
    ],
-   "id": "P011",
+   "id": "P008",
    "intuition_cost": 48,
    "intuition_expanded": 85,
    "intuition_score": 0.188,
@@ -859,7 +718,7 @@
      ]
     }
    ],
-   "id": "P012",
+   "id": "P009",
    "intuition_cost": 46,
    "intuition_expanded": 83,
    "intuition_score": 0.196,
@@ -912,7 +771,7 @@
      "to": "중동#2"
     }
    ],
-   "id": "P013",
+   "id": "P010",
    "intuition_cost": 37,
    "intuition_expanded": 38,
    "intuition_score": 0.108,
@@ -973,7 +832,7 @@
      ]
     }
    ],
-   "id": "P014",
+   "id": "P011",
    "intuition_cost": 38,
    "intuition_expanded": 39,
    "intuition_score": 0.132,
@@ -1034,7 +893,7 @@
      ]
     }
    ],
-   "id": "P015",
+   "id": "P012",
    "intuition_cost": 39,
    "intuition_expanded": 40,
    "intuition_score": 0.128,
@@ -1103,7 +962,7 @@
      ]
     }
    ],
-   "id": "P016",
+   "id": "P013",
    "intuition_cost": 40,
    "intuition_expanded": 41,
    "intuition_score": 0.15,
@@ -1188,7 +1047,7 @@
      ]
     }
    ],
-   "id": "P017",
+   "id": "P014",
    "intuition_cost": 42,
    "intuition_expanded": 48,
    "intuition_score": 0.19,
@@ -1281,7 +1140,7 @@
      ]
     }
    ],
-   "id": "P018",
+   "id": "P015",
    "intuition_cost": 42,
    "intuition_expanded": 43,
    "intuition_score": 0.214,
@@ -1334,7 +1193,7 @@
      "to": "용문#2"
     }
    ],
-   "id": "P019",
+   "id": "P016",
    "intuition_cost": 38,
    "intuition_expanded": 75,
    "intuition_score": 0.105,
@@ -1395,7 +1254,7 @@
      ]
     }
    ],
-   "id": "P020",
+   "id": "P017",
    "intuition_cost": 37,
    "intuition_expanded": 89,
    "intuition_score": 0.135,
@@ -1464,7 +1323,7 @@
      ]
     }
    ],
-   "id": "P021",
+   "id": "P018",
    "intuition_cost": 10,
    "intuition_expanded": 11,
    "intuition_score": 0.6,
@@ -1549,7 +1408,7 @@
      ]
     }
    ],
-   "id": "P022",
+   "id": "P019",
    "intuition_cost": 48,
    "intuition_expanded": 55,
    "intuition_score": 0.167,
@@ -1642,7 +1501,7 @@
      ]
     }
    ],
-   "id": "P023",
+   "id": "P020",
    "intuition_cost": 47,
    "intuition_expanded": 54,
    "intuition_score": 0.191,
@@ -1735,7 +1594,7 @@
      "to": "송정#2"
     }
    ],
-   "id": "P024",
+   "id": "P021",
    "intuition_cost": 41,
    "intuition_expanded": 42,
    "intuition_score": 0.22,
@@ -1836,7 +1695,7 @@
      ]
     }
    ],
-   "id": "P025",
+   "id": "P022",
    "intuition_cost": 48,
    "intuition_expanded": 55,
    "intuition_score": 0.208,
@@ -1945,7 +1804,7 @@
      "to": "중앙#2"
     }
    ],
-   "id": "P026",
+   "id": "P023",
    "intuition_cost": 42,
    "intuition_expanded": 48,
    "intuition_score": 0.262,
@@ -2063,7 +1922,7 @@
      "to": "양정#2"
     }
    ],
-   "id": "P027",
+   "id": "P024",
    "intuition_cost": 37,
    "intuition_expanded": 38,
    "intuition_score": 0.324,
@@ -2180,7 +2039,7 @@
      ]
     }
    ],
-   "id": "P028",
+   "id": "P025",
    "intuition_cost": 44,
    "intuition_expanded": 47,
    "intuition_score": 0.273,
@@ -2297,7 +2156,7 @@
      "to": "중앙#2"
     }
    ],
-   "id": "P029",
+   "id": "P026",
    "intuition_cost": 43,
    "intuition_expanded": 51,
    "intuition_score": 0.279,
@@ -2423,7 +2282,7 @@
      ]
     }
    ],
-   "id": "P030",
+   "id": "P027",
    "intuition_cost": 38,
    "intuition_expanded": 39,
    "intuition_score": 0.342,
@@ -2548,7 +2407,7 @@
      ]
     }
    ],
-   "id": "P031",
+   "id": "P028",
    "intuition_cost": 39,
    "intuition_expanded": 40,
    "intuition_score": 0.333,
@@ -2625,7 +2484,7 @@
      ]
     }
    ],
-   "id": "P032",
+   "id": "P029",
    "intuition_cost": 9,
    "intuition_expanded": 10,
    "intuition_score": 0.778,
@@ -2634,143 +2493,82 @@
   {
    "kind": "shortcut",
    "difficulty": "normal",
-   "from": "개운포#1",
-   "to": "초량#1",
-   "from_label": "부산 개운포",
-   "to_label": "부산 초량",
-   "cost_warp": 9,
-   "cost_no_warp": 28,
+   "from": "도심#1",
+   "to": "한대앞#1",
+   "from_label": "수도권 도심",
+   "to_label": "수도권 한대앞",
+   "cost_warp": 14,
+   "cost_no_warp": 33,
    "savings": 19,
    "optimal_paths": 1,
-   "warps": 1,
-   "rides": 8,
+   "warps": 2,
+   "rides": 12,
    "warp_portals": [
-    "좌천"
+    "양정",
+    "중앙"
    ],
    "optimal": [
     {
      "type": "ride",
-     "from": "개운포#1",
-     "to": "덕하#1",
+     "from": "도심#1",
+     "to": "덕소#1",
      "lines": [
-      "donghae"
+      "gyeongui-jungang"
      ]
     },
     {
      "type": "ride",
-     "from": "덕하#1",
-     "to": "망양#1",
+     "from": "덕소#1",
+     "to": "양정#2",
      "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "망양#1",
-     "to": "남창#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "남창#1",
-     "to": "서생#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서생#1",
-     "to": "월내#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "월내#1",
-     "to": "좌천#2",
-     "lines": [
-      "donghae"
+      "gyeongui-jungang"
      ]
     },
     {
      "type": "warp",
-     "portal": "좌천",
-     "from": "좌천#2",
-     "to": "좌천#1"
+     "portal": "양정",
+     "from": "양정#2",
+     "to": "양정#1"
     },
     {
      "type": "ride",
-     "from": "좌천#1",
-     "to": "부산진#1",
+     "from": "양정#1",
+     "to": "부전#1",
      "lines": [
       "busan-1"
      ]
     },
     {
      "type": "ride",
-     "from": "부산진#1",
-     "to": "초량#1",
+     "from": "부전#1",
+     "to": "서면#1",
      "lines": [
       "busan-1"
      ]
-    }
-   ],
-   "id": "P033",
-   "intuition_cost": 9,
-   "intuition_expanded": 10,
-   "intuition_score": 1.0,
-   "difficulty_calibrated": "easy"
-  },
-  {
-   "kind": "shortcut",
-   "difficulty": "normal",
-   "from": "남창#1",
-   "to": "남포#1",
-   "from_label": "부산 남창",
-   "to_label": "부산 남포",
-   "cost_warp": 9,
-   "cost_no_warp": 28,
-   "savings": 19,
-   "optimal_paths": 1,
-   "warps": 1,
-   "rides": 8,
-   "warp_portals": [
-    "좌천"
-   ],
-   "optimal": [
+    },
     {
      "type": "ride",
-     "from": "남창#1",
-     "to": "서생#1",
+     "from": "서면#1",
+     "to": "범내골#1",
      "lines": [
-      "donghae"
+      "busan-1"
      ]
     },
     {
      "type": "ride",
-     "from": "서생#1",
-     "to": "월내#1",
+     "from": "범내골#1",
+     "to": "범일#1",
      "lines": [
-      "donghae"
+      "busan-1"
      ]
     },
     {
      "type": "ride",
-     "from": "월내#1",
-     "to": "좌천#2",
+     "from": "범일#1",
+     "to": "좌천#1",
      "lines": [
-      "donghae"
+      "busan-1"
      ]
-    },
-    {
-     "type": "warp",
-     "portal": "좌천",
-     "from": "좌천#2",
-     "to": "좌천#1"
     },
     {
      "type": "ride",
@@ -2805,19 +2603,79 @@
      ]
     },
     {
-     "type": "ride",
+     "type": "warp",
+     "portal": "중앙",
      "from": "중앙#1",
-     "to": "남포#1",
+     "to": "중앙#2"
+    },
+    {
+     "type": "ride",
+     "from": "중앙#2",
+     "to": "한대앞#1",
      "lines": [
-      "busan-1"
+      "seoul-4-ansan",
+      "suin-bundang-suin"
      ]
     }
    ],
-   "id": "P034",
-   "intuition_cost": 9,
-   "intuition_expanded": 10,
-   "intuition_score": 1.0,
-   "difficulty_calibrated": "easy"
+   "id": "P030",
+   "intuition_cost": 37,
+   "intuition_expanded": 40,
+   "intuition_score": 0.378,
+   "difficulty_calibrated": "hard"
+  },
+  {
+   "kind": "shortcut",
+   "difficulty": "normal",
+   "from": "금곡#2",
+   "to": "증산#2",
+   "from_label": "수도권 금곡",
+   "to_label": "수도권 증산",
+   "cost_warp": 4,
+   "cost_no_warp": 22,
+   "savings": 18,
+   "optimal_paths": 1,
+   "warps": 2,
+   "rides": 2,
+   "warp_portals": [
+    "금곡",
+    "증산"
+   ],
+   "optimal": [
+    {
+     "type": "warp",
+     "portal": "금곡",
+     "from": "금곡#2",
+     "to": "금곡#1"
+    },
+    {
+     "type": "ride",
+     "from": "금곡#1",
+     "to": "호포#1",
+     "lines": [
+      "busan-2"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "호포#1",
+     "to": "증산#1",
+     "lines": [
+      "busan-2"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "증산",
+     "from": "증산#1",
+     "to": "증산#2"
+    }
+   ],
+   "id": "P031",
+   "intuition_cost": 29,
+   "intuition_expanded": 31,
+   "intuition_score": 0.138,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "shortcut",
@@ -2928,7 +2786,7 @@
      "to": "운천#2"
     }
    ],
-   "id": "P035",
+   "id": "P032",
    "intuition_cost": 28,
    "intuition_expanded": 31,
    "intuition_score": 0.429,
@@ -3051,7 +2909,7 @@
      ]
     }
    ],
-   "id": "P036",
+   "id": "P033",
    "intuition_cost": 29,
    "intuition_expanded": 32,
    "intuition_score": 0.448,
@@ -3174,7 +3032,7 @@
      ]
     }
    ],
-   "id": "P037",
+   "id": "P034",
    "intuition_cost": 54,
    "intuition_expanded": 91,
    "intuition_score": 0.241,
@@ -3305,7 +3163,7 @@
      ]
     }
    ],
-   "id": "P038",
+   "id": "P035",
    "intuition_cost": 55,
    "intuition_expanded": 92,
    "intuition_score": 0.255,
@@ -3436,7 +3294,7 @@
      ]
     }
    ],
-   "id": "P039",
+   "id": "P036",
    "intuition_cost": 51,
    "intuition_expanded": 103,
    "intuition_score": 0.275,
@@ -3584,7 +3442,7 @@
      "to": "중앙#2"
     }
    ],
-   "id": "P040",
+   "id": "P037",
    "intuition_cost": 22,
    "intuition_expanded": 27,
    "intuition_score": 0.727,
@@ -3725,7 +3583,7 @@
      ]
     }
    ],
-   "id": "P041",
+   "id": "P038",
    "intuition_cost": 49,
    "intuition_expanded": 56,
    "intuition_score": 0.306,
@@ -3866,7 +3724,7 @@
      ]
     }
    ],
-   "id": "P042",
+   "id": "P039",
    "intuition_cost": 50,
    "intuition_expanded": 63,
    "intuition_score": 0.3,
@@ -4007,7 +3865,7 @@
      ]
     }
    ],
-   "id": "P043",
+   "id": "P040",
    "intuition_cost": 48,
    "intuition_expanded": 52,
    "intuition_score": 0.312,
@@ -4148,7 +4006,7 @@
      ]
     }
    ],
-   "id": "P044",
+   "id": "P041",
    "intuition_cost": 48,
    "intuition_expanded": 52,
    "intuition_score": 0.312,
@@ -4289,7 +4147,7 @@
      "to": "동백#2"
     }
    ],
-   "id": "P045",
+   "id": "P042",
    "intuition_cost": 48,
    "intuition_expanded": 51,
    "intuition_score": 0.312,
@@ -4430,7 +4288,7 @@
      ]
     }
    ],
-   "id": "P046",
+   "id": "P043",
    "intuition_cost": 48,
    "intuition_expanded": 50,
    "intuition_score": 0.312,
@@ -4586,7 +4444,7 @@
      "to": "중앙#2"
     }
    ],
-   "id": "P047",
+   "id": "P044",
    "intuition_cost": 21,
    "intuition_expanded": 26,
    "intuition_score": 0.81,
@@ -4751,7 +4609,7 @@
      ]
     }
    ],
-   "id": "P048",
+   "id": "P045",
    "intuition_cost": 54,
    "intuition_expanded": 84,
    "intuition_score": 0.333,
@@ -4924,7 +4782,7 @@
      ]
     }
    ],
-   "id": "P049",
+   "id": "P046",
    "intuition_cost": 50,
    "intuition_expanded": 69,
    "intuition_score": 0.38,
@@ -5066,7 +4924,7 @@
      ]
     }
    ],
-   "id": "P050",
+   "id": "P047",
    "intuition_cost": 43,
    "intuition_expanded": 62,
    "intuition_score": 0.349,
@@ -5198,7 +5056,7 @@
      ]
     }
    ],
-   "id": "P051",
+   "id": "P048",
    "intuition_cost": 50,
    "intuition_expanded": 123,
    "intuition_score": 0.28,
@@ -5339,7 +5197,7 @@
      ]
     }
    ],
-   "id": "P052",
+   "id": "P049",
    "intuition_cost": 47,
    "intuition_expanded": 51,
    "intuition_score": 0.319,
@@ -5480,7 +5338,7 @@
      ]
     }
    ],
-   "id": "P053",
+   "id": "P050",
    "intuition_cost": 51,
    "intuition_expanded": 52,
    "intuition_score": 0.294,
@@ -5621,7 +5479,7 @@
      ]
     }
    ],
-   "id": "P054",
+   "id": "P051",
    "intuition_cost": 55,
    "intuition_expanded": 57,
    "intuition_score": 0.273,
@@ -5770,7 +5628,7 @@
      ]
     }
    ],
-   "id": "P055",
+   "id": "P052",
    "intuition_cost": 54,
    "intuition_expanded": 56,
    "intuition_score": 0.296,
@@ -5919,7 +5777,7 @@
      ]
     }
    ],
-   "id": "P056",
+   "id": "P053",
    "intuition_cost": 42,
    "intuition_expanded": 45,
    "intuition_score": 0.381,
@@ -6061,7 +5919,7 @@
      ]
     }
    ],
-   "id": "P057",
+   "id": "P054",
    "intuition_cost": 37,
    "intuition_expanded": 39,
    "intuition_score": 0.405,
@@ -6203,7 +6061,7 @@
      ]
     }
    ],
-   "id": "P058",
+   "id": "P055",
    "intuition_cost": 41,
    "intuition_expanded": 60,
    "intuition_score": 0.366,
@@ -6344,7 +6202,7 @@
      ]
     }
    ],
-   "id": "P059",
+   "id": "P056",
    "intuition_cost": 39,
    "intuition_expanded": 40,
    "intuition_score": 0.385,
@@ -6430,7 +6288,7 @@
      ]
     }
    ],
-   "id": "P060",
+   "id": "P057",
    "intuition_cost": 31,
    "intuition_expanded": 41,
    "intuition_score": 0.258,
@@ -6516,7 +6374,7 @@
      ]
     }
    ],
-   "id": "P061",
+   "id": "P058",
    "intuition_cost": 35,
    "intuition_expanded": 45,
    "intuition_score": 0.229,
@@ -6602,7 +6460,7 @@
      "to": "용산#1"
     }
    ],
-   "id": "P062",
+   "id": "P059",
    "intuition_cost": 43,
    "intuition_expanded": 82,
    "intuition_score": 0.186,
@@ -6688,7 +6546,7 @@
      ]
     }
    ],
-   "id": "P063",
+   "id": "P060",
    "intuition_cost": 55,
    "intuition_expanded": 133,
    "intuition_score": 0.145,
@@ -6698,9 +6556,9 @@
    "kind": "crosscity",
    "difficulty": "easy",
    "from": "가야#1",
-   "to": "공덕#1",
+   "to": "강남#1",
    "from_label": "부산 가야",
-   "to_label": "수도권 공덕",
+   "to_label": "수도권 강남",
    "cost_warp": 8,
    "cost_no_warp": null,
    "savings": null,
@@ -6708,7 +6566,7 @@
    "warps": 1,
    "rides": 7,
    "warp_portals": [
-    "시청"
+    "교대"
    ],
    "optimal": [
     {
@@ -6738,46 +6596,46 @@
     {
      "type": "ride",
      "from": "부전#1",
-     "to": "양정#1",
+     "to": "거제해맞이#1",
      "lines": [
-      "busan-1"
+      "donghae"
      ]
     },
     {
      "type": "ride",
-     "from": "양정#1",
-     "to": "시청#1",
+     "from": "거제해맞이#1",
+     "to": "거제#1",
      "lines": [
-      "busan-1"
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "거제#1",
+     "to": "교대#1",
+     "lines": [
+      "donghae"
      ]
     },
     {
      "type": "warp",
-     "portal": "시청",
-     "from": "시청#1",
-     "to": "시청#3"
+     "portal": "교대",
+     "from": "교대#1",
+     "to": "교대#3"
     },
     {
      "type": "ride",
-     "from": "시청#3",
-     "to": "서울#1",
+     "from": "교대#3",
+     "to": "강남#1",
      "lines": [
-      "seoul-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "서울#1",
-     "to": "공덕#1",
-     "lines": [
-      "arex"
+      "seoul-2"
      ]
     }
    ],
-   "id": "P064",
-   "intuition_cost": 40,
-   "intuition_expanded": 41,
-   "intuition_score": 0.2,
+   "id": "P061",
+   "intuition_cost": 39,
+   "intuition_expanded": 40,
+   "intuition_score": 0.205,
    "difficulty_calibrated": "hard"
   },
   {
@@ -6861,7 +6719,7 @@
      ]
     }
    ],
-   "id": "P065",
+   "id": "P062",
    "intuition_cost": 61,
    "intuition_expanded": 92,
    "intuition_score": 0.131,
@@ -6947,7 +6805,7 @@
      ]
     }
    ],
-   "id": "P066",
+   "id": "P063",
    "intuition_cost": 34,
    "intuition_expanded": 35,
    "intuition_score": 0.235,
@@ -7033,7 +6891,7 @@
      "to": "고촌#1"
     }
    ],
-   "id": "P067",
+   "id": "P064",
    "intuition_cost": 30,
    "intuition_expanded": 48,
    "intuition_score": 0.267,
@@ -7119,7 +6977,7 @@
      "to": "송정#1"
     }
    ],
-   "id": "P068",
+   "id": "P065",
    "intuition_cost": 15,
    "intuition_expanded": 18,
    "intuition_score": 0.533,
@@ -7205,7 +7063,7 @@
      ]
     }
    ],
-   "id": "P069",
+   "id": "P066",
    "intuition_cost": 30,
    "intuition_expanded": 81,
    "intuition_score": 0.267,
@@ -7291,7 +7149,7 @@
      ]
     }
    ],
-   "id": "P070",
+   "id": "P067",
    "intuition_cost": 13,
    "intuition_expanded": 14,
    "intuition_score": 0.615,
@@ -7377,7 +7235,7 @@
      ]
     }
    ],
-   "id": "P071",
+   "id": "P068",
    "intuition_cost": 28,
    "intuition_expanded": 38,
    "intuition_score": 0.286,
@@ -7464,7 +7322,7 @@
      "to": "동천#1"
     }
    ],
-   "id": "P072",
+   "id": "P069",
    "intuition_cost": 10,
    "intuition_expanded": 20,
    "intuition_score": 0.8,
@@ -7550,7 +7408,7 @@
      "to": "금곡#1"
     }
    ],
-   "id": "P073",
+   "id": "P070",
    "intuition_cost": 8,
    "intuition_expanded": 9,
    "intuition_score": 1.0,
@@ -7636,7 +7494,7 @@
      ]
     }
    ],
-   "id": "P074",
+   "id": "P071",
    "intuition_cost": 8,
    "intuition_expanded": 9,
    "intuition_score": 1.0,
@@ -7770,7 +7628,7 @@
      ]
     }
    ],
-   "id": "P075",
+   "id": "P072",
    "intuition_cost": 28,
    "intuition_expanded": 137,
    "intuition_score": 0.5,
@@ -7903,7 +7761,7 @@
      ]
     }
    ],
-   "id": "P076",
+   "id": "P073",
    "intuition_cost": 57,
    "intuition_expanded": 110,
    "intuition_score": 0.246,
@@ -8036,7 +7894,7 @@
      ]
     }
    ],
-   "id": "P077",
+   "id": "P074",
    "intuition_cost": 32,
    "intuition_expanded": 84,
    "intuition_score": 0.438,
@@ -8046,9 +7904,9 @@
    "kind": "crosscity",
    "difficulty": "normal",
    "from": "가야#1",
-   "to": "건대입구#1",
+   "to": "신흥#1",
    "from_label": "부산 가야",
-   "to_label": "수도권 건대입구",
+   "to_label": "대전 신흥",
    "cost_warp": 14,
    "cost_no_warp": null,
    "savings": null,
@@ -8056,8 +7914,8 @@
    "warps": 2,
    "rides": 12,
    "warp_portals": [
-    "부전",
-    "종합운동장"
+    "교대",
+    "중앙로"
    ],
    "optimal": [
     {
@@ -8085,14 +7943,8 @@
      ]
     },
     {
-     "type": "warp",
-     "portal": "부전",
-     "from": "부전#1",
-     "to": "부전#2"
-    },
-    {
      "type": "ride",
-     "from": "부전#2",
+     "from": "부전#1",
      "to": "거제해맞이#1",
      "lines": [
       "donghae"
@@ -8109,71 +7961,77 @@
     {
      "type": "ride",
      "from": "거제#1",
-     "to": "종합운동장#1",
+     "to": "교대#1",
      "lines": [
-      "busan-3"
+      "donghae"
      ]
     },
     {
      "type": "warp",
-     "portal": "종합운동장",
-     "from": "종합운동장#1",
-     "to": "종합운동장#2"
+     "portal": "교대",
+     "from": "교대#1",
+     "to": "교대#2"
     },
     {
      "type": "ride",
-     "from": "종합운동장#2",
-     "to": "잠실새내#1",
+     "from": "교대#2",
+     "to": "명덕#1",
      "lines": [
-      "seoul-2"
+      "daegu-1"
      ]
     },
     {
      "type": "ride",
-     "from": "잠실새내#1",
-     "to": "잠실#1",
+     "from": "명덕#1",
+     "to": "반월당#1",
      "lines": [
-      "seoul-2"
+      "daegu-1"
      ]
     },
     {
      "type": "ride",
-     "from": "잠실#1",
-     "to": "잠실나루#1",
+     "from": "반월당#1",
+     "to": "중앙로#1",
      "lines": [
-      "seoul-2"
+      "daegu-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "중앙로",
+     "from": "중앙로#1",
+     "to": "중앙로#2"
+    },
+    {
+     "type": "ride",
+     "from": "중앙로#2",
+     "to": "대전#1",
+     "lines": [
+      "daejeon-1"
      ]
     },
     {
      "type": "ride",
-     "from": "잠실나루#1",
-     "to": "강변#1",
+     "from": "대전#1",
+     "to": "대동#1",
      "lines": [
-      "seoul-2"
+      "daejeon-1"
      ]
     },
     {
      "type": "ride",
-     "from": "강변#1",
-     "to": "구의#1",
+     "from": "대동#1",
+     "to": "신흥#1",
      "lines": [
-      "seoul-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "구의#1",
-     "to": "건대입구#1",
-     "lines": [
-      "seoul-2"
+      "daejeon-1"
      ]
     }
    ],
-   "id": "P078",
-   "intuition_cost": 32,
-   "intuition_expanded": 33,
-   "intuition_score": 0.438,
-   "difficulty_calibrated": "normal"
+   "id": "P075",
+   "intuition_cost": 66,
+   "intuition_expanded": 73,
+   "intuition_score": 0.212,
+   "difficulty_calibrated": "hard"
   },
   {
    "kind": "crosscity",
@@ -8303,7 +8161,7 @@
      ]
     }
    ],
-   "id": "P079",
+   "id": "P076",
    "intuition_cost": 42,
    "intuition_expanded": 43,
    "intuition_score": 0.333,
@@ -8436,7 +8294,7 @@
      ]
     }
    ],
-   "id": "P080",
+   "id": "P077",
    "intuition_cost": 24,
    "intuition_expanded": 25,
    "intuition_score": 0.583,
@@ -8569,7 +8427,7 @@
      ]
     }
    ],
-   "id": "P081",
+   "id": "P078",
    "intuition_cost": 29,
    "intuition_expanded": 30,
    "intuition_score": 0.483,
@@ -8702,7 +8560,7 @@
      ]
     }
    ],
-   "id": "P082",
+   "id": "P079",
    "intuition_cost": 31,
    "intuition_expanded": 32,
    "intuition_score": 0.452,
@@ -8835,7 +8693,7 @@
      "to": "구암#1"
     }
    ],
-   "id": "P083",
+   "id": "P080",
    "intuition_cost": 34,
    "intuition_expanded": 40,
    "intuition_score": 0.412,
@@ -8968,7 +8826,7 @@
      "to": "좌천#1"
     }
    ],
-   "id": "P084",
+   "id": "P081",
    "intuition_cost": 29,
    "intuition_expanded": 30,
    "intuition_score": 0.483,
@@ -9101,7 +8959,7 @@
      ]
     }
    ],
-   "id": "P085",
+   "id": "P082",
    "intuition_cost": 16,
    "intuition_expanded": 17,
    "intuition_score": 0.875,
@@ -9234,9 +9092,9 @@
      ]
     }
    ],
-   "id": "P086",
+   "id": "P083",
    "intuition_cost": 20,
-   "intuition_expanded": 27,
+   "intuition_expanded": 26,
    "intuition_score": 0.7,
    "difficulty_calibrated": "normal"
   },
@@ -9368,7 +9226,7 @@
      ]
     }
    ],
-   "id": "P087",
+   "id": "P084",
    "intuition_cost": 23,
    "intuition_expanded": 132,
    "intuition_score": 0.609,
@@ -9501,7 +9359,7 @@
      ]
     }
    ],
-   "id": "P088",
+   "id": "P085",
    "intuition_cost": 31,
    "intuition_expanded": 49,
    "intuition_score": 0.452,
@@ -9634,7 +9492,7 @@
      ]
     }
    ],
-   "id": "P089",
+   "id": "P086",
    "intuition_cost": 25,
    "intuition_expanded": 26,
    "intuition_score": 0.56,
@@ -9812,7 +9670,7 @@
      ]
     }
    ],
-   "id": "P090",
+   "id": "P087",
    "intuition_cost": 37,
    "intuition_expanded": 40,
    "intuition_score": 0.541,
@@ -9982,7 +9840,7 @@
      ]
     }
    ],
-   "id": "P091",
+   "id": "P088",
    "intuition_cost": 38,
    "intuition_expanded": 41,
    "intuition_score": 0.5,
@@ -10152,7 +10010,7 @@
      ]
     }
    ],
-   "id": "P092",
+   "id": "P089",
    "intuition_cost": 36,
    "intuition_expanded": 39,
    "intuition_score": 0.528,
@@ -10314,7 +10172,7 @@
      ]
     }
    ],
-   "id": "P093",
+   "id": "P090",
    "intuition_cost": 31,
    "intuition_expanded": 32,
    "intuition_score": 0.581,
@@ -10468,7 +10326,7 @@
      ]
     }
    ],
-   "id": "P094",
+   "id": "P091",
    "intuition_cost": 28,
    "intuition_expanded": 39,
    "intuition_score": 0.607,
@@ -10622,7 +10480,7 @@
      ]
     }
    ],
-   "id": "P095",
+   "id": "P092",
    "intuition_cost": 28,
    "intuition_expanded": 39,
    "intuition_score": 0.607,
@@ -10833,7 +10691,7 @@
      ]
     }
    ],
-   "id": "P096",
+   "id": "P093",
    "intuition_cost": 28,
    "intuition_expanded": 65,
    "intuition_score": 0.857,
@@ -11044,7 +10902,7 @@
      ]
     }
    ],
-   "id": "P097",
+   "id": "P094",
    "intuition_cost": 34,
    "intuition_expanded": 73,
    "intuition_score": 0.706,
@@ -11255,10 +11113,221 @@
      ]
     }
    ],
-   "id": "P098",
+   "id": "P095",
    "intuition_cost": 42,
    "intuition_expanded": 84,
    "intuition_score": 0.571,
+   "difficulty_calibrated": "normal"
+  },
+  {
+   "kind": "crosscity",
+   "difficulty": "hard",
+   "from": "개운포#1",
+   "to": "단대오거리#1",
+   "from_label": "부산 개운포",
+   "to_label": "수도권 단대오거리",
+   "cost_warp": 24,
+   "cost_no_warp": null,
+   "savings": null,
+   "optimal_paths": 1,
+   "warps": 4,
+   "rides": 20,
+   "warp_portals": [
+    "좌천",
+    "교대",
+    "중앙로",
+    "신흥"
+   ],
+   "optimal": [
+    {
+     "type": "ride",
+     "from": "개운포#1",
+     "to": "덕하#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "덕하#1",
+     "to": "망양#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "망양#1",
+     "to": "남창#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "남창#1",
+     "to": "서생#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서생#1",
+     "to": "월내#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "월내#1",
+     "to": "좌천#2",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "좌천",
+     "from": "좌천#2",
+     "to": "좌천#1"
+    },
+    {
+     "type": "ride",
+     "from": "좌천#1",
+     "to": "범일#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "범일#1",
+     "to": "범내골#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "범내골#1",
+     "to": "서면#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서면#1",
+     "to": "부전#1",
+     "lines": [
+      "busan-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "부전#1",
+     "to": "거제해맞이#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "거제해맞이#1",
+     "to": "거제#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "거제#1",
+     "to": "교대#1",
+     "lines": [
+      "donghae"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "교대",
+     "from": "교대#1",
+     "to": "교대#2"
+    },
+    {
+     "type": "ride",
+     "from": "교대#2",
+     "to": "명덕#1",
+     "lines": [
+      "daegu-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "명덕#1",
+     "to": "반월당#1",
+     "lines": [
+      "daegu-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "반월당#1",
+     "to": "중앙로#1",
+     "lines": [
+      "daegu-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "중앙로",
+     "from": "중앙로#1",
+     "to": "중앙로#2"
+    },
+    {
+     "type": "ride",
+     "from": "중앙로#2",
+     "to": "대전#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "대전#1",
+     "to": "대동#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "대동#1",
+     "to": "신흥#1",
+     "lines": [
+      "daejeon-1"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "신흥",
+     "from": "신흥#1",
+     "to": "신흥#2"
+    },
+    {
+     "type": "ride",
+     "from": "신흥#2",
+     "to": "단대오거리#1",
+     "lines": [
+      "seoul-8"
+     ]
+    }
+   ],
+   "id": "P096",
+   "intuition_cost": 32,
+   "intuition_expanded": 39,
+   "intuition_score": 0.75,
    "difficulty_calibrated": "normal"
   },
   {
@@ -11466,10 +11535,10 @@
      ]
     }
    ],
-   "id": "P099",
-   "intuition_cost": 54,
-   "intuition_expanded": 59,
-   "intuition_score": 0.444,
+   "id": "P097",
+   "intuition_cost": 56,
+   "intuition_expanded": 62,
+   "intuition_score": 0.429,
    "difficulty_calibrated": "normal"
   },
   {
@@ -11677,7 +11746,7 @@
      ]
     }
    ],
-   "id": "P100",
+   "id": "P098",
    "intuition_cost": 43,
    "intuition_expanded": 47,
    "intuition_score": 0.558,
@@ -11888,7 +11957,7 @@
      ]
     }
    ],
-   "id": "P101",
+   "id": "P099",
    "intuition_cost": 45,
    "intuition_expanded": 49,
    "intuition_score": 0.533,
@@ -12100,7 +12169,7 @@
      ]
     }
    ],
-   "id": "P102",
+   "id": "P100",
    "intuition_cost": 28,
    "intuition_expanded": 51,
    "intuition_score": 0.857,
@@ -12312,222 +12381,10 @@
      ]
     }
    ],
-   "id": "P103",
-   "intuition_cost": 32,
-   "intuition_expanded": 41,
-   "intuition_score": 0.75,
-   "difficulty_calibrated": "normal"
-  },
-  {
-   "kind": "crosscity",
-   "difficulty": "hard",
-   "from": "고진#1",
-   "to": "서부산유통지구#1",
-   "from_label": "수도권 고진",
-   "to_label": "부산 서부산유통지구",
-   "cost_warp": 24,
-   "cost_no_warp": null,
-   "savings": null,
-   "optimal_paths": 1,
-   "warps": 4,
-   "rides": 20,
-   "warp_portals": [
-    "동백",
-    "송정",
-    "화정",
-    "공항"
-   ],
-   "optimal": [
-    {
-     "type": "ride",
-     "from": "고진#1",
-     "to": "용인중앙시장#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "용인중앙시장#1",
-     "to": "김량장#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김량장#1",
-     "to": "명지대#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "명지대#1",
-     "to": "시청·용인대#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "시청·용인대#1",
-     "to": "삼가#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "삼가#1",
-     "to": "초당#1",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "초당#1",
-     "to": "동백#2",
-     "lines": [
-      "everline"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "동백",
-     "from": "동백#2",
-     "to": "동백#1"
-    },
-    {
-     "type": "ride",
-     "from": "동백#1",
-     "to": "벡스코#1",
-     "lines": [
-      "busan-2"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "벡스코#1",
-     "to": "신해운대#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "신해운대#1",
-     "to": "송정#1",
-     "lines": [
-      "donghae"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "송정",
-     "from": "송정#1",
-     "to": "송정#2"
-    },
-    {
-     "type": "ride",
-     "from": "송정#2",
-     "to": "김포공항#1",
-     "lines": [
-      "seoul-5"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김포공항#1",
-     "to": "능곡#1",
-     "lines": [
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "능곡#1",
-     "to": "대곡#2",
-     "lines": [
-      "gyeongui-jungang",
-      "seohae"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "대곡#2",
-     "to": "화정#2",
-     "lines": [
-      "seoul-3-ilsan"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "화정",
-     "from": "화정#2",
-     "to": "화정#1"
-    },
-    {
-     "type": "ride",
-     "from": "화정#1",
-     "to": "쌍촌#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "쌍촌#1",
-     "to": "운천#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "운천#1",
-     "to": "상무#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "상무#1",
-     "to": "김대중컨벤션센터#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "ride",
-     "from": "김대중컨벤션센터#1",
-     "to": "공항#1",
-     "lines": [
-      "gwangju-1"
-     ]
-    },
-    {
-     "type": "warp",
-     "portal": "공항",
-     "from": "공항#1",
-     "to": "공항#2"
-    },
-    {
-     "type": "ride",
-     "from": "공항#2",
-     "to": "서부산유통지구#1",
-     "lines": [
-      "busan-gimhae"
-     ]
-    }
-   ],
-   "id": "P104",
-   "intuition_cost": 30,
-   "intuition_expanded": 34,
-   "intuition_score": 0.8,
+   "id": "P101",
+   "intuition_cost": 31,
+   "intuition_expanded": 40,
+   "intuition_score": 0.774,
    "difficulty_calibrated": "normal"
   }
  ]

@@ -101,8 +101,8 @@ async function load(key, { fit = false } = {}) {
   $("stats").textContent = `${countries} · 역 ${data.clusters.length} · 노선 ${data.lines.length} · 포탈 ${data.portals.length}${(data.meta.countries || []).length > 1 ? ` (국가 간 ${nX})` : ""}`;
   $("station-list").innerHTML = labels.map((l) => `<option value="${esc(l)}"></option>`).join("");
   $("ruleset-select").value = rsKey;
-  $("ruleset-note").textContent = def.note === "공식명 아님"
-    ? "타이베이 이름은 위키데이터 라벨(커뮤니티 표기)이다. 공식명 소스가 막혀 참고용으로만 둔다."
+  $("ruleset-note").textContent = def.note === "현지어 라벨 포함" || def.note === "T3b 포함"
+    ? "타이베이 이름은 위키데이터 zh-Hant 라벨(현지어 라벨, 준공식)이다. 그 라벨로 맞은 국가 간 워프는 신뢰도 '보통'. 국가 간 경로는 선택 항목이고 기본은 한국만."
     : (data.meta.countries || []).length > 1 && nX === 0 ? "공식명만 쓰면 타이베이와 이어지는 포탈이 없다 (타이베이 공식명 미확보)." : "";
   drawLines();
   drawWarps();

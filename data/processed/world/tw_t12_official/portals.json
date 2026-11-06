@@ -1,5 +1,5 @@
 {
- "ruleset": "tw_t12_label",
+ "ruleset": "tw_t12_official",
  "portals": [
   {
    "id": "P:T1:고촌",
@@ -18,7 +18,11 @@
    "texts": [
     "고촌",
     "고촌역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:공항",
@@ -36,7 +40,11 @@
    "degree": 2,
    "texts": [
     "공항"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:교대",
@@ -60,7 +68,11 @@
     "교대",
     "교대(법원·검찰청)",
     "교대역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:구암",
@@ -79,7 +91,11 @@
    "texts": [
     "구암",
     "구암(과학대보건대입구)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:금곡",
@@ -98,7 +114,11 @@
    "texts": [
     "금곡",
     "금곡역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:남산",
@@ -117,7 +137,11 @@
    "texts": [
     "남산",
     "남산(계명네거리)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:대곡",
@@ -132,13 +156,19 @@
     "kr:I4106:1953",
     "kr:I4108:1953",
     "kr:I41WS:1953",
-    "kr:S2701:0117"
+    "kr:S2701:0117",
+    "kr:XGTXA:X103"
    ],
    "degree": 2,
    "texts": [
+    "대곡",
     "대곡(정부대구청사)",
     "대곡역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:동래",
@@ -158,7 +188,11 @@
    "texts": [
     "동래",
     "동래역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:동백",
@@ -177,7 +211,11 @@
    "texts": [
     "동백",
     "동백(용인세브란스)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:동천",
@@ -195,26 +233,11 @@
    "degree": 2,
    "texts": [
     "동천"
-   ]
-  },
-  {
-   "id": "P:T1:부전",
-   "tier": "T1",
-   "name": "부전",
-   "cost": 1,
-   "cluster_ids": [
-    "부전#1",
-    "부전#2"
    ],
-   "station_ids": [
-    "kr:I26K6:8001",
-    "kr:S2601:0120"
+   "grades": [
+    "official"
    ],
-   "degree": 2,
-   "texts": [
-    "부전",
-    "부전역"
-   ]
+   "confidence": "high"
   },
   {
    "id": "P:T1:송정",
@@ -233,7 +256,11 @@
    "texts": [
     "송정",
     "송정역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:시청",
@@ -255,7 +282,11 @@
    "texts": [
     "시청",
     "시청(연제)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:신천",
@@ -274,7 +305,11 @@
    "texts": [
     "신천(경북대입구)",
     "신천역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:신촌",
@@ -293,7 +328,11 @@
    "texts": [
     "신촌(지하)",
     "신촌역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:신흥",
@@ -311,7 +350,11 @@
    "degree": 2,
    "texts": [
     "신흥"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:양정",
@@ -330,7 +373,11 @@
    "texts": [
     "양정",
     "양정역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:양평",
@@ -349,7 +396,11 @@
    "texts": [
     "양평",
     "양평역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:용문",
@@ -368,7 +419,11 @@
    "texts": [
     "용문",
     "용문역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:용산",
@@ -388,7 +443,11 @@
    "texts": [
     "용산(서부법원․검찰청입구)",
     "용산역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:운천",
@@ -407,7 +466,11 @@
    "texts": [
     "운천",
     "운천역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:월드컵경기장",
@@ -426,7 +489,11 @@
    "texts": [
     "월드컵경기장",
     "월드컵경기장(성산)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:종합운동장",
@@ -445,7 +512,11 @@
    "degree": 2,
    "texts": [
     "종합운동장"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:좌천",
@@ -464,7 +535,11 @@
    "texts": [
     "좌천",
     "좌천역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:죽전",
@@ -483,7 +558,11 @@
    "texts": [
     "죽전",
     "죽전역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:중동",
@@ -502,7 +581,11 @@
    "texts": [
     "중동",
     "중동역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:중앙",
@@ -522,7 +605,11 @@
    "texts": [
     "중앙",
     "중앙역"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:중앙로",
@@ -540,7 +627,11 @@
    "degree": 2,
    "texts": [
     "중앙로"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:증산",
@@ -559,7 +650,11 @@
    "texts": [
     "증산",
     "증산(명지대앞)"
-   ]
+   ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high"
   },
   {
    "id": "P:T1:화정",
@@ -578,64 +673,11 @@
    "texts": [
     "화정",
     "화정역"
-   ]
-  },
-  {
-   "id": "P:T2:中咊",
-   "tier": "T2",
-   "name": "中咊",
-   "cost": 2,
-   "cluster_ids": [
-    "中和#1",
-    "중화#1"
    ],
-   "station_ids": [
-    "kr:S1107:0719",
-    "tw:tp-y:Y12"
+   "grades": [
+    "official"
    ],
-   "degree": 2,
-   "texts": [
-    "中和",
-    "中和站"
-   ]
-  },
-  {
-   "id": "P:T2:囘惇",
-   "tier": "T2",
-   "name": "囘惇",
-   "cost": 2,
-   "cluster_ids": [
-    "迴龍#1",
-    "회룡#1"
-   ],
-   "station_ids": [
-    "kr:L41U1:U111",
-    "tw:tp-o:O21"
-   ],
-   "degree": 2,
-   "texts": [
-    "回龙",
-    "迴龍站"
-   ]
-  },
-  {
-   "id": "P:T2:土城",
-   "tier": "T2",
-   "name": "土城",
-   "cost": 2,
-   "cluster_ids": [
-    "土城#1",
-    "토성#1"
-   ],
-   "station_ids": [
-    "kr:S2601:0109",
-    "tw:tp-bl:BL03"
-   ],
-   "degree": 2,
-   "texts": [
-    "土城",
-    "土城站"
-   ]
+   "confidence": "high"
   },
   {
    "id": "P:T2:大峙",
@@ -653,69 +695,11 @@
    "degree": 2,
    "texts": [
     "大峙"
-   ]
-  },
-  {
-   "id": "P:T2:明徳",
-   "tier": "T2",
-   "name": "明徳",
-   "cost": 2,
-   "cluster_ids": [
-    "明德#1",
-    "명덕#1"
    ],
-   "station_ids": [
-    "kr:S2701:0129",
-    "kr:S2703:0331",
-    "tw:tp-r:R18"
+   "grades": [
+    "official"
    ],
-   "degree": 2,
-   "texts": [
-    "明德 (2·28民主運動紀念會館)",
-    "明德(2‧28民主運動紀念會館)",
-    "明德站"
-   ]
-  },
-  {
-   "id": "P:T2:松山",
-   "tier": "T2",
-   "name": "松山",
-   "cost": 2,
-   "cluster_ids": [
-    "松山車站#1",
-    "송산#1"
-   ],
-   "station_ids": [
-    "kr:L41U1:U124",
-    "tw:tp-g:G19"
-   ],
-   "degree": 2,
-   "texts": [
-    "松山",
-    "松山車站"
-   ]
-  },
-  {
-   "id": "P:T2:板桥",
-   "tier": "T2",
-   "name": "板桥",
-   "cost": 2,
-   "cluster_ids": [
-    "板橋#1",
-    "판교#1"
-   ],
-   "station_ids": [
-    "kr:I11D1:D011",
-    "kr:I41K5:1501",
-    "tw:tp-bl:BL07",
-    "tw:tp-y:Y15:Q131625402"
-   ],
-   "degree": 2,
-   "texts": [
-    "板橋",
-    "板橋(板橋테크노밸리)",
-    "板橋站"
-   ]
+   "confidence": "high"
   }
  ],
  "capped": [
@@ -736,6 +720,10 @@
    "texts": [
     "東川"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -755,6 +743,10 @@
    "texts": [
     "中央"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -774,6 +766,10 @@
    "texts": [
     "中央路"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -794,6 +790,10 @@
     "云泉",
     "雲泉"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -813,6 +813,10 @@
    "texts": [
     "佐川"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -833,6 +837,10 @@
     "南山",
     "南山 (계명네거리)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -855,6 +863,10 @@
    "texts": [
     "市廳"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -876,6 +888,10 @@
     "敎大",
     "敎大(法院․檢察廳)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -895,6 +911,10 @@
    "texts": [
     "新興"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -915,6 +935,10 @@
     "新川",
     "新川(慶北大入口)"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   },
   {
@@ -936,6 +960,10 @@
     "綜合運動場",
     "综合运动场"
    ],
+   "grades": [
+    "official"
+   ],
+   "confidence": "high",
    "subsumed": true
   }
  ]

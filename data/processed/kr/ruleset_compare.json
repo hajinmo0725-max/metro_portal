@@ -24,37 +24,37 @@
    "D": 300,
    "counts": {
     "stations": 1100,
-    "clusters": 941,
+    "clusters": 940,
     "lines": 46,
     "sequences": 53,
     "ride_edges": 1065,
     "ride_edges_directed": 6,
-    "transfer_clusters_multi": 135,
-    "portals_total": 30,
+    "transfer_clusters_multi": 136,
+    "portals_total": 29,
     "portals_by_tier": {
-     "T1": 30
+     "T1": 29
     },
-    "portal_links": 62,
-    "routing_nodes": 1130,
-    "routing_edges": 2652
+    "portal_links": 60,
+    "routing_nodes": 1129,
+    "routing_edges": 2650
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
-    "largest_component_size": 941,
+    "largest_component_size": 940,
     "strong_components": 1,
-    "largest_strong_component_size": 941,
+    "largest_strong_component_size": 940,
     "diameter": {
      "value": 67,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 17.77
+     "mean_cost": 17.757
     }
    },
    "without_warp": {
     "components": 5,
-    "largest_component_ratio": 0.6961,
+    "largest_component_ratio": 0.6968,
     "largest_component_size": 655,
     "strong_components": 5,
     "largest_strong_component_size": 655,
@@ -117,7 +117,6 @@
    ],
    "same_city_portals": [
     "동래",
-    "부전",
     "신촌",
     "양평",
     "좌천"
@@ -129,37 +128,37 @@
    "D": 500,
    "counts": {
     "stations": 1100,
-    "clusters": 941,
+    "clusters": 940,
     "lines": 46,
     "sequences": 53,
     "ride_edges": 1065,
     "ride_edges_directed": 6,
-    "transfer_clusters_multi": 135,
-    "portals_total": 30,
+    "transfer_clusters_multi": 136,
+    "portals_total": 29,
     "portals_by_tier": {
-     "T1": 30
+     "T1": 29
     },
-    "portal_links": 62,
-    "routing_nodes": 1130,
-    "routing_edges": 2652
+    "portal_links": 60,
+    "routing_nodes": 1129,
+    "routing_edges": 2650
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
-    "largest_component_size": 941,
+    "largest_component_size": 940,
     "strong_components": 1,
-    "largest_strong_component_size": 941,
+    "largest_strong_component_size": 940,
     "diameter": {
      "value": 67,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 17.77
+     "mean_cost": 17.757
     }
    },
    "without_warp": {
     "components": 5,
-    "largest_component_ratio": 0.6961,
+    "largest_component_ratio": 0.6968,
     "largest_component_size": 655,
     "strong_components": 5,
     "largest_strong_component_size": 655,
@@ -222,7 +221,6 @@
    ],
    "same_city_portals": [
     "동래",
-    "부전",
     "신촌",
     "양평",
     "좌천"
@@ -234,37 +232,37 @@
    "D": 1000,
    "counts": {
     "stations": 1100,
-    "clusters": 941,
+    "clusters": 940,
     "lines": 46,
     "sequences": 53,
     "ride_edges": 1065,
     "ride_edges_directed": 6,
-    "transfer_clusters_multi": 135,
-    "portals_total": 30,
+    "transfer_clusters_multi": 136,
+    "portals_total": 29,
     "portals_by_tier": {
-     "T1": 30
+     "T1": 29
     },
-    "portal_links": 62,
-    "routing_nodes": 1130,
-    "routing_edges": 2652
+    "portal_links": 60,
+    "routing_nodes": 1129,
+    "routing_edges": 2650
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
-    "largest_component_size": 941,
+    "largest_component_size": 940,
     "strong_components": 1,
-    "largest_strong_component_size": 941,
+    "largest_strong_component_size": 940,
     "diameter": {
      "value": 67,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 17.77
+     "mean_cost": 17.757
     }
    },
    "without_warp": {
     "components": 5,
-    "largest_component_ratio": 0.6961,
+    "largest_component_ratio": 0.6968,
     "largest_component_size": 655,
     "strong_components": 5,
     "largest_strong_component_size": 655,
@@ -327,7 +325,6 @@
    ],
    "same_city_portals": [
     "동래",
-    "부전",
     "신촌",
     "양평",
     "좌천"
@@ -339,38 +336,38 @@
    "D": 300,
    "counts": {
     "stations": 1100,
-    "clusters": 941,
+    "clusters": 940,
     "lines": 46,
     "sequences": 53,
     "ride_edges": 1065,
     "ride_edges_directed": 6,
-    "transfer_clusters_multi": 135,
-    "portals_total": 30,
+    "transfer_clusters_multi": 136,
+    "portals_total": 29,
     "portals_by_tier": {
-     "T1": 30
+     "T1": 29
     },
-    "portal_links": 62,
-    "routing_nodes": 1130,
-    "routing_edges": 2652
+    "portal_links": 60,
+    "routing_nodes": 1129,
+    "routing_edges": 2650
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
-    "largest_component_size": 941,
+    "largest_component_size": 940,
     "strong_components": 1,
-    "largest_strong_component_size": 941,
+    "largest_strong_component_size": 940,
     "diameter": {
      "value": 70,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 19.934,
+     "mean_cost": 19.946,
      "level": "station"
     }
    },
    "without_warp": {
     "components": 5,
-    "largest_component_ratio": 0.6961,
+    "largest_component_ratio": 0.6968,
     "largest_component_size": 655,
     "strong_components": 5,
     "largest_strong_component_size": 655,
@@ -434,7 +431,6 @@
    ],
    "same_city_portals": [
     "동래",
-    "부전",
     "신촌",
     "양평",
     "좌천"
@@ -446,38 +442,38 @@
    "D": 500,
    "counts": {
     "stations": 1100,
-    "clusters": 941,
+    "clusters": 940,
     "lines": 46,
     "sequences": 53,
     "ride_edges": 1065,
     "ride_edges_directed": 6,
-    "transfer_clusters_multi": 135,
-    "portals_total": 30,
+    "transfer_clusters_multi": 136,
+    "portals_total": 29,
     "portals_by_tier": {
-     "T1": 30
+     "T1": 29
     },
-    "portal_links": 62,
-    "routing_nodes": 1130,
-    "routing_edges": 2652
+    "portal_links": 60,
+    "routing_nodes": 1129,
+    "routing_edges": 2650
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
-    "largest_component_size": 941,
+    "largest_component_size": 940,
     "strong_components": 1,
-    "largest_strong_component_size": 941,
+    "largest_strong_component_size": 940,
     "diameter": {
      "value": 70,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 19.934,
+     "mean_cost": 19.946,
      "level": "station"
     }
    },
    "without_warp": {
     "components": 5,
-    "largest_component_ratio": 0.6961,
+    "largest_component_ratio": 0.6968,
     "largest_component_size": 655,
     "strong_components": 5,
     "largest_strong_component_size": 655,
@@ -541,7 +537,6 @@
    ],
    "same_city_portals": [
     "동래",
-    "부전",
     "신촌",
     "양평",
     "좌천"
@@ -553,38 +548,38 @@
    "D": 1000,
    "counts": {
     "stations": 1100,
-    "clusters": 941,
+    "clusters": 940,
     "lines": 46,
     "sequences": 53,
     "ride_edges": 1065,
     "ride_edges_directed": 6,
-    "transfer_clusters_multi": 135,
-    "portals_total": 30,
+    "transfer_clusters_multi": 136,
+    "portals_total": 29,
     "portals_by_tier": {
-     "T1": 30
+     "T1": 29
     },
-    "portal_links": 62,
-    "routing_nodes": 1130,
-    "routing_edges": 2652
+    "portal_links": 60,
+    "routing_nodes": 1129,
+    "routing_edges": 2650
    },
    "with_warp": {
     "components": 1,
     "largest_component_ratio": 1.0,
-    "largest_component_size": 941,
+    "largest_component_size": 940,
     "strong_components": 1,
-    "largest_strong_component_size": 941,
+    "largest_strong_component_size": 940,
     "diameter": {
      "value": 70,
      "from": "신창#1",
      "to": "연천#1",
      "exact": true,
-     "mean_cost": 19.934,
+     "mean_cost": 19.946,
      "level": "station"
     }
    },
    "without_warp": {
     "components": 5,
-    "largest_component_ratio": 0.6961,
+    "largest_component_ratio": 0.6968,
     "largest_component_size": 655,
     "strong_components": 5,
     "largest_strong_component_size": 655,
@@ -648,7 +643,6 @@
    ],
    "same_city_portals": [
     "동래",
-    "부전",
     "신촌",
     "양평",
     "좌천"

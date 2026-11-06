@@ -36,20 +36,30 @@ cluster:
   use_parenthetical_alias: true
   # 데이터 보정 파일(config/kr_station_fixes.yaml aliases)의 별칭도 같은 조건으로 쓸지
   use_data_aliases: true
+  # 4차 Q6-3: 역외 환승 수동 목록. 같은 이름 쌍이 여기 있으면 공식 정보가 '일반역'(no)이어도 같은 클러스터로 묶는다.
+  # 포탈은 "현실에서 불가능한 이동"이어야 한다는 원칙 (부전: 부산 1호선 ↔ 동해선). null이면 쓰지 않는다
+  offsite_transfers: config/kr_offsite_transfers.yaml
 
 portals:
   T1:
     enabled: true
     cost: 1
-    # 매칭에 쓰는 이름: 언어·문자·종류. official 이름만 사용 (부역명·로마자 표기는 제외)
+    # 매칭에 쓰는 이름: 언어·문자·종류 (부역명·로마자 표기는 제외)
     langs: ["ko"]
     scripts: ["Hang"]
     kinds: ["primary"]
-    official_only: true
+    # 4차 Q6-1: 이름 출처 등급 허용 목록 (config/name_grades.yaml). 기본 = official + native_label(현지어 라벨, 준공식)
+    grades: ["official", "native_label"]
+    # 역이 있는 나라의 현지어 이름만 (한국 역의 중국어·일본어 번역명은 공식 소스라도 제외)
+    native_only: true
   T2:
     enabled: false
     cost: 2
-  T3:
+  # 4차 Q6-6: T3를 T3a(번역형 영어명)·T3b(로마자 우연 일치)로 나눴다 (설정은 tw_t123.yaml)
+  T3a:
+    enabled: false
+    cost: 3
+  T3b:
     enabled: false
     cost: 3
   # 포탈 하나에 연결 가능한 클러스터 수 상한. null이면 무제한 (Phase 3 대비 옵션)

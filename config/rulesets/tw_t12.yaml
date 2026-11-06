@@ -1,8 +1,9 @@
-# Phase 1 T1 + T2 (한자 이체자 정규화 후 일치). 3차 B3.
-# T2 이름: 한국 = 표준데이터 한자역사명(ko-Hani, kric_std), 타이베이 = 공식 번체명(zh-Hant, wikidata_p1448).
+# Phase 1 T1 + T2 (한자 이체자 정규화 후 일치). 4차 기본 ruleset 3종 중 2.
+# T2 이름: 한국 = 표준데이터 한자역사명(ko-Hani), 타이베이 = 공식 번체명 또는 zh-Hant 현지어 라벨.
+# 4차 Q6-6: 大峙(대치 ↔ 대티)처럼 한자가 같고 독음이 다른 경우도 T2 정의에 맞으므로 T2에 둔다.
 extends: tw_t1
 name: tw_t12
-description: "한국+타이베이, T1 + T2 (공식명만)"
+description: "한국+타이베이, T1 + T2 (공식명 + 현지어 라벨)"
 portals:
   T2:
     enabled: true
@@ -10,8 +11,8 @@ portals:
     langs: ["ko", "zh"]
     scripts: ["Hani", "Hant"]
     kinds: ["primary"]
-    official_only: true
-    sources: ["kric_std", "wikidata_p1448"]
+    grades: ["official", "native_label"]
+    native_only: true
     # 정규화된 이름의 글자가 선언한 문자 체계(Hani/Hant/Latn)인지 검사. 표준데이터 대구 6역의 한자역사명이 '한자가없음'이다
     script_check: true
     normalize:
@@ -20,7 +21,7 @@ portals:
       # 표준데이터 한자역사명의 '값 없음' 표기
       ignore_texts: ["-", "없음", "해당없음"]
     variant_fold:
-      # OpenCC 변환 사슬 (순서대로). t2s = 번체 → 간체로 접어서 비교 (다대일이라 發/髮 같은 과병합 가능성 있음)
+      # OpenCC 변환 사슬 (순서대로). t2s = 번체 → 간체로 접어서 비교 (다대일이라 發/髮 같은 과병합 가능성 있음 → 4차 Q6-7 감사표)
       opencc: ["t2s"]
       # Unihan 이체자 관계 (union-find, 대표 = 최소 코드포인트)
       unihan_fields: ["kTraditionalVariant", "kSimplifiedVariant", "kZVariant", "kSemanticVariant",

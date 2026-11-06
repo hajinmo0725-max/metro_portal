@@ -1,9 +1,0 @@
-# 참고 실험 (공식명 아님): tw_t1과 같고, 타이베이 이름으로 Wikidata 라벨(커뮤니티 표기, official=False)도 쓴다.
-# 사용자 지시는 '공식명만'이라 기본 비교에는 넣지 않는다. 공식명 소스가 막힌 상태에서 매칭 엔진이 실제로 무엇을 만드는지 보려는 용도.
-extends: tw_t1
-name: tw_t1_label
-description: "참고: tw_t1 + 타이베이 Wikidata 라벨 허용 (공식명 아님)"
-portals:
-  T1:
-    official_only: false
-    sources: ["kric_std", "wikidata_p1448", "wikidata_label"]

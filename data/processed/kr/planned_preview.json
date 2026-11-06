@@ -37,12 +37,12 @@
  "rulesets": {
   "strict": {
    "before": {
-    "clusters": 941,
-    "portals": 30
+    "clusters": 940,
+    "portals": 29
    },
    "after": {
-    "clusters": 948,
-    "portals": 31
+    "clusters": 947,
+    "portals": 30
    },
    "new_station_clusters": [
     {
@@ -137,12 +137,12 @@
   },
   "tw_t123": {
    "before": {
-    "clusters": 1111,
-    "portals": 32
+    "clusters": 1110,
+    "portals": 36
    },
    "after": {
-    "clusters": 1118,
-    "portals": 32
+    "clusters": 1117,
+    "portals": 37
    },
    "new_station_clusters": [
     {
@@ -218,7 +218,20 @@
      ]
     }
    ],
-   "portals_added": [],
+   "portals_added": [
+    {
+     "id": "P:T1:신기",
+     "tier": "T1",
+     "clusters": [
+      "신기#1",
+      "신기#2"
+     ],
+     "labels": [
+      "부산 신기 [XYS01]",
+      "대구 신기 [S2701]"
+     ]
+    }
+   ],
    "portals_changed": [],
    "portals_removed": []
   }

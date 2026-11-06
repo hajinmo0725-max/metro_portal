@@ -103,12 +103,13 @@ def main() -> int:
         if multi:
             po["x"] = len({co for x in p["cluster_ids"] for co in cmap0[x].get("countries", ["KR"])}) > 1  # 국가 간 포탈
             po["texts"] = p.get("texts", [])
+            po["conf"] = p.get("confidence", "high")  # 4차 Q6-1: 이름 출처 등급 기준 신뢰도
         portals_out.append(po)
 
     doc = {
         "meta": {"ruleset": rs["name"], "description": rs.get("description", ""), "costs": rs["costs"], "kinds": list(KIND),
                  "countries": list(countries),
-                 "tiers": {t: {"cost": v["cost"], "official_only": bool(v.get("official_only"))}
+                 "tiers": {t: {"cost": v["cost"], "grades": v.get("grades") or (["official"] if v.get("official_only") else [])}
                            for t, v in rs["portals"].items() if t.startswith("T") and v.get("enabled")},
                  "attribution": "역·노선: 레일포털(data.kric.go.kr) 표준데이터, 이용허락범위 제한 없음"
                                 + (" · 타이베이: Wikidata (CC0)" if "TW" in countries else "") + ". 지도: © OpenStreetMap contributors"},

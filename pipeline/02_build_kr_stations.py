@@ -206,6 +206,9 @@ def main() -> int:
     planned_added = station_records(load_planned())
     stations += planned_added
     assert len({s["id"] for s in stations}) == len(stations), "station id 중복"
+    # 4차 Q6-1: 이름 출처 등급 (config/name_grades.yaml). 한국 역 이름은 전부 공식 소스라 official
+    from metro_portal.names import assign_grades
+    assign_grades(stations, "KR")
 
     # 좌표 보정 (config/kr_station_fixes.yaml)
     fix_cfg = yaml.safe_load(open(ROOT / "config" / "kr_station_fixes.yaml", encoding="utf-8"))

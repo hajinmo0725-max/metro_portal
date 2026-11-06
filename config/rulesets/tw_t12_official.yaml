@@ -1,0 +1,10 @@
+# 참고 실험: 공식명만 (출처 등급 official). 3차 기본 ruleset(tw_t12)의 결과를 재현하는 비교용.
+# 타이베이는 공식명(P1448) 0건이라 국가 간 포탈이 생기지 않는다.
+extends: tw_t12
+name: tw_t12_official
+description: "참고: 한국+타이베이 T1 + T2, 공식명만 (3차 기본)"
+portals:
+  T1:
+    grades: ["official"]
+  T2:
+    grades: ["official"]

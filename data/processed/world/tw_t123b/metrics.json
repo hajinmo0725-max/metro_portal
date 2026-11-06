@@ -1,38 +1,40 @@
 {
- "ruleset": "tw_t1_label",
+ "ruleset": "tw_t123b",
  "counts": {
   "stations": 1293,
-  "clusters": 1111,
+  "clusters": 1110,
   "lines": 56,
   "sequences": 67,
   "ride_edges": 1248,
   "ride_edges_directed": 6,
-  "transfer_clusters_multi": 157,
-  "portals_total": 30,
+  "transfer_clusters_multi": 158,
+  "portals_total": 37,
   "portals_by_tier": {
-   "T1": 30
+   "T1": 29,
+   "T2": 7,
+   "T3b": 1
   },
-  "portal_links": 62,
-  "routing_nodes": 1323,
-  "routing_edges": 3064
+  "portal_links": 76,
+  "routing_nodes": 1330,
+  "routing_edges": 3104
  },
  "with_warp": {
-  "components": 2,
-  "largest_component_ratio": 0.847,
-  "largest_component_size": 941,
-  "strong_components": 2,
-  "largest_strong_component_size": 941,
+  "components": 1,
+  "largest_component_ratio": 1.0,
+  "largest_component_size": 1110,
+  "strong_components": 1,
+  "largest_strong_component_size": 1110,
   "diameter": {
-   "value": 67,
-   "from": "신창#1",
-   "to": "연천#1",
+   "value": 63,
+   "from": "가야대#1",
+   "to": "신창#1",
    "exact": true,
-   "mean_cost": 17.77
+   "mean_cost": 18.39
   }
  },
  "without_warp": {
   "components": 6,
-  "largest_component_ratio": 0.5896,
+  "largest_component_ratio": 0.5901,
   "largest_component_size": 655,
   "strong_components": 6,
   "largest_strong_component_size": 655,
@@ -129,12 +131,12 @@
      "中原#1",
      "中和#1"
     ],
-    "joins_giant_with_warp": false
+    "joins_giant_with_warp": true
    },
    {
-    "size": 147,
+    "size": 146,
     "regions": {
-     "부산": 147
+     "부산": 146
     },
     "lines": [
      "I26K6:동해선",
@@ -243,6 +245,78 @@
    ]
   },
   {
+   "name": "seongnam",
+   "tier": "T3b",
+   "degree": 2,
+   "clusters": [
+    "석남#1",
+    "성남#1"
+   ]
+  },
+  {
+   "name": "中咊",
+   "tier": "T2",
+   "degree": 2,
+   "clusters": [
+    "中和#1",
+    "중화#1"
+   ]
+  },
+  {
+   "name": "囘惇",
+   "tier": "T2",
+   "degree": 2,
+   "clusters": [
+    "迴龍#1",
+    "회룡#1"
+   ]
+  },
+  {
+   "name": "土城",
+   "tier": "T2",
+   "degree": 2,
+   "clusters": [
+    "土城#1",
+    "토성#1"
+   ]
+  },
+  {
+   "name": "大峙",
+   "tier": "T2",
+   "degree": 2,
+   "clusters": [
+    "대치#1",
+    "대티#1"
+   ]
+  },
+  {
+   "name": "明徳",
+   "tier": "T2",
+   "degree": 2,
+   "clusters": [
+    "明德#1",
+    "명덕#1"
+   ]
+  },
+  {
+   "name": "松山",
+   "tier": "T2",
+   "degree": 2,
+   "clusters": [
+    "松山車站#1",
+    "송산#1"
+   ]
+  },
+  {
+   "name": "板桥",
+   "tier": "T2",
+   "degree": 2,
+   "clusters": [
+    "板橋#1",
+    "판교#1"
+   ]
+  },
+  {
    "name": "고촌",
    "tier": "T1",
    "degree": 2,
@@ -324,84 +398,12 @@
    ]
   },
   {
-   "name": "부전",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "부전#1",
-    "부전#2"
-   ]
-  },
-  {
    "name": "송정",
    "tier": "T1",
    "degree": 2,
    "clusters": [
     "송정#1",
     "송정#2"
-   ]
-  },
-  {
-   "name": "신천",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "신천#1",
-    "신천#2"
-   ]
-  },
-  {
-   "name": "신촌",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "신촌#1",
-    "신촌#2"
-   ]
-  },
-  {
-   "name": "신흥",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "신흥#1",
-    "신흥#2"
-   ]
-  },
-  {
-   "name": "양정",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "양정#1",
-    "양정#2"
-   ]
-  },
-  {
-   "name": "양평",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "양평#1",
-    "양평#2"
-   ]
-  },
-  {
-   "name": "용문",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "용문#1",
-    "용문#2"
-   ]
-  },
-  {
-   "name": "용산",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "용산#1",
-    "용산#2"
    ]
   }
  ],
@@ -433,12 +435,12 @@
     "中原#1",
     "中和#1"
    ],
-   "joins_giant_with_warp": false
+   "joins_giant_with_warp": true
   },
   {
-   "size": 147,
+   "size": 146,
    "regions": {
-    "부산": 147
+    "부산": 146
    },
    "lines": [
     "I26K6:동해선",
@@ -566,6 +568,11 @@
     "records": 3
    },
    {
+    "cluster": "부전#1",
+    "max_internal_m": 342,
+    "records": 2
+   },
+   {
     "cluster": "디지털미디어시티#1",
     "max_internal_m": 325,
     "records": 3
@@ -584,11 +591,6 @@
     "cluster": "홍대입구#1",
     "max_internal_m": 296,
     "records": 3
-   },
-   {
-    "cluster": "신당#1",
-    "max_internal_m": 293,
-    "records": 2
    }
   ]
  }

@@ -219,13 +219,17 @@ def main() -> int:
                           "components": len([s for s in out_seqs if s["id"] == "main"]) + sum(1 for s in out_seqs if s["id"] != "main" and s["station_ids"][0] not in {x for o in out_seqs for x in o["station_ids"] if o is not s})})
     edges.sort(key=lambda e: (e["line"], e["a"], e["b"]))
     stations.sort(key=lambda s: s["id"])
+    # 4차 Q6-1: 이름 출처 등급. zh-Hant 라벨 = native_label(현지어 라벨, 준공식), en 라벨 = foreign_label
+    from metro_portal.names import assign_grades
+    assign_grades(stations, "TW")
     out_long = [{**e, "a_name": sidx[e["a"]]["name_ko"], "b_name": sidx[e["b"]]["name_ko"]} for e in edges if e["distance_m"] > scope["adjacent_max_m"]]
     langs = Counter(f"{n['lang']}-{n['script']}-{n['source']}" for s in stations for n in s["names"])
     meta = {"description": "타이베이 대도시권 도시철도 (타이베이 메트로·신베이 메트로·타오위안 공항 MRT). 노선별 역 단위.",
             "source": "Wikidata Query Service (CC0)", "fetched_at": {k: v["fetched_at"] for k, v in meta_raw.items()},
             "counts": {"stations": len(stations), "physical_items": len(keep), "lines": len(lines), "ride_edges": len(edges),
                        "excluded": len(excluded), "names_by_lang_script_source": dict(sorted(langs.items())),
-                       "official_names": sum(1 for s in stations for n in s["names"] if n["official"])},
+                       "official_names": sum(1 for s in stations for n in s["names"] if n["official"]),
+                       "names_by_grade": dict(sorted(Counter(n["grade"] for s in stations for n in s["names"]).items()))},
             "excluded": excluded, "recent_openings": sorted(recent_open, key=lambda r: (r["opened"], r["qid"])),
             "duplicate_codes": dup_codes,
             "missing_zh_label": sorted({s["wikidata"] for s in stations if not s["name_zh"]}),

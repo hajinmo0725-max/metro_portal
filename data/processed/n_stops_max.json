@@ -666,88 +666,6 @@
     ]
    },
    {
-    "value_m": 366981,
-    "start": "부전#1",
-    "end": "임진강#1",
-    "start_label": "부산 부전",
-    "end_label": "수도권 임진강",
-    "warps": 4,
-    "great_circle_m": 366981,
-    "track_m": 27418,
-    "path": [
-     {
-      "cluster": "부전#1",
-      "label": "부산 부전",
-      "via": "start"
-     },
-     {
-      "cluster": "양정#1",
-      "label": "부산 양정",
-      "via": "ride"
-     },
-     {
-      "cluster": "시청#1",
-      "label": "부산 시청",
-      "via": "ride"
-     },
-     {
-      "cluster": "시청#2",
-      "label": "대전 시청",
-      "via": "warp"
-     },
-     {
-      "cluster": "시청#3",
-      "label": "수도권 시청",
-      "via": "warp"
-     },
-     {
-      "cluster": "서울#1",
-      "label": "수도권 서울",
-      "via": "ride"
-     },
-     {
-      "cluster": "연신내#1",
-      "label": "수도권 연신내",
-      "via": "ride"
-     },
-     {
-      "cluster": "대곡#2",
-      "label": "수도권 대곡",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#2",
-      "label": "수도권 화정",
-      "via": "ride"
-     },
-     {
-      "cluster": "화정#1",
-      "label": "광주 화정",
-      "via": "warp"
-     },
-     {
-      "cluster": "쌍촌#1",
-      "label": "광주 쌍촌",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#1",
-      "label": "광주 운천",
-      "via": "ride"
-     },
-     {
-      "cluster": "운천#2",
-      "label": "수도권 운천",
-      "via": "warp"
-     },
-     {
-      "cluster": "임진강#1",
-      "label": "수도권 임진강",
-      "via": "ride"
-     }
-    ]
-   },
-   {
     "value_m": 366822,
     "start": "물만골#1",
     "end": "임진강#1",
@@ -830,24 +748,19 @@
     ]
    },
    {
-    "value_m": 366646,
-    "start": "부전#2",
+    "value_m": 366814,
+    "start": "부전#1",
     "end": "임진강#1",
     "start_label": "부산 부전",
     "end_label": "수도권 임진강",
     "warps": 4,
-    "great_circle_m": 366646,
+    "great_circle_m": 366814,
     "track_m": 27418,
     "path": [
      {
-      "cluster": "부전#2",
-      "label": "부산 부전",
-      "via": "start"
-     },
-     {
       "cluster": "부전#1",
       "label": "부산 부전",
-      "via": "warp"
+      "via": "start"
      },
      {
       "cluster": "양정#1",
@@ -858,6 +771,11 @@
       "cluster": "시청#1",
       "label": "부산 시청",
       "via": "ride"
+     },
+     {
+      "cluster": "시청#2",
+      "label": "대전 시청",
+      "via": "warp"
      },
      {
       "cluster": "시청#3",
@@ -1645,6 +1563,88 @@
      {
       "cluster": "임진강#1",
       "label": "수도권 임진강",
+      "via": "ride"
+     }
+    ]
+   },
+   {
+    "value_m": 365621,
+    "start": "운천#2",
+    "end": "재송#1",
+    "start_label": "수도권 운천",
+    "end_label": "부산 재송",
+    "warps": 3,
+    "great_circle_m": 365621,
+    "track_m": 21368,
+    "path": [
+     {
+      "cluster": "운천#2",
+      "label": "수도권 운천",
+      "via": "start"
+     },
+     {
+      "cluster": "운천#1",
+      "label": "광주 운천",
+      "via": "warp"
+     },
+     {
+      "cluster": "쌍촌#1",
+      "label": "광주 쌍촌",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#1",
+      "label": "광주 화정",
+      "via": "ride"
+     },
+     {
+      "cluster": "화정#2",
+      "label": "수도권 화정",
+      "via": "warp"
+     },
+     {
+      "cluster": "대곡#2",
+      "label": "수도권 대곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "능곡#1",
+      "label": "수도권 능곡",
+      "via": "ride"
+     },
+     {
+      "cluster": "김포공항#1",
+      "label": "수도권 김포공항",
+      "via": "ride"
+     },
+     {
+      "cluster": "송정#2",
+      "label": "수도권 송정",
+      "via": "ride"
+     },
+     {
+      "cluster": "송정#1",
+      "label": "부산 송정",
+      "via": "warp"
+     },
+     {
+      "cluster": "신해운대#1",
+      "label": "부산 신해운대",
+      "via": "ride"
+     },
+     {
+      "cluster": "벡스코#1",
+      "label": "부산 벡스코",
+      "via": "ride"
+     },
+     {
+      "cluster": "센텀#1",
+      "label": "부산 센텀",
+      "via": "ride"
+     },
+     {
+      "cluster": "재송#1",
+      "label": "부산 재송",
       "via": "ride"
      }
     ]
@@ -3292,7 +3292,7 @@
     ]
    }
   ],
-  "pairs_seen": 120713
+  "pairs_seen": 121009
  },
  "without_warp": {
   "great_circle": [
@@ -4119,6 +4119,6 @@
     ]
    }
   ],
-  "pairs_seen": 49702
+  "pairs_seen": 49978
  }
 }

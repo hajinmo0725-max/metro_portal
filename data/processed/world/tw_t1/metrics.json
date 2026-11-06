@@ -2,37 +2,37 @@
  "ruleset": "tw_t1",
  "counts": {
   "stations": 1293,
-  "clusters": 1111,
+  "clusters": 1110,
   "lines": 56,
   "sequences": 67,
   "ride_edges": 1248,
   "ride_edges_directed": 6,
-  "transfer_clusters_multi": 157,
-  "portals_total": 30,
+  "transfer_clusters_multi": 158,
+  "portals_total": 29,
   "portals_by_tier": {
-   "T1": 30
+   "T1": 29
   },
-  "portal_links": 62,
-  "routing_nodes": 1323,
+  "portal_links": 60,
+  "routing_nodes": 1322,
   "routing_edges": 3064
  },
  "with_warp": {
   "components": 2,
-  "largest_component_ratio": 0.847,
-  "largest_component_size": 941,
+  "largest_component_ratio": 0.8468,
+  "largest_component_size": 940,
   "strong_components": 2,
-  "largest_strong_component_size": 941,
+  "largest_strong_component_size": 940,
   "diameter": {
    "value": 67,
    "from": "신창#1",
    "to": "연천#1",
    "exact": true,
-   "mean_cost": 17.77
+   "mean_cost": 17.757
   }
  },
  "without_warp": {
   "components": 6,
-  "largest_component_ratio": 0.5896,
+  "largest_component_ratio": 0.5901,
   "largest_component_size": 655,
   "strong_components": 6,
   "largest_strong_component_size": 655,
@@ -132,9 +132,9 @@
     "joins_giant_with_warp": false
    },
    {
-    "size": 147,
+    "size": 146,
     "regions": {
-     "부산": 147
+     "부산": 146
     },
     "lines": [
      "I26K6:동해선",
@@ -324,15 +324,6 @@
    ]
   },
   {
-   "name": "부전",
-   "tier": "T1",
-   "degree": 2,
-   "clusters": [
-    "부전#1",
-    "부전#2"
-   ]
-  },
-  {
    "name": "송정",
    "tier": "T1",
    "degree": 2,
@@ -403,6 +394,15 @@
     "용산#1",
     "용산#2"
    ]
+  },
+  {
+   "name": "운천",
+   "tier": "T1",
+   "degree": 2,
+   "clusters": [
+    "운천#1",
+    "운천#2"
+   ]
   }
  ],
  "isolated_without_warp": [
@@ -436,9 +436,9 @@
    "joins_giant_with_warp": false
   },
   {
-   "size": 147,
+   "size": 146,
    "regions": {
-    "부산": 147
+    "부산": 146
    },
    "lines": [
     "I26K6:동해선",
@@ -566,6 +566,11 @@
     "records": 3
    },
    {
+    "cluster": "부전#1",
+    "max_internal_m": 342,
+    "records": 2
+   },
+   {
     "cluster": "디지털미디어시티#1",
     "max_internal_m": 325,
     "records": 3
@@ -584,11 +589,6 @@
     "cluster": "홍대입구#1",
     "max_internal_m": 296,
     "records": 3
-   },
-   {
-    "cluster": "신당#1",
-    "max_internal_m": 293,
-    "records": 2
    }
   ]
  }

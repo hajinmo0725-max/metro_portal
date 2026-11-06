@@ -1,5 +1,5 @@
 {
- "ruleset": "tw_t12_label",
+ "ruleset": "tw_t123b",
  "clusters": [
   {
    "name": "4·19민주묘지",
@@ -14498,42 +14498,19 @@
     "부전"
    ],
    "station_ids": [
+    "kr:I26K6:8001",
     "kr:S2601:0120"
    ],
-   "lat": 35.1625,
-   "lon": 129.06278,
+   "lat": 35.163584,
+   "lon": 129.061445,
    "regions": [
     "부산광역시"
    ],
    "lines": [
+    "I26K6:동해선",
     "S2601:부산 도시철도 1호선"
    ],
    "id": "부전#1",
-   "alias_links": [],
-   "cities": [
-    "부산"
-   ],
-   "countries": [
-    "KR"
-   ]
-  },
-  {
-   "name": "부전",
-   "names": [
-    "부전"
-   ],
-   "station_ids": [
-    "kr:I26K6:8001"
-   ],
-   "lat": 35.164668,
-   "lon": 129.06011,
-   "regions": [
-    "부산광역시"
-   ],
-   "lines": [
-    "I26K6:동해선"
-   ],
-   "id": "부전#2",
    "alias_links": [],
    "cities": [
     "부산"

@@ -98,3 +98,17 @@ def coord_copy_pairs(stations: list[dict], official: "OfficialTransfers", norm: 
                 if rel != "yes":
                     out.append({"name": nm, "a": x["id"], "b": y["id"], "distance_m": round(d, 1), "relation": rel})
     return out
+
+
+def load_offsite(path) -> dict:
+    """4차 Q6-3: 역외 환승 수동 목록. {frozenset(역 id 2개): 항목}. 경로는 레포 루트 기준."""
+    p = Path(path)
+    if not p.is_absolute():
+        p = ROOT / p
+    cfg = yaml.safe_load(open(p, encoding="utf-8")) or {}
+    out = {}
+    for e in cfg.get("pairs", []):
+        if len(e["stations"]) != 2:
+            raise ValueError(f"역외 환승 항목은 역 2개: {e}")
+        out[frozenset(e["stations"])] = e
+    return out
