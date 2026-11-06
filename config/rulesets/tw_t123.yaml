@@ -1,0 +1,22 @@
+# Phase 1 T1 + T2 + T3 (영어명 정확 일치). 3차 B3.
+# T3 이름: 한국 = 표준데이터 영문역사명(kric_std), 타이베이 = 공식 영문명(wikidata_p1448).
+extends: tw_t12
+name: tw_t123
+description: "한국+타이베이, T1 + T2 + T3 (공식명만)"
+portals:
+  T3:
+    enabled: true
+    cost: 3
+    langs: ["en"]
+    scripts: ["Latn"]
+    kinds: ["primary"]
+    official_only: true
+    sources: ["kric_std", "wikidata_p1448"]
+    # 정규화된 이름의 글자가 선언한 문자 체계(Hani/Hant/Latn)인지 검사. 표준데이터 대구 6역의 한자역사명이 '한자가없음'이다
+    script_check: true
+    normalize:
+      casefold: true
+      char_map: {"’": "'", "‘": "'", "–": "-", "—": "-"}
+      # 대소문자 접기 뒤에 적용. Wikidata 영문 라벨의 ' Station' 꼬리 (공식명에는 대개 없다)
+      remove_suffixes: [" station"]
+      ignore_texts: ["-"]

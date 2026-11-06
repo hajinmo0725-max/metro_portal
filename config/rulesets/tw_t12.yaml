@@ -1,0 +1,30 @@
+# Phase 1 T1 + T2 (한자 이체자 정규화 후 일치). 3차 B3.
+# T2 이름: 한국 = 표준데이터 한자역사명(ko-Hani, kric_std), 타이베이 = 공식 번체명(zh-Hant, wikidata_p1448).
+extends: tw_t1
+name: tw_t12
+description: "한국+타이베이, T1 + T2 (공식명만)"
+portals:
+  T2:
+    enabled: true
+    cost: 2
+    langs: ["ko", "zh"]
+    scripts: ["Hani", "Hant"]
+    kinds: ["primary"]
+    official_only: true
+    sources: ["kric_std", "wikidata_p1448"]
+    # 정규화된 이름의 글자가 선언한 문자 체계(Hani/Hant/Latn)인지 검사. 표준데이터 대구 6역의 한자역사명이 '한자가없음'이다
+    script_check: true
+    normalize:
+      # 한자명 끝의 역 접미사. 먼저 맞는 하나만 뗀다 (南港車站 → 南港, 新店站 → 新店)
+      remove_suffixes: ["車站", "站", "驛", "駅", "역"]
+      # 표준데이터 한자역사명의 '값 없음' 표기
+      ignore_texts: ["-", "없음", "해당없음"]
+    variant_fold:
+      # OpenCC 변환 사슬 (순서대로). t2s = 번체 → 간체로 접어서 비교 (다대일이라 發/髮 같은 과병합 가능성 있음)
+      opencc: ["t2s"]
+      # Unihan 이체자 관계 (union-find, 대표 = 최소 코드포인트)
+      unihan_fields: ["kTraditionalVariant", "kSimplifiedVariant", "kZVariant", "kSemanticVariant",
+                      "kSpecializedSemanticVariant", "kJapaneseNewVariant", "kJapaneseOldVariant"]
+      unihan_file: "data/raw/unihan/Unihan_Variants.txt"
+      # 이체자 클래스가 이보다 크면 접지 않는다 (의미 이체자 사슬 과병합 방어)
+      max_class_size: 8

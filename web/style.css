@@ -94,3 +94,14 @@ button { font: inherit; }
 .ghost:disabled { opacity: .4; cursor: default; }
 .pz-share { white-space: pre-wrap; font-family: inherit; font-size: 14px; line-height: 1.5; margin: 0 0 10px; background: var(--bg); border-radius: 8px; padding: 10px; }
 .pz-done { color: var(--start); font-weight: 700; }
+
+/* Phase 1: ruleset 선택, 국가 간 워프 */
+.rs-card select { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid var(--line, #d0d5db); font: inherit; background: #fff; }
+.rs-card .small { font-size: 12px; margin: 6px 0 0; }
+.views { display: flex; gap: 6px; align-items: center; margin-top: 8px; font-size: 12px; color: #667; }
+.views button { border: 1px solid #d0d5db; background: #fff; border-radius: 999px; padding: 2px 10px; cursor: pointer; font: inherit; }
+.legend { margin-left: 6px; font-size: 12px; color: #667; white-space: nowrap; }
+.legend i { display: inline-block; width: 16px; height: 0; border-top: 2px dashed; vertical-align: middle; margin: 0 3px 0 6px; }
+.legend .lg-warp { border-color: var(--warp, #8b3dff); }
+.legend .lg-cross { border-top: 3px solid #ff6a00; }
+.steps li.warp.cross .bar { background: #ff6a00; }

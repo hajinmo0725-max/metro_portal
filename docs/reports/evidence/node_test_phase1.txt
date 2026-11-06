@@ -1,0 +1,158 @@
+
+> test
+> node --test web/test/*.test.mjs
+
+TAP version 13
+# Subtest: 서울 시간 날짜: UTC 15시 이후는 다음 날
+ok 1 - 서울 시간 날짜: UTC 15시 이후는 다음 날
+  ---
+  duration_ms: 1.290415
+  type: 'test'
+  ...
+# Subtest: 데일리 선택: 날짜가 같으면 같은 퍼즐, 한 주기 동안 중복 없음, 회차 번호
+ok 2 - 데일리 선택: 날짜가 같으면 같은 퍼즐, 한 주기 동안 중복 없음, 회차 번호
+  ---
+  duration_ms: 1.159365
+  type: 'test'
+  ...
+# Subtest: 이동 그래프: 승차는 인접역, 워프는 같은 포탈, 환승은 수가 아님
+ok 3 - 이동 그래프: 승차는 인접역, 워프는 같은 포탈, 환승은 수가 아님
+  ---
+  duration_ms: 0.808306
+  type: 'test'
+  ...
+# Subtest: 클러스터 단위 최단 비용 = 역 수준 길찾기(route.js) 비용 = 퍼즐 cost_warp
+ok 4 - 클러스터 단위 최단 비용 = 역 수준 길찾기(route.js) 비용 = 퍼즐 cost_warp
+  ---
+  duration_ms: 150.365108
+  type: 'test'
+  ...
+# Subtest: 최적 경로를 따라가면 100점, 이모지 결과
+ok 5 - 최적 경로를 따라가면 100점, 이모지 결과
+  ---
+  duration_ms: 1.292108
+  type: 'test'
+  ...
+# Subtest: 돌아가면 점수가 깎이고, 되돌리기·포기 동작
+ok 6 - 돌아가면 점수가 깎이고, 되돌리기·포기 동작
+  ---
+  duration_ms: 0.9898
+  type: 'test'
+  ...
+# Subtest: 수 제한: 최적의 3배+10 비용을 넘기면 자동 종료
+ok 7 - 수 제한: 최적의 3배+10 비용을 넘기면 자동 종료
+  ---
+  duration_ms: 0.952548
+  type: 'test'
+  ...
+# Subtest: 3차 A2: 응암순환 단방향 — 퍼즐 이동·길찾기 모두 역방향 승차 불가
+ok 8 - 3차 A2: 응암순환 단방향 — 퍼즐 이동·길찾기 모두 역방향 승차 불가
+  ---
+  duration_ms: 1.492155
+  type: 'test'
+  ...
+# Subtest: JS 길찾기 비용·경로가 Python 결과와 같다
+ok 9 - JS 길찾기 비용·경로가 Python 결과와 같다
+  ---
+  duration_ms: 80.76562
+  type: 'test'
+  ...
+# Subtest: 강남 → 부산 동래 = 교대 워프 1회, 비용 3
+ok 10 - 강남 → 부산 동래 = 교대 워프 1회, 비용 3
+  ---
+  duration_ms: 1.342369
+  type: 'test'
+  ...
+# Subtest: 워프 없이는 서울에서 부산에 못 간다
+ok 11 - 워프 없이는 서울에서 부산에 못 간다
+  ---
+  duration_ms: 1.611499
+  type: 'test'
+  ...
+# Subtest: 0-1 BFS와 Dijkstra 비용 일치 (랜덤 쌍)
+ok 12 - 0-1 BFS와 Dijkstra 비용 일치 (랜덤 쌍)
+  ---
+  duration_ms: 68.319894
+  type: 'test'
+  ...
+# Subtest: 경로 구간 묶기: 승차는 노선별로 연속, 워프는 in/out 한 쌍
+ok 13 - 경로 구간 묶기: 승차는 노선별로 연속, 워프는 in/out 한 쌍
+  ---
+  duration_ms: 1.966443
+  type: 'test'
+  ...
+# Subtest: 데이터 무결성: 엣지 인덱스·포탈 노드
+ok 14 - 데이터 무결성: 엣지 인덱스·포탈 노드
+  ---
+  duration_ms: 0.805934
+  type: 'test'
+  ...
+# Subtest: 입력 해석: 도시 접두어, 동명역, 라벨
+ok 15 - 입력 해석: 도시 접두어, 동명역, 라벨
+  ---
+  duration_ms: 4.325115
+  type: 'test'
+  ...
+# Subtest: ruleset 목록의 번들 파일이 전부 있다
+ok 16 - ruleset 목록의 번들 파일이 전부 있다
+  ---
+  duration_ms: 4.761679
+  type: 'test'
+  ...
+# Subtest: tw_t1: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+ok 17 - tw_t1: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+  ---
+  duration_ms: 134.371122
+  type: 'test'
+  ...
+# Subtest: tw_t12: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+ok 18 - tw_t12: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+  ---
+  duration_ms: 93.880416
+  type: 'test'
+  ...
+# Subtest: tw_t123: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+ok 19 - tw_t123: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+  ---
+  duration_ms: 65.970381
+  type: 'test'
+  ...
+# Subtest: tw_t12_label: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+ok 20 - tw_t12_label: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+  ---
+  duration_ms: 79.713446
+  type: 'test'
+  ...
+# Subtest: tw_t123_label: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+ok 21 - tw_t123_label: JS 길찾기가 Python 결과와 같다 (워프 비용 2·3 → Dijkstra)
+  ---
+  duration_ms: 49.288853
+  type: 'test'
+  ...
+# Subtest: 공식명만 쓰는 번들은 국가 간 포탈이 없고 판교 → 타이베이 板橋가 연결되지 않는다
+ok 22 - 공식명만 쓰는 번들은 국가 간 포탈이 없고 판교 → 타이베이 板橋가 연결되지 않는다
+  ---
+  duration_ms: 18.579571
+  type: 'test'
+  ...
+# Subtest: 참고 번들: 판교 → 타이베이 板橋 = 국가 간 T2 워프 1회 (비용 2)
+ok 23 - 참고 번들: 판교 → 타이베이 板橋 = 국가 간 T2 워프 1회 (비용 2)
+  ---
+  duration_ms: 4.882454
+  type: 'test'
+  ...
+# Subtest: 국가 표기와 국가 간 워프 스타일
+ok 24 - 국가 표기와 국가 간 워프 스타일
+  ---
+  duration_ms: 4.317798
+  type: 'test'
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 24
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 562.837537

@@ -4,7 +4,7 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 
 from .geo import haversine_m
-from .normalize import normalize_name, parenthetical_aliases
+from .normalize import normalize_name, parenthetical_aliases, script_ok
 
 
 class UnionFind:
@@ -26,9 +26,20 @@ class UnionFind:
             self.p[rb] = ra
 
 
-def station_match_names(st: dict, tier_cfg: dict, norm: dict) -> set[str]:
-    """포탈 매칭에 쓰는 정규화 이름 집합 (ruleset의 언어·문자·종류·official 조건)."""
-    out = set()
+def tier_normalize(tier_cfg: dict, norm: dict) -> dict:
+    """등급별 정규화: 공통 normalize 위에 tier의 normalize를 덮어쓴다 (T2 '站' 접미사, T3 대소문자 접기 등)."""
+    if not tier_cfg.get("normalize"):
+        return norm
+    from .ruleset import deep_merge
+    return deep_merge(norm, tier_cfg["normalize"])
+
+
+def station_match_names(st: dict, tier_cfg: dict, norm: dict, folder=None, with_text: bool = False):
+    """포탈 매칭에 쓰는 정규화 이름 집합 (ruleset의 언어·문자·종류·official·출처 조건).
+    folder: T2 이체자 접기 (variants.VariantFolder). with_text면 {키: 원문 집합}을 돌려준다."""
+    out: dict[str, set[str]] = {}
+    tnorm = tier_normalize(tier_cfg, norm)
+    ignore = set(tnorm.get("ignore_texts") or [])
     for n in st.get("names", []):
         if n["lang"] not in tier_cfg["langs"]:
             continue
@@ -38,10 +49,18 @@ def station_match_names(st: dict, tier_cfg: dict, norm: dict) -> set[str]:
             continue
         if tier_cfg.get("official_only") and not n.get("official"):
             continue
-        k = normalize_name(n["text"], norm)
+        if tier_cfg.get("sources") and n.get("source") not in tier_cfg["sources"]:
+            continue
+        if n["text"].strip() in ignore:
+            continue
+        k = normalize_name(n["text"], tnorm)
+        if tier_cfg.get("script_check") and not script_ok(k, n["script"]):
+            continue  # 표기 오류 (한자 칸의 한글 등)
+        if folder is not None:
+            k = folder.fold(k)
         if k:
-            out.add(k)
-    return out
+            out.setdefault(k, set()).add(n["text"])
+    return out if with_text else set(out)
 
 
 def transfer_decision(a: dict, b: dict, d: float, ccfg: dict, official) -> tuple[bool, str]:
@@ -134,22 +153,36 @@ def build_portals(stations: list[dict], clusters: list[dict], rs: dict) -> tuple
     cap = rs["portals"].get("hub_degree_cap")
     cluster_of = {sid: c["id"] for c in clusters for sid in c["station_ids"]}
     portals, capped = [], []
-    for tier in sorted(k for k in rs["portals"] if k != "hub_degree_cap"):
+    # 등급 키는 T로 시작하는 것만 (hub_degree_cap, dedupe_subsumed 같은 옵션 제외). 비용 순 → 이름 순
+    tiers = sorted((k for k in rs["portals"] if k.startswith("T")), key=lambda k: (rs["portals"][k]["cost"], k))
+    for tier in tiers:
         tcfg = rs["portals"][tier]
         if not tcfg.get("enabled"):
             continue
+        folder = None
+        if tcfg.get("variant_fold"):
+            from .variants import folder_for
+            folder = folder_for(tcfg["variant_fold"])
         by_name = defaultdict(lambda: defaultdict(list))
+        texts = defaultdict(set)
         for s in sorted(stations, key=lambda s: s["id"]):
-            for nm in station_match_names(s, tcfg, norm):
+            for nm, tx in station_match_names(s, tcfg, norm, folder, with_text=True).items():
                 by_name[nm][cluster_of[s["id"]]].append(s["id"])
+                texts[nm] |= tx
         for nm in sorted(by_name):
             cl = by_name[nm]
             if len(cl) < 2:
                 continue
             p = {"id": f"P:{tier}:{nm}", "tier": tier, "name": nm, "cost": tcfg["cost"],
                  "cluster_ids": sorted(cl), "station_ids": sorted(sid for v in cl.values() for sid in v),
-                 "degree": len(cl)}
+                 "degree": len(cl), "texts": sorted(texts[nm])}
             if cap is not None and p["degree"] > cap:
+                capped.append(p)
+                continue
+            # 더 싼(먼저 만든) 등급 포탈이 이미 같은 클러스터들을 다 잇고 있으면 중복 (예: T1 '시청'과 T3 'city hall')
+            if rs["portals"].get("dedupe_subsumed") and any(
+                    q["tier"] != tier and set(p["cluster_ids"]) <= set(q["cluster_ids"]) for q in portals):
+                p["subsumed"] = True
                 capped.append(p)
                 continue
             portals.append(p)

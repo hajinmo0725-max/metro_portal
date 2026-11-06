@@ -31,6 +31,11 @@ def _strip_parenthetical(s: str, pairs: list[list[str]]) -> tuple[str, list[str]
 
 def _base(text: str, cfg: dict) -> str:
     s = unicodedata.normalize(cfg["unicode_form"], text or "")
+    # 선택 옵션 (Phase 1 T3 영문명용): 문자 치환표, 대소문자 접기
+    for a, b in (cfg.get("char_map") or {}).items():
+        s = s.replace(a, b)
+    if cfg.get("casefold"):
+        s = s.casefold()
     if cfg["collapse_whitespace"]:
         s = _collapse(s)
     if cfg["strip"]:
@@ -73,3 +78,19 @@ def parenthetical_aliases(text: str, cfg: dict) -> list[str]:
         if n:
             out.append(n)
     return out
+
+
+_SCRIPT_PREFIX = {"Hani": ("CJK UNIFIED IDEOGRAPH", "CJK COMPATIBILITY IDEOGRAPH"),
+                  "Hant": ("CJK UNIFIED IDEOGRAPH", "CJK COMPATIBILITY IDEOGRAPH"),
+                  "Hans": ("CJK UNIFIED IDEOGRAPH", "CJK COMPATIBILITY IDEOGRAPH"),
+                  "Latn": ("LATIN ",), "Hang": ("HANGUL ",)}
+
+
+def script_ok(text: str, script: str) -> bool:
+    """정규화된 이름의 글자(Unicode 범주 L*)가 모두 선언한 문자 체계인가. 한자 칸에 '한자가없음' 같은 한글이 든 표기 오류를 거른다.
+    알 수 없는 문자 체계면 검사하지 않는다(True)."""
+    pre = _SCRIPT_PREFIX.get(script)
+    if not pre:
+        return True
+    letters = [ch for ch in text if unicodedata.category(ch).startswith("L")]
+    return bool(letters) and all(unicodedata.name(ch, "").startswith(pre) for ch in letters)

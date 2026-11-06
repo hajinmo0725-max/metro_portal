@@ -1,0 +1,506 @@
+{
+ "lines": [
+  {
+   "id": "tp-br",
+   "name": "文湖線",
+   "name_en": "Wenhu line",
+   "source_no": "tp-br",
+   "source_name": "文湖線",
+   "operator": "臺北大眾捷運公司",
+   "city": "타이베이",
+   "country": "TW",
+   "color": "#C48C31",
+   "pools": [
+    "TW:tp-br"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "tw:tp-br:BR01",
+      "tw:tp-br:BR02",
+      "tw:tp-br:BR03",
+      "tw:tp-br:BR04",
+      "tw:tp-br:BR05",
+      "tw:tp-br:BR06",
+      "tw:tp-br:BR07",
+      "tw:tp-br:BR08",
+      "tw:tp-br:BR09",
+      "tw:tp-br:BR10",
+      "tw:tp-br:BR11",
+      "tw:tp-br:BR12",
+      "tw:tp-br:BR13",
+      "tw:tp-br:BR14",
+      "tw:tp-br:BR15",
+      "tw:tp-br:BR16",
+      "tw:tp-br:BR17",
+      "tw:tp-br:BR18",
+      "tw:tp-br:BR19",
+      "tw:tp-br:BR20",
+      "tw:tp-br:BR21",
+      "tw:tp-br:BR22",
+      "tw:tp-br:BR23",
+      "tw:tp-br:BR24"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q707644"
+   ]
+  },
+  {
+   "id": "tp-r",
+   "name": "淡水信義線",
+   "name_en": "Tamsui–Xinyi line",
+   "source_no": "tp-r",
+   "source_name": "淡水信義線",
+   "operator": "臺北大眾捷運公司",
+   "city": "타이베이",
+   "country": "TW",
+   "color": "#E3002C",
+   "pools": [
+    "TW:tp-r"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "tw:tp-r:R01",
+      "tw:tp-r:R02",
+      "tw:tp-r:R03",
+      "tw:tp-r:R04",
+      "tw:tp-r:R05",
+      "tw:tp-r:R06",
+      "tw:tp-r:R07",
+      "tw:tp-r:R08",
+      "tw:tp-r:R09",
+      "tw:tp-r:R10",
+      "tw:tp-r:R11",
+      "tw:tp-r:R12",
+      "tw:tp-r:R13",
+      "tw:tp-r:R14",
+      "tw:tp-r:R15",
+      "tw:tp-r:R16",
+      "tw:tp-r:R17",
+      "tw:tp-r:R18",
+      "tw:tp-r:R19",
+      "tw:tp-r:R20",
+      "tw:tp-r:R21",
+      "tw:tp-r:R22",
+      "tw:tp-r:R23",
+      "tw:tp-r:R24",
+      "tw:tp-r:R25",
+      "tw:tp-r:R26",
+      "tw:tp-r:R27",
+      "tw:tp-r:R28"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-R22A",
+     "station_ids": [
+      "tw:tp-r:R22",
+      "tw:tp-r:R22A"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q697140",
+    "Q8044505",
+    "Q6685757"
+   ]
+  },
+  {
+   "id": "tp-g",
+   "name": "松山新店線",
+   "name_en": "Songshan–Xindian line",
+   "source_no": "tp-g",
+   "source_name": "松山新店線",
+   "operator": "臺北大眾捷運公司",
+   "city": "타이베이",
+   "country": "TW",
+   "color": "#008659",
+   "pools": [
+    "TW:tp-g"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "tw:tp-g:G01",
+      "tw:tp-g:G02",
+      "tw:tp-g:G03",
+      "tw:tp-g:G04",
+      "tw:tp-g:G05",
+      "tw:tp-g:G06",
+      "tw:tp-g:G07",
+      "tw:tp-g:G08",
+      "tw:tp-g:G09",
+      "tw:tp-g:G10",
+      "tw:tp-g:G11",
+      "tw:tp-g:G12",
+      "tw:tp-g:G13",
+      "tw:tp-g:G14",
+      "tw:tp-g:G15",
+      "tw:tp-g:G16",
+      "tw:tp-g:G17",
+      "tw:tp-g:G18",
+      "tw:tp-g:G19"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-G03A",
+     "station_ids": [
+      "tw:tp-g:G03",
+      "tw:tp-g:G03A"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q697192",
+    "Q8044250"
+   ]
+  },
+  {
+   "id": "tp-o",
+   "name": "中和新蘆線",
+   "name_en": "Zhonghe–Xinlu line",
+   "source_no": "tp-o",
+   "source_name": "中和新蘆線",
+   "operator": "臺北大眾捷運公司",
+   "city": "타이베이",
+   "country": "TW",
+   "color": "#F8B61C",
+   "pools": [
+    "TW:tp-o"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "tw:tp-o:O01",
+      "tw:tp-o:O02",
+      "tw:tp-o:O03",
+      "tw:tp-o:O04",
+      "tw:tp-o:O05",
+      "tw:tp-o:O06",
+      "tw:tp-o:O07",
+      "tw:tp-o:O08",
+      "tw:tp-o:O09",
+      "tw:tp-o:O10",
+      "tw:tp-o:O11",
+      "tw:tp-o:O12",
+      "tw:tp-o:O13",
+      "tw:tp-o:O14",
+      "tw:tp-o:O15",
+      "tw:tp-o:O16",
+      "tw:tp-o:O17",
+      "tw:tp-o:O18",
+      "tw:tp-o:O19",
+      "tw:tp-o:O20",
+      "tw:tp-o:O21"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-O54",
+     "station_ids": [
+      "tw:tp-o:O12",
+      "tw:tp-o:O50",
+      "tw:tp-o:O51",
+      "tw:tp-o:O52",
+      "tw:tp-o:O53",
+      "tw:tp-o:O54"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q6141590",
+    "Q3241405"
+   ]
+  },
+  {
+   "id": "tp-bl",
+   "name": "板南線",
+   "name_en": "Bannan line",
+   "source_no": "tp-bl",
+   "source_name": "板南線",
+   "operator": "臺北大眾捷運公司",
+   "city": "타이베이",
+   "country": "TW",
+   "color": "#0070BD",
+   "pools": [
+    "TW:tp-bl"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "tw:tp-bl:BL01",
+      "tw:tp-bl:BL02",
+      "tw:tp-bl:BL03",
+      "tw:tp-bl:BL04",
+      "tw:tp-bl:BL05",
+      "tw:tp-bl:BL06",
+      "tw:tp-bl:BL07",
+      "tw:tp-bl:BL08",
+      "tw:tp-bl:BL09",
+      "tw:tp-bl:BL10",
+      "tw:tp-bl:BL11",
+      "tw:tp-bl:BL12",
+      "tw:tp-bl:BL13",
+      "tw:tp-bl:BL14",
+      "tw:tp-bl:BL15",
+      "tw:tp-bl:BL16",
+      "tw:tp-bl:BL17",
+      "tw:tp-bl:BL18",
+      "tw:tp-bl:BL19",
+      "tw:tp-bl:BL20",
+      "tw:tp-bl:BL21",
+      "tw:tp-bl:BL22",
+      "tw:tp-bl:BL23"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q708378",
+    "Q6685410"
+   ]
+  },
+  {
+   "id": "tp-y",
+   "name": "台北捷運環狀線",
+   "name_en": "Circular line",
+   "source_no": "tp-y",
+   "source_name": "台北捷運環狀線",
+   "operator": "臺北大眾捷運公司",
+   "city": "타이베이",
+   "country": "TW",
+   "color": "#FFDB00",
+   "pools": [
+    "TW:tp-y"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "tw:tp-y:Y07",
+      "tw:tp-y:Y08",
+      "tw:tp-y:Y09",
+      "tw:tp-y:Y10",
+      "tw:tp-y:Y11",
+      "tw:tp-y:Y12",
+      "tw:tp-y:Y13",
+      "tw:tp-y:Y14",
+      "tw:tp-y:Y15:Q11105013",
+      "tw:tp-y:Y15:Q131625402",
+      "tw:tp-y:Y17",
+      "tw:tp-y:Y18:Q5932132",
+      "tw:tp-y:Y18:Q11061523",
+      "tw:tp-y:Y20"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q5971413"
+   ]
+  },
+  {
+   "id": "ty-a",
+   "name": "桃園捷運 機場線",
+   "name_en": "Taoyuan Airport MRT",
+   "source_no": "ty-a",
+   "source_name": "桃園捷運 機場線",
+   "operator": "桃園大眾捷運公司",
+   "city": "타이베이",
+   "country": "TW",
+   "color": "#8246AF",
+   "pools": [
+    "TW:ty-a"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "tw:ty-a:A1",
+      "tw:ty-a:A2",
+      "tw:ty-a:A3",
+      "tw:ty-a:A4",
+      "tw:ty-a:A5",
+      "tw:ty-a:A6",
+      "tw:ty-a:A7",
+      "tw:ty-a:A8",
+      "tw:ty-a:A9",
+      "tw:ty-a:A10",
+      "tw:ty-a:A11",
+      "tw:ty-a:A12",
+      "tw:ty-a:A13",
+      "tw:ty-a:A14a",
+      "tw:ty-a:A15",
+      "tw:ty-a:A16",
+      "tw:ty-a:A17",
+      "tw:ty-a:A18",
+      "tw:ty-a:A19",
+      "tw:ty-a:A20",
+      "tw:ty-a:A21",
+      "tw:ty-a:A22"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q4268353"
+   ]
+  },
+  {
+   "id": "nt-v",
+   "name": "淡海輕軌",
+   "name_en": "Danhai light rail",
+   "source_no": "nt-v",
+   "source_name": "淡海輕軌",
+   "operator": "新北大眾捷運公司",
+   "city": "타이베이",
+   "country": "TW",
+   "color": "#CFDB00",
+   "pools": [
+    "TW:nt-v"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "tw:nt-v:V01",
+      "tw:nt-v:V02",
+      "tw:nt-v:V03",
+      "tw:nt-v:V04",
+      "tw:nt-v:V05",
+      "tw:nt-v:V06",
+      "tw:nt-v:V07",
+      "tw:nt-v:V08",
+      "tw:nt-v:V09",
+      "tw:nt-v:V28",
+      "tw:nt-v:V27",
+      "tw:nt-v:V26"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-V11",
+     "station_ids": [
+      "tw:nt-v:V09",
+      "tw:nt-v:V10",
+      "tw:nt-v:V11"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q11152362",
+    "Q51691675",
+    "Q85884091"
+   ]
+  },
+  {
+   "id": "nt-k",
+   "name": "安坑輕軌",
+   "name_en": "Ankeng light rail",
+   "source_no": "nt-k",
+   "source_name": "安坑輕軌",
+   "operator": "新北大眾捷運公司",
+   "city": "타이베이",
+   "country": "TW",
+   "color": "#C3B091",
+   "pools": [
+    "TW:nt-k"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "tw:nt-k:K01",
+      "tw:nt-k:K02",
+      "tw:nt-k:K03",
+      "tw:nt-k:K04",
+      "tw:nt-k:K05",
+      "tw:nt-k:K06",
+      "tw:nt-k:K07",
+      "tw:nt-k:K08",
+      "tw:nt-k:K09"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q10914168"
+   ]
+  },
+  {
+   "id": "nt-lb",
+   "name": "三鶯線",
+   "name_en": "Sanying Line",
+   "source_no": "nt-lb",
+   "source_name": "三鶯線",
+   "operator": "新北大眾捷運公司",
+   "city": "타이베이",
+   "country": "TW",
+   "color": "#77BBE0",
+   "pools": [
+    "TW:nt-lb"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "tw:nt-lb:LB01",
+      "tw:nt-lb:LB02",
+      "tw:nt-lb:LB03",
+      "tw:nt-lb:LB04",
+      "tw:nt-lb:LB05",
+      "tw:nt-lb:LB06",
+      "tw:nt-lb:LB07",
+      "tw:nt-lb:LB08",
+      "tw:nt-lb:LB09",
+      "tw:nt-lb:LB10",
+      "tw:nt-lb:LB11",
+      "tw:nt-lb:LB12"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q10914163"
+   ]
+  }
+ ]
+}

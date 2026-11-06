@@ -30,7 +30,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from metro_portal import ROOT  # noqa: E402
 from metro_portal.ruleset import load_ruleset  # noqa: E402
-from metro_portal.game import INF, ClusterGraph, describe_path, n_stops  # noqa: E402,F401
+from metro_portal.game import INF, ClusterGraph, describe_path, intuition_search, n_stops  # noqa: E402,F401
 from metro_portal.world import build_world, load_base  # noqa: E402
 
 
@@ -111,6 +111,19 @@ def build_puzzles(g, cfg):
     # 결정적 퍼즐 id와 데일리 순서
     for i, p in enumerate(out):
         p["id"] = f"P{i + 1:03d}"
+    # 3차: 난이도 보정 주석 (직관 탐색). 선정·순서에는 영향 없음
+    cal = cfg.get("calibration")
+    if cal:
+        for p in out:
+            ic, ex = intuition_search(g, g.ix[p["from"]], g.ix[p["to"]])
+            sc = round(p["cost_warp"] / ic, 3) if ic else 0.0
+            p["intuition_cost"], p["intuition_expanded"], p["intuition_score"] = ic, ex, sc
+            p["difficulty_calibrated"] = "easy" if sc >= cal["easy_min_score"] else ("normal" if sc >= cal["normal_min_score"] else "hard")
+        stats["calibration"] = {f"{a}->{b}": sum(1 for p in out if p["difficulty"] == a and p["difficulty_calibrated"] == b)
+                                for a in ("easy", "normal", "hard") for b in ("easy", "normal", "hard")}
+        import statistics
+        stats["calibration_expanded_median"] = {a: statistics.median([p["intuition_expanded"] for p in out if p["difficulty"] == a] or [0])
+                                                for a in ("easy", "normal", "hard")}
     rnd = random.Random(cfg["daily_seed"])
     order = [p["id"] for p in out]
     rnd.shuffle(order)
@@ -185,6 +198,20 @@ def write_report(pz, ns, g):
     L += [f"| {k} | {v} |" for k, v in st.items()]
     L += ["", "optimal_count_hist: 워프 포함 최적 경로 개수 분포 (10 = 10개 이상).", "",
           f"선정 결과: {len(pz['puzzles'])}개 → `data/processed/puzzles.json` (웹용 축약본 `web/data/puzzles.json`)", ""]
+    cal = st.get("calibration")
+    if cal:
+        L += ["### 난이도 보정 (3차, 직관 탐색)", "",
+              "지리 감각만 가진 플레이어를 흉내 낸 최선 우선 탐색(역의 가치 = 그 역 또는 그 역의 워프 도착지에서 목적지까지 대권거리의 최솟값)으로 풀어 본다.",
+              "점수 = 최적 비용 / 직관 탐색이 찾은 비용. 보정 등급: 점수 1.0 = easy, 0.4 이상 = normal, 그 밖 = hard (`config/game.yaml` calibration). 선정·데일리 순서에는 쓰지 않는다.",
+              f"규칙 등급별 목적지까지 펼친 역 수 중앙값: " + ", ".join(f"{k} {v}" for k, v in st.get("calibration_expanded_median", {}).items()), "",
+              "| 규칙 등급 \\ 보정 등급 | easy | normal | hard |", "| :- | -: | -: | -: |"]
+        for a in ("easy", "normal", "hard"):
+            L.append(f"| {a} | " + " | ".join(str(cal[f"{a}->{b}"]) for b in ("easy", "normal", "hard")) + " |")
+        agree = sum(cal[f"{a}->{a}"] for a in ("easy", "normal", "hard"))
+        L += ["", f"일치 {agree}/{sum(cal.values())}. 규칙상 easy인데 직관 탐색이 최적을 못 찾는 퍼즐 (지리 감각과 반대로 가야 하는 워프):", ""]
+        tricky = [p for p in pz["puzzles"] if p["difficulty"] == "easy" and p["difficulty_calibrated"] != "easy"]
+        L += [f"- {p['id']} {p['from_label']} → {p['to_label']}: 최적 {p['cost_warp']}, 직관 {p['intuition_cost']} (점수 {p['intuition_score']}, 펼친 역 {p['intuition_expanded']})" for p in tricky] or ["없음."]
+        L.append("")
     for kind in ("shortcut", "crosscity"):
         L += [f"### {kind} — {pz['definition']['kinds'][kind]}", "",
               "| id | 난이도 | 출발 | 도착 | 워프 有 | 워프 無 | 단축 | 워프 | 최적 경로 |", "| :- | :- | :- | :- | -: | -: | -: | -: | :- |"]
