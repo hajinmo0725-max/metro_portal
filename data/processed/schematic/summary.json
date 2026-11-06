@@ -1,0 +1,293 @@
+{
+ "engine": "own octilinear MIP (Nöllenburg & Wolff 2011 style, HiGHS via highspy)",
+ "solver": {
+  "grid_edge": 4.0,
+  "min_edge": 2.0,
+  "chain_len_factor": 0.6,
+  "w_bend": 1.0,
+  "w_dir": 2.0,
+  "w_len": 0.05,
+  "min_sep": 1.5,
+  "time_limit_s": 60,
+  "max_iterations": 12,
+  "mip_rel_gap": 0.05,
+  "order": "hard",
+  "w_order": 20.0,
+  "span_factor": 1.0,
+  "scale_by": "mean",
+  "mip_heuristic_effort": 0.05,
+  "pos_window": null,
+  "geo_len_factor": 0.5
+ },
+ "regions": {
+  "seoul": {
+   "city": "수도권",
+   "country": "KR",
+   "keep_every": 3,
+   "engine": "mip",
+   "status": "반복 2 해 사용 (Optimal; 반복 3은 Time limit reached, 해 없음)",
+   "seconds": 239.5,
+   "iterations": 3,
+   "crossing_constraints": 6,
+   "objective": Infinity,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 0,
+    "crossings": 17,
+    "bend_units_45deg": 214,
+    "mean_displacement_norm": 0.31
+   },
+   "stats_geo": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 755,
+    "crossings": 18,
+    "bend_units_45deg": 343,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  "busan": {
+   "city": "부산",
+   "country": "KR",
+   "keep_every": 2,
+   "engine": "mip",
+   "status": "Optimal",
+   "seconds": 4.6,
+   "iterations": 2,
+   "crossing_constraints": 6,
+   "objective": 74.66355340299353,
+   "stats": {
+    "nodes": 146,
+    "edges": 152,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 43,
+    "mean_displacement_norm": 0.339
+   },
+   "stats_geo": {
+    "nodes": 146,
+    "edges": 152,
+    "non_octilinear_edges": 152,
+    "crossings": 0,
+    "bend_units_45deg": 65,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  "daegu": {
+   "city": "대구",
+   "country": "KR",
+   "keep_every": 2,
+   "engine": "mip",
+   "status": "Optimal",
+   "seconds": 3.6,
+   "iterations": 4,
+   "crossing_constraints": 17,
+   "objective": 42.580340608401514,
+   "stats": {
+    "nodes": 97,
+    "edges": 98,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 20,
+    "mean_displacement_norm": 0.404
+   },
+   "stats_geo": {
+    "nodes": 97,
+    "edges": 98,
+    "non_octilinear_edges": 98,
+    "crossings": 2,
+    "bend_units_45deg": 27,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  "daejeon": {
+   "city": "대전",
+   "country": "KR",
+   "keep_every": 2,
+   "engine": "mip",
+   "status": "Optimal",
+   "seconds": 0.1,
+   "iterations": 1,
+   "crossing_constraints": 0,
+   "objective": 11.69999999999999,
+   "stats": {
+    "nodes": 22,
+    "edges": 21,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 6,
+    "mean_displacement_norm": 0.12
+   },
+   "stats_geo": {
+    "nodes": 22,
+    "edges": 21,
+    "non_octilinear_edges": 21,
+    "crossings": 0,
+    "bend_units_45deg": 12,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  "gwangju": {
+   "city": "광주",
+   "country": "KR",
+   "keep_every": 2,
+   "engine": "mip",
+   "status": "Optimal",
+   "seconds": 0.0,
+   "iterations": 1,
+   "crossing_constraints": 0,
+   "objective": 6.575882501671258,
+   "stats": {
+    "nodes": 20,
+    "edges": 19,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 3,
+    "mean_displacement_norm": 0.196
+   },
+   "stats_geo": {
+    "nodes": 20,
+    "edges": 19,
+    "non_octilinear_edges": 19,
+    "crossings": 0,
+    "bend_units_45deg": 7,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  "taipei": {
+   "city": "타이베이",
+   "country": "TW",
+   "keep_every": 2,
+   "engine": "mip",
+   "status": "Optimal",
+   "seconds": 10.7,
+   "iterations": 5,
+   "crossing_constraints": 9,
+   "objective": 79.81581999454542,
+   "stats": {
+    "nodes": 170,
+    "edges": 183,
+    "non_octilinear_edges": 0,
+    "crossings": 2,
+    "bend_units_45deg": 40,
+    "mean_displacement_norm": 0.271
+   },
+   "stats_geo": {
+    "nodes": 170,
+    "edges": 183,
+    "non_octilinear_edges": 183,
+    "crossings": 1,
+    "bend_units_45deg": 79,
+    "mean_displacement_norm": 0.0
+   }
+  }
+ },
+ "seoul_variants": [
+  {
+   "name": "A 굴곡 우선",
+   "id": "seoul_A",
+   "params": {
+    "w_bend": 3.0,
+    "w_dir": 1.0
+   },
+   "keep_every": 3,
+   "status": "MIP: Time limit reached (실행 가능해 없음) → snap-lp",
+   "seconds": 182.2,
+   "engine": "snap-lp",
+   "iterations": 6,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 18,
+    "crossings": 116,
+    "bend_units_45deg": 213,
+    "mean_displacement_norm": 0.16
+   }
+  },
+  {
+   "name": "B 이전 기본 (w_dir 2, 간격 1.5, 길이 비례 없음)",
+   "id": "seoul_B",
+   "params": {
+    "w_bend": 1.0,
+    "w_dir": 2.0
+   },
+   "keep_every": 3,
+   "status": "Time limit reached (실행 가능해 없음)",
+   "seconds": 362.6,
+   "engine": "mip",
+   "iterations": 2,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 0,
+    "crossings": 17,
+    "bend_units_45deg": 177,
+    "mean_displacement_norm": 0.411
+   }
+  },
+  {
+   "name": "C 지리 우선",
+   "id": "seoul_C",
+   "params": {
+    "w_bend": 1.0,
+    "w_dir": 4.0
+   },
+   "keep_every": 3,
+   "status": "Time limit reached (실행 가능해 없음)",
+   "seconds": 198.7,
+   "engine": "mip",
+   "iterations": 2,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 0,
+    "crossings": 17,
+    "bend_units_45deg": 209,
+    "mean_displacement_norm": 0.319
+   }
+  },
+  {
+   "name": "D 전체 축약",
+   "id": "seoul_D",
+   "params": {
+    "w_bend": 1.0,
+    "w_dir": 2.0
+   },
+   "keep_every": 0,
+   "status": "MIP: Time limit reached (실행 가능해 없음) → snap-lp",
+   "seconds": 181.6,
+   "engine": "snap-lp",
+   "iterations": 6,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 50,
+    "crossings": 52,
+    "bend_units_45deg": 149,
+    "mean_displacement_norm": 0.311
+   }
+  },
+  {
+   "name": "E 간격 완화",
+   "id": "seoul_E",
+   "params": {
+    "w_bend": 1.0,
+    "w_dir": 2.0
+   },
+   "keep_every": 3,
+   "status": "Time limit reached (실행 가능해 없음)",
+   "seconds": 361.4,
+   "engine": "mip",
+   "iterations": 2,
+   "stats": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 0,
+    "crossings": 17,
+    "bend_units_45deg": 177,
+    "mean_displacement_norm": 0.411
+   }
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "name": "B 이전 기본 (w_dir 2, 간격 1.5, 길이 비례 없음)",
+ "id": "seoul_B",
+ "params": {
+  "w_bend": 1.0,
+  "w_dir": 2.0
+ },
+ "keep_every": 3,
+ "status": "Time limit reached (실행 가능해 없음)",
+ "seconds": 362.6,
+ "engine": "mip",
+ "iterations": 2,
+ "stats": {
+  "nodes": 655,
+  "edges": 755,
+  "non_octilinear_edges": 0,
+  "crossings": 17,
+  "bend_units_45deg": 177,
+  "mean_displacement_norm": 0.411
+ }
+}

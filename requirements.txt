@@ -10,3 +10,5 @@ koreanize-matplotlib>=0.1.1
 osmium>=3.7
 # Phase 1 T2 이체자 정규화 (3차 B2)
 opencc>=1.1.9
+# 4차 S5 도식 노선도 octilinear MIP (HiGHS)
+highspy>=1.7

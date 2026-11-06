@@ -14,3 +14,5 @@
 | OpenCC 변환표 (Phase 1 T2) | PyPI `opencc` 패키지 내장 사전 | Apache-2.0 | `pip install opencc` | T2 이체자 정규화 |
 | Wikidata 개통 예정 역 좌표 (4차 Q0) | Wikidata Query Service (양산선 6역·노포 Q705026·양산중앙 Q56058997·북울산 Q108426233의 P625) | CC0 1.0 | 2026-11-06 SPARQL 1회 수동 조회, 값은 `config/kr_planned.yaml`에 QID와 함께 기록 | 비활성 계획 노선(`enabled: false`) 좌표. 개통 후 표준데이터로 교체 |
 | 한국 도시철도·광역철도 개통 현황 조사 (4차) | `docs/research/kr_line_openings.md` (Cowork 조사, 2026-11-06). 국토부·국가철도공단·지자체 보도자료와 언론 보도 | 각 원문 저작권. 조사 문서는 요약·링크만 | 사용자 제공 | 개통 예정 노선 등록·제외 판단 근거 |
+| LOOM (도식 노선도 레이아웃 도구, 4차 S2) | github.com/ad-freiburg/loom (커밋 1e47578 고정, `scripts/build_loom.sh`) | **GPL-3.0** — 레포에 코드를 복사하지 않고 빌드 단계에서 받아 외부 CLI로만 쓰는 조건 | `git ls-remote` 접근은 됐지만, 받기·빌드 명령이 세션의 자동 권한 판정(외부 코드 실행)에서 거부됨 (2026-11-06) | **미사용**. 우회 시도 안 함. 자체 MIP(`metro_portal/schematic.py`)로 대체 |
+| HiGHS (MIP 솔버, 4차 S5) | PyPI `highspy` | MIT | `pip install highspy` (requirements.txt) | 자체 octilinear MIP 풀이 |
