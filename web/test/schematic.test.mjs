@@ -71,3 +71,14 @@ test("국가 간 번들: 판교 → 타이베이 板橋는 타이베이 패널�
   const r = routeClusters(tw, buildAdj(tw, { warp: true }), a.index, b.index);
   assert.deepEqual(panelSequence(routeSteps(tw, r, reg)), ["seoul", "taipei"]);
 });
+
+test("라벨 충돌 회피: 가까운 두 역 라벨이 겹치지 않게 다른 쪽에 놓는다", async () => {
+  const { placeLabels } = await import("../schematic_core.js");
+  const st = [
+    { p: [100, 100], dir: [0, 1], text: "가나다라", size: 10, big: false },
+    { p: [100, 104], dir: [0, 1], text: "마바사아", size: 10, big: false },
+  ];
+  const out = placeLabels(st);
+  const ov = (a, b) => Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
+  assert.equal(ov(out[0].box, out[1].box), 0);
+});

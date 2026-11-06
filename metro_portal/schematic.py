@@ -163,10 +163,12 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
     E = list(cg["edges"].keys())
     P = g["pos"]
     # 지리 좌표를 격자 단위로 스케일: 평균 엣지 길이를 grid_edge 칸으로
-    mean_len = sum(math.dist(P[a], P[b]) for a, b in E) / max(1, len(E))
+    lens = sorted(math.dist(P[a], P[b]) for a, b in E)
+    # 격자 스케일 기준: 평균(기본) 또는 중앙값(scale_by: median — 축약으로 긴 교외 엣지가 평균을 끌어올리는 큰 권역용)
+    mean_len = (lens[len(lens) // 2] if cfg.get("scale_by") == "median" else sum(lens) / max(1, len(lens))) if lens else 0
     scale = cfg["grid_edge"] / mean_len if mean_len else 1.0
     G = {v: (P[v][0] * scale, P[v][1] * scale) for v in nodes}
-    span = max(max(abs(p[0]) for p in G.values()), max(abs(p[1]) for p in G.values())) * 2 + 10 * cfg["grid_edge"]
+    span = (max(max(abs(p[0]) for p in G.values()), max(abs(p[1]) for p in G.values())) * 2 + 10 * cfg["grid_edge"]) * cfg.get("span_factor", 1.0)
     M0 = M = span * 4
     h = highspy.Highs()
     h.setOptionValue("output_flag", False)
@@ -216,19 +218,24 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
         a, b = e
         s = sector(G[b][0] - G[a][0], G[b][1] - G[a][1])
         sec[e] = s
-        ks = choices(G[a], G[b], s, cfg.get("dir_choices", 3))
-        KS[e] = ks
-        for k in ks:
-            i = (s + k) % 8
-            D[e, i] = var(0, 1, cfg["w_dir"] * abs(k), integer=True)
-        row([(D[e, (s + k) % 8], 1) for k in ks], 1, 1)
+        if cfg.get("allowed") and e in cfg["allowed"]:
+            dirs_e = sorted(set(cfg["allowed"][e]))          # fix-and-optimize: 바깥에서 정한 방향 후보
+        else:
+            dirs_e = sorted({(s + k) % 8 for k in choices(G[a], G[b], s, cfg.get("dir_choices", 3))})
+        KS[e] = dirs_e
+        for i in dirs_e:
+            dist8 = min((i - s) % 8, (s - i) % 8)
+            D[e, i] = var(0, 1, cfg["w_dir"] * dist8, integer=True)
+        row([(D[e, i], 1) for i in dirs_e], 1, 1)
         # 최소 길이: 축약한 원래 엣지 수에 비례
         n_orig = len(cg["edges"][e]["chain"]) - 1
         lmin = cfg["min_edge"] * (1 + cfg.get("chain_len_factor", 0.6) * (n_orig - 1))
+        # 선택: 지리 길이 비례 하한 (긴 교외 구간이 최소 길이로 쪼그라들어 노선 끝이 뭉치는 걸 막는다, LOOM geo-pen과 비슷한 의도)
+        if cfg.get("geo_len_factor"):
+            lmin = max(lmin, cfg["geo_len_factor"] * max(abs(G[b][0] - G[a][0]), abs(G[b][1] - G[a][1])))
         # 엣지별 빅M: 좌표 창이 있으면 두 끝점의 가능한 최대 차이로 조인다 (LP 완화 강화)
         M = Me = (max(abs(G[b][0] - G[a][0]), abs(G[b][1] - G[a][1])) * 2 + 4 * R + 2 * lmin) if R else M0
-        for k in ks:
-            i = (s + k) % 8
+        for i in dirs_e:
             dx, dy = DIRS[i]
             d = D[e, i]
             # 방향 직교 성분 = 0 (빅M), 진행 성분 ≥ lmin
@@ -262,10 +269,8 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
     def theta_terms(v, e):
         """정점 v에서 본 엣지 e의 방향 섹터 (0..7) = Σ i·d."""
         a, b = e
-        s = sec[e]
         out = []
-        for k in KS[e]:
-            i = (s + k) % 8
+        for i in KS[e]:
             t = i if v == a else (i + 4) % 8
             out.append((D[e, i], t))
         return out
@@ -277,7 +282,7 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
         inc[e[1]].append(e)
     for v in nodes:
         es = inc[v]
-        if len(es) < 2:
+        if len(es) < 2 or cfg.get("order") == "none":
             continue
         if len(es) > 8:
             raise ValueError(f"차수 > 8 정점: {v}")
@@ -325,6 +330,15 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
     row([(X[v0], 1)], G[v0][0], G[v0][0])
     row([(Y[v0], 1)], G[v0][1], G[v0][1])
 
+    # 지리 좌표에서 이미 교차하는 엣지 쌍 (역 없이 입체 교차하는 실제 노선)은 평면성 제약에서 뺀다
+    # (N&W는 교차점에 가상 정점을 넣어 평면화하지만, 여기서는 그 쌍의 교차를 허용하는 쪽으로 단순화)
+    geo_cross = set()
+    for i in range(len(E)):
+        a, b = E[i]
+        for j in range(i + 1, len(E)):
+            c, d = E[j]
+            if len({a, b, c, d}) == 4 and segments_cross(G[a], G[b], G[c], G[d]):
+                geo_cross.add((E[i], E[j]))
     added = set()
     it = 0
     status = None
@@ -350,7 +364,7 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
                 if len({a, b, c, d}) < 4:
                     continue
                 key = (E[i], E[j])
-                if key in added:
+                if key in added or key in geo_cross:
                     continue
                 if segments_cross(pos[a], pos[b], pos[c], pos[d]) or min(
                         point_seg_dist(pos[c], pos[a], pos[b]), point_seg_dist(pos[d], pos[a], pos[b]),
@@ -382,8 +396,13 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
             return sector(pos[o][0] - pos[v][0], pos[o][1] - pos[v][1])
         dvt = (th(e2) - th(e1) - 4) % 8
         bends += w * min(dvt, 8 - dvt)
+    chosen = {}
+    if pos:
+        sol = h.getSolution().col_value
+        for e in E:
+            chosen[e] = max(KS[e], key=lambda i: sol[D[e, i]])
     return {"pos": pos, "status": status, "iterations": it, "crossing_constraints": len(added), "objective": obj,
-            "scale": scale, "bend_cost": bends}
+            "scale": scale, "bend_cost": bends, "geo_crossing_pairs": len(geo_cross), "dirs": chosen}
 
 
 def expand(g: dict, cg: dict, pos: dict) -> dict:
@@ -478,31 +497,26 @@ def render_svg(g: dict, pos: dict, title: str, size=900, label=True) -> str:
             deg[b] += 1
             nbr[a].append(b)
             nbr[b].append(a)
+    items = []
     for v, p in sorted(pos.items()):
         x, y = tr(p)
         big = deg[v] != 2
         out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{5 if big else 3}" fill="#fff" stroke="#222" stroke-width="{2 if big else 1.2}"/>')
-        if label:
-            # 라벨: 역에 닿는 선의 평균 방향에 수직으로 띄운다. 선이 가로에 가까우면 45° 기울여 겹침을 줄인다
-            vx = vy = 0.0
-            for o in nbr[v]:
-                q = tr(pos[o])
-                dx, dy = q[0] - x, q[1] - y
-                L = math.hypot(dx, dy) or 1
-                # 방향 부호를 맞춰 더한다 (양쪽 이웃이 반대 방향이면 상쇄되지 않게)
-                if dx < -1e-6 or (abs(dx) <= 1e-6 and dy < 0):
-                    dx, dy = -dx, -dy
-                vx, vy = vx + dx / L, vy + dy / L
-            L = math.hypot(vx, vy) or 1
-            ux, uy = vx / L, vy / L
-            fs = 11 if big else 9
-            if abs(uy) < 0.38:      # 가로선: 위쪽에 -45° 기울인 라벨
-                out.append(f'<text x="{x + 3:.1f}" y="{y - 7:.1f}" font-size="{fs}" fill="#333" transform="rotate(-45 {x + 3:.1f} {y - 7:.1f})">{g["names"][v]}</text>')
-            else:                   # 세로·대각선: 오른쪽(수직 방향)에
-                nx, ny = -uy, ux
-                if nx < 0:
-                    nx, ny = -nx, -ny
-                out.append(f'<text x="{x + nx * 8:.1f}" y="{y + ny * 8 + 3:.1f}" font-size="{fs}" fill="#333">{g["names"][v]}</text>')
+        vx = vy = 0.0
+        for o in nbr[v]:
+            q = tr(pos[o])
+            dx, dy = q[0] - x, q[1] - y
+            L = math.hypot(dx, dy) or 1
+            if dx < -1e-6 or (abs(dx) <= 1e-6 and dy < 0):
+                dx, dy = -dx, -dy
+            vx, vy = vx + dx / L, vy + dy / L
+        L = math.hypot(vx, vy) or 1
+        items.append({"p": (x, y), "dir": (vx / L, vy / L), "text": g["names"][v], "size": 11 if big else 9, "big": big})
+    if label:
+        for it, lp in zip(items, place_labels(items)):
+            tf = f' transform="rotate({lp["rot"]} {lp["x"]:.1f} {lp["y"]:.1f})"' if lp["rot"] else ""
+            out.append(f'<text x="{lp["x"]:.1f}" y="{lp["y"]:.1f}" font-size="{it["size"]}" fill="#333" text-anchor="{lp["anchor"]}"'
+                       f' paint-order="stroke" stroke="#fff" stroke-width="2.5"{tf}>{it["text"]}</text>')
     out.append("</svg>")
     return "\n".join(out)
 
@@ -545,6 +559,7 @@ def solve_snap_lp(g: dict, cg: dict, cfg: dict, log=None, rounds: int = 6) -> di
                 row([(t, 1), (C, -1)], -gv, inf)
                 row([(t, 1), (C, 1)], gv, inf)
         RES = {}
+        SLK = {}
         for e in E:
             a, b = e
             dx, dy = DIRS[dirs[e]]
@@ -563,6 +578,7 @@ def solve_snap_lp(g: dict, cg: dict, cfg: dict, log=None, rounds: int = 6) -> di
             row(eq + [(r, 1)], 0, inf)
             row([(c, -k) for c, k in eq] + [(r, 1)], 0, inf)
             sl = var(0, inf, 200.0)   # 진행 부족 벌점
+            SLK[e] = sl
             prog = [(X[b], dx), (X[a], -dx)] if dx != 0 else [(Y[b], dy), (Y[a], -dy)]
             row(prog + [(sl, 1)], lmin, inf)
             L = var(0, inf, cfg["w_len"])
@@ -581,4 +597,147 @@ def solve_snap_lp(g: dict, cg: dict, cfg: dict, log=None, rounds: int = 6) -> di
             a, b = e
             dirs[e] = sector(pos[b][0] - pos[a][0], pos[b][1] - pos[a][1])
     # 남은 잔차는 그대로 (octilinear 아닌 엣지로 지표에 잡힌다)
-    return {"pos": pos, "status": "snap-lp", "iterations": rounds, "crossing_constraints": 0, "objective": None, "scale": scale}
+    return {"pos": pos, "status": "snap-lp", "iterations": rounds, "crossing_constraints": 0, "objective": None, "scale": scale,
+            "dirs": dict(dirs), "residual_edges": [e for e in E if sol[RES[e]] > 1e-6 or sol[SLK[e]] > 1e-6]}
+
+
+def solve_lns(g: dict, cg: dict, cfg: dict, log=None) -> dict:
+    """큰 권역용 fix-and-optimize (LNS). snap-lp 방향으로 대부분 엣지를 고정한 MIP로 첫 해를 얻고,
+    교차·굴곡이 몰린 구역(씨앗 정점 주변 lns_radius 홉)의 엣지만 3방향으로 풀어 다시 푸는 것을 lns_rounds번 반복한다.
+    목적값이 나빠지면 그 라운드 결과를 버린다. 순환 순서는 soft (벌점)."""
+    import time as _t
+    base = dict(cfg, order=cfg.get("order", "soft"))
+    t0 = _t.time()
+    snap = solve_snap_lp(g, cg, cfg)
+    E = list(cg["edges"].keys())
+    res = set(snap["residual_edges"])
+    P = g["pos"]
+
+    def around3(e):
+        a, b = e
+        s0 = sector(P[b][0] - P[a][0], P[b][1] - P[a][1])
+        return [(s0 - 1) % 8, s0, (s0 + 1) % 8]
+    # 잔차 엣지 끝점에서 lns_init_radius 홉 안의 엣지까지 풀어야 고정 방향 사이클의 닫힘 조건이 맞는다
+    adj0 = defaultdict(set)
+    for a, b in E:
+        adj0[a].add(b)
+        adj0[b].add(a)
+    free_n = {v for e in res for v in e}
+    fr = set(free_n)
+    for _ in range(cfg.get("lns_init_radius", 2)):
+        fr = {w for v in fr for w in adj0[v]} - free_n
+        free_n |= fr
+    free0 = {e for e in E if e in res or (e[0] in free_n and e[1] in free_n)}
+    allowed = {e: ([snap["dirs"][e]] if e not in free0 else sorted(set(around3(e)) | {snap["dirs"][e]})) for e in E}
+    if log:
+        log(f"    LNS 시작: snap-lp 잔차·길이 부족 엣지 {len(res)}개와 주변까지 {len(free0)}개를 풀고 나머지 {len(E) - len(free0)}개 방향 고정")
+    r = solve_octilinear(g, cg, dict(base, allowed=allowed, pos_window=None, time_limit_s=cfg.get("lns_time_s", 60)), log=log)
+    if not r["pos"]:
+        return {**snap, "status": "LNS 첫 해 실패 → snap-lp", "engine_detail": "snap-lp"}
+    best = r
+    adj = defaultdict(set)
+    for a, b in E:
+        adj[a].add(b)
+        adj[b].add(a)
+    rounds = cfg.get("lns_rounds", 6)
+    radius = cfg.get("lns_radius", 3)
+    tried = set()
+    for k in range(rounds):
+        if _t.time() - t0 > cfg.get("lns_total_s", 900):
+            break
+        pos = expand(g, cg, best["pos"])
+        st = layout_stats(g, pos)
+        # 씨앗: 교차하는 엣지 끝점 우선, 없으면 굴곡이 큰 정점
+        seeds = []
+        Ek = list(g["edges"].keys())
+        for i in range(len(Ek)):
+            a, b = Ek[i]
+            for j in range(i + 1, len(Ek)):
+                c, d = Ek[j]
+                if len({a, b, c, d}) == 4 and segments_cross(pos[a], pos[b], pos[c], pos[d]) and not segments_cross(P[a], P[b], P[c], P[d]):
+                    seeds += [a, c]
+        if not seeds:
+            bend_at = defaultdict(int)
+            for sq in g["seqs"]:
+                ks = sq["nodes"]
+                for a, v, b in zip(ks, ks[1:], ks[2:]):
+                    t1 = math.atan2(pos[a][1] - pos[v][1], pos[a][0] - pos[v][0])
+                    t2 = math.atan2(pos[b][1] - pos[v][1], pos[b][0] - pos[v][0])
+                    bend_at[v] += round(abs((math.degrees(t2 - t1) + 360) % 360 - 180) / 45.0)
+            seeds = [v for v, _ in sorted(bend_at.items(), key=lambda kv: (-kv[1], kv[0]))]
+        kept = set(cg["nodes"])
+        seed = next((v for v in seeds if v in kept and v not in tried), None)
+        if seed is None:
+            break
+        tried.add(seed)
+        free_nodes = {seed}
+        frontier = {seed}
+        for _ in range(radius):
+            frontier = {w for v in frontier for w in adj[v]} - free_nodes
+            free_nodes |= frontier
+        allowed_k = {e: (sorted(set(around3(e)) | {best["dirs"][e]}) if (e[0] in free_nodes or e[1] in free_nodes) else [best["dirs"][e]]) for e in E}
+        rk = solve_octilinear(g, cg, dict(base, allowed=allowed_k, pos_window=None, time_limit_s=cfg.get("lns_time_s", 60)), log=None)
+        ok = bool(rk["pos"]) and rk["objective"] is not None and rk["objective"] <= best["objective"] + 1e-6
+        if log:
+            log(f"    LNS {k + 1}: 씨앗 {seed}, 자유 엣지 {sum(1 for e in E if len(allowed_k[e]) > 1)}, "
+                f"{rk['status']}, obj {rk['objective'] if rk['objective'] is not None else '-'} (최선 {best['objective']:.2f}) {'채택' if ok else '버림'}")
+        if ok:
+            best = rk
+    best = dict(best)
+    best["status"] = f"LNS: {best['status']}"
+    best["engine_detail"] = "mip-lns"
+    return best
+
+
+def place_labels(stations: list[dict], cell: float = 40.0) -> list[dict]:
+    """라벨 충돌 회피 (web/schematic_core.js placeLabels와 같은 규칙). 큰 역부터, 후보 중 겹침 넓이 최소."""
+    grid = defaultdict(list)
+
+    def cells(b):
+        for i in range(int(math.floor(b[0] / cell)), int(math.floor(b[2] / cell)) + 1):
+            for j in range(int(math.floor(b[1] / cell)), int(math.floor(b[3] / cell)) + 1):
+                yield (i, j)
+
+    def add(b):
+        for c in cells(b):
+            grid[c].append(b)
+
+    def overlap(a, b):
+        return max(0.0, min(a[2], b[2]) - max(a[0], b[0])) * max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
+    for st in stations:
+        r = 6 if st["big"] else 4
+        add((st["p"][0] - r, st["p"][1] - r, st["p"][0] + r, st["p"][1] + r))
+    order = sorted(range(len(stations)), key=lambda i: (not stations[i]["big"], i))
+    out = [None] * len(stations)
+    for i in order:
+        st = stations[i]
+        x0, y0 = st["p"]
+        w, h = len(st["text"]) * st["size"] * 0.95, st["size"] * 1.2
+        ux, uy = st["dir"]
+        nx, ny = -uy, ux
+        if nx < 0:
+            nx, ny = -nx, -ny
+        horiz = abs(uy) < 0.38
+        d45 = w * math.sqrt(0.5)
+        cand = []
+        if horiz:
+            cand.append({"x": x0 + 3, "y": y0 - 7, "rot": -45, "anchor": "start", "box": (x0 + 2, y0 - 7 - d45 - h * 0.5, x0 + 4 + d45, y0 - 5)})
+            cand.append({"x": x0 - 3, "y": y0 + 12, "rot": -45, "anchor": "end", "box": (x0 - 4 - d45, y0 + 8, x0 - 2, y0 + 12 + d45 + h * 0.5)})
+        for sg in (1, -1):
+            x, y = x0 + sg * nx * 8, y0 + sg * ny * 8 + 3
+            anchor = "start" if sg * nx >= 0 else "end"
+            xa = x if anchor == "start" else x - w
+            cand.append({"x": x, "y": y, "rot": 0, "anchor": anchor, "box": (xa, y - h * 0.85, xa + w, y + h * 0.15)})
+        if not horiz:
+            cand.append({"x": x0 - w / 2, "y": y0 - 9, "rot": 0, "anchor": "start", "box": (x0 - w / 2, y0 - 9 - h * 0.85, x0 + w / 2, y0 - 9 + h * 0.15)})
+        best = None
+        for k, c in enumerate(cand):
+            near = {id(b): b for cc in cells(c["box"]) for b in grid[cc]}
+            o = sum(overlap(c["box"], b) for b in near.values()) + k * 0.01
+            if best is None or o < best[0]:
+                best = (o, c)
+            if o < 0.02 * (k + 1):
+                break
+        add(best[1]["box"])
+        out[i] = best[1]
+    return out

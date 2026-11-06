@@ -62,7 +62,18 @@ def main() -> int:
     ap.add_argument("--regions", default=None)
     ap.add_argument("--skip-variants", action="store_true")
     ap.add_argument("--time-limit", type=float, default=None, help="모든 권역의 반복당 시간 제한 덮어쓰기 (빠른 시험용)")
+    ap.add_argument("--only-variant", default=None, help="수도권 비교 변형 하나만 (이름 앞글자, 예: A). 권역 산출물은 건드리지 않는다")
+    ap.add_argument("--merge-variants", action="store_true", help="variant_*.json을 summary.json에 합치기만 한다")
     a = ap.parse_args()
+    if a.merge_variants:
+        summ = json.loads((OUT / "summary.json").read_text(encoding="utf-8"))
+        vs = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(OUT.glob("variant_*.json"))]
+        summ["seoul_variants"] = vs
+        (OUT / "summary.json").write_text(json.dumps(summ, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        print(f"[20] merged {len(vs)} variants")
+        return 0
+    if a.only_variant:
+        a.regions = "__none__"
     cfg = yaml.safe_load(open(ROOT / "config" / "schematic.yaml", encoding="utf-8"))
     if a.time_limit:
         cfg["solver"]["time_limit_s"] = a.time_limit
@@ -109,10 +120,12 @@ def main() -> int:
             note = f"{reg['city']}: 시간 제한으로 평면성 제약을 다 못 넣어 교차 {st['crossings']}곳이 남았다."
         web["regions"].append({"id": reg["id"], "city": reg["city"], "country": reg["country"], "engine": r["engine"], "note": note,
                                "s": doc["schematic"], "g": doc["geo"], "e": doc["edges"], "lines": doc["lines"]})
-    if not a.skip_variants and (not want or "seoul" in want):
+    if a.only_variant or (not a.skip_variants and (not want or "seoul" in want)):
         reg0 = next(r for r in cfg["regions"] if r["id"] == "seoul")
         summary["seoul_variants"] = []
         for v in cfg.get("seoul_variants", []):
+            if a.only_variant and not v["name"].startswith(a.only_variant):
+                continue
             reg = {**reg0, **{k: x for k, x in v.items() if k != "name"}, "id": "seoul_" + v["name"].split()[0]}
             solver = {**cfg["solver"], **{k: x for k, x in v.items() if k in cfg["solver"]}}
             g, cg, pos, r, st, st_geo, sec, rcfg = run_region(w_kr, reg, solver, log)
@@ -124,6 +137,8 @@ def main() -> int:
             summary["seoul_variants"].append({"name": v["name"], "id": reg["id"], "params": {k: rcfg[k] for k in ("w_bend", "w_dir")},
                                               "keep_every": reg["keep_every"], "status": r["status"], "seconds": sec, "engine": r["engine"],
                                               "iterations": r["iterations"], "stats": st})
+            # 병렬 실행용: 변형마다 따로 저장 (summary 병합은 --merge-variants)
+            (OUT / f"variant_{reg['id']}.json").write_text(json.dumps(summary["seoul_variants"][-1], ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     if want:   # 일부 권역만 다시 돌렸으면 기존 번들·요약과 합친다
         old = json.loads((ROOT / "web" / "data" / "schematic.json").read_text(encoding="utf-8")) if (ROOT / "web" / "data" / "schematic.json").exists() else {"regions": []}
         got = {r["id"] for r in web["regions"]}
@@ -133,6 +148,8 @@ def main() -> int:
             summary["regions"].setdefault(k, v)
         if "seoul_variants" not in summary and "seoul_variants" in olds:
             summary["seoul_variants"] = olds["seoul_variants"]
+    if a.only_variant:
+        return 0
     order = [r["id"] for r in cfg["regions"]]
     web["regions"].sort(key=lambda r: order.index(r["id"]))
     (ROOT / "web" / "data" / "schematic.json").write_text(json.dumps(web, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")

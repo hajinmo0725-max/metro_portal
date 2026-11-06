@@ -90,3 +90,61 @@ export function offsetSegment(pa, pb, k, n, gap = 4.5) {
   const nx = -dy / L, ny = dx / L, off = (k - (n - 1) / 2) * gap;
   return [[pa[0] + nx * off, pa[1] + ny * off], [pb[0] + nx * off, pb[1] + ny * off]];
 }
+
+// 4차 S4 보강: 라벨 충돌 회피 (탐욕). stations = [{p:[x,y], dir:[ux,uy], text, size, big}] → [{x, y, rot, anchor}]
+// 후보: 선 방향에 수직 양쪽, 가로선이면 45° 회전 위·아래. 이미 놓은 라벨·역 원과 겹치는 넓이가 가장 작은 후보를 고른다.
+// 큰 역(환승·종점)을 먼저 놓는다. 격자 해시로 근처 상자만 비교한다.
+export function placeLabels(stations, { cell = 40 } = {}) {
+  const grid = new Map();
+  const key = (i, j) => `${i},${j}`;
+  const boxesNear = (b) => {
+    const out = [];
+    for (let i = Math.floor(b[0] / cell); i <= Math.floor(b[2] / cell); i++)
+      for (let j = Math.floor(b[1] / cell); j <= Math.floor(b[3] / cell); j++) for (const x of grid.get(key(i, j)) || []) out.push(x);
+    return out;
+  };
+  const add = (b) => {
+    for (let i = Math.floor(b[0] / cell); i <= Math.floor(b[2] / cell); i++)
+      for (let j = Math.floor(b[1] / cell); j <= Math.floor(b[3] / cell); j++) {
+        const k = key(i, j);
+        if (!grid.has(k)) grid.set(k, []);
+        grid.get(k).push(b);
+      }
+  };
+  const overlap = (a, b) => Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
+  for (const s of stations) { const r = s.big ? 6 : 4; add([s.p[0] - r, s.p[1] - r, s.p[0] + r, s.p[1] + r]); }
+  const order = stations.map((s, i) => i).sort((a, b) => (stations[b].big - stations[a].big) || a - b);
+  const out = new Array(stations.length);
+  for (const i of order) {
+    const s = stations[i];
+    const w = s.text.length * s.size * 0.95, h = s.size * 1.2;
+    const [ux, uy] = s.dir;
+    let nx = -uy, ny = ux;
+    if (nx < 0) { nx = -nx; ny = -ny; }
+    const horiz = Math.abs(uy) < 0.38;
+    const c = [];
+    const d45 = w * Math.SQRT1_2;
+    if (horiz) {
+      c.push({ x: s.p[0] + 3, y: s.p[1] - 7, rot: -45, anchor: "start", box: [s.p[0] + 2, s.p[1] - 7 - d45 - h * 0.5, s.p[0] + 4 + d45, s.p[1] - 5] });
+      c.push({ x: s.p[0] - 3, y: s.p[1] + 12, rot: -45, anchor: "end", box: [s.p[0] - 4 - d45, s.p[1] + 8, s.p[0] - 2, s.p[1] + 12 + d45 + h * 0.5] });
+    }
+    for (const sg of [1, -1]) {
+      const x = s.p[0] + sg * nx * 8, y = s.p[1] + sg * ny * 8 + 3;
+      const anchor = sg * nx >= 0 ? "start" : "end";
+      const x0 = anchor === "start" ? x : x - w;
+      c.push({ x, y, rot: 0, anchor, box: [x0, y - h * 0.85, x0 + w, y + h * 0.15] });
+    }
+    if (!horiz) {
+      c.push({ x: s.p[0] - w / 2, y: s.p[1] - 9, rot: 0, anchor: "start", box: [s.p[0] - w / 2, s.p[1] - 9 - h * 0.85, s.p[0] + w / 2, s.p[1] - 9 + h * 0.15] });
+    }
+    let best = null;
+    for (const [k, cand] of c.entries()) {
+      const o = boxesNear(cand.box).reduce((acc, b) => acc + overlap(cand.box, b), 0) + k * 0.01;
+      if (!best || o < best.o) best = { ...cand, o };
+      if (o < 0.02 * (k + 1)) break;
+    }
+    add(best.box);
+    out[i] = best;
+  }
+  return out;
+}

@@ -1,6 +1,6 @@
 // 4차 S4: 도식 노선도 화면 (권역 패널, 포탈 아이콘·목적지, 같은 권역 포탈 점선, 길찾기 경로 하이라이트, 지리 ↔ 도식 전환)
 import { buildAdj, buildLabels, resolveQuery, routeClusters } from "./route.js";
-import { fitTransform, lerpPoint, offsetSegment, panelSequence, portalLinks, regionIndex, routeSteps, warpTargets } from "./schematic_core.js";
+import { fitTransform, lerpPoint, offsetSegment, panelSequence, placeLabels, portalLinks, regionIndex, routeSteps, warpTargets } from "./schematic_core.js";
 
 const $ = (id) => document.getElementById(id);
 const NS = "http://www.w3.org/2000/svg";
@@ -157,14 +157,29 @@ function place(t) {
     x.e.setAttribute("x1", p[0].toFixed(1)); x.e.setAttribute("y1", p[1].toFixed(1));
     x.e.setAttribute("x2", q[0].toFixed(1)); x.e.setAttribute("y2", q[1].toFixed(1));
   }
-  for (const x of items.st) {
+  // 멈춘 상태(t = 0 또는 1)에서는 라벨 충돌 회피 배치, 전환 애니메이션 중에는 단순 규칙
+  const settled = t === 0 || t === 1;
+  const placed = settled ? placeLabels(items.st.map((x) => {
+    const p = P(x.cid), nb = (nbr.get(x.cid) || []).map(P);
+    let vx = 0, vy = 0;
+    for (const q of nb) {
+      let dx = q[0] - p[0], dy = q[1] - p[1];
+      const L = Math.hypot(dx, dy) || 1;
+      if (dx < -1e-6 || (Math.abs(dx) <= 1e-6 && dy < 0)) { dx = -dx; dy = -dy; }
+      vx += dx / L; vy += dy / L;
+    }
+    const L = Math.hypot(vx, vy) || 1;
+    return { p, dir: [vx / L, vy / L], text: x.t.textContent, size: +x.t.getAttribute("font-size"), big: x.circ.getAttribute("r") !== "3.2" };
+  })) : null;
+  items.st.forEach((x, i) => {
     const p = P(x.cid);
     x.circ.setAttribute("cx", p[0].toFixed(1)); x.circ.setAttribute("cy", p[1].toFixed(1));
-    const lp = labelPlace(p, (nbr.get(x.cid) || []).map(P));
+    const lp = placed ? placed[i] : labelPlace(p, (nbr.get(x.cid) || []).map(P));
     x.t.setAttribute("x", lp.x.toFixed(1)); x.t.setAttribute("y", lp.y.toFixed(1));
+    x.t.setAttribute("text-anchor", lp.anchor || "start");
     if (lp.rot) x.t.setAttribute("transform", `rotate(${lp.rot} ${lp.x.toFixed(1)} ${lp.y.toFixed(1)})`); else x.t.removeAttribute("transform");
     if (x.icon) { x.icon.setAttribute("x", (p[0] - 8).toFixed(1)); x.icon.setAttribute("y", (p[1] + 20).toFixed(1)); }
-  }
+  });
 }
 
 function animateTo(view) {

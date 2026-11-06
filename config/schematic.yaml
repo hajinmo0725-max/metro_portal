@@ -12,16 +12,29 @@ solver:
   time_limit_s: 60           # 반복(재풀이) 하나의 시간 제한. 이걸 넘기면 그때까지의 최선해 (상태가 'Time limit reached')
   max_iterations: 12         # 교차 제약 추가 → 재풀이 최대 횟수
   mip_rel_gap: 0.05
+  # 아래는 큰 권역(수도권)용 조정 키. 기본값은 N&W 그대로에 가깝다
+  order: hard                # 순환 순서 제약: hard / soft(위반에 벌점 w_order) / none
+  w_order: 20.0
+  span_factor: 1.0           # 좌표 범위 배수 (도심이 크게 부풀어야 하는 권역은 키운다)
+  scale_by: mean             # 격자 스케일 기준 엣지 길이: mean / median
+  mip_heuristic_effort: 0.05 # HiGHS 기본값
+  pos_window: null           # 좌표를 지리 위치 ± (범위 × 이 비율)로 묶기 (null = 안 묶음)
+  geo_len_factor: 0.5        # 최소 길이 하한 = 이 값 × 지리 길이(격자, L∞). 0 = 안 씀
 regions:
-  - {id: seoul, city: 수도권, country: KR, keep_every: 3, time_limit_s: 120}
+  # 수도권: 축약 엣지 길이 편차가 커서(최소/평균 0.15) N&W 기본 설정으로는 150초 안에 실행 가능해를 못 찾았다 (보고서 S3).
+  # 순서 제약 soft, 최소 길이 완화, 좌표 범위 3배, 중앙값 스케일로 푼다
+  - {id: seoul, city: 수도권, country: KR, keep_every: 3, time_limit_s: 180, max_iterations: 8, order: soft, min_edge: 1.0,
+     chain_len_factor: 0.3, span_factor: 3.0, scale_by: median, mip_heuristic_effort: 0.3, mip_rel_gap: 0.2}
   - {id: busan, city: 부산, country: KR, keep_every: 2}
   - {id: daegu, city: 대구, country: KR, keep_every: 2}
   - {id: daejeon, city: 대전, country: KR, keep_every: 2}
   - {id: gwangju, city: 광주, country: KR, keep_every: 2}
   - {id: taipei, city: 타이베이, country: TW, keep_every: 2}
 # S3: 수도권은 파라미터 조합 몇 개를 비교해 가장 읽기 좋은 것을 고른다 (LOOM --geo-pen 비교 대신 같은 성격의 가중치 비교)
+# 기본(B)은 regions의 seoul 설정 그대로이고, 나머지는 거기서 바꾼 값만 적는다
 seoul_variants:
-  - {name: "A 굴곡 우선", keep_every: 3, w_bend: 3.0, w_dir: 1.0}
-  - {name: "B 균형 (기본)", keep_every: 3, w_bend: 1.0, w_dir: 2.0}
-  - {name: "C 지리 우선", keep_every: 3, w_bend: 1.0, w_dir: 4.0}
-  - {name: "D 덜 축약", keep_every: 2, w_bend: 1.0, w_dir: 2.0}
+  - {name: "A 굴곡 우선", w_bend: 3.0, w_dir: 1.0}
+  - {name: "C 지리 우선", w_bend: 1.0, w_dir: 4.0}
+  - {name: "D 전체 축약", keep_every: 0}
+  - {name: "E 간격 완화", min_sep: 0.6}
+  - {name: "F 지리 우선 + 길이 비례", w_dir: 4.0, min_sep: 0.6, geo_len_factor: 0.35}

@@ -12,7 +12,14 @@
   "min_sep": 1.5,
   "time_limit_s": 60,
   "max_iterations": 12,
-  "mip_rel_gap": 0.05
+  "mip_rel_gap": 0.05,
+  "order": "hard",
+  "w_order": 20.0,
+  "span_factor": 1.0,
+  "scale_by": "mean",
+  "mip_heuristic_effort": 0.05,
+  "pos_window": null,
+  "geo_len_factor": 0.5
  },
  "keep_every": 2,
  "engine": "mip",
@@ -20,14 +27,14 @@
  "seconds": 0.1,
  "iterations": 1,
  "crossing_constraints": 0,
- "objective": 11.699999999999992,
+ "objective": 11.69999999999999,
  "stats": {
   "nodes": 22,
   "edges": 21,
   "non_octilinear_edges": 0,
   "crossings": 0,
   "bend_units_45deg": 6,
-  "mean_displacement_norm": 0.195
+  "mean_displacement_norm": 0.12
  },
  "stats_geo": {
   "nodes": 22,
@@ -56,11 +63,11 @@
   ],
   "대동#1": [
    11.103,
-   0.401
+   -4.399
   ],
   "대전#1": [
    9.503,
-   0.401
+   -2.799
   ],
   "반석#1": [
    -12.897,
@@ -76,7 +83,7 @@
   ],
   "신흥#1": [
    12.703,
-   0.401
+   -5.999
   ],
   "오룡#1": [
    3.103,
@@ -108,7 +115,7 @@
   ],
   "중앙로#2": [
    7.903,
-   -1.199
+   -2.799
   ],
   "지족#1": [
    -12.897,
@@ -120,7 +127,7 @@
   ],
   "판암#1": [
    14.703,
-   0.401
+   -5.999
   ],
   "현충원#1": [
    -12.897,

@@ -12,7 +12,14 @@
   "min_sep": 1.5,
   "time_limit_s": 60,
   "max_iterations": 12,
-  "mip_rel_gap": 0.05
+  "mip_rel_gap": 0.05,
+  "order": "hard",
+  "w_order": 20.0,
+  "span_factor": 1.0,
+  "scale_by": "mean",
+  "mip_heuristic_effort": 0.05,
+  "pos_window": null,
+  "geo_len_factor": 0.5
  },
  "keep_every": 2,
  "engine": "mip",
@@ -20,14 +27,14 @@
  "seconds": 0.0,
  "iterations": 1,
  "crossing_constraints": 0,
- "objective": 6.539999999999994,
+ "objective": 6.575882501671258,
  "stats": {
   "nodes": 20,
   "edges": 19,
   "non_octilinear_edges": 0,
   "crossings": 0,
   "bend_units_45deg": 3,
-  "mean_displacement_norm": 0.211
+  "mean_displacement_norm": 0.196
  },
  "stats_geo": {
   "nodes": 20,
@@ -39,11 +46,11 @@
  },
  "schematic": {
   "공항#1": [
-   -6.943,
+   -7.302,
    2.629
   ],
   "광주송정#1": [
-   -10.143,
+   -10.861,
    1.029
   ],
   "금남로4가#1": [
@@ -71,7 +78,7 @@
    2.629
   ],
   "도산#1": [
-   -11.743,
+   -12.461,
    -0.571
   ],
   "돌고개#1": [
@@ -91,7 +98,7 @@
    -5.371
   ],
   "송정공원#1": [
-   -8.543,
+   -9.261,
    2.629
   ],
   "쌍촌#1": [
@@ -107,7 +114,7 @@
    2.629
   ],
   "평동#1": [
-   -13.743,
+   -14.461,
    -2.571
   ],
   "학동증심사입구#1": [

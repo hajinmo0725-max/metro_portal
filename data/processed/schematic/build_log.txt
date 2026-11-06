@@ -1,9 +1,4 @@
 [20] seoul (수도권): 역 655, 엣지 755 → 축약 253/350
-    iter 1: Time limit reached (실행 가능해 없음)
-    snap-lp round 1: 잔차 남은 엣지 23
-    snap-lp round 2: 잔차 남은 엣지 12
-    snap-lp round 3: 잔차 남은 엣지 11
-    snap-lp round 4: 잔차 남은 엣지 11
-    snap-lp round 5: 잔차 남은 엣지 11
-    snap-lp round 6: 잔차 남은 엣지 11
-[20] seoul: MIP: Time limit reached (실행 가능해 없음) → snap-lp 21.4s 반복 6 교차제약 0 → {'nodes': 655, 'edges': 755, 'non_octilinear_edges': 23, 'crossings': 107, 'bend_units_45deg': 209, 'mean_displacement_norm': 0.298}
+    iter 1: Time limit reached, obj=444.36, 위반 쌍 224
+    iter 2: Time limit reached (실행 가능해 없음)
+[20] seoul: Time limit reached (실행 가능해 없음) 362.6s 반복 2 교차제약 224 → {'nodes': 655, 'edges': 755, 'non_octilinear_edges': 0, 'crossings': 17, 'bend_units_45deg': 177, 'mean_displacement_norm': 0.411}
