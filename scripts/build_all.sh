@@ -22,6 +22,9 @@ python3 pipeline/10_build_game_data.py --ruleset "$RS" > /dev/null
 python3 pipeline/11_fun_facts.py --ruleset "$RS" > /dev/null
 # 환승 판정 감사 (3차 A3 공식 우선 vs D=500, A4 좌표 복사)
 python3 pipeline/12_audit_transfers.py --ruleset "$RS" > /dev/null
+# 4차 Q0: 개통 예정 노선(config/kr_planned.yaml)을 켰을 때의 포탈 미리보기, 최근 개통 역 점검
+python3 pipeline/18_planned_preview.py > /dev/null
+python3 scripts/q0_checklist.py > /dev/null
 # Phase 1 타이베이 (Wikidata 캐시가 없으면 받아 온다), Unihan, 한국+타이베이 ruleset 비교
 python3 pipeline/14_fetch_tw_wikidata.py > /dev/null
 python3 pipeline/15_build_tw.py > /dev/null
