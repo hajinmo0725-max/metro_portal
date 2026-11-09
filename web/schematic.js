@@ -1,6 +1,6 @@
 // 4차 S4: 도식 노선도 화면 (권역 패널, 포탈 아이콘·목적지, 같은 권역 포탈 점선, 길찾기 경로 하이라이트, 지리 ↔ 도식 전환)
 import { buildAdj, buildLabels, resolveQuery, routeClusters } from "./route.js";
-import { fitTransform, lerpPoint, offsetSegment, panelSequence, placeLabels, portalLinks, regionIndex, routeSteps, warpTargets } from "./schematic_core.js";
+import { fitTransform, labelStats, lerpPoint, offsetSegment, panelSequence, placeLabels, portalLinks, regionIndex, routeSteps, warpTargets } from "./schematic_core.js";
 
 const $ = (id) => document.getElementById(id);
 const NS = "http://www.w3.org/2000/svg";
@@ -151,10 +151,12 @@ function build() {
 function place(t) {
   const { S, G, items, nbr, k } = els;
   const P = (k) => lerpPoint(G.get(k), S.get(k), t);
+  const segs = [];   // 5차 R4: 라벨이 노선 선 위에 걸치지 않게 라벨 배치에 넘긴다
   for (const x of items.edges) {
     const [p, q] = offsetSegment(P(x.a), P(x.b), x.k, x.n, 4.5 * Math.max(k, 0.55));
     x.e.setAttribute("x1", p[0].toFixed(1)); x.e.setAttribute("y1", p[1].toFixed(1));
     x.e.setAttribute("x2", q[0].toFixed(1)); x.e.setAttribute("y2", q[1].toFixed(1));
+    segs.push([p[0], p[1], q[0], q[1]]);
   }
   for (const x of [...items.same, ...items.route]) {
     const p = P(x.a), q = P(x.b);
@@ -174,7 +176,8 @@ function place(t) {
     }
     const L = Math.hypot(vx, vy) || 1;
     return { p, dir: [vx / L, vy / L], text: x.t.textContent, size: +x.t.getAttribute("font-size"), big: x.circ.getAttribute("data-big") === "1" };
-  }), { k }) : null;
+  }), { k, segments: segs }) : null;
+  if (placed) { els.placed = placed; els.segs = segs; }
   items.st.forEach((x, i) => {
     const p = P(x.cid);
     x.circ.setAttribute("cx", p[0].toFixed(1)); x.circ.setAttribute("cy", p[1].toFixed(1));
@@ -185,6 +188,9 @@ function place(t) {
     if (x.icon) { x.icon.setAttribute("x", (p[0] - 8 * k).toFixed(1)); x.icon.setAttribute("y", (p[1] + 20 * k).toFixed(1)); }
   });
 }
+
+// 5차 R4: 라벨 품질 지표 (E2E 측정용, 필요할 때만 계산)
+window.__schLabelStats = () => (els && els.placed ? labelStats(els.placed, els.segs) : null);
 
 function animateTo(view) {
   if (view === state.view || !els) { state.view = view; return; }

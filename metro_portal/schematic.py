@@ -132,6 +132,43 @@ def contract(g: dict, keep_every: int = 3) -> dict:
     return {"nodes": sorted(kept), "edges": dict(sorted(out_e.items()))}
 
 
+# 5차 R3: 풀이 '예산' 키 (문제 정의가 아니라 얼마나 오래·어떻게 찾을지). 입력 지문에서 뺀다
+BUDGET_KEYS = {"time_limit_s", "max_iterations", "mip_rel_gap", "mip_heuristic_effort", "mip_max_nodes", "warm_start",
+               "checkpoint", "id", "city", "country", "fallback", "keep_every", "random_seed", "warm_rounds", "incumbent_every_s",
+               "long_run", "total_budget_s"}
+
+
+def fingerprint(g: dict, cg: dict, cfg: dict) -> str:
+    """도식 풀이 입력 지문 (5차 R3). 그래프(정점·지리 좌표·엣지·노선 시퀀스·축약 결과)와 모델 파라미터가 같으면 같다.
+    캐시(data/processed/schematic/<권역>.json)가 지금 그래프에 맞는지 웹 빌드(21 단계)가 이걸로 확인한다.
+    역 이름은 넣지 않는다 (표시용이라 레이아웃 입력이 아니다)."""
+    import hashlib
+    import json
+    doc = {"nodes": list(g["nodes"]),
+           "pos": {k: [round(g["pos"][k][0], 4), round(g["pos"][k][1], 4)] for k in g["nodes"]},
+           "edges": [[a, b, list(ls)] for (a, b), ls in sorted(g["edges"].items())],
+           "seqs": [[s["line"], list(s["nodes"]), bool(s["circular"])] for s in g["seqs"]],
+           "kept": list(cg["nodes"]),
+           "cfg": {k: cfg[k] for k in sorted(cfg) if k not in BUDGET_KEYS}}
+    return hashlib.sha256(json.dumps(doc, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:16]
+
+
+def region_params(cfg: dict, reg: dict) -> dict:
+    """config/schematic.yaml의 solver 기본값 + 권역별 덮어쓰기 (20 풀이·21 웹 빌드 공용)."""
+    solver = cfg["solver"]
+    extra = ("mip_max_nodes", "warm_start", "random_seed", "warm_rounds", "incumbent_every_s", "total_budget_s")
+    return {**solver, **{k: v for k, v in reg.items() if k in solver or k in extra}}
+
+
+def highs_version() -> str:
+    try:
+        import highspy
+        h = highspy.Highs()
+        return h.version() if hasattr(h, "version") else "?"
+    except Exception:  # noqa: BLE001
+        return "?"
+
+
 def segments_cross(p1, p2, p3, p4, eps=1e-6):
     """두 선분이 교차하거나 겹치는가 (끝점 공유는 호출하는 쪽에서 뺀다)."""
     def orient(a, b, c):
@@ -154,8 +191,16 @@ def point_seg_dist(p, a, b):
     return math.hypot(p[0] - ax - t * vx, p[1] - ay - t * vy)
 
 
-def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
-    """축약 그래프 cg를 octilinear로 배치한다. 반환 {pos: {node: (x, y)}, status, iterations, crossings_added, objective}."""
+def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None, on_incumbent=None,
+                     start: dict | None = None, init_added: list | None = None) -> dict:
+    """축약 그래프 cg를 octilinear로 배치한다. 반환 {pos: {node: (x, y)}, status, iterations, crossings_added, objective}.
+    on_iteration(it, pos, added, status, objective, dirs): 반복(재풀이)마다 실행 가능해가 나오면 부른다 (5차 R4 중간 저장용).
+    on_incumbent(it, pos, objective): 반복 안에서 HiGHS가 더 좋은 해를 찾을 때마다 (incumbent_every_s 간격으로 솎아서) 부른다.
+    5차 R4 웜스타트 (cfg warm_start):
+      "geo-snap" — 첫 반복에 엣지 방향 = 지리 방향에 가장 가까운 8방향(허용 3방향 안)으로 고정한 LP를 몇 번 고쳐 풀어,
+                   octilinear가 맞는 엣지의 방향을 HiGHS에 부분해로 준다 (나머지는 HiGHS가 채운다).
+      이후 반복 — 앞 반복 해의 방향을 주되, 새로 교차 제약이 붙은 엣지와 그 이웃 엣지는 비운다.
+    start: {"dirs": {엣지: 방향}} 이어 풀기용 시작 방향. init_added: 처음부터 넣을 교차 제약 쌍 (이어 풀기)."""
     import highspy
     import numpy as np  # noqa: F401  (highspy 의존)
 
@@ -172,10 +217,14 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
     M0 = M = span * 4
     h = highspy.Highs()
     h.setOptionValue("output_flag", False)
+    # 결정성: 단일 스레드·고정 시드. 시간 제한(벽시계)에 걸리면 기계 속도에 따라 해가 달라지므로 반복마다 기록한다 (5차 R3).
+    # mip_max_nodes(노드 수 제한)를 주면 시간 대신 작업량으로 끊는다 → 같은 기계·같은 HiGHS 버전이면 재현된다
     h.setOptionValue("threads", 1)
-    h.setOptionValue("random_seed", 7)
+    h.setOptionValue("random_seed", int(cfg.get("random_seed", 7)))
     h.setOptionValue("time_limit", float(cfg["time_limit_s"]))
     h.setOptionValue("mip_rel_gap", float(cfg.get("mip_rel_gap", 0.02)))
+    if cfg.get("mip_max_nodes"):
+        h.setOptionValue("mip_max_nodes", int(cfg["mip_max_nodes"]))
     if cfg.get("mip_heuristic_effort"):
         h.setOptionValue("mip_heuristic_effort", float(cfg["mip_heuristic_effort"]))
     inf = highspy.kHighsInf
@@ -206,6 +255,7 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
     D = {}
     sec = {}
     KS = {}
+    LMIN = {}
 
     def choices(pa, pb, s, n):
         """허용 방향 오프셋: 3이면 (-1, 0, 1), 2이면 지리 각도에 더 가까운 이웃 섹터와 s"""
@@ -233,6 +283,7 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
         # 선택: 지리 길이 비례 하한 (긴 교외 구간이 최소 길이로 쪼그라들어 노선 끝이 뭉치는 걸 막는다, LOOM geo-pen과 비슷한 의도)
         if cfg.get("geo_len_factor"):
             lmin = max(lmin, cfg["geo_len_factor"] * max(abs(G[b][0] - G[a][0]), abs(G[b][1] - G[a][1])))
+        LMIN[e] = lmin
         # 엣지별 빅M: 좌표 창이 있으면 두 끝점의 가능한 최대 차이로 조인다 (LP 완화 강화)
         M = Me = (max(abs(G[b][0] - G[a][0]), abs(G[b][1] - G[a][1])) * 2 + 4 * R + 2 * lmin) if R else M0
         for i in dirs_e:
@@ -340,14 +391,146 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
             if len({a, b, c, d}) == 4 and segments_cross(G[a], G[b], G[c], G[d]):
                 geo_cross.add((E[i], E[j]))
     added = set()
+
+    def add_cross(e1, e2):
+        """비인접 엣지 쌍 e1, e2를 8방향 중 하나로 min_sep 이상 떨어뜨리는 제약 (이진 γ 8개 중 하나 이상)."""
+        added.add((e1, e2))
+        a, b = e1
+        c, d = e2
+        gam = [var(0, 1, integer=True) for _ in range(8)]
+        row([(gj, 1) for gj in gam], 1, inf)
+        dm = cfg["min_sep"]
+        # 방향 k: e2의 두 끝점이 e1의 두 끝점보다 방향 k 쪽으로 dm 이상 (k의 단위벡터와 내적)
+        for k, (ux, uy) in enumerate(DIRS):
+            for p in (c, d):
+                for q in (a, b):
+                    Mx = (abs(G[p][0] - G[q][0]) + abs(G[p][1] - G[q][1]) + 4 * R + 2 * dm) if R else M0
+                    row([(X[p], ux), (Y[p], uy), (X[q], -ux), (Y[q], -uy), (gam[k], -Mx)], dm - Mx, inf)
+    Eset = set(E)
+    for e1, e2 in (init_added or []):
+        e1, e2 = tuple(e1), tuple(e2)
+        if e1 in Eset and e2 in Eset and (e1, e2) not in added:
+            add_cross(e1, e2)
+    if init_added and log:
+        log(f"    이어 풀기: 교차 제약 {len(added)}쌍을 처음부터 넣음")
+
+    edge_adj = defaultdict(set)   # 정점을 공유하는 엣지끼리
+    for e in E:
+        for f in inc[e[0]] + inc[e[1]]:
+            if f != e:
+                edge_adj[e].add(f)
+
+    def give_start(dirs, label):
+        """부분해(엣지 방향 이진변수만)를 HiGHS에 준다. 나머지 변수는 HiGHS가 채운다 (못 채우면 무시된다)."""
+        idx, val = [], []
+        for e, i0 in sorted(dirs.items()):
+            if e not in KS or i0 not in KS[e]:
+                continue
+            for i in KS[e]:
+                idx.append(D[e, i])
+                val.append(1.0 if i == i0 else 0.0)
+        if not idx:
+            return
+        import numpy as np
+        st_ = h.setSolution(len(idx), np.array(idx, dtype=np.int32), np.array(val, dtype=np.float64))
+        if log:
+            log(f"    웜스타트({label}): 방향 고정 엣지 {len(set(e for e in dirs if e in KS))}/{len(E)} → {st_}")
+
+    def geo_snap_dirs():
+        """지리 방향 스냅 → 방향 고정 LP(직교 잔차·길이 부족에 벌점) 반복으로 맞는 방향 찾기. 잔차가 남은 엣지와 그 이웃은 뺀다."""
+        dirs = {e: sec[e] if sec[e] in KS[e] else KS[e][len(KS[e]) // 2] for e in E}
+        bad = list(E)
+        for rd in range(int(cfg.get("warm_rounds", 8))):
+            lp = highspy.Highs()
+            lp.setOptionValue("output_flag", False)
+            lp.setOptionValue("threads", 1)
+
+            def lv(lb, ub, cost=0.0):
+                lp.addVar(lb, ub)
+                j = lp.getNumCol() - 1
+                if cost:
+                    lp.changeColCost(j, cost)
+                return j
+
+            def lr(coefs, lo, hi):
+                lp.addRow(lo, hi, len(coefs), [j for j, _ in coefs], [c for _, c in coefs])
+            LX = {v: lv(-inf, inf) for v in nodes}
+            LY = {v: lv(-inf, inf) for v in nodes}
+            for v in nodes:
+                for C, gv in ((LX[v], G[v][0]), (LY[v], G[v][1])):
+                    t = lv(0, inf, 0.01)
+                    lr([(t, 1), (C, -1)], -gv, inf)
+                    lr([(t, 1), (C, 1)], gv, inf)
+            RES = {}
+            for e in E:
+                a, b = e
+                dx, dy = DIRS[dirs[e]]
+                if dy == 0:
+                    eq = [(LY[b], 1), (LY[a], -1)]
+                elif dx == 0:
+                    eq = [(LX[b], 1), (LX[a], -1)]
+                elif dx == dy:
+                    eq = [(LX[b], 1), (LX[a], -1), (LY[b], -1), (LY[a], 1)]
+                else:
+                    eq = [(LX[b], 1), (LX[a], -1), (LY[b], 1), (LY[a], -1)]
+                r_ = lv(0, inf, 100.0)
+                sl = lv(0, inf, 100.0)
+                RES[e] = (r_, sl)
+                lr(eq + [(r_, 1)], 0, inf)
+                lr([(c, -k) for c, k in eq] + [(r_, 1)], 0, inf)
+                prog = [(LX[b], dx), (LX[a], -dx)] if dx != 0 else [(LY[b], dy), (LY[a], -dy)]
+                lr(prog + [(sl, 1)], LMIN[e], inf)
+            lp.run()
+            sol_ = lp.getSolution().col_value
+            P2 = {v: (sol_[LX[v]], sol_[LY[v]]) for v in nodes}
+            bad = [e for e in E if sol_[RES[e][0]] > 1e-6 or sol_[RES[e][1]] > 1e-6]
+            if not bad:
+                break
+            for e in bad:   # 지금 LP 배치 방향에 가장 가까운 허용 방향으로 다시 스냅
+                a, b = e
+                ang = math.degrees(math.atan2(P2[b][1] - P2[a][1], P2[b][0] - P2[a][0])) % 360
+                dirs[e] = min(KS[e], key=lambda i: (min(abs(ang - 45 * i) % 360, 360 - abs(ang - 45 * i) % 360), i))
+        drop = set(bad) | {f for e in bad for f in edge_adj[e]}
+        if log:
+            log(f"    지리 스냅 LP: {rd + 1}회, 잔차 남은 엣지 {len(bad)} (이웃 포함 {len(drop)}개는 HiGHS가 정함)")
+        return {e: i for e, i in dirs.items() if e not in drop}
+
+    warm = cfg.get("warm_start")
+    if start and start.get("dirs"):
+        give_start({tuple(k) if not isinstance(k, tuple) else k: v for k, v in start["dirs"].items()}, "이어 풀기")
+    elif warm == "geo-snap":
+        give_start(geo_snap_dirs(), "지리 스냅")
+
+    import time as _time
+    inc_state = {"it": 1, "t": 0.0}
+    if on_incumbent:
+        def _cb(ev):
+            now = _time.time()
+            if now - inc_state["t"] < float(cfg.get("incumbent_every_s", 60)):
+                return
+            inc_state["t"] = now
+            try:
+                solv = ev.data_out.mip_solution
+                on_incumbent(inc_state["it"], {v: (float(solv[X[v]]), float(solv[Y[v]])) for v in nodes},
+                             float(ev.data_out.objective_function_value))
+            except Exception as ex:  # noqa: BLE001
+                if log:
+                    log(f"    (중간 저장 실패: {ex})")
+        h.cbMipImprovingSolution.subscribe(_cb)
+
     it = 0
     status = None
     last_ok = (0, "")
     pos = {}
+    iter_status = []
+    last_violations = 10 ** 6
+    t_start = _time.time()
     while True:
         it += 1
+        inc_state["it"] = it
         h.run()
         status = h.modelStatusToString(h.getModelStatus())
+        iter_status.append(status)
         sol = h.getSolution().col_value
         if not sol or len(sol) < h.getNumCol() or h.getInfo().primal_solution_status != 2:
             # 실행 가능해 없음 (시간 제한 안에 못 찾음 등). 앞 반복의 해가 있으면 그걸 남긴다
@@ -358,6 +541,9 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
             break
         last_ok = (it, status)
         pos = {v: (sol[X[v]], sol[Y[v]]) for v in nodes}
+        cur_dirs = {e: max(KS[e], key=lambda i: sol[D[e, i]]) for e in E}
+        last_sol = list(sol)
+        last_obj = h.getInfo().objective_function_value
         # 교차 검사 (비인접 엣지 쌍) + 정점-엣지 근접
         cross = []
         for i in range(len(E)):
@@ -375,22 +561,23 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
                     cross.append(key)
         if log:
             log(f"    iter {it}: {status}, obj={h.getInfo().objective_function_value:.2f}, 위반 쌍 {len(cross)}")
+        if on_iteration:
+            on_iteration(it, pos, sorted(added), status, h.getInfo().objective_function_value, cur_dirs, len(cross))
+        last_violations = len(cross)
         if not cross or it >= cfg["max_iterations"]:
             break
+        if cfg.get("total_budget_s") and _time.time() - t_start > float(cfg["total_budget_s"]):
+            if log:
+                log(f"    전체 예산 {cfg['total_budget_s']}s 초과 → 반복 {it}에서 멈춤 (교차 {len(cross)}쌍 남음)")
+            status = f"{status} (전체 예산 초과로 반복 {it}에서 멈춤)"
+            break
         for e1, e2 in cross:
-            added.add((e1, e2))
-            a, b = e1
-            c, d = e2
-            gam = [var(0, 1, integer=True) for _ in range(8)]
-            row([(gj, 1) for gj in gam], 1, inf)
-            dm = cfg["min_sep"]
-            # 방향 k: e2의 두 끝점이 e1의 두 끝점보다 방향 k 쪽으로 dm 이상 (k의 단위벡터와 내적)
-            for k, (ux, uy) in enumerate(DIRS):
-                for p in (c, d):
-                    for q in (a, b):
-                        Mx = (abs(G[p][0] - G[q][0]) + abs(G[p][1] - G[q][1]) + 4 * R + 2 * dm) if R else M0
-                        row([(X[p], ux), (Y[p], uy), (X[q], -ux), (Y[q], -uy), (gam[k], -Mx)], dm - Mx, inf)
-    obj = h.getInfo().objective_function_value if pos else None
+            add_cross(e1, e2)
+        if warm:
+            touched = {e for pair in cross for e in pair}
+            touched |= {f for e in touched for f in edge_adj[e]}
+            give_start({e: i for e, i in cur_dirs.items() if e not in touched}, f"반복 {it + 1}")
+    obj = last_obj if pos else None
     # 결과 통계
     bends = 0
     for (v, e1, e2), w in (pairs.items() if pos else []):
@@ -401,11 +588,13 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
         bends += w * min(dvt, 8 - dvt)
     chosen = {}
     if pos:
-        sol = h.getSolution().col_value
+        sol = last_sol   # 마지막으로 실행 가능했던 반복의 해 (마지막 반복이 해를 못 찾았으면 그 앞)
         for e in E:
             chosen[e] = max(KS[e], key=lambda i: sol[D[e, i]])
     return {"pos": pos, "status": status, "iterations": it, "crossing_constraints": len(added), "objective": obj,
-            "scale": scale, "bend_cost": bends, "geo_crossing_pairs": len(geo_cross), "dirs": chosen}
+            "scale": scale, "bend_cost": bends, "geo_crossing_pairs": len(geo_cross), "dirs": chosen,
+            "iteration_status": iter_status, "time_limited": any("Time limit" in x for x in iter_status),
+            "last_violations": last_violations}
 
 
 def expand(g: dict, cg: dict, pos: dict) -> dict:
@@ -464,7 +653,7 @@ def snap_baseline(g: dict) -> dict:
     return dict(g["pos"])
 
 
-def render_svg(g: dict, pos: dict, title: str, size=900, label=True) -> str:
+def render_svg(g: dict, pos: dict, title: str, size=900, label=True, names: dict | None = None, label_fn=None, stats_out: dict | None = None) -> str:
     """도식 SVG (노선 색만 사용). 같은 엣지를 여러 노선이 지나면 평행 오프셋."""
     xs = [p[0] for p in pos.values()]
     ys = [p[1] for p in pos.values()]
@@ -479,6 +668,8 @@ def render_svg(g: dict, pos: dict, title: str, size=900, label=True) -> str:
         return (pad + (p[0] - minx) * sc, pad + (maxy - p[1]) * sc)
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H:.0f}" font-family="sans-serif">',
            f'<rect width="100%" height="100%" fill="#fff"/><text x="12" y="24" font-size="16" font-weight="700">{title}</text>']
+    segs = []   # 5차 R4: 라벨 배치가 노선 선분을 피하게 넘긴다
+    names = names or g["names"]
     for (a, b), ls in g["edges"].items():
         if a not in pos or b not in pos:
             continue
@@ -492,6 +683,7 @@ def render_svg(g: dict, pos: dict, title: str, size=900, label=True) -> str:
             col = g["lines"].get(lid, {}).get("color", "#888")
             out.append(f'<line x1="{pa[0] + nx * off:.1f}" y1="{pa[1] + ny * off:.1f}" x2="{pb[0] + nx * off:.1f}" y2="{pb[1] + ny * off:.1f}" '
                        f'stroke="{col}" stroke-width="4" stroke-linecap="round"/>')
+            segs.append((pa[0] + nx * off, pa[1] + ny * off, pb[0] + nx * off, pb[1] + ny * off))
     deg = defaultdict(int)
     nbr = defaultdict(list)
     for a, b in g["edges"]:
@@ -514,9 +706,13 @@ def render_svg(g: dict, pos: dict, title: str, size=900, label=True) -> str:
                 dx, dy = -dx, -dy
             vx, vy = vx + dx / L, vy + dy / L
         L = math.hypot(vx, vy) or 1
-        items.append({"p": (x, y), "dir": (vx / L, vy / L), "text": g["names"][v], "size": 11 if big else 9, "big": big})
+        items.append({"p": (x, y), "dir": (vx / L, vy / L), "text": names.get(v, g["names"][v]), "size": 11 if big else 9, "big": big})
     if label:
-        for it, lp in zip(items, place_labels(items)):
+        placed = (label_fn or (lambda its, sg: place_labels(its, segments=sg)))(items, segs)
+        if stats_out is not None:
+            stats_out.update(label_stats(placed, segs) if all("r" in x for x in placed) else {})
+            stats_out["_placed"], stats_out["_segs"] = placed, segs
+        for it, lp in zip(items, placed):
             tf = f' transform="rotate({lp["rot"]} {lp["x"]:.1f} {lp["y"]:.1f})"' if lp["rot"] else ""
             out.append(f'<text x="{lp["x"]:.1f}" y="{lp["y"]:.1f}" font-size="{it["size"]}" fill="#333" text-anchor="{lp["anchor"]}"'
                        f' paint-order="stroke" stroke="#fff" stroke-width="2.5"{tf}>{it["text"]}</text>')
@@ -692,55 +888,131 @@ def solve_lns(g: dict, cg: dict, cfg: dict, log=None) -> dict:
     return best
 
 
-def place_labels(stations: list[dict], cell: float = 40.0) -> list[dict]:
-    """라벨 충돌 회피 (web/schematic_core.js placeLabels와 같은 규칙). 큰 역부터, 후보 중 겹침 넓이 최소."""
+def label_geom(c: dict) -> tuple:
+    """라벨 사각형(원점 ox, oy에서 rot만큼 돌린 좌표계의 r = [x0, y0, x1, y1])의 화면 외접 사각형 (web/schematic_core.js labelGeom)."""
+    ox, oy, rot, r = c["ox"], c["oy"], c["rot"], c["r"]
+    if not rot:
+        return (r[0] + ox, r[1] + oy, r[2] + ox, r[3] + oy)
+    a = math.radians(rot)
+    ca, sa = math.cos(a), math.sin(a)
+    pts = [(ox + x * ca - y * sa, oy + x * sa + y * ca) for x, y in ((r[0], r[1]), (r[2], r[1]), (r[2], r[3]), (r[0], r[3]))]
+    return (min(p[0] for p in pts), min(p[1] for p in pts), max(p[0] for p in pts), max(p[1] for p in pts))
+
+
+def seg_in_label(c: dict, sg) -> float:
+    """선분이 라벨 사각형 안을 지나는 길이 (Liang–Barsky, 회전 라벨은 라벨 좌표계로). web segInLabel과 같다."""
+    x1, y1, x2, y2 = sg[0] - c["ox"], sg[1] - c["oy"], sg[2] - c["ox"], sg[3] - c["oy"]
+    if c["rot"]:
+        a = math.radians(-c["rot"])
+        ca, sa = math.cos(a), math.sin(a)
+        x1, y1, x2, y2 = x1 * ca - y1 * sa, x1 * sa + y1 * ca, x2 * ca - y2 * sa, x2 * sa + y2 * ca
+    rx0, ry0, rx1, ry1 = c["r"]
+    t0, t1 = 0.0, 1.0
+    dx, dy = x2 - x1, y2 - y1
+    for p_, q_ in ((-dx, x1 - rx0), (dx, rx1 - x1), (-dy, y1 - ry0), (dy, ry1 - y1)):
+        if abs(p_) < 1e-12:
+            if q_ < 0:
+                return 0.0
+            continue
+        t = q_ / p_
+        if p_ < 0:
+            if t > t1:
+                return 0.0
+            t0 = max(t0, t)
+        else:
+            if t < t0:
+                return 0.0
+            t1 = min(t1, t)
+    return (t1 - t0) * math.hypot(dx, dy) if t1 > t0 else 0.0
+
+
+def place_labels(stations: list[dict], cell: float = 40.0, segments=None, seg_w=None) -> list[dict]:
+    """라벨 충돌 회피 (web/schematic_core.js placeLabels와 같은 규칙). 큰 역부터, 후보 중 비용 최소.
+    비용 = 놓은 라벨·역 원과 겹치는 넓이 + seg_w × 라벨 안을 지나는 노선 선분 길이 (5차 R4) + 후보 순번 × 0.01."""
+    segments = segments or []
     grid = defaultdict(list)
+    sgrid = defaultdict(list)
 
     def cells(b):
         for i in range(int(math.floor(b[0] / cell)), int(math.floor(b[2] / cell)) + 1):
             for j in range(int(math.floor(b[1] / cell)), int(math.floor(b[3] / cell)) + 1):
                 yield (i, j)
 
-    def add(b):
-        for c in cells(b):
-            grid[c].append(b)
+    def near(gr, b):
+        seen, out = set(), []
+        for cc in cells(b):
+            for x in gr[cc]:
+                if id(x) not in seen:
+                    seen.add(id(x))
+                    out.append(x)
+        return out
+
+    def put(gr, b, x):
+        for cc in cells(b):
+            gr[cc].append(x)
 
     def overlap(a, b):
         return max(0.0, min(a[2], b[2]) - max(a[0], b[0])) * max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
     for st in stations:
         r = 6 if st["big"] else 4
-        add((st["p"][0] - r, st["p"][1] - r, st["p"][0] + r, st["p"][1] + r))
+        b = (st["p"][0] - r, st["p"][1] - r, st["p"][0] + r, st["p"][1] + r)
+        put(grid, b, b)
+    for sg in segments:
+        sg = tuple(sg)
+        put(sgrid, (min(sg[0], sg[2]), min(sg[1], sg[3]), max(sg[0], sg[2]), max(sg[1], sg[3])), sg)
     order = sorted(range(len(stations)), key=lambda i: (not stations[i]["big"], i))
     out = [None] * len(stations)
     for i in order:
         st = stations[i]
-        x0, y0 = st["p"]
+        px, py = st["p"]
         w, h = len(st["text"]) * st["size"] * 0.95, st["size"] * 1.2
+        sw = seg_w if seg_w is not None else 0.45 * h
         ux, uy = st["dir"]
         nx, ny = -uy, ux
         if nx < 0:
             nx, ny = -nx, -ny
         horiz = abs(uy) < 0.38
-        d45 = w * math.sqrt(0.5)
+        R_S, R_E = (0, -h * 0.85, w, h * 0.15), (-w, -h * 0.85, 0, h * 0.15)
         cand = []
         if horiz:
-            cand.append({"x": x0 + 3, "y": y0 - 7, "rot": -45, "anchor": "start", "box": (x0 + 2, y0 - 7 - d45 - h * 0.5, x0 + 4 + d45, y0 - 5)})
-            cand.append({"x": x0 - 3, "y": y0 + 12, "rot": -45, "anchor": "end", "box": (x0 - 4 - d45, y0 + 8, x0 - 2, y0 + 12 + d45 + h * 0.5)})
+            cand.append({"x": px + 3, "y": py - 7, "rot": -45, "anchor": "start", "ox": px + 3, "oy": py - 7, "r": R_S})
+            cand.append({"x": px - 3, "y": py + 12, "rot": -45, "anchor": "end", "ox": px - 3, "oy": py + 12, "r": R_E})
         for sg in (1, -1):
-            x, y = x0 + sg * nx * 8, y0 + sg * ny * 8 + 3
+            x, y = px + sg * nx * 8, py + sg * ny * 8 + 3
             anchor = "start" if sg * nx >= 0 else "end"
-            xa = x if anchor == "start" else x - w
-            cand.append({"x": x, "y": y, "rot": 0, "anchor": anchor, "box": (xa, y - h * 0.85, xa + w, y + h * 0.15)})
+            cand.append({"x": x, "y": y, "rot": 0, "anchor": anchor, "ox": x, "oy": y, "r": R_S if anchor == "start" else R_E})
         if not horiz:
-            cand.append({"x": x0 - w / 2, "y": y0 - 9, "rot": 0, "anchor": "start", "box": (x0 - w / 2, y0 - 9 - h * 0.85, x0 + w / 2, y0 - 9 + h * 0.15)})
+            cand.append({"x": px - w / 2, "y": py - 9, "rot": 0, "anchor": "start", "ox": px - w / 2, "oy": py - 9, "r": R_S})
+        d, dd = 8, 6
+        for x, y, anchor in ((px + d, py + h * 0.35, "start"), (px - d, py + h * 0.35, "end"), (px - w / 2, py - d, "start"),
+                             (px - w / 2, py + d + h * 0.7, "start"), (px + dd, py - dd, "start"), (px - dd, py - dd, "end"),
+                             (px + dd, py + dd + h * 0.7, "start"), (px - dd, py + dd + h * 0.7, "end")):
+            cand.append({"x": x, "y": y, "rot": 0, "anchor": anchor, "ox": x, "oy": y, "r": R_S if anchor == "start" else R_E})
         best = None
         for k, c in enumerate(cand):
-            near = {id(b): b for cc in cells(c["box"]) for b in grid[cc]}
-            o = sum(overlap(c["box"], b) for b in near.values()) + k * 0.01
+            c["box"] = label_geom(c)
+            o = sum(overlap(c["box"], b) for b in near(grid, c["box"]))
+            if segments:
+                o += sw * sum(seg_in_label(c, sg) for sg in near(sgrid, c["box"]))
+            o += k * 0.01
             if best is None or o < best[0]:
                 best = (o, c)
             if o < 0.02 * (k + 1):
                 break
-        add(best[1]["box"])
+        best[1]["cost"] = best[0]
+        put(grid, best[1]["box"], best[1]["box"])
         out[i] = best[1]
     return out
+
+
+def label_stats(placed: list[dict], segments, min_len: float = 2.0) -> dict:
+    """라벨 배치 지표 (web labelStats와 같다): 선분이 min_len보다 길게 지나는 라벨 수, 서로 겹치는 라벨 쌍 수."""
+    on_line = sum(1 for c in placed if any(seg_in_label(c, sg) > min_len for sg in segments))
+    pairs = 0
+    for i in range(len(placed)):
+        a = placed[i]["box"]
+        for j in range(i + 1, len(placed)):
+            b = placed[j]["box"]
+            if min(a[2], b[2]) - max(a[0], b[0]) > 0.5 and min(a[3], b[3]) - max(a[1], b[1]) > 0.5:
+                pairs += 1
+    return {"labels": len(placed), "on_line": on_line, "overlap_pairs": pairs}

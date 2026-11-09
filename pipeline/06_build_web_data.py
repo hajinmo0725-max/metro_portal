@@ -33,15 +33,9 @@ def load_route_cli():
 
 def display_name(name: str, norm: dict) -> str:
     """4차 Q5: 표시용 역 이름의 '역' 접미사 통일 (코레일 계열 '양평역' ↔ 도시철도 '양평'). 괄호 부역명은 남기고 그 앞의 접미사만 뗀다.
-    접미사 목록은 매칭 정규화와 같은 ruleset normalize.remove_suffixes를 쓴다 (클러스터 이름과 같은 규칙)."""
-    import re
-    m = re.match(r"^(.*?)(\s*[(\[].*)?$", name)
-    base, paren = m.group(1), m.group(2) or ""
-    for suf in norm["remove_suffixes"]:
-        if base.endswith(suf) and len(base) - len(suf) >= norm["min_length_after_suffix"]:
-            base = base[: -len(suf)]
-            break
-    return base + paren
+    접미사 목록은 매칭 정규화와 같은 ruleset normalize.remove_suffixes를 쓴다. 5차 R2 예외('역' 유지)는 names.display_names."""
+    from metro_portal.names import strip_display_suffix
+    return strip_display_suffix(name, norm)
 
 
 def main() -> int:
@@ -74,9 +68,12 @@ def main() -> int:
         for sq in lines_by_id[lid]["sequences"]:
             for x in sq["station_ids"]:
                 line_names.setdefault(x, lines_by_id[lid]["name"])
+    # 5차 R2: 표시 이름 — '역'을 떼면 도시·지역 이름이 되거나 다른 역 이름과 겹치는 클러스터는 '역' 유지 (config/display.yaml)
+    from metro_portal.names import display_names
+    cdisp, sdisp, _ = display_names(clusters, idx.st, lambda n: display_name(n, rs["normalize"]))
     st_out = {}
     for s in stations:
-        st_out[s["id"]] = {"n": display_name(s["name_ko"], rs["normalize"]), "la": s["lat"], "lo": s["lon"], "g": line_names.get(s["id"], s["line_name"]),
+        st_out[s["id"]] = {"n": sdisp.get(s["id"], display_name(s["name_ko"], rs["normalize"])), "la": s["lat"], "lo": s["lon"], "g": line_names.get(s["id"], s["line_name"]),
                            "c": cix[cluster_of[s["id"]]], "ct": s.get("city", "")}
         if multi:
             st_out[s["id"]]["co"] = s.get("country", "KR")
@@ -103,7 +100,7 @@ def main() -> int:
                           "seqs": [{"id": sq["id"], "circular": sq["circular"], "directed": bool(sq.get("directed")),
                                     "nodes": [nix[x] for x in sq["station_ids"]]}
                                    for sq in ln["sequences"]]})
-    clusters_out = [{"id": c["id"], "n": c["name"], "la": c["lat"], "lo": c["lon"], "city": "/".join(c.get("cities", [])),
+    clusters_out = [{"id": c["id"], "n": cdisp[c["id"]], "la": c["lat"], "lo": c["lon"], "city": "/".join(c.get("cities", [])),
                      **({"co": "/".join(c.get("countries", ["KR"]))} if multi else {}),
                      "s": [nix[x] for x in c["station_ids"]],
                      "lines": sorted({line_names[x] for x in c["station_ids"] if x in line_names})}

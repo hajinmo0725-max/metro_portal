@@ -13,6 +13,11 @@ export function kstDateString(date = new Date()) {
   return kst.toISOString().slice(0, 10);
 }
 
+// 5차 R1: 퍼즐 ruleset → 길찾기 번들 파일 (pipeline/06_build_web_data.py 출력 이름 규칙)
+export function bundleFile(ruleset) {
+  return ruleset === "strict" ? "kr_strict.json" : `world_${ruleset}.json`;
+}
+
 export function daysBetween(epoch, dateStr) {
   return Math.round((Date.parse(`${dateStr}T00:00:00Z`) - Date.parse(`${epoch}T00:00:00Z`)) / DAY_MS);
 }

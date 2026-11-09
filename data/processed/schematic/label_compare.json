@@ -1,0 +1,79 @@
+[
+ {
+  "region": "seoul",
+  "city": "수도권",
+  "size": 1100,
+  "4차_labels": 655,
+  "4차_on_line": 323,
+  "4차_overlap_pairs": 908,
+  "5차_labels": 655,
+  "5차_on_line": 224,
+  "5차_overlap_pairs": 742
+ },
+ {
+  "region": "seoul",
+  "city": "수도권",
+  "size": 3300,
+  "4차_labels": 655,
+  "4차_on_line": 160,
+  "4차_overlap_pairs": 102,
+  "5차_labels": 655,
+  "5차_on_line": 32,
+  "5차_overlap_pairs": 59
+ },
+ {
+  "region": "busan",
+  "city": "부산",
+  "size": 1100,
+  "4차_labels": 146,
+  "4차_on_line": 12,
+  "4차_overlap_pairs": 9,
+  "5차_labels": 146,
+  "5차_on_line": 0,
+  "5차_overlap_pairs": 0
+ },
+ {
+  "region": "daegu",
+  "city": "대구",
+  "size": 1100,
+  "4차_labels": 97,
+  "4차_on_line": 12,
+  "4차_overlap_pairs": 6,
+  "5차_labels": 97,
+  "5차_on_line": 1,
+  "5차_overlap_pairs": 1
+ },
+ {
+  "region": "daejeon",
+  "city": "대전",
+  "size": 1100,
+  "4차_labels": 22,
+  "4차_on_line": 0,
+  "4차_overlap_pairs": 0,
+  "5차_labels": 22,
+  "5차_on_line": 0,
+  "5차_overlap_pairs": 0
+ },
+ {
+  "region": "gwangju",
+  "city": "광주",
+  "size": 1100,
+  "4차_labels": 20,
+  "4차_on_line": 1,
+  "4차_overlap_pairs": 1,
+  "5차_labels": 20,
+  "5차_on_line": 0,
+  "5차_overlap_pairs": 0
+ },
+ {
+  "region": "taipei",
+  "city": "타이베이",
+  "size": 1100,
+  "4차_labels": 170,
+  "4차_on_line": 27,
+  "4차_overlap_pairs": 11,
+  "5차_labels": 170,
+  "5차_on_line": 4,
+  "5차_overlap_pairs": 2
+ }
+]

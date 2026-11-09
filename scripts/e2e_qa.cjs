@@ -41,6 +41,7 @@ async function optimal(pg) {
   let longest = { len: 0 };
   pz.daily_order.forEach((pid, d) => {
     const p = pz.puzzles.find((x) => x.id === pid);
+    if ((p.ruleset || 'strict') !== 'strict') return;   // 5차 R1: 주말 한국+타이베이 퍼즐은 다른 번들
     for (const m of moves[cix.get(p.from)]) {
       if (m.type !== 'ride') continue;
       const len = m.lines.map((i) => data.lines[i].name).join(' · ').length;
@@ -193,8 +194,9 @@ async function optimal(pg) {
     await pg.waitForSelector('#result .summary');
     await pg.waitForTimeout(900);
     const steps = (await pg.textContent('#result .steps')).replace(/\s+/g, ' ');
-    check(`[${name}] Q5 같은 이름 역 워프에 노선 병기`, /양평 \(5호선\) ⇢ 수도권 양평 \(경의·중앙선\)/.test(steps), steps.match(/워프 T1 \[양평\][^⇢]*⇢[^)]*\)/)?.[0] || steps.slice(0, 120));
-    check(`[${name}] Q5 '역' 접미사 통일 (양평역·용문역 표기 없음)`, !/양평역|용문역/.test(steps));
+    // 5차 R2: '양평'은 군 이름이라 화면에서 '양평역'(두 양평 모두), '용문역'(경의중앙)은 대전 용문과 겹쳐서 '역' 유지
+    check(`[${name}] Q5 같은 이름 역 워프에 노선 병기`, /양평역 \(5호선\) ⇢ 수도권 양평역 \(경의·중앙선\)/.test(steps), steps.match(/워프 T1 \[양평\][^⇢]*⇢[^)]*\)/)?.[0] || steps.slice(0, 120));
+    check(`[${name}] 5차 R2 '역' 표기: 도시·지역 이름이 되거나 다른 역과 겹치면 유지 (양평역·용문역), 접미사 중복 없음`, /양평역/.test(steps) && /용문역/.test(steps) && !/역역/.test(steps));
     if (name === 'mobile') {
       const r = await pg.evaluate(() => ({ res: document.querySelector('#result').getBoundingClientRect().top, map: document.querySelector('#map').getBoundingClientRect() }));
       check('[mobile] Q4 길찾기 후 결과가 첫 화면에 보이고 지도도 함께 보인다', r.res < vh * 0.8 && r.map.top <= 1 && r.map.bottom > 150,

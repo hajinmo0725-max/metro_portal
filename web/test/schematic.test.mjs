@@ -82,3 +82,25 @@ test("라벨 충돌 회피: 가까운 두 역 라벨이 겹치지 않게 다른 
   const ov = (a, b) => Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
   assert.equal(ov(out[0].box, out[1].box), 0);
 });
+
+test("5차 R4: 라벨이 근처 노선 선분 위에 걸치지 않게 놓는다", async () => {
+  const { placeLabels, labelStats, segInLabel } = await import("../schematic_core.js");
+  // 가로선 위 역 (100, 100). 바로 위·아래로 지나는 다른 가로선 두 개와 오른쪽 위 대각선 → 4차 첫 후보(오른쪽 위 45°)는 대각선에 걸친다
+  const st = [{ p: [100, 100], dir: [1, 0], text: "가나다라마", size: 10, big: false }];
+  const segs = [[0, 100, 300, 100], [0, 86, 300, 86], [0, 114, 300, 114], [100, 95, 160, 35]];
+  const out = placeLabels(st, { segments: segs });
+  assert.equal(labelStats(out, segs).on_line, 0);
+  // 선분을 안 주면 (4차와 같은 비용) 선 위에 걸친다 — 지표가 실제로 차이를 잡는지 확인
+  const old = placeLabels(st);
+  assert.ok(segs.some((sg) => segInLabel(old[0], sg) > 2));
+});
+
+test("5차 R4: segInLabel — 회전 라벨 좌표계 클리핑 길이", async () => {
+  const { segInLabel } = await import("../schematic_core.js");
+  const c = { ox: 0, oy: 0, rot: 0, r: [0, -10, 40, 2] };
+  assert.equal(Math.round(segInLabel(c, [-10, -5, 100, -5])), 40);   // 라벨 폭만큼
+  assert.equal(segInLabel(c, [-10, 20, 100, 20]), 0);
+  const cr = { ox: 0, oy: 0, rot: -45, r: [0, -2, 40, 2] };          // 오른쪽 위로 45° 기운 라벨
+  assert.ok(segInLabel(cr, [0, 0, 40, -40]) > 39);                   // 라벨 방향 대각선은 거의 전부 안
+  assert.equal(segInLabel(cr, [0, 10, 40, 10]), 0);
+});

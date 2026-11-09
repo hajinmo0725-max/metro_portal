@@ -70,13 +70,19 @@ test("입력 해석: 도시 접두어, 동명역, 라벨", () => {
   assert.equal(new Set(labels).size, labels.length);
   const r1 = resolveQuery(data, labels, "부산 동래");
   // 부산에는 동래가 둘(1·4호선 / 동해선): 도시 접두어가 있으면 둘 다 후보
-  assert.ok(r1.multi && r1.index.length === 2 && r1.index.every((i) => data.clusters[i].n === "동래"));
+  // 5차 R2: 동해선 동래는 화면에 '동래역' (원래 이름 동래역 + 다른 동래와 겹침). 입력 '동래'는 둘 다 찾는다
+  assert.ok(r1.multi && r1.index.length === 2);
+  assert.deepEqual(r1.index.map((i) => data.clusters[i].n).sort(), ["동래", "동래역"]);
   assert.ok(resolveQuery(data, labels, "동래").error.includes("여러 역"));
   const r0 = resolveQuery(data, labels, "광주 녹동");
   assert.equal(data.clusters[r0.index].n, "녹동");
   assert.ok(resolveQuery(data, labels, "양평").error.includes("여러 역"));
   const r2 = resolveQuery(data, labels, "강남역");
   assert.equal(data.clusters[r2.index].n, "강남");
+  // 5차 R2: '역'을 떼면 도시 이름이 되는 역은 화면에 '서울역'. 입력은 '서울'·'서울역' 둘 다 된다
+  const rs1 = resolveQuery(data, labels, "서울"), rs2 = resolveQuery(data, labels, "서울역");
+  assert.equal(data.clusters[rs1.index].n, "서울역");
+  assert.equal(rs1.index, rs2.index);
   const r3 = resolveQuery(data, labels, labels[10]);
   assert.equal(r3.index, 10);
   assert.ok(resolveQuery(data, labels, "없는역이름").error);

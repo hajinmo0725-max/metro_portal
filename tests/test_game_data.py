@@ -119,40 +119,46 @@ real = pytest.mark.skipif(not PZ.exists(), reason="puzzles.json missing")
 
 @real
 def test_puzzles_are_consistent_with_router():
-    """퍼즐의 워프 有/無 비용을 05 단계 길찾기(역 수준 그래프)로 다시 계산해 대조하고, 최적 경로가 유효한지 본다."""
+    """퍼즐의 워프 有/無 비용을 05 단계 길찾기(역 수준 그래프)로 다시 계산해 대조하고, 대표 최적 경로가 유효한지 본다.
+    5차 R1: 퍼즐마다 그 ruleset 그래프로 (주말 풀 = 한국+타이베이). 최적해 유일성은 요구하지 않고 optimal_paths가 실제 개수와 같은지 본다."""
     from metro_portal.route import shortest_path, without_warps
-    from metro_portal.world import build_world, load_base
+    from metro_portal.world import build_world, load_base, load_multi
     pz = json.loads(PZ.read_text(encoding="utf-8"))
-    w = build_world(*load_base(), load_ruleset(pz["ruleset"]))
-    cmap = {c["id"]: c for c in w["clusters"]}
-    nowarp = without_warps(w["adj"])
-    g = g10.ClusterGraph(w)
-    # 4차 Q2: 풀(puzzles) 중 일정(daily_order)에 든 것만 웹에 나간다. 일정은 중복 없는 순환 일정
-    assert len(pz["puzzles"]) >= 60 and len(set(pz["daily_order"])) == len(pz["daily_order"])
+    assert len(pz["puzzles"]) >= 365 and len(set(pz["daily_order"])) == len(pz["daily_order"])
     assert set(pz["daily_order"]) <= {p["id"] for p in pz["puzzles"]}
-    for p in pz["puzzles"]:
-        a, b = cmap[p["from"]]["station_ids"], cmap[p["to"]]["station_ids"]
-        r = shortest_path(w["adj"], a, b)
-        assert r[0] == p["cost_warp"], p["id"]
-        rn = shortest_path(nowarp, a, b)
-        assert (rn[0] if rn else None) == p["cost_no_warp"], p["id"]
-        assert p["optimal_paths"] == 1 and cmap[p["from"]]["name"] != cmap[p["to"]]["name"]
-        # 최적 경로: 연속, 승차는 인접, 워프는 같은 포탈, 비용 합 = cost_warp
-        cur, cost = p["from"], 0
-        for s in p["optimal"]:
-            assert s["from"] == cur
-            u, v = g.ix[s["from"]], g.ix[s["to"]]
-            if s["type"] == "ride":
-                assert any(x == v for x, _ in g.ride_adj[u])
-                cost += 1
-            else:
-                portal = next(q for q in g.portals if q["name"] == s["portal"])
-                assert s["from"] in portal["cluster_ids"] and s["to"] in portal["cluster_ids"]
-                cost += portal["cost"]
-            cur = s["to"]
-        assert cur == p["to"] and cost == p["cost_warp"]
-        _, cnt = g.sssp_count(g.ix[p["from"]])
-        assert cnt[g.ix[p["to"]]] == 1
+    for rsn in sorted({p["ruleset"] for p in pz["puzzles"]}):
+        w = build_world(*(load_base() if rsn == pz["ruleset"] else load_multi(("KR", "TW"))), load_ruleset(rsn))
+        cmap = {c["id"]: c for c in w["clusters"]}
+        nowarp = without_warps(w["adj"])
+        g = g10.ClusterGraph(w)
+        ps = [p for p in pz["puzzles"] if p["ruleset"] == rsn]
+        # 전수 대조는 무거워서(984개) 일정에 든 퍼즐 + 앞쪽 40개만 역 수준 길찾기로 다시 잰다
+        check = {p["id"] for p in ps if p.get("scheduled")} | {p["id"] for p in ps[:40]}
+        for p in ps:
+            assert cmap[p["from"]]["name"] != cmap[p["to"]]["name"]
+            # 최적 경로: 연속, 승차는 인접, 워프는 같은 포탈, 비용 합 = cost_warp
+            cur, cost = p["from"], 0
+            for s in p["optimal"]:
+                assert s["from"] == cur
+                u, v = g.ix[s["from"]], g.ix[s["to"]]
+                if s["type"] == "ride":
+                    assert any(x == v for x, _ in g.ride_adj[u])
+                    cost += 1
+                else:
+                    portal = next(q for q in g.portals if q["name"] == s["portal"])
+                    assert s["from"] in portal["cluster_ids"] and s["to"] in portal["cluster_ids"]
+                    cost += portal["cost"]
+                cur = s["to"]
+            assert cur == p["to"] and cost == p["cost_warp"]
+            if p["id"] not in check:
+                continue
+            a, b = cmap[p["from"]]["station_ids"], cmap[p["to"]]["station_ids"]
+            r = shortest_path(w["adj"], a, b)
+            assert r[0] == p["cost_warp"], p["id"]
+            rn = shortest_path(nowarp, a, b)
+            assert (rn[0] if rn else None) == p["cost_no_warp"], p["id"]
+            _, cnt = g.sssp_count(g.ix[p["from"]])
+            assert cnt[g.ix[p["to"]]] == p["optimal_paths"], p["id"]
 
 
 @real
@@ -332,7 +338,14 @@ def test_daily_order_meets_all_constraints():
     h = pz["stats"]["daily_order"]["weekday_mean_h"]
     seq = [h[d] for d in WEEKDAYS]
     assert seq == sorted(seq), seq
-    assert all(by[i]["ruleset"] == pz["ruleset"] for i in pz["daily_order"])
+    # 5차 R1: 기본 ruleset + 주말 풀 ruleset(한국+타이베이). 주말 풀 퍼즐은 토·일에만
+    wk = oc["weekend_pool"]["ruleset"]
+    epoch = date.fromisoformat(pz["definition"].get("epoch", "2026-11-05"))
+    for t, i in enumerate(pz["daily_order"]):
+        assert by[i]["ruleset"] in (pz["ruleset"], wk)
+        if by[i]["ruleset"] == wk:
+            assert WEEKDAYS[(epoch + timedelta(days=t)).weekday()] in ("sat", "sun")
+    assert sum(1 for i in pz["daily_order"] if by[i]["ruleset"] == wk) > 0
     web = json.loads((ROOT / "web" / "data" / "puzzles.json").read_text(encoding="utf-8"))
     assert web["daily_order"] == pz["daily_order"] and len(web["puzzles"]) == len(pz["daily_order"])
-    assert all(p["ruleset"] == "strict" and p["difficulty"] == by[p["id"]]["difficulty_calibrated"] for p in web["puzzles"])
+    assert all(p["ruleset"] == by[p["id"]]["ruleset"] and p["difficulty"] == by[p["id"]]["difficulty_calibrated"] for p in web["puzzles"])
