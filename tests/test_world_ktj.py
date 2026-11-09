@@ -77,3 +77,25 @@ def test_three_country_compare_results():
     assert all(not v["judge"]["explosion"] for v in r.values())          # 허브 폭발 없음
     cross = {(p["name"], tuple(p["countries"])) for p in r["ktj_t12"]["portals"] if p["cross_country"]}
     assert {("三田", ("JP", "KR")), ("田浦", ("JP", "KR")), ("中山", ("JP", "TW")), ("府中", ("JP", "TW"))} <= cross
+
+
+FF = ROOT / "data" / "processed" / "fun_facts.json"
+
+
+@pytest.mark.skipif(not FF.exists(), reason="fun_facts 없음")
+def test_fun_facts_world_section():
+    """5차: fun facts 국가 간 경로 사례 — 세 나라 공통 포탈 板橋, 나라 사이 최단 경로, 해외 경유 국내 단축."""
+    w = json.loads(FF.read_text(encoding="utf-8")).get("world")
+    if w is None:
+        pytest.skip("world 섹션 없음 (도쿄 데이터 없이 생성)")
+    assert [p["name"] for p in w["three_country_portals"]] == ["板桥"]
+    assert w["diameter"]["cost"] >= 60 and len(w["diameter"]["countries_on_path"]) >= 2
+    r = {(x["from"], x["to"]): x for x in w["routes"]}
+    assert ("타이베이 台北車站", "도쿄권 東京") in r
+    for x in w["routes"]:   # 경로가 실제로 다른 나라로 넘어간다 (국가 간 워프 포함)
+        assert any(s["type"] == "warp" for s in x["steps"])
+    for cc in ("KR", "TW", "JP"):
+        d = w["detours"][cc]
+        assert 0 < d["shortened_via_abroad"] < d["pairs"]
+        e = d["example"]
+        assert e["cost_domestic"] is None or e["cost"] < e["cost_domestic"]
