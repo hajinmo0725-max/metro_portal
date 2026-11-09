@@ -1441,7 +1441,7 @@
 <text x="121.7" y="624.6" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">가정중앙시장</text>
 <text x="347.6" y="460.3" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">가좌</text>
 <text x="672.3" y="699.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">가천대</text>
-<text x="736.6" y="262.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">가평</text>
+<text x="736.6" y="262.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">가평역</text>
 <text x="135.7" y="638.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">간석</text>
 <text x="157.4" y="666.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">간석오거리</text>
 <text x="622.3" y="323.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">갈매</text>
@@ -1483,7 +1483,7 @@
 <text x="470.2" y="604.4" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">고속터미널</text>
 <text x="246.4" y="768.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 246.4 768.4)">고잔</text>
 <text x="666.2" y="859.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">고진</text>
-<text x="175.8" y="460.3" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">고촌</text>
+<text x="168.9" y="481.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">고촌역</text>
 <text x="183.7" y="323.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">곡산</text>
 <text x="618.4" y="210.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">곤제</text>
 <text x="749.5" y="742.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">곤지암</text>
@@ -1491,13 +1491,13 @@
 <text x="590.6" y="304.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">공릉</text>
 <text x="200.9" y="470.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">공항시장</text>
 <text x="77.3" y="552.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">공항화물청사</text>
-<text x="428.9" y="729.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">과천</text>
+<text x="428.9" y="729.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">과천역</text>
 <text x="373.4" y="739.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">관악</text>
 <text x="357.0" y="716.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">관악산</text>
 <text x="565.7" y="848.8" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">광교</text>
 <text x="571.1" y="834.8" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">광교중앙</text>
 <text x="620.4" y="504.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">광나루</text>
-<text x="266.9" y="683.6" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">광명</text>
+<text x="261.7" y="683.6" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">광명역</text>
 <text x="230.1" y="653.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">광명사거리</text>
 <text x="573.3" y="318.7" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">광운대</text>
 <text x="381.2" y="491.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">광화문</text>
@@ -1507,7 +1507,7 @@
 <text x="271.4" y="628.9" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">구로</text>
 <text x="310.0" y="667.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">구로디지털단지</text>
 <text x="549.8" y="641.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">구룡</text>
-<text x="628.0" y="341.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">구리</text>
+<text x="628.0" y="341.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">구리역</text>
 <text x="426.3" y="626.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">구반포</text>
 <text x="322.8" y="439.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">구산</text>
 <text x="618.1" y="835.5" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">구성</text>
@@ -1518,12 +1518,12 @@
 <text x="113.6" y="695.5" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">국제업무지구</text>
 <text x="301.0" y="587.5" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">국회의사당</text>
 <text x="593.2" y="489.3" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">군자</text>
-<text x="391.0" y="761.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">군포</text>
+<text x="391.0" y="761.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">군포역</text>
 <text x="749.6" y="249.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">굴봉산</text>
 <text x="173.1" y="620.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">굴포천</text>
 <text x="700.6" y="505.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">굽은다리</text>
 <text x="164.7" y="520.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">귤현</text>
-<text x="648.3" y="302.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 648.3 302.0)">금곡</text>
+<text x="648.3" y="302.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 648.3 302.0)">금곡역</text>
 <text x="183.0" y="275.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">금릉</text>
 <text x="391.0" y="774.8" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">금정</text>
 <text x="285.1" y="653.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">금천구청</text>
@@ -1567,8 +1567,8 @@
 <text x="349.4" y="648.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">당곡</text>
 <text x="299.3" y="562.8" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">당산</text>
 <text x="391.0" y="788.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">당정</text>
-<text x="195.7" y="308.4" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대곡</text>
-<text x="443.0" y="721.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대공원</text>
+<text x="195.7" y="308.4" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대곡역</text>
+<text x="437.0" y="718.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대공원</text>
 <text x="291.2" y="629.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대림</text>
 <text x="602.6" y="641.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">대모산입구</text>
 <text x="328.3" y="620.8" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">대방</text>
@@ -1579,14 +1579,14 @@
 <text x="163.1" y="311.2" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">대화</text>
 <text x="348.0" y="552.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">대흥</text>
 <text x="591.2" y="164.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">덕계</text>
-<text x="647.3" y="339.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">덕소</text>
+<text x="647.3" y="319.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">덕소</text>
 <text x="607.2" y="154.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">덕정</text>
 <text x="530.9" y="646.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">도곡</text>
-<text x="634.4" y="319.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">도농</text>
+<text x="634.4" y="339.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">도농</text>
 <text x="266.4" y="612.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">도림천</text>
 <text x="585.1" y="235.3" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">도봉</text>
 <text x="591.2" y="230.1" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">도봉산</text>
-<text x="657.0" y="319.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">도심</text>
+<text x="657.0" y="339.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">도심</text>
 <text x="110.0" y="647.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">도원</text>
 <text x="119.8" y="657.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">도화</text>
 <text x="359.2" y="473.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">독립문</text>
@@ -1594,11 +1594,11 @@
 <text x="283.4" y="661.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">독산</text>
 <text x="137.7" y="485.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">독정</text>
 <text x="547.8" y="344.7" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">돌곶이</text>
-<text x="616.0" y="314.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">동구릉</text>
+<text x="630.0" y="323.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동구릉</text>
 <text x="448.5" y="429.0" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">동대문</text>
 <text x="409.5" y="479.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동대문역사문화공원</text>
 <text x="441.1" y="530.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동대입구</text>
-<text x="607.2" y="123.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동두천</text>
+<text x="607.2" y="123.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동두천역</text>
 <text x="607.2" y="134.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동두천중앙</text>
 <text x="130.4" y="700.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동막</text>
 <text x="472.8" y="441.6" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">동묘앞</text>
@@ -1687,10 +1687,10 @@
 <text x="561.2" y="1045.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">봉명</text>
 <text x="515.2" y="604.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">봉은사</text>
 <text x="353.4" y="704.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">봉천</text>
-<text x="601.2" y="313.7" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">봉화산</text>
+<text x="594.4" y="311.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">봉화산</text>
 <text x="171.0" y="637.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">부개</text>
 <text x="792.1" y="765.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 792.1 765.6)">부발</text>
-<text x="187.2" y="657.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">부천</text>
+<text x="187.2" y="657.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">부천역</text>
 <text x="182.7" y="620.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">부천시청</text>
 <text x="195.7" y="620.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">부천종합운동장</text>
 <text x="167.1" y="658.8" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">부평</text>
@@ -1705,7 +1705,7 @@
 <text x="414.6" y="685.2" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">사당</text>
 <text x="629.0" y="301.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">사릉</text>
 <text x="374.3" y="813.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">사리</text>
-<text x="171.9" y="479.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">사우</text>
+<text x="169.0" y="461.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">사우</text>
 <text x="480.4" y="624.0" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">사평</text>
 <text x="136.8" y="618.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">산곡</text>
 <text x="371.7" y="768.6" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">산본</text>
@@ -1735,13 +1735,13 @@
 <text x="596.8" y="191.0" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">새말</text>
 <text x="317.2" y="468.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">새절</text>
 <text x="340.4" y="597.4" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 340.4 597.4)">샛강</text>
-<text x="351.2" y="537.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">서강대</text>
+<text x="349.2" y="527.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">서강대</text>
 <text x="123.7" y="606.7" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">서구청</text>
 <text x="371.9" y="504.8" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">서대문</text>
 <text x="500.2" y="889.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">서동탄</text>
 <text x="121.7" y="633.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">서부여성회관</text>
 <text x="440.8" y="578.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">서빙고</text>
-<text x="385.7" y="523.1" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">서울</text>
+<text x="399.7" y="533.7" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">서울역</text>
 <text x="341.8" y="711.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">서울대벤처타운</text>
 <text x="371.8" y="702.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">서울대입구</text>
 <text x="512.5" y="535.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">서울숲</text>
@@ -1764,7 +1764,7 @@
 <text x="510.5" y="604.4" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">선정릉</text>
 <text x="151.4" y="685.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">선학</text>
 <text x="417.2" y="807.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">성균관대</text>
-<text x="618.1" y="725.5" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">성남</text>
+<text x="618.1" y="725.5" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">성남역</text>
 <text x="575.5" y="824.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">성복</text>
 <text x="574.8" y="520.4" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">성수</text>
 <text x="450.5" y="395.6" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">성신여대입구</text>
@@ -1792,7 +1792,7 @@
 <text x="380.1" y="778.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">수리산</text>
 <text x="281.7" y="459.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">수색</text>
 <text x="615.1" y="611.3" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 615.1 611.3)">수서</text>
-<text x="470.7" y="856.9" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">수원</text>
+<text x="470.7" y="856.9" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">수원역</text>
 <text x="467.6" y="856.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">수원시청</text>
 <text x="503.7" y="335.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">수유</text>
 <text x="582.5" y="823.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">수지구청</text>
@@ -1822,7 +1822,7 @@
 <text x="347.4" y="685.2" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">신림</text>
 <text x="279.2" y="560.5" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">신목동</text>
 <text x="451.7" y="624.0" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">신반포</text>
-<text x="183.3" y="481.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">신방화</text>
+<text x="202.1" y="479.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">신방화</text>
 <text x="470.2" y="584.8" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">신사</text>
 <text x="502.5" y="423.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">신설동</text>
 <text x="132.5" y="691.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">신연수</text>
@@ -1833,9 +1833,9 @@
 <text x="235.4" y="596.7" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">신정네거리</text>
 <text x="168.2" y="641.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">신중동</text>
 <text x="494.5" y="1044.6" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">신창</text>
-<text x="195.7" y="726.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">신천</text>
+<text x="195.7" y="726.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">신천역</text>
 <text x="339.6" y="511.7" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">신촌</text>
-<text x="359.7" y="496.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">신촌</text>
+<text x="359.7" y="496.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">신촌역</text>
 <text x="109.7" y="654.8" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">신포</text>
 <text x="308.3" y="646.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">신풍</text>
 <text x="195.7" y="734.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">신현</text>
@@ -1843,35 +1843,35 @@
 <text x="545.2" y="293.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">쌍문</text>
 <text x="542.6" y="1051.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">쌍용</text>
 <text x="172.1" y="494.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">아라</text>
-<text x="541.1" y="1053.6" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">아산</text>
+<text x="541.1" y="1053.6" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">아산역</text>
 <text x="121.7" y="573.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">아시아드경기장</text>
 <text x="711.2" y="345.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">아신</text>
 <text x="612.8" y="496.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">아차산</text>
-<text x="370.5" y="521.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">아현</text>
+<text x="358.5" y="521.5" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">아현</text>
 <text x="393.7" y="475.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">안국</text>
-<text x="178.3" y="778.3" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">안산</text>
+<text x="178.3" y="778.3" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">안산역</text>
 <text x="485.7" y="403.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">안암</text>
-<text x="365.5" y="751.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">안양</text>
+<text x="365.5" y="751.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">안양역</text>
 <text x="630.0" y="515.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">암사</text>
 <text x="630.0" y="452.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">암사역사공원</text>
 <text x="474.6" y="563.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">압구정</text>
 <text x="510.5" y="555.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">압구정로데오</text>
-<text x="378.9" y="537.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">애오개</text>
+<text x="366.9" y="537.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">애오개</text>
 <text x="183.0" y="289.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">야당</text>
 <text x="403.5" y="842.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">야목</text>
 <text x="674.3" y="738.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">야탑</text>
 <text x="444.1" y="527.5" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 444.1 527.5)">약수</text>
-<text x="673.1" y="347.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">양수</text>
+<text x="670.6" y="349.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양수</text>
 <text x="605.0" y="341.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양원</text>
 <text x="486.2" y="648.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양재</text>
 <text x="535.8" y="661.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양재시민의숲</text>
-<text x="634.8" y="336.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양정</text>
-<text x="591.2" y="174.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">양주</text>
+<text x="640.8" y="319.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양정역</text>
+<text x="591.2" y="174.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">양주역</text>
 <text x="252.3" y="605.8" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">양천구청</text>
 <text x="209.3" y="483.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양천향교</text>
 <text x="125.1" y="443.7" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양촌</text>
-<text x="714.5" y="367.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양평</text>
-<text x="264.7" y="558.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양평</text>
+<text x="710.2" y="367.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양평역</text>
+<text x="258.7" y="575.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">양평역</text>
 <text x="603.9" y="191.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">어룡</text>
 <text x="601.3" y="493.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">어린이대공원</text>
 <text x="636.2" y="843.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">어정</text>
@@ -1879,13 +1879,13 @@
 <text x="506.5" y="604.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">언주</text>
 <text x="345.1" y="581.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">여의나루</text>
 <text x="307.0" y="581.6" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">여의도</text>
-<text x="833.1" y="777.2" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">여주</text>
-<text x="200.1" y="652.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">역곡</text>
+<text x="833.1" y="777.2" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">여주역</text>
+<text x="199.7" y="647.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">역곡</text>
 <text x="506.8" y="618.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">역삼</text>
 <text x="314.7" y="439.5" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">역촌</text>
 <text x="149.1" y="678.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">연수</text>
 <text x="308.8" y="446.2" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">연신내</text>
-<text x="607.2" y="63.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">연천</text>
+<text x="607.2" y="63.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">연천역</text>
 <text x="275.6" y="542.6" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">염창</text>
 <text x="288.1" y="603.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">영등포</text>
 <text x="279.2" y="579.5" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">영등포구청</text>
@@ -1899,8 +1899,8 @@
 <text x="605.3" y="830.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">오리</text>
 <text x="224.1" y="568.0" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">오목교</text>
 <text x="441.2" y="876.5" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">오목천</text>
-<text x="705.6" y="367.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">오빈</text>
-<text x="515.8" y="906.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">오산</text>
+<text x="720.1" y="345.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">오빈</text>
+<text x="515.8" y="906.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">오산역</text>
 <text x="495.0" y="912.8" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">오산대</text>
 <text x="172.3" y="742.6" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">오이도</text>
 <text x="465.1" y="555.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">옥수</text>
@@ -1914,8 +1914,8 @@
 <text x="562.7" y="472.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">용답</text>
 <text x="506.5" y="431.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">용두</text>
 <text x="586.4" y="479.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">용마산</text>
-<text x="741.0" y="343.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">용문</text>
-<text x="385.7" y="564.7" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">용산</text>
+<text x="736.8" y="367.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">용문역</text>
+<text x="388.7" y="569.4" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">용산역</text>
 <text x="661.0" y="872.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">용인중앙시장</text>
 <text x="216.5" y="514.8" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">우장산</text>
 <text x="678.5" y="329.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">운길산</text>
@@ -1924,13 +1924,13 @@
 <text x="154.2" y="686.2" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">운연</text>
 <text x="167.0" y="281.7" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">운정</text>
 <text x="151.2" y="288.6" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">운정중앙</text>
-<text x="162.9" y="241.3" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">운천</text>
+<text x="162.9" y="241.3" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">운천역</text>
 <text x="207.8" y="328.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">원당</text>
-<text x="742.3" y="365.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">원덕</text>
+<text x="742.3" y="345.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">원덕</text>
 <text x="173.9" y="787.8" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">원시</text>
 <text x="139.4" y="672.7" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">원인재</text>
 <text x="195.7" y="540.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">원종</text>
-<text x="213.9" y="308.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">원흥</text>
+<text x="215.9" y="318.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">원흥</text>
 <text x="587.1" y="284.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">월계</text>
 <text x="489.6" y="393.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">월곡</text>
 <text x="166.5" y="699.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">월곶</text>
@@ -1938,21 +1938,21 @@
 <text x="183.0" y="258.2" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">월롱</text>
 <text x="416.3" y="503.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">을지로3가</text>
 <text x="429.4" y="481.1" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">을지로4가</text>
-<text x="410.2" y="521.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">을지로입구</text>
+<text x="410.2" y="501.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">을지로입구</text>
 <text x="486.8" y="540.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">응봉</text>
 <text x="308.8" y="454.0" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">응암</text>
-<text x="376.4" y="798.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">의왕</text>
-<text x="593.2" y="194.0" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">의정부</text>
+<text x="372.1" y="798.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">의왕역</text>
+<text x="593.2" y="194.0" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">의정부역</text>
 <text x="587.1" y="213.8" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">의정부시청</text>
-<text x="590.4" y="191.0" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">의정부중앙</text>
-<text x="350.0" y="501.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">이대</text>
+<text x="588.4" y="200.8" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">의정부중앙</text>
+<text x="356.0" y="518.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">이대</text>
 <text x="686.3" y="746.8" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">이매</text>
 <text x="412.6" y="670.6" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">이수</text>
-<text x="765.2" y="786.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">이천</text>
+<text x="765.2" y="786.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">이천역</text>
 <text x="412.6" y="591.6" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">이촌</text>
-<text x="421.0" y="558.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">이태원</text>
+<text x="414.2" y="537.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">이태원</text>
 <text x="403.8" y="752.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">인덕원</text>
-<text x="102.3" y="647.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">인천</text>
+<text x="102.3" y="647.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">인천역</text>
 <text x="123.7" y="626.5" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">인천가좌</text>
 <text x="60.1" y="546.5" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">인천공항1터미널</text>
 <text x="52.0" y="559.6" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">인천공항2터미널</text>
@@ -1994,12 +1994,12 @@
 <text x="135.7" y="637.6" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">주안</text>
 <text x="123.7" y="653.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">주안국가산단</text>
 <text x="169.1" y="304.5" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">주엽</text>
-<text x="596.2" y="845.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">죽전</text>
+<text x="608.2" y="825.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">죽전역</text>
 <text x="607.2" y="270.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">중계</text>
 <text x="591.2" y="495.8" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">중곡</text>
-<text x="166.7" y="637.6" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">중동</text>
+<text x="166.7" y="637.6" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">중동역</text>
 <text x="581.6" y="347.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">중랑</text>
-<text x="300.1" y="768.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 300.1 768.4)">중앙</text>
+<text x="300.1" y="768.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 300.1 768.4)">중앙역</text>
 <text x="702.0" y="602.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">중앙보훈병원</text>
 <text x="590.6" y="343.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">중화</text>
 <text x="240.1" y="502.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">증미</text>
@@ -2014,9 +2014,9 @@
 <text x="648.0" y="223.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">진접</text>
 <text x="573.1" y="248.2" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">창동</text>
 <text x="480.5" y="422.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">창신</text>
-<text x="668.3" y="302.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 668.3 302.0)">천마산</text>
-<text x="567.3" y="1031.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">천안</text>
-<text x="209.5" y="638.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">천왕</text>
+<text x="673.3" y="312.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">천마산</text>
+<text x="567.3" y="1031.6" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">천안역</text>
+<text x="212.5" y="656.4" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">천왕</text>
 <text x="628.0" y="512.1" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">천호</text>
 <text x="253.8" y="637.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">철산</text>
 <text x="558.1" y="706.6" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">청계산입구</text>
@@ -2031,9 +2031,9 @@
 <text x="724.1" y="745.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">초월</text>
 <text x="195.7" y="769.4" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">초지</text>
 <text x="176.8" y="618.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">춘의</text>
-<text x="803.8" y="223.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">춘천</text>
-<text x="409.4" y="535.7" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">충무로</text>
-<text x="366.9" y="523.2" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">충정로</text>
+<text x="803.8" y="223.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">춘천역</text>
+<text x="426.9" y="513.7" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">충무로</text>
+<text x="357.3" y="525.2" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">충정로</text>
 <text x="127.7" y="692.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">캠퍼스타운</text>
 <text x="168.5" y="293.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">킨텍스</text>
 <text x="185.9" y="284.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">탄현</text>
@@ -2043,14 +2043,14 @@
 <text x="674.3" y="701.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">태평</text>
 <text x="129.5" y="700.3" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 129.5 700.3)">테크노파크</text>
 <text x="635.7" y="303.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">퇴계원</text>
-<text x="169.0" y="258.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">파주</text>
+<text x="169.0" y="258.1" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">파주역</text>
 <text x="589.3" y="736.1" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">판교</text>
-<text x="660.8" y="336.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">팔당</text>
-<text x="663.3" y="312.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">평내호평</text>
-<text x="398.2" y="765.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">평촌</text>
-<text x="548.0" y="970.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">평택</text>
+<text x="666.8" y="319.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">팔당</text>
+<text x="661.3" y="303.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">평내호평</text>
+<text x="398.2" y="746.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">평촌</text>
+<text x="548.0" y="970.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">평택역</text>
 <text x="531.0" y="953.1" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">평택지제</text>
-<text x="165.3" y="458.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">풍무</text>
+<text x="167.8" y="460.3" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">풍무</text>
 <text x="195.7" y="293.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">풍산</text>
 <text x="605.2" y="284.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">하계</text>
 <text x="731.2" y="522.7" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">하남검단산</text>
@@ -2058,7 +2058,7 @@
 <text x="707.9" y="528.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">하남풍산</text>
 <text x="508.5" y="593.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">학동</text>
 <text x="539.3" y="616.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">학여울</text>
-<text x="427.2" y="541.0" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">한강진</text>
+<text x="424.2" y="558.9" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">한강진</text>
 <text x="273.5" y="439.8" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">한국항공대</text>
 <text x="450.6" y="571.3" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">한남</text>
 <text x="335.1" y="767.4" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">한대앞</text>
@@ -2075,14 +2075,14 @@
 <text x="357.0" y="461.9" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">홍제</text>
 <text x="442.5" y="361.2" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">화계</text>
 <text x="228.5" y="536.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">화곡</text>
-<text x="611.2" y="323.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">화랑대</text>
+<text x="597.2" y="313.7" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">화랑대</text>
 <text x="443.8" y="833.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">화서</text>
-<text x="189.8" y="328.0" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">화정</text>
+<text x="192.8" y="326.4" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 192.8 326.4)">화정역</text>
 <text x="570.6" y="349.0" font-size="11" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">회기</text>
 <text x="591.2" y="217.3" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">회룡</text>
 <text x="404.2" y="529.5" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">회현</text>
 <text x="617.2" y="200.8" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">효자</text>
 <text x="373.0" y="560.6" font-size="11" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">효창공원앞</text>
 <text x="400.9" y="624.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">흑석</text>
-<text x="587.5" y="205.7" font-size="9" fill="#333" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="2.5">흥선</text>
+<text x="584.6" y="188.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">흥선</text>
 </svg>

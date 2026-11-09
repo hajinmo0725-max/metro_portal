@@ -141,7 +141,8 @@ export function resolveQuery(data, labels, text) {
   let city = null, name = t;
   if (parts.length >= 2) { city = parts[0]; name = parts.slice(1).join(" "); }
   const key = stripSuffix(name.replace(/\(.*?\)/g, "").trim());
-  let cands = data.clusters.map((c, i) => [c, i]).filter(([c]) => c.n === key);
+  // 5차 R2: 표시 이름이 "서울역"처럼 '역'을 유지해도 입력 "서울"·"서울역" 둘 다 찾는다 (매칭 키 = 접미사 뗀 이름)
+  let cands = data.clusters.map((c, i) => [c, i]).filter(([c]) => c.n === key || stripSuffix(c.n) === key);
   if (city) cands = cands.filter(([c, i]) => c.city.includes(city) || data.clusters[i].s.some((n) => (data.nodes[n].ct || "").includes(city)));
   if (cands.length === 1) return { index: cands[0][1] };
   if (cands.length === 0) return { error: `역을 찾지 못함: ${t}` };

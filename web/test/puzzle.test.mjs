@@ -87,7 +87,8 @@ test("4차 Q3: 공유 문구에 되돌리기 횟수", () => {
 test("이동 그래프: 승차는 인접역, 워프는 같은 포탈, 환승은 수가 아님", () => {
   const gangnam = data.clusters.findIndex((c) => c.n === "강남");
   const gyodae = data.clusters.findIndex((c) => c.n === "교대" && c.city === "수도권");
-  const gyodaeBusan = data.clusters.findIndex((c) => c.n === "교대" && c.city === "부산");
+  // 5차 R2: 부산 교대는 동해선 레코드가 '교대역'이고 서울 교대와 이름이 겹쳐서 화면에 '역'을 유지한다
+  const gyodaeBusan = data.clusters.findIndex((c) => c.n === "교대역" && c.city === "부산");
   assert.ok(moves[gangnam].some((m) => m.to === gyodae && m.type === "ride" && m.cost === 1));
   const w = moves[gyodae].find((m) => m.to === gyodaeBusan);
   assert.equal(w.type, "warp");

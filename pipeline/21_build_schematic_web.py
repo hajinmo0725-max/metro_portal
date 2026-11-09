@@ -21,6 +21,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from metro_portal import ROOT  # noqa: E402
 from metro_portal import schematic as S  # noqa: E402
+from metro_portal.names import world_display_names  # noqa: E402
 from metro_portal.ruleset import load_ruleset  # noqa: E402
 from metro_portal.world import build_world, load_base, load_multi  # noqa: E402
 
@@ -91,8 +92,10 @@ def main() -> int:
         web["regions"].append({"id": reg["id"], "city": reg["city"], "country": reg["country"], "engine": doc["engine"], "note": note,
                                "s": doc["schematic"], "g": doc["geo"], "e": doc["edges"], "lines": doc["lines"]})
         if not a.no_svg:
-            (REP / f"{reg['id']}.svg").write_text(S.render_svg(g, pos, f"{reg['city']} — 자동 도식 (octilinear MIP)", size=1100), encoding="utf-8")
-            (REP / f"{reg['id']}_geo.svg").write_text(S.render_svg(g, g["pos"], f"{reg['city']} — 지리 좌표 (비교용)", size=1100), encoding="utf-8")
+            # 5차 R2: SVG 라벨도 웹과 같은 표시 이름 ('서울역', '동래역' 등)
+            names = world_display_names(world(reg["country"]))
+            (REP / f"{reg['id']}.svg").write_text(S.render_svg(g, pos, f"{reg['city']} — 자동 도식 (octilinear MIP)", size=1100, names=names), encoding="utf-8")
+            (REP / f"{reg['id']}_geo.svg").write_text(S.render_svg(g, g["pos"], f"{reg['city']} — 지리 좌표 (비교용)", size=1100, names=names), encoding="utf-8")
         print(f"[21] {reg['id']}: 캐시 사용 (지문 {doc['fingerprint']}, {'재현 가능' if doc['reproducibility']['deterministic'] else '재현 불가 해(시간 제한)'})")
     if problems:
         for k, v in problems.items():
