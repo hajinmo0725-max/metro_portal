@@ -523,6 +523,7 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None, 
     last_ok = (0, "")
     pos = {}
     iter_status = []
+    last_violations = 10 ** 6
     t_start = _time.time()
     while True:
         it += 1
@@ -561,7 +562,8 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None, 
         if log:
             log(f"    iter {it}: {status}, obj={h.getInfo().objective_function_value:.2f}, 위반 쌍 {len(cross)}")
         if on_iteration:
-            on_iteration(it, pos, sorted(added), status, h.getInfo().objective_function_value, cur_dirs)
+            on_iteration(it, pos, sorted(added), status, h.getInfo().objective_function_value, cur_dirs, len(cross))
+        last_violations = len(cross)
         if not cross or it >= cfg["max_iterations"]:
             break
         if cfg.get("total_budget_s") and _time.time() - t_start > float(cfg["total_budget_s"]):
@@ -591,7 +593,8 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None, 
             chosen[e] = max(KS[e], key=lambda i: sol[D[e, i]])
     return {"pos": pos, "status": status, "iterations": it, "crossing_constraints": len(added), "objective": obj,
             "scale": scale, "bend_cost": bends, "geo_crossing_pairs": len(geo_cross), "dirs": chosen,
-            "iteration_status": iter_status, "time_limited": any("Time limit" in x for x in iter_status)}
+            "iteration_status": iter_status, "time_limited": any("Time limit" in x for x in iter_status),
+            "last_violations": last_violations}
 
 
 def expand(g: dict, cg: dict, pos: dict) -> dict:

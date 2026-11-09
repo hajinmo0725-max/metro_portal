@@ -61,10 +61,11 @@ def checkpointer(ckdir: Path, g, cg, log, offset: int = 0):
     ckdir.mkdir(parents=True, exist_ok=True)
     best = {"key": None}
 
-    def dump(name, it, pos_kept, status, obj, added=None, dirs=None):
+    def dump(name, it, pos_kept, status, obj, added=None, dirs=None, violations=None):
         pos = S.expand(g, cg, pos_kept)
         st = S.layout_stats(g, pos)
-        doc = {"iteration": it, "status": status, "objective": obj, "stats": st, "saved_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        doc = {"iteration": it, "status": status, "objective": obj, "stats": st, "violations": violations,
+               "saved_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                # 5차: 남긴 정점 좌표는 원래 정밀도로 (반올림하면 8방향 검사 허용오차 1e-6을 넘는다)
                "pos_kept": {k: [v[0], v[1]] for k, v in sorted(pos_kept.items())},
                "added": [[list(a), list(b)] for a, b in (added or [])],
@@ -73,9 +74,9 @@ def checkpointer(ckdir: Path, g, cg, log, offset: int = 0):
         (ckdir / name).write_text(json.dumps(doc, ensure_ascii=False) + "\n", encoding="utf-8")
         return st
 
-    def on_iteration(it, pos_kept, added, status, obj, dirs):
+    def on_iteration(it, pos_kept, added, status, obj, dirs, violations=None):
         it += offset
-        st = dump(f"iter_{it:02d}.json", it, pos_kept, status, obj, added, dirs)
+        st = dump(f"iter_{it:02d}.json", it, pos_kept, status, obj, added, dirs, violations)
         key = (st["crossings"], st["bend_units_45deg"])
         log(f"    [중간 저장] iter_{it:02d}.json: 교차 {st['crossings']}, 굴곡 {st['bend_units_45deg']}, 목적 {obj:.2f}")
         if best["key"] is None or key < best["key"]:
@@ -99,11 +100,12 @@ def load_resume(ckdir: Path):
 
 
 def best_iteration(ckdir: Path, g):
-    """체크포인트 반복 중 (교차, 굴곡)이 가장 작은 해."""
+    """체크포인트 반복 중 (교차, 남은 평면성·간격 위반 쌍, 굴곡) 사전식 최소 해. 위반 쌍 기록이 없으면(5차 초기 체크포인트) 큰 값으로 본다."""
     cands = []
     for p in sorted(ckdir.glob("iter_*.json")):
         d = json.loads(p.read_text(encoding="utf-8"))
-        cands.append(((d["stats"]["crossings"], d["stats"]["bend_units_45deg"], -d["iteration"]), p.name, d))
+        v = d.get("violations")
+        cands.append(((d["stats"]["crossings"], 10 ** 6 if v is None else v, d["stats"]["bend_units_45deg"], -d["iteration"]), p.name, d))
     if not cands:
         return None
     cands.sort(key=lambda x: x[0])
@@ -140,7 +142,8 @@ def run_region(w, reg, rcfg, log, ckdir: Path | None = None, resume=False):
     if ckdir is not None and r["pos"]:
         b = best_iteration(ckdir, g)
         last = S.layout_stats(g, S.expand(g, cg, r["pos"]))
-        if b and (b["stats"]["crossings"], b["stats"]["bend_units_45deg"]) < (last["crossings"], last["bend_units_45deg"]):
+        last_v = r.get("last_violations", 10 ** 6)
+        if b and (b["stats"]["crossings"], b.get("violations") if b.get("violations") is not None else 10 ** 6, b["stats"]["bend_units_45deg"]) < (last["crossings"], last_v, last["bend_units_45deg"]):
             log(f"[20] 마지막 반복보다 체크포인트 반복 {b['iteration']}이 낫다 (교차 {b['stats']['crossings']}, 굴곡 {b['stats']['bend_units_45deg']}) → 그 방향으로 다듬는다")
             rp = polish(g, cg, rcfg, b, log)
             if rp["pos"]:

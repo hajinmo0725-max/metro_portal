@@ -147,7 +147,7 @@ def loom_stats(g, out, eps=40.0):
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--regions", default="gwangju,daejeon,daegu,busan,seoul")
+    ap.add_argument("--regions", default="seoul,busan,daegu,daejeon,gwangju,taipei")
     ap.add_argument("--bin", default="/tmp/loom/build")
     ap.add_argument("--geo-pen", default="0")
     ap.add_argument("--timeout", type=int, default=1800)

@@ -1,0 +1,180 @@
+{
+ "loom_commit": "1e4757838104d1e4d22186c9b77d5fc4b98681a0",
+ "bin": "/tmp/loom/build",
+ "rows": [
+  {
+   "region": "seoul",
+   "city": "수도권",
+   "geo_pen": "0",
+   "seconds": 46.6,
+   "stations_placed": 655,
+   "segments": 866,
+   "non_octilinear_segments": 13,
+   "segment_crossings": 7,
+   "bend_units_45deg_at_stations": 326,
+   "bend_units_45deg_inside_edges": 114,
+   "mean_displacement_norm": 0.113,
+   "mip": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 0,
+    "crossings": 14,
+    "bend_units_45deg": 212,
+    "mean_displacement_norm": 0.328
+   },
+   "geo": {
+    "nodes": 655,
+    "edges": 755,
+    "non_octilinear_edges": 755,
+    "crossings": 18,
+    "bend_units_45deg": 343,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  {
+   "region": "busan",
+   "city": "부산",
+   "geo_pen": "0",
+   "seconds": 0.2,
+   "stations_placed": 146,
+   "segments": 162,
+   "non_octilinear_segments": 3,
+   "segment_crossings": 0,
+   "bend_units_45deg_at_stations": 26,
+   "bend_units_45deg_inside_edges": 10,
+   "mean_displacement_norm": 0.131,
+   "mip": {
+    "nodes": 146,
+    "edges": 152,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 43,
+    "mean_displacement_norm": 0.339
+   },
+   "geo": {
+    "nodes": 146,
+    "edges": 152,
+    "non_octilinear_edges": 152,
+    "crossings": 0,
+    "bend_units_45deg": 65,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  {
+   "region": "daegu",
+   "city": "대구",
+   "geo_pen": "0",
+   "seconds": 0.2,
+   "stations_placed": 97,
+   "segments": 107,
+   "non_octilinear_segments": 0,
+   "segment_crossings": 0,
+   "bend_units_45deg_at_stations": 14,
+   "bend_units_45deg_inside_edges": 8,
+   "mean_displacement_norm": 0.267,
+   "mip": {
+    "nodes": 97,
+    "edges": 98,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 20,
+    "mean_displacement_norm": 0.404
+   },
+   "geo": {
+    "nodes": 97,
+    "edges": 98,
+    "non_octilinear_edges": 98,
+    "crossings": 2,
+    "bend_units_45deg": 27,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  {
+   "region": "daejeon",
+   "city": "대전",
+   "geo_pen": "0",
+   "seconds": 0.0,
+   "stations_placed": 22,
+   "segments": 22,
+   "non_octilinear_segments": 1,
+   "segment_crossings": 0,
+   "bend_units_45deg_at_stations": 1,
+   "bend_units_45deg_inside_edges": 1,
+   "mean_displacement_norm": 0.21,
+   "mip": {
+    "nodes": 22,
+    "edges": 21,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 6,
+    "mean_displacement_norm": 0.12
+   },
+   "geo": {
+    "nodes": 22,
+    "edges": 21,
+    "non_octilinear_edges": 21,
+    "crossings": 0,
+    "bend_units_45deg": 12,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  {
+   "region": "gwangju",
+   "city": "광주",
+   "geo_pen": "0",
+   "seconds": 0.0,
+   "stations_placed": 20,
+   "segments": 20,
+   "non_octilinear_segments": 0,
+   "segment_crossings": 0,
+   "bend_units_45deg_at_stations": 1,
+   "bend_units_45deg_inside_edges": 1,
+   "mean_displacement_norm": 0.245,
+   "mip": {
+    "nodes": 20,
+    "edges": 19,
+    "non_octilinear_edges": 0,
+    "crossings": 0,
+    "bend_units_45deg": 3,
+    "mean_displacement_norm": 0.196
+   },
+   "geo": {
+    "nodes": 20,
+    "edges": 19,
+    "non_octilinear_edges": 19,
+    "crossings": 0,
+    "bend_units_45deg": 7,
+    "mean_displacement_norm": 0.0
+   }
+  },
+  {
+   "region": "taipei",
+   "city": "타이베이",
+   "geo_pen": "0",
+   "seconds": 0.8,
+   "stations_placed": 170,
+   "segments": 202,
+   "non_octilinear_segments": 9,
+   "segment_crossings": 0,
+   "bend_units_45deg_at_stations": 49,
+   "bend_units_45deg_inside_edges": 21,
+   "mean_displacement_norm": 0.15,
+   "mip": {
+    "nodes": 170,
+    "edges": 183,
+    "non_octilinear_edges": 0,
+    "crossings": 2,
+    "bend_units_45deg": 40,
+    "mean_displacement_norm": 0.271
+   },
+   "geo": {
+    "nodes": 170,
+    "edges": 183,
+    "non_octilinear_edges": 183,
+    "crossings": 1,
+    "bend_units_45deg": 79,
+    "mean_displacement_norm": 0.0
+   }
+  }
+ ]
+}

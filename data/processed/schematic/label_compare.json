@@ -4,22 +4,22 @@
   "city": "수도권",
   "size": 1100,
   "4차_labels": 655,
-  "4차_on_line": 302,
-  "4차_overlap_pairs": 843,
+  "4차_on_line": 323,
+  "4차_overlap_pairs": 908,
   "5차_labels": 655,
-  "5차_on_line": 221,
-  "5차_overlap_pairs": 681
+  "5차_on_line": 224,
+  "5차_overlap_pairs": 742
  },
  {
   "region": "seoul",
   "city": "수도권",
   "size": 3300,
   "4차_labels": 655,
-  "4차_on_line": 159,
-  "4차_overlap_pairs": 71,
+  "4차_on_line": 160,
+  "4차_overlap_pairs": 102,
   "5차_labels": 655,
-  "5차_on_line": 28,
-  "5차_overlap_pairs": 46
+  "5차_on_line": 32,
+  "5차_overlap_pairs": 59
  },
  {
   "region": "busan",
