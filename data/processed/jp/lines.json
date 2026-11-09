@@ -1,0 +1,5180 @@
+{
+ "lines": [
+  {
+   "id": "jp-Q29663",
+   "name": "京王高尾線",
+   "name_en": "Keio Takao Line",
+   "source_no": "Q29663",
+   "source_name": "京王高尾線",
+   "operator": "京王",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF1493",
+   "pools": [
+    "JP:jp-Q29663"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q29663:KO33",
+      "jp:Q29663:KO48",
+      "jp:Q29663:KO49",
+      "jp:Q29663:KO50",
+      "jp:Q29663:KO51",
+      "jp:Q29663:KO52",
+      "jp:Q29663:KO53"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q29663"
+   ]
+  },
+  {
+   "id": "jp-Q32388",
+   "name": "京王新線",
+   "name_en": "Keiō New Line",
+   "source_no": "Q32388",
+   "source_name": "京王新線",
+   "operator": "京王",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#DD0077",
+   "pools": [
+    "JP:jp-Q32388"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q32388:KO01",
+      "jp:Q32388:KO02",
+      "jp:Q32388:KO03",
+      "jp:Q32388:KO04"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q32388"
+   ]
+  },
+  {
+   "id": "jp-Q76804",
+   "name": "東武アーバンパークライン",
+   "name_en": "Tobu Urban Park Line",
+   "source_no": "Q76804",
+   "source_name": "東武アーバンパークライン",
+   "operator": "東武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00BFFF",
+   "pools": [
+    "JP:jp-Q76804"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q76804:TD01",
+      "jp:Q76804:TD02",
+      "jp:Q76804:TD03",
+      "jp:Q76804:TD04",
+      "jp:Q76804:TD05",
+      "jp:Q76804:TD06",
+      "jp:Q76804:TD07",
+      "jp:Q76804:TD08",
+      "jp:Q76804:TD09",
+      "jp:Q76804:TD10",
+      "jp:Q76804:TD11",
+      "jp:Q76804:TD12",
+      "jp:Q76804:TD13",
+      "jp:Q76804:TD14",
+      "jp:Q76804:TD15",
+      "jp:Q76804:TD16",
+      "jp:Q76804:TD17",
+      "jp:Q76804:TD18",
+      "jp:Q76804:TD19",
+      "jp:Q76804:TD20",
+      "jp:Q76804:TD21",
+      "jp:Q76804:TD22",
+      "jp:Q76804:TD23",
+      "jp:Q76804:TD24",
+      "jp:Q76804:TD25",
+      "jp:Q76804:TD26",
+      "jp:Q76804:TD27",
+      "jp:Q76804:TD28",
+      "jp:Q76804:TD29",
+      "jp:Q76804:TD30",
+      "jp:Q76804:TD31",
+      "jp:Q76804:TD32",
+      "jp:Q76804:TD33",
+      "jp:Q76804:TD34",
+      "jp:Q76804:TD35"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q76804"
+   ]
+  },
+  {
+   "id": "jp-Q93546",
+   "name": "西武池袋線",
+   "name_en": "Seibu Ikebukuro Line",
+   "source_no": "Q93546",
+   "source_name": "西武池袋線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF8C00",
+   "pools": [
+    "JP:jp-Q93546"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q93546:Q4691200",
+      "jp:Q93546:Q8016063",
+      "jp:Q93546:Q8015462",
+      "jp:Q93546:Q6428027",
+      "jp:Q93546:Q842772",
+      "jp:Q93546:Q5649307",
+      "jp:Q93546:Q6918030",
+      "jp:Q93546:Q5001507",
+      "jp:Q93546:Q6074023",
+      "jp:Q93546:Q6013618",
+      "jp:Q93546:Q8015433",
+      "jp:Q93546:Q7429111",
+      "jp:Q93546:Q6433936",
+      "jp:Q93546:Q7040433",
+      "jp:Q93546:Q842569",
+      "jp:Q93546:Q842513",
+      "jp:Q93546:Q6419078",
+      "jp:Q93546:Q5753665",
+      "jp:Q93546:Q8016226",
+      "jp:Q93546:Q843153",
+      "jp:Q93546:Q8016303",
+      "jp:Q93546:Q8016003",
+      "jp:Q93546:Q843164",
+      "jp:Q93546:Q5507443",
+      "jp:Q93546:Q6960255",
+      "jp:Q93546:Q906953",
+      "jp:Q93546:Q5350525",
+      "jp:Q93546:Q843275",
+      "jp:Q93546:Q124260554",
+      "jp:Q93546:Q7496494"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q843041",
+     "station_ids": [
+      "jp:Q93546:Q5350525",
+      "jp:Q93546:Q843041"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q93546:Q7496494",
+      "jp:Q93546:Q843275"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q93546:Q843041",
+      "jp:Q93546:Q906953"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-3",
+     "station_ids": [
+      "jp:Q93546:Q843275",
+      "jp:Q93546:Q906953"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q93546"
+   ]
+  },
+  {
+   "id": "jp-Q133620",
+   "name": "西武多摩川線",
+   "name_en": "Seibu Tamagawa Line",
+   "source_no": "Q133620",
+   "source_name": "西武多摩川線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FFA500",
+   "pools": [
+    "JP:jp-Q133620"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q133620:SW01",
+      "jp:Q133620:SW02",
+      "jp:Q133620:SW03",
+      "jp:Q133620:SW04",
+      "jp:Q133620:SW05",
+      "jp:Q133620:SW06"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q133620:SW02",
+      "jp:Q133620:SW04"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q133620"
+   ]
+  },
+  {
+   "id": "jp-Q135176",
+   "name": "小田急小田原線",
+   "name_en": "Odakyū Odawara Line",
+   "source_no": "Q135176",
+   "source_name": "小田急小田原線",
+   "operator": "小田急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#0D82C7",
+   "pools": [
+    "JP:jp-Q135176"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q135176:OH01",
+      "jp:Q135176:OH02",
+      "jp:Q135176:OH03",
+      "jp:Q135176:OH04",
+      "jp:Q135176:OH05",
+      "jp:Q135176:OH06",
+      "jp:Q135176:OH07",
+      "jp:Q135176:OH08",
+      "jp:Q135176:OH09",
+      "jp:Q135176:OH10",
+      "jp:Q135176:OH11",
+      "jp:Q135176:OH12",
+      "jp:Q135176:OH13",
+      "jp:Q135176:OH14",
+      "jp:Q135176:OH15",
+      "jp:Q135176:OH16",
+      "jp:Q135176:OH17",
+      "jp:Q135176:OH18",
+      "jp:Q135176:OH19",
+      "jp:Q135176:OH20",
+      "jp:Q135176:OH21",
+      "jp:Q135176:OH22",
+      "jp:Q135176:OH23",
+      "jp:Q135176:OH24",
+      "jp:Q135176:OH25",
+      "jp:Q135176:OH26",
+      "jp:Q135176:OH27",
+      "jp:Q135176:OH28",
+      "jp:Q135176:OH29",
+      "jp:Q135176:OH30",
+      "jp:Q135176:OH31",
+      "jp:Q135176:OH32",
+      "jp:Q135176:OH33",
+      "jp:Q135176:OH34",
+      "jp:Q135176:OH35",
+      "jp:Q135176:OH36",
+      "jp:Q135176:OH37",
+      "jp:Q135176:OH38",
+      "jp:Q135176:OH39",
+      "jp:Q135176:OH40",
+      "jp:Q135176:OH41",
+      "jp:Q135176:OH42",
+      "jp:Q135176:OH43",
+      "jp:Q135176:OH44",
+      "jp:Q135176:OH45",
+      "jp:Q135176:OH46",
+      "jp:Q135176:OH47"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q135176"
+   ]
+  },
+  {
+   "id": "jp-Q177444",
+   "name": "西武豊島線",
+   "name_en": "Seibu Toshima Line",
+   "source_no": "Q177444",
+   "source_name": "西武豊島線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF8C00",
+   "pools": [
+    "JP:jp-Q177444"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q177444:SI06",
+      "jp:Q177444:SI39"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q177444"
+   ]
+  },
+  {
+   "id": "jp-Q195685",
+   "name": "西武新宿線",
+   "name_en": "Seibu Shinjuku Line",
+   "source_no": "Q195685",
+   "source_name": "西武新宿線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00CED1",
+   "pools": [
+    "JP:jp-Q195685"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q195685:SS01",
+      "jp:Q195685:SS02",
+      "jp:Q195685:SS03",
+      "jp:Q195685:SS04",
+      "jp:Q195685:SS05",
+      "jp:Q195685:SS06",
+      "jp:Q195685:SS07",
+      "jp:Q195685:SS08",
+      "jp:Q195685:SS09",
+      "jp:Q195685:SS10",
+      "jp:Q195685:SS11",
+      "jp:Q195685:SS12",
+      "jp:Q195685:SS13",
+      "jp:Q195685:SS14",
+      "jp:Q195685:SS15",
+      "jp:Q195685:SS16",
+      "jp:Q195685:SS17",
+      "jp:Q195685:Q5646738",
+      "jp:Q195685:SS19",
+      "jp:Q195685:SS20",
+      "jp:Q195685:SS21",
+      "jp:Q195685:SS22",
+      "jp:Q195685:SS23",
+      "jp:Q195685:SS24",
+      "jp:Q195685:SS25",
+      "jp:Q195685:SS26",
+      "jp:Q195685:SS27",
+      "jp:Q195685:SS28",
+      "jp:Q195685:Q842892"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q195685:SS22",
+      "jp:Q195685:SS24"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q195685"
+   ]
+  },
+  {
+   "id": "jp-Q211575",
+   "name": "西武拝島線",
+   "name_en": "Seibu Haijima Line",
+   "source_no": "Q211575",
+   "source_name": "西武拝島線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00CED1",
+   "pools": [
+    "JP:jp-Q211575"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q211575:SS19",
+      "jp:Q211575:SS30",
+      "jp:Q211575:Q7079856",
+      "jp:Q211575:SS32",
+      "jp:Q211575:SS33",
+      "jp:Q211575:SS34",
+      "jp:Q211575:SS35",
+      "jp:Q211575:SS36"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q211575"
+   ]
+  },
+  {
+   "id": "jp-Q218649",
+   "name": "西武多摩湖線",
+   "name_en": "Seibu Tamako Line",
+   "source_no": "Q218649",
+   "source_name": "西武多摩湖線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FFD700",
+   "pools": [
+    "JP:jp-Q218649"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q218649:ST01",
+      "jp:Q218649:ST02",
+      "jp:Q218649:ST03",
+      "jp:Q218649:ST04",
+      "jp:Q218649:ST05",
+      "jp:Q218649:ST06",
+      "jp:Q218649:ST07"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q218649:ST04",
+      "jp:Q218649:ST06"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q218649"
+   ]
+  },
+  {
+   "id": "jp-Q283861",
+   "name": "東急目黒線",
+   "name_en": "Tōkyū Meguro Line",
+   "source_no": "Q283861",
+   "source_name": "東急目黒線",
+   "operator": "東急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#1E90FF",
+   "pools": [
+    "JP:jp-Q283861"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q283861:MG01",
+      "jp:Q283861:MG02",
+      "jp:Q283861:MG03",
+      "jp:Q283861:MG04",
+      "jp:Q283861:MG05",
+      "jp:Q283861:MG06",
+      "jp:Q283861:MG07",
+      "jp:Q283861:MG08",
+      "jp:Q283861:MG09",
+      "jp:Q283861:MG10",
+      "jp:Q283861:MG11",
+      "jp:Q283861:MG12",
+      "jp:Q283861:MG13"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q283861"
+   ]
+  },
+  {
+   "id": "jp-Q339069",
+   "name": "東急世田谷線",
+   "name_en": "Tōkyū Setagaya Line",
+   "source_no": "Q339069",
+   "source_name": "東急世田谷線",
+   "operator": "東急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FCC800",
+   "pools": [
+    "JP:jp-Q339069"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q339069:SG01",
+      "jp:Q339069:SG02",
+      "jp:Q339069:SG03",
+      "jp:Q339069:SG04",
+      "jp:Q339069:SG05",
+      "jp:Q339069:SG06",
+      "jp:Q339069:SG07",
+      "jp:Q339069:SG08",
+      "jp:Q339069:SG09",
+      "jp:Q339069:SG10"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q339069"
+   ]
+  },
+  {
+   "id": "jp-Q379292",
+   "name": "東急多摩川線",
+   "name_en": "Tōkyū Tamagawa Line",
+   "source_no": "Q379292",
+   "source_name": "東急多摩川線",
+   "operator": "東急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#800080",
+   "pools": [
+    "JP:jp-Q379292"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q379292:TM01",
+      "jp:Q379292:TM02",
+      "jp:Q379292:TM03",
+      "jp:Q379292:TM04",
+      "jp:Q379292:TM05",
+      "jp:Q379292:TM06",
+      "jp:Q379292:TM07"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q379292"
+   ]
+  },
+  {
+   "id": "jp-Q384862",
+   "name": "都営地下鉄大江戸線",
+   "name_en": "Toei Ōedo Line",
+   "source_no": "Q384862",
+   "source_name": "都営地下鉄大江戸線",
+   "operator": "都営",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#CF035A",
+   "pools": [
+    "JP:jp-Q384862"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q384862:E01",
+      "jp:Q384862:E02",
+      "jp:Q384862:E03",
+      "jp:Q384862:E04",
+      "jp:Q384862:E05",
+      "jp:Q384862:E06",
+      "jp:Q384862:E07",
+      "jp:Q384862:E08",
+      "jp:Q384862:E09",
+      "jp:Q384862:E10",
+      "jp:Q384862:E11",
+      "jp:Q384862:E12",
+      "jp:Q384862:E13",
+      "jp:Q384862:E14",
+      "jp:Q384862:E15",
+      "jp:Q384862:E16",
+      "jp:Q384862:E17",
+      "jp:Q384862:E18",
+      "jp:Q384862:E19",
+      "jp:Q384862:E20",
+      "jp:Q384862:E21",
+      "jp:Q384862:E22",
+      "jp:Q384862:E23",
+      "jp:Q384862:E24",
+      "jp:Q384862:E25",
+      "jp:Q384862:E26",
+      "jp:Q384862:E27",
+      "jp:Q384862:E28",
+      "jp:Q384862:E29",
+      "jp:Q384862:E30",
+      "jp:Q384862:E31",
+      "jp:Q384862:E32",
+      "jp:Q384862:E33",
+      "jp:Q384862:E34",
+      "jp:Q384862:E35",
+      "jp:Q384862:E36",
+      "jp:Q384862:E37",
+      "jp:Q384862:E38"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q384862:E01",
+      "jp:Q384862:E28"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q384862"
+   ]
+  },
+  {
+   "id": "jp-Q384995",
+   "name": "東急大井町線",
+   "name_en": "Tōkyū Ōimachi Line",
+   "source_no": "Q384995",
+   "source_name": "東急大井町線",
+   "operator": "東急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FFA500",
+   "pools": [
+    "JP:jp-Q384995"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q384995:OM01",
+      "jp:Q384995:OM02",
+      "jp:Q384995:OM03",
+      "jp:Q384995:OM04",
+      "jp:Q384995:OM05",
+      "jp:Q384995:OM06",
+      "jp:Q384995:OM07",
+      "jp:Q384995:OM08",
+      "jp:Q384995:OM09",
+      "jp:Q384995:OM10",
+      "jp:Q384995:OM11",
+      "jp:Q384995:OM12",
+      "jp:Q384995:OM13",
+      "jp:Q384995:OM14",
+      "jp:Q384995:OM15",
+      "jp:Q384995:OM16"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q384995"
+   ]
+  },
+  {
+   "id": "jp-Q385398",
+   "name": "青梅線",
+   "name_en": "Ōme Line",
+   "source_no": "Q385398",
+   "source_name": "青梅線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#F15A22",
+   "pools": [
+    "JP:jp-Q385398"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q385398:JC19",
+      "jp:Q385398:JC51",
+      "jp:Q385398:JC52",
+      "jp:Q385398:JC53",
+      "jp:Q385398:JC54",
+      "jp:Q385398:JC55",
+      "jp:Q385398:JC56",
+      "jp:Q385398:JC57",
+      "jp:Q385398:JC58",
+      "jp:Q385398:Q7116441",
+      "jp:Q385398:JC60",
+      "jp:Q385398:JC61",
+      "jp:Q385398:JC62",
+      "jp:Q385398:JC63",
+      "jp:Q385398:JC64",
+      "jp:Q385398:JC65",
+      "jp:Q385398:JC66",
+      "jp:Q385398:JC67",
+      "jp:Q385398:JC68",
+      "jp:Q385398:Q6880751",
+      "jp:Q385398:JC70",
+      "jp:Q385398:JC71",
+      "jp:Q385398:JC72",
+      "jp:Q385398:JC73",
+      "jp:Q385398:JC74"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q385398"
+   ]
+  },
+  {
+   "id": "jp-Q413735",
+   "name": "赤羽線",
+   "name_en": "Akabane Line",
+   "source_no": "Q413735",
+   "source_name": "赤羽線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00AC9A",
+   "pools": [
+    "JP:jp-Q413735"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q413735:JA12",
+      "jp:Q413735:JA13",
+      "jp:Q413735:JA14",
+      "jp:Q413735:JA15"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q413735"
+   ]
+  },
+  {
+   "id": "jp-Q498157",
+   "name": "久留里線",
+   "name_en": "Kururi Line",
+   "source_no": "Q498157",
+   "source_name": "久留里線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00CED1",
+   "pools": [
+    "JP:jp-Q498157"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q498157:Q6381705",
+      "jp:Q498157:Q6381711",
+      "jp:Q498157:Q11482566",
+      "jp:Q498157:Q6447492",
+      "jp:Q498157:Q7689221",
+      "jp:Q498157:Q7074984",
+      "jp:Q498157:Q7496964",
+      "jp:Q498157:Q6740491",
+      "jp:Q498157:Q5753915",
+      "jp:Q498157:Q8054678",
+      "jp:Q498157:Q11527993",
+      "jp:Q498157:Q11360046",
+      "jp:Q498157:Q5563370",
+      "jp:Q498157:Q575433"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q498157"
+   ]
+  },
+  {
+   "id": "jp-Q520772",
+   "name": "東京メトロ南北線",
+   "name_en": "Namboku Line",
+   "source_no": "Q520772",
+   "source_name": "東京メトロ南北線",
+   "operator": "東京メトロ",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00AD9C",
+   "pools": [
+    "JP:jp-Q520772"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q520772:N01",
+      "jp:Q520772:N02",
+      "jp:Q520772:Q112323",
+      "jp:Q520772:N04",
+      "jp:Q520772:N05",
+      "jp:Q520772:N06",
+      "jp:Q520772:N07",
+      "jp:Q520772:N08",
+      "jp:Q520772:N09",
+      "jp:Q520772:N10",
+      "jp:Q520772:N11",
+      "jp:Q520772:N12",
+      "jp:Q520772:N13",
+      "jp:Q520772:N14",
+      "jp:Q520772:N15",
+      "jp:Q520772:N16",
+      "jp:Q520772:N17",
+      "jp:Q520772:N18",
+      "jp:Q520772:N19"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q520772"
+   ]
+  },
+  {
+   "id": "jp-Q653704",
+   "name": "西武国分寺線",
+   "name_en": "Seibu Kokubunji Line",
+   "source_no": "Q653704",
+   "source_name": "西武国分寺線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00CC00",
+   "pools": [
+    "JP:jp-Q653704"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q653704:SK03",
+      "jp:Q653704:SK02",
+      "jp:Q653704:SK01",
+      "jp:Q653704:Q7079856",
+      "jp:Q653704:SK05"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q653704:SK03",
+      "jp:Q653704:Q7079856"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q653704:SK01",
+      "jp:Q653704:SK03"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q653704"
+   ]
+  },
+  {
+   "id": "jp-Q656122",
+   "name": "京王競馬場線",
+   "name_en": "Keiō Keibajō Line",
+   "source_no": "Q656122",
+   "source_name": "京王競馬場線",
+   "operator": "京王",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#DD0077",
+   "pools": [
+    "JP:jp-Q656122"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q656122:KO23",
+      "jp:Q656122:KO46"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q656122"
+   ]
+  },
+  {
+   "id": "jp-Q670656",
+   "name": "外房線",
+   "name_en": "Sotobō Line",
+   "source_no": "Q670656",
+   "source_name": "外房線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF4500",
+   "pools": [
+    "JP:jp-Q670656"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q670656:Q552842",
+      "jp:Q670656:Q553048",
+      "jp:Q670656:Q552825",
+      "jp:Q670656:Q552818",
+      "jp:Q670656:Q553023",
+      "jp:Q670656:Q553006",
+      "jp:Q670656:Q553034",
+      "jp:Q670656:Q552783",
+      "jp:Q670656:Q552791",
+      "jp:Q670656:Q552811",
+      "jp:Q670656:Q564431",
+      "jp:Q670656:Q564439",
+      "jp:Q670656:Q564210",
+      "jp:Q670656:Q564474",
+      "jp:Q670656:Q564483",
+      "jp:Q670656:Q564445",
+      "jp:Q670656:Q564427",
+      "jp:Q670656:Q564465",
+      "jp:Q670656:Q564470",
+      "jp:Q670656:Q564453",
+      "jp:Q670656:Q5353488",
+      "jp:Q670656:Q5353420",
+      "jp:Q670656:Q5353370",
+      "jp:Q670656:Q5353463",
+      "jp:Q670656:Q844422",
+      "jp:Q670656:Q4389608",
+      "jp:Q670656:Q124472085"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q670656"
+   ]
+  },
+  {
+   "id": "jp-Q681190",
+   "name": "東北本線",
+   "name_en": "Tōhoku Main Line",
+   "source_no": "Q681190",
+   "source_name": "東北本線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#3CB371",
+   "pools": [
+    "JP:jp-Q681190"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q681190:JK26",
+      "jp:Q681190:JK27",
+      "jp:Q681190:JK28",
+      "jp:Q681190:JK29",
+      "jp:Q681190:JK30",
+      "jp:Q681190:JK31",
+      "jp:Q681190:JK32",
+      "jp:Q681190:JK33",
+      "jp:Q681190:JK34",
+      "jp:Q681190:JK35",
+      "jp:Q681190:JK36",
+      "jp:Q681190:JK37",
+      "jp:Q681190:JK38",
+      "jp:Q681190:JK39",
+      "jp:Q681190:JK40",
+      "jp:Q681190:JK41",
+      "jp:Q681190:JK42",
+      "jp:Q681190:JK43",
+      "jp:Q681190:JK44",
+      "jp:Q681190:JK45",
+      "jp:Q681190:JK46",
+      "jp:Q681190:JK47",
+      "jp:Q681190:Q857902",
+      "jp:Q681190:Q861532",
+      "jp:Q681190:Q872705",
+      "jp:Q681190:Q873198",
+      "jp:Q681190:Q874047",
+      "jp:Q681190:Q843719",
+      "jp:Q681190:Q845454",
+      "jp:Q681190:Q846796"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q844437",
+     "station_ids": [
+      "jp:Q681190:JK47",
+      "jp:Q681190:Q844444",
+      "jp:Q681190:Q844390",
+      "jp:Q681190:Q844368",
+      "jp:Q681190:Q844419",
+      "jp:Q681190:Q801208",
+      "jp:Q681190:Q844358",
+      "jp:Q681190:Q844437"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q844571",
+     "station_ids": [
+      "jp:Q681190:JK38",
+      "jp:Q681190:Q844401",
+      "jp:Q681190:Q844434",
+      "jp:Q681190:Q844571"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q845113",
+     "station_ids": [
+      "jp:Q681190:JK30",
+      "jp:Q681190:Q845113"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q124260233",
+     "station_ids": [
+      "jp:Q681190:JK38",
+      "jp:Q681190:Q124260233"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q681190:JK26",
+      "jp:Q681190:JK30"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q681190:JK30",
+      "jp:Q681190:JK32"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-3",
+     "station_ids": [
+      "jp:Q681190:JK38",
+      "jp:Q681190:JK43"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-4",
+     "station_ids": [
+      "jp:Q681190:JK38",
+      "jp:Q681190:Q845113"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-5",
+     "station_ids": [
+      "jp:Q681190:JK41",
+      "jp:Q681190:JK43"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-6",
+     "station_ids": [
+      "jp:Q681190:JK43",
+      "jp:Q681190:JK46"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-7",
+     "station_ids": [
+      "jp:Q681190:JK43",
+      "jp:Q681190:JK47"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-8",
+     "station_ids": [
+      "jp:Q681190:Q844437",
+      "jp:Q681190:Q844571"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q681190"
+   ]
+  },
+  {
+   "id": "jp-Q693036",
+   "name": "山手線",
+   "name_en": "Yamanote Line",
+   "source_no": "Q693036",
+   "source_name": "山手線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#9ACD32",
+   "pools": [
+    "JP:jp-Q693036"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q693036:JY09",
+      "jp:Q693036:JY10",
+      "jp:Q693036:JY11",
+      "jp:Q693036:JY12",
+      "jp:Q693036:JY13",
+      "jp:Q693036:JY14",
+      "jp:Q693036:JY15",
+      "jp:Q693036:JY16",
+      "jp:Q693036:JY17",
+      "jp:Q693036:JY18",
+      "jp:Q693036:JY19",
+      "jp:Q693036:JY20",
+      "jp:Q693036:JY21",
+      "jp:Q693036:JY22",
+      "jp:Q693036:JY23",
+      "jp:Q693036:JY24",
+      "jp:Q693036:JY25"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q800369",
+     "station_ids": [
+      "jp:Q693036:JY13",
+      "jp:Q693036:Q800369"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q693036:JY13",
+      "jp:Q693036:JY17"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q693036:JY17",
+      "jp:Q693036:JY20"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-3",
+     "station_ids": [
+      "jp:Q693036:JY21",
+      "jp:Q693036:JY24"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q693036"
+   ]
+  },
+  {
+   "id": "jp-Q720653",
+   "name": "都営地下鉄浅草線",
+   "name_en": "Asakusa Line",
+   "source_no": "Q720653",
+   "source_name": "都営地下鉄浅草線",
+   "operator": "都営",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#EF5BA1",
+   "pools": [
+    "JP:jp-Q720653"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q720653:A01",
+      "jp:Q720653:A02",
+      "jp:Q720653:A03",
+      "jp:Q720653:A04",
+      "jp:Q720653:A05",
+      "jp:Q720653:A06",
+      "jp:Q720653:A07",
+      "jp:Q720653:A08",
+      "jp:Q720653:A09",
+      "jp:Q720653:A10",
+      "jp:Q720653:A11",
+      "jp:Q720653:A12",
+      "jp:Q720653:A13",
+      "jp:Q720653:A14",
+      "jp:Q720653:A15",
+      "jp:Q720653:A16",
+      "jp:Q720653:A17",
+      "jp:Q720653:A18",
+      "jp:Q720653:A19",
+      "jp:Q720653:A20"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q720653"
+   ]
+  },
+  {
+   "id": "jp-Q741145",
+   "name": "京葉線",
+   "name_en": "Keiyō Line",
+   "source_no": "Q741145",
+   "source_name": "京葉線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#DC143C",
+   "pools": [
+    "JP:jp-Q741145"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q741145:JE01",
+      "jp:Q741145:JE02",
+      "jp:Q741145:JE03",
+      "jp:Q741145:JE04",
+      "jp:Q741145:JE05",
+      "jp:Q741145:JE06",
+      "jp:Q741145:JE07",
+      "jp:Q741145:JE08",
+      "jp:Q741145:JE09",
+      "jp:Q741145:JE10",
+      "jp:Q741145:JE11",
+      "jp:Q741145:JE12",
+      "jp:Q741145:JE13",
+      "jp:Q741145:JE14",
+      "jp:Q741145:JE15",
+      "jp:Q741145:JE16",
+      "jp:Q741145:JE17",
+      "jp:Q741145:Q844422"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q128803",
+     "station_ids": [
+      "jp:Q741145:JE09",
+      "jp:Q741145:Q128803"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q741145:JE11",
+      "jp:Q741145:Q128803"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q741145:JE12",
+      "jp:Q741145:JE14"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q741145"
+   ]
+  },
+  {
+   "id": "jp-Q787305",
+   "name": "東京メトロ有楽町線",
+   "name_en": "Yūrakuchō Line",
+   "source_no": "Q787305",
+   "source_name": "東京メトロ有楽町線",
+   "operator": "東京メトロ",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#BB8B38",
+   "pools": [
+    "JP:jp-Q787305"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q787305:Y01",
+      "jp:Q787305:Y02",
+      "jp:Q787305:Y03",
+      "jp:Q787305:Y04",
+      "jp:Q787305:Y05",
+      "jp:Q787305:Y06",
+      "jp:Q787305:Y07",
+      "jp:Q787305:Y08",
+      "jp:Q787305:Y09",
+      "jp:Q787305:Y10",
+      "jp:Q787305:Y11",
+      "jp:Q787305:Y12",
+      "jp:Q787305:Y13",
+      "jp:Q787305:Y14",
+      "jp:Q787305:Y15",
+      "jp:Q787305:Y16",
+      "jp:Q787305:Y17",
+      "jp:Q787305:Y18",
+      "jp:Q787305:Y19",
+      "jp:Q787305:Y20",
+      "jp:Q787305:Y21",
+      "jp:Q787305:Y22",
+      "jp:Q787305:Q331177",
+      "jp:Q787305:Y24"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q787305"
+   ]
+  },
+  {
+   "id": "jp-Q841584",
+   "name": "京成押上線",
+   "name_en": "Keisei Oshiage Line",
+   "source_no": "Q841584",
+   "source_name": "京成押上線",
+   "operator": "京成",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#005AAA",
+   "pools": [
+    "JP:jp-Q841584"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q841584:KS09",
+      "jp:Q841584:KS49",
+      "jp:Q841584:KS48",
+      "jp:Q841584:KS47",
+      "jp:Q841584:KS46",
+      "jp:Q841584:KS45"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q841584"
+   ]
+  },
+  {
+   "id": "jp-Q841998",
+   "name": "京成千葉線",
+   "name_en": "Keisei Chiba Line",
+   "source_no": "Q841998",
+   "source_name": "京成千葉線",
+   "operator": "京成",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#005AAA",
+   "pools": [
+    "JP:jp-Q841998"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q841998:KS26",
+      "jp:Q841998:KS52",
+      "jp:Q841998:KS53",
+      "jp:Q841998:KS54",
+      "jp:Q841998:KS55",
+      "jp:Q841998:KS56",
+      "jp:Q841998:KS57",
+      "jp:Q841998:KS58",
+      "jp:Q841998:KS59",
+      "jp:Q841998:KS60"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q841998"
+   ]
+  },
+  {
+   "id": "jp-Q842069",
+   "name": "京成千原線",
+   "name_en": "Keisei Chihara Line",
+   "source_no": "Q842069",
+   "source_name": "京成千原線",
+   "operator": "京成",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#0000CD",
+   "pools": [
+    "JP:jp-Q842069"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q842069:KS60",
+      "jp:Q842069:KS61",
+      "jp:Q842069:KS62",
+      "jp:Q842069:KS63",
+      "jp:Q842069:KS64",
+      "jp:Q842069:KS65"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q842069"
+   ]
+  },
+  {
+   "id": "jp-Q842520",
+   "name": "西武山口線",
+   "name_en": "Seibu Yamaguchi Line",
+   "source_no": "Q842520",
+   "source_name": "西武山口線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#EF473D",
+   "pools": [
+    "JP:jp-Q842520"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q842520:Q7446596",
+      "jp:Q842520:Q8014583",
+      "jp:Q842520:Q7446591"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q842520"
+   ]
+  },
+  {
+   "id": "jp-Q842649",
+   "name": "西武秩父線",
+   "name_en": "Seibu Chichibu Line",
+   "source_no": "Q842649",
+   "source_name": "西武秩父線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF8C00",
+   "pools": [
+    "JP:jp-Q842649"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q842649:Q7446590",
+      "jp:Q842649:Q8016151",
+      "jp:Q842649:Q4805059",
+      "jp:Q842649:Q8017361",
+      "jp:Q842649:Q7040305",
+      "jp:Q842649:Q4691200"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q842649"
+   ]
+  },
+  {
+   "id": "jp-Q842701",
+   "name": "東急こどもの国線",
+   "name_en": "Yokohama Minatomirai Railway Kodomonokuni Line",
+   "source_no": "Q842701",
+   "source_name": "東急こどもの国線",
+   "operator": "東急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#0068B7",
+   "pools": [
+    "JP:jp-Q842701"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q842701:KD01",
+      "jp:Q842701:KD02",
+      "jp:Q842701:KD03"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q842701"
+   ]
+  },
+  {
+   "id": "jp-Q845954",
+   "name": "東武日光線",
+   "name_en": "Tōbu Nikkō Line",
+   "source_no": "Q845954",
+   "source_name": "東武日光線",
+   "operator": "東武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#F68B1E",
+   "pools": [
+    "JP:jp-Q845954"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q845954:TN06",
+      "jp:Q845954:TN05",
+      "jp:Q845954:TN04",
+      "jp:Q845954:TN03",
+      "jp:Q845954:TN02",
+      "jp:Q845954:TN01",
+      "jp:Q845954:Q843158"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q845954"
+   ]
+  },
+  {
+   "id": "jp-Q846361",
+   "name": "相鉄本線",
+   "name_en": "Sōtetsu Main Line",
+   "source_no": "Q846361",
+   "source_name": "相鉄本線",
+   "operator": "相鉄",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#1E90FF",
+   "pools": [
+    "JP:jp-Q846361"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q846361:SO01",
+      "jp:Q846361:SO02",
+      "jp:Q846361:SO03",
+      "jp:Q846361:SO04",
+      "jp:Q846361:SO05",
+      "jp:Q846361:SO06",
+      "jp:Q846361:SO07",
+      "jp:Q846361:SO08",
+      "jp:Q846361:SO09",
+      "jp:Q846361:SO10",
+      "jp:Q846361:SO11",
+      "jp:Q846361:SO12",
+      "jp:Q846361:SO13",
+      "jp:Q846361:SO14",
+      "jp:Q846361:SO15",
+      "jp:Q846361:SO16",
+      "jp:Q846361:SO17",
+      "jp:Q846361:Q125230754"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-SO18",
+     "station_ids": [
+      "jp:Q846361:SO17",
+      "jp:Q846361:Q865932"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q846361:Q125230754",
+      "jp:Q846361:Q865932"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q846361:SO15",
+      "jp:Q846361:Q125230754"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q846361"
+   ]
+  },
+  {
+   "id": "jp-Q846367",
+   "name": "相鉄いずみ野線",
+   "name_en": "Sōtetsu Izumino Line",
+   "source_no": "Q846367",
+   "source_name": "相鉄いずみ野線",
+   "operator": "相鉄",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FFA500",
+   "pools": [
+    "JP:jp-Q846367"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q846367:SO10",
+      "jp:Q846367:SO31",
+      "jp:Q846367:SO32",
+      "jp:Q846367:SO33",
+      "jp:Q846367:SO34",
+      "jp:Q846367:SO35",
+      "jp:Q846367:SO36",
+      "jp:Q846367:SO37"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q846367"
+   ]
+  },
+  {
+   "id": "jp-Q906312",
+   "name": "京王動物園線",
+   "name_en": "Keiō Dōbutsuen Line",
+   "source_no": "Q906312",
+   "source_name": "京王動物園線",
+   "operator": "京王",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#DD0077",
+   "pools": [
+    "JP:jp-Q906312"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q906312:KO29",
+      "jp:Q906312:KO47"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q906312"
+   ]
+  },
+  {
+   "id": "jp-Q906348",
+   "name": "京王相模原線",
+   "name_en": "Keiō Sagamihara Line",
+   "source_no": "Q906348",
+   "source_name": "京王相模原線",
+   "operator": "京王",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#DD0077",
+   "pools": [
+    "JP:jp-Q906348"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q906348:KO18",
+      "jp:Q906348:KO35",
+      "jp:Q906348:KO36",
+      "jp:Q906348:KO37",
+      "jp:Q906348:KO38",
+      "jp:Q906348:KO39",
+      "jp:Q906348:KO40",
+      "jp:Q906348:KO41",
+      "jp:Q906348:KO42",
+      "jp:Q906348:KO43",
+      "jp:Q906348:KO44",
+      "jp:Q906348:KO45"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q1061400",
+     "station_ids": [
+      "jp:Q906348:Q988468",
+      "jp:Q906348:Q1061400"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q906348:KO43",
+      "jp:Q906348:KO45"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q906348"
+   ]
+  },
+  {
+   "id": "jp-Q906598",
+   "name": "東武伊勢崎線",
+   "name_en": "Tōbu Isesaki Line",
+   "source_no": "Q906598",
+   "source_name": "東武伊勢崎線",
+   "operator": "東武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF0000",
+   "pools": [
+    "JP:jp-Q906598"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q906598:TS01",
+      "jp:Q906598:TS02",
+      "jp:Q906598:TS04",
+      "jp:Q906598:TS05",
+      "jp:Q906598:TS06",
+      "jp:Q906598:TS07",
+      "jp:Q906598:TS08",
+      "jp:Q906598:TS09",
+      "jp:Q906598:TS10",
+      "jp:Q906598:TS11",
+      "jp:Q906598:TS12",
+      "jp:Q906598:TS13",
+      "jp:Q906598:TS14",
+      "jp:Q906598:TS15",
+      "jp:Q906598:TS16",
+      "jp:Q906598:TS17",
+      "jp:Q906598:TS18",
+      "jp:Q906598:TS19",
+      "jp:Q906598:TS20",
+      "jp:Q906598:TS21",
+      "jp:Q906598:TS22",
+      "jp:Q906598:TS23",
+      "jp:Q906598:TS24",
+      "jp:Q906598:TS25",
+      "jp:Q906598:TS26",
+      "jp:Q906598:TS27",
+      "jp:Q906598:TS28",
+      "jp:Q906598:TS29",
+      "jp:Q906598:TS30",
+      "jp:Q906598:Q7959314",
+      "jp:Q906598:Q843719",
+      "jp:Q906598:Q844040",
+      "jp:Q906598:Q5646939",
+      "jp:Q906598:Q6381375",
+      "jp:Q906598:Q6862883",
+      "jp:Q906598:Q843716"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-TS03",
+     "station_ids": [
+      "jp:Q906598:TS04",
+      "jp:Q906598:TS03"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q906598"
+   ]
+  },
+  {
+   "id": "jp-Q906807",
+   "name": "京急空港線",
+   "name_en": "Keikyū Airport Line",
+   "source_no": "Q906807",
+   "source_name": "京急空港線",
+   "operator": "京急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00BFFF",
+   "pools": [
+    "JP:jp-Q906807"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q906807:KK11",
+      "jp:Q906807:KK12",
+      "jp:Q906807:KK13",
+      "jp:Q906807:KK14",
+      "jp:Q906807:KK15",
+      "jp:Q906807:KK16",
+      "jp:Q906807:KK17"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q906807"
+   ]
+  },
+  {
+   "id": "jp-Q907687",
+   "name": "京急久里浜線",
+   "name_en": "Keikyū Kurihama Line",
+   "source_no": "Q907687",
+   "source_name": "京急久里浜線",
+   "operator": "京急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00BFFF",
+   "pools": [
+    "JP:jp-Q907687"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q907687:KK61",
+      "jp:Q907687:KK65",
+      "jp:Q907687:KK66",
+      "jp:Q907687:KK67",
+      "jp:Q907687:KK68",
+      "jp:Q907687:KK69",
+      "jp:Q907687:KK70",
+      "jp:Q907687:KK71",
+      "jp:Q907687:KK72"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q907687"
+   ]
+  },
+  {
+   "id": "jp-Q910032",
+   "name": "日暮里・舎人ライナー",
+   "name_en": "Nippori-Toneri Liner",
+   "source_no": "Q910032",
+   "source_name": "日暮里・舎人ライナー",
+   "operator": "都営",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF69B4",
+   "pools": [
+    "JP:jp-Q910032"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q910032:NT01",
+      "jp:Q910032:NT02",
+      "jp:Q910032:NT03",
+      "jp:Q910032:NT04",
+      "jp:Q910032:NT05",
+      "jp:Q910032:NT06",
+      "jp:Q910032:NT07",
+      "jp:Q910032:NT08",
+      "jp:Q910032:NT09",
+      "jp:Q910032:NT10",
+      "jp:Q910032:NT11",
+      "jp:Q910032:NT12",
+      "jp:Q910032:NT13"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q910032"
+   ]
+  },
+  {
+   "id": "jp-Q1036349",
+   "name": "京急逗子線",
+   "name_en": "Keikyū Zushi Line",
+   "source_no": "Q1036349",
+   "source_name": "京急逗子線",
+   "operator": "京急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00BFFF",
+   "pools": [
+    "JP:jp-Q1036349"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1036349:KK50",
+      "jp:Q1036349:KK51",
+      "jp:Q1036349:KK52",
+      "jp:Q1036349:KK53"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1036349"
+   ]
+  },
+  {
+   "id": "jp-Q1037491",
+   "name": "京急大師線",
+   "name_en": "Keikyū Daishi Line",
+   "source_no": "Q1037491",
+   "source_name": "京急大師線",
+   "operator": "京急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00BFFF",
+   "pools": [
+    "JP:jp-Q1037491"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1037491:KK20",
+      "jp:Q1037491:KK21",
+      "jp:Q1037491:KK22",
+      "jp:Q1037491:KK23",
+      "jp:Q1037491:KK24",
+      "jp:Q1037491:KK25",
+      "jp:Q1037491:KK26"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1037491"
+   ]
+  },
+  {
+   "id": "jp-Q1040703",
+   "name": "東武東上本線",
+   "name_en": "Tobu Tojo Line",
+   "source_no": "Q1040703",
+   "source_name": "東武東上本線",
+   "operator": "東武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#004098",
+   "pools": [
+    "JP:jp-Q1040703"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1040703:TJ01",
+      "jp:Q1040703:TJ02",
+      "jp:Q1040703:TJ03",
+      "jp:Q1040703:TJ04",
+      "jp:Q1040703:TJ05",
+      "jp:Q1040703:TJ06",
+      "jp:Q1040703:TJ07",
+      "jp:Q1040703:TJ08",
+      "jp:Q1040703:TJ09",
+      "jp:Q1040703:TJ10",
+      "jp:Q1040703:TJ11",
+      "jp:Q1040703:TJ12",
+      "jp:Q1040703:TJ13",
+      "jp:Q1040703:TJ14",
+      "jp:Q1040703:TJ15",
+      "jp:Q1040703:TJ16",
+      "jp:Q1040703:TJ17",
+      "jp:Q1040703:TJ18",
+      "jp:Q1040703:TJ19",
+      "jp:Q1040703:TJ20",
+      "jp:Q1040703:TJ21",
+      "jp:Q1040703:TJ22",
+      "jp:Q1040703:TJ23",
+      "jp:Q1040703:TJ24",
+      "jp:Q1040703:TJ25",
+      "jp:Q1040703:TJ26",
+      "jp:Q1040703:TJ27",
+      "jp:Q1040703:TJ28",
+      "jp:Q1040703:TJ29",
+      "jp:Q1040703:TJ30",
+      "jp:Q1040703:TJ31",
+      "jp:Q1040703:TJ32",
+      "jp:Q1040703:TJ33",
+      "jp:Q1040703:TJ34",
+      "jp:Q1040703:TJ35",
+      "jp:Q1040703:TJ36",
+      "jp:Q1040703:TJ37",
+      "jp:Q1040703:TJ38",
+      "jp:Q1040703:TJ39"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1040703"
+   ]
+  },
+  {
+   "id": "jp-Q1045305",
+   "name": "京成成田空港線",
+   "name_en": "Keisei Narita Airport Line",
+   "source_no": "Q1045305",
+   "source_name": "京成成田空港線",
+   "operator": "京成",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FFA500",
+   "pools": [
+    "JP:jp-Q1045305"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1045305:Q906732",
+      "jp:Q1045305:Q841454",
+      "jp:Q1045305:Q859802",
+      "jp:Q1045305:HS14",
+      "jp:Q1045305:HS12",
+      "jp:Q1045305:HS08",
+      "jp:Q1045305:HS05",
+      "jp:Q1045305:Q4162460"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1045305"
+   ]
+  },
+  {
+   "id": "jp-Q1063632",
+   "name": "京急本線",
+   "name_en": "Keikyū Main Line",
+   "source_no": "Q1063632",
+   "source_name": "京急本線",
+   "operator": "京急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00BFFF",
+   "pools": [
+    "JP:jp-Q1063632"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1063632:KK64",
+      "jp:Q1063632:KK63",
+      "jp:Q1063632:KK62",
+      "jp:Q1063632:KK61",
+      "jp:Q1063632:KK60",
+      "jp:Q1063632:KK59",
+      "jp:Q1063632:KK58",
+      "jp:Q1063632:KK57",
+      "jp:Q1063632:KK56",
+      "jp:Q1063632:KK55",
+      "jp:Q1063632:KK54",
+      "jp:Q1063632:KK50",
+      "jp:Q1063632:KK49",
+      "jp:Q1063632:KK48",
+      "jp:Q1063632:KK47",
+      "jp:Q1063632:KK46",
+      "jp:Q1063632:KK45",
+      "jp:Q1063632:KK44",
+      "jp:Q1063632:KK43",
+      "jp:Q1063632:KK42",
+      "jp:Q1063632:KK41",
+      "jp:Q1063632:KK40",
+      "jp:Q1063632:KK39",
+      "jp:Q1063632:KK38",
+      "jp:Q1063632:KK37",
+      "jp:Q1063632:KK36",
+      "jp:Q1063632:KK35",
+      "jp:Q1063632:KK34",
+      "jp:Q1063632:KK33",
+      "jp:Q1063632:KK32",
+      "jp:Q1063632:KK31",
+      "jp:Q1063632:KK30",
+      "jp:Q1063632:KK29",
+      "jp:Q1063632:KK28",
+      "jp:Q1063632:KK27",
+      "jp:Q1063632:KK20",
+      "jp:Q1063632:KK19",
+      "jp:Q1063632:KK18",
+      "jp:Q1063632:KK11",
+      "jp:Q1063632:KK10",
+      "jp:Q1063632:KK09",
+      "jp:Q1063632:KK08",
+      "jp:Q1063632:KK07",
+      "jp:Q1063632:KK06",
+      "jp:Q1063632:KK05",
+      "jp:Q1063632:KK04",
+      "jp:Q1063632:KK03",
+      "jp:Q1063632:KK02",
+      "jp:Q1063632:KK01",
+      "jp:Q1063632:Q905742"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1063632"
+   ]
+  },
+  {
+   "id": "jp-Q1063675",
+   "name": "京成本線",
+   "name_en": "Keisei Main Line",
+   "source_no": "Q1063675",
+   "source_name": "京成本線",
+   "operator": "京成",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#005AAA",
+   "pools": [
+    "JP:jp-Q1063675"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1063675:KS01",
+      "jp:Q1063675:KS02",
+      "jp:Q1063675:KS03",
+      "jp:Q1063675:KS04",
+      "jp:Q1063675:KS05",
+      "jp:Q1063675:KS06",
+      "jp:Q1063675:KS07",
+      "jp:Q1063675:KS08",
+      "jp:Q1063675:KS09",
+      "jp:Q1063675:KS10",
+      "jp:Q1063675:KS11",
+      "jp:Q1063675:KS12",
+      "jp:Q1063675:KS13",
+      "jp:Q1063675:KS14",
+      "jp:Q1063675:KS15",
+      "jp:Q1063675:KS16",
+      "jp:Q1063675:KS17",
+      "jp:Q1063675:KS18",
+      "jp:Q1063675:KS19",
+      "jp:Q1063675:KS20",
+      "jp:Q1063675:KS21",
+      "jp:Q1063675:KS22",
+      "jp:Q1063675:KS23",
+      "jp:Q1063675:KS24",
+      "jp:Q1063675:KS25",
+      "jp:Q1063675:KS26",
+      "jp:Q1063675:KS27",
+      "jp:Q1063675:KS28",
+      "jp:Q1063675:KS29",
+      "jp:Q1063675:KS30",
+      "jp:Q1063675:KS31",
+      "jp:Q1063675:KS32",
+      "jp:Q1063675:KS33",
+      "jp:Q1063675:KS34",
+      "jp:Q1063675:KS35",
+      "jp:Q1063675:KS36",
+      "jp:Q1063675:KS37",
+      "jp:Q1063675:KS38",
+      "jp:Q1063675:KS39",
+      "jp:Q1063675:KS40",
+      "jp:Q1063675:Q841454",
+      "jp:Q1063675:Q906732"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1063675"
+   ]
+  },
+  {
+   "id": "jp-Q1063832",
+   "name": "小田急多摩線",
+   "name_en": "Odakyū Tama Line",
+   "source_no": "Q1063832",
+   "source_name": "小田急多摩線",
+   "operator": "小田急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#0D82C7",
+   "pools": [
+    "JP:jp-Q1063832"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1063832:OT07",
+      "jp:Q1063832:OT06",
+      "jp:Q1063832:OT05",
+      "jp:Q1063832:OT04",
+      "jp:Q1063832:OT03",
+      "jp:Q1063832:OT02",
+      "jp:Q1063832:OT01",
+      "jp:Q1063832:Q1061373"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q1061400",
+     "station_ids": [
+      "jp:Q1063832:Q988468",
+      "jp:Q1063832:Q1061400"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q1063832:OT03",
+      "jp:Q1063832:OT05"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1063832"
+   ]
+  },
+  {
+   "id": "jp-Q1063924",
+   "name": "小田急江ノ島線",
+   "name_en": "Odakyū Enoshima Line",
+   "source_no": "Q1063924",
+   "source_name": "小田急江ノ島線",
+   "operator": "小田急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#0D82C7",
+   "pools": [
+    "JP:jp-Q1063924"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1063924:OE16",
+      "jp:Q1063924:OE15",
+      "jp:Q1063924:OE14",
+      "jp:Q1063924:OE13",
+      "jp:Q1063924:OE12",
+      "jp:Q1063924:OE11",
+      "jp:Q1063924:OE10",
+      "jp:Q1063924:OE09",
+      "jp:Q1063924:OE08",
+      "jp:Q1063924:OE07",
+      "jp:Q1063924:OE06",
+      "jp:Q1063924:OE05",
+      "jp:Q1063924:OE04",
+      "jp:Q1063924:OE03",
+      "jp:Q1063924:OE02",
+      "jp:Q1063924:OE01",
+      "jp:Q1063924:Q1054659"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1063924"
+   ]
+  },
+  {
+   "id": "jp-Q1064795",
+   "name": "都電荒川線",
+   "name_en": "Toden Arakawa Line",
+   "source_no": "Q1064795",
+   "source_name": "都電荒川線",
+   "operator": "都営",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#EE86A7",
+   "pools": [
+    "JP:jp-Q1064795"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1064795:SA01",
+      "jp:Q1064795:SA02",
+      "jp:Q1064795:SA03",
+      "jp:Q1064795:SA04",
+      "jp:Q1064795:SA05",
+      "jp:Q1064795:SA06",
+      "jp:Q1064795:SA07",
+      "jp:Q1064795:SA08",
+      "jp:Q1064795:SA09",
+      "jp:Q1064795:SA10",
+      "jp:Q1064795:SA11",
+      "jp:Q1064795:SA12",
+      "jp:Q1064795:SA13",
+      "jp:Q1064795:SA14",
+      "jp:Q1064795:SA15",
+      "jp:Q1064795:SA16",
+      "jp:Q1064795:SA17",
+      "jp:Q1064795:SA18",
+      "jp:Q1064795:SA19",
+      "jp:Q1064795:SA20",
+      "jp:Q1064795:SA21",
+      "jp:Q1064795:SA22",
+      "jp:Q1064795:Q16564575",
+      "jp:Q1064795:SA24",
+      "jp:Q1064795:SA25",
+      "jp:Q1064795:SA26",
+      "jp:Q1064795:SA27",
+      "jp:Q1064795:SA28",
+      "jp:Q1064795:SA29",
+      "jp:Q1064795:SA30"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1064795"
+   ]
+  },
+  {
+   "id": "jp-Q1064840",
+   "name": "西武有楽町線",
+   "name_en": "Seibu Yurakucho Line",
+   "source_no": "Q1064840",
+   "source_name": "西武有楽町線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF8C00",
+   "pools": [
+    "JP:jp-Q1064840"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1064840:SI06",
+      "jp:Q1064840:SI38",
+      "jp:Q1064840:SI37"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1064840"
+   ]
+  },
+  {
+   "id": "jp-Q1070027",
+   "name": "成田線",
+   "name_en": "Narita Line",
+   "source_no": "Q1070027",
+   "source_name": "成田線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00B261",
+   "pools": [
+    "JP:jp-Q1070027"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1070027:Q5365309",
+      "jp:Q1070027:Q7496496",
+      "jp:Q1070027:Q7497068",
+      "jp:Q1070027:Q7497065",
+      "jp:Q1070027:Q7424969",
+      "jp:Q1070027:Q7090185",
+      "jp:Q1070027:Q7635422",
+      "jp:Q1070027:Q6377809",
+      "jp:Q1070027:Q5359841",
+      "jp:Q1070027:Q8081763",
+      "jp:Q1070027:Q7497064",
+      "jp:Q1070027:Q6961565",
+      "jp:Q1070027:Q6449307",
+      "jp:Q1070027:Q845243",
+      "jp:Q1070027:Q7499126",
+      "jp:Q1070027:Q7403176"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1070027"
+   ]
+  },
+  {
+   "id": "jp-Q1073046",
+   "name": "東京メトロ銀座線",
+   "name_en": "Ginza Line",
+   "source_no": "Q1073046",
+   "source_name": "東京メトロ銀座線",
+   "operator": "東京メトロ",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF9501",
+   "pools": [
+    "JP:jp-Q1073046"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1073046:G01",
+      "jp:Q1073046:G02",
+      "jp:Q1073046:G03",
+      "jp:Q1073046:G04",
+      "jp:Q1073046:G05",
+      "jp:Q1073046:G06",
+      "jp:Q1073046:G07",
+      "jp:Q1073046:G08",
+      "jp:Q1073046:G09",
+      "jp:Q1073046:G10",
+      "jp:Q1073046:G11",
+      "jp:Q1073046:G12",
+      "jp:Q1073046:G13",
+      "jp:Q1073046:G14",
+      "jp:Q1073046:G15",
+      "jp:Q1073046:G16",
+      "jp:Q1073046:G17",
+      "jp:Q1073046:G18",
+      "jp:Q1073046:G19"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1073046"
+   ]
+  },
+  {
+   "id": "jp-Q1075089",
+   "name": "東京メトロ千代田線",
+   "name_en": "Chiyoda Line",
+   "source_no": "Q1075089",
+   "source_name": "東京メトロ千代田線",
+   "operator": "東京メトロ",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00A650",
+   "pools": [
+    "JP:jp-Q1075089"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1075089:C01",
+      "jp:Q1075089:C02",
+      "jp:Q1075089:C03",
+      "jp:Q1075089:C04",
+      "jp:Q1075089:C05",
+      "jp:Q1075089:C06",
+      "jp:Q1075089:C07",
+      "jp:Q1075089:C08",
+      "jp:Q1075089:C09",
+      "jp:Q1075089:C10",
+      "jp:Q1075089:C11",
+      "jp:Q1075089:C12",
+      "jp:Q1075089:C13",
+      "jp:Q1075089:C14",
+      "jp:Q1075089:C15",
+      "jp:Q1075089:C16",
+      "jp:Q1075089:C17",
+      "jp:Q1075089:C18",
+      "jp:Q1075089:C19",
+      "jp:Q1075089:C20"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1075089"
+   ]
+  },
+  {
+   "id": "jp-Q1078110",
+   "name": "中央本線",
+   "name_en": "Chūō Main Line",
+   "source_no": "Q1078110",
+   "source_name": "中央本線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#0B8E0E",
+   "pools": [
+    "JP:jp-Q1078110"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1078110:JC01",
+      "jp:Q1078110:JC02",
+      "jp:Q1078110:JC03",
+      "jp:Q1078110:JC04",
+      "jp:Q1078110:JC05",
+      "jp:Q1078110:JC06",
+      "jp:Q1078110:JC07",
+      "jp:Q1078110:JC08",
+      "jp:Q1078110:JC09",
+      "jp:Q1078110:JC10",
+      "jp:Q1078110:JC11",
+      "jp:Q1078110:JC12",
+      "jp:Q1078110:JC13",
+      "jp:Q1078110:JC14",
+      "jp:Q1078110:JC15",
+      "jp:Q1078110:JC16",
+      "jp:Q1078110:JC17",
+      "jp:Q1078110:JC18",
+      "jp:Q1078110:JC19",
+      "jp:Q1078110:JC20",
+      "jp:Q1078110:JC21",
+      "jp:Q1078110:JC22",
+      "jp:Q1078110:JC23",
+      "jp:Q1078110:JC24",
+      "jp:Q1078110:JC25",
+      "jp:Q1078110:JC26"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q590162",
+     "station_ids": [
+      "jp:Q1078110:JC04",
+      "jp:Q1078110:Q335677",
+      "jp:Q1078110:Q801428",
+      "jp:Q1078110:Q590162"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q800953",
+     "station_ids": [
+      "jp:Q1078110:JC04",
+      "jp:Q1078110:Q123975151",
+      "jp:Q1078110:Q800953"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q801496",
+     "station_ids": [
+      "jp:Q1078110:JC03",
+      "jp:Q1078110:Q801496"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q116259",
+     "station_ids": [
+      "jp:Q1078110:JC05",
+      "jp:Q1078110:Q116259"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q800921",
+     "station_ids": [
+      "jp:Q1078110:JC06",
+      "jp:Q1078110:Q800921"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q1078110:Q116259",
+      "jp:Q1078110:Q800921"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q1078110:Q800953",
+      "jp:Q1078110:Q801496"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1078110"
+   ]
+  },
+  {
+   "id": "jp-Q1142964",
+   "name": "内房線",
+   "name_en": "Uchibō Line",
+   "source_no": "Q1142964",
+   "source_name": "内房線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00BFFF",
+   "pools": [
+    "JP:jp-Q1142964"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1142964:Q844422",
+      "jp:Q1142964:Q571740",
+      "jp:Q1142964:Q573497",
+      "jp:Q1142964:Q573427",
+      "jp:Q1142964:Q573432",
+      "jp:Q1142964:Q573425",
+      "jp:Q1142964:Q573413",
+      "jp:Q1142964:Q573420",
+      "jp:Q1142964:Q575433",
+      "jp:Q1142964:Q575422",
+      "jp:Q1142964:Q558935",
+      "jp:Q1142964:Q558903",
+      "jp:Q1142964:Q558870",
+      "jp:Q1142964:Q558554",
+      "jp:Q1142964:Q558883",
+      "jp:Q1142964:Q558560",
+      "jp:Q1142964:Q558549",
+      "jp:Q1142964:Q558545",
+      "jp:Q1142964:Q556710",
+      "jp:Q1142964:Q556722",
+      "jp:Q1142964:Q556700",
+      "jp:Q1142964:Q553883",
+      "jp:Q1142964:Q553860",
+      "jp:Q1142964:Q553855",
+      "jp:Q1142964:Q553875",
+      "jp:Q1142964:Q553865",
+      "jp:Q1142964:Q553736",
+      "jp:Q1142964:Q553871",
+      "jp:Q1142964:Q553805",
+      "jp:Q1142964:Q552842"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1142964"
+   ]
+  },
+  {
+   "id": "jp-Q1147028",
+   "name": "東京メトロ丸ノ内線",
+   "name_en": "Marunouchi Line",
+   "source_no": "Q1147028",
+   "source_name": "東京メトロ丸ノ内線",
+   "operator": "東京メトロ",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#F62F36",
+   "pools": [
+    "JP:jp-Q1147028"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1147028:M01",
+      "jp:Q1147028:M02",
+      "jp:Q1147028:M03",
+      "jp:Q1147028:M04",
+      "jp:Q1147028:M05",
+      "jp:Q1147028:M06",
+      "jp:Q1147028:M07",
+      "jp:Q1147028:M08",
+      "jp:Q1147028:M09",
+      "jp:Q1147028:M10",
+      "jp:Q1147028:M11",
+      "jp:Q1147028:M12",
+      "jp:Q1147028:M13",
+      "jp:Q1147028:M14",
+      "jp:Q1147028:M15",
+      "jp:Q1147028:M16",
+      "jp:Q1147028:M17",
+      "jp:Q1147028:M18",
+      "jp:Q1147028:M19",
+      "jp:Q1147028:M20",
+      "jp:Q1147028:M21",
+      "jp:Q1147028:M22",
+      "jp:Q1147028:M23",
+      "jp:Q1147028:M24",
+      "jp:Q1147028:M25"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1147028"
+   ]
+  },
+  {
+   "id": "jp-Q1147054",
+   "name": "東京メトロ東西線",
+   "name_en": "Tōzai Line",
+   "source_no": "Q1147054",
+   "source_name": "東京メトロ東西線",
+   "operator": "東京メトロ",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#019BBF",
+   "pools": [
+    "JP:jp-Q1147054"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1147054:T01",
+      "jp:Q1147054:T02",
+      "jp:Q1147054:T03",
+      "jp:Q1147054:T04",
+      "jp:Q1147054:T05",
+      "jp:Q1147054:T06",
+      "jp:Q1147054:T07",
+      "jp:Q1147054:T08",
+      "jp:Q1147054:T09",
+      "jp:Q1147054:T10",
+      "jp:Q1147054:T11",
+      "jp:Q1147054:T12",
+      "jp:Q1147054:T13",
+      "jp:Q1147054:T14",
+      "jp:Q1147054:T15",
+      "jp:Q1147054:T16",
+      "jp:Q1147054:T17",
+      "jp:Q1147054:T18",
+      "jp:Q1147054:T19",
+      "jp:Q1147054:T20",
+      "jp:Q1147054:T21",
+      "jp:Q1147054:T22",
+      "jp:Q1147054:T23"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1147054"
+   ]
+  },
+  {
+   "id": "jp-Q1150161",
+   "name": "東金線",
+   "name_en": "Tōgane Line",
+   "source_no": "Q1150161",
+   "source_name": "東金線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF8C00",
+   "pools": [
+    "JP:jp-Q1150161"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1150161:Q6966490",
+      "jp:Q1150161:Q5353413",
+      "jp:Q1150161:Q5353531",
+      "jp:Q1150161:Q5353408",
+      "jp:Q1150161:Q5353488"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1150161"
+   ]
+  },
+  {
+   "id": "jp-Q1190086",
+   "name": "東急田園都市線",
+   "name_en": "Tōkyū Den'en-Toshi Line",
+   "source_no": "Q1190086",
+   "source_name": "東急田園都市線",
+   "operator": "東急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00B395",
+   "pools": [
+    "JP:jp-Q1190086"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1190086:DT01",
+      "jp:Q1190086:DT02",
+      "jp:Q1190086:DT03",
+      "jp:Q1190086:DT04",
+      "jp:Q1190086:DT05",
+      "jp:Q1190086:DT06",
+      "jp:Q1190086:DT07",
+      "jp:Q1190086:DT08",
+      "jp:Q1190086:DT09",
+      "jp:Q1190086:DT10",
+      "jp:Q1190086:DT11",
+      "jp:Q1190086:DT12",
+      "jp:Q1190086:DT13",
+      "jp:Q1190086:DT14",
+      "jp:Q1190086:DT15",
+      "jp:Q1190086:DT16",
+      "jp:Q1190086:DT17",
+      "jp:Q1190086:DT18",
+      "jp:Q1190086:DT19",
+      "jp:Q1190086:DT20",
+      "jp:Q1190086:DT21",
+      "jp:Q1190086:DT22",
+      "jp:Q1190086:DT23",
+      "jp:Q1190086:DT24",
+      "jp:Q1190086:DT25",
+      "jp:Q1190086:DT26",
+      "jp:Q1190086:DT27"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1190086"
+   ]
+  },
+  {
+   "id": "jp-Q1190152",
+   "name": "東海道本線",
+   "name_en": "Tōkaidō Main Line",
+   "source_no": "Q1190152",
+   "source_name": "東海道本線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FFA500",
+   "pools": [
+    "JP:jp-Q1190152"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1190152:JT20",
+      "jp:Q1190152:JT19",
+      "jp:Q1190152:JT18",
+      "jp:Q1190152:JT17",
+      "jp:Q1190152:JT16",
+      "jp:Q1190152:JT15",
+      "jp:Q1190152:JT14",
+      "jp:Q1190152:JT13",
+      "jp:Q1190152:JT12",
+      "jp:Q1190152:JT11",
+      "jp:Q1190152:JT10",
+      "jp:Q1190152:JT09",
+      "jp:Q1190152:JT08",
+      "jp:Q1190152:JT07",
+      "jp:Q1190152:JT06",
+      "jp:Q1190152:JT05",
+      "jp:Q1190152:JT04",
+      "jp:Q1190152:JT03",
+      "jp:Q1190152:JT02",
+      "jp:Q1190152:JT01",
+      "jp:Q1190152:Q124605617"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q801510",
+     "station_ids": [
+      "jp:Q1190152:JT03",
+      "jp:Q1190152:Q38278207",
+      "jp:Q1190152:Q801510"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q11262877",
+     "station_ids": [
+      "jp:Q1190152:JT04",
+      "jp:Q1190152:Q128164",
+      "jp:Q1190152:Q11262877"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q80420",
+     "station_ids": [
+      "jp:Q1190152:JT04",
+      "jp:Q1190152:Q800981",
+      "jp:Q1190152:Q80420"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q801690",
+     "station_ids": [
+      "jp:Q1190152:JT03",
+      "jp:Q1190152:Q801690"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q128205",
+     "station_ids": [
+      "jp:Q1190152:JT05",
+      "jp:Q1190152:Q128205"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q801434",
+     "station_ids": [
+      "jp:Q1190152:JT05",
+      "jp:Q1190152:Q801434"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q844185",
+     "station_ids": [
+      "jp:Q1190152:JT05",
+      "jp:Q1190152:Q844185"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q844252",
+     "station_ids": [
+      "jp:Q1190152:JT06",
+      "jp:Q1190152:Q844252"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q11528771",
+     "station_ids": [
+      "jp:Q1190152:Q128164",
+      "jp:Q1190152:Q11528771"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q128314",
+     "station_ids": [
+      "jp:Q1190152:Q128164",
+      "jp:Q1190152:Q128314"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q48755701",
+     "station_ids": [
+      "jp:Q1190152:Q801207",
+      "jp:Q1190152:Q48755701"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q1190152:JT02",
+      "jp:Q1190152:Q124605617"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q1190152:Q11262877",
+      "jp:Q1190152:Q844252"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-3",
+     "station_ids": [
+      "jp:Q1190152:Q128205",
+      "jp:Q1190152:Q128314"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-4",
+     "station_ids": [
+      "jp:Q1190152:Q801690",
+      "jp:Q1190152:Q80420"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-5",
+     "station_ids": [
+      "jp:Q1190152:Q844185",
+      "jp:Q1190152:Q844252"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1190152"
+   ]
+  },
+  {
+   "id": "jp-Q1191300",
+   "name": "京王井の頭線",
+   "name_en": "Keiō Inokashira Line",
+   "source_no": "Q1191300",
+   "source_name": "京王井の頭線",
+   "operator": "京王",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#1E90FF",
+   "pools": [
+    "JP:jp-Q1191300"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1191300:IN01",
+      "jp:Q1191300:IN02",
+      "jp:Q1191300:IN03",
+      "jp:Q1191300:IN04",
+      "jp:Q1191300:IN05",
+      "jp:Q1191300:IN06",
+      "jp:Q1191300:IN07",
+      "jp:Q1191300:IN08",
+      "jp:Q1191300:IN09",
+      "jp:Q1191300:IN10",
+      "jp:Q1191300:IN11",
+      "jp:Q1191300:IN12",
+      "jp:Q1191300:IN13",
+      "jp:Q1191300:IN14",
+      "jp:Q1191300:IN15",
+      "jp:Q1191300:IN16",
+      "jp:Q1191300:IN17"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1191300"
+   ]
+  },
+  {
+   "id": "jp-Q1191364",
+   "name": "総武本線",
+   "name_en": "Sōbu Main Line",
+   "source_no": "Q1191364",
+   "source_name": "総武本線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FFC20D",
+   "pools": [
+    "JP:jp-Q1191364"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1191364:Q861084",
+      "jp:Q1191364:Q5365309",
+      "jp:Q1191364:Q5364199",
+      "jp:Q1191364:Q5364298",
+      "jp:Q1191364:Q5364920",
+      "jp:Q1191364:Q863457",
+      "jp:Q1191364:Q5363793",
+      "jp:Q1191364:Q5363766",
+      "jp:Q1191364:Q5363230",
+      "jp:Q1191364:Q5363081",
+      "jp:Q1191364:Q5365257",
+      "jp:Q1191364:Q6966490",
+      "jp:Q1191364:Q5363469",
+      "jp:Q1191364:Q5364855",
+      "jp:Q1191364:Q5364697",
+      "jp:Q1191364:Q5364222",
+      "jp:Q1191364:Q7403176",
+      "jp:Q1191364:Q6901635",
+      "jp:Q1191364:Q8013017",
+      "jp:Q1191364:Q7849953",
+      "jp:Q1191364:Q8013045",
+      "jp:Q1191364:JB39",
+      "jp:Q1191364:Q909403",
+      "jp:Q1191364:Q801534",
+      "jp:Q1191364:JB31",
+      "jp:Q1191364:Q1067608",
+      "jp:Q1191364:Q1063750",
+      "jp:Q1191364:Q801017",
+      "jp:Q1191364:Q801389",
+      "jp:Q1191364:Q800404",
+      "jp:Q1191364:Q124504879",
+      "jp:Q1191364:Q124491572"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q1142065",
+     "station_ids": [
+      "jp:Q1191364:JB31",
+      "jp:Q1191364:Q128803",
+      "jp:Q1191364:Q1067586",
+      "jp:Q1191364:Q1142065"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-JO19",
+     "station_ids": [
+      "jp:Q1191364:Q801017",
+      "jp:Q1191364:Q844182",
+      "jp:Q1191364:Q844148",
+      "jp:Q1191364:JO19"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q908760",
+     "station_ids": [
+      "jp:Q1191364:Q801534",
+      "jp:Q1191364:Q906124",
+      "jp:Q1191364:Q908755",
+      "jp:Q1191364:Q908760"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q909531",
+     "station_ids": [
+      "jp:Q1191364:Q801017",
+      "jp:Q1191364:Q1036376",
+      "jp:Q1191364:Q909531"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q908788",
+     "station_ids": [
+      "jp:Q1191364:JB31",
+      "jp:Q1191364:Q908788"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q1067240",
+     "station_ids": [
+      "jp:Q1191364:JB39",
+      "jp:Q1191364:Q1067240"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q1067969",
+     "station_ids": [
+      "jp:Q1191364:Q1063750",
+      "jp:Q1191364:Q1067969"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q7499126",
+     "station_ids": [
+      "jp:Q1191364:Q7403176",
+      "jp:Q1191364:Q7499126"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q1191364:Q1063750",
+      "jp:Q1191364:Q909531"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q1191364:Q1067240",
+      "jp:Q1191364:Q909403"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-3",
+     "station_ids": [
+      "jp:Q1191364:Q1067608",
+      "jp:Q1191364:Q1067969"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-4",
+     "station_ids": [
+      "jp:Q1191364:Q1067608",
+      "jp:Q1191364:Q1142065"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-5",
+     "station_ids": [
+      "jp:Q1191364:Q801534",
+      "jp:Q1191364:Q908788"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-6",
+     "station_ids": [
+      "jp:Q1191364:Q908760",
+      "jp:Q1191364:Q909403"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1191364"
+   ]
+  },
+  {
+   "id": "jp-Q1191671",
+   "name": "武蔵野線",
+   "name_en": "Musashino Line",
+   "source_no": "Q1191671",
+   "source_name": "武蔵野線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF4500",
+   "pools": [
+    "JP:jp-Q1191671"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1191671:JM10",
+      "jp:Q1191671:JM11",
+      "jp:Q1191671:JM12",
+      "jp:Q1191671:JM13",
+      "jp:Q1191671:JM14",
+      "jp:Q1191671:JM15",
+      "jp:Q1191671:JM16",
+      "jp:Q1191671:JM17",
+      "jp:Q1191671:JM18",
+      "jp:Q1191671:JM19",
+      "jp:Q1191671:JM20",
+      "jp:Q1191671:JM21",
+      "jp:Q1191671:JM22",
+      "jp:Q1191671:Q8015281",
+      "jp:Q1191671:JM24",
+      "jp:Q1191671:JM25",
+      "jp:Q1191671:JM26",
+      "jp:Q1191671:JM27",
+      "jp:Q1191671:JM28",
+      "jp:Q1191671:JM29",
+      "jp:Q1191671:JM30",
+      "jp:Q1191671:JM31",
+      "jp:Q1191671:JM32",
+      "jp:Q1191671:JM33",
+      "jp:Q1191671:JM34",
+      "jp:Q1191671:JM35",
+      "jp:Q1191671:Q128164"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q5364850",
+     "station_ids": [
+      "jp:Q1191671:JM16",
+      "jp:Q1191671:Q5364850"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q865196",
+     "station_ids": [
+      "jp:Q1191671:JM16",
+      "jp:Q1191671:Q865196"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q801652",
+     "station_ids": [
+      "jp:Q1191671:JM26",
+      "jp:Q1191671:Q801652"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q474512",
+     "station_ids": [
+      "jp:Q1191671:JM32",
+      "jp:Q1191671:Q474512"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1191671"
+   ]
+  },
+  {
+   "id": "jp-Q1192388",
+   "name": "東急池上線",
+   "name_en": "Tōkyū Ikegami Line",
+   "source_no": "Q1192388",
+   "source_name": "東急池上線",
+   "operator": "東急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#EE86A7",
+   "pools": [
+    "JP:jp-Q1192388"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1192388:IK01",
+      "jp:Q1192388:IK02",
+      "jp:Q1192388:IK03",
+      "jp:Q1192388:IK04",
+      "jp:Q1192388:IK05",
+      "jp:Q1192388:IK06",
+      "jp:Q1192388:IK07",
+      "jp:Q1192388:IK08",
+      "jp:Q1192388:IK09",
+      "jp:Q1192388:IK10",
+      "jp:Q1192388:IK11",
+      "jp:Q1192388:IK12",
+      "jp:Q1192388:IK13",
+      "jp:Q1192388:IK14",
+      "jp:Q1192388:IK15"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1192388"
+   ]
+  },
+  {
+   "id": "jp-Q1192468",
+   "name": "東急東横線",
+   "name_en": "Tōkyū Tōyoko Line",
+   "source_no": "Q1192468",
+   "source_name": "東急東横線",
+   "operator": "東急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#DC143C",
+   "pools": [
+    "JP:jp-Q1192468"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1192468:TY01",
+      "jp:Q1192468:TY02",
+      "jp:Q1192468:TY03",
+      "jp:Q1192468:TY04",
+      "jp:Q1192468:TY05",
+      "jp:Q1192468:TY06",
+      "jp:Q1192468:TY07",
+      "jp:Q1192468:TY08",
+      "jp:Q1192468:TY09",
+      "jp:Q1192468:TY10",
+      "jp:Q1192468:TY11",
+      "jp:Q1192468:TY12",
+      "jp:Q1192468:TY13",
+      "jp:Q1192468:TY14",
+      "jp:Q1192468:TY15",
+      "jp:Q1192468:TY16",
+      "jp:Q1192468:TY17",
+      "jp:Q1192468:TY18",
+      "jp:Q1192468:TY19",
+      "jp:Q1192468:TY20",
+      "jp:Q1192468:TY21"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q1192468:TY10",
+      "jp:Q1192468:TY12"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1192468"
+   ]
+  },
+  {
+   "id": "jp-Q1194511",
+   "name": "根岸線",
+   "name_en": "Negishi Line",
+   "source_no": "Q1194511",
+   "source_name": "根岸線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00BFFF",
+   "pools": [
+    "JP:jp-Q1194511"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1194511:JK01",
+      "jp:Q1194511:JK02",
+      "jp:Q1194511:JK03",
+      "jp:Q1194511:JK04",
+      "jp:Q1194511:JK05",
+      "jp:Q1194511:JK06",
+      "jp:Q1194511:JK07",
+      "jp:Q1194511:JK08",
+      "jp:Q1194511:JK09",
+      "jp:Q1194511:JK10",
+      "jp:Q1194511:JK11",
+      "jp:Q1194511:JK12"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1194511"
+   ]
+  },
+  {
+   "id": "jp-Q1195170",
+   "name": "鶴見線",
+   "name_en": "Tsurumi Line",
+   "source_no": "Q1195170",
+   "source_name": "鶴見線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FFFF00",
+   "pools": [
+    "JP:jp-Q1195170"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1195170:JI01",
+      "jp:Q1195170:JI02",
+      "jp:Q1195170:JI03",
+      "jp:Q1195170:JI04",
+      "jp:Q1195170:JI05",
+      "jp:Q1195170:JI06",
+      "jp:Q1195170:JI07",
+      "jp:Q1195170:JI08",
+      "jp:Q1195170:JI09",
+      "jp:Q1195170:JI10"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-JI61",
+     "station_ids": [
+      "jp:Q1195170:JI06",
+      "jp:Q1195170:JI61"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-JI52",
+     "station_ids": [
+      "jp:Q1195170:JI51",
+      "jp:Q1195170:JI52"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q1195170:JI07",
+      "jp:Q1195170:JI61"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1195170"
+   ]
+  },
+  {
+   "id": "jp-Q1195907",
+   "name": "川越線",
+   "name_en": "Kawagoe Line",
+   "source_no": "Q1195907",
+   "source_name": "川越線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#2E8B57",
+   "pools": [
+    "JP:jp-Q1195907"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1195907:Q124413523",
+      "jp:Q1195907:Q844375",
+      "jp:Q1195907:Q849342",
+      "jp:Q1195907:Q844454",
+      "jp:Q1195907:Q844387",
+      "jp:Q1195907:Q800995",
+      "jp:Q1195907:Q844431",
+      "jp:Q1195907:Q844395",
+      "jp:Q1195907:Q844363",
+      "jp:Q1195907:Q1129108",
+      "jp:Q1195907:Q910599"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1195907"
+   ]
+  },
+  {
+   "id": "jp-Q1196223",
+   "name": "東京メトロ日比谷線",
+   "name_en": "Hibiya Line",
+   "source_no": "Q1196223",
+   "source_name": "東京メトロ日比谷線",
+   "operator": "東京メトロ",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#A0ACAD",
+   "pools": [
+    "JP:jp-Q1196223"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1196223:H01",
+      "jp:Q1196223:H02",
+      "jp:Q1196223:H03",
+      "jp:Q1196223:H04",
+      "jp:Q1196223:H05",
+      "jp:Q1196223:H06",
+      "jp:Q1196223:H07",
+      "jp:Q1196223:H08",
+      "jp:Q1196223:H09",
+      "jp:Q1196223:H10",
+      "jp:Q1196223:H11",
+      "jp:Q1196223:H12",
+      "jp:Q1196223:H13",
+      "jp:Q1196223:H14",
+      "jp:Q1196223:H15",
+      "jp:Q1196223:H16",
+      "jp:Q1196223:H17",
+      "jp:Q1196223:H18",
+      "jp:Q1196223:H19",
+      "jp:Q1196223:H20",
+      "jp:Q1196223:H21",
+      "jp:Q1196223:H22"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1196223"
+   ]
+  },
+  {
+   "id": "jp-Q1208633",
+   "name": "相模線",
+   "name_en": "Sagami Line",
+   "source_no": "Q1208633",
+   "source_name": "相模線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#339999",
+   "pools": [
+    "JP:jp-Q1208633"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1208633:Q800895",
+      "jp:Q1208633:Q6862886",
+      "jp:Q1208633:Q6358129",
+      "jp:Q1208633:Q4854306",
+      "jp:Q1208633:Q5654301",
+      "jp:Q1208633:Q7496979",
+      "jp:Q1208633:Q7667566",
+      "jp:Q1208633:Q8193653",
+      "jp:Q1208633:Q994477",
+      "jp:Q1208633:Q7462638",
+      "jp:Q1208633:Q6345663",
+      "jp:Q1208633:Q6445569",
+      "jp:Q1208633:Q265686",
+      "jp:Q1208633:Q8192986",
+      "jp:Q1208633:Q6346410",
+      "jp:Q1208633:Q6417522"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q800622",
+     "station_ids": [
+      "jp:Q1208633:Q6346410",
+      "jp:Q1208633:Q800622"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q865932",
+     "station_ids": [
+      "jp:Q1208633:Q8193653",
+      "jp:Q1208633:Q865932"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q1208633:Q6417522",
+      "jp:Q1208633:Q800622"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q1208633:Q6445569",
+      "jp:Q1208633:Q8192986"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-3",
+     "station_ids": [
+      "jp:Q1208633:Q865932",
+      "jp:Q1208633:Q994477"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1208633"
+   ]
+  },
+  {
+   "id": "jp-Q1323112",
+   "name": "京王線",
+   "name_en": "Keiō Line",
+   "source_no": "Q1323112",
+   "source_name": "京王線",
+   "operator": "京王",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#DD0077",
+   "pools": [
+    "JP:jp-Q1323112"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1323112:KO01",
+      "jp:Q1323112:KO04",
+      "jp:Q1323112:KO05",
+      "jp:Q1323112:KO06",
+      "jp:Q1323112:KO07",
+      "jp:Q1323112:KO08",
+      "jp:Q1323112:KO09",
+      "jp:Q1323112:KO10",
+      "jp:Q1323112:KO11",
+      "jp:Q1323112:KO12",
+      "jp:Q1323112:KO13",
+      "jp:Q1323112:KO14",
+      "jp:Q1323112:KO15",
+      "jp:Q1323112:KO16",
+      "jp:Q1323112:KO17",
+      "jp:Q1323112:KO18",
+      "jp:Q1323112:KO19",
+      "jp:Q1323112:KO20",
+      "jp:Q1323112:KO21",
+      "jp:Q1323112:KO22",
+      "jp:Q1323112:KO23",
+      "jp:Q1323112:KO24",
+      "jp:Q1323112:KO25",
+      "jp:Q1323112:KO26",
+      "jp:Q1323112:KO27",
+      "jp:Q1323112:KO28",
+      "jp:Q1323112:KO29",
+      "jp:Q1323112:KO30",
+      "jp:Q1323112:KO31",
+      "jp:Q1323112:KO32",
+      "jp:Q1323112:KO33",
+      "jp:Q1323112:KO34"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1323112"
+   ]
+  },
+  {
+   "id": "jp-Q1323839",
+   "name": "五日市線",
+   "name_en": "Itsukaichi Line",
+   "source_no": "Q1323839",
+   "source_name": "五日市線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#F15A22",
+   "pools": [
+    "JP:jp-Q1323839"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1323839:JC55",
+      "jp:Q1323839:JC81",
+      "jp:Q1323839:JC82",
+      "jp:Q1323839:JC83",
+      "jp:Q1323839:JC84",
+      "jp:Q1323839:JC85",
+      "jp:Q1323839:JC86"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1323839"
+   ]
+  },
+  {
+   "id": "jp-Q1332317",
+   "name": "横須賀線",
+   "name_en": "Yokosuka Line",
+   "source_no": "Q1332317",
+   "source_name": "横須賀線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#000080",
+   "pools": [
+    "JP:jp-Q1332317"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1332317:JO01",
+      "jp:Q1332317:JO02",
+      "jp:Q1332317:JO03",
+      "jp:Q1332317:JO04",
+      "jp:Q1332317:JO05",
+      "jp:Q1332317:JO06",
+      "jp:Q1332317:JO07",
+      "jp:Q1332317:JO08",
+      "jp:Q1332317:JO09"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1332317"
+   ]
+  },
+  {
+   "id": "jp-Q1332908",
+   "name": "東京メトロ副都心線",
+   "name_en": "Fukutoshin Line",
+   "source_no": "Q1332908",
+   "source_name": "東京メトロ副都心線",
+   "operator": "東京メトロ",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#9C5D31",
+   "pools": [
+    "JP:jp-Q1332908"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1332908:F01",
+      "jp:Q1332908:F02",
+      "jp:Q1332908:F03",
+      "jp:Q1332908:F04",
+      "jp:Q1332908:F05",
+      "jp:Q1332908:F06",
+      "jp:Q1332908:F07",
+      "jp:Q1332908:F08",
+      "jp:Q1332908:F09",
+      "jp:Q1332908:F10",
+      "jp:Q1332908:F11",
+      "jp:Q1332908:F12",
+      "jp:Q1332908:F13",
+      "jp:Q1332908:F14",
+      "jp:Q1332908:F15",
+      "jp:Q1332908:F16"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1332908"
+   ]
+  },
+  {
+   "id": "jp-Q1346657",
+   "name": "高崎線",
+   "name_en": "Takasaki Line",
+   "source_no": "Q1346657",
+   "source_name": "高崎線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF8C00",
+   "pools": [
+    "JP:jp-Q1346657"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1346657:Q845133",
+      "jp:Q1346657:Q844906",
+      "jp:Q1346657:Q845054",
+      "jp:Q1346657:Q844895",
+      "jp:Q1346657:Q845092",
+      "jp:Q1346657:Q735594",
+      "jp:Q1346657:Q845096",
+      "jp:Q1346657:Q801054",
+      "jp:Q1346657:Q845066",
+      "jp:Q1346657:Q844901",
+      "jp:Q1346657:Q845123",
+      "jp:Q1346657:Q800360",
+      "jp:Q1346657:Q845070",
+      "jp:Q1346657:Q124413523"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q845058",
+     "station_ids": [
+      "jp:Q1346657:Q735594",
+      "jp:Q1346657:Q845058"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q845061",
+     "station_ids": [
+      "jp:Q1346657:Q801054",
+      "jp:Q1346657:Q845061"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q1346657:Q845058",
+      "jp:Q1346657:Q845096"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q1346657:Q845061",
+      "jp:Q1346657:Q845096"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1346657"
+   ]
+  },
+  {
+   "id": "jp-Q1366263",
+   "name": "南武線",
+   "name_en": "Nambu Line",
+   "source_no": "Q1366263",
+   "source_name": "南武線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FFD400",
+   "pools": [
+    "JP:jp-Q1366263"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1366263:JN26",
+      "jp:Q1366263:JN25",
+      "jp:Q1366263:JN24",
+      "jp:Q1366263:JN23",
+      "jp:Q1366263:JN22",
+      "jp:Q1366263:JN21",
+      "jp:Q1366263:JN20",
+      "jp:Q1366263:JN19",
+      "jp:Q1366263:JN18",
+      "jp:Q1366263:JN17",
+      "jp:Q1366263:JN16",
+      "jp:Q1366263:JN15",
+      "jp:Q1366263:JN14",
+      "jp:Q1366263:JN13",
+      "jp:Q1366263:JN12",
+      "jp:Q1366263:JN11",
+      "jp:Q1366263:JN10",
+      "jp:Q1366263:JN09",
+      "jp:Q1366263:JN08",
+      "jp:Q1366263:JN07",
+      "jp:Q1366263:JN06",
+      "jp:Q1366263:JN05",
+      "jp:Q1366263:JN04",
+      "jp:Q1366263:JN03",
+      "jp:Q1366263:JN02",
+      "jp:Q1366263:JN51",
+      "jp:Q1366263:JN52",
+      "jp:Q1366263:JN53",
+      "jp:Q1366263:JN54"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-JN01",
+     "station_ids": [
+      "jp:Q1366263:JN02",
+      "jp:Q1366263:JN01"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q128164",
+     "station_ids": [
+      "jp:Q1366263:JN02",
+      "jp:Q1366263:Q128164"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1366263"
+   ]
+  },
+  {
+   "id": "jp-Q1369102",
+   "name": "横浜線",
+   "name_en": "Yokohama Line",
+   "source_no": "Q1369102",
+   "source_name": "横浜線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#7FC342",
+   "pools": [
+    "JP:jp-Q1369102"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1369102:JH13",
+      "jp:Q1369102:JH14",
+      "jp:Q1369102:JH15",
+      "jp:Q1369102:JH16",
+      "jp:Q1369102:JH17",
+      "jp:Q1369102:JH18",
+      "jp:Q1369102:JH19",
+      "jp:Q1369102:JH20",
+      "jp:Q1369102:JH21",
+      "jp:Q1369102:JH22",
+      "jp:Q1369102:JH23",
+      "jp:Q1369102:JH24",
+      "jp:Q1369102:JH25",
+      "jp:Q1369102:JH26",
+      "jp:Q1369102:JH27",
+      "jp:Q1369102:JH28",
+      "jp:Q1369102:JH29",
+      "jp:Q1369102:JH30",
+      "jp:Q1369102:JH31",
+      "jp:Q1369102:JH32"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q1369102:JH23",
+      "jp:Q1369102:JH25"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q1369102:JH29",
+      "jp:Q1369102:JH31"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1369102"
+   ]
+  },
+  {
+   "id": "jp-Q1369263",
+   "name": "常磐線",
+   "name_en": "Jōban Line",
+   "source_no": "Q1369263",
+   "source_name": "常磐線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#0000FF",
+   "pools": [
+    "JP:jp-Q1369263"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1369263:JL31",
+      "jp:Q1369263:JL30",
+      "jp:Q1369263:JL29",
+      "jp:Q1369263:JL28",
+      "jp:Q1369263:JL27",
+      "jp:Q1369263:JL26",
+      "jp:Q1369263:JL25",
+      "jp:Q1369263:JL24",
+      "jp:Q1369263:JL23",
+      "jp:Q1369263:JL22",
+      "jp:Q1369263:Q801026",
+      "jp:Q1369263:Q80570",
+      "jp:Q1369263:Q865170",
+      "jp:Q1369263:Q11658858"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-JL19",
+     "station_ids": [
+      "jp:Q1369263:JL22",
+      "jp:Q1369263:JL21",
+      "jp:Q1369263:JL20",
+      "jp:Q1369263:JL19"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q124799406",
+     "station_ids": [
+      "jp:Q1369263:Q865170",
+      "jp:Q1369263:Q124799406"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q801503",
+     "station_ids": [
+      "jp:Q1369263:Q865170",
+      "jp:Q1369263:Q801503"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q1369263:JL22",
+      "jp:Q1369263:JL28"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-2",
+     "station_ids": [
+      "jp:Q1369263:JL28",
+      "jp:Q1369263:JL30"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1369263"
+   ]
+  },
+  {
+   "id": "jp-Q1372071",
+   "name": "八高線",
+   "name_en": "Hachikō Line",
+   "source_no": "Q1372071",
+   "source_name": "八高線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#A9A9A9",
+   "pools": [
+    "JP:jp-Q1372071"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1372071:Q845044",
+      "jp:Q1372071:Q845035",
+      "jp:Q1372071:Q845010",
+      "jp:Q1372071:Q844838",
+      "jp:Q1372071:Q910653",
+      "jp:Q1372071:Q845030",
+      "jp:Q1372071:Q845007",
+      "jp:Q1372071:Q844858",
+      "jp:Q1372071:Q845049",
+      "jp:Q1372071:Q845041",
+      "jp:Q1372071:Q844988",
+      "jp:Q1372071:Q910599",
+      "jp:Q1372071:Q842772",
+      "jp:Q1372071:Q844340",
+      "jp:Q1372071:Q844354",
+      "jp:Q1372071:Q844330",
+      "jp:Q1372071:Q1065988",
+      "jp:Q1372071:Q844334",
+      "jp:Q1372071:Q844347",
+      "jp:Q1372071:Q800868"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1372071"
+   ]
+  },
+  {
+   "id": "jp-Q1374502",
+   "name": "都営地下鉄新宿線",
+   "name_en": "Shinjuku Line",
+   "source_no": "Q1374502",
+   "source_name": "都営地下鉄新宿線",
+   "operator": "都営",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#B0BF1E",
+   "pools": [
+    "JP:jp-Q1374502"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1374502:S01",
+      "jp:Q1374502:S02",
+      "jp:Q1374502:S03",
+      "jp:Q1374502:S04",
+      "jp:Q1374502:S05",
+      "jp:Q1374502:Q76805",
+      "jp:Q1374502:S07",
+      "jp:Q1374502:S08",
+      "jp:Q1374502:Q128303",
+      "jp:Q1374502:S10",
+      "jp:Q1374502:Q112723",
+      "jp:Q1374502:S12",
+      "jp:Q1374502:S13",
+      "jp:Q1374502:S14",
+      "jp:Q1374502:S15",
+      "jp:Q1374502:S16",
+      "jp:Q1374502:S17",
+      "jp:Q1374502:S18",
+      "jp:Q1374502:S19",
+      "jp:Q1374502:S20",
+      "jp:Q1374502:S21"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1374502"
+   ]
+  },
+  {
+   "id": "jp-Q1374506",
+   "name": "都営地下鉄三田線",
+   "name_en": "Mita Line",
+   "source_no": "Q1374506",
+   "source_name": "都営地下鉄三田線",
+   "operator": "都営",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#0080C6",
+   "pools": [
+    "JP:jp-Q1374506"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1374506:I01",
+      "jp:Q1374506:I02",
+      "jp:Q1374506:Q112323",
+      "jp:Q1374506:I04",
+      "jp:Q1374506:I05",
+      "jp:Q1374506:I06",
+      "jp:Q1374506:I07",
+      "jp:Q1374506:I08",
+      "jp:Q1374506:I09",
+      "jp:Q1374506:Q76805",
+      "jp:Q1374506:I11",
+      "jp:Q1374506:I12",
+      "jp:Q1374506:I13",
+      "jp:Q1374506:I14",
+      "jp:Q1374506:I15",
+      "jp:Q1374506:I16",
+      "jp:Q1374506:I17",
+      "jp:Q1374506:I18",
+      "jp:Q1374506:I19",
+      "jp:Q1374506:I20",
+      "jp:Q1374506:I21",
+      "jp:Q1374506:I22",
+      "jp:Q1374506:I23",
+      "jp:Q1374506:I24",
+      "jp:Q1374506:I25",
+      "jp:Q1374506:I26",
+      "jp:Q1374506:I27"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1374506"
+   ]
+  },
+  {
+   "id": "jp-Q1376030",
+   "name": "東京メトロ半蔵門線",
+   "name_en": "Hanzōmon Line",
+   "source_no": "Q1376030",
+   "source_name": "東京メトロ半蔵門線",
+   "operator": "東京メトロ",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#8F75D6",
+   "pools": [
+    "JP:jp-Q1376030"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1376030:Z01",
+      "jp:Q1376030:Z02",
+      "jp:Q1376030:Z03",
+      "jp:Q1376030:Z04",
+      "jp:Q1376030:Z05",
+      "jp:Q1376030:Z06",
+      "jp:Q1376030:Q76805",
+      "jp:Q1376030:Z07",
+      "jp:Q1376030:Z09",
+      "jp:Q1376030:Z10",
+      "jp:Q1376030:Q80542",
+      "jp:Q1376030:Z12",
+      "jp:Q1376030:Z13",
+      "jp:Q1376030:Z14"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1376030"
+   ]
+  },
+  {
+   "id": "jp-Q1444700",
+   "name": "西武西武園線",
+   "name_en": "Seibu Seibu-en Line",
+   "source_no": "Q1444700",
+   "source_name": "西武西武園線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#00CC00",
+   "pools": [
+    "JP:jp-Q1444700"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1444700:SK05",
+      "jp:Q1444700:SK06"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1444700"
+   ]
+  },
+  {
+   "id": "jp-Q1965549",
+   "name": "西武狭山線",
+   "name_en": "Seibu Sayama Line",
+   "source_no": "Q1965549",
+   "source_name": "西武狭山線",
+   "operator": "西武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#FF8C00",
+   "pools": [
+    "JP:jp-Q1965549"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q1965549:Q7446591",
+      "jp:Q1965549:Q7496941",
+      "jp:Q1965549:Q7040433"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q1965549"
+   ]
+  },
+  {
+   "id": "jp-Q2028573",
+   "name": "品鶴線",
+   "name_en": "Hinkaku Line",
+   "source_no": "Q2028573",
+   "source_name": "品鶴線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#888888",
+   "pools": [
+    "JP:jp-Q2028573"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q2028573:JO17",
+      "jp:Q2028573:JO16",
+      "jp:Q2028573:JO15",
+      "jp:Q2028573:JO14",
+      "jp:Q2028573:Q128164"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q48755701",
+     "station_ids": [
+      "jp:Q2028573:JO15",
+      "jp:Q2028573:Q48755701"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "branch-Q801695",
+     "station_ids": [
+      "jp:Q2028573:JO16",
+      "jp:Q2028573:Q801695"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q2028573:JO14",
+      "jp:Q2028573:JO16"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q2028573"
+   ]
+  },
+  {
+   "id": "jp-Q2782450",
+   "name": "東武越生線",
+   "name_en": "Tobu Ogose Line",
+   "source_no": "Q2782450",
+   "source_name": "東武越生線",
+   "operator": "東武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#004DA3",
+   "pools": [
+    "JP:jp-Q2782450"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q2782450:TJ26",
+      "jp:Q2782450:TJ41",
+      "jp:Q2782450:TJ42",
+      "jp:Q2782450:TJ43",
+      "jp:Q2782450:TJ44",
+      "jp:Q2782450:TJ45",
+      "jp:Q2782450:TJ46",
+      "jp:Q2782450:TJ47"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q2782450"
+   ]
+  },
+  {
+   "id": "jp-Q2791146",
+   "name": "東武亀戸線",
+   "name_en": "Tōbu Kameido Line",
+   "source_no": "Q2791146",
+   "source_name": "東武亀戸線",
+   "operator": "東武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#1E90FF",
+   "pools": [
+    "JP:jp-Q2791146"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q2791146:TS04",
+      "jp:Q2791146:TS41",
+      "jp:Q2791146:TS42",
+      "jp:Q2791146:TS43",
+      "jp:Q2791146:TS44"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q2791146"
+   ]
+  },
+  {
+   "id": "jp-Q2913662",
+   "name": "東武大師線",
+   "name_en": "Tōbu Daishi Line",
+   "source_no": "Q2913662",
+   "source_name": "東武大師線",
+   "operator": "東武",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#1E90FF",
+   "pools": [
+    "JP:jp-Q2913662"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q2913662:TS13",
+      "jp:Q2913662:TS51"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q2913662"
+   ]
+  },
+  {
+   "id": "jp-Q3553734",
+   "name": "京成松戸線",
+   "name_en": "Keisei Matsudo Line",
+   "source_no": "Q3553734",
+   "source_name": "京成松戸線",
+   "operator": "京成",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#EF58A2",
+   "pools": [
+    "JP:jp-Q3553734"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q3553734:SL01",
+      "jp:Q3553734:SL02",
+      "jp:Q3553734:SL03",
+      "jp:Q3553734:SL04",
+      "jp:Q3553734:SL05",
+      "jp:Q3553734:SL06",
+      "jp:Q3553734:SL07",
+      "jp:Q3553734:SL08",
+      "jp:Q3553734:SL09",
+      "jp:Q3553734:SL10",
+      "jp:Q3553734:SL11",
+      "jp:Q3553734:SL12",
+      "jp:Q3553734:SL13",
+      "jp:Q3553734:SL14",
+      "jp:Q3553734:SL15",
+      "jp:Q3553734:SL16",
+      "jp:Q3553734:SL17",
+      "jp:Q3553734:SL18",
+      "jp:Q3553734:SL19",
+      "jp:Q3553734:SL20",
+      "jp:Q3553734:SL21",
+      "jp:Q3553734:SL22",
+      "jp:Q3553734:SL23",
+      "jp:Q3553734:SL24"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q3553734"
+   ]
+  },
+  {
+   "id": "jp-Q4490874",
+   "name": "京成金町線",
+   "name_en": "Keisei Kanamachi Line",
+   "source_no": "Q4490874",
+   "source_name": "京成金町線",
+   "operator": "京成",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#0000CD",
+   "pools": [
+    "JP:jp-Q4490874"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q4490874:KS10",
+      "jp:Q4490874:KS50",
+      "jp:Q4490874:KS51"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q4490874"
+   ]
+  },
+  {
+   "id": "jp-Q4492924",
+   "name": "京成東成田線",
+   "name_en": "Keisei Higashi-Narita Line",
+   "source_no": "Q4492924",
+   "source_name": "京成東成田線",
+   "operator": "京成",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#0000CD",
+   "pools": [
+    "JP:jp-Q4492924"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q4492924:KS40",
+      "jp:Q4492924:KS44"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q4492924"
+   ]
+  },
+  {
+   "id": "jp-Q5370725",
+   "name": "鹿島線",
+   "name_en": "Kashima Line",
+   "source_no": "Q5370725",
+   "source_name": "鹿島線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#C56E2E",
+   "pools": [
+    "JP:jp-Q5370725"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q5370725:Q6322340",
+      "jp:Q5370725:Q6377809",
+      "jp:Q5370725:Q5359841"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q5370725"
+   ]
+  },
+  {
+   "id": "jp-Q74129112",
+   "name": "相鉄新横浜線",
+   "name_en": "Sōtetsu Shin-Yokohama Line",
+   "source_no": "Q74129112",
+   "source_name": "相鉄新横浜線",
+   "operator": "相鉄",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#041452",
+   "pools": [
+    "JP:jp-Q74129112"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q74129112:SO08",
+      "jp:Q74129112:SO51",
+      "jp:Q74129112:SO52"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q74129112"
+   ]
+  },
+  {
+   "id": "jp-Q114593970",
+   "name": "東急新横浜線",
+   "name_en": "Tōkyū Shin-Yokohama Line",
+   "source_no": "Q114593970",
+   "source_name": "東急新横浜線",
+   "operator": "東急",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#890D84",
+   "pools": [
+    "JP:jp-Q114593970"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q114593970:SH01",
+      "jp:Q114593970:SH02",
+      "jp:Q114593970:SH03"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q114593970"
+   ]
+  },
+  {
+   "id": "jp-Q124644144",
+   "name": "成田線我孫子支線",
+   "name_en": "Abiko branch line",
+   "source_no": "Q124644144",
+   "source_name": "成田線我孫子支線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#888888",
+   "pools": [
+    "JP:jp-Q124644144"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q124644144:Q845243",
+      "jp:Q124644144:Q5363815",
+      "jp:Q124644144:Q864215",
+      "jp:Q124644144:Q5363656",
+      "jp:Q124644144:Q6414520",
+      "jp:Q124644144:Q5366552",
+      "jp:Q124644144:Q4783839",
+      "jp:Q124644144:Q5366305",
+      "jp:Q124644144:Q5753445",
+      "jp:Q124644144:Q1043787"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q124644144"
+   ]
+  },
+  {
+   "id": "jp-Q124644450",
+   "name": "成田線空港支線",
+   "name_en": "Airport branch line of Narita Line",
+   "source_no": "Q124644450",
+   "source_name": "成田線空港支線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#888888",
+   "pools": [
+    "JP:jp-Q124644450"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q124644450:JO35",
+      "jp:Q124644450:JO36",
+      "jp:Q124644450:JO37"
+     ],
+     "circular": false,
+     "directed": false
+    },
+    {
+     "id": "link-1",
+     "station_ids": [
+      "jp:Q124644450:JO35",
+      "jp:Q124644450:JO37"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q124644450"
+   ]
+  },
+  {
+   "id": "jp-Q125502866",
+   "name": "鶴見線海芝浦支線",
+   "name_en": "",
+   "source_no": "Q125502866",
+   "source_name": "鶴見線海芝浦支線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#888888",
+   "pools": [
+    "JP:jp-Q125502866"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q125502866:JI05",
+      "jp:Q125502866:JI51"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q125502866"
+   ]
+  },
+  {
+   "id": "jp-Q125502892",
+   "name": "鶴見線大川支線",
+   "name_en": "",
+   "source_no": "Q125502892",
+   "source_name": "鶴見線大川支線",
+   "operator": "JR東日本",
+   "city": "도쿄권",
+   "country": "JP",
+   "color": "#888888",
+   "pools": [
+    "JP:jp-Q125502892"
+   ],
+   "sequences": [
+    {
+     "id": "main",
+     "station_ids": [
+      "jp:Q125502892:JI06",
+      "jp:Q125502892:JI61",
+      "jp:Q125502892:JI07"
+     ],
+     "circular": false,
+     "directed": false
+    }
+   ],
+   "patched": false,
+   "wikidata": [
+    "Q125502892"
+   ]
+  }
+ ]
+}

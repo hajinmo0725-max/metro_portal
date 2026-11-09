@@ -32,6 +32,9 @@ python3 pipeline/14_fetch_tw_wikidata.py > /dev/null
 python3 pipeline/15_build_tw.py > /dev/null
 python3 pipeline/17_compare_world_rulesets.py > /dev/null   # 약 1.5분 (한국 내 전쌍 최단 비용 × ruleset 5개)
 python3 pipeline/19_t2_audit.py > /dev/null                 # 4차 Q6-7: T2 포탈 이체자 근거·다대일 의존 감사표
+# 5차 T1: 도쿄권 (Wikidata 캐시가 없으면 받아 온다, 약 1분)
+python3 pipeline/22_fetch_jp_wikidata.py > /dev/null
+python3 pipeline/23_build_jp.py > /dev/null
 # 웹 통합 번들 (web/world.js RULESETS와 같은 목록)
 for r in tw_t1 tw_t12 tw_t123 tw_t12_official tw_t123b; do python3 pipeline/06_build_web_data.py --ruleset "$r" --countries KR,TW > /dev/null; done
 # 5차 R3: 도식 노선도는 커밋된 풀이 캐시(data/processed/schematic/<권역>.json)로만 웹 번들·SVG를 만든다 (결정적).

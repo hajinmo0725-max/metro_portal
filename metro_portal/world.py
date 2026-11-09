@@ -7,7 +7,7 @@ from . import ROOT
 from .graph import build_clusters, build_graph, build_portals
 
 PROC = ROOT / "data" / "processed" / "kr"
-COUNTRY_DIRS = {"KR": ROOT / "data" / "processed" / "kr", "TW": ROOT / "data" / "processed" / "tw"}
+COUNTRY_DIRS = {"KR": ROOT / "data" / "processed" / "kr", "TW": ROOT / "data" / "processed" / "tw", "JP": ROOT / "data" / "processed" / "jp"}
 
 
 def load_base():
