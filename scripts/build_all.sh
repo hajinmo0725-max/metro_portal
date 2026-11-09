@@ -35,8 +35,11 @@ python3 pipeline/19_t2_audit.py > /dev/null                 # 4차 Q6-7: T2 포�
 # 5차 T1: 도쿄권 (Wikidata 캐시가 없으면 받아 온다, 약 1분)
 python3 pipeline/22_fetch_jp_wikidata.py > /dev/null
 python3 pipeline/23_build_jp.py > /dev/null
+# 5차 T2: 한국+타이베이+도쿄 ruleset 비교 (ktj_*, 약 2.5분)
+python3 pipeline/17_compare_world_rulesets.py --config config/world_compare_ktj.yaml > /dev/null
 # 웹 통합 번들 (web/world.js RULESETS와 같은 목록)
 for r in tw_t1 tw_t12 tw_t123 tw_t12_official tw_t123b; do python3 pipeline/06_build_web_data.py --ruleset "$r" --countries KR,TW > /dev/null; done
+for r in ktj_t1 ktj_t12 ktj_t123; do python3 pipeline/06_build_web_data.py --ruleset "$r" --countries KR,TW,JP > /dev/null; done   # 5차 T3
 # 5차 R3: 도식 노선도는 커밋된 풀이 캐시(data/processed/schematic/<권역>.json)로만 웹 번들·SVG를 만든다 (결정적).
 # 풀이(재계산)는 따로: python3 pipeline/20_solve_schematic.py [--regions ...]  — 수도권은 시간 제한 해라 재현되지 않는다.
 # 그래프가 바뀌어 캐시 지문이 안 맞으면 21이 실패하고 어느 권역을 다시 풀어야 하는지 알려 준다

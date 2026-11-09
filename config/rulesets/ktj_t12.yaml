@@ -1,0 +1,19 @@
+# 5차 T2: Phase 1b 한국 + 타이베이 + 도쿄. 기존 ruleset `tw_t12`의 규칙을 그대로 두고 일본어(ja) 이름만 더한다.
+# - T1은 '같은 언어·같은 문자 정확 일치' 정의대로 언어마다 따로 맞춘다 (separate_langs: zh '板橋'와 ja '板橋'는 T1이 아니라 T2)
+# - 일본 역 이름: ja Wikidata 라벨 = native_label(준공식, 4차 Q6-1), P1448 = official, en 라벨 = foreign_label (T3a에서만)
+# - 일본 쪽은 공식 환승 정보가 없어 환승은 거리 D(500m) 규칙. '市ヶ谷/市ケ谷' 표기 차는 정규화에서 접는다
+extends: tw_t12
+name: ktj_t12
+description: "한국+타이베이+도쿄, T1 + T2 (공식명 + 현지어 라벨)"
+normalize:
+  char_map: {"ヶ": "ケ"}
+portals:
+  T1:
+    langs: ["ko", "zh", "ja"]
+    scripts: ["Hang", "Hant", "Jpan"]
+    separate_langs: true
+  T2:
+    langs: ["ko", "zh", "ja"]
+    scripts: ["Hani", "Hant", "Jpan"]
+    # 일본어 이름(Jpan)은 한자만으로 된 경우에만 T2 (가나가 섞이면 이체자 비교 대상이 아니다)
+    script_check_as: {Jpan: Hani}
