@@ -1,26 +1,24 @@
 // 데일리 퍼즐 화면. 로직은 puzzle.js (node 테스트 대상), 여기는 지도·DOM만.
-import { buildMoves, dailyPick, giveUp, kstDateString, legalMoves, medal, newGame, optimalPath, play, score, shareText,
+import { buildMoves, bundleFile, dailyPick, giveUp, kstDateString, legalMoves, medal, newGame, optimalPath, play, score, shareText,
   undo, validDateString } from "./puzzle.js";
 
-const RULESET = "strict";
 const $ = (id) => document.getElementById(id);
 const WARP_COLOR = getComputedStyle(document.documentElement).getPropertyValue("--warp").trim() || "#8b3dff";
 const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
 
-const [data, pz] = await Promise.all([
-  fetch(`data/kr_${RULESET}.json`).then((r) => r.json()),
-  fetch("data/puzzles.json").then((r) => r.json()),
-]);
-const moves = buildMoves(data);
-const labels = data.clusters.map((c) => `${c.city} ${c.n}`);
-const cLL = (c) => [data.clusters[c].la, data.clusters[c].lo];
-
 // 날짜: #d=YYYY-MM-DD 로 다른 날 퍼즐도 풀 수 있다.
 // 4차 Q1: 같은 탭에서 해시만 바꿔도 반영되게 hashchange에서 다시 읽는다 (상태가 날짜별이라 새로 고침이 가장 단순하고 안전)
 window.addEventListener("hashchange", () => location.reload());
+const pz = await fetch("data/puzzles.json").then((r) => r.json());
 const hashDate = new URLSearchParams(location.hash.slice(1)).get("d");
 const picked = dailyPick(pz, validDateString(hashDate) ? hashDate : kstDateString());
 const { number, puzzle, beforeEpoch } = picked;
+// 5차 R1: 퍼즐마다 ruleset이 고정돼 있다 (주말 일부는 한국+타이베이 T1+T2). 그 퍼즐의 ruleset 번들을 읽는다
+const RULESET = puzzle.ruleset || pz.ruleset || "strict";
+const data = await fetch(`data/${bundleFile(RULESET)}`).then((r) => r.json());
+const moves = buildMoves(data);
+const labels = data.clusters.map((c) => `${c.city} ${c.n}`);
+const cLL = (c) => [data.clusters[c].la, data.clusters[c].lo];
 const dateStr = picked.date;   // 출시일 이전 날짜는 1회차 날짜로 맞춘다 (#0·음수 회차 방지)
 const game = newGame(data, moves, puzzle);
 const DIFF_KO = { easy: "쉬움", normal: "보통", hard: "어려움" };
@@ -34,6 +32,7 @@ $("pz-chips").innerHTML = [
   `<span class="chip">${esc(dateStr)}</span>`,
   beforeEpoch ? `<span class="chip warn">출시일(${esc(pz.daily_epoch)}) 이전 날짜라 1회차를 보여 줌</span>` : "",
   `<span class="chip">난이도 <b>${DIFF_KO[puzzle.difficulty] || puzzle.difficulty}</b></span>`,
+  RULESET !== "strict" ? `<span class="chip warp">${esc(data.meta.description.split(",")[0] || "국가 간")} · 해외 워프 있음</span>` : "",
   puzzle.cost_no_warp !== null ? `<span class="chip">워프 없으면 <b>${puzzle.cost_no_warp}</b>수</span>` : `<span class="chip warp">워프 필수</span>`,
   `<span class="chip">최적은 비밀</span>`,
 ].join("");
@@ -130,7 +129,7 @@ function showResult() {
   }
   const s = score(game);
   $("pz-optimal").innerHTML = `<p class="${s === 100 ? "pz-done" : ""}">${s === 100 ? "최적해 찾음! " : ""}${medal(s)} ${s}점</p>
-    <p class="field-label" style="margin:8px 0 2px">최적 경로 (${opt.cost}수, 유일해)</p>
+    <p class="field-label" style="margin:8px 0 2px">${(puzzle.optimal_paths || 1) > 1 ? `최적 경로 중 하나 (${opt.cost}수, 최적 경로 ${puzzle.optimal_paths}개 — 채점은 수만 비교)` : `최적 경로 (${opt.cost}수, 유일해)`}</p>
     <p style="margin:0;font-size:13px">${esc(labels[game.from])} → ${optSteps.join(" → ")}</p>`;
   // 최적 경로를 지도에 얇게 겹쳐 그림
   for (let i = 1; i < opt.path.length; i++) {
@@ -188,4 +187,4 @@ map.fitBounds(L.latLngBounds([cLL(game.from), cLL(game.to)]).pad(0.3), { maxZoom
 draw();
 if (game.done) fitAll();
 // 테스트·디버그용 (e2e 스크립트가 읽는다)
-window.__daily = { game, number, dateStr, beforeEpoch, map, labels, data };
+window.__daily = { game, number, dateStr, beforeEpoch, map, labels, data, ruleset: RULESET };

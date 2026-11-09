@@ -59,8 +59,25 @@ class Planner:
         self.locked = list(locked or [])
         wd = cfg["weekday"]
         self.allowed = [set(wd[WEEKDAYS[(epoch + timedelta(days=t)).weekday()]]["levels"]) for t in range(self.L)]
+        # 5차 R1: 퍼즐 ruleset과 요일. 요일별 허용 ruleset(weekday.<요일>.rulesets, 없으면 전부)과
+        # ruleset별 허용 요일(ruleset_weekdays.<ruleset>, 없으면 전부)을 (iv) 요일 제약에 함께 넣는다
+        self.rs = {p["id"]: p.get("ruleset") for p in puzzles}
+        rw = cfg.get("ruleset_weekdays") or {}
+        self.day_rs = []
+        for t in range(self.L):
+            name = WEEKDAYS[(epoch + timedelta(days=t)).weekday()]
+            allow = wd[name].get("rulesets")
+            self.day_rs.append((set(allow) if allow else None, {r for r, days in rw.items() if name not in days}))
         self.target = [float(wd[WEEKDAYS[(epoch + timedelta(days=t)).weekday()]]["target_h"]) for t in range(self.L)]
         self.w = cfg["weights"]
+
+    def day_ok(self, t: int, pid: str) -> bool:
+        """(iv) 요일 제약: 보정 난이도 + ruleset."""
+        if self.level[pid] not in self.allowed[t]:
+            return False
+        allow, deny = self.day_rs[t]
+        r = self.rs.get(pid)
+        return (allow is None or r in allow) and r not in deny
 
     # ---------- 제약 ----------
     def cdist(self, a: int, b: int) -> int:
@@ -101,7 +118,7 @@ class Planner:
                     run += ind[s0 + W - 1] - ind[s0 - 1]
                 if run + 1 > cap:
                     v3 += 1
-        v4 = 0 if self.level[pid] in self.allowed[t] else 1
+        v4 = 0 if self.day_ok(t, pid) else 1
         return v1, v2, v3, v4
 
     def violations(self, order: list) -> dict:
@@ -129,7 +146,7 @@ class Planner:
                 if c > cap:
                     out["window"].append((s, x, c))
         for t, pid in enumerate(order):
-            if self.level[pid] not in self.allowed[t]:
+            if not self.day_ok(t, pid):
                 out["weekday"].append((t, self.level[pid]))
         return out
 
@@ -175,11 +192,30 @@ class Planner:
         s = sum(self.soft(order, t, pid) for t, pid in enumerate(order))
         return n, round(s, 6)
 
-    def local_search(self, order: list, max_rounds: int = 12) -> list:
-        """위반이 있는 날을 교체(미사용 후보) 또는 교환(다른 날)해서 (위반 수, 소프트) 사전식 감소. 잠긴 날은 건드리지 않는다."""
+    def local_search(self, order: list, max_rounds: int = 12, max_evals: int | None = None) -> list:
+        """위반이 있는 날을 교체(미사용 후보) 또는 교환(다른 날)해서 (위반 수, 소프트) 사전식 감소. 잠긴 날은 건드리지 않는다.
+        max_evals: 전체 평가(total) 횟수 상한 (5차: 풀이 부족해 위반이 많이 남는 설정에서 끝없이 도는 것 방지. 시간이 아니라 횟수라 결정적)."""
         order = list(order)
         fixed = len(self.locked)
-        best = self.total(order)
+        max_evals = max_evals if max_evals is not None else int(self.cfg.get("repair_max_evals", 20000))
+        evals = [0]
+        _total = self.total
+
+        def total(o):
+            evals[0] += 1
+            if evals[0] > max_evals:
+                raise StopIteration
+            return _total(o)
+        best = _total(order)
+        try:
+            return self._local_search(order, fixed, best, total, max_rounds)
+        except StopIteration:
+            self.last_search_capped = True
+            return self._ls_best
+
+    def _local_search(self, order, fixed, best, total, max_rounds):
+        self.last_search_capped = False
+        self._ls_best = list(order)
         for _ in range(max_rounds):
             improved = False
             v = self.violations(order)
@@ -202,9 +238,10 @@ class Planner:
                 cands = cands[: self.cfg.get("repair_candidates", 25)]
                 for pid in cands:
                     trial[t] = pid
-                    tot = self.total(trial)
+                    tot = total(trial)
                     if tot < best:
                         best, order = tot, trial[:]
+                        self._ls_best = list(order)
                         unused.remove(pid)
                         unused.append(cur)
                         unused.sort()
@@ -214,13 +251,14 @@ class Planner:
                     trial[t] = cur
                     # 교환: 같은 요일 허용 등급을 만족하는 다른 날과
                     for u in range(fixed, self.L):
-                        if u == t or self.level[order[u]] not in self.allowed[t] or self.level[cur] not in self.allowed[u]:
+                        if u == t or not self.day_ok(t, order[u]) or not self.day_ok(u, cur):
                             continue
                         sw = order[:]
                         sw[t], sw[u] = sw[u], sw[t]
-                        tot = self.total(sw)
+                        tot = total(sw)
                         if tot < best:
                             best, order = tot, sw
+                            self._ls_best = list(order)
                             improved = True
                             break
             if not improved:

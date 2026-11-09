@@ -25,20 +25,41 @@ puzzles:
     normal_min_score: 0.4    # 직관 탐색 비용이 최적의 2.5배 이내
   # 4차 Q2: 데일리 순서 (metro_portal/daily_order.py). 풀이 시그니처 = 최적 경로의 포탈 순서
   daily_order:
-    # 순환 일정 길이 (7의 배수여야 요일이 순환해도 유지된다). 웹은 (날짜 - daily_epoch) mod days로 고른다
-    days: 182
-    # 일정 후보 풀: 등급마다 흥미도 순으로 이만큼 뽑는다 (기존 per_kind_per_difficulty 대신). 같은 시그니처는 풀에서 등급마다 최대 n개
-    pool_per_kind_per_difficulty: {shortcut: 90, crosscity: 70}
-    pool_max_per_warp_signature: 2
-    pool_max_per_endpoint: 3
+    # 순환 일정 길이 (7의 배수여야 요일이 순환해도 유지된다). 웹은 (날짜 - daily_epoch) mod days로 고른다.
+    # 5차 R1: 182일 주기 반복 대신 1년 일정. 371일 = 53주 → 어느 365일 구간에서도 같은 퍼즐이 다시 나오지 않고 요일 순환도 유지
+    days: 371
+    # 일정 후보 풀 (5차 R1). 등급(규칙 난이도)·종류마다 흥미도 순으로 quotas개, 같은 시그니처 등급마다 max_per_signature개,
+    # 같은 출발/도착 역 max_per_endpoint번. 채점은 최적 수만 비교하므로 최적해 유일성은 필요 없다 → max_optimal_paths
+    # (null = 제한 없음, 4차는 1). min_savings: 같은 권역 퍼즐 최소 단축 폭 (4차는 위 puzzles.min_savings = 3)
+    # 비교(docs/reports/r1_daily_year.md)에서 고른 V5안: 유일성 완화 + 단축 하한 2(효과 없음, 선정이 단축 폭 큰 순이라) +
+    # easy 시그니처 상한 6 (월요일 easy 53개가 필요한데 상한 2로는 41개뿐) + 주말 한국+타이베이 풀을 섞어 편성
+    pool:
+      quotas: {shortcut: 200, crosscity: 150}
+      max_per_signature: {easy: 6, normal: 2, hard: 2}
+      max_per_endpoint: 3
+      max_optimal_paths: null
+      min_savings: 2
+    # 5차 R1: 주말(토·일) 한국+타이베이 ruleset 퍼즐 풀. 국가 간 워프를 쓰는 대표 경로만. ruleset_weekdays로 주말에만 편성
+    weekend_pool:
+      enabled: true
+      ruleset: tw_t12
+      countries: [KR, TW]
+      require_cross_country: true
+      quotas: {shortcut: 60, crosscity: 60}
+      max_per_signature: 2
+      max_per_endpoint: 3
+      max_optimal_paths: null
+      min_savings: 2
+    ruleset_weekdays: {tw_t12: [sat, sun]}
     # (i) 같은 시그니처 최소 간격 (일). 14 = 14일 안에 다시 나오지 않음
     signature_gap_days: 14
-    # (ii) 연속한 두 날의 포탈 집합 자카드 상한. 1/3 = {A,B}·{B,C}는 허용, {A}·{A,B}는 금지
+    # (ii) 연속한 두 날의 포탈 집합 자카드 상한. 1/3 = {A,B}·{B,C}는 허용, {A}·{A,B}는 금지 (5차: 유지)
     max_jaccard: 0.34
-    # (iii) window_days일 창마다 포탈별 최대 등장 횟수
+    # (iii) window_days일 창마다 포탈별 최대 등장 횟수 (5차: 유지)
     window_days: 30
     max_portal_per_window: 4
-    # (iv) 요일별 허용 보정 난이도와 목표 난이도 지수 h (= 1 - 직관 점수). 월요일 쉬움 → 일요일 어려움
+    # (iv) 요일별 허용 보정 난이도와 목표 난이도 지수 h (= 1 - 직관 점수). 월요일 쉬움 → 일요일 어려움.
+    # rulesets: 그 요일에 허용할 ruleset (없으면 전부)
     weekday:
       mon: {levels: [easy], target_h: 0.0}
       tue: {levels: [easy, normal], target_h: 0.3}
@@ -49,10 +70,11 @@ puzzles:
       sun: {levels: [hard], target_h: 0.8}
     # 소프트 비용 가중치: 난이도 목표 차이, 최근(30일 안) 같은 포탈 재사용(거리 역수 합), 흥미도
     weights: {difficulty: 2.0, recency: 1.0, quality: 0.5}
-    # 국소탐색에서 위반 난 날마다 전체 평가할 교체 후보 수
+    # 국소탐색에서 위반 난 날마다 전체 평가할 교체 후보 수, 최대 라운드
     repair_candidates: 60
-    # Q2-5 비교용: 최적해 유일성 완화판 (최적 경로 개수 상한)
-    relaxed_max_optimal_paths: 3
+    max_rounds: 12
+    # 전체 평가 횟수 상한 (5차: 풀이 모자라 위반이 남는 설정에서 국소탐색이 끝없이 도는 것 방지. 횟수라 결정적)
+    repair_max_evals: 4000
 
   # 4차 Q6-8: 출시 후 고정 규칙 (append-only). launch_date 이후에는 epoch부터 (빌드 날짜 + freeze_future_days)까지의
   # 퍼즐을 이전에 배포한 web/data/puzzles.json에서 그대로 가져와 고정하고, 그 뒤만 다시 짠다.

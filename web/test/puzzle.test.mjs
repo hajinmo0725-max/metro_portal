@@ -2,7 +2,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { buildMoves, clusterDistances, dailyPick, daysBetween, giveUp, kstDateString, legalMoves, medal, newGame,
+import { buildMoves, bundleFile, clusterDistances, dailyPick, daysBetween, giveUp, kstDateString, legalMoves, medal, newGame,
   optimalPath, play, rideDirections, score, shareText, undo, validDateString } from "../puzzle.js";
 import { buildAdj, routeClusters } from "../route.js";
 
@@ -12,6 +12,16 @@ const pz = JSON.parse(readFileSync(new URL("data/puzzles.json", root), "utf8"));
 const moves = buildMoves(data);
 const labels = data.clusters.map((c) => `${c.city} ${c.n}`);
 const cix = new Map(data.clusters.map((c, i) => [c.id, i]));
+// 5차 R1: 퍼즐마다 ruleset 번들 (주말 일부는 한국+타이베이 tw_t12)
+const BUNDLES = new Map();
+function bundleOf(ruleset) {
+  if (!BUNDLES.has(ruleset)) {
+    const d = ruleset === "strict" ? data : JSON.parse(readFileSync(new URL(`data/${bundleFile(ruleset)}`, root), "utf8"));
+    BUNDLES.set(ruleset, { data: d, moves: d === data ? moves : buildMoves(d), cix: new Map(d.clusters.map((c, i) => [c.id, i])),
+                           labels: d.clusters.map((c) => `${c.city} ${c.n}`) });
+  }
+  return BUNDLES.get(ruleset);
+}
 
 test("서울 시간 날짜: UTC 15시 이후는 다음 날", () => {
   assert.equal(kstDateString(new Date("2026-11-05T14:59:00Z")), "2026-11-05");
@@ -96,15 +106,40 @@ test("이동 그래프: 승차는 인접역, 워프는 같은 포탈, 환승은 
   for (const [i, ms] of moves.entries()) for (const m of ms) assert.notEqual(m.to, i);
 });
 
-test("클러스터 단위 최단 비용 = 역 수준 길찾기(route.js) 비용 = 퍼즐 cost_warp", () => {
-  const adjW = buildAdj(data, { warp: true }), adjN = buildAdj(data, { warp: false });
+test("클러스터 단위 최단 비용 = 역 수준 길찾기(route.js) 비용 = 퍼즐 cost_warp (퍼즐마다 그 ruleset 번들)", () => {
+  const adj = new Map();
   for (const p of pz.puzzles) {
-    const s = cix.get(p.from), t = cix.get(p.to);
-    const { dist } = clusterDistances(moves, s);
+    const B = bundleOf(p.ruleset);
+    if (!adj.has(p.ruleset)) adj.set(p.ruleset, [buildAdj(B.data, { warp: true }), buildAdj(B.data, { warp: false })]);
+    const [adjW, adjN] = adj.get(p.ruleset);
+    const s = B.cix.get(p.from), t = B.cix.get(p.to);
+    assert.ok(s !== undefined && t !== undefined, p.id);
+    const { dist } = clusterDistances(B.moves, s);
     assert.equal(dist[t], p.cost_warp, p.id);
-    assert.equal(routeClusters(data, adjW, s, t).cost, p.cost_warp, p.id);
-    const rn = routeClusters(data, adjN, s, t);
+    assert.equal(routeClusters(B.data, adjW, s, t).cost, p.cost_warp, p.id);
+    const rn = routeClusters(B.data, adjN, s, t);
     assert.equal(rn ? rn.cost : null, p.cost_no_warp, p.id);
+  }
+});
+
+test("5차 R1: 1년 일정 (371일, 반복 없음), 한국+타이베이 퍼즐은 주말에만, 국가 간 워프를 쓴다", () => {
+  assert.equal(pz.daily_order.length, 371);
+  assert.equal(new Set(pz.daily_order).size, 371);
+  const tw = [];
+  for (let d = 0; d < 371; d++) {
+    const date = new Date(Date.parse(`${pz.daily_epoch}T00:00:00Z`) + d * 86400000);
+    const p = pz.puzzles.find((x) => x.id === pz.daily_order[d]);
+    if (p.ruleset !== "strict") tw.push([date.getUTCDay(), p]);
+  }
+  assert.ok(tw.length > 0);
+  assert.ok(tw.every(([wd]) => wd === 0 || wd === 6), "주말 아님");
+  for (const [, p] of tw) {
+    const B = bundleOf(p.ruleset);
+    const opt = optimalPath(B.moves, B.cix.get(p.from), B.cix.get(p.to));
+    const co = (c) => B.data.clusters[c].co;
+    const cross = opt.path.slice(1).filter((c, i) => B.moves[opt.path[i]].find((m) => m.to === c).type === "warp" && co(c) !== co(opt.path[i]));
+    assert.ok(cross.length > 0, `${p.id} 국가 간 워프 없음`);
+    assert.equal(opt.cost, p.cost_warp, p.id);
   }
 });
 

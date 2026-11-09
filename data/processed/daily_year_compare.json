@@ -1,0 +1,682 @@
+[
+ {
+  "name": "V0 4차 설정 (182일)",
+  "days": 182,
+  "pool": 374,
+  "pool_levels": {
+   "easy": 31,
+   "hard": 156,
+   "normal": 187
+  },
+  "pool_weekend": 0,
+  "violations": {
+   "signature": 0,
+   "jaccard": 0,
+   "window": 0,
+   "weekday": 0
+  },
+  "violation_total": 0,
+  "distinct_signatures": 102,
+  "min_signature_gap": 14,
+  "mean_jaccard": 0.0,
+  "max_jaccard": 0.0,
+  "top_portals": [
+   [
+    "시청",
+    18,
+    9.9
+   ],
+   [
+    "동백",
+    17,
+    9.3
+   ],
+   [
+    "송정",
+    17,
+    9.3
+   ],
+   [
+    "중앙",
+    17,
+    9.3
+   ],
+   [
+    "증산",
+    17,
+    9.3
+   ]
+  ],
+  "portal_max_in_window": [
+   "교대",
+   4
+  ],
+  "weekday_mean_h": {
+   "mon": 0.0,
+   "tue": 0.309,
+   "wed": 0.459,
+   "thu": 0.536,
+   "fri": 0.619,
+   "sat": 0.71,
+   "sun": 0.81
+  },
+  "unique_share": 1.0,
+  "mean_optimal_paths": 1.0,
+  "shortcut_mean_savings": 17.85,
+  "scheduled_weekend_pool": 0,
+  "search_capped": false,
+  "seconds": 3.9
+ },
+ {
+  "name": "V0y 4차 풀로 371일",
+  "days": 371,
+  "pool": 374,
+  "pool_levels": {
+   "easy": 31,
+   "hard": 156,
+   "normal": 187
+  },
+  "pool_weekend": 0,
+  "violations": {
+   "signature": 11,
+   "jaccard": 7,
+   "window": 645,
+   "weekday": 32
+  },
+  "violation_total": 695,
+  "distinct_signatures": 175,
+  "min_signature_gap": 5,
+  "mean_jaccard": 0.044,
+  "max_jaccard": 0.8,
+  "top_portals": [
+   [
+    "시청",
+    81,
+    21.8
+   ],
+   [
+    "송정",
+    73,
+    19.7
+   ],
+   [
+    "화정",
+    66,
+    17.8
+   ],
+   [
+    "좌천",
+    52,
+    14.0
+   ],
+   [
+    "중앙",
+    47,
+    12.7
+   ]
+  ],
+  "portal_max_in_window": [
+   "화정",
+   19
+  ],
+  "weekday_mean_h": {
+   "mon": 0.134,
+   "tue": 0.398,
+   "wed": 0.435,
+   "thu": 0.482,
+   "fri": 0.636,
+   "sat": 0.703,
+   "sun": 0.737
+  },
+  "unique_share": 1.0,
+  "mean_optimal_paths": 1.0,
+  "shortcut_mean_savings": 16.02,
+  "scheduled_weekend_pool": 0,
+  "search_capped": true,
+  "seconds": 59.0
+ },
+ {
+  "name": "V1 할당 확대 (200/150)",
+  "days": 371,
+  "pool": 652,
+  "pool_levels": {
+   "easy": 38,
+   "hard": 194,
+   "normal": 420
+  },
+  "pool_weekend": 0,
+  "violations": {
+   "signature": 0,
+   "jaccard": 0,
+   "window": 0,
+   "weekday": 15
+  },
+  "violation_total": 15,
+  "distinct_signatures": 189,
+  "min_signature_gap": 14,
+  "mean_jaccard": 0.002,
+  "max_jaccard": 0.333,
+  "top_portals": [
+   [
+    "시청",
+    39,
+    10.5
+   ],
+   [
+    "증산",
+    38,
+    10.2
+   ],
+   [
+    "용산",
+    37,
+    10.0
+   ],
+   [
+    "동백",
+    36,
+    9.7
+   ],
+   [
+    "송정",
+    36,
+    9.7
+   ]
+  ],
+  "portal_max_in_window": [
+   "고촌",
+   4
+  ],
+  "weekday_mean_h": {
+   "mon": 0.04,
+   "tue": 0.308,
+   "wed": 0.452,
+   "thu": 0.519,
+   "fri": 0.612,
+   "sat": 0.705,
+   "sun": 0.789
+  },
+  "unique_share": 1.0,
+  "mean_optimal_paths": 1.0,
+  "shortcut_mean_savings": 14.25,
+  "scheduled_weekend_pool": 0,
+  "search_capped": true,
+  "seconds": 65.9
+ },
+ {
+  "name": "V2 + 유일성 완화 (최적 경로 수 제한 없음)",
+  "days": 371,
+  "pool": 683,
+  "pool_levels": {
+   "easy": 41,
+   "hard": 204,
+   "normal": 438
+  },
+  "pool_weekend": 0,
+  "violations": {
+   "signature": 0,
+   "jaccard": 0,
+   "window": 0,
+   "weekday": 12
+  },
+  "violation_total": 12,
+  "distinct_signatures": 201,
+  "min_signature_gap": 14,
+  "mean_jaccard": 0.0,
+  "max_jaccard": 0.0,
+  "top_portals": [
+   [
+    "시청",
+    40,
+    10.8
+   ],
+   [
+    "교대",
+    36,
+    9.7
+   ],
+   [
+    "송정",
+    36,
+    9.7
+   ],
+   [
+    "화정",
+    36,
+    9.7
+   ],
+   [
+    "증산",
+    34,
+    9.2
+   ]
+  ],
+  "portal_max_in_window": [
+   "고촌",
+   4
+  ],
+  "weekday_mean_h": {
+   "mon": 0.022,
+   "tue": 0.317,
+   "wed": 0.451,
+   "thu": 0.539,
+   "fri": 0.612,
+   "sat": 0.707,
+   "sun": 0.802
+  },
+  "unique_share": 0.728,
+  "mean_optimal_paths": 1.41,
+  "shortcut_mean_savings": 15.74,
+  "scheduled_weekend_pool": 0,
+  "search_capped": false,
+  "seconds": 34.4
+ },
+ {
+  "name": "V3 + 단축 하한 3 → 2",
+  "days": 371,
+  "pool": 684,
+  "pool_levels": {
+   "easy": 41,
+   "hard": 204,
+   "normal": 439
+  },
+  "pool_weekend": 0,
+  "violations": {
+   "signature": 0,
+   "jaccard": 0,
+   "window": 0,
+   "weekday": 12
+  },
+  "violation_total": 12,
+  "distinct_signatures": 201,
+  "min_signature_gap": 14,
+  "mean_jaccard": 0.0,
+  "max_jaccard": 0.0,
+  "top_portals": [
+   [
+    "시청",
+    40,
+    10.8
+   ],
+   [
+    "교대",
+    36,
+    9.7
+   ],
+   [
+    "송정",
+    36,
+    9.7
+   ],
+   [
+    "화정",
+    36,
+    9.7
+   ],
+   [
+    "증산",
+    34,
+    9.2
+   ]
+  ],
+  "portal_max_in_window": [
+   "고촌",
+   4
+  ],
+  "weekday_mean_h": {
+   "mon": 0.022,
+   "tue": 0.317,
+   "wed": 0.451,
+   "thu": 0.539,
+   "fri": 0.612,
+   "sat": 0.707,
+   "sun": 0.802
+  },
+  "unique_share": 0.728,
+  "mean_optimal_paths": 1.41,
+  "shortcut_mean_savings": 15.74,
+  "scheduled_weekend_pool": 0,
+  "search_capped": false,
+  "seconds": 34.9
+ },
+ {
+  "name": "V4 + easy 시그니처 상한 2 → 6",
+  "days": 371,
+  "pool": 792,
+  "pool_levels": {
+   "easy": 90,
+   "hard": 251,
+   "normal": 451
+  },
+  "pool_weekend": 0,
+  "violations": {
+   "signature": 0,
+   "jaccard": 0,
+   "window": 0,
+   "weekday": 0
+  },
+  "violation_total": 0,
+  "distinct_signatures": 179,
+  "min_signature_gap": 14,
+  "mean_jaccard": 0.0,
+  "max_jaccard": 0.0,
+  "top_portals": [
+   [
+    "시청",
+    35,
+    9.4
+   ],
+   [
+    "송정",
+    32,
+    8.6
+   ],
+   [
+    "증산",
+    31,
+    8.4
+   ],
+   [
+    "동백",
+    30,
+    8.1
+   ],
+   [
+    "중앙",
+    30,
+    8.1
+   ]
+  ],
+  "portal_max_in_window": [
+   "교대",
+   4
+  ],
+  "weekday_mean_h": {
+   "mon": 0.0,
+   "tue": 0.304,
+   "wed": 0.456,
+   "thu": 0.543,
+   "fri": 0.616,
+   "sat": 0.716,
+   "sun": 0.815
+  },
+  "unique_share": 0.763,
+  "mean_optimal_paths": 1.38,
+  "shortcut_mean_savings": 17.19,
+  "scheduled_weekend_pool": 0,
+  "search_capped": false,
+  "seconds": 10.6
+ },
+ {
+  "name": "V5 + 주말 한국+타이베이 풀 (주말에 섞어 편성)",
+  "days": 371,
+  "pool": 984,
+  "pool_levels": {
+   "easy": 102,
+   "hard": 300,
+   "normal": 582
+  },
+  "pool_weekend": 192,
+  "violations": {
+   "signature": 0,
+   "jaccard": 0,
+   "window": 0,
+   "weekday": 0
+  },
+  "violation_total": 0,
+  "distinct_signatures": 198,
+  "min_signature_gap": 14,
+  "mean_jaccard": 0.0,
+  "max_jaccard": 0.0,
+  "top_portals": [
+   [
+    "시청",
+    33,
+    8.9
+   ],
+   [
+    "송정",
+    30,
+    8.1
+   ],
+   [
+    "화정",
+    30,
+    8.1
+   ],
+   [
+    "교대",
+    29,
+    7.8
+   ],
+   [
+    "중앙",
+    29,
+    7.8
+   ]
+  ],
+  "portal_max_in_window": [
+   "송정",
+   4
+  ],
+  "weekday_mean_h": {
+   "mon": 0.0,
+   "tue": 0.304,
+   "wed": 0.454,
+   "thu": 0.543,
+   "fri": 0.618,
+   "sat": 0.7,
+   "sun": 0.81
+  },
+  "unique_share": 0.744,
+  "mean_optimal_paths": 1.41,
+  "shortcut_mean_savings": 17.25,
+  "scheduled_weekend_pool": 34,
+  "search_capped": false,
+  "seconds": 20.5
+ },
+ {
+  "name": "V6 = V5, 주말은 한국+타이베이만",
+  "days": 371,
+  "pool": 984,
+  "pool_levels": {
+   "easy": 102,
+   "hard": 300,
+   "normal": 582
+  },
+  "pool_weekend": 192,
+  "violations": {
+   "signature": 0,
+   "jaccard": 0,
+   "window": 0,
+   "weekday": 57
+  },
+  "violation_total": 57,
+  "distinct_signatures": 195,
+  "min_signature_gap": 14,
+  "mean_jaccard": 0.0,
+  "max_jaccard": 0.0,
+  "top_portals": [
+   [
+    "시청",
+    36,
+    9.7
+   ],
+   [
+    "교대",
+    30,
+    8.1
+   ],
+   [
+    "화정",
+    29,
+    7.8
+   ],
+   [
+    "중앙",
+    28,
+    7.5
+   ],
+   [
+    "증산",
+    28,
+    7.5
+   ]
+  ],
+  "portal_max_in_window": [
+   "中咊",
+   4
+  ],
+  "weekday_mean_h": {
+   "mon": 0.0,
+   "tue": 0.309,
+   "wed": 0.459,
+   "thu": 0.543,
+   "fri": 0.622,
+   "sat": 0.672,
+   "sun": 0.777
+  },
+  "unique_share": 0.765,
+  "mean_optimal_paths": 1.41,
+  "shortcut_mean_savings": 16.78,
+  "scheduled_weekend_pool": 60,
+  "search_capped": true,
+  "seconds": 79.9
+ },
+ {
+  "name": "V8 = V6 + 주말 풀 확대 (할당 150/150, 시그니처 상한 6)",
+  "days": 371,
+  "pool": 1260,
+  "pool_levels": {
+   "easy": 136,
+   "hard": 382,
+   "normal": 742
+  },
+  "pool_weekend": 468,
+  "violations": {
+   "signature": 0,
+   "jaccard": 0,
+   "window": 0,
+   "weekday": 4
+  },
+  "violation_total": 4,
+  "distinct_signatures": 188,
+  "min_signature_gap": 14,
+  "mean_jaccard": 0.0,
+  "max_jaccard": 0.0,
+  "top_portals": [
+   [
+    "板桥",
+    35,
+    9.4
+   ],
+   [
+    "시청",
+    34,
+    9.2
+   ],
+   [
+    "교대",
+    31,
+    8.4
+   ],
+   [
+    "중앙",
+    28,
+    7.5
+   ],
+   [
+    "화정",
+    28,
+    7.5
+   ]
+  ],
+  "portal_max_in_window": [
+   "中咊",
+   4
+  ],
+  "weekday_mean_h": {
+   "mon": 0.0,
+   "tue": 0.304,
+   "wed": 0.453,
+   "thu": 0.538,
+   "fri": 0.628,
+   "sat": 0.678,
+   "sun": 0.789
+  },
+  "unique_share": 0.725,
+  "mean_optimal_paths": 1.5,
+  "shortcut_mean_savings": 16.77,
+  "scheduled_weekend_pool": 102,
+  "search_capped": false,
+  "seconds": 24.9
+ },
+ {
+  "name": "V7 = V5에서 유일성 유지 (유일성 완화 효과 분리)",
+  "days": 371,
+  "pool": 937,
+  "pool_levels": {
+   "easy": 101,
+   "hard": 274,
+   "normal": 562
+  },
+  "pool_weekend": 168,
+  "violations": {
+   "signature": 0,
+   "jaccard": 0,
+   "window": 0,
+   "weekday": 0
+  },
+  "violation_total": 0,
+  "distinct_signatures": 182,
+  "min_signature_gap": 14,
+  "mean_jaccard": 0.0,
+  "max_jaccard": 0.0,
+  "top_portals": [
+   [
+    "시청",
+    33,
+    8.9
+   ],
+   [
+    "증산",
+    31,
+    8.4
+   ],
+   [
+    "송정",
+    30,
+    8.1
+   ],
+   [
+    "용산",
+    29,
+    7.8
+   ],
+   [
+    "중앙",
+    29,
+    7.8
+   ]
+  ],
+  "portal_max_in_window": [
+   "교대",
+   4
+  ],
+  "weekday_mean_h": {
+   "mon": 0.0,
+   "tue": 0.292,
+   "wed": 0.453,
+   "thu": 0.542,
+   "fri": 0.616,
+   "sat": 0.703,
+   "sun": 0.809
+  },
+  "unique_share": 1.0,
+  "mean_optimal_paths": 1.0,
+  "shortcut_mean_savings": 17.09,
+  "scheduled_weekend_pool": 25,
+  "search_capped": false,
+  "seconds": 18.1
+ }
+]

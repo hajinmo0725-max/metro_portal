@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""4차 Q2: 데일리 순서 전후 비교와 제약 민감도 → docs/reports/q2_daily_order.md, data/processed/daily_order_compare.json
+"""(5차 R1부터는 scripts/r1_compare.py가 1년 일정 비교를 맡는다. 이 스크립트는 4차 데이터(git rev) 비교용.)
+4차 Q2: 데일리 순서 전후 비교와 제약 민감도 → docs/reports/q2_daily_order.md, data/processed/daily_order_compare.json
 
 버전: 2차(QA가 플레이한 배포본, git 72e7e38) / 3차(main) / 4차 구방식(같은 그래프에 3차 선정 + 시드 셔플) / 4차 신방식 / 4차 유일성 완화판.
 같은 제약 정의(config/game.yaml daily_order)로 위반을 센다. 2차는 보정 난이도가 없어 규칙 난이도로 요일 제약을 잰다.
@@ -66,8 +67,9 @@ def main() -> int:
     n, sh = pool_share(sched)
     rows.append({"version": "4차 신방식 (제약 일정)", "pool": cur["stats"]["pool_size"], **cur["stats"]["daily_order"],
                  "pool_share": ranked(sh, 6), "calibrated": True})
-    rel = cur["compare"]["relaxed_unique"]
-    rows.append({"version": f"4차 유일성 완화판 (최적 경로 ≤ {oc['relaxed_max_optimal_paths']})", **rel, "pool_share": None, "calibrated": True})
+    rel = cur["compare"].get("relaxed_unique")   # 5차 R1부터 없음 (유일성 완화가 기본이 됐다, scripts/r1_compare.py)
+    if rel:
+        rows.append({"version": f"4차 유일성 완화판 (최적 경로 ≤ {oc.get('relaxed_max_optimal_paths')})", **rel, "pool_share": None, "calibrated": True})
     firsts["4차 신방식"] = first_days(by, cur["daily_order"], epoch, 14)
 
     # 민감도: 같은 4차 풀로 상한만 바꿔 다시 짠다
