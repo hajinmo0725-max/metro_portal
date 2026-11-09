@@ -64,6 +64,8 @@ def checkpointer(ckdir: Path, g, cg, log):
         pos = S.expand(g, cg, pos_kept)
         st = S.layout_stats(g, pos)
         doc = {"iteration": it, "status": status, "objective": obj, "stats": st, "saved_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+               # 5차: 남긴 정점 좌표는 원래 정밀도로 (반올림하면 8방향 검사 허용오차 1e-6을 넘는다)
+               "pos_kept": {k: [v[0], v[1]] for k, v in sorted(pos_kept.items())},
                "added": [[list(a), list(b)] for a, b in (added or [])],
                "dirs": [[list(e), i] for e, i in sorted((dirs or {}).items())],
                "pos": {k: [round(v[0], 4), round(v[1], 4)] for k, v in sorted(pos.items())}}
@@ -105,6 +107,18 @@ def best_iteration(ckdir: Path, g):
     return cands[0][2]
 
 
+def polish(g, cg, rcfg, ck, log):
+    """체크포인트 반복의 엣지 방향과 교차 제약을 고정하고 좌표만 다시 푼다 (정확한 8방향 좌표 복원).
+    방향이 다 정해져 있어 남는 정수변수는 순환 순서 β·교차 분리 γ뿐이라 빨리 끝난다."""
+    allowed = {tuple(e): [i] for e, i in ck["dirs"]}
+    added = [(tuple(a), tuple(b)) for a, b in ck["added"]]
+    cfg = {**rcfg, "allowed": allowed, "max_iterations": 1, "warm_start": None, "time_limit_s": max(300, rcfg.get("time_limit_s", 60))}
+    r = S.solve_octilinear(g, cg, cfg, log=log, init_added=added)
+    if r["pos"]:
+        r["status"] = f"반복 {ck['iteration']} 방향 고정 다듬기 ({r['status']}; 원래 {ck['status']})"
+    return r
+
+
 def run_region(w, reg, rcfg, log, ckdir: Path | None = None, resume=False):
     g = S.region_graph(w, reg["city"])
     cg = S.contract(g, keep_every=reg.get("keep_every", 2))
@@ -122,10 +136,13 @@ def run_region(w, reg, rcfg, log, ckdir: Path | None = None, resume=False):
         b = best_iteration(ckdir, g)
         last = S.layout_stats(g, S.expand(g, cg, r["pos"]))
         if b and (b["stats"]["crossings"], b["stats"]["bend_units_45deg"]) < (last["crossings"], last["bend_units_45deg"]):
-            log(f"[20] 마지막 반복보다 체크포인트 반복 {b['iteration']}이 낫다 (교차 {b['stats']['crossings']}, 굴곡 {b['stats']['bend_units_45deg']}) → 그 해를 쓴다")
-            r["pos"] = {k: tuple(b["pos"][k]) for k in cg["nodes"]}
-            r["status"] = f"반복 {b['iteration']} 해 사용 (체크포인트 중 교차·굴곡 최소; {b['status']})"
-            r["objective"] = b["objective"]
+            log(f"[20] 마지막 반복보다 체크포인트 반복 {b['iteration']}이 낫다 (교차 {b['stats']['crossings']}, 굴곡 {b['stats']['bend_units_45deg']}) → 그 방향으로 다듬는다")
+            rp = polish(g, cg, rcfg, b, log)
+            if rp["pos"]:
+                rp["iteration_status"] = r.get("iteration_status", []) + rp.get("iteration_status", [])
+                rp["time_limited"] = r.get("time_limited") or rp.get("time_limited")
+                rp["iterations"], rp["crossing_constraints"] = r["iterations"], max(r["crossing_constraints"], rp["crossing_constraints"])
+                r = rp
     if r["pos"]:
         pos = S.expand(g, cg, r["pos"])
         r["engine"] = "mip"
@@ -222,6 +239,7 @@ def main() -> int:
     ap.add_argument("--resume", action="store_true", help="체크포인트 마지막 반복의 교차 제약·방향에서 이어 푼다 (--checkpoint 포함)")
     ap.add_argument("--tag", default=None, help="실험 실행 이름: 체크포인트를 schematic_runs/<권역>_<tag>/에 두고 결과도 거기 result.json에만 쓴다 (캐시 안 건드림)")
     ap.add_argument("--promote", default=None, help="<권역>:<tag> — 실험 실행 결과(result.json)를 캐시로 올린다")
+    ap.add_argument("--polish", default=None, help="<권역>:<tag>:<반복> — 그 실험 실행의 반복 체크포인트 방향으로 좌표만 다시 풀어 result.json에 쓴다")
     a = ap.parse_args()
     cfg = yaml.safe_load(open(ROOT / "config" / "schematic.yaml", encoding="utf-8"))
     OUT.mkdir(parents=True, exist_ok=True)
@@ -240,6 +258,32 @@ def main() -> int:
         return 0
     summary = {"engine": "own octilinear MIP (Nöllenburg & Wolff 2011 style, HiGHS via highspy)", "solver": cfg["solver"], "regions": {}}
     runs = ROOT / "data" / "raw" / "schematic_runs"
+    if a.polish:
+        rid, tag, itn = a.polish.split(":")
+        reg = next(r for r in cfg["regions"] if r["id"] == rid)
+        rcfg = region_cfg(cfg, reg)
+        rcfg.update(reg.get("long_run") or {})
+        d = runs / f"{rid}_{tag}"
+        ck = json.loads((d / f"iter_{int(itn):02d}.json").read_text(encoding="utf-8"))
+        w = worlds(cfg)(reg["country"])
+        g = S.region_graph(w, reg["city"])
+        cg = S.contract(g, keep_every=reg.get("keep_every", 2))
+        t = time.time()
+        r = polish(g, cg, rcfg, ck, log)
+        if not r["pos"]:
+            raise SystemExit(f"[20] polish 실패: {r['status']}")
+        r["engine"] = "mip"
+        old = json.loads((d / "result.json").read_text(encoding="utf-8")) if (d / "result.json").exists() else {}
+        r["iteration_status"] = (old.get("reproducibility") or {}).get("iteration_status", []) + r.get("iteration_status", [])
+        r["time_limited"] = True
+        r["iterations"] = old.get("iterations", r["iterations"])
+        pos = S.expand(g, cg, r["pos"])
+        st, st_geo = S.layout_stats(g, pos), S.layout_stats(g, g["pos"])
+        sec = round(time.time() - t + (old.get("seconds") or 0), 1)
+        doc = region_doc(reg, rcfg, g, cg, pos, r, st, st_geo, sec, S.fingerprint(g, cg, rcfg), reproducibility(r, rcfg))
+        (d / "result.json").write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        log(f"[20] polish {rid}:{tag}:{itn} → {st}")
+        return 0
     if a.promote:
         rid, tag = a.promote.split(":")
         doc = json.loads((runs / f"{rid}_{tag}" / "result.json").read_text(encoding="utf-8"))
