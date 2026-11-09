@@ -45,6 +45,19 @@
     "crossings": 18,
     "bend_units_45deg": 343,
     "mean_displacement_norm": 0.0
+   },
+   "fingerprint": "e081d8a0d98b8f6c",
+   "reproducibility": {
+    "deterministic": false,
+    "reason": "이전 세션 풀이 결과를 채택 (재풀이 없이 지문만 찍음)",
+    "iteration_status": [
+     "반복 2 해 사용 (Optimal; 반복 3은 Time limit reached, 해 없음)"
+    ],
+    "highs": "1.15.1",
+    "threads": 1,
+    "random_seed": 7,
+    "time_limit_s": 180,
+    "mip_max_nodes": null
    }
   },
   "busan": {
@@ -53,7 +66,7 @@
    "keep_every": 2,
    "engine": "mip",
    "status": "Optimal",
-   "seconds": 4.6,
+   "seconds": 3.4,
    "iterations": 2,
    "crossing_constraints": 6,
    "objective": 74.66355340299353,
@@ -72,6 +85,20 @@
     "crossings": 0,
     "bend_units_45deg": 65,
     "mean_displacement_norm": 0.0
+   },
+   "fingerprint": "4463ad9c514b046c",
+   "reproducibility": {
+    "deterministic": true,
+    "reason": "시간 제한 전에 끝남 (최적·갭·노드 제한) → 같은 HiGHS 버전·설정이면 재현",
+    "iteration_status": [
+     "Optimal",
+     "Optimal"
+    ],
+    "highs": "1.15.1",
+    "threads": 1,
+    "random_seed": 7,
+    "time_limit_s": 60,
+    "mip_max_nodes": null
    }
   },
   "daegu": {
@@ -80,7 +107,7 @@
    "keep_every": 2,
    "engine": "mip",
    "status": "Optimal",
-   "seconds": 3.6,
+   "seconds": 3.0,
    "iterations": 4,
    "crossing_constraints": 17,
    "objective": 42.580340608401514,
@@ -99,6 +126,22 @@
     "crossings": 2,
     "bend_units_45deg": 27,
     "mean_displacement_norm": 0.0
+   },
+   "fingerprint": "e3b96a66fd6fcf2c",
+   "reproducibility": {
+    "deterministic": true,
+    "reason": "시간 제한 전에 끝남 (최적·갭·노드 제한) → 같은 HiGHS 버전·설정이면 재현",
+    "iteration_status": [
+     "Optimal",
+     "Optimal",
+     "Optimal",
+     "Optimal"
+    ],
+    "highs": "1.15.1",
+    "threads": 1,
+    "random_seed": 7,
+    "time_limit_s": 60,
+    "mip_max_nodes": null
    }
   },
   "daejeon": {
@@ -126,6 +169,19 @@
     "crossings": 0,
     "bend_units_45deg": 12,
     "mean_displacement_norm": 0.0
+   },
+   "fingerprint": "666ff75499b7cddb",
+   "reproducibility": {
+    "deterministic": true,
+    "reason": "시간 제한 전에 끝남 (최적·갭·노드 제한) → 같은 HiGHS 버전·설정이면 재현",
+    "iteration_status": [
+     "Optimal"
+    ],
+    "highs": "1.15.1",
+    "threads": 1,
+    "random_seed": 7,
+    "time_limit_s": 60,
+    "mip_max_nodes": null
    }
   },
   "gwangju": {
@@ -153,6 +209,19 @@
     "crossings": 0,
     "bend_units_45deg": 7,
     "mean_displacement_norm": 0.0
+   },
+   "fingerprint": "201188e40feec83a",
+   "reproducibility": {
+    "deterministic": true,
+    "reason": "시간 제한 전에 끝남 (최적·갭·노드 제한) → 같은 HiGHS 버전·설정이면 재현",
+    "iteration_status": [
+     "Optimal"
+    ],
+    "highs": "1.15.1",
+    "threads": 1,
+    "random_seed": 7,
+    "time_limit_s": 60,
+    "mip_max_nodes": null
    }
   },
   "taipei": {
@@ -161,7 +230,7 @@
    "keep_every": 2,
    "engine": "mip",
    "status": "Optimal",
-   "seconds": 10.7,
+   "seconds": 10.2,
    "iterations": 5,
    "crossing_constraints": 9,
    "objective": 79.81581999454542,
@@ -180,6 +249,23 @@
     "crossings": 1,
     "bend_units_45deg": 79,
     "mean_displacement_norm": 0.0
+   },
+   "fingerprint": "24437891906b0365",
+   "reproducibility": {
+    "deterministic": true,
+    "reason": "시간 제한 전에 끝남 (최적·갭·노드 제한) → 같은 HiGHS 버전·설정이면 재현",
+    "iteration_status": [
+     "Optimal",
+     "Optimal",
+     "Optimal",
+     "Optimal",
+     "Optimal"
+    ],
+    "highs": "1.15.1",
+    "threads": 1,
+    "random_seed": 7,
+    "time_limit_s": 60,
+    "mip_max_nodes": null
    }
   }
  },

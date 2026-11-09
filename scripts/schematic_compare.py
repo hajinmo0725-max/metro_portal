@@ -25,7 +25,7 @@ def main() -> int:
     summ = json.loads((ROOT / "data" / "processed" / "schematic" / "summary.json").read_text(encoding="utf-8"))
     w_kr = build_world(*load_base(), load_ruleset(cfg["ruleset"]))
     w_tw = None
-    L = ["# S5 도식 엔진 비교", "", "생성: `python3 scripts/schematic_compare.py` (MIP 결과는 `pipeline/20_build_schematic.py`)", "",
+    L = ["# S5 도식 엔진 비교", "", "생성: `python3 scripts/schematic_compare.py` (MIP 결과는 `pipeline/20_solve_schematic.py` 캐시)", "",
          "- MIP = 자체 octilinear MIP (N&W 2011식, HiGHS). snap-lp = 엣지 방향을 가까운 8방향으로 고정하고 LP로 좌표를 푼 뒤 어긋난 엣지만 다시 고정 (순환 순서·평면성 보장 없음). 지리 = 투영 좌표 그대로.",
          "- LOOM(topo → loom → octi → transitmap)은 받기·빌드가 막혀 비교하지 못했다 (보고서 S2).",
          "- 지표: 8방향 아닌 엣지 수, 비인접 엣지 교차 수, 노선 굴곡(같은 노선의 연속 세 역에서 꺾인 각도를 45° 단위로 반올림한 합), 정규화 평균 변위(두 배치를 중심 0·RMS 1로 맞춘 뒤 역별 거리 평균, 지리 = 0).", "",

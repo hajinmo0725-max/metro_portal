@@ -22,9 +22,23 @@
   "geo_len_factor": 0.5
  },
  "keep_every": 2,
+ "fingerprint": "4463ad9c514b046c",
+ "reproducibility": {
+  "deterministic": true,
+  "reason": "시간 제한 전에 끝남 (최적·갭·노드 제한) → 같은 HiGHS 버전·설정이면 재현",
+  "iteration_status": [
+   "Optimal",
+   "Optimal"
+  ],
+  "highs": "1.15.1",
+  "threads": 1,
+  "random_seed": 7,
+  "time_limit_s": 60,
+  "mip_max_nodes": null
+ },
  "engine": "mip",
  "status": "Optimal",
- "seconds": 4.6,
+ "seconds": 3.4,
  "iterations": 2,
  "crossing_constraints": 6,
  "objective": 74.66355340299353,

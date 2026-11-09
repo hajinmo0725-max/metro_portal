@@ -1,4 +1,4 @@
-# 4차 S3·S5: 권역별 도식 노선도 (pipeline/20_build_schematic.py, metro_portal/schematic.py). 레이아웃 파라미터이지 매칭 룰이 아니다.
+# 4차 S3·S5: 권역별 도식 노선도 (풀이 pipeline/20_solve_schematic.py → 캐시 data/processed/schematic/ → 웹 pipeline/21_build_schematic_web.py, metro_portal/schematic.py). 레이아웃 파라미터이지 매칭 룰이 아니다.
 # 엔진: 자체 octilinear MIP (Nöllenburg & Wolff 2011식, HiGHS). LOOM 빌드가 막혀서 대체 (docs/reports/schematic.md S2).
 ruleset: strict              # 클러스터·엣지를 만드는 ruleset (한국). 타이베이는 tw_t12 그래프에서 같은 규칙으로
 solver:

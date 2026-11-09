@@ -17,7 +17,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from metro_portal import ROOT  # noqa: E402
-from metro_portal.daily_order import WEEKDAYS, Planner, summarize  # noqa: E402
+from metro_portal.daily_order import WEEKDAYS, Planner, ranked, summarize  # noqa: E402
 
 GIT_VERSIONS = [("2차 (QA 배포본)", "72e7e38"), ("3차 (main)", "origin/main")]
 
@@ -55,7 +55,7 @@ def main() -> int:
         pl = Planner(ps, {**oc, "days": len(order)}, date.fromisoformat(git_json(rev, "web/data/puzzles.json")["daily_epoch"]))
         sm = summarize(pl, order)
         n, sh = pool_share(ps)
-        rows.append({"version": label, "pool": n, "days": len(order), **sm, "pool_share": sh.most_common(6),
+        rows.append({"version": label, "pool": n, "days": len(order), **sm, "pool_share": ranked(sh, 6),
                      "calibrated": "difficulty_calibrated" in ps[0]})
         firsts[label] = first_days({p["id"]: p for p in ps}, order, pl.epoch)
     by = {p["id"]: p for p in cur["puzzles"]}
@@ -65,7 +65,7 @@ def main() -> int:
     sched = [by[i] for i in cur["daily_order"]]
     n, sh = pool_share(sched)
     rows.append({"version": "4차 신방식 (제약 일정)", "pool": cur["stats"]["pool_size"], **cur["stats"]["daily_order"],
-                 "pool_share": sh.most_common(6), "calibrated": True})
+                 "pool_share": ranked(sh, 6), "calibrated": True})
     rel = cur["compare"]["relaxed_unique"]
     rows.append({"version": f"4차 유일성 완화판 (최적 경로 ≤ {oc['relaxed_max_optimal_paths']})", **rel, "pool_share": None, "calibrated": True})
     firsts["4차 신방식"] = first_days(by, cur["daily_order"], epoch, 14)

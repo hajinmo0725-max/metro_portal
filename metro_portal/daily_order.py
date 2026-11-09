@@ -20,6 +20,12 @@ from datetime import date, timedelta
 WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 
 
+def ranked(cnt: Counter, k: int | None = None) -> list:
+    """Counter.most_common과 같지만 동률은 이름순 (5차: frozenset 순회 순서가 해시 시드에 따라 달라 출력이 흔들리던 문제)."""
+    out = sorted(cnt.items(), key=lambda kv: (-kv[1], kv[0]))
+    return out[:k] if k is not None else out
+
+
 def jaccard(a: set, b: set) -> float:
     if not a and not b:
         return 1.0
@@ -254,8 +260,8 @@ def summarize(planner: Planner, order: list, horizon: int | None = None) -> dict
         "distinct_signatures": len(pos),
         "max_jaccard_consecutive": round(max(jac), 3),
         "mean_jaccard_consecutive": round(sum(jac) / L, 3),
-        "portal_counts": dict(cnt.most_common()),
-        "portal_max_in_window": dict(win_max.most_common()),
+        "portal_counts": dict(ranked(cnt)),
+        "portal_max_in_window": dict(ranked(win_max)),
         "weekday_mean_h": {wd: round(sum(by_wd[wd]) / len(by_wd[wd]), 3) for wd in WEEKDAYS if by_wd[wd]},
         "weekday_levels": {wd: dict(Counter(planner.level[order[t]] for t in range(L)
                                             if WEEKDAYS[(planner.epoch + timedelta(days=t)).weekday()] == wd)) for wd in WEEKDAYS},

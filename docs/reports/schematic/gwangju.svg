@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 452" font-family="sans-serif">
 <rect width="100%" height="100%" fill="#fff"/><text x="12" y="24" font-size="16" font-weight="700">광주 — 자동 도식 (octilinear MIP)</text>
-<line x1="307.7" y1="60.0" x2="375.5" y2="60.0" stroke="#009088" stroke-width="4" stroke-linecap="round"/>
-<line x1="307.7" y1="60.0" x2="240.0" y2="60.0" stroke="#009088" stroke-width="4" stroke-linecap="round"/>
+<line x1="307.8" y1="60.0" x2="375.5" y2="60.0" stroke="#009088" stroke-width="4" stroke-linecap="round"/>
+<line x1="307.8" y1="60.0" x2="240.0" y2="60.0" stroke="#009088" stroke-width="4" stroke-linecap="round"/>
 <line x1="184.6" y1="115.4" x2="129.2" y2="170.7" stroke="#009088" stroke-width="4" stroke-linecap="round"/>
 <line x1="184.6" y1="115.4" x2="240.0" y2="60.0" stroke="#009088" stroke-width="4" stroke-linecap="round"/>
 <line x1="873.9" y1="115.4" x2="818.5" y2="60.0" stroke="#009088" stroke-width="4" stroke-linecap="round"/>
@@ -19,7 +19,7 @@
 <line x1="1040.0" y1="336.9" x2="1040.0" y2="281.5" stroke="#009088" stroke-width="4" stroke-linecap="round"/>
 <line x1="541.7" y1="60.0" x2="486.3" y2="60.0" stroke="#009088" stroke-width="4" stroke-linecap="round"/>
 <line x1="541.7" y1="60.0" x2="597.0" y2="60.0" stroke="#009088" stroke-width="4" stroke-linecap="round"/>
-<circle cx="307.7" cy="60.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
+<circle cx="307.8" cy="60.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
 <circle cx="184.6" cy="115.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
 <circle cx="873.9" cy="115.4" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
 <circle cx="818.5" cy="60.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
@@ -39,7 +39,7 @@
 <circle cx="60.0" cy="240.0" r="5" fill="#fff" stroke="#222" stroke-width="2"/>
 <circle cx="1040.0" cy="281.5" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
 <circle cx="597.0" cy="60.0" r="3" fill="#fff" stroke="#222" stroke-width="1.2"/>
-<text x="310.7" y="53.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 310.7 53.0)">공항</text>
+<text x="310.8" y="53.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5" transform="rotate(-45 310.8 53.0)">공항</text>
 <text x="190.2" y="124.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">광주송정</text>
 <text x="879.5" y="112.7" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">금남로4가</text>
 <text x="797.1" y="51.0" font-size="9" fill="#333" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="2.5">금남로5가</text>

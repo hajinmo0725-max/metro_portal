@@ -3,3 +3,50 @@
     iter 2: Optimal, obj=497.21, 위반 쌍 4
     iter 3: Time limit reached (실행 가능해 없음)
 [20] seoul: 반복 2 해 사용 (Optimal; 반복 3은 Time limit reached, 해 없음) 239.5s 반복 3 교차제약 6 → {'nodes': 655, 'edges': 755, 'non_octilinear_edges': 0, 'crossings': 17, 'bend_units_45deg': 214, 'mean_displacement_norm': 0.31}
+[20] adopt seoul: 지문 e081d8a0d98b8f6c (정점 655, 엣지 755)
+[20] busan (부산): 역 146, 엣지 152 → 축약 76/82
+    iter 1: Optimal, obj=74.12, 위반 쌍 6
+    iter 2: Optimal, obj=74.66, 위반 쌍 0
+[20] busan: Optimal 3.5s 반복 2 교차제약 6 → {'nodes': 146, 'edges': 152, 'non_octilinear_edges': 0, 'crossings': 0, 'bend_units_45deg': 43, 'mean_displacement_norm': 0.339}
+[20] daegu (대구): 역 97, 엣지 98 → 축약 52/53
+    iter 1: Optimal, obj=41.50, 위반 쌍 9
+    iter 2: Optimal, obj=41.91, 위반 쌍 6
+    iter 3: Optimal, obj=43.09, 위반 쌍 2
+    iter 4: Optimal, obj=42.58, 위반 쌍 0
+[20] daegu: Optimal 3.0s 반복 4 교차제약 17 → {'nodes': 97, 'edges': 98, 'non_octilinear_edges': 0, 'crossings': 0, 'bend_units_45deg': 20, 'mean_displacement_norm': 0.404}
+[20] daejeon (대전): 역 22, 엣지 21 → 축약 12/11
+    iter 1: Optimal, obj=11.70, 위반 쌍 0
+[20] daejeon: Optimal 0.1s 반복 1 교차제약 0 → {'nodes': 22, 'edges': 21, 'non_octilinear_edges': 0, 'crossings': 0, 'bend_units_45deg': 6, 'mean_displacement_norm': 0.12}
+[20] gwangju (광주): 역 20, 엣지 19 → 축약 11/10
+    iter 1: Optimal, obj=6.58, 위반 쌍 0
+[20] gwangju: Optimal 0.0s 반복 1 교차제약 0 → {'nodes': 20, 'edges': 19, 'non_octilinear_edges': 0, 'crossings': 0, 'bend_units_45deg': 3, 'mean_displacement_norm': 0.196}
+[20] taipei (타이베이): 역 170, 엣지 183 → 축약 96/109
+    iter 1: Optimal, obj=79.55, 위반 쌍 3
+    iter 2: Optimal, obj=79.68, 위반 쌍 1
+    iter 3: Optimal, obj=79.65, 위반 쌍 1
+    iter 4: Optimal, obj=79.52, 위반 쌍 4
+    iter 5: Optimal, obj=79.82, 위반 쌍 0
+[20] taipei: Optimal 9.3s 반복 5 교차제약 9 → {'nodes': 170, 'edges': 183, 'non_octilinear_edges': 0, 'crossings': 2, 'bend_units_45deg': 40, 'mean_displacement_norm': 0.271}
+[20] busan (부산): 역 146, 엣지 152 → 축약 76/82
+    iter 1: Optimal, obj=74.12, 위반 쌍 6
+    iter 2: Optimal, obj=74.66, 위반 쌍 0
+[20] busan: Optimal 3.4s 반복 2 교차제약 6 → {'nodes': 146, 'edges': 152, 'non_octilinear_edges': 0, 'crossings': 0, 'bend_units_45deg': 43, 'mean_displacement_norm': 0.339}
+[20] daegu (대구): 역 97, 엣지 98 → 축약 52/53
+    iter 1: Optimal, obj=41.50, 위반 쌍 9
+    iter 2: Optimal, obj=41.91, 위반 쌍 6
+    iter 3: Optimal, obj=43.09, 위반 쌍 2
+    iter 4: Optimal, obj=42.58, 위반 쌍 0
+[20] daegu: Optimal 3.0s 반복 4 교차제약 17 → {'nodes': 97, 'edges': 98, 'non_octilinear_edges': 0, 'crossings': 0, 'bend_units_45deg': 20, 'mean_displacement_norm': 0.404}
+[20] daejeon (대전): 역 22, 엣지 21 → 축약 12/11
+    iter 1: Optimal, obj=11.70, 위반 쌍 0
+[20] daejeon: Optimal 0.1s 반복 1 교차제약 0 → {'nodes': 22, 'edges': 21, 'non_octilinear_edges': 0, 'crossings': 0, 'bend_units_45deg': 6, 'mean_displacement_norm': 0.12}
+[20] gwangju (광주): 역 20, 엣지 19 → 축약 11/10
+    iter 1: Optimal, obj=6.58, 위반 쌍 0
+[20] gwangju: Optimal 0.0s 반복 1 교차제약 0 → {'nodes': 20, 'edges': 19, 'non_octilinear_edges': 0, 'crossings': 0, 'bend_units_45deg': 3, 'mean_displacement_norm': 0.196}
+[20] taipei (타이베이): 역 170, 엣지 183 → 축약 96/109
+    iter 1: Optimal, obj=79.55, 위반 쌍 3
+    iter 2: Optimal, obj=79.68, 위반 쌍 1
+    iter 3: Optimal, obj=79.65, 위반 쌍 1
+    iter 4: Optimal, obj=79.52, 위반 쌍 4
+    iter 5: Optimal, obj=79.82, 위반 쌍 0
+[20] taipei: Optimal 10.2s 반복 5 교차제약 9 → {'nodes': 170, 'edges': 183, 'non_octilinear_edges': 0, 'crossings': 2, 'bend_units_45deg': 40, 'mean_displacement_norm': 0.271}

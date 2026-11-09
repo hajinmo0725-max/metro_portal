@@ -153,7 +153,7 @@ def build_puzzles(g, cfg, rs_name="strict", rows=None, locked=None):
     """4차 Q2: 후보 풀 → 보정 난이도 → 제약 기반 데일리 순서. 반환 (풀 퍼즐, 순서, 통계, 비교 자료)."""
     from datetime import date
 
-    from metro_portal.daily_order import Planner, summarize
+    from metro_portal.daily_order import Planner, ranked, summarize
     rows = rows if rows is not None else candidate_rows(g)
     oc = cfg["daily_order"]
     stats, shortcut, cross = pair_stats(rows, g, cfg)
@@ -188,8 +188,8 @@ def build_puzzles(g, cfg, rs_name="strict", rows=None, locked=None):
     cmp_["relaxed_unique"] = {"pool": len(pool2), "candidates_shortcut": st2["candidates_shortcut"],
                               "candidates_crosscity": st2["candidates_crosscity"], **summarize(pl2, o2)}
     cmp_["pool_portal_share"] = {
-        "unique": dict(Counter(x for p in pool for x in set(p["warp_portals"])).most_common(12)),
-        "relaxed": dict(Counter(x for p in pool2 for x in set(p["warp_portals"])).most_common(12))}
+        "unique": dict(ranked(Counter(x for p in pool for x in set(p["warp_portals"])), 12)),
+        "relaxed": dict(ranked(Counter(x for p in pool2 for x in set(p["warp_portals"])), 12))}
     return pool, order, stats, cmp_
 
 

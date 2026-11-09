@@ -132,6 +132,41 @@ def contract(g: dict, keep_every: int = 3) -> dict:
     return {"nodes": sorted(kept), "edges": dict(sorted(out_e.items()))}
 
 
+# 5차 R3: 풀이 '예산' 키 (문제 정의가 아니라 얼마나 오래·어떻게 찾을지). 입력 지문에서 뺀다
+BUDGET_KEYS = {"time_limit_s", "max_iterations", "mip_rel_gap", "mip_heuristic_effort", "mip_max_nodes", "warm_start",
+               "checkpoint", "id", "city", "country", "fallback", "keep_every", "random_seed"}
+
+
+def fingerprint(g: dict, cg: dict, cfg: dict) -> str:
+    """도식 풀이 입력 지문 (5차 R3). 그래프(정점·지리 좌표·엣지·노선 시퀀스·축약 결과)와 모델 파라미터가 같으면 같다.
+    캐시(data/processed/schematic/<권역>.json)가 지금 그래프에 맞는지 웹 빌드(21 단계)가 이걸로 확인한다.
+    역 이름은 넣지 않는다 (표시용이라 레이아웃 입력이 아니다)."""
+    import hashlib
+    import json
+    doc = {"nodes": list(g["nodes"]),
+           "pos": {k: [round(g["pos"][k][0], 4), round(g["pos"][k][1], 4)] for k in g["nodes"]},
+           "edges": [[a, b, list(ls)] for (a, b), ls in sorted(g["edges"].items())],
+           "seqs": [[s["line"], list(s["nodes"]), bool(s["circular"])] for s in g["seqs"]],
+           "kept": list(cg["nodes"]),
+           "cfg": {k: cfg[k] for k in sorted(cfg) if k not in BUDGET_KEYS}}
+    return hashlib.sha256(json.dumps(doc, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:16]
+
+
+def region_params(cfg: dict, reg: dict) -> dict:
+    """config/schematic.yaml의 solver 기본값 + 권역별 덮어쓰기 (20 풀이·21 웹 빌드 공용)."""
+    solver = cfg["solver"]
+    return {**solver, **{k: v for k, v in reg.items() if k in solver or k in ("mip_max_nodes", "warm_start", "random_seed")}}
+
+
+def highs_version() -> str:
+    try:
+        import highspy
+        h = highspy.Highs()
+        return h.version() if hasattr(h, "version") else "?"
+    except Exception:  # noqa: BLE001
+        return "?"
+
+
 def segments_cross(p1, p2, p3, p4, eps=1e-6):
     """두 선분이 교차하거나 겹치는가 (끝점 공유는 호출하는 쪽에서 뺀다)."""
     def orient(a, b, c):
@@ -154,8 +189,9 @@ def point_seg_dist(p, a, b):
     return math.hypot(p[0] - ax - t * vx, p[1] - ay - t * vy)
 
 
-def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
-    """축약 그래프 cg를 octilinear로 배치한다. 반환 {pos: {node: (x, y)}, status, iterations, crossings_added, objective}."""
+def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None) -> dict:
+    """축약 그래프 cg를 octilinear로 배치한다. 반환 {pos: {node: (x, y)}, status, iterations, crossings_added, objective}.
+    on_iteration(it, pos, added, status, objective): 반복(재풀이)마다 실행 가능해가 나오면 부른다 (5차 R4 중간 저장용)."""
     import highspy
     import numpy as np  # noqa: F401  (highspy 의존)
 
@@ -172,10 +208,14 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
     M0 = M = span * 4
     h = highspy.Highs()
     h.setOptionValue("output_flag", False)
+    # 결정성: 단일 스레드·고정 시드. 시간 제한(벽시계)에 걸리면 기계 속도에 따라 해가 달라지므로 반복마다 기록한다 (5차 R3).
+    # mip_max_nodes(노드 수 제한)를 주면 시간 대신 작업량으로 끊는다 → 같은 기계·같은 HiGHS 버전이면 재현된다
     h.setOptionValue("threads", 1)
-    h.setOptionValue("random_seed", 7)
+    h.setOptionValue("random_seed", int(cfg.get("random_seed", 7)))
     h.setOptionValue("time_limit", float(cfg["time_limit_s"]))
     h.setOptionValue("mip_rel_gap", float(cfg.get("mip_rel_gap", 0.02)))
+    if cfg.get("mip_max_nodes"):
+        h.setOptionValue("mip_max_nodes", int(cfg["mip_max_nodes"]))
     if cfg.get("mip_heuristic_effort"):
         h.setOptionValue("mip_heuristic_effort", float(cfg["mip_heuristic_effort"]))
     inf = highspy.kHighsInf
@@ -344,10 +384,12 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
     status = None
     last_ok = (0, "")
     pos = {}
+    iter_status = []
     while True:
         it += 1
         h.run()
         status = h.modelStatusToString(h.getModelStatus())
+        iter_status.append(status)
         sol = h.getSolution().col_value
         if not sol or len(sol) < h.getNumCol() or h.getInfo().primal_solution_status != 2:
             # 실행 가능해 없음 (시간 제한 안에 못 찾음 등). 앞 반복의 해가 있으면 그걸 남긴다
@@ -375,6 +417,8 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
                     cross.append(key)
         if log:
             log(f"    iter {it}: {status}, obj={h.getInfo().objective_function_value:.2f}, 위반 쌍 {len(cross)}")
+        if on_iteration:
+            on_iteration(it, pos, sorted(added), status, h.getInfo().objective_function_value)
         if not cross or it >= cfg["max_iterations"]:
             break
         for e1, e2 in cross:
@@ -405,7 +449,8 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None) -> dict:
         for e in E:
             chosen[e] = max(KS[e], key=lambda i: sol[D[e, i]])
     return {"pos": pos, "status": status, "iterations": it, "crossing_constraints": len(added), "objective": obj,
-            "scale": scale, "bend_cost": bends, "geo_crossing_pairs": len(geo_cross), "dirs": chosen}
+            "scale": scale, "bend_cost": bends, "geo_crossing_pairs": len(geo_cross), "dirs": chosen,
+            "iteration_status": iter_status, "time_limited": any("Time limit" in x for x in iter_status)}
 
 
 def expand(g: dict, cg: dict, pos: dict) -> dict:

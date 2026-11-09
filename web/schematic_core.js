@@ -1,5 +1,5 @@
 // 4차 S4: 도식 노선도 화면의 순수 로직 (브라우저·node 공용 ES 모듈). 화면 코드는 schematic.js.
-// 데이터: data/schematic.json (pipeline/20_build_schematic.py, 권역별 도식 좌표 s·지리 투영 좌표 g·엣지 e)
+// 데이터: data/schematic.json (pipeline/21_build_schematic_web.py가 풀이 캐시에서 만든다, 권역별 도식 좌표 s·지리 투영 좌표 g·엣지 e)
 //        + 길찾기 번들 (kr_strict.json 또는 world_<rs>.json: clusters·portals·nodes·lines)
 
 // 클러스터 인덱스 → 권역 id. 도식 좌표가 있는 권역을 우선 쓰고, 없으면 클러스터 city로 찾는다
