@@ -55,12 +55,77 @@ def worlds(cfg):
     return get
 
 
-def run_region(w, reg, rcfg, log, on_iteration=None):
+def checkpointer(ckdir: Path, g, cg, log):
+    """5차 R4 중간 저장: 반복마다 iter_<k>.json, 반복 안 개선해마다 incumbent.json (data/raw 아래, gitignore)."""
+    ckdir.mkdir(parents=True, exist_ok=True)
+    best = {"key": None}
+
+    def dump(name, it, pos_kept, status, obj, added=None, dirs=None):
+        pos = S.expand(g, cg, pos_kept)
+        st = S.layout_stats(g, pos)
+        doc = {"iteration": it, "status": status, "objective": obj, "stats": st, "saved_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+               "added": [[list(a), list(b)] for a, b in (added or [])],
+               "dirs": [[list(e), i] for e, i in sorted((dirs or {}).items())],
+               "pos": {k: [round(v[0], 4), round(v[1], 4)] for k, v in sorted(pos.items())}}
+        (ckdir / name).write_text(json.dumps(doc, ensure_ascii=False) + "\n", encoding="utf-8")
+        return st
+
+    def on_iteration(it, pos_kept, added, status, obj, dirs):
+        st = dump(f"iter_{it:02d}.json", it, pos_kept, status, obj, added, dirs)
+        key = (st["crossings"], st["bend_units_45deg"])
+        log(f"    [중간 저장] iter_{it:02d}.json: 교차 {st['crossings']}, 굴곡 {st['bend_units_45deg']}, 목적 {obj:.2f}")
+        if best["key"] is None or key < best["key"]:
+            best["key"] = key
+
+    def on_incumbent(it, pos_kept, obj):
+        st = dump("incumbent.json", it, pos_kept, f"반복 {it} 진행 중 개선해", obj)
+        log(f"    [중간 저장] incumbent.json (반복 {it}): 목적 {obj:.2f}, 교차 {st['crossings']}, 굴곡 {st['bend_units_45deg']}")
+    return on_iteration, on_incumbent
+
+
+def load_resume(ckdir: Path):
+    """가장 마지막 iter_<k>.json에서 교차 제약 쌍과 방향을 읽는다."""
+    its = sorted(ckdir.glob("iter_*.json"))
+    if not its:
+        return None, None
+    doc = json.loads(its[-1].read_text(encoding="utf-8"))
+    added = [(tuple(a), tuple(b)) for a, b in doc["added"]]
+    return {"dirs": {tuple(e): i for e, i in doc["dirs"]}}, added
+
+
+def best_iteration(ckdir: Path, g):
+    """체크포인트 반복 중 (교차, 굴곡)이 가장 작은 해."""
+    cands = []
+    for p in sorted(ckdir.glob("iter_*.json")):
+        d = json.loads(p.read_text(encoding="utf-8"))
+        cands.append(((d["stats"]["crossings"], d["stats"]["bend_units_45deg"], -d["iteration"]), p.name, d))
+    if not cands:
+        return None
+    cands.sort(key=lambda x: x[0])
+    return cands[0][2]
+
+
+def run_region(w, reg, rcfg, log, ckdir: Path | None = None, resume=False):
     g = S.region_graph(w, reg["city"])
     cg = S.contract(g, keep_every=reg.get("keep_every", 2))
     t = time.time()
     log(f"[20] {reg['id']} ({reg['city']}): 역 {len(g['nodes'])}, 엣지 {len(g['edges'])} → 축약 {len(cg['nodes'])}/{len(cg['edges'])}")
-    r = S.solve_octilinear(g, cg, rcfg, log=log, on_iteration=on_iteration)
+    kw = {}
+    if ckdir is not None:
+        kw["on_iteration"], kw["on_incumbent"] = checkpointer(ckdir, g, cg, log)
+        if resume:
+            kw["start"], kw["init_added"] = load_resume(ckdir)
+            if kw["start"]:
+                log(f"[20] 이어 풀기: {ckdir} 마지막 반복의 방향 {len(kw['start']['dirs'])}개, 교차 제약 {len(kw['init_added'])}쌍")
+    r = S.solve_octilinear(g, cg, rcfg, log=log, **kw)
+    if ckdir is not None and r["pos"]:
+        b = best_iteration(ckdir, g)
+        last = S.layout_stats(g, S.expand(g, cg, r["pos"]))
+        if b and (b["stats"]["crossings"], b["stats"]["bend_units_45deg"]) < (last["crossings"], last["bend_units_45deg"]):
+            log(f"[20] 마지막 반복보다 체크포인트 반복 {b['iteration']}이 낫다 (교차 {b['stats']['crossings']}, 굴곡 {b['stats']['bend_units_45deg']}) → 그 해를 쓴다")
+            r["pos"] = {k: tuple(b["pos"][k]) for k in cg["nodes"]}
+            r["status"] = f"반복 {b['iteration']} 해 사용 (체크포인트 중 교차·굴곡 최소; {b['status']})"
+            r["objective"] = b["objective"]
     if r["pos"]:
         pos = S.expand(g, cg, r["pos"])
         r["engine"] = "mip"
@@ -148,6 +213,15 @@ def main() -> int:
     ap.add_argument("--only-variant", default=None, help="수도권 비교 변형 하나만 (이름 앞글자, 예: A). 권역 산출물은 건드리지 않는다")
     ap.add_argument("--merge-variants", action="store_true", help="variant_*.json을 summary.json에 합치기만 한다")
     ap.add_argument("--adopt", default=None, help="쉼표 구분 권역: 재풀이 없이 기존 캐시를 검증하고 지문만 찍는다")
+    # 5차 R4: 장시간 풀이 (수도권). 예산 키만 바꾸므로 입력 지문은 그대로다
+    ap.add_argument("--long", action="store_true", help="config/schematic.yaml long_run 예산(반복당 시간·반복 수·갭)과 웜스타트를 쓴다")
+    ap.add_argument("--max-iterations", type=int, default=None)
+    ap.add_argument("--gap", type=float, default=None, help="mip_rel_gap 덮어쓰기")
+    ap.add_argument("--warm-start", default=None, help="geo-snap / none")
+    ap.add_argument("--checkpoint", action="store_true", help="data/raw/schematic_runs/<권역>/에 반복·개선해마다 중간 저장")
+    ap.add_argument("--resume", action="store_true", help="체크포인트 마지막 반복의 교차 제약·방향에서 이어 푼다 (--checkpoint 포함)")
+    ap.add_argument("--tag", default=None, help="실험 실행 이름: 체크포인트를 schematic_runs/<권역>_<tag>/에 두고 결과도 거기 result.json에만 쓴다 (캐시 안 건드림)")
+    ap.add_argument("--promote", default=None, help="<권역>:<tag> — 실험 실행 결과(result.json)를 캐시로 올린다")
     a = ap.parse_args()
     cfg = yaml.safe_load(open(ROOT / "config" / "schematic.yaml", encoding="utf-8"))
     OUT.mkdir(parents=True, exist_ok=True)
@@ -165,7 +239,16 @@ def main() -> int:
         print(f"[20] merged {len(olds['seoul_variants'])} variants")
         return 0
     summary = {"engine": "own octilinear MIP (Nöllenburg & Wolff 2011 style, HiGHS via highspy)", "solver": cfg["solver"], "regions": {}}
-    if a.adopt:
+    runs = ROOT / "data" / "raw" / "schematic_runs"
+    if a.promote:
+        rid, tag = a.promote.split(":")
+        doc = json.loads((runs / f"{rid}_{tag}" / "result.json").read_text(encoding="utf-8"))
+        write_region(doc)
+        summary["regions"][rid] = summary_entry(doc)
+        log(f"[20] promote {rid}:{tag} → 캐시 (교차 {doc['stats']['crossings']}, 굴곡 {doc['stats']['bend_units_45deg']}, 지문 {doc['fingerprint']})")
+        want = {rid}
+        a.skip_variants = True
+    elif a.adopt:
         for k, doc in adopt(cfg, set(a.adopt.split(",")), log).items():
             summary["regions"][k] = summary_entry(doc)
         want = set(a.adopt.split(","))
@@ -183,8 +266,21 @@ def main() -> int:
             if want and reg["id"] not in want:
                 continue
             rcfg = region_cfg(cfg, reg)
-            g, cg, pos, r, st, st_geo, sec = run_region(get(reg["country"]), reg, rcfg, log)
+            if a.long:
+                rcfg.update(reg.get("long_run") or {})
+            for k, v in (("max_iterations", a.max_iterations), ("mip_rel_gap", a.gap)):
+                if v is not None:
+                    rcfg[k] = v
+            if a.warm_start:
+                rcfg["warm_start"] = None if a.warm_start == "none" else a.warm_start
+            name = reg["id"] + (f"_{a.tag}" if a.tag else "")
+            ckdir = (runs / name) if (a.checkpoint or a.resume or a.tag) else None
+            g, cg, pos, r, st, st_geo, sec = run_region(get(reg["country"]), reg, rcfg, log, ckdir, a.resume)
             doc = region_doc(reg, rcfg, g, cg, pos, r, st, st_geo, sec, S.fingerprint(g, cg, rcfg), reproducibility(r, rcfg))
+            if a.tag:   # 실험 실행: 캐시를 건드리지 않는다 (--promote로 올린다)
+                (ckdir / "result.json").write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+                log(f"[20] {name}: 결과 {ckdir / 'result.json'} (캐시는 그대로)")
+                continue
             write_region(doc)
             summary["regions"][reg["id"]] = summary_entry(doc)
     if a.only_variant or (not a.skip_variants and (not want or "seoul" in want)):
@@ -201,7 +297,9 @@ def main() -> int:
                                               "keep_every": reg["keep_every"], "status": r["status"], "seconds": sec, "engine": r["engine"],
                                               "iterations": r["iterations"], "stats": st})
             (OUT / f"variant_{reg['id']}.json").write_text(json.dumps(summary["seoul_variants"][-1], ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    if a.only_variant:
+    if a.only_variant or (a.tag and not a.promote):
+        with open(runs / "run_log.txt", "a", encoding="utf-8") as f:
+            f.write("\n".join(logs) + "\n")
         return 0
     # 일부 권역만 다시 풀었으면 기존 요약과 합친다
     for k, v in olds.get("regions", {}).items():

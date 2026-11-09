@@ -134,7 +134,8 @@ def contract(g: dict, keep_every: int = 3) -> dict:
 
 # 5차 R3: 풀이 '예산' 키 (문제 정의가 아니라 얼마나 오래·어떻게 찾을지). 입력 지문에서 뺀다
 BUDGET_KEYS = {"time_limit_s", "max_iterations", "mip_rel_gap", "mip_heuristic_effort", "mip_max_nodes", "warm_start",
-               "checkpoint", "id", "city", "country", "fallback", "keep_every", "random_seed"}
+               "checkpoint", "id", "city", "country", "fallback", "keep_every", "random_seed", "warm_rounds", "incumbent_every_s",
+               "long_run", "total_budget_s"}
 
 
 def fingerprint(g: dict, cg: dict, cfg: dict) -> str:
@@ -155,7 +156,8 @@ def fingerprint(g: dict, cg: dict, cfg: dict) -> str:
 def region_params(cfg: dict, reg: dict) -> dict:
     """config/schematic.yaml의 solver 기본값 + 권역별 덮어쓰기 (20 풀이·21 웹 빌드 공용)."""
     solver = cfg["solver"]
-    return {**solver, **{k: v for k, v in reg.items() if k in solver or k in ("mip_max_nodes", "warm_start", "random_seed")}}
+    extra = ("mip_max_nodes", "warm_start", "random_seed", "warm_rounds", "incumbent_every_s", "total_budget_s")
+    return {**solver, **{k: v for k, v in reg.items() if k in solver or k in extra}}
 
 
 def highs_version() -> str:
@@ -189,9 +191,16 @@ def point_seg_dist(p, a, b):
     return math.hypot(p[0] - ax - t * vx, p[1] - ay - t * vy)
 
 
-def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None) -> dict:
+def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None, on_incumbent=None,
+                     start: dict | None = None, init_added: list | None = None) -> dict:
     """축약 그래프 cg를 octilinear로 배치한다. 반환 {pos: {node: (x, y)}, status, iterations, crossings_added, objective}.
-    on_iteration(it, pos, added, status, objective): 반복(재풀이)마다 실행 가능해가 나오면 부른다 (5차 R4 중간 저장용)."""
+    on_iteration(it, pos, added, status, objective, dirs): 반복(재풀이)마다 실행 가능해가 나오면 부른다 (5차 R4 중간 저장용).
+    on_incumbent(it, pos, objective): 반복 안에서 HiGHS가 더 좋은 해를 찾을 때마다 (incumbent_every_s 간격으로 솎아서) 부른다.
+    5차 R4 웜스타트 (cfg warm_start):
+      "geo-snap" — 첫 반복에 엣지 방향 = 지리 방향에 가장 가까운 8방향(허용 3방향 안)으로 고정한 LP를 몇 번 고쳐 풀어,
+                   octilinear가 맞는 엣지의 방향을 HiGHS에 부분해로 준다 (나머지는 HiGHS가 채운다).
+      이후 반복 — 앞 반복 해의 방향을 주되, 새로 교차 제약이 붙은 엣지와 그 이웃 엣지는 비운다.
+    start: {"dirs": {엣지: 방향}} 이어 풀기용 시작 방향. init_added: 처음부터 넣을 교차 제약 쌍 (이어 풀기)."""
     import highspy
     import numpy as np  # noqa: F401  (highspy 의존)
 
@@ -246,6 +255,7 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None) 
     D = {}
     sec = {}
     KS = {}
+    LMIN = {}
 
     def choices(pa, pb, s, n):
         """허용 방향 오프셋: 3이면 (-1, 0, 1), 2이면 지리 각도에 더 가까운 이웃 섹터와 s"""
@@ -273,6 +283,7 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None) 
         # 선택: 지리 길이 비례 하한 (긴 교외 구간이 최소 길이로 쪼그라들어 노선 끝이 뭉치는 걸 막는다, LOOM geo-pen과 비슷한 의도)
         if cfg.get("geo_len_factor"):
             lmin = max(lmin, cfg["geo_len_factor"] * max(abs(G[b][0] - G[a][0]), abs(G[b][1] - G[a][1])))
+        LMIN[e] = lmin
         # 엣지별 빅M: 좌표 창이 있으면 두 끝점의 가능한 최대 차이로 조인다 (LP 완화 강화)
         M = Me = (max(abs(G[b][0] - G[a][0]), abs(G[b][1] - G[a][1])) * 2 + 4 * R + 2 * lmin) if R else M0
         for i in dirs_e:
@@ -380,13 +391,142 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None) 
             if len({a, b, c, d}) == 4 and segments_cross(G[a], G[b], G[c], G[d]):
                 geo_cross.add((E[i], E[j]))
     added = set()
+
+    def add_cross(e1, e2):
+        """비인접 엣지 쌍 e1, e2를 8방향 중 하나로 min_sep 이상 떨어뜨리는 제약 (이진 γ 8개 중 하나 이상)."""
+        added.add((e1, e2))
+        a, b = e1
+        c, d = e2
+        gam = [var(0, 1, integer=True) for _ in range(8)]
+        row([(gj, 1) for gj in gam], 1, inf)
+        dm = cfg["min_sep"]
+        # 방향 k: e2의 두 끝점이 e1의 두 끝점보다 방향 k 쪽으로 dm 이상 (k의 단위벡터와 내적)
+        for k, (ux, uy) in enumerate(DIRS):
+            for p in (c, d):
+                for q in (a, b):
+                    Mx = (abs(G[p][0] - G[q][0]) + abs(G[p][1] - G[q][1]) + 4 * R + 2 * dm) if R else M0
+                    row([(X[p], ux), (Y[p], uy), (X[q], -ux), (Y[q], -uy), (gam[k], -Mx)], dm - Mx, inf)
+    Eset = set(E)
+    for e1, e2 in (init_added or []):
+        e1, e2 = tuple(e1), tuple(e2)
+        if e1 in Eset and e2 in Eset and (e1, e2) not in added:
+            add_cross(e1, e2)
+    if init_added and log:
+        log(f"    이어 풀기: 교차 제약 {len(added)}쌍을 처음부터 넣음")
+
+    edge_adj = defaultdict(set)   # 정점을 공유하는 엣지끼리
+    for e in E:
+        for f in inc[e[0]] + inc[e[1]]:
+            if f != e:
+                edge_adj[e].add(f)
+
+    def give_start(dirs, label):
+        """부분해(엣지 방향 이진변수만)를 HiGHS에 준다. 나머지 변수는 HiGHS가 채운다 (못 채우면 무시된다)."""
+        idx, val = [], []
+        for e, i0 in sorted(dirs.items()):
+            if e not in KS or i0 not in KS[e]:
+                continue
+            for i in KS[e]:
+                idx.append(D[e, i])
+                val.append(1.0 if i == i0 else 0.0)
+        if not idx:
+            return
+        import numpy as np
+        st_ = h.setSolution(len(idx), np.array(idx, dtype=np.int32), np.array(val, dtype=np.float64))
+        if log:
+            log(f"    웜스타트({label}): 방향 고정 엣지 {len(set(e for e in dirs if e in KS))}/{len(E)} → {st_}")
+
+    def geo_snap_dirs():
+        """지리 방향 스냅 → 방향 고정 LP(직교 잔차·길이 부족에 벌점) 반복으로 맞는 방향 찾기. 잔차가 남은 엣지와 그 이웃은 뺀다."""
+        dirs = {e: sec[e] if sec[e] in KS[e] else KS[e][len(KS[e]) // 2] for e in E}
+        bad = list(E)
+        for rd in range(int(cfg.get("warm_rounds", 8))):
+            lp = highspy.Highs()
+            lp.setOptionValue("output_flag", False)
+            lp.setOptionValue("threads", 1)
+
+            def lv(lb, ub, cost=0.0):
+                lp.addVar(lb, ub)
+                j = lp.getNumCol() - 1
+                if cost:
+                    lp.changeColCost(j, cost)
+                return j
+
+            def lr(coefs, lo, hi):
+                lp.addRow(lo, hi, len(coefs), [j for j, _ in coefs], [c for _, c in coefs])
+            LX = {v: lv(-inf, inf) for v in nodes}
+            LY = {v: lv(-inf, inf) for v in nodes}
+            for v in nodes:
+                for C, gv in ((LX[v], G[v][0]), (LY[v], G[v][1])):
+                    t = lv(0, inf, 0.01)
+                    lr([(t, 1), (C, -1)], -gv, inf)
+                    lr([(t, 1), (C, 1)], gv, inf)
+            RES = {}
+            for e in E:
+                a, b = e
+                dx, dy = DIRS[dirs[e]]
+                if dy == 0:
+                    eq = [(LY[b], 1), (LY[a], -1)]
+                elif dx == 0:
+                    eq = [(LX[b], 1), (LX[a], -1)]
+                elif dx == dy:
+                    eq = [(LX[b], 1), (LX[a], -1), (LY[b], -1), (LY[a], 1)]
+                else:
+                    eq = [(LX[b], 1), (LX[a], -1), (LY[b], 1), (LY[a], -1)]
+                r_ = lv(0, inf, 100.0)
+                sl = lv(0, inf, 100.0)
+                RES[e] = (r_, sl)
+                lr(eq + [(r_, 1)], 0, inf)
+                lr([(c, -k) for c, k in eq] + [(r_, 1)], 0, inf)
+                prog = [(LX[b], dx), (LX[a], -dx)] if dx != 0 else [(LY[b], dy), (LY[a], -dy)]
+                lr(prog + [(sl, 1)], LMIN[e], inf)
+            lp.run()
+            sol_ = lp.getSolution().col_value
+            P2 = {v: (sol_[LX[v]], sol_[LY[v]]) for v in nodes}
+            bad = [e for e in E if sol_[RES[e][0]] > 1e-6 or sol_[RES[e][1]] > 1e-6]
+            if not bad:
+                break
+            for e in bad:   # 지금 LP 배치 방향에 가장 가까운 허용 방향으로 다시 스냅
+                a, b = e
+                ang = math.degrees(math.atan2(P2[b][1] - P2[a][1], P2[b][0] - P2[a][0])) % 360
+                dirs[e] = min(KS[e], key=lambda i: (min(abs(ang - 45 * i) % 360, 360 - abs(ang - 45 * i) % 360), i))
+        drop = set(bad) | {f for e in bad for f in edge_adj[e]}
+        if log:
+            log(f"    지리 스냅 LP: {rd + 1}회, 잔차 남은 엣지 {len(bad)} (이웃 포함 {len(drop)}개는 HiGHS가 정함)")
+        return {e: i for e, i in dirs.items() if e not in drop}
+
+    warm = cfg.get("warm_start")
+    if start and start.get("dirs"):
+        give_start({tuple(k) if not isinstance(k, tuple) else k: v for k, v in start["dirs"].items()}, "이어 풀기")
+    elif warm == "geo-snap":
+        give_start(geo_snap_dirs(), "지리 스냅")
+
+    import time as _time
+    inc_state = {"it": 1, "t": 0.0}
+    if on_incumbent:
+        def _cb(ev):
+            now = _time.time()
+            if now - inc_state["t"] < float(cfg.get("incumbent_every_s", 60)):
+                return
+            inc_state["t"] = now
+            try:
+                solv = ev.data_out.mip_solution
+                on_incumbent(inc_state["it"], {v: (float(solv[X[v]]), float(solv[Y[v]])) for v in nodes},
+                             float(ev.data_out.objective_function_value))
+            except Exception as ex:  # noqa: BLE001
+                if log:
+                    log(f"    (중간 저장 실패: {ex})")
+        h.cbMipImprovingSolution.subscribe(_cb)
+
     it = 0
     status = None
     last_ok = (0, "")
     pos = {}
     iter_status = []
+    t_start = _time.time()
     while True:
         it += 1
+        inc_state["it"] = it
         h.run()
         status = h.modelStatusToString(h.getModelStatus())
         iter_status.append(status)
@@ -400,6 +540,9 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None) 
             break
         last_ok = (it, status)
         pos = {v: (sol[X[v]], sol[Y[v]]) for v in nodes}
+        cur_dirs = {e: max(KS[e], key=lambda i: sol[D[e, i]]) for e in E}
+        last_sol = list(sol)
+        last_obj = h.getInfo().objective_function_value
         # 교차 검사 (비인접 엣지 쌍) + 정점-엣지 근접
         cross = []
         for i in range(len(E)):
@@ -418,23 +561,21 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None) 
         if log:
             log(f"    iter {it}: {status}, obj={h.getInfo().objective_function_value:.2f}, 위반 쌍 {len(cross)}")
         if on_iteration:
-            on_iteration(it, pos, sorted(added), status, h.getInfo().objective_function_value)
+            on_iteration(it, pos, sorted(added), status, h.getInfo().objective_function_value, cur_dirs)
         if not cross or it >= cfg["max_iterations"]:
             break
+        if cfg.get("total_budget_s") and _time.time() - t_start > float(cfg["total_budget_s"]):
+            if log:
+                log(f"    전체 예산 {cfg['total_budget_s']}s 초과 → 반복 {it}에서 멈춤 (교차 {len(cross)}쌍 남음)")
+            status = f"{status} (전체 예산 초과로 반복 {it}에서 멈춤)"
+            break
         for e1, e2 in cross:
-            added.add((e1, e2))
-            a, b = e1
-            c, d = e2
-            gam = [var(0, 1, integer=True) for _ in range(8)]
-            row([(gj, 1) for gj in gam], 1, inf)
-            dm = cfg["min_sep"]
-            # 방향 k: e2의 두 끝점이 e1의 두 끝점보다 방향 k 쪽으로 dm 이상 (k의 단위벡터와 내적)
-            for k, (ux, uy) in enumerate(DIRS):
-                for p in (c, d):
-                    for q in (a, b):
-                        Mx = (abs(G[p][0] - G[q][0]) + abs(G[p][1] - G[q][1]) + 4 * R + 2 * dm) if R else M0
-                        row([(X[p], ux), (Y[p], uy), (X[q], -ux), (Y[q], -uy), (gam[k], -Mx)], dm - Mx, inf)
-    obj = h.getInfo().objective_function_value if pos else None
+            add_cross(e1, e2)
+        if warm:
+            touched = {e for pair in cross for e in pair}
+            touched |= {f for e in touched for f in edge_adj[e]}
+            give_start({e: i for e, i in cur_dirs.items() if e not in touched}, f"반복 {it + 1}")
+    obj = last_obj if pos else None
     # 결과 통계
     bends = 0
     for (v, e1, e2), w in (pairs.items() if pos else []):
@@ -445,7 +586,7 @@ def solve_octilinear(g: dict, cg: dict, cfg: dict, log=None, on_iteration=None) 
         bends += w * min(dvt, 8 - dvt)
     chosen = {}
     if pos:
-        sol = h.getSolution().col_value
+        sol = last_sol   # 마지막으로 실행 가능했던 반복의 해 (마지막 반복이 해를 못 찾았으면 그 앞)
         for e in E:
             chosen[e] = max(KS[e], key=lambda i: sol[D[e, i]])
     return {"pos": pos, "status": status, "iterations": it, "crossing_constraints": len(added), "objective": obj,

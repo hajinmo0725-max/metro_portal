@@ -26,7 +26,10 @@ regions:
   # 비교(아래 seoul_variants) 결과 F안(지리 방향 이탈 비용 4, 최소 간격 0.6, 지리 길이 비례 0.35)이 가장 읽기 좋아 기본으로 골랐다
   - {id: seoul, city: 수도권, country: KR, keep_every: 3, time_limit_s: 180, max_iterations: 8, order: soft, min_edge: 1.0,
      chain_len_factor: 0.3, span_factor: 3.0, scale_by: median, mip_heuristic_effort: 0.3, mip_rel_gap: 0.2,
-     w_dir: 4.0, min_sep: 0.6, geo_len_factor: 0.35}
+     w_dir: 4.0, min_sep: 0.6, geo_len_factor: 0.35,
+     # 5차 R4: 장시간 풀이 예산 (20_solve_schematic.py --long). 예산 키라 입력 지문은 안 바뀐다.
+     # 앞 반복 해의 방향을 다음 반복 웜스타트로 넘기고(교차 제약이 붙은 엣지와 이웃만 비움), 반복·개선해마다 data/raw/schematic_runs/에 중간 저장
+     long_run: {time_limit_s: 900, max_iterations: 12, mip_rel_gap: 0.05, warm_start: geo-snap, total_budget_s: 7200, incumbent_every_s: 60}}
   - {id: busan, city: 부산, country: KR, keep_every: 2}
   - {id: daegu, city: 대구, country: KR, keep_every: 2}
   - {id: daejeon, city: 대전, country: KR, keep_every: 2}
