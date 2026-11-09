@@ -2,8 +2,8 @@
 
 - 시작: 2026-11-09T12:19:40Z (세션 시작 직후 `date -u`, R과 같은 세션) · 명세: 사용자 /goal 메시지 T1~T3
 - 브랜치 `tokyo-phase1b` = `run5-polish`(R, PR #7)에서 분기, draft PR #8 (베이스 = run5-polish)
-- 커밋: `6b82c88` T1 → `ec45f9a` T2 → `6c11d4a` T3 → `9c79653` fun facts 국가 간 경로 → `97831df` T3 안내 문구 (+ R 최종 머지, 이 보고서)
-- 테스트: pytest **225 통과** (`evidence/pytest_run5_t.txt`), node **42 통과** (`evidence/node_test_run5_t.txt`), 브라우저 E2E 에러 0 (`evidence/t3_browser.txt`)
+- 커밋: `6b82c88` T1 → `ec45f9a` T2 → `6c11d4a` T3 → `9c79653` fun facts 국가 간 경로 → `97831df` T3 안내 문구 → `36278fa` 이 보고서 → `f107a68` R(run5-polish) 최종 머지 (R4 수도권 장시간 풀이·LOOM 비교·R 보고서 포함)
+- 테스트 (R 최종 머지 후): pytest **228 통과** (`evidence/pytest_run5_t.txt`), node **42 통과** (`evidence/node_test_run5_t.txt`), 브라우저 E2E 에러 0 (`evidence/t3_browser.txt`)
 
 ## 요약
 
