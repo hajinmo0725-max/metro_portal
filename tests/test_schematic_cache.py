@@ -96,3 +96,31 @@ def test_cache_files_carry_fingerprint_and_repro_flag():
         # 시간 제한에 걸린 반복이 있으면 재현 불가로 표시돼야 한다
         if any("Time limit" in s for s in rp["iteration_status"]):
             assert rp["deterministic"] is False
+
+
+def test_polish_recovers_exact_octilinear_from_checkpoint_directions():
+    """5차 R4: 체크포인트 좌표를 반올림해도, 저장한 엣지 방향을 고정해 다시 풀면 정확한 8방향 좌표가 나온다."""
+    spec20 = importlib.util.spec_from_file_location("s20", ROOT / "pipeline" / "20_solve_schematic.py")
+    s20 = importlib.util.module_from_spec(spec20)
+    spec20.loader.exec_module(s20)
+    g = toy_graph()
+    cg = S.contract(g, keep_every=2)
+    r = S.solve_octilinear(g, cg, CFG)
+    ck = {"iteration": 1, "status": r["status"], "dirs": [[list(e), i] for e, i in sorted(r["dirs"].items())], "added": []}
+    # 반올림한 좌표는 8방향 검사(허용오차 1e-6)를 깨뜨릴 수 있다
+    rounded = {k: (round(v[0], 4) + 1e-4 * i, round(v[1], 4)) for i, (k, v) in enumerate(sorted(r["pos"].items()))}
+    assert S.layout_stats(g, S.expand(g, cg, rounded))["non_octilinear_edges"] > 0
+    rp = s20.polish(g, cg, CFG, ck, None)
+    st = S.layout_stats(g, S.expand(g, cg, rp["pos"]))
+    assert st["non_octilinear_edges"] == 0
+    assert rp["dirs"] == r["dirs"]
+
+
+def test_warm_start_partial_solution_accepted():
+    """지리 스냅 웜스타트를 줘도 같은 문제를 풀고 8방향 해가 나온다 (부분해는 HiGHS가 채운다)."""
+    g = toy_graph()
+    cg = S.contract(g, keep_every=2)
+    logs = []
+    r = S.solve_octilinear(g, cg, {**CFG, "warm_start": "geo-snap"}, log=logs.append)
+    assert r["pos"] and any("웜스타트(지리 스냅)" in m for m in logs)
+    assert S.layout_stats(g, S.expand(g, cg, r["pos"]))["non_octilinear_edges"] == 0

@@ -1,0 +1,29 @@
+$ python3 pipeline/20_solve_schematic.py --regions daegu --skip-variants --tag resumedemo --max-iterations 2
+[20] daegu (대구): 역 97, 엣지 98 → 축약 52/53
+    [중간 저장] incumbent.json (반복 1): 목적 60.34, 교차 4, 굴곡 27
+    iter 1: Optimal, obj=41.50, 위반 쌍 9
+    [중간 저장] iter_01.json: 교차 9, 굴곡 20, 목적 41.50
+    iter 2: Optimal, obj=41.91, 위반 쌍 6
+    [중간 저장] iter_02.json: 교차 1, 굴곡 22, 목적 41.91
+[20] daegu: Optimal 1.6s 반복 2 교차제약 9 → {'nodes': 97, 'edges': 98, 'non_octilinear_edges': 0, 'crossings': 1, 'bend_units_45deg': 22, 'mean_displacement_norm': 0.362}
+[20] daegu_resumedemo: 결과 /home/user/metro_portal/data/raw/schematic_runs/daegu_resumedemo/result.json (캐시는 그대로)
+
+$ python3 pipeline/20_solve_schematic.py --regions daegu --skip-variants --tag resumedemo --resume --max-iterations 2
+[20] daegu (대구): 역 97, 엣지 98 → 축약 52/53
+[20] 이어 풀기: /home/user/metro_portal/data/raw/schematic_runs/daegu_resumedemo 마지막 반복의 방향 53개, 교차 제약 9쌍
+    이어 풀기: 교차 제약 9쌍을 처음부터 넣음
+    웜스타트(이어 풀기): 방향 고정 엣지 53/53 → HighsStatus.kOk
+    [중간 저장] incumbent.json (반복 3): 목적 42.62, 교차 1, 굴곡 22
+    iter 1: Optimal, obj=42.62, 위반 쌍 2
+    [중간 저장] iter_03.json: 교차 1, 굴곡 22, 목적 42.62
+    iter 2: Optimal, obj=42.25, 위반 쌍 0
+    [중간 저장] iter_04.json: 교차 0, 굴곡 20, 목적 42.25
+[20] daegu: Optimal 1.1s 반복 2 교차제약 11 → {'nodes': 97, 'edges': 98, 'non_octilinear_edges': 0, 'crossings': 0, 'bend_units_45deg': 20, 'mean_displacement_norm': 0.406}
+[20] daegu_resumedemo: 결과 /home/user/metro_portal/data/raw/schematic_runs/daegu_resumedemo/result.json (캐시는 그대로)
+
+incumbent.json
+iter_01.json
+iter_02.json
+iter_03.json
+iter_04.json
+result.json

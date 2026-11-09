@@ -2,7 +2,7 @@
 
 | 데이터 | 출처 | 라이선스 | 수집 방식 | 상태 |
 | :- | :- | :- | :- | :- |
-| 전국도시철도역사정보표준데이터 (역사정보) | 레일포털 data.kric.go.kr `M_01_01/detail.do?id=32` (공공데이터포털 15013205의 제공 시스템, 국가철도공단) | 이용허락범위 제한 없음 | `pipeline/01_fetch_kr_sources.py` 자동 다운로드 (로그인 불필요). data.go.kr 직접 다운로드는 JS XHR 구조라 실패 | **사용 (역 마스터)**. 기준일 2026-06-30 |
+| 전국도시철도역사정보표준데이터 (역사정보) | 레일포털 data.kric.go.kr `M_01_01/detail.do?id=32` (공공데이터포털 15013205의 제공 시스템, 국가철도공단) | 이용허락범위 제한 없음 | `pipeline/01_fetch_kr_sources.py` 자동 다운로드 (로그인 불필요). data.go.kr 직접 다운로드는 JS XHR 구조라 실패. **5차 세션(2026-11-09)**: 노선정보(28KB)만 받아졌고 역사정보 2개 파일은 6초 후 터널 종료(code 1006), 재시도 시 프록시 502 → 우회 안 하고 커밋된 `data/processed/kr`로 04단계부터 진행 | **사용 (역 마스터)**. 기준일 2026-06-30 |
 | 전국도시철도노선정보표준데이터 (노선정보, 정거장구성) | 레일포털 `detail.do?id=18` | 이용허락범위 제한 없음 | 자동 다운로드 | **사용 (정차 순서 기본값)**. 기준일 2026-06-30 |
 | 전국 도시광역철도 역사정보 (다국어 역명) | 레일포털 `detail.do?id=1294` | 레일포털 이용약관 (검증 못 함: 상세 라이선스 문구 미확인) | 자동 다운로드 | **사용 (일/중 역명·부역명 보강)**. 좌표는 부산 1호선 등에서 오류가 있어 보강에는 쓰지 않음. 3차부터 표준데이터 미수록 GTX-A 9역은 이 파일 행(좌표·이름·신설일자·환승노선명)으로 역 레코드를 만든다 (`config/kr_supplement.yaml`). 기준일 2026-07-01 |
 | OSM 역·노선 (route relation) | OpenStreetMap via Overpass API, Geofabrik 추출본(.osm.pbf) | ODbL 1.0 (© OpenStreetMap contributors) | Overpass·Geofabrik 둘 다 허용 목록에 있으나 세션 egress에서 TLS 핸드셰이크 중 터널 종료(2026-11-05 2·3차 동일) | 미사용. 우회 시도 안 함 (미러·다른 OSM 배포처도 쓰지 않음) |
@@ -14,6 +14,6 @@
 | OpenCC 변환표 (Phase 1 T2) | PyPI `opencc` 패키지 내장 사전 | Apache-2.0 | `pip install opencc` | T2 이체자 정규화 |
 | Wikidata 개통 예정 역 좌표 (4차 Q0) | Wikidata Query Service (양산선 6역·노포 Q705026·양산중앙 Q56058997·북울산 Q108426233의 P625) | CC0 1.0 | 2026-11-06 SPARQL 1회 수동 조회, 값은 `config/kr_planned.yaml`에 QID와 함께 기록 | 비활성 계획 노선(`enabled: false`) 좌표. 개통 후 표준데이터로 교체 |
 | 한국 도시철도·광역철도 개통 현황 조사 (4차) | `docs/research/kr_line_openings.md` (Cowork 조사, 2026-11-06). 국토부·국가철도공단·지자체 보도자료와 언론 보도 | 각 원문 저작권. 조사 문서는 요약·링크만 | 사용자 제공 | 개통 예정 노선 등록·제외 판단 근거 |
-| LOOM (도식 노선도 레이아웃 도구, 4차 S2) | github.com/ad-freiburg/loom (커밋 1e47578 고정, `scripts/build_loom.sh`) | **GPL-3.0** — 레포에 코드를 복사하지 않고 빌드 단계에서 받아 외부 CLI로만 쓰는 조건 | `git ls-remote` 접근은 됐지만, 받기·빌드 명령이 세션의 자동 권한 판정(외부 코드 실행)에서 거부됨 (2026-11-06) | **미사용**. 우회 시도 안 함. 자체 MIP(`metro_portal/schematic.py`)로 대체 |
+| LOOM (도식 노선도 레이아웃 도구, 4차 S2 · 5차 R4) | github.com/ad-freiburg/loom, **커밋 `1e4757838104d1e4d22186c9b77d5fc4b98681a0`** | **GPL-3.0** — 레포에 코드를 복사하지 않고 외부 CLI로만 쓴다 | 4차: 세션 안 받기·빌드가 자동 권한 판정에서 거부(2026-11-06). 5차: 환경 설정 스크립트가 컨테이너 생성 때 빌드해 둔 `/tmp/loom/build/{loom,octi,transitmap}`을 그대로 실행 (`make install`이 끝나지 않아 PATH에는 없었다. 세션에서 받거나 빌드하지 않음) | **비교용으로 사용** (`scripts/loom_compare.py` → `docs/reports/schematic/loom_compare.md`). 웹 도식은 계속 자체 MIP |
 | HiGHS (MIP 솔버, 4차 S5) | PyPI `highspy` | MIT | `pip install highspy` (requirements.txt) | 자체 octilinear MIP 풀이 |
 | 도쿄권 도시철도 역·노선·인접·역번호·공식명 (Phase 1b, 5차 T1) | Wikidata Query Service (노선 P137 ∈ JR東日本·東京メトロ·都営·간토 대형 사철 8사, 역 P81·P131(1도 3현)·P197+한정자·P296·P625·P5817·P1619·P1448·P465 노선 색) | CC0 1.0 | `pipeline/22_fetch_jp_wikidata.py` (SPARQL 6회, 요청 간 3초, User-Agent에 프로젝트명), 원문 캐시 `data/raw/wikidata_jp/` | **사용 (구조·좌표·순서·역번호·이름)**. 4차 결정(Q6-9)대로 ODPT는 접근하지 않았다. ja 라벨 = native_label(준공식), P1448(ja) = official(434건), en 라벨 = foreign_label. 라벨의 운영사 구분 접두어(JR東日本 등)는 공식명이 아니라 뗐다 |

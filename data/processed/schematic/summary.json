@@ -25,18 +25,18 @@
    "country": "KR",
    "keep_every": 3,
    "engine": "mip",
-   "status": "반복 2 해 사용 (Optimal; 반복 3은 Time limit reached, 해 없음)",
-   "seconds": 239.5,
-   "iterations": 3,
-   "crossing_constraints": 6,
-   "objective": Infinity,
+   "status": "반복 6 방향 고정 다듬기 (Optimal; 원래 Time limit reached)",
+   "seconds": 5536.5,
+   "iterations": 6,
+   "crossing_constraints": 15,
+   "objective": 518.7708692596598,
    "stats": {
     "nodes": 655,
     "edges": 755,
     "non_octilinear_edges": 0,
-    "crossings": 17,
-    "bend_units_45deg": 214,
-    "mean_displacement_norm": 0.31
+    "crossings": 14,
+    "bend_units_45deg": 212,
+    "mean_displacement_norm": 0.328
    },
    "stats_geo": {
     "nodes": 655,
@@ -49,14 +49,20 @@
    "fingerprint": "e081d8a0d98b8f6c",
    "reproducibility": {
     "deterministic": false,
-    "reason": "이전 세션 풀이 결과를 채택 (재풀이 없이 지문만 찍음)",
+    "reason": "반복 중 시간 제한(벽시계)에 걸림 → 기계 속도에 따라 다를 수 있다",
     "iteration_status": [
-     "반복 2 해 사용 (Optimal; 반복 3은 Time limit reached, 해 없음)"
+     "Time limit reached",
+     "Time limit reached",
+     "Time limit reached",
+     "Time limit reached",
+     "Time limit reached",
+     "Time limit reached",
+     "Optimal"
     ],
     "highs": "1.15.1",
     "threads": 1,
     "random_seed": 7,
-    "time_limit_s": 180,
+    "time_limit_s": 900,
     "mip_max_nodes": null
    }
   },
