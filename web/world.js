@@ -1,5 +1,5 @@
 // Phase 1 웹 설정 (브라우저·node 공용 ES 모듈): ruleset 번들 목록, 국가 표기, 워프 아크 스타일.
-// 번들은 pipeline/06_build_web_data.py가 만든다 (한국만 = kr_<rs>.json, 한국+타이베이 = world_<rs>.json).
+// 번들은 pipeline/06_build_web_data.py가 만든다 (한국만 = kr_<rs>.json, 한국+타이베이(+도쿄) = world_<rs>.json).
 
 export const RULESETS = [
   { key: "strict", file: "kr_strict.json", label: "한국만 · T1 (기본)", note: "" },
@@ -8,9 +8,13 @@ export const RULESETS = [
   { key: "tw_t123", file: "world_tw_t123.json", label: "한국+타이베이 · T1+T2+T3a", note: "현지어 라벨 포함" },
   { key: "tw_t12_official", file: "world_tw_t12_official.json", label: "참고 · T1+T2 공식명만", note: "공식명만" },
   { key: "tw_t123b", file: "world_tw_t123b.json", label: "참고 · T1+T2+T3a+T3b (로마자 우연 일치)", note: "T3b 포함" },
+  // 5차 T3: Phase 1b 한국+타이베이+도쿄 (기존 규칙 + 일본어 라벨, config/rulesets/ktj_*.yaml)
+  { key: "ktj_t1", file: "world_ktj_t1.json", label: "한국+타이베이+도쿄 · T1", note: "현지어 라벨 포함" },
+  { key: "ktj_t12", file: "world_ktj_t12.json", label: "한국+타이베이+도쿄 · T1+T2", note: "현지어 라벨 포함" },
+  { key: "ktj_t123", file: "world_ktj_t123.json", label: "한국+타이베이+도쿄 · T1+T2+T3a", note: "현지어 라벨 포함" },
 ];
 
-export const COUNTRY_KO = { KR: "한국", TW: "대만" };
+export const COUNTRY_KO = { KR: "한국", TW: "대만", JP: "일본" };
 
 export function rulesetByKey(key) {
   return RULESETS.find((r) => r.key === key) || RULESETS[0];

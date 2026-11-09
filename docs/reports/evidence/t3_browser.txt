@@ -1,0 +1,8 @@
+desktop ruleset options: ktj_t1=한국+타이베이+도쿄 · T1 | ktj_t12=한국+타이베이+도쿄 · T1+T2 | ktj_t123=한국+타이베이+도쿄 · T1+T2+T3a
+desktop route 판교 → 도쿄권 板橋 @ ktj_t12 : 총비용 2승차 0역워프 1회⇢ 국가 간 워프 T2 [板橋] 수도권 판교 (신분당선) ⇢ 도쿄권 板橋 (赤羽線)
+desktop bundle {"clusters":2383,"jp":1273,"portals":44}
+desktop route 新宿 → 판교: 총비용 4승차 2역워프 1회山手線 新宿 → 池袋1역 · 직행환승 · 山手線 → 赤羽線赤羽線 池袋 → 板橋1역 · 직행⇢ 국가 간 워프 T2 [板橋] 도쿄권 板橋 (赤羽線) ⇢ 수도권 판교 (신분당선)
+mobile ruleset options: ktj_t1=한국+타이베이+도쿄 · T1 | ktj_t12=한국+타이베이+도쿄 · T1+T2 | ktj_t123=한국+타이베이+도쿄 · T1+T2+T3a
+mobile route 판교 → 도쿄권 板橋 @ ktj_t12 : 총비용 2승차 0역워프 1회⇢ 국가 간 워프 T2 [板橋] 수도권 판교 (신분당선) ⇢ 도쿄권 板橋 (赤羽線)
+mobile bundle {"clusters":2383,"jp":1273,"portals":44}
+ERRORS none
