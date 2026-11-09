@@ -55,8 +55,9 @@ def worlds(cfg):
     return get
 
 
-def checkpointer(ckdir: Path, g, cg, log):
-    """5차 R4 중간 저장: 반복마다 iter_<k>.json, 반복 안 개선해마다 incumbent.json (data/raw 아래, gitignore)."""
+def checkpointer(ckdir: Path, g, cg, log, offset: int = 0):
+    """5차 R4 중간 저장: 반복마다 iter_<k>.json, 반복 안 개선해마다 incumbent.json (data/raw 아래, gitignore).
+    offset: 이어 풀기면 앞 실행의 마지막 반복 번호 (번호를 이어서 매겨 앞 체크포인트를 덮어쓰지 않는다)."""
     ckdir.mkdir(parents=True, exist_ok=True)
     best = {"key": None}
 
@@ -73,6 +74,7 @@ def checkpointer(ckdir: Path, g, cg, log):
         return st
 
     def on_iteration(it, pos_kept, added, status, obj, dirs):
+        it += offset
         st = dump(f"iter_{it:02d}.json", it, pos_kept, status, obj, added, dirs)
         key = (st["crossings"], st["bend_units_45deg"])
         log(f"    [중간 저장] iter_{it:02d}.json: 교차 {st['crossings']}, 굴곡 {st['bend_units_45deg']}, 목적 {obj:.2f}")
@@ -80,6 +82,7 @@ def checkpointer(ckdir: Path, g, cg, log):
             best["key"] = key
 
     def on_incumbent(it, pos_kept, obj):
+        it += offset
         st = dump("incumbent.json", it, pos_kept, f"반복 {it} 진행 중 개선해", obj)
         log(f"    [중간 저장] incumbent.json (반복 {it}): 목적 {obj:.2f}, 교차 {st['crossings']}, 굴곡 {st['bend_units_45deg']}")
     return on_iteration, on_incumbent
@@ -126,7 +129,9 @@ def run_region(w, reg, rcfg, log, ckdir: Path | None = None, resume=False):
     log(f"[20] {reg['id']} ({reg['city']}): 역 {len(g['nodes'])}, 엣지 {len(g['edges'])} → 축약 {len(cg['nodes'])}/{len(cg['edges'])}")
     kw = {}
     if ckdir is not None:
-        kw["on_iteration"], kw["on_incumbent"] = checkpointer(ckdir, g, cg, log)
+        its = sorted(ckdir.glob("iter_*.json")) if resume else []
+        offset = json.loads(its[-1].read_text(encoding="utf-8"))["iteration"] if its else 0
+        kw["on_iteration"], kw["on_incumbent"] = checkpointer(ckdir, g, cg, log, offset)
         if resume:
             kw["start"], kw["init_added"] = load_resume(ckdir)
             if kw["start"]:
