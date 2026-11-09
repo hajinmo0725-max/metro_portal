@@ -63,9 +63,74 @@ def city_of(c):
     return "/".join(c["cities"])
 
 
+def world_facts(rs_name: str, countries=("KR", "TW", "JP")) -> dict:
+    """5차: 국가 간 경로 사례 (한국+타이베이+도쿄). 3국 지름, 세 나라 공통 포탈, 서울·타이베이 → 도쿄, 해외를 거쳐야 짧아지는 국내 경로."""
+    from metro_portal.world import load_multi
+    rs = load_ruleset(rs_name)
+    w = build_world(*load_multi(countries), rs)
+    g = ClusterGraph(w)
+    C = g.C
+    co = [tuple(c.get("countries") or ("KR",)) for c in g.cl]
+    cross_ids = {p["id"] for p in w["portals"] if len({x for cid in p["cluster_ids"] for x in co[g.ix[cid]]}) > 1}
+    w2 = dict(w, portals=[p for p in w["portals"] if p["id"] not in cross_ids])
+    g2 = ClusterGraph(w2)   # 국가 간 포탈만 뺀 그래프 (같은 클러스터 순서)
+    out = {"ruleset": rs_name, "countries": list(countries), "clusters": C, "cross_portals": len(cross_ids)}
+    D = [g.sssp_count(s)[0][:C] for s in range(C)]
+    best = max(((D[s][t], s, t) for s in range(C) for t in range(C) if t != s and D[s][t] != INF), key=lambda x: (x[0], -x[1], -x[2]))
+    dia, s0, t0 = best
+    path = g.unique_path(s0, t0, g.sssp_count(s0)[0])
+    out["diameter"] = {"cost": dia, "from": g.name(s0), "to": g.name(t0), "steps": describe_path(g, path),
+                       "countries_on_path": sorted({x for i in path if i < C for x in co[i]})}
+    tri = [p for p in w["portals"] if len({x for cid in p["cluster_ids"] for x in co[g.ix[cid]]}) == 3]
+    out["three_country_portals"] = [{"name": p["name"], "texts": p.get("texts", []), "tier": p["tier"], "cost": p["cost"],
+                                     "clusters": [g.name(g.ix[c]) for c in p["cluster_ids"]]} for p in tri]
+
+    def find(country, name):
+        c = [i for i in range(C) if country in co[i] and g.cl[i]["name"] == name]
+        return c[0] if c else None
+    routes = []
+    for (ca, na), (cb, nb) in [(("KR", "서울"), ("JP", "東京")), (("TW", "台北車站"), ("JP", "東京")), (("KR", "부산"), ("JP", "新宿")),
+                               (("JP", "東京"), ("KR", "부산"))]:
+        a_, b_ = find(ca, na), find(cb, nb)
+        if a_ is None or b_ is None:
+            continue
+        d = g.sssp_count(a_)[0]
+        if d[b_] == INF:
+            continue
+        routes.append({"from": g.name(a_), "to": g.name(b_), "cost": d[b_], "steps": describe_path(g, g.unique_path(a_, b_, d))})
+    out["routes"] = routes
+    # 해외를 거쳐야 짧아지는 국내 경로: 같은 나라 두 역의 최단 비용이 국가 간 포탈을 빼면 커지는 쌍
+    det = {}
+    for cc in countries:
+        idx = [i for i in range(C) if co[i] == (cc,)]
+        n, pairs, ex = 0, 0, None
+        for s in idx:
+            d1 = D[s]
+            d2 = g2.sssp_count(s)[0][:C]
+            for t in idx:
+                if t == s or d1[t] == INF:
+                    continue
+                pairs += 1
+                if d1[t] < d2[t]:
+                    n += 1
+                    gain = (d2[t] - d1[t]) if d2[t] != INF else 10 ** 6
+                    key = (gain, -d1[t], -s, -t)
+                    if ex is None or key > ex[0]:
+                        ex = (key, s, t, d1[t], d2[t])
+        e = None
+        if ex:
+            _, s, t, a1, a2 = ex
+            e = {"from": g.name(s), "to": g.name(t), "cost": a1, "cost_domestic": None if a2 == INF else a2,
+                 "steps": describe_path(g, g.unique_path(s, t, g.sssp_count(s)[0]))}
+        det[cc] = {"pairs": pairs, "shortened_via_abroad": n, "example": e}
+    out["detours"] = det
+    return out
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--ruleset", default="strict")
+    ap.add_argument("--world-ruleset", default="ktj_t12", help="5차: 국가 간 경로 사례 ruleset (한국+타이베이+도쿄). 'none'이면 생략")
     a = ap.parse_args()
     rs = load_ruleset(a.ruleset)
     if rs["costs"]["transfer"] != 0:
@@ -187,6 +252,8 @@ def main() -> int:
             if t != s and D[s][t] != INF:
                 hist[WP[s][t] if CNT[s][t] == 1 else -1] += 1
     facts["unique_pairs_by_warps"] = {str(k): v for k, v in sorted(hist.items()) if k >= 0}
+    if a.world_ruleset != "none" and (ROOT / "data" / "processed" / "jp" / "stations.json").exists():
+        facts["world"] = world_facts(a.world_ruleset)
     (ROOT / "data" / "processed" / "fun_facts.json").write_text(json.dumps(facts, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     write_md(facts, g)
     print(f"[11] diameter={dia} hubs_top={hubs[0]['portal']} most_warps={mw}")
@@ -281,8 +348,43 @@ def write_md(f, g):
     oc = f["optimal_count_max"]
     L += ["## 8. 기타", "", f"- 최단 경로가 가장 많은 쌍: {oc[1]} → {oc[2]}, 최단 경로 {oc[0]:,}개 (같은 수로 가는 길이 이만큼)",
           f"- 연결된 역 순서쌍 {f['pairs_total']:,}개 중 최적해가 유일한 쌍 {sum(f['unique_pairs_by_warps'].values()):,}개", ""]
+    if f.get("world"):
+        L += world_md(f["world"])
     (ROOT / "docs" / "reports" / "fun_facts.md").write_text("\n".join(L) + "\n", encoding="utf-8")
     del lab_id
+
+
+def world_md(wf):
+    """5차: 국가 간 경로 사례 섹션."""
+    def rt(r):
+        return route_txt(r["steps"], r["from"])
+    CK = {"KR": "한국", "TW": "대만", "JP": "일본"}
+    d = wf["diameter"]
+    L = [f"## 9. 국가 간 경로 사례 (한국+타이베이+도쿄, `{wf['ruleset']}`: T1 + T2 한자 이체자, 워프 T1 1수·T2 2수)", "",
+         f"5차 Phase 1b 도쿄를 넣은 통합 그래프. 클러스터 {wf['clusters']:,}개, 국가 간 포탈 {wf['cross_portals']}개. "
+         "일본·대만 역 이름은 Wikidata 현지어 라벨(준공식)이다.", "",
+         f"**세 나라에서 가장 먼 두 역: {d['from']} → {d['to']} = {d['cost']}수** (지나는 나라: {', '.join(CK[c] for c in d['countries_on_path'])})", "",
+         f"> {rt(d)}", ""]
+    for p in wf["three_country_portals"]:
+        L += [f"**한 번의 워프로 세 나라: [{p['texts'][0] if p['texts'] else p['name']}]** — {' · '.join(p['clusters'])}. "
+              f"서울 판교에서 도쿄 이타바시(板橋)도, 타이베이 반차오(板橋)도 {p['tier']} 워프 한 번({p['cost']}수).", ""]
+    if wf["routes"]:
+        L += ["나라 사이 최단 경로:", ""]
+        for r in wf["routes"]:
+            L += [f"- **{r['from']} → {r['to']} = {r['cost']}수**", f"  > {rt(r)}"]
+        L.append("")
+    L += ["해외를 거쳐야 짧아지는 국내 경로 (국가 간 포탈을 빼면 더 멀어지는 같은 나라 순서쌍):", ""]
+    for cc, x in wf["detours"].items():
+        line = f"- {CK[cc]}: {x['shortened_via_abroad']:,} / {x['pairs']:,}쌍 ({x['shortened_via_abroad'] / max(1, x['pairs']):.2%})"
+        e = x["example"]
+        if e:
+            dom = f"{e['cost_domestic']}수" if e["cost_domestic"] is not None else "국내로는 못 감"
+            line += f". 최대 단축: **{e['from']} → {e['to']}** {dom} → {e['cost']}수"
+            L += [line, f"  > {rt(e)}"]
+        else:
+            L.append(line)
+    L.append("")
+    return L
 
 
 if __name__ == "__main__":

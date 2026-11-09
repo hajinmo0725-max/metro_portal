@@ -1,0 +1,13 @@
+# 5차 T2: 한국 + 타이베이 + 도쿄 통합 그래프 ruleset 비교 (pipeline/17_compare_world_rulesets.py --config config/world_compare_ktj.yaml).
+# 기존 ruleset 5종(tw_*)을 그대로 두고 일본어 이름만 더한 ktj_* 5종 (config/rulesets/ktj_*.yaml)
+countries: [KR, TW, JP]
+rulesets: [ktj_t1, ktj_t12, ktj_t123]
+reference_rulesets: [ktj_t12_official, ktj_t123b]
+out_dir: data/processed/world_ktj
+report: docs/reports/t2_world_ktj.md
+title: "T2 한국 + 타이베이 + 도쿄 통합 그래프 — ruleset 비교"
+# 허브 폭발 판정 기준은 4차 B3과 같다 (작성자 판단)
+hub_explosion:
+  degree_alert: 5
+  diameter_drop_ratio: 0.2
+  portal_growth_ratio: 2.0

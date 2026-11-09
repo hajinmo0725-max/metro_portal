@@ -125,7 +125,9 @@ async function load(key, { fit = false } = {}) {
   $("station-list").innerHTML = labels.map((l) => `<option value="${esc(l)}"></option>`).join("");
   $("ruleset-select").value = rsKey;
   $("ruleset-note").textContent = def.note === "현지어 라벨 포함" || def.note === "T3b 포함"
-    ? "타이베이 이름은 위키데이터 zh-Hant 라벨(현지어 라벨, 준공식)이다. 그 라벨로 맞은 국가 간 워프는 신뢰도 '보통'. 국가 간 경로는 선택 항목이고 기본은 한국만."
+    ? ((data.meta.countries || []).includes("JP")
+      ? "타이베이·도쿄 이름은 위키데이터 현지어 라벨(zh-Hant·ja, 준공식)이다. 그 라벨로 맞은 국가 간 워프는 신뢰도 '보통'. 국가 간 경로는 선택 항목이고 기본은 한국만."
+      : "타이베이 이름은 위키데이터 zh-Hant 라벨(현지어 라벨, 준공식)이다. 그 라벨로 맞은 국가 간 워프는 신뢰도 '보통'. 국가 간 경로는 선택 항목이고 기본은 한국만.")
     : (data.meta.countries || []).length > 1 && nX === 0 ? "공식명만 쓰면 타이베이와 이어지는 포탈이 없다 (타이베이 공식명 미확보)." : "";
   drawLines();
   drawWarps();
@@ -202,7 +204,11 @@ function run() {
 $("route-form").addEventListener("submit", (e) => { e.preventDefault(); run(); });
 $("allow-warp").addEventListener("change", () => { if ($("from").value && $("to").value) run(); });
 $("swap").addEventListener("click", () => { [$("from").value, $("to").value] = [$("to").value, $("from").value]; if ($("from").value && $("to").value) run(); });
-document.querySelectorAll(".examples button").forEach((b) => b.addEventListener("click", () => { $("from").value = b.dataset.from; $("to").value = b.dataset.to; run(); }));
+// 5차 T3: 예시 버튼에 data-rs가 있으면 그 ruleset 번들로 바꾼 뒤 찾는다 (판교 → 도쿄 板橋 = 한국+타이베이+도쿄 T1+T2)
+document.querySelectorAll(".examples button").forEach((b) => b.addEventListener("click", async () => {
+  if (b.dataset.rs && b.dataset.rs !== rsKey) await load(b.dataset.rs, { fit: true });
+  $("from").value = b.dataset.from; $("to").value = b.dataset.to; run();
+}));
 $("show-warps").addEventListener("change", (e) => (e.target.checked ? warpLayer.addTo(map) : warpLayer.remove()));
 $("show-stations").addEventListener("change", (e) => { (e.target.checked ? stationLayer.addTo(map) : stationLayer.remove()); syncPlainStations(); });
 
@@ -214,11 +220,11 @@ $("ruleset-select").addEventListener("change", async (e) => {
   if (keep[0] && keep[1]) run();
 });
 document.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => {
-  const v = { kr: [[36.4, 127.8], 7], tw: [[25.04, 121.52], 11] }[b.dataset.view];
+  const v = { kr: [[36.4, 127.8], 7], tw: [[25.04, 121.52], 11], jp: [[35.68, 139.75], 10] }[b.dataset.view];
   map.setView(v[0], v[1]);
 }));
 
-// URL 해시로 상태 복원 (#from=강남&to=부산 동래&rs=tw_t12)
+// URL 해시로 상태 복원 (#from=강남&to=부산 동래&rs=tw_t12, 도쿄: rs=ktj_t12)
 const h = new URLSearchParams(location.hash.slice(1));
 await load(h.get("rs") || "strict", { fit: false });
 if (h.get("from") && h.get("to")) {

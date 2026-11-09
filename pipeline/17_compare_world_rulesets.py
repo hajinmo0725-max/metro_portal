@@ -22,6 +22,7 @@ from metro_portal.ruleset import load_ruleset  # noqa: E402
 from metro_portal.world import build_world, load_multi  # noqa: E402
 
 OUT = ROOT / "data" / "processed" / "world"
+REPORT = ROOT / "docs" / "reports" / "b3_world_rulesets.md"
 
 
 def dump(path, obj):
@@ -153,7 +154,15 @@ def judge(r, base, cfg):
 
 
 def main() -> int:
-    cfg = yaml.safe_load(open(ROOT / "config" / "world_compare.yaml", encoding="utf-8"))
+    import argparse
+    global OUT, REPORT
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--config", default="config/world_compare.yaml", help="5차 T2: config/world_compare_ktj.yaml = 한국+타이베이+도쿄")
+    a = ap.parse_args()
+    cfg = yaml.safe_load(open(ROOT / a.config, encoding="utf-8"))
+    cfg["_path"] = a.config
+    OUT = ROOT / cfg.get("out_dir", "data/processed/world")
+    REPORT = ROOT / cfg.get("report", "docs/reports/b3_world_rulesets.md")
     res = {}
     for name in cfg["rulesets"] + cfg["reference_rulesets"]:
         res[name] = run(name, cfg["countries"])
@@ -168,7 +177,7 @@ def main() -> int:
     for v in res.values():
         v.pop("_kr")
     slim = {k: {kk: vv for kk, vv in v.items() if kk not in ("metrics",)} | {"metrics_summary": summary(v["metrics"])} for k, v in res.items()}
-    dump(OUT / "compare.json", {"config": cfg, "results": slim})
+    dump(OUT / "compare.json", {"config": {k: v for k, v in cfg.items() if not k.startswith("_")}, "results": slim})
     write_report(cfg, res)
     return 0
 
@@ -185,8 +194,10 @@ def summary(m):
 
 def write_report(cfg, res):
     names = cfg["rulesets"] + cfg["reference_rulesets"]
-    L = ["# B3 한국 + 타이베이 통합 그래프 — ruleset 비교", "",
-         "생성: `python3 pipeline/17_compare_world_rulesets.py` (설정 `config/world_compare.yaml`, 룰 `config/rulesets/tw_*.yaml`)", "",
+    multi3 = len(cfg["countries"]) > 2
+    L = [f"# {cfg.get('title', 'B3 한국 + 타이베이 통합 그래프 — ruleset 비교')}", "",
+         (f"생성: `python3 pipeline/17_compare_world_rulesets.py --config config/world_compare_ktj.yaml` (룰 `config/rulesets/ktj_*.yaml`)" if multi3 else
+          "생성: `python3 pipeline/17_compare_world_rulesets.py` (설정 `config/world_compare.yaml`, 룰 `config/rulesets/tw_*.yaml`)"), "",
          "- 4차(2026-11-06 사용자 결정 Q6-1): 기본 3종(`tw_t1`, `tw_t12`, `tw_t123`)은 이름 출처 등급 **official + native_label**을 쓴다. "
          "타이베이 역의 zh-Hant Wikidata 라벨은 현지어 라벨(준공식)로 인정하고, 현지어가 아닌 라벨(en 등)은 T3a에서만 쓰며 그 포탈은 신뢰도 low로 표시한다.",
          "- 참고: `tw_t12_official`은 공식명만(3차 기본 재현), `tw_t123b`는 T3b(로마자 표기 우연 일치)를 켠 것이다.",
@@ -203,7 +214,7 @@ def write_report(cfg, res):
                  f"{s['mean_warp']} | {s['components_nowarp']} | {s['diameter_nowarp']} | {'예' if res[n]['countries_connected'] else '아니오'} | {len(res[n]['subsumed'])} |")
     L += ["", "지름·평균은 워프 有 그래프의 최대 컴포넌트 기준이다. 국가 간 포탈이 없으면 최대 컴포넌트는 한국이라 지름이 한국 값과 같다.", "",
           "## 허브 폭발 판정", "",
-          f"기준 (`config/world_compare.yaml`): T2·T3 포탈 차수 ≥ {cfg['hub_explosion']['degree_alert']}, 포탈 수 ×{cfg['hub_explosion']['portal_growth_ratio']} 이상, "
+          f"기준 (`{cfg.get('_path', 'config/world_compare.yaml')}`): T2·T3 포탈 차수 ≥ {cfg['hub_explosion']['degree_alert']}, 포탈 수 ×{cfg['hub_explosion']['portal_growth_ratio']} 이상, "
           f"같은 연결 범위에서 지름 {cfg['hub_explosion']['diameter_drop_ratio']:.0%} 이상 감소 중 하나라도 해당하면 의심. 각 그룹의 첫 ruleset(T1만)이 기준.", "",
           "| ruleset | 판정 | 근거 | 등급별 최대 차수 |", "| :- | :- | :- | :- |"]
     for n in names:
@@ -212,7 +223,7 @@ def write_report(cfg, res):
         for p in res[n]["portals"]:
             mx[p["tier"]] = max(mx.get(p["tier"], 0), p["degree"])
         L.append(f"| `{n}` | {'**폭발 의심**' if j['explosion'] else '정상'} | {'; '.join(j['reasons']) or '-'} | {', '.join(f'{k} {v}' for k, v in sorted(mx.items()))} |")
-    L += ["", "## 국내 우회 효과 — 한국 내 순서쌍 중 `tw_t1`보다 최단 비용이 줄어든 쌍", "",
+    L += ["", f"## 국내 우회 효과 — 한국 내 순서쌍 중 `{names[0]}`보다 최단 비용이 줄어든 쌍", "",
           "국가 간 포탈이 생기면 한국 두 역 사이 최단 경로가 타이베이를 거쳐 짧아질 수 있다(4차 Q6-5: 허용, 단 길찾기 기본은 한국 T1). 같은 나라 T2·T3 포탈(대치↔대티, 성남↔석남)도 국내 단축을 만든다.", "",
           "| ruleset | 단축된 쌍 / 한국 내 쌍 | 최대 단축 예시 |", "| :- | :- | :- |"]
     for n in names:
@@ -220,6 +231,21 @@ def write_report(cfg, res):
         ex = k["example"]
         L.append(f"| `{n}` | {k['shortened']:,} / {k['pairs']:,} ({k['shortened'] / k['pairs']:.2%}) | "
                  + (f"{ex['from']} → {ex['to']}: {ex['before']} → {ex['after']} ({ex['path']})" if ex else "-") + " |")
+    if multi3:
+        L += ["", "## 국가 쌍별 국가 간 포탈 수", "", "| ruleset | " + " | ".join(["KR–TW", "KR–JP", "TW–JP", "세 나라 공통"]) + " |", "| :- |" + " -: |" * 4]
+        for n in names:
+            cc = Counter()
+            for p in res[n]["portals"]:
+                cs = tuple(p["countries"])
+                if len(cs) == 3:
+                    cc["KR–TW–JP"] += 1
+                for a_, b_ in (("KR", "TW"), ("KR", "JP"), ("TW", "JP")):
+                    if a_ in cs and b_ in cs:
+                        cc[f"{a_}–{b_}"] += 1
+            L.append(f"| `{n}` | {cc['KR–TW']} | {cc['KR–JP']} | {cc['TW–JP']} | {cc['KR–TW–JP']} |")
+        L += ["", "세 나라 공통 포탈:", ""]
+        tri = sorted({(p["tier"], p["name"], " / ".join(p["texts"]), "; ".join(p["stations"])) for n in names for p in res[n]["portals"] if len(p["countries"]) == 3})
+        L += [f"- {t} {k} (원문 {x}): {st}" for t, k, x, st in tri] or ["없음."]
     L += ["", "## 등급별 국가 간 포탈", ""]
     for n in names:
         cross = [p for p in res[n]["portals"] if p["cross_country"]]
@@ -243,7 +269,7 @@ def write_report(cfg, res):
     for n in names:
         c = Counter(p["tier"] for p in res[n]["subsumed"])
         L.append(f"- `{n}`: " + (", ".join(f"{k} {v}" for k, v in sorted(c.items())) or "없음"))
-    (ROOT / "docs" / "reports" / "b3_world_rulesets.md").write_text("\n".join(L) + "\n", encoding="utf-8")
+    REPORT.write_text("\n".join(L) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

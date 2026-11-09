@@ -42,7 +42,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--ruleset", default="strict")
     ap.add_argument("--random-pairs", type=int, default=40)
-    ap.add_argument("--countries", default="KR", help="KR 또는 KR,TW (Phase 1 통합 번들 → web/data/world_<ruleset>.json)")
+    ap.add_argument("--countries", default="KR", help="KR, KR,TW 또는 KR,TW,JP (통합 번들 → web/data/world_<ruleset>.json)")
     a = ap.parse_args()
     countries = tuple(a.countries.split(","))
     multi = countries != ("KR",)
@@ -122,7 +122,8 @@ def main() -> int:
                  "tiers": {t: {"cost": v["cost"], "grades": v.get("grades") or (["official"] if v.get("official_only") else [])}
                            for t, v in rs["portals"].items() if t.startswith("T") and v.get("enabled")},
                  "attribution": "역·노선: 레일포털(data.kric.go.kr) 표준데이터, 이용허락범위 제한 없음"
-                                + (" · 타이베이: Wikidata (CC0)" if "TW" in countries else "") + ". 지도: © OpenStreetMap contributors"},
+                                + (" · 타이베이: Wikidata (CC0)" if "TW" in countries else "")
+                                + (" · 도쿄권: Wikidata (CC0)" if "JP" in countries else "") + ". 지도: © OpenStreetMap contributors"},
         "lines": lines_out, "nodes": node_out, "edges": edges, "clusters": clusters_out, "portals": portals_out,
     }
     out = ROOT / "web" / "data" / (f"world_{rs['name']}.json" if multi else f"kr_{rs['name']}.json")

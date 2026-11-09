@@ -2776,5 +2776,1279 @@
   "3": 37974,
   "4": 9072,
   "5": 346
+ },
+ "world": {
+  "ruleset": "ktj_t12",
+  "countries": [
+   "KR",
+   "TW",
+   "JP"
+  ],
+  "clusters": 2383,
+  "cross_portals": 10,
+  "diameter": {
+   "cost": 77,
+   "from": "도쿄권 和田浦",
+   "to": "수도권 신창",
+   "steps": [
+    {
+     "type": "ride",
+     "from": "和田浦#1",
+     "to": "南三原#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "南三原#1",
+     "to": "千歳#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "千歳#1",
+     "to": "千倉#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "千倉#1",
+     "to": "九重#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "九重#1",
+     "to": "館山#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "館山#1",
+     "to": "那古船形#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "那古船形#1",
+     "to": "富浦#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "富浦#1",
+     "to": "岩井#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "岩井#1",
+     "to": "安房勝山#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "安房勝山#1",
+     "to": "保田#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "保田#1",
+     "to": "浜金谷#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "浜金谷#1",
+     "to": "竹岡#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "竹岡#1",
+     "to": "上総湊#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "上総湊#1",
+     "to": "佐貫町#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "佐貫町#1",
+     "to": "大貫#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "大貫#1",
+     "to": "青堀#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "青堀#1",
+     "to": "君津#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "君津#1",
+     "to": "木更津#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "木更津#1",
+     "to": "巌根#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "巌根#1",
+     "to": "袖ケ浦#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "袖ケ浦#1",
+     "to": "長浦#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "長浦#1",
+     "to": "姉ケ崎#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "姉ケ崎#1",
+     "to": "五井#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "五井#1",
+     "to": "八幡宿#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "八幡宿#1",
+     "to": "浜野#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "浜野#1",
+     "to": "蘇我#1",
+     "lines": [
+      "jp-Q1142964"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "蘇我#1",
+     "to": "本千葉#1",
+     "lines": [
+      "jp-Q670656"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "本千葉#1",
+     "to": "千葉#1",
+     "lines": [
+      "jp-Q670656"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "千葉#1",
+     "to": "稲毛#1",
+     "lines": [
+      "jp-Q1191364"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "稲毛#1",
+     "to": "津田沼#1",
+     "lines": [
+      "jp-Q1191364"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "津田沼#1",
+     "to": "船橋#1",
+     "lines": [
+      "jp-Q1191364"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "船橋#1",
+     "to": "市川#1",
+     "lines": [
+      "jp-Q1191364"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "市川#1",
+     "to": "新小岩#1",
+     "lines": [
+      "jp-Q1191364"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "新小岩#1",
+     "to": "錦糸町#1",
+     "lines": [
+      "jp-Q1191364"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "錦糸町#1",
+     "to": "馬喰町#1",
+     "lines": [
+      "jp-Q1191364"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "馬喰町#1",
+     "to": "新日本橋#1",
+     "lines": [
+      "jp-Q1191364"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "新日本橋#1",
+     "to": "東京#1",
+     "lines": [
+      "jp-Q1191364"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "東京#1",
+     "to": "上野#1",
+     "lines": [
+      "jp-Q681190"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "上野#1",
+     "to": "尾久#1",
+     "lines": [
+      "jp-Q681190"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "尾久#1",
+     "to": "赤羽#1",
+     "lines": [
+      "jp-Q681190"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "赤羽#1",
+     "to": "十条#1",
+     "lines": [
+      "jp-Q413735"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "十条#1",
+     "to": "板橋#2",
+     "lines": [
+      "jp-Q413735"
+     ]
+    },
+    {
+     "type": "warp",
+     "portal": "板桥",
+     "from": "板橋#2",
+     "to": "판교#1"
+    },
+    {
+     "type": "ride",
+     "from": "판교#1",
+     "to": "성남#1",
+     "lines": [
+      "gyeonggang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "성남#1",
+     "to": "구성#1",
+     "lines": [
+      "gtx-a"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "구성#1",
+     "to": "신갈#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "신갈#1",
+     "to": "기흥#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "기흥#1",
+     "to": "상갈#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "상갈#1",
+     "to": "청명#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "청명#1",
+     "to": "영통#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "영통#1",
+     "to": "망포#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "망포#1",
+     "to": "매탄권선#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "매탄권선#1",
+     "to": "수원시청#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "수원시청#1",
+     "to": "매교#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "매교#1",
+     "to": "수원#1",
+     "lines": [
+      "suin-bundang"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "수원#1",
+     "to": "세류#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "세류#1",
+     "to": "병점#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "병점#1",
+     "to": "세마#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "세마#1",
+     "to": "오산대#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "오산대#1",
+     "to": "오산#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "오산#1",
+     "to": "진위#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "진위#1",
+     "to": "송탄#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "송탄#1",
+     "to": "서정리#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "서정리#1",
+     "to": "평택지제#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "평택지제#1",
+     "to": "평택#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "평택#1",
+     "to": "성환#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "성환#1",
+     "to": "직산#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "직산#1",
+     "to": "두정#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "두정#1",
+     "to": "천안#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "천안#1",
+     "to": "봉명#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "봉명#1",
+     "to": "쌍용#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "쌍용#1",
+     "to": "아산#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "아산#1",
+     "to": "탕정#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "탕정#1",
+     "to": "배방#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "배방#1",
+     "to": "온양온천#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    },
+    {
+     "type": "ride",
+     "from": "온양온천#1",
+     "to": "신창#1",
+     "lines": [
+      "seoul-1-gyeongbu"
+     ]
+    }
+   ],
+   "countries_on_path": [
+    "JP",
+    "KR"
+   ]
+  },
+  "three_country_portals": [
+   {
+    "name": "板桥",
+    "texts": [
+     "板橋",
+     "板橋(板橋테크노밸리)",
+     "板橋站"
+    ],
+    "tier": "T2",
+    "cost": 2,
+    "clusters": [
+     "타이베이 板橋",
+     "도쿄권 板橋",
+     "수도권 판교"
+    ]
+   }
+  ],
+  "routes": [
+   {
+    "from": "수도권 서울",
+    "to": "도쿄권 東京",
+    "cost": 12,
+    "steps": [
+     {
+      "type": "ride",
+      "from": "서울#1",
+      "to": "시청#3",
+      "lines": [
+       "seoul-1"
+      ]
+     },
+     {
+      "type": "warp",
+      "portal": "시청",
+      "from": "시청#3",
+      "to": "시청#1"
+     },
+     {
+      "type": "ride",
+      "from": "시청#1",
+      "to": "연산#1",
+      "lines": [
+       "busan-1"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "연산#1",
+      "to": "거제#1",
+      "lines": [
+       "busan-3"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "거제#1",
+      "to": "종합운동장#1",
+      "lines": [
+       "busan-3"
+      ]
+     },
+     {
+      "type": "warp",
+      "portal": "종합운동장",
+      "from": "종합운동장#1",
+      "to": "종합운동장#2"
+     },
+     {
+      "type": "ride",
+      "from": "종합운동장#2",
+      "to": "삼전#1",
+      "lines": [
+       "seoul-9"
+      ]
+     },
+     {
+      "type": "warp",
+      "portal": "三田",
+      "from": "삼전#1",
+      "to": "三田#1"
+     },
+     {
+      "type": "ride",
+      "from": "三田#1",
+      "to": "大門#1",
+      "lines": [
+       "jp-Q720653"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "大門#1",
+      "to": "新橋#1",
+      "lines": [
+       "jp-Q720653"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "新橋#1",
+      "to": "東京#1",
+      "lines": [
+       "jp-Q1190152"
+      ]
+     }
+    ]
+   },
+   {
+    "from": "타이베이 台北車站",
+    "to": "도쿄권 東京",
+    "cost": 12,
+    "steps": [
+     {
+      "type": "ride",
+      "from": "台北車站#1",
+      "to": "西門#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "西門#1",
+      "to": "龍山寺#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "龍山寺#1",
+      "to": "江子翠#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "江子翠#1",
+      "to": "新埔#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "新埔#1",
+      "to": "板橋#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "warp",
+      "portal": "板桥",
+      "from": "板橋#1",
+      "to": "板橋#2"
+     },
+     {
+      "type": "ride",
+      "from": "板橋#2",
+      "to": "十条#1",
+      "lines": [
+       "jp-Q413735"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "十条#1",
+      "to": "赤羽#1",
+      "lines": [
+       "jp-Q413735"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "赤羽#1",
+      "to": "尾久#1",
+      "lines": [
+       "jp-Q681190"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "尾久#1",
+      "to": "上野#1",
+      "lines": [
+       "jp-Q681190"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "上野#1",
+      "to": "東京#1",
+      "lines": [
+       "jp-Q681190"
+      ]
+     }
+    ]
+   },
+   {
+    "from": "부산 부산",
+    "to": "도쿄권 新宿",
+    "cost": 14,
+    "steps": [
+     {
+      "type": "ride",
+      "from": "부산#1",
+      "to": "중앙#1",
+      "lines": [
+       "busan-1"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "중앙#1",
+      "to": "남포#1",
+      "lines": [
+       "busan-1"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "남포#1",
+      "to": "자갈치#1",
+      "lines": [
+       "busan-1"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "자갈치#1",
+      "to": "토성#1",
+      "lines": [
+       "busan-1"
+      ]
+     },
+     {
+      "type": "warp",
+      "portal": "土城",
+      "from": "토성#1",
+      "to": "土城#1"
+     },
+     {
+      "type": "ride",
+      "from": "土城#1",
+      "to": "海山#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "海山#1",
+      "to": "亞東醫院#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "亞東醫院#1",
+      "to": "府中#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "府中#1",
+      "to": "板橋#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "warp",
+      "portal": "板桥",
+      "from": "板橋#1",
+      "to": "板橋#2"
+     },
+     {
+      "type": "ride",
+      "from": "板橋#2",
+      "to": "池袋#1",
+      "lines": [
+       "jp-Q413735"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "池袋#1",
+      "to": "新宿#1",
+      "lines": [
+       "jp-Q693036"
+      ]
+     }
+    ]
+   },
+   {
+    "from": "도쿄권 東京",
+    "to": "부산 부산",
+    "cost": 17,
+    "steps": [
+     {
+      "type": "ride",
+      "from": "東京#1",
+      "to": "上野#1",
+      "lines": [
+       "jp-Q681190"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "上野#1",
+      "to": "尾久#1",
+      "lines": [
+       "jp-Q681190"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "尾久#1",
+      "to": "赤羽#1",
+      "lines": [
+       "jp-Q681190"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "赤羽#1",
+      "to": "十条#1",
+      "lines": [
+       "jp-Q413735"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "十条#1",
+      "to": "板橋#2",
+      "lines": [
+       "jp-Q413735"
+      ]
+     },
+     {
+      "type": "warp",
+      "portal": "板桥",
+      "from": "板橋#2",
+      "to": "板橋#1"
+     },
+     {
+      "type": "ride",
+      "from": "板橋#1",
+      "to": "府中#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "府中#1",
+      "to": "亞東醫院#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "亞東醫院#1",
+      "to": "海山#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "海山#1",
+      "to": "土城#1",
+      "lines": [
+       "tp-bl"
+      ]
+     },
+     {
+      "type": "warp",
+      "portal": "土城",
+      "from": "土城#1",
+      "to": "토성#1"
+     },
+     {
+      "type": "ride",
+      "from": "토성#1",
+      "to": "자갈치#1",
+      "lines": [
+       "busan-1"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "자갈치#1",
+      "to": "남포#1",
+      "lines": [
+       "busan-1"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "남포#1",
+      "to": "중앙#1",
+      "lines": [
+       "busan-1"
+      ]
+     },
+     {
+      "type": "ride",
+      "from": "중앙#1",
+      "to": "부산#1",
+      "lines": [
+       "busan-1"
+      ]
+     }
+    ]
+   }
+  ],
+  "detours": {
+   "KR": {
+    "pairs": 882660,
+    "shortened_via_abroad": 43243,
+    "example": {
+     "from": "수도권 송산",
+     "to": "수도권 판교",
+     "cost": 15,
+     "cost_domestic": 36,
+     "steps": [
+      {
+       "type": "warp",
+       "portal": "松山",
+       "from": "송산#1",
+       "to": "松山車站#1"
+      },
+      {
+       "type": "ride",
+       "from": "松山車站#1",
+       "to": "南京三民#1",
+       "lines": [
+        "tp-g"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "南京三民#1",
+       "to": "台北小巨蛋#1",
+       "lines": [
+        "tp-g"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "台北小巨蛋#1",
+       "to": "南京復興#1",
+       "lines": [
+        "tp-g"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "南京復興#1",
+       "to": "松江南京#1",
+       "lines": [
+        "tp-g"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "松江南京#1",
+       "to": "中山#1",
+       "lines": [
+        "tp-g"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "中山#1",
+       "to": "北門#1",
+       "lines": [
+        "tp-g"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "北門#1",
+       "to": "西門#1",
+       "lines": [
+        "tp-g"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "西門#1",
+       "to": "龍山寺#1",
+       "lines": [
+        "tp-bl"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "龍山寺#1",
+       "to": "江子翠#1",
+       "lines": [
+        "tp-bl"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "江子翠#1",
+       "to": "新埔#1",
+       "lines": [
+        "tp-bl"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "新埔#1",
+       "to": "板橋#1",
+       "lines": [
+        "tp-bl"
+       ]
+      },
+      {
+       "type": "warp",
+       "portal": "板桥",
+       "from": "板橋#1",
+       "to": "판교#1"
+      }
+     ]
+    }
+   },
+   "TW": {
+    "pairs": 28730,
+    "shortened_via_abroad": 1050,
+    "example": {
+     "from": "타이베이 明德",
+     "to": "타이베이 板橋",
+     "cost": 11,
+     "cost_domestic": 13,
+     "steps": [
+      {
+       "type": "warp",
+       "portal": "明徳",
+       "from": "明德#1",
+       "to": "명덕#1"
+      },
+      {
+       "type": "ride",
+       "from": "명덕#1",
+       "to": "교대#2",
+       "lines": [
+        "daegu-1"
+       ]
+      },
+      {
+       "type": "warp",
+       "portal": "교대",
+       "from": "교대#2",
+       "to": "교대#3"
+      },
+      {
+       "type": "ride",
+       "from": "교대#3",
+       "to": "강남#1",
+       "lines": [
+        "seoul-2"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "강남#1",
+       "to": "양재#1",
+       "lines": [
+        "shinbundang"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "양재#1",
+       "to": "양재시민의숲#1",
+       "lines": [
+        "shinbundang"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "양재시민의숲#1",
+       "to": "청계산입구#1",
+       "lines": [
+        "shinbundang"
+       ]
+      },
+      {
+       "type": "ride",
+       "from": "청계산입구#1",
+       "to": "판교#1",
+       "lines": [
+        "shinbundang"
+       ]
+      },
+      {
+       "type": "warp",
+       "portal": "板桥",
+       "from": "판교#1",
+       "to": "板橋#1"
+      }
+     ]
+    }
+   },
+   "JP": {
+    "pairs": 1614172,
+    "shortened_via_abroad": 10968,
+    "example": {
+     "from": "도쿄권 府中",
+     "to": "도쿄권 板橋",
+     "cost": 5,
+     "cost_domestic": 11,
+     "steps": [
+      {
+       "type": "warp",
+       "portal": "府中",
+       "from": "府中#2",
+       "to": "府中#1"
+      },
+      {
+       "type": "ride",
+       "from": "府中#1",
+       "to": "板橋#1",
+       "lines": [
+        "tp-bl"
+       ]
+      },
+      {
+       "type": "warp",
+       "portal": "板桥",
+       "from": "板橋#1",
+       "to": "板橋#2"
+      }
+     ]
+    }
+   }
+  }
  }
 }

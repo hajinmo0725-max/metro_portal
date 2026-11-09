@@ -74,12 +74,18 @@ def station_match_names(st: dict, tier_cfg: dict, norm: dict, folder=None, with_
         if n["text"].strip() in ignore:
             continue
         k = normalize_name(n["text"], tnorm)
-        if tier_cfg.get("script_check") and not script_ok(k, n["script"]):
+        # 5차 T2: script_check_as — 이름의 문자 체계를 다른 체계로 검사 (일본어 Jpan 이름을 T2에서는 한자만(Hani)인지 본다: 가나 섞인 이름 제외)
+        chk = (tier_cfg.get("script_check_as") or {}).get(n["script"], n["script"])
+        if tier_cfg.get("script_check") and not script_ok(k, chk):
             continue  # 표기 오류 (한자 칸의 한글 등)
         if folder is not None:
             k = folder.fold(k)
         if k and tier_cfg.get("en_type") and english_type(k, tier_cfg) != tier_cfg["en_type"]:
             continue  # T3a(번역형)·T3b(로마자형) 분리
+        # 5차 T2: separate_langs — T1은 '같은 언어·같은 문자' 정의대로 언어마다 따로 맞춘다 (zh '板橋'와 ja '板橋'는 T1이 아니라 T2).
+        # 첫 번째 언어는 키 그대로(기존 id 유지), 나머지 언어는 키 뒤에 '@언어'를 붙인다 (포탈 표시 이름은 '@' 앞)
+        if k and tier_cfg.get("separate_langs") and n["lang"] != tier_cfg["langs"][0]:
+            k = f"{k}@{n['lang']}"
         if k:
             d = out.setdefault(k, {"texts": set(), "grades": set()})
             d["texts"].add(n["text"])
@@ -211,7 +217,7 @@ def build_portals(stations: list[dict], clusters: list[dict], rs: dict) -> tuple
             cl = by_name[nm]
             if len(cl) < 2:
                 continue
-            p = {"id": f"P:{tier}:{nm}", "tier": tier, "name": nm, "cost": tcfg["cost"],
+            p = {"id": f"P:{tier}:{nm}", "tier": tier, "name": nm.split("@")[0], "cost": tcfg["cost"],
                  "cluster_ids": sorted(cl), "station_ids": sorted(sid for v in cl.values() for sid in v),
                  "degree": len(cl), "texts": sorted(texts[nm]),
                  # 4차 Q6-1: 매칭에 쓰인 이름의 출처 등급과 그에 따른 신뢰도 (가장 낮은 등급 기준)

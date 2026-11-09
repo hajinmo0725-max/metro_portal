@@ -1,0 +1,5460 @@
+{
+ "lines": [
+  {
+   "line": "jp-Q29663",
+   "qid": "Q29663",
+   "name": "京王高尾線",
+   "operator": "京王",
+   "code_prefix": "KO",
+   "stations": 7,
+   "members_p81": 7,
+   "edges": 6,
+   "sequences": [
+    [
+     "main",
+     7
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 7,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "北野(KO33)–京王片倉(KO48)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q32388",
+   "qid": "Q32388",
+   "name": "京王新線",
+   "operator": "京王",
+   "code_prefix": "KO",
+   "stations": 4,
+   "members_p81": 4,
+   "edges": 3,
+   "sequences": [
+    [
+     "main",
+     4
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 4,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q76804",
+   "qid": "Q76804",
+   "name": "東武アーバンパークライン",
+   "operator": "東武",
+   "code_prefix": "TD",
+   "stations": 35,
+   "members_p81": 35,
+   "edges": 34,
+   "sequences": [
+    [
+     "main",
+     35
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 35,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q93546",
+   "qid": "Q93546",
+   "name": "西武池袋線",
+   "operator": "西武",
+   "code_prefix": "",
+   "stations": 31,
+   "members_p81": 32,
+   "edges": 33,
+   "sequences": [
+    [
+     "main",
+     30
+    ],
+    [
+     "branch-Q843041",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ],
+    [
+     "link-3",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "椎名町–東長崎",
+    "桜台–西武練馬",
+    "東長崎–西武練馬"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 30,
+     "ratio": 1.0379
+    },
+    {
+     "sequence": "branch-Q843041",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [
+    "武蔵丘車両基地"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "西武鉄道池袋駅–東長崎駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q133620",
+   "qid": "Q133620",
+   "name": "西武多摩川線",
+   "operator": "西武",
+   "code_prefix": "SW",
+   "stations": 6,
+   "members_p81": 6,
+   "edges": 6,
+   "sequences": [
+    [
+     "main",
+     6
+    ],
+    [
+     "link-1",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "新小金井–北多磨"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 6,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "新小金井(SW02)–北多磨(SW04)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q135176",
+   "qid": "Q135176",
+   "name": "小田急小田原線",
+   "operator": "小田急",
+   "code_prefix": "OH",
+   "stations": 47,
+   "members_p81": 47,
+   "edges": 46,
+   "sequences": [
+    [
+     "main",
+     47
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 47,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "新百合ヶ丘駅–柿生駅",
+    "柿生駅–鶴川駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "相模大野分岐点 (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q177444",
+   "qid": "Q177444",
+   "name": "西武豊島線",
+   "operator": "西武",
+   "code_prefix": "SI",
+   "stations": 2,
+   "members_p81": 2,
+   "edges": 1,
+   "sequences": [
+    [
+     "main",
+     2
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "西武練馬(SI06)–豊島園(SI39)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q195685",
+   "qid": "Q195685",
+   "name": "西武新宿線",
+   "operator": "西武",
+   "code_prefix": "SS",
+   "stations": 29,
+   "members_p81": 30,
+   "edges": 29,
+   "sequences": [
+    [
+     "main",
+     29
+    ],
+    [
+     "link-1",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "所沢–所沢御幸町"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 29,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "上石神井車両基地"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "所沢(SS22)–所沢御幸町(SS24)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "南入曽信号場 (2이웃)",
+    "脇田信号場 (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q211575",
+   "qid": "Q211575",
+   "name": "西武拝島線",
+   "operator": "西武",
+   "code_prefix": "SS",
+   "stations": 8,
+   "members_p81": 9,
+   "edges": 7,
+   "sequences": [
+    [
+     "main",
+     8
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 8,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "玉川上水車両基地"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "小平(SS19)–萩山(SS30)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q218649",
+   "qid": "Q218649",
+   "name": "西武多摩湖線",
+   "operator": "西武",
+   "code_prefix": "ST",
+   "stations": 7,
+   "members_p81": 7,
+   "edges": 7,
+   "sequences": [
+    [
+     "main",
+     7
+    ],
+    [
+     "link-1",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "萩山–村山貯水池"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 7,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "萩山駅–武蔵大和駅"
+   ],
+   "code_non_consecutive_edges": [
+    "萩山(ST04)–村山貯水池(ST06)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "回田信号場 (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q283861",
+   "qid": "Q283861",
+   "name": "東急目黒線",
+   "operator": "東急",
+   "code_prefix": "MG",
+   "stations": 13,
+   "members_p81": 13,
+   "edges": 12,
+   "sequences": [
+    [
+     "main",
+     13
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 13,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q339069",
+   "qid": "Q339069",
+   "name": "東急世田谷線",
+   "operator": "東急",
+   "code_prefix": "SG",
+   "stations": 10,
+   "members_p81": 10,
+   "edges": 9,
+   "sequences": [
+    [
+     "main",
+     10
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 10,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q379292",
+   "qid": "Q379292",
+   "name": "東急多摩川線",
+   "operator": "東急",
+   "code_prefix": "TM",
+   "stations": 7,
+   "members_p81": 7,
+   "edges": 6,
+   "sequences": [
+    [
+     "main",
+     7
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 7,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q384862",
+   "qid": "Q384862",
+   "name": "都営地下鉄大江戸線",
+   "operator": "都営",
+   "code_prefix": "E",
+   "stations": 38,
+   "members_p81": 39,
+   "edges": 38,
+   "sequences": [
+    [
+     "main",
+     38
+    ],
+    [
+     "link-1",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "新宿西口–都庁前"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 38,
+     "ratio": 1.0102
+    }
+   ],
+   "isolated_members": [
+    "木場車両検修場"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q384995",
+   "qid": "Q384995",
+   "name": "東急大井町線",
+   "operator": "東急",
+   "code_prefix": "OM",
+   "stations": 16,
+   "members_p81": 16,
+   "edges": 15,
+   "sequences": [
+    [
+     "main",
+     16
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 16,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q385398",
+   "qid": "Q385398",
+   "name": "青梅線",
+   "operator": "JR東日本",
+   "code_prefix": "JC",
+   "stations": 25,
+   "members_p81": 25,
+   "edges": 24,
+   "sequences": [
+    [
+     "main",
+     25
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 25,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "拝島駅–牛浜駅",
+    "拝島駅–昭島駅",
+    "西立川駅–立川駅",
+    "白丸駅–奥多摩駅"
+   ],
+   "code_non_consecutive_edges": [
+    "立川(JC19)–西立川(JC51)",
+    "沢井(JC68)–御嶽(JC59)",
+    "川井(JC70)–御嶽(JC59)"
+   ],
+   "code_consecutive_without_adjacency": [
+    "羽村(JC58)–御嶽(JC59)",
+    "河辺(JC60)–御嶽(JC59)"
+   ],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q413735",
+   "qid": "Q413735",
+   "name": "赤羽線",
+   "operator": "JR東日本",
+   "code_prefix": "JA",
+   "stations": 4,
+   "members_p81": 4,
+   "edges": 3,
+   "sequences": [
+    [
+     "main",
+     4
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 4,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q498157",
+   "qid": "Q498157",
+   "name": "久留里線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 14,
+   "members_p81": 14,
+   "edges": 13,
+   "sequences": [
+    [
+     "main",
+     14
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 14,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "祇園駅–木更津駅",
+    "上総亀山駅–上総松丘駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q520772",
+   "qid": "Q520772",
+   "name": "東京メトロ南北線",
+   "operator": "東京メトロ",
+   "code_prefix": "N",
+   "stations": 19,
+   "members_p81": 21,
+   "edges": 18,
+   "sequences": [
+    [
+     "main",
+     19
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 19,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "王子検車区",
+    "東京メトロ市ケ谷駅"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q653704",
+   "qid": "Q653704",
+   "name": "西武国分寺線",
+   "operator": "西武",
+   "code_prefix": "SK",
+   "stations": 5,
+   "members_p81": 5,
+   "edges": 6,
+   "sequences": [
+    [
+     "main",
+     5
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "小川–鷹の台",
+    "国分寺–鷹の台"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 5,
+     "ratio": 1.3776
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "国分寺駅–小川駅"
+   ],
+   "code_non_consecutive_edges": [
+    "国分寺(SK01)–鷹の台(SK03)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q656122",
+   "qid": "Q656122",
+   "name": "京王競馬場線",
+   "operator": "京王",
+   "code_prefix": "KO",
+   "stations": 2,
+   "members_p81": 2,
+   "edges": 1,
+   "sequences": [
+    [
+     "main",
+     2
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "東府中(KO23)–府中競馬正門前(KO46)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q670656",
+   "qid": "Q670656",
+   "name": "外房線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 27,
+   "members_p81": 27,
+   "edges": 26,
+   "sequences": [
+    [
+     "main",
+     27
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 27,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "土気駅–大網駅",
+    "鎌取駅–蘇我駅",
+    "大網駅–永田駅",
+    "浪花駅–大原駅",
+    "大原駅–三門駅",
+    "安房鴨川駅–安房天津駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q681190",
+   "qid": "Q681190",
+   "name": "東北本線",
+   "operator": "JR東日本",
+   "code_prefix": "JK",
+   "stations": 42,
+   "members_p81": 42,
+   "edges": 49,
+   "sequences": [
+    [
+     "main",
+     30
+    ],
+    [
+     "branch-Q844437",
+     8
+    ],
+    [
+     "branch-Q844571",
+     4
+    ],
+    [
+     "branch-Q845113",
+     2
+    ],
+    [
+     "branch-Q124260233",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ],
+    [
+     "link-3",
+     2
+    ],
+    [
+     "link-4",
+     2
+    ],
+    [
+     "link-5",
+     2
+    ],
+    [
+     "link-6",
+     2
+    ],
+    [
+     "link-7",
+     2
+    ],
+    [
+     "link-8",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "東京–上野",
+    "上野–日暮里",
+    "赤羽–浦和",
+    "赤羽–尾久",
+    "蕨–浦和",
+    "浦和–さいたま新都心",
+    "浦和–大宮",
+    "戸田–戸田公園"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 30,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q844437",
+     "n": 8,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q844571",
+     "n": 4,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q845113",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q124260233",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [
+    "JR東日本池袋駅"
+   ],
+   "asymmetric_p197": [
+    "JR東日本池袋駅–赤羽駅"
+   ],
+   "code_non_consecutive_edges": [
+    "東京(JK26)–上野(JK30)",
+    "上野(JK30)–日暮里(JK32)",
+    "赤羽(JK38)–浦和(JK43)",
+    "蕨(JK41)–浦和(JK43)",
+    "浦和(JK43)–さいたま新都心(JK46)",
+    "浦和(JK43)–大宮(JK47)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [
+    "赤羽–浦和 10631m"
+   ],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "小谷場信号所 (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q693036",
+   "qid": "Q693036",
+   "name": "山手線",
+   "operator": "JR東日本",
+   "code_prefix": "JY",
+   "stations": 18,
+   "members_p81": 20,
+   "edges": 20,
+   "sequences": [
+    [
+     "main",
+     17
+    ],
+    [
+     "branch-Q800369",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ],
+    [
+     "link-3",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "池袋–新宿",
+    "新宿–渋谷",
+    "恵比寿–大崎"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 17,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q800369",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [
+    "田端信号場駅",
+    "新大久保駅乗客転落事故"
+   ],
+   "added_by_qualifier": [
+    "赤羽駅"
+   ],
+   "asymmetric_p197": [
+    "JR東日本池袋駅–赤羽駅",
+    "JR東日本新宿駅–JR東日本渋谷駅",
+    "JR東日本恵比寿駅–大崎駅"
+   ],
+   "code_non_consecutive_edges": [
+    "池袋(JY13)–新宿(JY17)",
+    "新宿(JY17)–渋谷(JY20)",
+    "恵比寿(JY21)–大崎(JY24)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q720653",
+   "qid": "Q720653",
+   "name": "都営地下鉄浅草線",
+   "operator": "都営",
+   "code_prefix": "A",
+   "stations": 20,
+   "members_p81": 20,
+   "edges": 19,
+   "sequences": [
+    [
+     "main",
+     20
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 20,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q741145",
+   "qid": "Q741145",
+   "name": "京葉線",
+   "operator": "JR東日本",
+   "code_prefix": "JE",
+   "stations": 19,
+   "members_p81": 19,
+   "edges": 20,
+   "sequences": [
+    [
+     "main",
+     18
+    ],
+    [
+     "branch-Q128803",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "南船橋–西船橋",
+    "新習志野–海浜幕張"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 18,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q128803",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "新習志野(JE12)–海浜幕張(JE14)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q787305",
+   "qid": "Q787305",
+   "name": "東京メトロ有楽町線",
+   "operator": "東京メトロ",
+   "code_prefix": "Y",
+   "stations": 24,
+   "members_p81": 26,
+   "edges": 23,
+   "sequences": [
+    [
+     "main",
+     24
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 24,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "飯田橋検車区",
+    "東京メトロ市ケ谷駅"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q841584",
+   "qid": "Q841584",
+   "name": "京成押上線",
+   "operator": "京成",
+   "code_prefix": "KS",
+   "stations": 6,
+   "members_p81": 6,
+   "edges": 5,
+   "sequences": [
+    [
+     "main",
+     6
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 6,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "青砥(KS09)–京成立石(KS49)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q841998",
+   "qid": "Q841998",
+   "name": "京成千葉線",
+   "operator": "京成",
+   "code_prefix": "KS",
+   "stations": 10,
+   "members_p81": 10,
+   "edges": 9,
+   "sequences": [
+    [
+     "main",
+     10
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 10,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "京成津田沼(KS26)–幕張本郷(KS52)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q842069",
+   "qid": "Q842069",
+   "name": "京成千原線",
+   "operator": "京成",
+   "code_prefix": "KS",
+   "stations": 6,
+   "members_p81": 6,
+   "edges": 5,
+   "sequences": [
+    [
+     "main",
+     6
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 6,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q842520",
+   "qid": "Q842520",
+   "name": "西武山口線",
+   "operator": "西武",
+   "code_prefix": "",
+   "stations": 3,
+   "members_p81": 3,
+   "edges": 2,
+   "sequences": [
+    [
+     "main",
+     3
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 3,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [
+    "多摩湖駅"
+   ],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q842649",
+   "qid": "Q842649",
+   "name": "西武秩父線",
+   "operator": "西武",
+   "code_prefix": "",
+   "stations": 6,
+   "members_p81": 6,
+   "edges": 5,
+   "sequences": [
+    [
+     "main",
+     6
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 6,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q842701",
+   "qid": "Q842701",
+   "name": "東急こどもの国線",
+   "operator": "東急",
+   "code_prefix": "KD",
+   "stations": 3,
+   "members_p81": 3,
+   "edges": 2,
+   "sequences": [
+    [
+     "main",
+     3
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 3,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q845954",
+   "qid": "Q845954",
+   "name": "東武日光線",
+   "operator": "東武",
+   "code_prefix": "TN",
+   "stations": 7,
+   "members_p81": 7,
+   "edges": 6,
+   "sequences": [
+    [
+     "main",
+     7
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 7,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q846361",
+   "qid": "Q846361",
+   "name": "相鉄本線",
+   "operator": "相鉄",
+   "code_prefix": "SO",
+   "stations": 19,
+   "members_p81": 19,
+   "edges": 20,
+   "sequences": [
+    [
+     "main",
+     18
+    ],
+    [
+     "branch-SO18",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "海老名–海老名",
+    "海老名–相模大塚"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 18,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-SO18",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [
+    "海老名駅"
+   ],
+   "asymmetric_p197": [
+    "相鉄海老名駅–かしわ台駅",
+    "かしわ台駅–海老名駅"
+   ],
+   "code_non_consecutive_edges": [
+    "海老名(SO18)–海老名(SO18)",
+    "海老名(SO18)–相模大塚(SO15)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "相模国分信号所 (3이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q846367",
+   "qid": "Q846367",
+   "name": "相鉄いずみ野線",
+   "operator": "相鉄",
+   "code_prefix": "SO",
+   "stations": 8,
+   "members_p81": 8,
+   "edges": 7,
+   "sequences": [
+    [
+     "main",
+     8
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 8,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "二俣川(SO10)–南万騎が原(SO31)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q906312",
+   "qid": "Q906312",
+   "name": "京王動物園線",
+   "operator": "京王",
+   "code_prefix": "KO",
+   "stations": 2,
+   "members_p81": 2,
+   "edges": 1,
+   "sequences": [
+    [
+     "main",
+     2
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "高幡不動(KO29)–多摩動物公園(KO47)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q906348",
+   "qid": "Q906348",
+   "name": "京王相模原線",
+   "operator": "京王",
+   "code_prefix": "KO",
+   "stations": 14,
+   "members_p81": 14,
+   "edges": 13,
+   "sequences": [
+    [
+     "main",
+     12
+    ],
+    [
+     "branch-Q1061400",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "南大沢–橋本"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 12,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q1061400",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "永山駅–多摩センター駅",
+    "京王永山駅–若葉台駅",
+    "京王多摩センター駅–京王堀之内駅",
+    "南大沢駅–橋本駅"
+   ],
+   "code_non_consecutive_edges": [
+    "調布(KO18)–京王多摩川(KO35)",
+    "南大沢(KO43)–橋本(KO45)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 1,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q906598",
+   "qid": "Q906598",
+   "name": "東武伊勢崎線",
+   "operator": "東武",
+   "code_prefix": "TS",
+   "stations": 37,
+   "members_p81": 37,
+   "edges": 36,
+   "sequences": [
+    [
+     "main",
+     36
+    ],
+    [
+     "branch-TS03",
+     2
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 36,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-TS03",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "とうきょうスカイツリー(TS02)–曳舟(TS04)"
+   ],
+   "code_consecutive_without_adjacency": [
+    "とうきょうスカイツリー(TS02)–押上(TS03)"
+   ],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q906807",
+   "qid": "Q906807",
+   "name": "京急空港線",
+   "operator": "京急",
+   "code_prefix": "KK",
+   "stations": 7,
+   "members_p81": 8,
+   "edges": 6,
+   "sequences": [
+    [
+     "main",
+     7
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 7,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "羽田空港第3ターミナル駅"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q907687",
+   "qid": "Q907687",
+   "name": "京急久里浜線",
+   "operator": "京急",
+   "code_prefix": "KK",
+   "stations": 9,
+   "members_p81": 10,
+   "edges": 8,
+   "sequences": [
+    [
+     "main",
+     9
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 9,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "三崎駅"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "堀ノ内(KK61)–新大津(KK65)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q910032",
+   "qid": "Q910032",
+   "name": "日暮里・舎人ライナー",
+   "operator": "都営",
+   "code_prefix": "NT",
+   "stations": 13,
+   "members_p81": 13,
+   "edges": 12,
+   "sequences": [
+    [
+     "main",
+     13
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 13,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1036349",
+   "qid": "Q1036349",
+   "name": "京急逗子線",
+   "operator": "京急",
+   "code_prefix": "KK",
+   "stations": 4,
+   "members_p81": 4,
+   "edges": 3,
+   "sequences": [
+    [
+     "main",
+     4
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 4,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1037491",
+   "qid": "Q1037491",
+   "name": "京急大師線",
+   "operator": "京急",
+   "code_prefix": "KK",
+   "stations": 7,
+   "members_p81": 7,
+   "edges": 6,
+   "sequences": [
+    [
+     "main",
+     7
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 7,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1040703",
+   "qid": "Q1040703",
+   "name": "東武東上本線",
+   "operator": "東武",
+   "code_prefix": "TJ",
+   "stations": 39,
+   "members_p81": 39,
+   "edges": 38,
+   "sequences": [
+    [
+     "main",
+     39
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 39,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "和光市駅–成増駅",
+    "川越市駅–川越駅",
+    "志木駅–柳瀬川駅",
+    "上板橋駅–ときわ台駅",
+    "上板橋駅–東武練馬駅",
+    "北坂戸駅–坂戸駅",
+    "武蔵嵐山駅–小川町駅",
+    "坂戸駅–若葉駅",
+    "新河岸駅–川越駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1045305",
+   "qid": "Q1045305",
+   "name": "京成成田空港線",
+   "operator": "京成",
+   "code_prefix": "HS",
+   "stations": 8,
+   "members_p81": 8,
+   "edges": 7,
+   "sequences": [
+    [
+     "main",
+     8
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 8,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "東松戸(HS05)–新鎌ヶ谷(HS08)",
+    "新鎌ヶ谷(HS08)–千葉ニュータウン中央(HS12)",
+    "千葉ニュータウン中央(HS12)–印旛日本医大(HS14)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [
+    "新鎌ヶ谷–千葉ニュータウン中央 10890m",
+    "印旛日本医大–成田湯川 8038m",
+    "空港第2ビル–成田湯川 9191m"
+   ],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "根古屋信号場 (京成) (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q1063632",
+   "qid": "Q1063632",
+   "name": "京急本線",
+   "operator": "京急",
+   "code_prefix": "KK",
+   "stations": 50,
+   "members_p81": 50,
+   "edges": 49,
+   "sequences": [
+    [
+     "main",
+     50
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 50,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "京急蒲田(KK11)–雑色(KK18)",
+    "京急川崎(KK20)–八丁畷(KK27)",
+    "金沢八景(KK50)–追浜(KK54)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1063675",
+   "qid": "Q1063675",
+   "name": "京成本線",
+   "operator": "京成",
+   "code_prefix": "KS",
+   "stations": 42,
+   "members_p81": 42,
+   "edges": 41,
+   "sequences": [
+    [
+     "main",
+     42
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 42,
+     "ratio": 1.0002
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "京成成田(KS40)–空港第2ビル(KS42)",
+    "空港第2ビル(KS42)–成田空港(KS42)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "駒井野信号場 (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q1063832",
+   "qid": "Q1063832",
+   "name": "小田急多摩線",
+   "operator": "小田急",
+   "code_prefix": "OT",
+   "stations": 10,
+   "members_p81": 10,
+   "edges": 9,
+   "sequences": [
+    [
+     "main",
+     8
+    ],
+    [
+     "branch-Q1061400",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "黒川–小田急永山"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 8,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q1061400",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "永山駅–多摩センター駅",
+    "小田急永山駅–黒川駅"
+   ],
+   "code_non_consecutive_edges": [
+    "黒川(OT03)–小田急永山(OT05)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 1,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1063924",
+   "qid": "Q1063924",
+   "name": "小田急江ノ島線",
+   "operator": "小田急",
+   "code_prefix": "OE",
+   "stations": 17,
+   "members_p81": 17,
+   "edges": 16,
+   "sequences": [
+    [
+     "main",
+     17
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 17,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "相模大野分岐点 (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q1064795",
+   "qid": "Q1064795",
+   "name": "都電荒川線",
+   "operator": "都営",
+   "code_prefix": "SA",
+   "stations": 30,
+   "members_p81": 30,
+   "edges": 29,
+   "sequences": [
+    [
+     "main",
+     30
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 30,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "東尾久三丁目停留場–熊野前駅",
+    "梶原停留場–栄町停留場",
+    "宮ノ前停留場–熊野前駅",
+    "滝野川一丁目停留場–飛鳥山停留場",
+    "荒川一中前停留場–三ノ輪橋停留場",
+    "面影橋停留場–早稲田停留場"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1064840",
+   "qid": "Q1064840",
+   "name": "西武有楽町線",
+   "operator": "西武",
+   "code_prefix": "SI",
+   "stations": 3,
+   "members_p81": 3,
+   "edges": 2,
+   "sequences": [
+    [
+     "main",
+     3
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 3,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "西武練馬(SI06)–新桜台(SI38)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1070027",
+   "qid": "Q1070027",
+   "name": "成田線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 16,
+   "members_p81": 16,
+   "edges": 15,
+   "sequences": [
+    [
+     "main",
+     16
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 16,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "佐原駅–大戸駅",
+    "松岸駅–椎柴駅",
+    "香取駅–水郷駅",
+    "久住駅–成田駅",
+    "佐倉駅–酒々井駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1073046",
+   "qid": "Q1073046",
+   "name": "東京メトロ銀座線",
+   "operator": "東京メトロ",
+   "code_prefix": "G",
+   "stations": 19,
+   "members_p81": 19,
+   "edges": 18,
+   "sequences": [
+    [
+     "main",
+     19
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 19,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1075089",
+   "qid": "Q1075089",
+   "name": "東京メトロ千代田線",
+   "operator": "東京メトロ",
+   "code_prefix": "C",
+   "stations": 20,
+   "members_p81": 20,
+   "edges": 19,
+   "sequences": [
+    [
+     "main",
+     20
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 20,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1078110",
+   "qid": "Q1078110",
+   "name": "中央本線",
+   "operator": "JR東日本",
+   "code_prefix": "JC",
+   "stations": 34,
+   "members_p81": 36,
+   "edges": 35,
+   "sequences": [
+    [
+     "main",
+     26
+    ],
+    [
+     "branch-Q590162",
+     4
+    ],
+    [
+     "branch-Q800953",
+     3
+    ],
+    [
+     "branch-Q801496",
+     2
+    ],
+    [
+     "branch-Q116259",
+     2
+    ],
+    [
+     "branch-Q800921",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "大久保–東中野",
+    "飯田橋–水道橋"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 26,
+     "ratio": 1.0018
+    },
+    {
+     "sequence": "branch-Q590162",
+     "n": 4,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q800953",
+     "n": 3,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q801496",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q116259",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q800921",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [
+    "三鷹車両センター",
+    "豊田車両センター"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "JR東日本東京駅–JR東日本神田駅",
+    "藤野駅–相模湖駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [
+    "高尾–相模湖 8863m"
+   ],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1142964",
+   "qid": "Q1142964",
+   "name": "内房線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 30,
+   "members_p81": 30,
+   "edges": 29,
+   "sequences": [
+    [
+     "main",
+     30
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 30,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "安房鴨川駅–太海駅",
+    "浜野駅–八幡宿駅",
+    "巌根駅–木更津駅",
+    "五井駅–姉ケ崎駅",
+    "五井駅–八幡宿駅",
+    "君津駅–木更津駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1147028",
+   "qid": "Q1147028",
+   "name": "東京メトロ丸ノ内線",
+   "operator": "東京メトロ",
+   "code_prefix": "M",
+   "stations": 25,
+   "members_p81": 28,
+   "edges": 24,
+   "sequences": [
+    [
+     "main",
+     25
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 25,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "方南町駅",
+    "中野新橋駅",
+    "中野富士見町駅"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1147054",
+   "qid": "Q1147054",
+   "name": "東京メトロ東西線",
+   "operator": "東京メトロ",
+   "code_prefix": "T",
+   "stations": 23,
+   "members_p81": 24,
+   "edges": 22,
+   "sequences": [
+    [
+     "main",
+     23
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 23,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "飯田橋検車区"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1150161",
+   "qid": "Q1150161",
+   "name": "東金線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 5,
+   "members_p81": 5,
+   "edges": 4,
+   "sequences": [
+    [
+     "main",
+     5
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 5,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "福俵駅–大網駅",
+    "福俵駅–東金駅",
+    "求名駅–東金駅",
+    "求名駅–成東駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1190086",
+   "qid": "Q1190086",
+   "name": "東急田園都市線",
+   "operator": "東急",
+   "code_prefix": "DT",
+   "stations": 27,
+   "members_p81": 28,
+   "edges": 26,
+   "sequences": [
+    [
+     "main",
+     27
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 27,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "長津田検車区"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1190152",
+   "qid": "Q1190152",
+   "name": "東海道本線",
+   "operator": "JR東日本",
+   "code_prefix": "JT",
+   "stations": 36,
+   "members_p81": 39,
+   "edges": 39,
+   "sequences": [
+    [
+     "main",
+     21
+    ],
+    [
+     "branch-Q801510",
+     3
+    ],
+    [
+     "branch-Q11262877",
+     3
+    ],
+    [
+     "branch-Q80420",
+     3
+    ],
+    [
+     "branch-Q801690",
+     2
+    ],
+    [
+     "branch-Q128205",
+     2
+    ],
+    [
+     "branch-Q801434",
+     2
+    ],
+    [
+     "branch-Q844185",
+     2
+    ],
+    [
+     "branch-Q844252",
+     2
+    ],
+    [
+     "branch-Q11528771",
+     2
+    ],
+    [
+     "branch-Q128314",
+     2
+    ],
+    [
+     "branch-Q48755701",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ],
+    [
+     "link-3",
+     2
+    ],
+    [
+     "link-4",
+     2
+    ],
+    [
+     "link-5",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "新橋–有楽町",
+    "横浜羽沢–東戸塚",
+    "東神奈川–新子安",
+    "大井町–大森",
+    "保土ケ谷–東戸塚"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 21,
+     "ratio": 1.0082
+    },
+    {
+     "sequence": "branch-Q801510",
+     "n": 3,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q11262877",
+     "n": 3,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q80420",
+     "n": 3,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q801690",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q128205",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q801434",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q844185",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q844252",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q11528771",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q128314",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q48755701",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [
+    "鶴見事故",
+    "大船駅",
+    "白糸川橋梁"
+   ],
+   "added_by_qualifier": [
+    "羽沢横浜国大駅",
+    "武蔵小杉駅",
+    "新川崎駅"
+   ],
+   "asymmetric_p197": [
+    "JR東日本横浜駅–新川崎駅",
+    "羽沢横浜国大駅–武蔵小杉駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [
+    "品川–川崎 11396m",
+    "川崎–横浜 9977m",
+    "横浜–戸塚 10774m",
+    "横浜–新川崎 10529m",
+    "横浜羽沢–鶴見 8285m",
+    "羽沢横浜国大–武蔵小杉 12523m"
+   ],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "相模貨物駅 (2이웃)",
+    "湘南貨物駅 (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q1191300",
+   "qid": "Q1191300",
+   "name": "京王井の頭線",
+   "operator": "京王",
+   "code_prefix": "IN",
+   "stations": 17,
+   "members_p81": 17,
+   "edges": 16,
+   "sequences": [
+    [
+     "main",
+     17
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 17,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1191364",
+   "qid": "Q1191364",
+   "name": "総武本線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 47,
+   "members_p81": 48,
+   "edges": 52,
+   "sequences": [
+    [
+     "main",
+     32
+    ],
+    [
+     "branch-Q1142065",
+     4
+    ],
+    [
+     "branch-JO19",
+     4
+    ],
+    [
+     "branch-Q908760",
+     4
+    ],
+    [
+     "branch-Q909531",
+     3
+    ],
+    [
+     "branch-Q908788",
+     2
+    ],
+    [
+     "branch-Q1067240",
+     2
+    ],
+    [
+     "branch-Q1067969",
+     2
+    ],
+    [
+     "branch-Q7499126",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ],
+    [
+     "link-3",
+     2
+    ],
+    [
+     "link-4",
+     2
+    ],
+    [
+     "link-5",
+     2
+    ],
+    [
+     "link-6",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "新小岩–平井",
+    "西千葉–稲毛",
+    "市川–小岩",
+    "市川–本八幡",
+    "津田沼–東船橋",
+    "新検見川–稲毛"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 32,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q1142065",
+     "n": 4,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-JO19",
+     "n": 4,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q908760",
+     "n": 4,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q909531",
+     "n": 3,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q908788",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q1067240",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q1067969",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q7499126",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [
+    "新小岩信号場駅"
+   ],
+   "added_by_qualifier": [
+    "酒々井駅"
+   ],
+   "asymmetric_p197": [
+    "亀戸駅–錦糸町駅",
+    "亀戸駅–平井駅",
+    "飯倉駅–八日市場駅",
+    "日向駅–八街駅",
+    "日向駅–成東駅",
+    "八日市場駅–干潟駅",
+    "猿田駅–松岸駅",
+    "南酒々井駅–佐倉駅",
+    "榎戸駅–八街駅",
+    "松尾駅–成東駅",
+    "佐倉駅–酒々井駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [
+    "津田沼–稲毛 8873m"
+   ],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1191671",
+   "qid": "Q1191671",
+   "name": "武蔵野線",
+   "operator": "JR東日本",
+   "code_prefix": "JM",
+   "stations": 31,
+   "members_p81": 32,
+   "edges": 30,
+   "sequences": [
+    [
+     "main",
+     27
+    ],
+    [
+     "branch-Q5364850",
+     2
+    ],
+    [
+     "branch-Q865196",
+     2
+    ],
+    [
+     "branch-Q801652",
+     2
+    ],
+    [
+     "branch-Q474512",
+     2
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 27,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q5364850",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q865196",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q801652",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q474512",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [
+    "東所沢電車区"
+   ],
+   "added_by_qualifier": [
+    "鶴見駅",
+    "北小金駅",
+    "与野駅",
+    "馬橋駅"
+   ],
+   "asymmetric_p197": [
+    "国立駅–新小平駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [
+    "府中本町–鶴見 25109m"
+   ],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "別所信号場 (3이웃)",
+    "梶ヶ谷貨物ターミナル駅 (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q1192388",
+   "qid": "Q1192388",
+   "name": "東急池上線",
+   "operator": "東急",
+   "code_prefix": "IK",
+   "stations": 15,
+   "members_p81": 15,
+   "edges": 14,
+   "sequences": [
+    [
+     "main",
+     15
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 15,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "東急電鉄五反田駅–大崎広小路駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1192468",
+   "qid": "Q1192468",
+   "name": "東急東横線",
+   "operator": "東急",
+   "code_prefix": "TY",
+   "stations": 21,
+   "members_p81": 21,
+   "edges": 21,
+   "sequences": [
+    [
+     "main",
+     21
+    ],
+    [
+     "link-1",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "新丸子–元住吉"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 21,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "新丸子駅–元住吉駅"
+   ],
+   "code_non_consecutive_edges": [
+    "新丸子(TY10)–元住吉(TY12)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1194511",
+   "qid": "Q1194511",
+   "name": "根岸線",
+   "operator": "JR東日本",
+   "code_prefix": "JK",
+   "stations": 12,
+   "members_p81": 13,
+   "edges": 11,
+   "sequences": [
+    [
+     "main",
+     12
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 12,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "大船駅"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "JR東日本関内駅–石川町駅",
+    "JR東日本大船駅–本郷台駅",
+    "磯子駅–根岸駅",
+    "磯子駅–新杉田駅",
+    "根岸駅–山手駅",
+    "洋光台駅–新杉田駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1195170",
+   "qid": "Q1195170",
+   "name": "鶴見線",
+   "operator": "JR東日本",
+   "code_prefix": "JI",
+   "stations": 13,
+   "members_p81": 13,
+   "edges": 12,
+   "sequences": [
+    [
+     "main",
+     10
+    ],
+    [
+     "branch-JI61",
+     2
+    ],
+    [
+     "branch-JI52",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "武蔵白石–大川"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 10,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-JI61",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-JI52",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [
+    "大川駅",
+    "新芝浦駅"
+   ],
+   "asymmetric_p197": [
+    "海芝浦駅–新芝浦駅",
+    "鶴見駅–国道駅",
+    "弁天橋駅–浅野駅",
+    "大川駅–安善駅",
+    "大川駅–武蔵白石駅",
+    "浜川崎駅–武蔵白石駅",
+    "浜川崎駅–昭和駅",
+    "安善駅–武蔵白石駅",
+    "扇町駅–昭和駅"
+   ],
+   "code_non_consecutive_edges": [
+    "安善(JI06)–大川(JI61)",
+    "武蔵白石(JI07)–大川(JI61)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 1,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1195907",
+   "qid": "Q1195907",
+   "name": "川越線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 11,
+   "members_p81": 11,
+   "edges": 10,
+   "sequences": [
+    [
+     "main",
+     11
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 11,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "武蔵高萩駅–高麗川駅",
+    "JR東日本大宮駅–日進駅",
+    "川越駅–南古谷駅",
+    "川越駅–西川越駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1196223",
+   "qid": "Q1196223",
+   "name": "東京メトロ日比谷線",
+   "operator": "東京メトロ",
+   "code_prefix": "H",
+   "stations": 22,
+   "members_p81": 23,
+   "edges": 21,
+   "sequences": [
+    [
+     "main",
+     22
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 22,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "営団日比谷線中目黒駅構内列車脱線衝突事故"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1208633",
+   "qid": "Q1208633",
+   "name": "相模線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 18,
+   "members_p81": 18,
+   "edges": 20,
+   "sequences": [
+    [
+     "main",
+     16
+    ],
+    [
+     "branch-Q800622",
+     2
+    ],
+    [
+     "branch-Q865932",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ],
+    [
+     "link-3",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "北茅ヶ崎–茅ケ崎",
+    "倉見–寒川",
+    "海老名–厚木"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 16,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q800622",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q865932",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "門沢橋駅–倉見駅",
+    "香川駅–茅ケ崎駅",
+    "上溝駅–南橋本駅",
+    "北茅ケ崎駅–茅ケ崎駅",
+    "南橋本駅–橋本駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1323112",
+   "qid": "Q1323112",
+   "name": "京王線",
+   "operator": "京王",
+   "code_prefix": "KO",
+   "stations": 32,
+   "members_p81": 32,
+   "edges": 31,
+   "sequences": [
+    [
+     "main",
+     32
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 32,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "新宿(KO01)–笹塚(KO04)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1323839",
+   "qid": "Q1323839",
+   "name": "五日市線",
+   "operator": "JR東日本",
+   "code_prefix": "JC",
+   "stations": 7,
+   "members_p81": 7,
+   "edges": 6,
+   "sequences": [
+    [
+     "main",
+     7
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 7,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "拝島駅–熊川駅"
+   ],
+   "code_non_consecutive_edges": [
+    "拝島(JC55)–熊川(JC81)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1332317",
+   "qid": "Q1332317",
+   "name": "横須賀線",
+   "operator": "JR東日本",
+   "code_prefix": "JO",
+   "stations": 9,
+   "members_p81": 10,
+   "edges": 8,
+   "sequences": [
+    [
+     "main",
+     9
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 9,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "大船駅"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1332908",
+   "qid": "Q1332908",
+   "name": "東京メトロ副都心線",
+   "operator": "東京メトロ",
+   "code_prefix": "F",
+   "stations": 16,
+   "members_p81": 16,
+   "edges": 15,
+   "sequences": [
+    [
+     "main",
+     16
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 16,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [
+    "要町駅",
+    "和光市駅",
+    "千川駅",
+    "地下鉄赤塚駅",
+    "平和台駅",
+    "地下鉄成増駅",
+    "氷川台駅"
+   ],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1346657",
+   "qid": "Q1346657",
+   "name": "高崎線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 16,
+   "members_p81": 16,
+   "edges": 17,
+   "sequences": [
+    [
+     "main",
+     14
+    ],
+    [
+     "branch-Q845058",
+     2
+    ],
+    [
+     "branch-Q845061",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "行田–吹上",
+    "北鴻巣–吹上"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 14,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q845058",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q845061",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "JR東日本大宮駅–宮原駅",
+    "熊谷駅–行田駅",
+    "熊谷駅–籠原駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1366263",
+   "qid": "Q1366263",
+   "name": "南武線",
+   "operator": "JR東日本",
+   "code_prefix": "JN",
+   "stations": 31,
+   "members_p81": 31,
+   "edges": 30,
+   "sequences": [
+    [
+     "main",
+     29
+    ],
+    [
+     "branch-JN01",
+     2
+    ],
+    [
+     "branch-Q128164",
+     2
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 29,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-JN01",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q128164",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [
+    "鶴見駅"
+   ],
+   "asymmetric_p197": [
+    "浜川崎駅–小田栄駅",
+    "八丁畷駅–川崎新町駅"
+   ],
+   "code_non_consecutive_edges": [
+    "尻手(JN02)–八丁畷(JN51)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1369102",
+   "qid": "Q1369102",
+   "name": "横浜線",
+   "operator": "JR東日本",
+   "code_prefix": "JH",
+   "stations": 20,
+   "members_p81": 20,
+   "edges": 21,
+   "sequences": [
+    [
+     "main",
+     20
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "町田–淵野辺",
+    "相原–片倉"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 20,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "JR東日本新横浜駅–小机駅",
+    "東神奈川駅–大口駅",
+    "JR東日本町田駅–成瀬駅",
+    "JR東日本町田駅–古淵駅",
+    "八王子駅–片倉駅",
+    "橋本駅–相原駅",
+    "橋本駅–相模原駅",
+    "菊名駅–大口駅",
+    "長津田駅–十日市場駅",
+    "長津田駅–成瀬駅",
+    "十日市場駅–中山駅",
+    "中山駅–鴨居駅"
+   ],
+   "code_non_consecutive_edges": [
+    "町田(JH23)–淵野辺(JH25)",
+    "相原(JH29)–片倉(JH31)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1369263",
+   "qid": "Q1369263",
+   "name": "常磐線",
+   "operator": "JR東日本",
+   "code_prefix": "JL",
+   "stations": 19,
+   "members_p81": 19,
+   "edges": 20,
+   "sequences": [
+    [
+     "main",
+     14
+    ],
+    [
+     "branch-JL19",
+     4
+    ],
+    [
+     "branch-Q124799406",
+     2
+    ],
+    [
+     "branch-Q801503",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ],
+    [
+     "link-2",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "松戸–柏",
+    "柏–我孫子"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 14,
+     "ratio": 1.066
+    },
+    {
+     "sequence": "branch-JL19",
+     "n": 4,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q124799406",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q801503",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "隅田川駅–三河島駅"
+   ],
+   "code_non_consecutive_edges": [
+    "松戸(JL22)–柏(JL28)",
+    "柏(JL28)–我孫子(JL30)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [
+    "松戸–北千住 9458m",
+    "松戸–柏 10758m"
+   ],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1372071",
+   "qid": "Q1372071",
+   "name": "八高線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 20,
+   "members_p81": 20,
+   "edges": 19,
+   "sequences": [
+    [
+     "main",
+     20
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 20,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "拝島駅–東福生駅",
+    "拝島駅–小宮駅",
+    "八王子駅–北八王子駅",
+    "東福生駅–箱根ケ崎駅",
+    "用土駅–寄居駅",
+    "小川町駅–竹沢駅",
+    "小川町駅–明覚駅",
+    "毛呂駅–越生駅",
+    "毛呂駅–高麗川駅",
+    "折原駅–寄居駅",
+    "越生駅–明覚駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1374502",
+   "qid": "Q1374502",
+   "name": "都営地下鉄新宿線",
+   "operator": "都営",
+   "code_prefix": "S",
+   "stations": 21,
+   "members_p81": 21,
+   "edges": 20,
+   "sequences": [
+    [
+     "main",
+     21
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 21,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1374506",
+   "qid": "Q1374506",
+   "name": "都営地下鉄三田線",
+   "operator": "都営",
+   "code_prefix": "I",
+   "stations": 27,
+   "members_p81": 28,
+   "edges": 26,
+   "sequences": [
+    [
+     "main",
+     27
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 27,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [
+    "志村車両検修場"
+   ],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1376030",
+   "qid": "Q1376030",
+   "name": "東京メトロ半蔵門線",
+   "operator": "東京メトロ",
+   "code_prefix": "Z",
+   "stations": 14,
+   "members_p81": 14,
+   "edges": 13,
+   "sequences": [
+    [
+     "main",
+     14
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 14,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "大手町(Z07)–三越前(Z09)"
+   ],
+   "code_consecutive_without_adjacency": [
+    "九段下(Z06)–大手町(Z07)"
+   ],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1444700",
+   "qid": "Q1444700",
+   "name": "西武西武園線",
+   "operator": "西武",
+   "code_prefix": "SK",
+   "stations": 2,
+   "members_p81": 2,
+   "edges": 1,
+   "sequences": [
+    [
+     "main",
+     2
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q1965549",
+   "qid": "Q1965549",
+   "name": "西武狭山線",
+   "operator": "西武",
+   "code_prefix": "",
+   "stations": 3,
+   "members_p81": 3,
+   "edges": 2,
+   "sequences": [
+    [
+     "main",
+     3
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 3,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q2028573",
+   "qid": "Q2028573",
+   "name": "品鶴線",
+   "operator": "JR東日本",
+   "code_prefix": "JO",
+   "stations": 7,
+   "members_p81": 7,
+   "edges": 7,
+   "sequences": [
+    [
+     "main",
+     5
+    ],
+    [
+     "branch-Q48755701",
+     2
+    ],
+    [
+     "branch-Q801695",
+     2
+    ],
+    [
+     "link-1",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "新川崎–西大井"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 5,
+     "ratio": 1.0
+    },
+    {
+     "sequence": "branch-Q48755701",
+     "n": 2,
+     "ratio": null
+    },
+    {
+     "sequence": "branch-Q801695",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [
+    "鶴見駅",
+    "羽沢横浜国大駅",
+    "大崎駅"
+   ],
+   "asymmetric_p197": [
+    "JR東日本品川駅–西大井駅",
+    "羽沢横浜国大駅–武蔵小杉駅",
+    "武蔵小杉駅–新川崎駅",
+    "大崎駅–西大井駅"
+   ],
+   "code_non_consecutive_edges": [
+    "新川崎(JO14)–西大井(JO16)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [
+    "武蔵小杉–羽沢横浜国大 12523m"
+   ],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "新鶴見信号場 (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q2782450",
+   "qid": "Q2782450",
+   "name": "東武越生線",
+   "operator": "東武",
+   "code_prefix": "TJ",
+   "stations": 8,
+   "members_p81": 8,
+   "edges": 7,
+   "sequences": [
+    [
+     "main",
+     8
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 8,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "一本松駅 (埼玉県)–坂戸駅",
+    "武州唐沢駅–越生駅"
+   ],
+   "code_non_consecutive_edges": [
+    "坂戸(TJ26)–一本松(TJ41)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q2791146",
+   "qid": "Q2791146",
+   "name": "東武亀戸線",
+   "operator": "東武",
+   "code_prefix": "TS",
+   "stations": 5,
+   "members_p81": 5,
+   "edges": 4,
+   "sequences": [
+    [
+     "main",
+     5
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 5,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "曳舟(TS04)–小村井(TS41)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q2913662",
+   "qid": "Q2913662",
+   "name": "東武大師線",
+   "operator": "東武",
+   "code_prefix": "TS",
+   "stations": 2,
+   "members_p81": 2,
+   "edges": 1,
+   "sequences": [
+    [
+     "main",
+     2
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "西新井(TS13)–大師前(TS51)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q3553734",
+   "qid": "Q3553734",
+   "name": "京成松戸線",
+   "operator": "京成",
+   "code_prefix": "SL",
+   "stations": 24,
+   "members_p81": 24,
+   "edges": 23,
+   "sequences": [
+    [
+     "main",
+     24
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 24,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "新津田沼駅–京成津田沼駅",
+    "初富駅–新鎌ヶ谷駅",
+    "上本郷駅–松戸駅",
+    "北初富駅–新鎌ヶ谷駅",
+    "北習志野駅–習志野駅",
+    "北習志野駅–高根木戸駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q4490874",
+   "qid": "Q4490874",
+   "name": "京成金町線",
+   "operator": "京成",
+   "code_prefix": "KS",
+   "stations": 3,
+   "members_p81": 3,
+   "edges": 2,
+   "sequences": [
+    [
+     "main",
+     3
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 3,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "京成高砂(KS10)–柴又(KS50)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q4492924",
+   "qid": "Q4492924",
+   "name": "京成東成田線",
+   "operator": "京成",
+   "code_prefix": "KS",
+   "stations": 2,
+   "members_p81": 2,
+   "edges": 1,
+   "sequences": [
+    [
+     "main",
+     2
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "京成成田(KS40)–東成田(KS44)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "駒井野信号場 (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q5370725",
+   "qid": "Q5370725",
+   "name": "鹿島線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 3,
+   "members_p81": 3,
+   "edges": 2,
+   "sequences": [
+    [
+     "main",
+     3
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 3,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [
+    "佐原駅"
+   ],
+   "asymmetric_p197": [
+    "十二橋駅–香取駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q74129112",
+   "qid": "Q74129112",
+   "name": "相鉄新横浜線",
+   "operator": "相鉄",
+   "code_prefix": "SO",
+   "stations": 3,
+   "members_p81": 3,
+   "edges": 2,
+   "sequences": [
+    [
+     "main",
+     3
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 3,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "西谷(SO08)–羽沢横浜国大(SO51)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q114593970",
+   "qid": "Q114593970",
+   "name": "東急新横浜線",
+   "operator": "東急",
+   "code_prefix": "SH",
+   "stations": 3,
+   "members_p81": 3,
+   "edges": 2,
+   "sequences": [
+    [
+     "main",
+     3
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 3,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q124644144",
+   "qid": "Q124644144",
+   "name": "成田線我孫子支線",
+   "operator": "JR東日本",
+   "code_prefix": "",
+   "stations": 10,
+   "members_p81": 10,
+   "edges": 9,
+   "sequences": [
+    [
+     "main",
+     10
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 10,
+     "ratio": 1.0
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "我孫子駅–東我孫子駅",
+    "下総松崎駅–成田駅"
+   ],
+   "code_non_consecutive_edges": [],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q124644450",
+   "qid": "Q124644450",
+   "name": "成田線空港支線",
+   "operator": "JR東日本",
+   "code_prefix": "JO",
+   "stations": 3,
+   "members_p81": 3,
+   "edges": 3,
+   "sequences": [
+    [
+     "main",
+     3
+    ],
+    [
+     "link-1",
+     2
+    ]
+   ],
+   "cycle_links": [
+    "成田–成田空港"
+   ],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 3,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [],
+   "code_non_consecutive_edges": [
+    "成田(JO35)–成田空港(JO37)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": [
+    "根古屋信号場 (JR東日本) (2이웃)",
+    "堀之内信号場 (2이웃)"
+   ]
+  },
+  {
+   "line": "jp-Q125502866",
+   "qid": "Q125502866",
+   "name": "鶴見線海芝浦支線",
+   "operator": "JR東日本",
+   "code_prefix": "JI",
+   "stations": 2,
+   "members_p81": 2,
+   "edges": 1,
+   "sequences": [
+    [
+     "main",
+     2
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 2,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "新芝浦駅–浅野駅"
+   ],
+   "code_non_consecutive_edges": [
+    "浅野(JI05)–新芝浦(JI51)"
+   ],
+   "code_consecutive_without_adjacency": [],
+   "long_edges": [],
+   "unqualified_ignored": 0,
+   "contracted_non_stations": []
+  },
+  {
+   "line": "jp-Q125502892",
+   "qid": "Q125502892",
+   "name": "鶴見線大川支線",
+   "operator": "JR東日本",
+   "code_prefix": "JI",
+   "stations": 3,
+   "members_p81": 3,
+   "edges": 2,
+   "sequences": [
+    [
+     "main",
+     3
+    ]
+   ],
+   "cycle_links": [],
+   "geometry": [
+    {
+     "sequence": "main",
+     "n": 3,
+     "ratio": null
+    }
+   ],
+   "isolated_members": [],
+   "added_by_qualifier": [],
+   "asymmetric_p197": [
+    "大川駅–安善駅"
+   ],
+   "code_non_consecutive_edges": [
+    "安善(JI06)–大川(JI61)",
+    "武蔵白石(JI07)–大川(JI61)"
+   ],
+   "code_consecutive_without_adjacency": [
+    "安善(JI06)–武蔵白石(JI07)"
+   ],
+   "long_edges": [],
+   "unqualified_ignored": 1,
+   "contracted_non_stations": []
+  }
+ ],
+ "suspects": {
+  "asymmetric_p197": [
+   {
+    "line": "西武池袋線",
+    "item": "西武鉄道池袋駅–東長崎駅"
+   },
+   {
+    "line": "小田急小田原線",
+    "item": "新百合ヶ丘駅–柿生駅"
+   },
+   {
+    "line": "小田急小田原線",
+    "item": "柿生駅–鶴川駅"
+   },
+   {
+    "line": "西武多摩湖線",
+    "item": "萩山駅–武蔵大和駅"
+   },
+   {
+    "line": "青梅線",
+    "item": "拝島駅–牛浜駅"
+   },
+   {
+    "line": "青梅線",
+    "item": "拝島駅–昭島駅"
+   },
+   {
+    "line": "青梅線",
+    "item": "西立川駅–立川駅"
+   },
+   {
+    "line": "青梅線",
+    "item": "白丸駅–奥多摩駅"
+   },
+   {
+    "line": "久留里線",
+    "item": "祇園駅–木更津駅"
+   },
+   {
+    "line": "久留里線",
+    "item": "上総亀山駅–上総松丘駅"
+   },
+   {
+    "line": "西武国分寺線",
+    "item": "国分寺駅–小川駅"
+   },
+   {
+    "line": "外房線",
+    "item": "土気駅–大網駅"
+   },
+   {
+    "line": "外房線",
+    "item": "鎌取駅–蘇我駅"
+   },
+   {
+    "line": "外房線",
+    "item": "大網駅–永田駅"
+   },
+   {
+    "line": "外房線",
+    "item": "浪花駅–大原駅"
+   },
+   {
+    "line": "外房線",
+    "item": "大原駅–三門駅"
+   },
+   {
+    "line": "外房線",
+    "item": "安房鴨川駅–安房天津駅"
+   },
+   {
+    "line": "東北本線",
+    "item": "JR東日本池袋駅–赤羽駅"
+   },
+   {
+    "line": "山手線",
+    "item": "JR東日本池袋駅–赤羽駅"
+   },
+   {
+    "line": "山手線",
+    "item": "JR東日本新宿駅–JR東日本渋谷駅"
+   },
+   {
+    "line": "山手線",
+    "item": "JR東日本恵比寿駅–大崎駅"
+   },
+   {
+    "line": "相鉄本線",
+    "item": "相鉄海老名駅–かしわ台駅"
+   },
+   {
+    "line": "相鉄本線",
+    "item": "かしわ台駅–海老名駅"
+   },
+   {
+    "line": "京王相模原線",
+    "item": "永山駅–多摩センター駅"
+   },
+   {
+    "line": "京王相模原線",
+    "item": "京王永山駅–若葉台駅"
+   },
+   {
+    "line": "京王相模原線",
+    "item": "京王多摩センター駅–京王堀之内駅"
+   },
+   {
+    "line": "京王相模原線",
+    "item": "南大沢駅–橋本駅"
+   },
+   {
+    "line": "東武東上本線",
+    "item": "和光市駅–成増駅"
+   },
+   {
+    "line": "東武東上本線",
+    "item": "川越市駅–川越駅"
+   },
+   {
+    "line": "東武東上本線",
+    "item": "志木駅–柳瀬川駅"
+   },
+   {
+    "line": "東武東上本線",
+    "item": "上板橋駅–ときわ台駅"
+   },
+   {
+    "line": "東武東上本線",
+    "item": "上板橋駅–東武練馬駅"
+   },
+   {
+    "line": "東武東上本線",
+    "item": "北坂戸駅–坂戸駅"
+   },
+   {
+    "line": "東武東上本線",
+    "item": "武蔵嵐山駅–小川町駅"
+   },
+   {
+    "line": "東武東上本線",
+    "item": "坂戸駅–若葉駅"
+   },
+   {
+    "line": "東武東上本線",
+    "item": "新河岸駅–川越駅"
+   },
+   {
+    "line": "小田急多摩線",
+    "item": "永山駅–多摩センター駅"
+   },
+   {
+    "line": "小田急多摩線",
+    "item": "小田急永山駅–黒川駅"
+   },
+   {
+    "line": "都電荒川線",
+    "item": "東尾久三丁目停留場–熊野前駅"
+   },
+   {
+    "line": "都電荒川線",
+    "item": "梶原停留場–栄町停留場"
+   },
+   {
+    "line": "都電荒川線",
+    "item": "宮ノ前停留場–熊野前駅"
+   },
+   {
+    "line": "都電荒川線",
+    "item": "滝野川一丁目停留場–飛鳥山停留場"
+   },
+   {
+    "line": "都電荒川線",
+    "item": "荒川一中前停留場–三ノ輪橋停留場"
+   },
+   {
+    "line": "都電荒川線",
+    "item": "面影橋停留場–早稲田停留場"
+   },
+   {
+    "line": "成田線",
+    "item": "佐原駅–大戸駅"
+   },
+   {
+    "line": "成田線",
+    "item": "松岸駅–椎柴駅"
+   },
+   {
+    "line": "成田線",
+    "item": "香取駅–水郷駅"
+   },
+   {
+    "line": "成田線",
+    "item": "久住駅–成田駅"
+   },
+   {
+    "line": "成田線",
+    "item": "佐倉駅–酒々井駅"
+   },
+   {
+    "line": "中央本線",
+    "item": "JR東日本東京駅–JR東日本神田駅"
+   },
+   {
+    "line": "中央本線",
+    "item": "藤野駅–相模湖駅"
+   },
+   {
+    "line": "内房線",
+    "item": "安房鴨川駅–太海駅"
+   },
+   {
+    "line": "内房線",
+    "item": "浜野駅–八幡宿駅"
+   },
+   {
+    "line": "内房線",
+    "item": "巌根駅–木更津駅"
+   },
+   {
+    "line": "内房線",
+    "item": "五井駅–姉ケ崎駅"
+   },
+   {
+    "line": "内房線",
+    "item": "五井駅–八幡宿駅"
+   },
+   {
+    "line": "内房線",
+    "item": "君津駅–木更津駅"
+   },
+   {
+    "line": "東金線",
+    "item": "福俵駅–大網駅"
+   },
+   {
+    "line": "東金線",
+    "item": "福俵駅–東金駅"
+   },
+   {
+    "line": "東金線",
+    "item": "求名駅–東金駅"
+   },
+   {
+    "line": "東金線",
+    "item": "求名駅–成東駅"
+   },
+   {
+    "line": "東海道本線",
+    "item": "JR東日本横浜駅–新川崎駅"
+   },
+   {
+    "line": "東海道本線",
+    "item": "羽沢横浜国大駅–武蔵小杉駅"
+   },
+   {
+    "line": "総武本線",
+    "item": "亀戸駅–錦糸町駅"
+   },
+   {
+    "line": "総武本線",
+    "item": "亀戸駅–平井駅"
+   },
+   {
+    "line": "総武本線",
+    "item": "飯倉駅–八日市場駅"
+   },
+   {
+    "line": "総武本線",
+    "item": "日向駅–八街駅"
+   },
+   {
+    "line": "総武本線",
+    "item": "日向駅–成東駅"
+   },
+   {
+    "line": "総武本線",
+    "item": "八日市場駅–干潟駅"
+   },
+   {
+    "line": "総武本線",
+    "item": "猿田駅–松岸駅"
+   },
+   {
+    "line": "総武本線",
+    "item": "南酒々井駅–佐倉駅"
+   },
+   {
+    "line": "総武本線",
+    "item": "榎戸駅–八街駅"
+   },
+   {
+    "line": "総武本線",
+    "item": "松尾駅–成東駅"
+   },
+   {
+    "line": "総武本線",
+    "item": "佐倉駅–酒々井駅"
+   },
+   {
+    "line": "武蔵野線",
+    "item": "国立駅–新小平駅"
+   },
+   {
+    "line": "東急池上線",
+    "item": "東急電鉄五反田駅–大崎広小路駅"
+   },
+   {
+    "line": "東急東横線",
+    "item": "新丸子駅–元住吉駅"
+   },
+   {
+    "line": "根岸線",
+    "item": "JR東日本関内駅–石川町駅"
+   },
+   {
+    "line": "根岸線",
+    "item": "JR東日本大船駅–本郷台駅"
+   },
+   {
+    "line": "根岸線",
+    "item": "磯子駅–根岸駅"
+   },
+   {
+    "line": "根岸線",
+    "item": "磯子駅–新杉田駅"
+   },
+   {
+    "line": "根岸線",
+    "item": "根岸駅–山手駅"
+   },
+   {
+    "line": "根岸線",
+    "item": "洋光台駅–新杉田駅"
+   },
+   {
+    "line": "鶴見線",
+    "item": "海芝浦駅–新芝浦駅"
+   },
+   {
+    "line": "鶴見線",
+    "item": "鶴見駅–国道駅"
+   },
+   {
+    "line": "鶴見線",
+    "item": "弁天橋駅–浅野駅"
+   },
+   {
+    "line": "鶴見線",
+    "item": "大川駅–安善駅"
+   },
+   {
+    "line": "鶴見線",
+    "item": "大川駅–武蔵白石駅"
+   },
+   {
+    "line": "鶴見線",
+    "item": "浜川崎駅–武蔵白石駅"
+   },
+   {
+    "line": "鶴見線",
+    "item": "浜川崎駅–昭和駅"
+   },
+   {
+    "line": "鶴見線",
+    "item": "安善駅–武蔵白石駅"
+   },
+   {
+    "line": "鶴見線",
+    "item": "扇町駅–昭和駅"
+   },
+   {
+    "line": "川越線",
+    "item": "武蔵高萩駅–高麗川駅"
+   },
+   {
+    "line": "川越線",
+    "item": "JR東日本大宮駅–日進駅"
+   },
+   {
+    "line": "川越線",
+    "item": "川越駅–南古谷駅"
+   },
+   {
+    "line": "川越線",
+    "item": "川越駅–西川越駅"
+   },
+   {
+    "line": "相模線",
+    "item": "門沢橋駅–倉見駅"
+   },
+   {
+    "line": "相模線",
+    "item": "香川駅–茅ケ崎駅"
+   },
+   {
+    "line": "相模線",
+    "item": "上溝駅–南橋本駅"
+   },
+   {
+    "line": "相模線",
+    "item": "北茅ケ崎駅–茅ケ崎駅"
+   },
+   {
+    "line": "相模線",
+    "item": "南橋本駅–橋本駅"
+   },
+   {
+    "line": "五日市線",
+    "item": "拝島駅–熊川駅"
+   },
+   {
+    "line": "高崎線",
+    "item": "JR東日本大宮駅–宮原駅"
+   },
+   {
+    "line": "高崎線",
+    "item": "熊谷駅–行田駅"
+   },
+   {
+    "line": "高崎線",
+    "item": "熊谷駅–籠原駅"
+   },
+   {
+    "line": "南武線",
+    "item": "浜川崎駅–小田栄駅"
+   },
+   {
+    "line": "南武線",
+    "item": "八丁畷駅–川崎新町駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "JR東日本新横浜駅–小机駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "東神奈川駅–大口駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "JR東日本町田駅–成瀬駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "JR東日本町田駅–古淵駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "八王子駅–片倉駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "橋本駅–相原駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "橋本駅–相模原駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "菊名駅–大口駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "長津田駅–十日市場駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "長津田駅–成瀬駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "十日市場駅–中山駅"
+   },
+   {
+    "line": "横浜線",
+    "item": "中山駅–鴨居駅"
+   },
+   {
+    "line": "常磐線",
+    "item": "隅田川駅–三河島駅"
+   },
+   {
+    "line": "八高線",
+    "item": "拝島駅–東福生駅"
+   },
+   {
+    "line": "八高線",
+    "item": "拝島駅–小宮駅"
+   },
+   {
+    "line": "八高線",
+    "item": "八王子駅–北八王子駅"
+   },
+   {
+    "line": "八高線",
+    "item": "東福生駅–箱根ケ崎駅"
+   },
+   {
+    "line": "八高線",
+    "item": "用土駅–寄居駅"
+   },
+   {
+    "line": "八高線",
+    "item": "小川町駅–竹沢駅"
+   },
+   {
+    "line": "八高線",
+    "item": "小川町駅–明覚駅"
+   },
+   {
+    "line": "八高線",
+    "item": "毛呂駅–越生駅"
+   },
+   {
+    "line": "八高線",
+    "item": "毛呂駅–高麗川駅"
+   },
+   {
+    "line": "八高線",
+    "item": "折原駅–寄居駅"
+   },
+   {
+    "line": "八高線",
+    "item": "越生駅–明覚駅"
+   },
+   {
+    "line": "品鶴線",
+    "item": "JR東日本品川駅–西大井駅"
+   },
+   {
+    "line": "品鶴線",
+    "item": "羽沢横浜国大駅–武蔵小杉駅"
+   },
+   {
+    "line": "品鶴線",
+    "item": "武蔵小杉駅–新川崎駅"
+   },
+   {
+    "line": "品鶴線",
+    "item": "大崎駅–西大井駅"
+   },
+   {
+    "line": "東武越生線",
+    "item": "一本松駅 (埼玉県)–坂戸駅"
+   },
+   {
+    "line": "東武越生線",
+    "item": "武州唐沢駅–越生駅"
+   },
+   {
+    "line": "京成松戸線",
+    "item": "新津田沼駅–京成津田沼駅"
+   },
+   {
+    "line": "京成松戸線",
+    "item": "初富駅–新鎌ヶ谷駅"
+   },
+   {
+    "line": "京成松戸線",
+    "item": "上本郷駅–松戸駅"
+   },
+   {
+    "line": "京成松戸線",
+    "item": "北初富駅–新鎌ヶ谷駅"
+   },
+   {
+    "line": "京成松戸線",
+    "item": "北習志野駅–習志野駅"
+   },
+   {
+    "line": "京成松戸線",
+    "item": "北習志野駅–高根木戸駅"
+   },
+   {
+    "line": "鹿島線",
+    "item": "十二橋駅–香取駅"
+   },
+   {
+    "line": "成田線我孫子支線",
+    "item": "我孫子駅–東我孫子駅"
+   },
+   {
+    "line": "成田線我孫子支線",
+    "item": "下総松崎駅–成田駅"
+   },
+   {
+    "line": "鶴見線海芝浦支線",
+    "item": "新芝浦駅–浅野駅"
+   },
+   {
+    "line": "鶴見線大川支線",
+    "item": "大川駅–安善駅"
+   }
+  ],
+  "code_consecutive_without_adjacency": [
+   {
+    "line": "青梅線",
+    "item": "羽村(JC58)–御嶽(JC59)"
+   },
+   {
+    "line": "青梅線",
+    "item": "河辺(JC60)–御嶽(JC59)"
+   },
+   {
+    "line": "東武伊勢崎線",
+    "item": "とうきょうスカイツリー(TS02)–押上(TS03)"
+   },
+   {
+    "line": "東京メトロ半蔵門線",
+    "item": "九段下(Z06)–大手町(Z07)"
+   },
+   {
+    "line": "鶴見線大川支線",
+    "item": "安善(JI06)–武蔵白石(JI07)"
+   }
+  ],
+  "code_non_consecutive_edges": [
+   {
+    "line": "京王高尾線",
+    "item": "北野(KO33)–京王片倉(KO48)"
+   },
+   {
+    "line": "西武多摩川線",
+    "item": "新小金井(SW02)–北多磨(SW04)"
+   },
+   {
+    "line": "西武豊島線",
+    "item": "西武練馬(SI06)–豊島園(SI39)"
+   },
+   {
+    "line": "西武新宿線",
+    "item": "所沢(SS22)–所沢御幸町(SS24)"
+   },
+   {
+    "line": "西武拝島線",
+    "item": "小平(SS19)–萩山(SS30)"
+   },
+   {
+    "line": "西武多摩湖線",
+    "item": "萩山(ST04)–村山貯水池(ST06)"
+   },
+   {
+    "line": "青梅線",
+    "item": "立川(JC19)–西立川(JC51)"
+   },
+   {
+    "line": "青梅線",
+    "item": "沢井(JC68)–御嶽(JC59)"
+   },
+   {
+    "line": "青梅線",
+    "item": "川井(JC70)–御嶽(JC59)"
+   },
+   {
+    "line": "西武国分寺線",
+    "item": "国分寺(SK01)–鷹の台(SK03)"
+   },
+   {
+    "line": "京王競馬場線",
+    "item": "東府中(KO23)–府中競馬正門前(KO46)"
+   },
+   {
+    "line": "東北本線",
+    "item": "東京(JK26)–上野(JK30)"
+   },
+   {
+    "line": "東北本線",
+    "item": "上野(JK30)–日暮里(JK32)"
+   },
+   {
+    "line": "東北本線",
+    "item": "赤羽(JK38)–浦和(JK43)"
+   },
+   {
+    "line": "東北本線",
+    "item": "蕨(JK41)–浦和(JK43)"
+   },
+   {
+    "line": "東北本線",
+    "item": "浦和(JK43)–さいたま新都心(JK46)"
+   },
+   {
+    "line": "東北本線",
+    "item": "浦和(JK43)–大宮(JK47)"
+   },
+   {
+    "line": "山手線",
+    "item": "池袋(JY13)–新宿(JY17)"
+   },
+   {
+    "line": "山手線",
+    "item": "新宿(JY17)–渋谷(JY20)"
+   },
+   {
+    "line": "山手線",
+    "item": "恵比寿(JY21)–大崎(JY24)"
+   },
+   {
+    "line": "京葉線",
+    "item": "新習志野(JE12)–海浜幕張(JE14)"
+   },
+   {
+    "line": "京成押上線",
+    "item": "青砥(KS09)–京成立石(KS49)"
+   },
+   {
+    "line": "京成千葉線",
+    "item": "京成津田沼(KS26)–幕張本郷(KS52)"
+   },
+   {
+    "line": "相鉄本線",
+    "item": "海老名(SO18)–海老名(SO18)"
+   },
+   {
+    "line": "相鉄本線",
+    "item": "海老名(SO18)–相模大塚(SO15)"
+   },
+   {
+    "line": "相鉄いずみ野線",
+    "item": "二俣川(SO10)–南万騎が原(SO31)"
+   },
+   {
+    "line": "京王動物園線",
+    "item": "高幡不動(KO29)–多摩動物公園(KO47)"
+   },
+   {
+    "line": "京王相模原線",
+    "item": "調布(KO18)–京王多摩川(KO35)"
+   },
+   {
+    "line": "京王相模原線",
+    "item": "南大沢(KO43)–橋本(KO45)"
+   },
+   {
+    "line": "東武伊勢崎線",
+    "item": "とうきょうスカイツリー(TS02)–曳舟(TS04)"
+   },
+   {
+    "line": "京急久里浜線",
+    "item": "堀ノ内(KK61)–新大津(KK65)"
+   },
+   {
+    "line": "京成成田空港線",
+    "item": "東松戸(HS05)–新鎌ヶ谷(HS08)"
+   },
+   {
+    "line": "京成成田空港線",
+    "item": "新鎌ヶ谷(HS08)–千葉ニュータウン中央(HS12)"
+   },
+   {
+    "line": "京成成田空港線",
+    "item": "千葉ニュータウン中央(HS12)–印旛日本医大(HS14)"
+   },
+   {
+    "line": "京急本線",
+    "item": "京急蒲田(KK11)–雑色(KK18)"
+   },
+   {
+    "line": "京急本線",
+    "item": "京急川崎(KK20)–八丁畷(KK27)"
+   },
+   {
+    "line": "京急本線",
+    "item": "金沢八景(KK50)–追浜(KK54)"
+   },
+   {
+    "line": "京成本線",
+    "item": "京成成田(KS40)–空港第2ビル(KS42)"
+   },
+   {
+    "line": "京成本線",
+    "item": "空港第2ビル(KS42)–成田空港(KS42)"
+   },
+   {
+    "line": "小田急多摩線",
+    "item": "黒川(OT03)–小田急永山(OT05)"
+   },
+   {
+    "line": "西武有楽町線",
+    "item": "西武練馬(SI06)–新桜台(SI38)"
+   },
+   {
+    "line": "東急東横線",
+    "item": "新丸子(TY10)–元住吉(TY12)"
+   },
+   {
+    "line": "鶴見線",
+    "item": "安善(JI06)–大川(JI61)"
+   },
+   {
+    "line": "鶴見線",
+    "item": "武蔵白石(JI07)–大川(JI61)"
+   },
+   {
+    "line": "京王線",
+    "item": "新宿(KO01)–笹塚(KO04)"
+   },
+   {
+    "line": "五日市線",
+    "item": "拝島(JC55)–熊川(JC81)"
+   },
+   {
+    "line": "南武線",
+    "item": "尻手(JN02)–八丁畷(JN51)"
+   },
+   {
+    "line": "横浜線",
+    "item": "町田(JH23)–淵野辺(JH25)"
+   },
+   {
+    "line": "横浜線",
+    "item": "相原(JH29)–片倉(JH31)"
+   },
+   {
+    "line": "常磐線",
+    "item": "松戸(JL22)–柏(JL28)"
+   },
+   {
+    "line": "常磐線",
+    "item": "柏(JL28)–我孫子(JL30)"
+   },
+   {
+    "line": "東京メトロ半蔵門線",
+    "item": "大手町(Z07)–三越前(Z09)"
+   },
+   {
+    "line": "品鶴線",
+    "item": "新川崎(JO14)–西大井(JO16)"
+   },
+   {
+    "line": "東武越生線",
+    "item": "坂戸(TJ26)–一本松(TJ41)"
+   },
+   {
+    "line": "東武亀戸線",
+    "item": "曳舟(TS04)–小村井(TS41)"
+   },
+   {
+    "line": "東武大師線",
+    "item": "西新井(TS13)–大師前(TS51)"
+   },
+   {
+    "line": "京成金町線",
+    "item": "京成高砂(KS10)–柴又(KS50)"
+   },
+   {
+    "line": "京成東成田線",
+    "item": "京成成田(KS40)–東成田(KS44)"
+   },
+   {
+    "line": "相鉄新横浜線",
+    "item": "西谷(SO08)–羽沢横浜国大(SO51)"
+   },
+   {
+    "line": "成田線空港支線",
+    "item": "成田(JO35)–成田空港(JO37)"
+   },
+   {
+    "line": "鶴見線海芝浦支線",
+    "item": "浅野(JI05)–新芝浦(JI51)"
+   },
+   {
+    "line": "鶴見線大川支線",
+    "item": "安善(JI06)–大川(JI61)"
+   },
+   {
+    "line": "鶴見線大川支線",
+    "item": "武蔵白石(JI07)–大川(JI61)"
+   }
+  ],
+  "geometry": [
+   {
+    "line": "西武国分寺線",
+    "item": "main (5역) 비율 1.3776"
+   },
+   {
+    "line": "常磐線",
+    "item": "main (14역) 비율 1.066"
+   }
+  ],
+  "isolated_members": [
+   {
+    "line": "西武池袋線",
+    "item": "武蔵丘車両基地"
+   },
+   {
+    "line": "西武新宿線",
+    "item": "上石神井車両基地"
+   },
+   {
+    "line": "西武拝島線",
+    "item": "玉川上水車両基地"
+   },
+   {
+    "line": "都営地下鉄大江戸線",
+    "item": "木場車両検修場"
+   },
+   {
+    "line": "東京メトロ南北線",
+    "item": "王子検車区"
+   },
+   {
+    "line": "東京メトロ南北線",
+    "item": "東京メトロ市ケ谷駅"
+   },
+   {
+    "line": "山手線",
+    "item": "田端信号場駅"
+   },
+   {
+    "line": "山手線",
+    "item": "新大久保駅乗客転落事故"
+   },
+   {
+    "line": "東京メトロ有楽町線",
+    "item": "飯田橋検車区"
+   },
+   {
+    "line": "東京メトロ有楽町線",
+    "item": "東京メトロ市ケ谷駅"
+   },
+   {
+    "line": "京急空港線",
+    "item": "羽田空港第3ターミナル駅"
+   },
+   {
+    "line": "京急久里浜線",
+    "item": "三崎駅"
+   },
+   {
+    "line": "中央本線",
+    "item": "三鷹車両センター"
+   },
+   {
+    "line": "中央本線",
+    "item": "豊田車両センター"
+   },
+   {
+    "line": "東京メトロ丸ノ内線",
+    "item": "方南町駅"
+   },
+   {
+    "line": "東京メトロ丸ノ内線",
+    "item": "中野新橋駅"
+   },
+   {
+    "line": "東京メトロ丸ノ内線",
+    "item": "中野富士見町駅"
+   },
+   {
+    "line": "東京メトロ東西線",
+    "item": "飯田橋検車区"
+   },
+   {
+    "line": "東急田園都市線",
+    "item": "長津田検車区"
+   },
+   {
+    "line": "東海道本線",
+    "item": "鶴見事故"
+   },
+   {
+    "line": "東海道本線",
+    "item": "大船駅"
+   },
+   {
+    "line": "東海道本線",
+    "item": "白糸川橋梁"
+   },
+   {
+    "line": "総武本線",
+    "item": "新小岩信号場駅"
+   },
+   {
+    "line": "武蔵野線",
+    "item": "東所沢電車区"
+   },
+   {
+    "line": "根岸線",
+    "item": "大船駅"
+   },
+   {
+    "line": "東京メトロ日比谷線",
+    "item": "営団日比谷線中目黒駅構内列車脱線衝突事故"
+   },
+   {
+    "line": "横須賀線",
+    "item": "大船駅"
+   },
+   {
+    "line": "都営地下鉄三田線",
+    "item": "志村車両検修場"
+   }
+  ],
+  "long_edges": [
+   {
+    "line": "東北本線",
+    "item": "赤羽–浦和 10631m"
+   },
+   {
+    "line": "京成成田空港線",
+    "item": "新鎌ヶ谷–千葉ニュータウン中央 10890m"
+   },
+   {
+    "line": "京成成田空港線",
+    "item": "印旛日本医大–成田湯川 8038m"
+   },
+   {
+    "line": "京成成田空港線",
+    "item": "空港第2ビル–成田湯川 9191m"
+   },
+   {
+    "line": "中央本線",
+    "item": "高尾–相模湖 8863m"
+   },
+   {
+    "line": "東海道本線",
+    "item": "品川–川崎 11396m"
+   },
+   {
+    "line": "東海道本線",
+    "item": "川崎–横浜 9977m"
+   },
+   {
+    "line": "東海道本線",
+    "item": "横浜–戸塚 10774m"
+   },
+   {
+    "line": "東海道本線",
+    "item": "横浜–新川崎 10529m"
+   },
+   {
+    "line": "東海道本線",
+    "item": "横浜羽沢–鶴見 8285m"
+   },
+   {
+    "line": "東海道本線",
+    "item": "羽沢横浜国大–武蔵小杉 12523m"
+   },
+   {
+    "line": "総武本線",
+    "item": "津田沼–稲毛 8873m"
+   },
+   {
+    "line": "武蔵野線",
+    "item": "府中本町–鶴見 25109m"
+   },
+   {
+    "line": "常磐線",
+    "item": "松戸–北千住 9458m"
+   },
+   {
+    "line": "常磐線",
+    "item": "松戸–柏 10758m"
+   },
+   {
+    "line": "品鶴線",
+    "item": "武蔵小杉–羽沢横浜国大 12523m"
+   }
+  ]
+ }
+}
