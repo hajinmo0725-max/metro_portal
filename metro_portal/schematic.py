@@ -650,7 +650,7 @@ def snap_baseline(g: dict) -> dict:
     return dict(g["pos"])
 
 
-def render_svg(g: dict, pos: dict, title: str, size=900, label=True) -> str:
+def render_svg(g: dict, pos: dict, title: str, size=900, label=True, names: dict | None = None, label_fn=None, stats_out: dict | None = None) -> str:
     """도식 SVG (노선 색만 사용). 같은 엣지를 여러 노선이 지나면 평행 오프셋."""
     xs = [p[0] for p in pos.values()]
     ys = [p[1] for p in pos.values()]
@@ -665,6 +665,8 @@ def render_svg(g: dict, pos: dict, title: str, size=900, label=True) -> str:
         return (pad + (p[0] - minx) * sc, pad + (maxy - p[1]) * sc)
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W:.0f} {H:.0f}" font-family="sans-serif">',
            f'<rect width="100%" height="100%" fill="#fff"/><text x="12" y="24" font-size="16" font-weight="700">{title}</text>']
+    segs = []   # 5차 R4: 라벨 배치가 노선 선분을 피하게 넘긴다
+    names = names or g["names"]
     for (a, b), ls in g["edges"].items():
         if a not in pos or b not in pos:
             continue
@@ -678,6 +680,7 @@ def render_svg(g: dict, pos: dict, title: str, size=900, label=True) -> str:
             col = g["lines"].get(lid, {}).get("color", "#888")
             out.append(f'<line x1="{pa[0] + nx * off:.1f}" y1="{pa[1] + ny * off:.1f}" x2="{pb[0] + nx * off:.1f}" y2="{pb[1] + ny * off:.1f}" '
                        f'stroke="{col}" stroke-width="4" stroke-linecap="round"/>')
+            segs.append((pa[0] + nx * off, pa[1] + ny * off, pb[0] + nx * off, pb[1] + ny * off))
     deg = defaultdict(int)
     nbr = defaultdict(list)
     for a, b in g["edges"]:
@@ -700,9 +703,13 @@ def render_svg(g: dict, pos: dict, title: str, size=900, label=True) -> str:
                 dx, dy = -dx, -dy
             vx, vy = vx + dx / L, vy + dy / L
         L = math.hypot(vx, vy) or 1
-        items.append({"p": (x, y), "dir": (vx / L, vy / L), "text": g["names"][v], "size": 11 if big else 9, "big": big})
+        items.append({"p": (x, y), "dir": (vx / L, vy / L), "text": names.get(v, g["names"][v]), "size": 11 if big else 9, "big": big})
     if label:
-        for it, lp in zip(items, place_labels(items)):
+        placed = (label_fn or (lambda its, sg: place_labels(its, segments=sg)))(items, segs)
+        if stats_out is not None:
+            stats_out.update(label_stats(placed, segs) if all("r" in x for x in placed) else {})
+            stats_out["_placed"], stats_out["_segs"] = placed, segs
+        for it, lp in zip(items, placed):
             tf = f' transform="rotate({lp["rot"]} {lp["x"]:.1f} {lp["y"]:.1f})"' if lp["rot"] else ""
             out.append(f'<text x="{lp["x"]:.1f}" y="{lp["y"]:.1f}" font-size="{it["size"]}" fill="#333" text-anchor="{lp["anchor"]}"'
                        f' paint-order="stroke" stroke="#fff" stroke-width="2.5"{tf}>{it["text"]}</text>')
@@ -878,55 +885,131 @@ def solve_lns(g: dict, cg: dict, cfg: dict, log=None) -> dict:
     return best
 
 
-def place_labels(stations: list[dict], cell: float = 40.0) -> list[dict]:
-    """라벨 충돌 회피 (web/schematic_core.js placeLabels와 같은 규칙). 큰 역부터, 후보 중 겹침 넓이 최소."""
+def label_geom(c: dict) -> tuple:
+    """라벨 사각형(원점 ox, oy에서 rot만큼 돌린 좌표계의 r = [x0, y0, x1, y1])의 화면 외접 사각형 (web/schematic_core.js labelGeom)."""
+    ox, oy, rot, r = c["ox"], c["oy"], c["rot"], c["r"]
+    if not rot:
+        return (r[0] + ox, r[1] + oy, r[2] + ox, r[3] + oy)
+    a = math.radians(rot)
+    ca, sa = math.cos(a), math.sin(a)
+    pts = [(ox + x * ca - y * sa, oy + x * sa + y * ca) for x, y in ((r[0], r[1]), (r[2], r[1]), (r[2], r[3]), (r[0], r[3]))]
+    return (min(p[0] for p in pts), min(p[1] for p in pts), max(p[0] for p in pts), max(p[1] for p in pts))
+
+
+def seg_in_label(c: dict, sg) -> float:
+    """선분이 라벨 사각형 안을 지나는 길이 (Liang–Barsky, 회전 라벨은 라벨 좌표계로). web segInLabel과 같다."""
+    x1, y1, x2, y2 = sg[0] - c["ox"], sg[1] - c["oy"], sg[2] - c["ox"], sg[3] - c["oy"]
+    if c["rot"]:
+        a = math.radians(-c["rot"])
+        ca, sa = math.cos(a), math.sin(a)
+        x1, y1, x2, y2 = x1 * ca - y1 * sa, x1 * sa + y1 * ca, x2 * ca - y2 * sa, x2 * sa + y2 * ca
+    rx0, ry0, rx1, ry1 = c["r"]
+    t0, t1 = 0.0, 1.0
+    dx, dy = x2 - x1, y2 - y1
+    for p_, q_ in ((-dx, x1 - rx0), (dx, rx1 - x1), (-dy, y1 - ry0), (dy, ry1 - y1)):
+        if abs(p_) < 1e-12:
+            if q_ < 0:
+                return 0.0
+            continue
+        t = q_ / p_
+        if p_ < 0:
+            if t > t1:
+                return 0.0
+            t0 = max(t0, t)
+        else:
+            if t < t0:
+                return 0.0
+            t1 = min(t1, t)
+    return (t1 - t0) * math.hypot(dx, dy) if t1 > t0 else 0.0
+
+
+def place_labels(stations: list[dict], cell: float = 40.0, segments=None, seg_w=None) -> list[dict]:
+    """라벨 충돌 회피 (web/schematic_core.js placeLabels와 같은 규칙). 큰 역부터, 후보 중 비용 최소.
+    비용 = 놓은 라벨·역 원과 겹치는 넓이 + seg_w × 라벨 안을 지나는 노선 선분 길이 (5차 R4) + 후보 순번 × 0.01."""
+    segments = segments or []
     grid = defaultdict(list)
+    sgrid = defaultdict(list)
 
     def cells(b):
         for i in range(int(math.floor(b[0] / cell)), int(math.floor(b[2] / cell)) + 1):
             for j in range(int(math.floor(b[1] / cell)), int(math.floor(b[3] / cell)) + 1):
                 yield (i, j)
 
-    def add(b):
-        for c in cells(b):
-            grid[c].append(b)
+    def near(gr, b):
+        seen, out = set(), []
+        for cc in cells(b):
+            for x in gr[cc]:
+                if id(x) not in seen:
+                    seen.add(id(x))
+                    out.append(x)
+        return out
+
+    def put(gr, b, x):
+        for cc in cells(b):
+            gr[cc].append(x)
 
     def overlap(a, b):
         return max(0.0, min(a[2], b[2]) - max(a[0], b[0])) * max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
     for st in stations:
         r = 6 if st["big"] else 4
-        add((st["p"][0] - r, st["p"][1] - r, st["p"][0] + r, st["p"][1] + r))
+        b = (st["p"][0] - r, st["p"][1] - r, st["p"][0] + r, st["p"][1] + r)
+        put(grid, b, b)
+    for sg in segments:
+        sg = tuple(sg)
+        put(sgrid, (min(sg[0], sg[2]), min(sg[1], sg[3]), max(sg[0], sg[2]), max(sg[1], sg[3])), sg)
     order = sorted(range(len(stations)), key=lambda i: (not stations[i]["big"], i))
     out = [None] * len(stations)
     for i in order:
         st = stations[i]
-        x0, y0 = st["p"]
+        px, py = st["p"]
         w, h = len(st["text"]) * st["size"] * 0.95, st["size"] * 1.2
+        sw = seg_w if seg_w is not None else 0.45 * h
         ux, uy = st["dir"]
         nx, ny = -uy, ux
         if nx < 0:
             nx, ny = -nx, -ny
         horiz = abs(uy) < 0.38
-        d45 = w * math.sqrt(0.5)
+        R_S, R_E = (0, -h * 0.85, w, h * 0.15), (-w, -h * 0.85, 0, h * 0.15)
         cand = []
         if horiz:
-            cand.append({"x": x0 + 3, "y": y0 - 7, "rot": -45, "anchor": "start", "box": (x0 + 2, y0 - 7 - d45 - h * 0.5, x0 + 4 + d45, y0 - 5)})
-            cand.append({"x": x0 - 3, "y": y0 + 12, "rot": -45, "anchor": "end", "box": (x0 - 4 - d45, y0 + 8, x0 - 2, y0 + 12 + d45 + h * 0.5)})
+            cand.append({"x": px + 3, "y": py - 7, "rot": -45, "anchor": "start", "ox": px + 3, "oy": py - 7, "r": R_S})
+            cand.append({"x": px - 3, "y": py + 12, "rot": -45, "anchor": "end", "ox": px - 3, "oy": py + 12, "r": R_E})
         for sg in (1, -1):
-            x, y = x0 + sg * nx * 8, y0 + sg * ny * 8 + 3
+            x, y = px + sg * nx * 8, py + sg * ny * 8 + 3
             anchor = "start" if sg * nx >= 0 else "end"
-            xa = x if anchor == "start" else x - w
-            cand.append({"x": x, "y": y, "rot": 0, "anchor": anchor, "box": (xa, y - h * 0.85, xa + w, y + h * 0.15)})
+            cand.append({"x": x, "y": y, "rot": 0, "anchor": anchor, "ox": x, "oy": y, "r": R_S if anchor == "start" else R_E})
         if not horiz:
-            cand.append({"x": x0 - w / 2, "y": y0 - 9, "rot": 0, "anchor": "start", "box": (x0 - w / 2, y0 - 9 - h * 0.85, x0 + w / 2, y0 - 9 + h * 0.15)})
+            cand.append({"x": px - w / 2, "y": py - 9, "rot": 0, "anchor": "start", "ox": px - w / 2, "oy": py - 9, "r": R_S})
+        d, dd = 8, 6
+        for x, y, anchor in ((px + d, py + h * 0.35, "start"), (px - d, py + h * 0.35, "end"), (px - w / 2, py - d, "start"),
+                             (px - w / 2, py + d + h * 0.7, "start"), (px + dd, py - dd, "start"), (px - dd, py - dd, "end"),
+                             (px + dd, py + dd + h * 0.7, "start"), (px - dd, py + dd + h * 0.7, "end")):
+            cand.append({"x": x, "y": y, "rot": 0, "anchor": anchor, "ox": x, "oy": y, "r": R_S if anchor == "start" else R_E})
         best = None
         for k, c in enumerate(cand):
-            near = {id(b): b for cc in cells(c["box"]) for b in grid[cc]}
-            o = sum(overlap(c["box"], b) for b in near.values()) + k * 0.01
+            c["box"] = label_geom(c)
+            o = sum(overlap(c["box"], b) for b in near(grid, c["box"]))
+            if segments:
+                o += sw * sum(seg_in_label(c, sg) for sg in near(sgrid, c["box"]))
+            o += k * 0.01
             if best is None or o < best[0]:
                 best = (o, c)
             if o < 0.02 * (k + 1):
                 break
-        add(best[1]["box"])
+        best[1]["cost"] = best[0]
+        put(grid, best[1]["box"], best[1]["box"])
         out[i] = best[1]
     return out
+
+
+def label_stats(placed: list[dict], segments, min_len: float = 2.0) -> dict:
+    """라벨 배치 지표 (web labelStats와 같다): 선분이 min_len보다 길게 지나는 라벨 수, 서로 겹치는 라벨 쌍 수."""
+    on_line = sum(1 for c in placed if any(seg_in_label(c, sg) > min_len for sg in segments))
+    pairs = 0
+    for i in range(len(placed)):
+        a = placed[i]["box"]
+        for j in range(i + 1, len(placed)):
+            b = placed[j]["box"]
+            if min(a[2], b[2]) - max(a[0], b[0]) > 0.5 and min(a[3], b[3]) - max(a[1], b[1]) > 0.5:
+                pairs += 1
+    return {"labels": len(placed), "on_line": on_line, "overlap_pairs": pairs}

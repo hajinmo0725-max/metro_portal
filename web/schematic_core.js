@@ -91,62 +91,105 @@ export function offsetSegment(pa, pb, k, n, gap = 4.5) {
   return [[pa[0] + nx * off, pa[1] + ny * off], [pb[0] + nx * off, pb[1] + ny * off]];
 }
 
-// 4차 S4 보강: 라벨 충돌 회피 (탐욕). stations = [{p:[x,y], dir:[ux,uy], text, size, big}] → [{x, y, rot, anchor}]
-// 후보: 선 방향에 수직 양쪽, 가로선이면 45° 회전 위·아래. 이미 놓은 라벨·역 원과 겹치는 넓이가 가장 작은 후보를 고른다.
-// 큰 역(환승·종점)을 먼저 놓는다. 격자 해시로 근처 상자만 비교한다.
-export function placeLabels(stations, { cell = 40, k = 1 } = {}) {
+// 4차 S4 보강 → 5차 R4: 라벨 충돌 회피 (탐욕). stations = [{p:[x,y], dir:[ux,uy], text, size, big}] → [{x, y, rot, anchor, box, cost}]
+// 후보: 선 방향에 수직 양쪽, 가로선이면 45° 회전 위·아래 (4차) + 8방위(동·서·남·북·대각) (5차).
+// 비용 = 이미 놓은 라벨·역 원과 겹치는 넓이 + segW × 라벨 안을 지나는 노선 선분 길이 (5차: 라벨이 선 위에 걸치는 문제) + 후보 순번 × 0.01.
+// segments = [[x1, y1, x2, y2], ...] (화면 좌표, 평행 오프셋 포함). 큰 역(환승·종점)을 먼저 놓는다. 격자 해시로 근처만 비교한다.
+export function labelGeom(c) {
+  // 라벨 사각형 = 원점(ox, oy)에서 rot만큼 돌린 좌표계의 [x0, y0, x1, y1]. box는 화면 좌표 외접 사각형(격자·라벨끼리 겹침용)
+  const { ox, oy, rot, r } = c;
+  if (!rot) return [r[0] + ox, r[1] + oy, r[2] + ox, r[3] + oy];
+  const a = (rot * Math.PI) / 180, ca = Math.cos(a), sa = Math.sin(a);
+  const pts = [[r[0], r[1]], [r[2], r[1]], [r[2], r[3]], [r[0], r[3]]].map(([x, y]) => [ox + x * ca - y * sa, oy + x * sa + y * ca]);
+  return [Math.min(...pts.map((q) => q[0])), Math.min(...pts.map((q) => q[1])), Math.max(...pts.map((q) => q[0])), Math.max(...pts.map((q) => q[1]))];
+}
+
+// 선분이 라벨 사각형 안을 지나는 길이 (Liang–Barsky 클리핑, 회전 라벨은 라벨 좌표계로 돌려서)
+export function segInLabel(c, sg) {
+  let [x1, y1, x2, y2] = sg;
+  x1 -= c.ox; y1 -= c.oy; x2 -= c.ox; y2 -= c.oy;
+  if (c.rot) {
+    const a = (-c.rot * Math.PI) / 180, ca = Math.cos(a), sa = Math.sin(a);
+    [x1, y1, x2, y2] = [x1 * ca - y1 * sa, x1 * sa + y1 * ca, x2 * ca - y2 * sa, x2 * sa + y2 * ca];
+  }
+  const [rx0, ry0, rx1, ry1] = c.r;
+  let t0 = 0, t1 = 1;
+  const dx = x2 - x1, dy = y2 - y1;
+  for (const [p, q] of [[-dx, x1 - rx0], [dx, rx1 - x1], [-dy, y1 - ry0], [dy, ry1 - y1]]) {
+    if (Math.abs(p) < 1e-12) { if (q < 0) return 0; continue; }
+    const t = q / p;
+    if (p < 0) { if (t > t1) return 0; if (t > t0) t0 = t; } else { if (t < t0) return 0; if (t < t1) t1 = t; }
+  }
+  return t1 > t0 ? (t1 - t0) * Math.hypot(dx, dy) : 0;
+}
+
+export function placeLabels(stations, { cell = 40, k = 1, segments = [], segW = null } = {}) {
   // k: 화면 확대 배율의 역수. 라벨 간격·역 원 크기를 k배로 (확대해도 화면에서 같은 크기)
   cell *= k;
-  const grid = new Map();
+  const grid = new Map(), sgrid = new Map();
   const key = (i, j) => `${i},${j}`;
-  const boxesNear = (b) => {
-    const out = [];
+  const cellsOf = (b, f) => {
     for (let i = Math.floor(b[0] / cell); i <= Math.floor(b[2] / cell); i++)
-      for (let j = Math.floor(b[1] / cell); j <= Math.floor(b[3] / cell); j++) for (const x of grid.get(key(i, j)) || []) out.push(x);
-    return out;
+      for (let j = Math.floor(b[1] / cell); j <= Math.floor(b[3] / cell); j++) f(key(i, j));
   };
-  const add = (b) => {
-    for (let i = Math.floor(b[0] / cell); i <= Math.floor(b[2] / cell); i++)
-      for (let j = Math.floor(b[1] / cell); j <= Math.floor(b[3] / cell); j++) {
-        const k = key(i, j);
-        if (!grid.has(k)) grid.set(k, []);
-        grid.get(k).push(b);
-      }
-  };
+  const near = (g, b) => { const out = new Set(); cellsOf(b, (kk) => { for (const x of g.get(kk) || []) out.add(x); }); return [...out]; };
+  const put = (g, b, x) => cellsOf(b, (kk) => { if (!g.has(kk)) g.set(kk, []); g.get(kk).push(x); });
   const overlap = (a, b) => Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
-  for (const s of stations) { const r = (s.big ? 6 : 4) * k; add([s.p[0] - r, s.p[1] - r, s.p[0] + r, s.p[1] + r]); }
+  for (const s of stations) { const r = (s.big ? 6 : 4) * k; const b = [s.p[0] - r, s.p[1] - r, s.p[0] + r, s.p[1] + r]; put(grid, b, b); }
+  segments.forEach((sg) => put(sgrid, [Math.min(sg[0], sg[2]), Math.min(sg[1], sg[3]), Math.max(sg[0], sg[2]), Math.max(sg[1], sg[3])], sg));
   const order = stations.map((s, i) => i).sort((a, b) => (stations[b].big - stations[a].big) || a - b);
   const out = new Array(stations.length);
   for (const i of order) {
     const s = stations[i];
     const w = s.text.length * s.size * 0.95, h = s.size * 1.2;
+    const sw = segW ?? 0.45 * h;
     const [ux, uy] = s.dir;
     let nx = -uy, ny = ux;
     if (nx < 0) { nx = -nx; ny = -ny; }
     const horiz = Math.abs(uy) < 0.38;
+    const [px, py] = s.p;
     const c = [];
-    const d45 = w * Math.SQRT1_2;
+    // 회전 후보 (가로선): 원점 = 글자 기준점, 라벨 좌표계에서 [0, -0.85h, w, 0.15h] (anchor start) / [-w, ...] (end)
     if (horiz) {
-      c.push({ x: s.p[0] + 3 * k, y: s.p[1] - 7 * k, rot: -45, anchor: "start", box: [s.p[0] + 2 * k, s.p[1] - 7 * k - d45 - h * 0.5, s.p[0] + 4 * k + d45, s.p[1] - 5 * k] });
-      c.push({ x: s.p[0] - 3 * k, y: s.p[1] + 12 * k, rot: -45, anchor: "end", box: [s.p[0] - 4 * k - d45, s.p[1] + 8 * k, s.p[0] - 2 * k, s.p[1] + 12 * k + d45 + h * 0.5] });
+      c.push({ x: px + 3 * k, y: py - 7 * k, rot: -45, anchor: "start", ox: px + 3 * k, oy: py - 7 * k, r: [0, -h * 0.85, w, h * 0.15] });
+      c.push({ x: px - 3 * k, y: py + 12 * k, rot: -45, anchor: "end", ox: px - 3 * k, oy: py + 12 * k, r: [-w, -h * 0.85, 0, h * 0.15] });
     }
     for (const sg of [1, -1]) {
-      const x = s.p[0] + sg * nx * 8 * k, y = s.p[1] + sg * ny * 8 * k + 3 * k;
+      const x = px + sg * nx * 8 * k, y = py + sg * ny * 8 * k + 3 * k;
       const anchor = sg * nx >= 0 ? "start" : "end";
-      const x0 = anchor === "start" ? x : x - w;
-      c.push({ x, y, rot: 0, anchor, box: [x0, y - h * 0.85, x0 + w, y + h * 0.15] });
+      c.push({ x, y, rot: 0, anchor, ox: x, oy: y, r: anchor === "start" ? [0, -h * 0.85, w, h * 0.15] : [-w, -h * 0.85, 0, h * 0.15] });
     }
-    if (!horiz) {
-      c.push({ x: s.p[0] - w / 2, y: s.p[1] - 9 * k, rot: 0, anchor: "start", box: [s.p[0] - w / 2, s.p[1] - 9 * k - h * 0.85, s.p[0] + w / 2, s.p[1] - 9 * k + h * 0.15] });
-    }
+    if (!horiz) c.push({ x: px - w / 2, y: py - 9 * k, rot: 0, anchor: "start", ox: px - w / 2, oy: py - 9 * k, r: [0, -h * 0.85, w, h * 0.15] });
+    // 5차: 8방위 후보 (역에서 8k 떨어진 곳)
+    const d = 8 * k, dd = 6 * k;
+    for (const [x, y, anchor, r] of [
+      [px + d, py + h * 0.35, "start", [0, -h * 0.85, w, h * 0.15]], [px - d, py + h * 0.35, "end", [-w, -h * 0.85, 0, h * 0.15]],
+      [px - w / 2, py - d, "start", [0, -h * 0.85, w, h * 0.15]], [px - w / 2, py + d + h * 0.7, "start", [0, -h * 0.85, w, h * 0.15]],
+      [px + dd, py - dd, "start", [0, -h * 0.85, w, h * 0.15]], [px - dd, py - dd, "end", [-w, -h * 0.85, 0, h * 0.15]],
+      [px + dd, py + dd + h * 0.7, "start", [0, -h * 0.85, w, h * 0.15]], [px - dd, py + dd + h * 0.7, "end", [-w, -h * 0.85, 0, h * 0.15]],
+    ]) c.push({ x, y, rot: 0, anchor, ox: x, oy: y, r });
     let best = null;
-    for (const [k, cand] of c.entries()) {
-      const o = boxesNear(cand.box).reduce((acc, b) => acc + overlap(cand.box, b), 0) + k * 0.01;
-      if (!best || o < best.o) best = { ...cand, o };
-      if (o < 0.02 * (k + 1)) break;
+    for (const [j, cand] of c.entries()) {
+      cand.box = labelGeom(cand);
+      let o = near(grid, cand.box).reduce((acc, b) => acc + overlap(cand.box, b), 0);
+      if (segments.length) o += sw * near(sgrid, cand.box).reduce((acc, sg) => acc + segInLabel(cand, sg), 0);
+      o += j * 0.01;
+      if (!best || o < best.cost) best = { ...cand, cost: o };
+      if (o < 0.02 * (j + 1)) break;
     }
-    add(best.box);
+    put(grid, best.box, best.box);
     out[i] = best;
   }
   return out;
+}
+
+// 5차 R4: 라벨 배치 품질 지표 — 선분이 지나는 라벨 수(라벨 안 길이 > minLen), 서로 겹치는 라벨 쌍 수
+export function labelStats(placed, segments, { minLen = 2 } = {}) {
+  let onLine = 0, pairs = 0;
+  for (const c of placed) if (segments.some((sg) => segInLabel(c, sg) > minLen)) onLine++;
+  for (let i = 0; i < placed.length; i++) for (let j = i + 1; j < placed.length; j++) {
+    const a = placed[i].box, b = placed[j].box;
+    if (Math.min(a[2], b[2]) - Math.max(a[0], b[0]) > 0.5 && Math.min(a[3], b[3]) - Math.max(a[1], b[1]) > 0.5) pairs++;
+  }
+  return { labels: placed.length, on_line: onLine, overlap_pairs: pairs };
 }
